@@ -78,7 +78,7 @@
 				<div class="box2-1">
 					<div class="viewbox">피자/양식</div>
 					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/7.png">
-				</div>			
+				</div>		  	
 				<div class="box2-1">
 					<div class="viewbox">중국집</div>
 					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/8.png">
