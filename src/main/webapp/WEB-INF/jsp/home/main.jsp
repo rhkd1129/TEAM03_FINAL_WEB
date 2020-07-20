@@ -86,7 +86,7 @@
 			</div>		
 			<div class="foodbox3">
 				<div id="box3-1">
-					<div class="viewbox">한식</div>
+					<div class="viewbox">한식</div>  
 					<img class="foodimg3" src="${pageContext.request.contextPath}/resource/image/home/food/9.png">
 				</div>
 				<div class="box3-1">
