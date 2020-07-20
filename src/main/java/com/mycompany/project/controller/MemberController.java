@@ -21,7 +21,7 @@ public class MemberController {
 	
 	@PostMapping("/cjoin.do")
 	public String cjoin(Cmember cmember) {
-		return "redirect:/home/main.do";
+		return "redirect:/customer/main.do";
 	}
 	
 	@GetMapping("/clogin.do")
@@ -31,7 +31,7 @@ public class MemberController {
 	
 	@PostMapping("/clogin.do")
 	public String clogin(CloginForm cloginFrom) {
-		return "redirect:/home/main.do";
+		return "redirect:/customer/main.do";
 	}
 	
 	@GetMapping("/ojoin.do")
@@ -41,7 +41,7 @@ public class MemberController {
 	
 	@PostMapping("/ojoin.do")
 	public String ojoin(Omember omember) {
-		return "redirect:/home/main.do";
+		return "redirect:/owner/main.do";
 	}
 	
 	@GetMapping("/ologin.do")
@@ -51,7 +51,7 @@ public class MemberController {
 	
 	@PostMapping("/ologin.do")
 	public String ologin(OloginForm ologinForm) {
-		return "redirect:/home/main.do";
+		return "redirect:/owner/main.do";
 	}
 
 }

@@ -48,22 +48,22 @@
 			<div></div>
 		</div>
 	</div>
-	
+
 	<div class="ownerlogin">
 		<div>
 			<img class="ownerloginimg" src="${pageContext.request.contextPath}/resource/image/owner/owner_login.png">
 		</div>
-		
+
 		<div class="ownerloginform">
 			<form action="post">
 			<h5>아이디</h5>
-			
+
 			<h5>비밀번호</h5>
 			</form>
 		</div>
 	</div>
 
-	
+
 
 
 	<!-- FOOTER START ======================================== -->
@@ -73,7 +73,7 @@
 			<div class="footer1-2-2">개인정보처리방침</div>
 			<div class="footer1-2-3">회원등급정책</div>
 			<div class="footer1-2-4">회사소개</div>
-			<div class="footer1-2-5">요기요사장님</div>
+			<div class="footer1-2-5">즈기요사장님</div>
 			<div class="footer1-2-6">입점문의</div>
 			<div class="footer1-2-7">공지사항</div>
 
@@ -111,11 +111,11 @@
 </body>
 <script type="text/javascript">
 $(".login").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/main.do";
+    location.href = "${pageContext.request.contextPath}/member/ologin.do";
 });
 
 $(".join").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/main.do";
+    location.href = "${pageContext.request.contextPath}/member/ojoin.do";
 });
 </script>
 </html>
