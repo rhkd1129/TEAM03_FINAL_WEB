@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/maincss.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/owner_logincss.css">
 </head>
 <body>
 	<div class="navbar1">
@@ -48,8 +49,18 @@
 		</div>
 	</div>
 	
-	<div class="">
-	
+	<div class="ownerlogin">
+		<div>
+			<img class="ownerloginimg" src="${pageContext.request.contextPath}/resource/image/owner/owner_login.png">
+		</div>
+		
+		<div class="ownerloginform">
+			<form action="post">
+			<h5>아이디</h5>
+			
+			<h5>비밀번호</h5>
+			</form>
+		</div>
 	</div>
 
 	
