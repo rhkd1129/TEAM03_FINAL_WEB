@@ -1,6 +1,6 @@
 package com.mycompany.project.model;
 
-public class Cmodel {
+public class Cmember {
 	private String mid;
 	private String mpassword;
 	private String mname;

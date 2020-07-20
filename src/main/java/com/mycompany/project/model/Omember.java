@@ -1,6 +1,6 @@
 package com.mycompany.project.model;
 
-public class Omodel {
+public class Omember {
 	private String omid;
 	private String odate;
 	private String oadress;

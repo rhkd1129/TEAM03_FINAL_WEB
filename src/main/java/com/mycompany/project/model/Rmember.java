@@ -1,6 +1,6 @@
 package com.mycompany.project.model;
 
-public class Rmodel {
+public class Rmember {
 	private int rid;
 	private String rname;
 	private String radress;
