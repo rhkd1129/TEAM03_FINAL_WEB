@@ -25,7 +25,7 @@
 				<div class="join">회원가입</div>	
 			</div>			
 		</div>
-	</div>
+	</div>  
 	
 	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/imgage/home/1.jpg">
 	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/imgage/home/2.jpg">
