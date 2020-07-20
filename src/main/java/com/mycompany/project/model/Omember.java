@@ -1,24 +1,30 @@
 package com.mycompany.project.model;
 
 public class Omember {
-	private String omid;
-	private String odate;
+	private String oid;
+	private String opassword;
+	private String oname;
 	private String oadress;
-	private String omenu;
-	private int oprice;
-	private String orestaurant;
+	private String otel;
+	private String ocategory;
 	
-	public String getOmid() {
-		return omid;
+	public String getOid() {
+		return oid;
 	}
-	public void setOmid(String omid) {
-		this.omid = omid;
+	public void setOid(String oid) {
+		this.oid = oid;
 	}
-	public String getOdate() {
-		return odate;
+	public String getOpassword() {
+		return opassword;
 	}
-	public void setOdate(String odate) {
-		this.odate = odate;
+	public void setOpassword(String opassword) {
+		this.opassword = opassword;
+	}
+	public String getOname() {
+		return oname;
+	}
+	public void setOname(String oname) {
+		this.oname = oname;
 	}
 	public String getOadress() {
 		return oadress;
@@ -26,24 +32,17 @@ public class Omember {
 	public void setOadress(String oadress) {
 		this.oadress = oadress;
 	}
-	public String getOmenu() {
-		return omenu;
+	public String getOtel() {
+		return otel;
 	}
-	public void setOmenu(String omenu) {
-		this.omenu = omenu;
+	public void setOtel(String otel) {
+		this.otel = otel;
 	}
-	public int getOprice() {
-		return oprice;
+	public String getOcategory() {
+		return ocategory;
 	}
-	public void setOprice(int oprice) {
-		this.oprice = oprice;
+	public void setOcategory(String ocategory) {
+		this.ocategory = ocategory;
 	}
-	public String getOrestaurant() {
-		return orestaurant;
-	}
-	public void setOrestaurant(String orestaurant) {
-		this.orestaurant = orestaurant;
-	}
-	
 
 }
