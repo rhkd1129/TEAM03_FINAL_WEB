@@ -14,49 +14,51 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/maincss.css">
-</head>	
+</head>
 <body>
 	<div class="navbar1">
 		<div class="navbar2">
-			<img class="zegiyo" src="${pageContext.request.contextPath}/resource/imgage/home/즈기요.png">
-			
+			<img class="zegiyo" src="${pageContext.request.contextPath}/resource/image/home/즈기요.png">
+
 			<div class="boxbox">
 				<div class="login">로그인</div>
-				<div class="join">회원가입</div>	
-			</div>			
+				<div class="join">회원가입</div>
+			</div>
 		</div>
-	</div>  
-	
+	</div>
+
 	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/1.jpg">
 	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/2.jpg">
 	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/3.jpg">
 	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/4.jpg">
+
+
+
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 <script type="text/javascript">
 $(".login").click(function(){
     location.href = "${pageContext.request.contextPath}/home/main.do";
-}); 
+});
 
 $(".join").click(function(){
     location.href = "${pageContext.request.contextPath}/home/main.do";
-}); 
+});
 </script>
 </html>
