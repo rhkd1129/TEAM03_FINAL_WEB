@@ -52,13 +52,13 @@
 
 
 </body>
-<script type="text/javascript">  
+<script type="text/javascript">
 $(".login").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/main.do";
+    location.href = "${pageContext.request.contextPath}/member/login.do";
 });
 
 $(".join").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/main.do";
+    location.href = "${pageContext.request.contextPath}/member/join.do";
 });
 </script>
 </html>
