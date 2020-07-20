@@ -22,7 +22,9 @@
 	</head>
 	<body>
 		<div id='logo'>
-			<img src="${pageContext.request.contextPath}/resource/image/home/zgiyo_logo.png" style="">
+			<a href='${pageContext.request.contextPath}/home/main.do'>
+			<img src="${pageContext.request.contextPath}/resource/image/home/zgiyo_logo.png">
+			</a>
 		</div>
 	</body>
 </html>
