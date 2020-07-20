@@ -13,10 +13,9 @@
 		<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 		<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-	</head>
-	<body>
-		<h5 class="alert alert-success">/xxx.jsp</h5>
 		
-		<div></div>
+		</head>
+	<body>
+		<h5 class="alert alert-info">/xxx.jsp</h5>
 	</body>
 </html>
