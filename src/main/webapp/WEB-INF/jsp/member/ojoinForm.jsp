@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -28,8 +28,10 @@
 					</td>
 				</tr>
 				<tr>
-					<td>이름</td>
-					
+					<td>점포명</td>
+					<td>
+						<form:input path="oname"/>
+					</td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
@@ -37,7 +39,27 @@
 						<form:input path="opassword"/>
 					</td>
 				</tr>
+				<tr>
+					<td>전화번호</td>
+					<td>
+						<form:input type="tel" path="otel"/>
+					</td>
+				</tr>
+				<tr>
+					<td>주소</td>
+					<td>
+						<form:input path="oadress"/>
+					</td>
+				</tr>
+				<tr>
+					<td>업종</td>
+					<td>
+						<form:input path="ocategoy"/>
+					</td>
+				</tr>
 			</table>
+			
+			<input type="submit" value="가입"/>
 		</form:form>
 	</body>
 </html>
