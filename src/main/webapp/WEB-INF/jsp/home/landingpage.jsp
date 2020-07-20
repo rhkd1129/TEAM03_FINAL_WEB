@@ -13,10 +13,16 @@
 		<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 		<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
+		<style>
+			body {
+			  background-color: #e60000
+;
+			}
+		</style>
 	</head>
 	<body>
-		<h5 class="alert alert-success">/xxx.jsp</h5>
-		
-		<div></div>
+		<div id='logo'>
+			<img src="${pageContext.request.contextPath}/resource/image/home/zgiyo_logo.png" style="">
+		</div>
 	</body>
 </html>
