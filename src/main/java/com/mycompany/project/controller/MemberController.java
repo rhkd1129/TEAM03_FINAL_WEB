@@ -44,14 +44,14 @@ public class MemberController {
 		return "redirect:/owner/main.do";
 	}
 	
-	@GetMapping("/ologin.do")
-	public String ologinform(OloginForm ologinForm) {
-		return "member/ologinForm";
-	}
-	
-	@PostMapping("/ologin.do")
-	public String ologin(OloginForm ologinForm) {
-		return "redirect:/owner/main.do";
-	}
+//	@GetMapping("/ologin.do")
+//	public String ologinform(OloginForm ologinForm) {
+//		return "member/ologinForm";
+//	}
+//	
+//	@PostMapping("/ologin.do")
+//	public String ologin(OloginForm ologinForm) {
+//		return "redirect:/owner/main.do";
+//	}
 
 }

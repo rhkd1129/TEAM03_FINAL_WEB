@@ -309,6 +309,8 @@
 }
 
 .ownerloginimg{
+	margin-top: 30px;
+	margin-bottom: 30px;
 	width: 100%;
 }
 
@@ -321,6 +323,10 @@
 ul{
    list-style:none;
    padding-left:0px;
+}
+
+li{
+	margin: 20px;
 }
 
 /* foot=============================== */

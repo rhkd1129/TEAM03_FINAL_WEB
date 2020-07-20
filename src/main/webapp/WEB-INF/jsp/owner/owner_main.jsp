@@ -20,56 +20,9 @@
 	<div class="navbar1">
 		<div class="navbar2">
 			<img class="zgiyo" src="${pageContext.request.contextPath}/resource/image/home/즈기요.png">
-
-			<div class="boxbox">
-				<div class="login">로그인</div>
-				<div class="join">회원가입</div>
-			</div>
 		</div>
 	</div>
 
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/1.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/2.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/3.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/4.jpg">
-
-
-
-
-	<div class="textbox">
-		<div class="textbox1">
-			<div class="where">"어디로 </div>
-			<div class="delivery">배달</div>
-			<div class="doing">해 드릴까요?"</div>
-			<div class="textbox1-1">배달 받으실 동 이름으로 검색해주세요</div>
-		</div>
-		<div class="textbox2">
-			<div></div>
-			<div></div>
-		</div>
-	</div>
-
-	<div class="ownerlogin">
-		<div>
-			<img class="ownerloginimg" src="${pageContext.request.contextPath}/resource/image/owner/owner_login.png">
-		</div>
-
-		<div class="ownerloginform">
-			<form action="post">
-				<ul>
-					<li>아이디</li>
-					<li>
-						<input>
-					</li>
-					<li>비밀번호</li>
-					<li>
-						<input>
-					</li>				
-				</ul>
-				<input type="submit" value="로그인">
-			</form>
-		</div>
-	</div>
 
 
 
