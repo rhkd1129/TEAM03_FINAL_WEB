@@ -14,31 +14,13 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/maincss.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/owner_maincss.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/owner_logincss.css">
 </head>
 <body>
 	<div class="navbar1">
 		<div class="navbar2">
 			<img class="zgiyo" src="${pageContext.request.contextPath}/resource/image/home/즈기요.png">
 		</div>
-	</div>
-	
-	<div class="menu">
-		<div class="menu1">
-			<h1>접수대기</h1>
-		</div>
-		<div class="menu1">
-			<h1>처리중</h1>
-		</div>
-		<div class="menu1">
-			<h1>완료</h1>
-		</div>
-		<div class="menu1">
-			<h1>주문조회</h1>
-		</div>
-	</div>
-	
-	<div class="main">
 	</div>
 
 
