@@ -161,11 +161,11 @@
 </body>
 <script type="text/javascript">
 $(".login").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/main.do";
+    location.href = "${pageContext.request.contextPath}/member/clogin.do";
 });
 
 $(".join").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/main.do";
+    location.href = "${pageContext.request.contextPath}/member/cjoin.do";
 });
 </script>
 </html>

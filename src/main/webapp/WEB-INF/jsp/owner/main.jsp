@@ -100,11 +100,11 @@
 </body>
 <script type="text/javascript">
 $(".login").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/main.do";
+    location.href = "${pageContext.request.contextPath}/member/ologin.do";
 });
 
 $(".join").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/main.do";
+    location.href = "${pageContext.request.contextPath}/member/ojoin.do";
 });
 </script>
 </html>
