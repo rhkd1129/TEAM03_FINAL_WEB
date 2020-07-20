@@ -16,10 +16,8 @@
 		
 		</head>
 	<body>
-		<h5 class="alert alert-info">/home/main.jsp</h5>
+		<h5 class="alert alert-info">/member/joinForm.jsp</h5>
 		
-		<ul style="list-style: none; padding-left:0px;">
-			<li><a href="${pageContext.request.contextPath}/member/join.do">회원가입</a></li>
-		</ul>
+		<form method="post"></form>
 	</body>
 </html>

@@ -4,22 +4,61 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
-		<script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
-		<script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
-		<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
-		<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-		
-		</head>
-	<body>
-		<h5 class="alert alert-info">/home/main.jsp</h5>
-		
-		<ul style="list-style: none; padding-left:0px;">
-			<li><a href="${pageContext.request.contextPath}/member/join.do">회원가입</a></li>
-		</ul>
-	</body>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
+	<script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
+	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/maincss.css">
+</head>	
+<body>
+	<div class="navbar1">
+		<div class="navbar2">
+			<img class="zegiyo" src="${pageContext.request.contextPath}/resource/img/즈기요.png">
+			
+			<div class="boxbox">
+				<div class="login">로그인</div>
+				<div class="join">회원가입</div>	
+			</div>			
+		</div>
+	</div>
+	
+	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/img/1.jpg">
+	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/img/2.jpg">
+	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/img/3.jpg">
+	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/img/4.jpg">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+<script type="text/javascript">
+$(".login").click(function(){
+    location.href = "${pageContext.request.contextPath}/home/main.do";
+}); 
+
+$(".join").click(function(){
+    location.href = "${pageContext.request.contextPath}/home/main.do";
+}); 
+</script>
 </html>
