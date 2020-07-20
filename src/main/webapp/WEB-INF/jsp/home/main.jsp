@@ -18,7 +18,7 @@
 <body>
 	<div class="navbar1">
 		<div class="navbar2">
-			<img class="zegiyo" src="${pageContext.request.contextPath}/resource/img/즈기요.png">
+			<img class="zegiyo" src="${pageContext.request.contextPath}/resource/imgage/home/즈기요.png">
 			
 			<div class="boxbox">
 				<div class="login">로그인</div>
@@ -27,10 +27,10 @@
 		</div>
 	</div>
 	
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/img/1.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/img/2.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/img/3.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/img/4.jpg">
+	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/imgage/home/1.jpg">
+	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/imgage/home/2.jpg">
+	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/imgage/home/3.jpg">
+	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/imgage/home/4.jpg">
 	
 	
 	
