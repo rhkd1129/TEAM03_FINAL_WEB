@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -17,5 +18,24 @@
 		</head>
 	<body>
 		<h5 class="alert alert-info">/member/ologinForm.jsp</h5>
+		
+		<form:form>
+			<table>
+				<tr>
+					<td>아이디</td>
+					<td>
+						<form:input path="oid"/>
+					</td>
+				</tr>
+				<tr>
+					<td>비밀번호</td>
+					<td>
+						<form:input path="opassword"/>
+					</td>
+				</tr>
+			</table>
+			
+			<input type="submit" value="로그인"/>
+		</form:form>
 	</body>
 </html>
