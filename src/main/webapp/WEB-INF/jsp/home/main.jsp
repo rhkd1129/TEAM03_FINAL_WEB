@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+<head>  
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
@@ -54,11 +54,11 @@
 </body>
 <script type="text/javascript">
 $(".login").click(function(){
-    location.href = "${pageContext.request.contextPath}/member/login.do";
+    location.href = "${pageContext.request.contextPath}/home/main.do";
 });
 
 $(".join").click(function(){
-    location.href = "${pageContext.request.contextPath}/member/join.do";
+    location.href = "${pageContext.request.contextPath}/home/main.do";
 });
 </script>
 </html>
