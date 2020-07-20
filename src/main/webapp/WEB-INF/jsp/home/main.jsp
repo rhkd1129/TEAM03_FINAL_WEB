@@ -139,7 +139,7 @@
 	</div>
   
 	<div class="footermain2">
-		<img class="footimg3" src="${pageContext.request.contextPath}/resource/image/home/footer/zzz.png">	
+		<img class="footimg3" src="${pageContext.request.contextPath}/resource/image/home/footer/footer.png">	
 	</div>	
 	<!-- FOOTER END ======================================== -->
 
