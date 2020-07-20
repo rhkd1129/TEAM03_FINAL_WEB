@@ -136,7 +136,7 @@
 			</div>
 		</div>
 	</div>
-
+  
 	<div class="footermain2">
 		<img class="footimg3" src="${pageContext.request.contextPath}/resource/image/home/footer/zzz.png">	
 	</div>	
