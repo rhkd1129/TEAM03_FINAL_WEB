@@ -27,12 +27,10 @@
 		</div>
 	</div>  
 	
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/imgage/home/1.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/imgage/home/2.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/imgage/home/3.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/imgage/home/4.jpg">
-	
-	
+	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/1.jpg">
+	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/2.jpg">
+	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/3.jpg">
+	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/4.jpg">
 	
 	
 	
