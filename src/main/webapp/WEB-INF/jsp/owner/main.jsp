@@ -48,72 +48,7 @@
 		</div>
 	</div>
 
-	<div class="imgboxmain">
-		<div class="imgboxmain1">
-			<div class="foodbox1">
-				<div id="box1-1">
-					<img class="foodimg1" src="${pageContext.request.contextPath}/resource/image/home/food/1.png">
-				</div>
-				<div id="box1-2">
-					<img class="foodimg1" src="${pageContext.request.contextPath}/resource/image/home/food/2.png">
-				</div>
-				<div class="box1-1">
-					<div class="viewbox">전체보기</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/3.png">
-				</div>
-				<div class="box1-1">
-					<div class="viewbox">1인분 주문</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/4.png">
-				</div>
-			</div>
-			<div class="foodbox2">
-				<div id="box2-1">
-					<div class="viewbox">프랜차이즈</div>
-					<img class="foodimg3" src="${pageContext.request.contextPath}/resource/image/home/food/5.png">
-				</div>
-				<div class="box2-1">
-					<div class="viewbox">치킨</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/6.png">
-				</div>
-				<div class="box2-1">
-					<div class="viewbox">피자/양식</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/7.png">
-				</div>
-				<div class="box2-1">
-					<div class="viewbox">중국집</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/8.png">
-				</div>
-			</div>
-			<div class="foodbox3">
-				<div id="box3-1">
-					<div class="viewbox">한식</div>
-					<img class="foodimg3" src="${pageContext.request.contextPath}/resource/image/home/food/9.png">
-				</div>
-				<div class="box3-1">
-					<div class="viewbox">족발/보쌈</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/10.png">
-				</div>
-				<div class="box3-1">
-					<div class="viewbox">야식</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/11.png">
-				</div>
-				<div class="box3-1">
-					<div class="viewbox">분식</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/12.png">
-				</div>
-			</div>
-			<div class="foodbox4">
-				<div id="box4-1">
-					<div class="viewbox">카페/디저트</div>
-					<img class="foodimg3" src="${pageContext.request.contextPath}/resource/image/home/food/13.png">
-				</div>
-				<div class="box4-1">
-					<div class="viewbox">편의점/마트</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/14.png">
-				</div>
-			</div>
-		</div>
-	</div>
+	
 
 
 	<!-- FOOTER START ======================================== -->
