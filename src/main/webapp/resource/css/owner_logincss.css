@@ -318,6 +318,11 @@
 	width: 30%;	
 }
 
+ul{
+   list-style:none;
+   padding-left:0px;
+}
+
 /* foot=============================== */
 .footermain1{
 	width: 1903px;

@@ -56,9 +56,17 @@
 
 		<div class="ownerloginform">
 			<form action="post">
-			<h5>아이디</h5>
-
-			<h5>비밀번호</h5>
+				<ul>
+					<li>아이디</li>
+					<li>
+						<input>
+					</li>
+					<li>비밀번호</li>
+					<li>
+						<input>
+					</li>				
+				</ul>
+				<input type="submit" value="로그인">
 			</form>
 		</div>
 	</div>
