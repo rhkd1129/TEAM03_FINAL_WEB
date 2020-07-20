@@ -89,7 +89,7 @@
 					<div class="viewbox">한식</div>  
 					<img class="foodimg3" src="${pageContext.request.contextPath}/resource/image/home/food/9.png">
 				</div>
-				<div class="box3-1">
+				<div class="box3-1"> 
 					<div class="viewbox">족발/보쌈</div>
 					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/10.png">				
 				</div>			
