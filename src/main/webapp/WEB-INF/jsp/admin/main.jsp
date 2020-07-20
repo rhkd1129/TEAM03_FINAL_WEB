@@ -13,7 +13,7 @@
    <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
    <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/maincss.css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">
 </head>
 <body>
 	<div class="navbar1">
@@ -123,7 +123,7 @@
 			<div class="footer1-2-2">개인정보처리방침</div>
 			<div class="footer1-2-3">회원등급정책</div>
 			<div class="footer1-2-4">회사소개</div>
-			<div class="footer1-2-5">요기요사장님</div>
+			<div class="footer1-2-5">즈기요사장님</div>
 			<div class="footer1-2-6">입점문의</div>
 			<div class="footer1-2-7">공지사항</div>
 

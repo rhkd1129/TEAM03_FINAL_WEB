@@ -123,7 +123,7 @@
 			<div class="footer1-2-2">개인정보처리방침</div>
 			<div class="footer1-2-3">회원등급정책</div>
 			<div class="footer1-2-4">회사소개</div>
-			<div class="footer1-2-5">요기요사장님</div>
+			<div class="footer1-2-5">즈기요사장님</div>
 			<div class="footer1-2-6">입점문의</div>
 			<div class="footer1-2-7">공지사항</div>
 
