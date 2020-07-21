@@ -32,9 +32,6 @@
 	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/3.jpg">
 	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/4.jpg">
 
-
-
-
 	<div class="textbox">
 		<div class="textbox1">
 			<div class="where">"어디로 </div>
