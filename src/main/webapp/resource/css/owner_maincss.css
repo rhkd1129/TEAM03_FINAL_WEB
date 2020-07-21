@@ -1,23 +1,48 @@
 @charset "UTF-8";
 /* head=============================== */
 .navbar1{
-	background-color: #f0001e;
+	background-color: #242929;
 	width: 1903px;
 	height: 90px;
 	float: left;
 }
 
 .navbar2{
-	background-color: #f0001e;
 	width: 1020px;
 	height: 78px;
 	float: left;
-	margin-left: 450px;
+	margin-left: 100px;
+}
+
+.navtap{
+	background-color: #313535;
+	width: 100%;
+	height: 90px;
+	float: left;
+	color: white;
+	text-align: center;
+	font-size: 50px;
+}
+
+.navtap1{
+	background-color: #313535;
+	width: 20%;
+	height: 100%;
+	float: left;
+	border-right: 1px solid #000000;
+}
+
+.navtap2{
+	background-color: #313535;
+	width: 20%;
+	height: 100%;
+	float: left;
+	border-right: 1px solid #000000;
 }
 
 .zgiyo{
-	width: 90px;
-	height: 38px;
+	width: 108px;
+	height: 47px;
 	float: left;
 	margin-left: 2.5px;
 	margin-top: 20px;
@@ -62,34 +87,41 @@
 /* body=============================== */
 
 .menu {
-	width: 25%;
+	width: 20%;
 	height: 850px;
 	float: left;
+	border-right: 1px solid #a6abab;
+	color: #a6abab;
+	font-size: 40px;
+	text-align: center;
 }
 
 .menu1 {
-	border: 1px solid black;
 	height: 25%;
+	background-color: #d7dada;
+	border-bottom: 1px solid #a6abab;
 }
 
 .menu2 {
-	border: 1px solid black;
 	height: 25%;
+	background-color: #d7dada;
+	border-bottom: 1px solid #a6abab;
 }
 
 .menu3 {
-	border: 1px solid black;
 	height: 25%;
+	background-color: #d7dada;
+	border-bottom: 1px solid #a6abab;
 }
 
 .menu4 {
-	border: 1px solid black;
 	height: 25%;
+	background-color: #d7dada;
+	border-bottom: 1px solid #a6abab;
 }
 
 .main {
-	border: 1px solid black;
-	width: 75%;
+	width: 80%;
 	height: 850px;
 	float: left;
 	padding: 15px;
@@ -332,6 +364,10 @@
 	margin-left: 20px;
 	margin-top: 20px;
 	cursor: pointer;
+}
+
+h1{
+	text-align: center;
 }
 
 /* foot=============================== */
