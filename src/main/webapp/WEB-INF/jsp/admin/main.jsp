@@ -133,7 +133,7 @@ function getInputValue(){
 
 // manu bar script1 
 //로딩 이미지
-$(".ring1").hide();
+$(".ring1").hide();  
 $(".ring2").hide();
 $(".ring3").hide();
 $(".ring4").hide();
