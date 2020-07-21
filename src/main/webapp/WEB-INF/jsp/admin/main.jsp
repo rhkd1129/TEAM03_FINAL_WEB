@@ -121,7 +121,7 @@ function getInputValue(){
 	logincheck = false;
 
 		if(valueByIdName == "admin123" && valueByPwName =="admin123"){
-			alert("관리자 페이지에 오신 것을 환영합니다.");
+			alert("관리자 페이지에 오신 것을 환영합니다.");  
 			logincheck = true;
 			$(".opacitybox").hide();
 		}else{
@@ -133,7 +133,7 @@ function getInputValue(){
 
 // manu bar script1 
 //로딩 이미지
-$(".ring1").hide();
+$(".ring1").hide();  
 $(".ring2").hide();
 $(".ring3").hide();
 $(".ring4").hide();
