@@ -17,25 +17,55 @@
 		
 		</head>
 	<body>
-		<h5 class="alert alert-info">/member/ologinForm.jsp</h5>
+		<h5 class="alert alert-info">/member/rjoinForm.jsp</h5>
 		
-		<form:form>
+		<form:form method="post" modelAttribute="rmember">
 			<table>
 				<tr>
 					<td>아이디</td>
 					<td>
-						<form:input path="oid"/>
+						<form:input path="rid"/>
 					</td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
 					<td>
-						<form:input path="opassword"/>
+						<form:input path="rpassword"/>
+					</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>
+						<form:input path="rname"/>
+					</td>
+				</tr>
+				<tr>
+					<td>점포명</td>
+					<td>
+						<form:input path="rtitle"/>
+					</td>
+				</tr>
+				<tr>
+					<td>주소</td>
+					<td>
+						<form:input path="radress"/>
+					</td>
+				</tr>
+				<tr>
+					<td>전화번호</td>
+					<td>
+						<form:input type="tel" path="rtel"/>
+					</td>
+				</tr>
+				<tr>
+					<td>업종</td>
+					<td>
+						<form:input path="rcategoy"/>
 					</td>
 				</tr>
 			</table>
 			
-			<input type="submit" value="로그인"/>
+			<input type="submit" value="가입"/>
 		</form:form>
 	</body>
 </html>

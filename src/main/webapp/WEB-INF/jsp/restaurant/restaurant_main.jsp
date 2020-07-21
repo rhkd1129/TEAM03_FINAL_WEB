@@ -13,7 +13,7 @@
 	<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/owner_maincss.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_maincss.css">
 	
 </head>
 <body>
@@ -102,5 +102,5 @@
 	<!-- FOOTER END ======================================== -->
 
 </body>
-<script src="${pageContext.request.contextPath}/resource/script/owner_main.js"></script>
+<script src="${pageContext.request.contextPath}/resource/script/restaurant_main.js"></script>
 </html>

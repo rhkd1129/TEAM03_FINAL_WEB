@@ -1,18 +1,25 @@
 package com.mycompany.project.model;
 
 public class Rmember {
-	private int rid;
+	private String rid;
+	private String rpassword;
 	private String rname;
+	private String rtitle;
 	private String radress;
-	private String rowner;
 	private String rtel;
 	private String rcategory;
 	
-	public int getRid() {
+	public String getRid() {
 		return rid;
 	}
-	public void setRid(int rid) {
+	public void setRid(String rid) {
 		this.rid = rid;
+	}
+	public String getRpassword() {
+		return rpassword;
+	}
+	public void setRpassword(String rpassword) {
+		this.rpassword = rpassword;
 	}
 	public String getRname() {
 		return rname;
@@ -20,17 +27,17 @@ public class Rmember {
 	public void setRname(String rname) {
 		this.rname = rname;
 	}
+	public String getRtitle() {
+		return rtitle;
+	}
+	public void setRtitle(String rtitle) {
+		this.rtitle = rtitle;
+	}
 	public String getRadress() {
 		return radress;
 	}
 	public void setRadress(String radress) {
 		this.radress = radress;
-	}
-	public String getRowner() {
-		return rowner;
-	}
-	public void setRowner(String rowner) {
-		this.rowner = rowner;
 	}
 	public String getRtel() {
 		return rtel;
