@@ -127,7 +127,7 @@ function getInputValue(){
 		}else{
 			alert("다시 입력하시기 바랍니다.");
 			logincheck = false;		
-			$(".opacitybox").show();
+			$(".opacitybox").show();  
 		};
 };
 
