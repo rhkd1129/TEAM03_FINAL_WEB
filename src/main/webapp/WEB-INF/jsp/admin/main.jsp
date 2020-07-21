@@ -16,156 +16,312 @@
    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">
 </head>
 <body>
-	<div class="navbar1">
-		<div class="navbar2">
-			<img class="zgiyo" src="${pageContext.request.contextPath}/resource/image/home/즈기요.png">
-
-			<div class="boxbox">
-				<div class="login">로그인</div>
-				<div class="join">회원가입</div>
+	<div class="bodymainbox">
+		<div class="navbarmain">
+			<!-- /* Group0 */ -->
+			<div class=nav1>
+				<img class="nav1img1" src="${pageContext.request.contextPath}/resource/image/admin/관리자.png">
+				<div class="nav1text1">Admin Page</div>
 			</div>
+			<div class=nav2>
+				<img class="nav2img1" src="${pageContext.request.contextPath}/resource/image/admin/윤봉길.png">				
+				<div class="nav2text1">Welcome,</div>
+				<div class="nav2text2">Administrator Yoon</div>
+			</div>
+			
+			<!-- /* Group1 */ -->
+			<div class=nav3>
+				<div class="nav3text1">Shopkeeper | Customer</div> 
+				
+				<div class="btnHome1">
+					<img class="btnHomeimg1" src="${pageContext.request.contextPath}/resource/image/admin/list1.png">
+					<div class="btnHometext1">List</div>
+				</div>
+				
+				<div class="btnHome2">
+					<img class="btnHomeimg2" src="${pageContext.request.contextPath}/resource/image/admin/data.png">
+					<div class="btnHometext2">Data</div>
+				</div>			
+				
+				<div class="btnHome3">
+					<img class="btnHomeimg3" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
+					<div class="btnHometext3">Map</div>
+				</div>						
+			</div>		
+			<!-- /* Group2 */ -->
+			<div class=nav4>
+				<div class="nav4text1">Device | Instrument</div> 
+				
+				<div class="btnHome21">
+					<img class="btnHomeimg21" src="${pageContext.request.contextPath}/resource/image/admin/list1.png">
+					<div class="btnHometext21">List</div>
+				</div>
+				
+				<div class="btnHome22">
+					<img class="btnHomeimg22" src="${pageContext.request.contextPath}/resource/image/admin/data.png">
+					<div class="btnHometext22">Data</div>
+				</div>				
+				
+				<div class="btnHome23">
+					<img class="btnHomeimg23" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
+					<div class="btnHometext23">Map</div>
+				</div>						
+			</div>			
+		
+					<img class="ring" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		</div>
 	</div>
-
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/1.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/2.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/3.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/4.jpg">
-
-
-
-
-	<div class="textbox">
-		<div class="textbox1">
-			<div class="where">"어디로 </div>
-			<div class="delivery">배달</div>
-			<div class="doing">해 드릴까요?"</div>
-			<div class="textbox1-1">배달 받으실 동 이름으로 검색해주세요</div>
-		</div>
-		<div class="textbox2">
-			<div></div>
-			<div></div>
-		</div>
-	</div>
-
-	<div class="imgboxmain">
-		<div class="imgboxmain1">
-			<div class="foodbox1">
-				<div id="box1-1">
-					<img class="foodimg1" src="${pageContext.request.contextPath}/resource/image/home/food/1.png">
-				</div>
-				<div id="box1-2">
-					<img class="foodimg1" src="${pageContext.request.contextPath}/resource/image/home/food/2.png">
-				</div>
-				<div class="box1-1">
-					<div class="viewbox">전체보기</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/3.png">
-				</div>
-				<div class="box1-1">
-					<div class="viewbox">1인분 주문</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/4.png">
-				</div>
-			</div>
-			<div class="foodbox2">
-				<div id="box2-1">
-					<div class="viewbox">프랜차이즈</div>
-					<img class="foodimg3" src="${pageContext.request.contextPath}/resource/image/home/food/5.png">
-				</div>
-				<div class="box2-1">
-					<div class="viewbox">치킨</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/6.png">
-				</div>
-				<div class="box2-1">
-					<div class="viewbox">피자/양식</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/7.png">
-				</div>
-				<div class="box2-1">
-					<div class="viewbox">중국집</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/8.png">
-				</div>
-			</div>
-			<div class="foodbox3">
-				<div id="box3-1">
-					<div class="viewbox">한식</div>
-					<img class="foodimg3" src="${pageContext.request.contextPath}/resource/image/home/food/9.png">
-				</div>
-				<div class="box3-1">
-					<div class="viewbox">족발/보쌈</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/10.png">
-				</div>
-				<div class="box3-1">
-					<div class="viewbox">야식</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/11.png">
-				</div>
-				<div class="box3-1">
-					<div class="viewbox">분식</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/12.png">
-				</div>
-			</div>
-			<div class="foodbox4">
-				<div id="box4-1">
-					<div class="viewbox">카페/디저트</div>
-					<img class="foodimg3" src="${pageContext.request.contextPath}/resource/image/home/food/13.png">
-				</div>
-				<div class="box4-1">
-					<div class="viewbox">편의점/마트</div>
-					<img class="foodimg2" src="${pageContext.request.contextPath}/resource/image/home/food/14.png">
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<!-- FOOTER START ======================================== -->
-	<div class="footermain1">
-		<div class="footer1-1">
-			<div class="footer1-2-1">이용약관</div>
-			<div class="footer1-2-2">개인정보처리방침</div>
-			<div class="footer1-2-3">회원등급정책</div>
-			<div class="footer1-2-4">회사소개</div>
-			<div class="footer1-2-5">즈기요사장님</div>
-			<div class="footer1-2-6">입점문의</div>
-			<div class="footer1-2-7">공지사항</div>
-
-			<div class="foot1-2">
-				<img class="footimg1" src="${pageContext.request.contextPath}/resource/image/home/footer/face.png">
-				페이스북
-			</div>
-			<div class="foot1-3">
-				<img class="footimg2" src="${pageContext.request.contextPath}/resource/image/home/footer/blog.png">
-				블로그
-			</div>
-		</div>
-	</div>
-
-	<div class="footermain2">
-		<img class="footimg3" src="${pageContext.request.contextPath}/resource/image/home/footer/footer.png">
-	</div>
-	<!-- FOOTER END ======================================== -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
-<script type="text/javascript">
-$(".login").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/main.do";
-});
 
-$(".join").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/main.do";
-});
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+/* manu bar script1 */
+
+var ringcheck = 0;
+
+// while(ringcheck == 0){	
+// 	$(".ring").css("transition", "transform 0.5s");
+// 	$(".ring").css("transform", "rotate(360deg)");		
+// }
+
+/* manu bar script2 */
+$(document).ready(function(){	
+		//<!-- /* Group1 */ -->
+		var check1 = 0;
+		$(".btnHome1").click( function() {  
+			if(check1 == 0){		
+				$(".btnHome1").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome1").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome1").css("border-right","7px solid #1ABB9C");							
+				check1 = 1;
+				
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");					
+				check2 = 0;	
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");					
+				check3 = 0;	
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");				
+				check4 = 0;	
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");	
+				$(".btnHome22").css("border-right","");				
+				check5 = 0;					
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");				
+				check6 = 0;							
+				
+			}else if(check1 == 1){
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");				
+				check1 = 0;			
+			};
+		});	
+		
+		var check2 = 0;
+		$(".btnHome2").click( function() {  
+			if(check2 == 0){		
+				$(".btnHome2").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome2").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome2").css("border-right","7px solid #1ABB9C");		
+				check2 = 1;
+				
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");						
+				check1 = 0;	
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");						
+				check3 = 0;	
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");					
+				check4 = 0;	
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");						
+				check5 = 0;					
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");				
+				check6 = 0;	
+				
+			}else if(check2 == 1){
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");
+				check2 = 0;		
+			};
+		});	
+		
+		var check3 = 0;
+		$(".btnHome3").click( function() {  
+			if(check3 == 0){		
+				$(".btnHome3").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome3").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome3").css("border-right","7px solid #1ABB9C");		
+				check3 = 1;
+				
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");				
+				check1 = 0;	
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");				
+				check2 = 0;	
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");				
+				check4 = 0;	
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");				
+				check5 = 0;					
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");				
+				check6 = 0;	
+				
+			}else if(check3 == 1){
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");
+				check3 = 0;		
+			};
+		});	
+		
+		//<!-- /* Group2 */ -->
+		var check4 = 0;
+		$(".btnHome21").click( function() {  
+			if(check4 == 0){		
+				$(".btnHome21").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome21").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome21").css("border-right","7px solid #1ABB9C");		
+				check4 = 1;
+				/* others */
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");				
+				check1 = 0;	
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");				
+				check2 = 0;					
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");				
+				check3 = 0;	
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");				
+				check5 = 0;	
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");				
+				check6 = 0;	
+				
+			}else if(check4 == 1){
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");
+				check4 = 0;	
+			};
+		});	
+		
+		var check5 = 0;
+		$(".btnHome22").click( function() {  
+			if(check5 == 0){		
+				$(".btnHome22").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome22").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome22").css("border-right","7px solid #1ABB9C");		
+				check5 = 1;
+				/* others */	
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");				
+				check1 = 0;	
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");				
+				check2 = 0;					
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");				
+				check3 = 0;	
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");				
+				check4 = 0;	
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");				
+				check6 = 0;	
+				
+			}else if(check5 == 1){
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");
+				check5 = 0;		
+			};
+		});	
+		
+		var check6 = 0;
+		$(".btnHome23").click( function() {  
+			if(check6 == 0){		
+				$(".btnHome23").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome23").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome23").css("border-right","7px solid #1ABB9C");		
+				check6 = 1;
+				/* others */
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");				
+				check1 = 0;	
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");				
+				check2 = 0;					
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");				
+				check3 = 0;					
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");				
+				check4 = 0;		
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");				
+				check5 = 0;		
+				
+			}else if(check6 == 1){
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");				
+				check6 = 0;		
+			};
+		});	
+			
+		
+});	
+
 </script>
 </html>
