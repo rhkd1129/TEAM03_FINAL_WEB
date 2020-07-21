@@ -28,7 +28,7 @@
 				<div class="nav2text2">BoomBoom cha</div>
 			</div>
 			<div class=nav3>
-				<div class="nav3text1">GENERAL</div>
+				<div class="nav3text1">GENERAL</div> 
 				
 				<div class="btnHome1">
 					<img class="btnHomeimg1" src="${pageContext.request.contextPath}/resource/image/admin/home.png">
