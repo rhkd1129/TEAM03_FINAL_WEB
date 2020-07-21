@@ -4,5 +4,6 @@
 	<configuration>
 		<typeAliases>
 			<typeAlias alias="cmember" type="com.mycompany.project.model.Cmember"/>
+			<typeAlias alias="omember" type="com.mycompany.project.model.Omember"/>
 		</typeAliases>
 	</configuration>

@@ -28,27 +28,33 @@
 					</td>
 				</tr>
 				<tr>
-					<td>점포명</td>
-					<td>
-						<form:input path="oname"/>
-					</td>
-				</tr>
-				<tr>
 					<td>비밀번호</td>
 					<td>
 						<form:input path="opassword"/>
 					</td>
 				</tr>
 				<tr>
-					<td>전화번호</td>
+					<td>이름</td>
 					<td>
-						<form:input type="tel" path="otel"/>
+						<form:input path="oname"/>
+					</td>
+				</tr>
+				<tr>
+					<td>점포명</td>
+					<td>
+						<form:input path="otitle"/>
 					</td>
 				</tr>
 				<tr>
 					<td>주소</td>
 					<td>
 						<form:input path="oadress"/>
+					</td>
+				</tr>
+				<tr>
+					<td>전화번호</td>
+					<td>
+						<form:input type="tel" path="otel"/>
 					</td>
 				</tr>
 				<tr>

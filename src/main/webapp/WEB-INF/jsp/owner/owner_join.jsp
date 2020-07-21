@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/maincss.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/owner_logincss.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/owner_joincss.css">
 </head>
 <body>
 	<div class="navbar1">
@@ -24,13 +24,13 @@
 		</div>
 	</div>
 
-	<div class="ownerlogin">
+	<div class="ownerjoin">
 		<div>
-			<img class="ownerloginimg" src="${pageContext.request.contextPath}/resource/image/owner/owner_login.png">
+			<img class="ownerjoinimg" src="${pageContext.request.contextPath}/resource/image/owner/owner_login.png">
 		</div>
 
-		<div class="ownerloginform" style="width:576px">
-			<form:form method="post" modelAttribute="ologinForm">
+		<div class="ownerjoinform" style="width:576px">
+			<form:form method="post" modelAttribute="omember">
 				<ul>
 					<li>아이디</li>
 					<li>
@@ -39,11 +39,29 @@
 					<li>비밀번호</li>
 					<li>
 						<form:input path="opassword" style="width:500px; height:50px;"/>
+					</li>
+					<li>이름</li>
+					<li>
+						<form:input path="oname" style="width:500px; height:50px;"/>
+					</li>
+					<li>점포명</li>
+					<li>
+						<form:input path="otitle" style="width:500px; height:50px;"/>
+					</li>
+					<li>주소</li>
+					<li>
+						<form:input path="oadress" style="width:500px; height:50px;"/>
+					</li>
+					<li>전화번호</li>
+					<li>
+						<form:input path="otel" style="width:500px; height:50px;"/>
+					</li>
+					<li>업종</li>
+					<li>
+						<form:input path="ocategory" style="width:500px; height:50px;"/>
 					</li>				
 				</ul>
-				<input type="submit" value="로그인" style="width:500px; height:50px; margin:20px"/>
-				<input type="button" onclick="location.href='${pageContext.request.contextPath}/owner/owner_join.do';"
-						value="회원가입" style="width:500px; height:50px; margin:20px"/>
+				<input type="submit" value="가입" style="width:500px; height:50px; margin:20px"/>
 				
 			</form:form>
 			

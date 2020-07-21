@@ -4,6 +4,7 @@ public class Omember {
 	private String oid;
 	private String opassword;
 	private String oname;
+	private String otitle;
 	private String oadress;
 	private String otel;
 	private String ocategory;
@@ -25,6 +26,12 @@ public class Omember {
 	}
 	public void setOname(String oname) {
 		this.oname = oname;
+	}
+	public String getOtitle() {
+		return otitle;
+	}
+	public void setOtitle(String otitle) {
+		this.otitle = otitle;
 	}
 	public String getOadress() {
 		return oadress;
