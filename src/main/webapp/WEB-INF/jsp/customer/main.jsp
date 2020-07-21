@@ -161,7 +161,7 @@
 </body>
 <script type="text/javascript">
 $(".login").click(function(){
-    location.href = "${pageContext.request.contextPath}/member/clogin.do";
+    location.href = "${pageContext.request.contextPath}/customer/customer_login.do";
 });
 
 $(".join").click(function(){
