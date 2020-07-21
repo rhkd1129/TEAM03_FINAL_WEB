@@ -7,10 +7,11 @@
 	float: left;
 }
 .navbarmain{
-	width: 230px;
+	width: 235px;
 	height: 938px;
 	background-color: #2A3F54;
 	float: left;
+	box-shadow: 5px 5px 5px 5px gray;
 }
 
 .nav1{
@@ -539,46 +540,46 @@
 }
 
 .viewmainbox{
-	width: 1690px;
+	width: 1685px;
 	height: 938px;
 	background-color: white;
 	float: left;
 }
 
 .viewbox1{
-	width: 1690px;
+	width: 1685px;
 	height: 938px;	
-	background-color: red;
+	background-color: #F2F2F2;
 	float: left;
 }
 
 .viewbox2{
-	width: 1690px;
+	width: 1685px;
 	height: 938px;	
 	background-color: green;
 	float: left;	
 }
 
 .viewbox3{
-	width: 1690px;
+	width: 1685px;
 	height: 938px;	
 	background-color: #ACFA58;
 	float: left;	
 }
 .viewbox4{
-	width: 1690px;
+	width: 1685px;
 	height: 938px;	
 	background-color: #D0A9F5;
 	float: left;	
 }
 .viewbox5{
-	width: 1690px;
+	width: 1685px;
 	height: 938px;	
 	background-color: gray;
 	float: left;	
 }
 .viewbox6{
-	width: 1690px;
+	width: 1685px;
 	height: 938px;	
 	background-color: blue;
 	float: left;	
@@ -615,6 +616,12 @@
 	color: black;
 	width: 600px;
 	text-align: center;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .adname{
@@ -624,6 +631,12 @@
 	margin-top: 50px;
 	float: left;
 	font-size: 20px;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .adpassword{
@@ -633,6 +646,12 @@
 	margin-top: 15px;
 	float: left;
 	font-size: 20px;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .adname1{
@@ -659,6 +678,34 @@
 	margin-left: -65px;
 }
 
+/* viewbox1 page =============== */
+.memberlistmain{
+	width: 500px;
+	height: 800px;
+	float: left;
+	background-color: #E6E6E6;
+	margin-left: 200px;
+	margin-top: 69px;
+	box-shadow: 5px 5px 5px 5px gray;	
+}
+
+
+.restaurantlistmain{
+	width: 500px;
+	height: 800px;
+	float: left;
+	background-color: #E6E6E6;
+	margin-left: 290px;
+	margin-top: 69px;
+	box-shadow: 5px 5px 5px 5px gray;
+}
+
+.mlistbox1{
+	width: 500px;
+	height: 800px;
+	background-color: #E6E6E6;
+	float: left;
+}
 
 
 
@@ -676,6 +723,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* viewbox2 page =============== */
+/* viewbox3 page =============== */
+/* viewbox4 page =============== */
+/* viewbox5 page =============== */
+/* viewbox6 page =============== */
 
 
 

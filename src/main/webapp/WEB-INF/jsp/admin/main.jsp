@@ -31,7 +31,7 @@
 			
 			<!-- /* Group1 */ -->
 			<div class=nav3>
-				<div class="nav3text1">Shopkeeper | Customer</div> 
+				<div class="nav3text1">Restaurant | Customer</div> 
 				
 				<div class="btnHome1">
 					<img class="btnHomeimg1" src="${pageContext.request.contextPath}/resource/image/admin/list1.png">
@@ -84,28 +84,67 @@
 					<div class="adpassword">Admin Password : </div><input type="text" class="adpassword1" name="inputPwName">			
 					<input type="button" class="btn btn-secondary" id="adbutton" onclick="getInputValue();" value="Login">
 				</div>					
+			</div>			
+			
+			<!-- member + restaurant list ==========================================-->
+			<div class="viewbox1">
+				<!-- member list box -->
+				<div class="memberlistmain">
+					<div class="mlistbox1">
+						<div></div>
+						<div></div>						
+						
+						
+						
+					
+					</div>
+				</div>
+			
+			
+			
+				<!-- restaurant list box -->		
+				<div class="restaurantlistmain">
+				
+				
+				</div>				
+				
+				
+				
+					
+			</div>
+			<!-- member + Restaurant data ==========================================-->
+			<div class="viewbox2">
+			</div>
+			<!-- member + Restaurant map ===========================================-->
+			<div class="viewbox3">
+			</div>
+			<!-- member + device + instrument list =================================-->
+			<div class="viewbox4">
+			</div>
+			<!-- member + device + instrument data =================================-->
+			<div class="viewbox5">
+			</div>
+			<!-- member + device + instrument map =================================-->
+			<div class="viewbox6">
 			</div>
 			
-			
-			<div class="viewbox1"></div>
-			<div class="viewbox2"></div>
-			<div class="viewbox3"></div>
-			<div class="viewbox4"></div>
-			<div class="viewbox5"></div>
-			<div class="viewbox6"></div>
 		</div>
 	</div>
-	<!-- admin login opacity box -->
-	<div class="opacitybox">
-	</div>
+	<!-- admin login opacity box 													//--주석 제거해야함!!-->
+<!-- 	<div class="opacitybox"> -->
+<!-- 	</div> -->
 	
 </body>
 
 <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
+
+
+
 // viewbox0 login script 
-$(".opacitybox").show();
+// $(".opacitybox").show();															//--주석 제거해야함!!
+$(".viewbox0").show();
 
 document.addEventListener('keydown', function(event) {
 	if (event.keyCode === 13) {
@@ -123,11 +162,13 @@ function getInputValue(){
 		if(valueByIdName == "admin123" && valueByPwName =="admin123"){
 			alert("관리자 페이지에 오신 것을 환영합니다.");  
 			logincheck = true;
-			$(".opacitybox").hide();
+// 			$(".opacitybox").hide();												//--주석 제거해야함!!
+			$(".viewbox0").hide();
+			$(".viewbox1").show();
 		}else{
 			alert("다시 입력하시기 바랍니다.");
 			logincheck = false;		
-			$(".opacitybox").show();  
+// 			$(".opacitybox").show();  												//--주석 제거해야함!!
 		};
 };
 
@@ -140,7 +181,6 @@ $(".ring4").hide();
 $(".ring5").hide();
 $(".ring6").hide();
 //뷰 박스
-$(".viewbox0").show();
 $(".viewbox1").hide();
 $(".viewbox2").hide();
 $(".viewbox3").hide();

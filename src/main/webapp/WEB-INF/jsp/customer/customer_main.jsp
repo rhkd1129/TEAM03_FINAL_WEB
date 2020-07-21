@@ -167,5 +167,10 @@ $(".login").click(function(){
 $(".join").click(function(){
     location.href = "${pageContext.request.contextPath}/customer/customer_join.do";
 });
+
+$(".zgiyo").click(function(){
+    location.href = "${pageContext.request.contextPath}/home/landingpage.do";
+});
+
 </script>
 </html>

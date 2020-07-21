@@ -193,4 +193,6 @@ $('#menu8').click(function() {
 	})
 });
 
-
+$(".zgiyo").click(function(){
+    location.href = "${pageContext.request.contextPath}/home/landingpage.do";
+});
