@@ -3,7 +3,7 @@
 .navbar1{
 	background-color: #f0001e;
 	width: 1903px;
-	height: 90px;
+	height: 78px;
 	float: left;
 }
 
@@ -60,40 +60,6 @@
 }
 
 /* body=============================== */
-
-.menu {
-	width: 25%;
-	height: 850px;
-	float: left;
-}
-
-.menu1 {
-	border: 1px solid black;
-	height: 25%;
-}
-
-.menu2 {
-	border: 1px solid black;
-	height: 25%;
-}
-
-.menu3 {
-	border: 1px solid black;
-	height: 25%;
-}
-
-.menu4 {
-	border: 1px solid black;
-	height: 25%;
-}
-
-.main {
-	border: 1px solid black;
-	width: 75%;
-	height: 850px;
-	float: left;
-	padding: 15px;
-}
 
 .backgroundimg{
 	width: 475.75px;
