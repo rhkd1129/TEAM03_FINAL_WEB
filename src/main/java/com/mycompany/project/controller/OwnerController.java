@@ -11,15 +11,19 @@ import com.mycompany.project.model.OloginForm;
 @RequestMapping("/owner")
 public class OwnerController {
 	
+	@RequestMapping("/owner_main.do") 
+	public String main() {
+		return "owner/owner_main";
+	}
+	
 	@GetMapping("/owner_login.do")
 	public String loginForm(OloginForm ologinForm) {
 		return "owner/owner_login";
 	}
 	
 	@PostMapping("/owner_login.do")
-	public String main(OloginForm ologinForm) {
-		return "owner/owner_main";
+	public String login(OloginForm ologinForm) {
+		return "redirect:/owner/owner_main.do";
 	}
-
 
 }
