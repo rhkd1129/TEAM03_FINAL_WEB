@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/maincss.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/owner_maincss.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/owner_logincss.css">
 </head>
 <body>
 	<div class="navbar1">
@@ -22,25 +23,29 @@
 			<img class="zgiyo" src="${pageContext.request.contextPath}/resource/image/home/즈기요.png">
 		</div>
 	</div>
-	
-	<div class="menu">
-		<div class="menu1">
-			<h1>접수대기</h1>
-		</div>
-		<div class="menu1">
-			<h1>처리중</h1>
-		</div>
-		<div class="menu1">
-			<h1>완료</h1>
-		</div>
-		<div class="menu1">
-			<h1>주문조회</h1>
-		</div>
-	</div>
-	
-	<div class="main">
-	</div>
 
+	<div class="ownerlogin">
+		<div>
+			<img class="ownerloginimg" src="${pageContext.request.contextPath}/resource/image/owner/owner_login.png">
+		</div>
+
+		<div class="ownerloginform" style="width:576px">
+			<form:form method="post" modelAttribute="ologinForm">
+				<ul>
+					<li>아이디</li>
+					<li>
+						<form:input path="oid" style="width:500px; height:50px;"/>
+					</li>
+					<li>비밀번호</li>
+					<li>
+						<form:input path="opassword" style="width:500px; height:50px;"/>
+					</li>				
+				</ul>
+				<input type="submit" value="로그인" style="width:500px; height:50px; margin:20px"/>
+			</form:form>
+			
+		</div>
+	</div>
 
 
 

@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -16,8 +17,44 @@
 		
 		</head>
 	<body>
-		<h5 class="alert alert-info">/member/joinForm.jsp</h5>
+		<h5 class="alert alert-info">/member/cjoinForm.jsp</h5>
 		
-		<form method="post"></form>
+		<form:form method="post" modelAttribute="cmember">
+			<table>
+				<tr>
+					<td>아이디</td>
+					<td>
+						<form:input path="mid"/>
+					</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>
+						<form:input path="mname"/>
+					</td>
+				</tr>
+				<tr>
+					<td>비밀번호</td>
+					<td>
+						<form:input path="mpassword"/>
+					</td>
+				</tr>
+				<tr>
+					<td>전화번호</td>
+					<td>
+						<form:input type="tel" path="mtel"/>
+					</td>
+				</tr>
+				<tr>
+					<td>주소</td>
+					<td>
+						<form:input path="madress"/>
+					</td>
+				</tr>
+			</table>
+			
+			<input type="submit" value="가입"/>
+		</form:form>
+		
 	</body>
 </html>
