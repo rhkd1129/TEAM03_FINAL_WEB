@@ -26,6 +26,13 @@ public class OwnerController {
 		return "redirect:/owner/owner_main.do";
 	}
 	
+		
+	@GetMapping("/owner_order_queue.do")
+	public String orderQueue() {
+		return "owner/owner_order_queue";
+	}
+
+	
 	
 
 }
