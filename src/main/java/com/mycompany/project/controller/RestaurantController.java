@@ -42,5 +42,10 @@ public class RestaurantController {
 		restaurantService.join(rmember);
 		return "redirect:/restaurant/restaurant_login.do";
 	}
+	
+	@GetMapping("/owner_order_queue.do")
+	public String orderQueue() {
+		return "restaurant/owner_order_queue";
+	}
 
 }

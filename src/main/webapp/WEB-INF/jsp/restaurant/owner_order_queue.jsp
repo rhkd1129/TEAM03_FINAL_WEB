@@ -23,7 +23,7 @@
 							13:22
 						</td>
 						<td class="orederdetail">
-							<img src="${pageContext.request.contextPath}/resource/image/owner/order_temp.png">
+							<img src="${pageContext.request.contextPath}/resource/image/restaurant/order_temp.png">
 						</td>
 						<td class="orederstatus">
 							<button>접수하기</button>
@@ -38,7 +38,7 @@
 							13:22
 						</td>
 						<td class="orederdetail">
-							<img src="${pageContext.request.contextPath}/resource/image/owner/order_temp.png">
+							<img src="${pageContext.request.contextPath}/resource/image/restaurant/order_temp.png">
 						</td>
 						<td class="orederstatus">
 							<button>접수하기</button>
@@ -53,7 +53,7 @@
 							13:22
 						</td>
 						<td class="orederdetail">
-							<img src="${pageContext.request.contextPath}/resource/image/owner/order_temp.png">
+							<img src="${pageContext.request.contextPath}/resource/image/restaurant/order_temp.png">
 						</td>
 						<td class="orederstatus">
 							<button>접수하기</button>
