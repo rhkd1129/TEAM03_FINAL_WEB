@@ -73,9 +73,6 @@
 		content2
 		</div>
 	</div>
-	
-	
-	
 
 	<!-- FOOTER START ======================================== -->
 	<div class="footermain1">
