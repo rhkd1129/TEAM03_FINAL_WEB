@@ -24,15 +24,15 @@ public class MemberController {
 		return "redirect:/customer/main.do";
 	}
 	
-	@GetMapping("/clogin.do")
-	public String cloginform(CloginForm cloginForm) {
-		return "member/cloginForm";
-	}
-	
-	@PostMapping("/clogin.do")
-	public String clogin(CloginForm cloginFrom) {
-		return "redirect:/customer/main.do";
-	}
+//	@GetMapping("/clogin.do")
+//	public String cloginform(CloginForm cloginForm) {
+//		return "member/cloginForm";
+//	}
+//	
+//	@PostMapping("/clogin.do")
+//	public String clogin(CloginForm cloginForm) {
+//		return "redirect:/customer/main.do";
+//	}
 	
 	@GetMapping("/ojoin.do")
 	public String ojoinform(Omember omember) {
