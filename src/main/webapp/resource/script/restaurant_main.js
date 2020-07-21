@@ -51,6 +51,13 @@ $('#menu1').click(function() {
 		'background-color' : '#d7dada',
 		'color' : '#a6abab'
 	})
+	$.ajax({
+		type : "get", 
+		url : "owner_order_queue.do",
+		success : function(result) { 
+			$(".content1").html(result);
+		}
+	});
 });
 
 $('#menu2').click(function() {

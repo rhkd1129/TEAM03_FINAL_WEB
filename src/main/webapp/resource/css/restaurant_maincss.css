@@ -120,7 +120,14 @@
 	border-bottom: 1px solid #a6abab;
 }
 
-.content {
+.content1 {
+	width: 80%;
+	height: 850px;
+	float: left;
+	padding: 15px;
+}
+
+.content2 {
 	width: 80%;
 	height: 850px;
 	float: left;

@@ -1,16 +1,16 @@
 @charset "UTF-8";
 /* head=============================== */
-
 .bodymainbox{
-	width: 1903px;
-	height: 936px;
+	width: 1920px;
+	height: 938px;
 	background-color: white;
+	float: left;
 }
-
 .navbarmain{
 	width: 230px;
-	height: 936px;
+	height: 938px;
 	background-color: #2A3F54;
+	float: left;
 }
 
 .nav1{
@@ -195,7 +195,8 @@
    -moz-user-select: -moz-none;
    -khtml-user-select: none;
    -webkit-user-select: none;
-   user-select: none;
+    user-select: none;
+    width: 50px; 
 }
 
 .btnHome2{
@@ -240,6 +241,7 @@
    -khtml-user-select: none;
    -webkit-user-select: none;
    user-select: none;	
+   width: 50px;
 }
 
 .btnHome3{
@@ -284,6 +286,7 @@
    -khtml-user-select: none;
    -webkit-user-select: none;
    user-select: none;
+   width: 50px;
 }
 
 /* Group2 */
@@ -329,6 +332,7 @@
    -khtml-user-select: none;
    -webkit-user-select: none;
    user-select: none;
+   width: 50px;
 }
 
 .btnHome22{
@@ -373,6 +377,7 @@
    -khtml-user-select: none;
    -webkit-user-select: none;
    user-select: none;	
+   width: 50px;
 }
 
 .btnHome23{
@@ -417,11 +422,12 @@
    -khtml-user-select: none;
    -webkit-user-select: none;
    user-select: none;
+   width: 50px;
 }
 
-.ring{
-	width: 100px;
-	height: 100px;
+.ring1{
+	width: 30px;
+	height: 30px;
 	float: left;
 	/* 드래그 막기 */	
    -ms-user-select: none; 
@@ -429,35 +435,229 @@
    -khtml-user-select: none;
    -webkit-user-select: none;
    user-select: none;
+   margin-left: 130px;
+   position: absolute;
+   margin-top: -25px;
+   
+   -webkit-animation: rotation 2s infinite linear;
+}
+
+.ring2{
+	width: 30px;
+	height: 30px;
+	float: left;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+   margin-left: 120px;
+   position: absolute;
+   margin-top: -25px;   
+   
+   -webkit-animation: rotation 2s infinite linear;
+}
+
+.ring3{
+	width: 30px;
+	height: 30px;
+	float: left;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+   margin-left: 130px;
+   margin-top: -25px;
+   position: absolute;
+   
+   
+   -webkit-animation: rotation 2s infinite linear;
+}
+
+.ring4{
+	width: 30px;
+	height: 30px;
+	float: left;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+   margin-left: 130px;
+   position: absolute;
+   margin-top: -25px;
+   
+   -webkit-animation: rotation 2s infinite linear;
+}
+
+.ring5{
+	width: 30px;
+	height: 30px;
+	float: left;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+   margin-left: 120px;
+   position: absolute;
+   margin-top: -25px;   
+   
+   -webkit-animation: rotation 2s infinite linear;
+}
+
+.ring6{
+	width: 30px;
+	height: 30px;
+	float: left;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+   margin-left: 130px;
+   margin-top: -25px;
+   position: absolute;
+   
+   
+   -webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation{
+	from {
+	-webkit-transform:rotate(0deg);
+	}
+	to{
+	-webkit-transform:rotate(359deg);
+	}
+}
+
+.viewmainbox{
+	width: 1690px;
+	height: 938px;
+	background-color: white;
+	float: left;
+}
+
+.viewbox1{
+	width: 1690px;
+	height: 938px;	
+	background-color: red;
+	float: left;
+}
+
+.viewbox2{
+	width: 1690px;
+	height: 938px;	
+	background-color: green;
+	float: left;	
+}
+
+.viewbox3{
+	width: 1690px;
+	height: 938px;	
+	background-color: #ACFA58;
+	float: left;	
+}
+.viewbox4{
+	width: 1690px;
+	height: 938px;	
+	background-color: #D0A9F5;
+	float: left;	
+}
+.viewbox5{
+	width: 1690px;
+	height: 938px;	
+	background-color: gray;
+	float: left;	
+}
+.viewbox6{
+	width: 1690px;
+	height: 938px;	
+	background-color: blue;
+	float: left;	
 }
 
 
+/* admin login page  = viewbox0*/
+.viewbox0{
+	z-index: 9999;
+	position: absolute;	
+}
 
+.opacitybox{
+	width: 1920px;
+	height: 938px;
+	opacity: 0.01;
+	position: absolute;
+	background-color: gray;
+	z-index: 999;
+}
 
+.admainbox{
+	width: 600px;
+	height: 250px;
+	margin-left: 545px;
+	margin-top: 300px;
+	background-color: white;	
+	float: left;
+}
 
+.adfirst{
+	font-weight: 900;
+	font-size: 30px;
+	color: black;
+	width: 600px;
+	text-align: center;
+}
 
+.adname{
+	width: 150px;
+	height: 30px;
+	margin-left: 100px;
+	margin-top: 50px;
+	float: left;
+	font-size: 20px;
+}
 
+.adpassword{
+	width: 160px;
+	height: 30px;	
+	margin-left: 100px;
+	margin-top: 15px;
+	float: left;
+	font-size: 20px;
+}
 
+.adname1{
+	width: 200px;
+	height: 30px;
+	background-color: #F2F2F2;
+	margin-left: 60px;
+	margin-top: 50px;
+	float: left;
+}
 
+.adpassword1{
+	width: 200px;
+	height: 30px;	
+	background-color: #F2F2F2;
+	margin-left: 50px;
+	margin-top: 15px;
+	float: left;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#adbutton{
+	float: left;
+	margin-top: 60px;
+	margin-left: -65px;
+}
 
 
 
