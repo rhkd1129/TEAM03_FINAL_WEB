@@ -12,7 +12,7 @@
 		<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 		<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/owner_order_queuecss.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_order_queuecss.css">
 	</head>
 	<body>
 		<div class="orderlist" >
@@ -23,7 +23,7 @@
 							13:22
 						</td>
 						<td class="orederdetail">
-							<img src="${pageContext.request.contextPath}/resource/image/owner/order_temp.png">
+							<img src="${pageContext.request.contextPath}/resource/image/restaurant/order_temp.png">
 						</td>
 						<td class="orederstatus">
 							<button>접수하기</button>
@@ -38,7 +38,7 @@
 							13:22
 						</td>
 						<td class="orederdetail">
-							<img src="${pageContext.request.contextPath}/resource/image/owner/order_temp.png">
+							<img src="${pageContext.request.contextPath}/resource/image/restaurant/order_temp.png">
 						</td>
 						<td class="orederstatus">
 							<button>접수하기</button>
@@ -53,7 +53,7 @@
 							13:22
 						</td>
 						<td class="orederdetail">
-							<img src="${pageContext.request.contextPath}/resource/image/owner/order_temp.png">
+							<img src="${pageContext.request.contextPath}/resource/image/restaurant/order_temp.png">
 						</td>
 						<td class="orederstatus">
 							<button>접수하기</button>

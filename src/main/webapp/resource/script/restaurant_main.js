@@ -53,7 +53,7 @@ $('#menu1').click(function() {
 	})
 	$.ajax({
 		type : "get", 
-		url : "owner_order_queue.do",
+		url : "restaurant_order_queue.do",
 		success : function(result) { 
 			$(".content1").html(result);
 		}
@@ -77,6 +77,13 @@ $('#menu2').click(function() {
 		'background-color' : '#d7dada',
 		'color' : '#a6abab'
 	})
+	$.ajax({
+		type : "get", 
+		url : "restaurant_order_processing.do",
+		success : function(result) { 
+			$(".content1").html(result);
+		}
+	});
 });
 
 $('#menu3').click(function() {
@@ -96,6 +103,13 @@ $('#menu3').click(function() {
 		'background-color' : '#d7dada',
 		'color' : '#a6abab'
 	})
+	$.ajax({
+		type : "get", 
+		url : "restaurant_order_complete.do",
+		success : function(result) { 
+			$(".content1").html(result);
+		}
+	});
 });
 
 $('#menu4').click(function() {
@@ -115,6 +129,13 @@ $('#menu4').click(function() {
 		'background-color' : '#d7dada',
 		'color' : '#a6abab'
 	})
+	$.ajax({
+		type : "get", 
+		url : "restaurant_order_inquiry.do",
+		success : function(result) { 
+			$(".content1").html(result);
+		}
+	});
 });
 
 $('#menu5').click(function() {

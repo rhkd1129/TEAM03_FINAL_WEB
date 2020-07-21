@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.order {
+	
+}
+
+table {
+	width: 100%;
+}
+
+tr {
+	height: 200px;
+	border-bottom: 1px solid #a6abab;
+}
+
+
+.oredertime {
+	width: 20%;
+	text-align: center;
+	font-size: 70px;
+	font-weight: bold;
+}
+
+.orederdetail {
+}
+
+.orederstatus {
+	width: 20%;
+	text-align: center;
+}
+
+button {
+	background-color: #008CBA; 
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 40px;
+	margin: 4px 2px;
+	cursor: pointer;
+	width: 90%;
+	height: 120px;
+	font-weight: bold;
+}
