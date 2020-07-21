@@ -19,7 +19,7 @@
 	<body>
 		<h5 class="alert alert-info">/member/cloginForm.jsp</h5>
 		
-		<form:form method="post" modelAttribute="cloginForm">
+		<form:form>
 			<table>
 				<tr>
 					<td>아이디</td>
