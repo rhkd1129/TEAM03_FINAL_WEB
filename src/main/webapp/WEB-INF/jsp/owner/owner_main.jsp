@@ -13,8 +13,8 @@
 	<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/maincss.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/owner_maincss.css">
+	
 </head>
 <body>
 	<div class="navbar1">
@@ -23,18 +23,27 @@
 		</div>
 	</div>
 	
+	<div class="navtap">
+		<div class="navtap1" id='navtap1'>
+			주문접수
+		</div>
+		<div class="navtap2" id='navtap2'>
+			매장관리
+		</div>
+	</div>
+	
 	<div class="menu">
-		<div class="menu1">
-			<h1>접수대기</h1>
+		<div class="menu1" id='menu1'>
+			접수대기
 		</div>
-		<div class="menu1">
-			<h1>처리중</h1>
+		<div class="menu2" id='menu2'>
+			처리중
 		</div>
-		<div class="menu1">
-			<h1>완료</h1>
+		<div class="menu3" id='menu3'>
+			완료
 		</div>
-		<div class="menu1">
-			<h1>주문조회</h1>
+		<div class="menu4" id='menu4'>
+			주문조회
 		</div>
 	</div>
 	
@@ -72,29 +81,6 @@
 	</div>
 	<!-- FOOTER END ======================================== -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
-<script type="text/javascript">
-$(".login").click(function(){
-    location.href = "${pageContext.request.contextPath}/member/ologin.do";
-});
-
-$(".join").click(function(){
-    location.href = "${pageContext.request.contextPath}/member/ojoin.do";
-});
-</script>
+<script src="${pageContext.request.contextPath}/resource/script/owner_main.js"></script>
 </html>
