@@ -23,31 +23,16 @@
 		</div>
 	</div>
 	
-	<div class="navtap">
-		<div class="navtap1" id='navtap1'>
+	<div class="navtab">
+		<div class="navtab1" id='navtab1'>
 			주문접수
 		</div>
-		<div class="navtap2" id='navtap2'>
+		<div class="navtab2" id='navtab2'>
 			매장관리
 		</div>
 	</div>
 	
-	<div class="menu">
-		<div class="menu1" id='menu1'>
-			접수대기
-		</div>
-		<div class="menu2" id='menu2'>
-			처리중
-		</div>
-		<div class="menu3" id='menu3'>
-			완료
-		</div>
-		<div class="menu4" id='menu4'>
-			주문조회
-		</div>
-	</div>
-	
-	<div class="main">
+	<div id="ownermain">
 	</div>
 
 
