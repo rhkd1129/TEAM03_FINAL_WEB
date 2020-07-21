@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -13,8 +14,8 @@
 	<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/owner_maincss.css">
-	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/maincss.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_joincss.css">
 </head>
 <body>
 	<div class="navbar1">
@@ -22,34 +23,50 @@
 			<img class="zgiyo" src="${pageContext.request.contextPath}/resource/image/home/즈기요.png">
 		</div>
 	</div>
-	
-	<div class="navtap">
-		<div class="navtap1" id='navtap1'>
-			주문접수
-		</div>
-		<div class="navtap2" id='navtap2'>
-			매장관리
-		</div>
-	</div>
-	
-	<div class="menu">
-		<div class="menu1" id='menu1'>
-			접수대기
-		</div>
-		<div class="menu2" id='menu2'>
-			처리중
-		</div>
-		<div class="menu3" id='menu3'>
-			완료
-		</div>
-		<div class="menu4" id='menu4'>
-			주문조회
-		</div>
-	</div>
-	
-	<div class="main">
-	</div>
 
+	<div class="restaurantjoin">
+		<div>
+			<img class="restaurantjoinimg" src="${pageContext.request.contextPath}/resource/image/restaurant/restaurant_login.png">
+		</div>
+
+		<div class="restaurantjoinform" style="width:576px">
+			<form:form method="post" modelAttribute="rmember">
+				<ul>
+					<li>아이디</li>
+					<li>
+						<form:input path="rid" style="width:500px; height:50px;"/>
+					</li>
+					<li>비밀번호</li>
+					<li>
+						<form:input path="rpassword" style="width:500px; height:50px;"/>
+					</li>
+					<li>이름</li>
+					<li>
+						<form:input path="rname" style="width:500px; height:50px;"/>
+					</li>
+					<li>점포명</li>
+					<li>
+						<form:input path="rtitle" style="width:500px; height:50px;"/>
+					</li>
+					<li>주소</li>
+					<li>
+						<form:input path="radress" style="width:500px; height:50px;"/>
+					</li>
+					<li>전화번호</li>
+					<li>
+						<form:input path="rtel" style="width:500px; height:50px;"/>
+					</li>
+					<li>업종</li>
+					<li>
+						<form:input path="rcategory" style="width:500px; height:50px;"/>
+					</li>				
+				</ul>
+				<input type="submit" value="가입" style="width:500px; height:50px; margin:20px"/>
+				
+			</form:form>
+			
+		</div>
+	</div>
 
 
 
@@ -81,6 +98,29 @@
 	</div>
 	<!-- FOOTER END ======================================== -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
-<script src="${pageContext.request.contextPath}/resource/script/owner_main.js"></script>
+<script type="text/javascript">
+$(".login").click(function(){
+    location.href = "${pageContext.request.contextPath}/member/ologin.do";
+});
+
+$(".join").click(function(){
+    location.href = "${pageContext.request.contextPath}/member/ojoin.do";
+});
+</script>
 </html>

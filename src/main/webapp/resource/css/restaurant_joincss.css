@@ -300,7 +300,7 @@
 	cursor: pointer;
 }
 
-.ownerjoin{
+.restaurantjoin{
 	padding-top: 60px;
 	padding-bottom: 30px;
 	margin-left: auto;
@@ -308,13 +308,13 @@
 	width: 30%;
 }
 
-.ownerjoinimg{
+.restaurantjoinimg{
 	margin-top: 30px;
 	margin-bottom: 30px;
 	width: 100%;
 }
 
-.ownerjoinform{
+.restaurantjoinform{
 	margin-left: 30px;
 	margin-right: 30px;
 	width: 30%;	
