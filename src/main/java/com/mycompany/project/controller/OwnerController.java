@@ -11,7 +11,7 @@ import com.mycompany.project.model.RloginForm;
 @RequestMapping("/owner")
 public class OwnerController {
 	
-	@RequestMapping("/owner_main.do") 
+	@RequestMapping("/owner_main.do")   
 	public String main() {
 		return "owner/owner_main";
 	}
