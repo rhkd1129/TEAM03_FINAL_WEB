@@ -8,11 +8,17 @@ table {
 	width: 100%;
 }
 
+tr {
+	height: 200px;
+	border-bottom: 1px solid #a6abab;
+}
+
 
 .oredertime {
 	width: 20%;
 	text-align: center;
-	font-size: 50px;
+	font-size: 70px;
+	font-weight: bold;
 }
 
 .orederdetail {
@@ -36,4 +42,5 @@ button {
 	cursor: pointer;
 	width: 90%;
 	height: 120px;
+	font-weight: bold;
 }

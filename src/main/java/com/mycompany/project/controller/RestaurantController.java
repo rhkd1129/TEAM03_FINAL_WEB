@@ -43,9 +43,24 @@ public class RestaurantController {
 		return "redirect:/restaurant/restaurant_login.do";
 	}
 	
-	@GetMapping("/owner_order_queue.do")
+	@GetMapping("/restaurant_order_queue.do")
 	public String orderQueue() {
-		return "restaurant/owner_order_queue";
+		return "restaurant/restaurant_order_queue";
+	}
+	
+	@GetMapping("/restaurant_order_processing.do")
+	public String orderProcessing() {
+		return "restaurant/restaurant_order_processing";
+	}
+	
+	@GetMapping("/restaurant_order_complete.do")
+	public String orderComplete() {
+		return "restaurant/restaurant_order_complete";
+	}
+	
+	@GetMapping("/restaurant_order_inquiry.do")
+	public String orderInquiry() {
+		return "restaurant/restaurant_order_inquiry";
 	}
 
 }
