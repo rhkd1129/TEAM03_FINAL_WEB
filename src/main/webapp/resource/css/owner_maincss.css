@@ -120,7 +120,7 @@
 	border-bottom: 1px solid #a6abab;
 }
 
-.main {
+.content {
 	width: 80%;
 	height: 850px;
 	float: left;
@@ -369,6 +369,7 @@
 h1{
 	text-align: center;
 }
+
 
 /* foot=============================== */
 .footermain1{

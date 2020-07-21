@@ -32,12 +32,50 @@
 		</div>
 	</div>
 	
-	<div id="ownermain">
+	<div class="main1">
+		<div class="menu">
+			<div class="menu1" id='menu1'>
+				접수대기
+			</div>
+			<div class="menu2" id='menu2'>
+				처리중
+			</div>
+			<div class="menu3" id='menu3'>
+				완료
+			</div>
+			<div class="menu4" id='menu4'>
+				주문조회
+			</div>
+		</div>
+		
+		<div class="content1">
+		content1
+		</div>
 	</div>
-
-
-
-
+	
+	<div class="main2">
+		<div class="menu">
+			<div class="menu1" id='menu5'>
+				a
+			</div>
+			<div class="menu2" id='menu6'>
+				b
+			</div>
+			<div class="menu3" id='menu7'>
+				c
+			</div>
+			<div class="menu4" id='menu8'>
+				d
+			</div>
+		</div>
+		
+		<div class="content2">
+		content2
+		</div>
+	</div>
+	
+	
+	
 
 	<!-- FOOTER START ======================================== -->
 	<div class="footermain1">

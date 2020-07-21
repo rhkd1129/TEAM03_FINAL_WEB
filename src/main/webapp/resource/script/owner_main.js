@@ -1,7 +1,43 @@
+// 페이지 로드시
+$('#navtab1').css({
+	'background-color' : '#f4001f'
+})
+$('#navtab2').css({
+	'background-color' : '#313535',
+})
+$(".main1").show();
+$(".main2").hide();
+
+$('#navtab1').click(function() {
+	$(this).css({
+		'background-color' : '#f4001f'
+	})
+	$('#navtab2').css({
+		'background-color' : '#313535',
+	})
+	$(".main1").show();
+	$(".main2").hide();
+	$(".content1").show();
+	$(".content2").hide();
+});
+
+$('#navtab2').click(function() {
+	$(this).css({
+		'background-color' : '#f4001f'
+	})
+	$('#navtab1').css({
+		'background-color' : '#313535',
+	})
+	$(".main2").show();
+	$(".main1").hide();
+	$(".content2").show();
+	$(".content1").hide();
+});
+
 $('#menu1').click(function() {
 	$(this).css({
 		'background-color' : '#ffffff',
-		'color' : '#242929'
+		'color' : '#000000'
 	})
 	$('#menu2').css({
 		'background-color' : '#d7dada',
@@ -20,7 +56,7 @@ $('#menu1').click(function() {
 $('#menu2').click(function() {
 	$(this).css({
 		'background-color' : '#ffffff',
-		'color' : '#242929'
+		'color' : '#000000'
 	})
 	$('#menu1').css({
 		'background-color' : '#d7dada',
@@ -35,12 +71,11 @@ $('#menu2').click(function() {
 		'color' : '#a6abab'
 	})
 });
-
 
 $('#menu3').click(function() {
 	$(this).css({
 		'background-color' : '#ffffff',
-		'color' : '#242929'
+		'color' : '#000000'
 	})
 	$('#menu1').css({
 		'background-color' : '#d7dada',
@@ -56,11 +91,10 @@ $('#menu3').click(function() {
 	})
 });
 
-
 $('#menu4').click(function() {
 	$(this).css({
 		'background-color' : '#ffffff',
-		'color' : '#242929'
+		'color' : '#000000'
 	})
 	$('#menu1').css({
 		'background-color' : '#d7dada',
@@ -76,6 +110,80 @@ $('#menu4').click(function() {
 	})
 });
 
+$('#menu5').click(function() {
+	$(this).css({
+		'background-color' : '#ffffff',
+		'color' : '#000000'
+	})
+	$('#menu6').css({
+		'background-color' : '#d7dada',
+		'color' : '#a6abab'
+	})
+	$('#menu7').css({
+		'background-color' : '#d7dada',
+		'color' : '#a6abab'
+	})
+	$('#menu8').css({
+		'background-color' : '#d7dada',
+		'color' : '#a6abab'
+	})
+});
 
+$('#menu6').click(function() {
+	$(this).css({
+		'background-color' : '#ffffff',
+		'color' : '#000000'
+	})
+	$('#menu5').css({
+		'background-color' : '#d7dada',
+		'color' : '#a6abab'
+	})
+	$('#menu7').css({
+		'background-color' : '#d7dada',
+		'color' : '#a6abab'
+	})
+	$('#menu8').css({
+		'background-color' : '#d7dada',
+		'color' : '#a6abab'
+	})
+});
+
+$('#menu7').click(function() {
+	$(this).css({
+		'background-color' : '#ffffff',
+		'color' : '#000000'
+	})
+	$('#menu5').css({
+		'background-color' : '#d7dada',
+		'color' : '#a6abab'
+	})
+	$('#menu6').css({
+		'background-color' : '#d7dada',
+		'color' : '#a6abab'
+	})
+	$('#menu8').css({
+		'background-color' : '#d7dada',
+		'color' : '#a6abab'
+	})
+});
+
+$('#menu8').click(function() {
+	$(this).css({
+		'background-color' : '#ffffff',
+		'color' : '#000000'
+	})
+	$('#menu5').css({
+		'background-color' : '#d7dada',
+		'color' : '#a6abab'
+	})
+	$('#menu6').css({
+		'background-color' : '#d7dada',
+		'color' : '#a6abab'
+	})
+	$('#menu7').css({
+		'background-color' : '#d7dada',
+		'color' : '#a6abab'
+	})
+});
 
 
