@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+
+.menu {
+	width: 20%;
+	height: 850px;
+	float: left;
+	border-right: 1px solid #a6abab;
+	color: #a6abab;
+	font-size: 40px;
+	text-align: center;
+}
+
+.menu1 {
+	height: 25%;
+	background-color: #d7dada;
+	border-bottom: 1px solid #a6abab;
+}
+
+.menu2 {
+	height: 25%;
+	background-color: #d7dada;
+	border-bottom: 1px solid #a6abab;
+}
+
+.menu3 {
+	height: 25%;
+	background-color: #d7dada;
+	border-bottom: 1px solid #a6abab;
+}
+
+.menu4 {
+	height: 25%;
+	background-color: #d7dada;
+	border-bottom: 1px solid #a6abab;
+}
+
+.main {
+	width: 80%;
+	height: 850px;
+	float: left;
+	padding: 15px;
+}

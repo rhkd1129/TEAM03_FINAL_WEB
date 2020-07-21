@@ -20,10 +20,12 @@ public class OwnerController {
 	public String loginForm(OloginForm ologinForm) {
 		return "owner/owner_login";
 	}
-	
+
 	@PostMapping("/owner_login.do")
 	public String login(OloginForm ologinForm) {
 		return "redirect:/owner/owner_main.do";
 	}
+	
+	
 
 }
