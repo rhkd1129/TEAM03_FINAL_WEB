@@ -24,9 +24,9 @@
 				<div class="nav1text1">Admin Page</div>
 			</div>
 			<div class=nav2>
-				<img class="nav2img1" src="${pageContext.request.contextPath}/resource/image/admin/차범근.jpg">				
-				<div class="nav2text1">welcome,</div>
-				<div class="nav2text2">BoomBoom cha</div>
+				<img class="nav2img1" src="${pageContext.request.contextPath}/resource/image/admin/윤봉길.png">				
+				<div class="nav2text1">Welcome,</div>
+				<div class="nav2text2">Administrator Yoon</div>
 			</div>
 			
 			<!-- /* Group1 */ -->
@@ -34,7 +34,7 @@
 				<div class="nav3text1">Shopkeeper | Customer</div> 
 				
 				<div class="btnHome1">
-					<img class="btnHomeimg1" src="${pageContext.request.contextPath}/resource/image/admin/home.png">
+					<img class="btnHomeimg1" src="${pageContext.request.contextPath}/resource/image/admin/list1.png">
 					<div class="btnHometext1">List</div>
 				</div>
 				
@@ -53,7 +53,7 @@
 				<div class="nav4text1">Device | Instrument</div> 
 				
 				<div class="btnHome21">
-					<img class="btnHomeimg21" src="${pageContext.request.contextPath}/resource/image/admin/home.png">
+					<img class="btnHomeimg21" src="${pageContext.request.contextPath}/resource/image/admin/list1.png">
 					<div class="btnHometext21">List</div>
 				</div>
 				
@@ -68,7 +68,7 @@
 				</div>						
 			</div>			
 		
-		
+					<img class="ring" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">			
 		
 		
 		
@@ -85,6 +85,16 @@
 
 <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
+/* manu bar script1 */
+
+var ringcheck = 0;
+
+// while(ringcheck == 0){	
+// 	$(".ring").css("transition", "transform 0.5s");
+// 	$(".ring").css("transform", "rotate(360deg)");		
+// }
+
+/* manu bar script2 */
 $(document).ready(function(){	
 		//<!-- /* Group1 */ -->
 		var check1 = 0;
