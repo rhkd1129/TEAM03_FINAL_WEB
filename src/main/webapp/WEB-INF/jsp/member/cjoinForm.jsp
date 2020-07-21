@@ -28,15 +28,15 @@
 					</td>
 				</tr>
 				<tr>
-					<td>이름</td>
-					<td>
-						<form:input path="mname"/>
-					</td>
-				</tr>
-				<tr>
 					<td>비밀번호</td>
 					<td>
 						<form:input path="mpassword"/>
+					</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>
+						<form:input path="mname"/>
 					</td>
 				</tr>
 				<tr>

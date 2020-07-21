@@ -11,8 +11,8 @@ import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
 public class CustomerDao extends EgovAbstractMapper{
 	
 	public int insert(Cmember cmember) {
-		int rows = insert("cmember.insert", cmember);
-		return rows;
+		int crows = insert("cmember.insert", cmember);
+		return crows;
 	}
 
 }
