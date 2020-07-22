@@ -114,10 +114,11 @@
 										<td class="mlisttelTD">${cmember.mtel}</td>
 										<td class="mlistadressTD">${cmember.madress}</td>																		
 										<td class="mlistdateTD">${cmember.mdate}</td>	
-										<td class="mlistdeleteTD"><div id="${cmember.mid}" class="btn btn-danger btn-sm deleteX">X</div></td>						
+										<td class="mlistdeleteTD"><div id="${cmember.mid}" class="btn btn-secondary btn-sm deleteX">X</div></td>						
 									</tr>
 								</c:forEach>
 							</table>
+							<input type="text" class="search" placeholder="City or State" />
 							<!-- 하단 페이져 -->
 							<table class="pagepage1">	
 								<tr>							
@@ -629,8 +630,6 @@ $(document).ready(function(){
 				check6 = 0;		
 			};
 		});	
-			
-		
 });	
 
 </script>
