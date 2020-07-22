@@ -6,4 +6,28 @@
 			insert into customer (mid, mpassword, mname, mtel, madress, mdate)
 			values (#{mid}, #{mpassword}, #{mname}, #{mtel}, #{madress}, NOW())
 		</insert>
+		
+		<select id="selectAllByPage" resultType="cmember">
+			select mid, mpassword, mname, mtel, mdate, madress
+			from customer order by mtel desc limit #{startIndex}, #{rowsPerPage}
+		</select>
+		
+		<select id="count" resultType="int">
+			select count(*) from customer
+		</select>
+		
+		<delete id="deleteByMid">
+			delete from customer where mid=#{mid}
+		</delete>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	</mapper>
