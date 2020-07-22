@@ -7,6 +7,7 @@
 <head>
    <meta charset="UTF-8">
    <title>Insert title here</title>
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
    <script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
    <script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
@@ -74,6 +75,7 @@
 				</div>						
 			</div>			
 		</div>
+		
 		<!-- /* 뷰박스 bigbox */ ------------------------------------------------------------------------>
 		<div class="viewmainbox">
 			<!-- admin 관리 전 재로그인 진행 -->
@@ -89,31 +91,99 @@
 			<!-- member + restaurant list ==========================================-->
 			<div class="viewbox1">
 				<!-- member list box -->
-				<div class="memberlistmain">
-					<div class="mlistbox1">
-						<div></div>
-						<div></div>						
-						
-						
-						  
+				<div class="w3-content" style="max-width:1000px; margin-top: 70px;">
+					<div class="mySlides" id="mlistmain">
+						<div class="mlist">
+							<div class="mlistid">Id</div>
+							<div class="mlistpw">Password</div>						
+							<div class="mlistname">Name</div>
+							<div class="mlisttel">Tel</div>		
+							<div class="mlistadress">Adress</div>
+							<div class="mlistdate">Join Date</div>
+							<div class="mlistdelete">Unlock</div>	
+							
+						</div>
+						<div class="mlistbox">
+							<!-- Customer Member List -->
+							<table>
+								<c:forEach var="cmember" items="${cmemberlist}">
+									<tr class="mlistTR">
+										<td class="mlistidTD">${cmember.mid}</td>
+										<td class="mlistpwTD">${cmember.mpassword}</td>								
+										<td class="mlistnameTD">${cmember.mname}</td>
+										<td class="mlisttelTD">${cmember.mtel}</td>
+										<td class="mlistadressTD">${cmember.madress}</td>																		
+										<td class="mlistdateTD">${cmember.mdate}</td>	
+										<td class="mlistdeleteTD"><div id="${cmember.mid}" class="btn btn-danger btn-sm deleteX">X</div></td>						
+									</tr>
+								</c:forEach>
+							</table>
+							<!-- 하단 페이져 -->
+							<table class="pagepage1">	
+								<tr>							
+									<td colspan="6">
+										<a class="w3-button demo  btn-sm"  href="main.do?pageNo=1">처음</a>		
+										
+										<c:if test="${pager.groupNo > 1}">
+											<a class="w3-button demo  btn-sm" href="main.do?pageNo=${pager.startPageNo-pager.pagesPergroup}">이전</a>	
+											<!-- <<=6~10 이전으로 가려면 -5(즉pagesPerGroup =5)를 빼준다   -->
+										</c:if>	
+										
+										<c:forEach var="i" begin="${pager.startPageNo}" end="${pager.endPageNo}">
+											<c:if test="${pager.pageNo != i}">	
+											<!-- 현재 페이지와 ${i}와 같다면 색을 변경 -->	
+												<a class="w3-button demo  btn-sm" href="main.do?pageNo=${i}"> ${i}</a>	
+											</c:if>		
+											
+											<c:if test="${pager.pageNo == i}">
+												<a class="w3-button demo  btn-sm" href="main.do?pageNo=${i}"> ${i}</a>
+											</c:if>					
+										</c:forEach>
+										
+										<c:if test="${pager.groupNo < pager.totalGroupNo}">
+											<a class="w3-button demo  btn-sm" href="main.do?pageNo=${pager.endPageNo+1}">다음</a>	
+										</c:if>				
+										<a class="w3-button demo  btn-sm" href="main.do?pageNo=${pager.totalPageNo}">맨끝</a>
+									</td>
+								</tr>
+							</table>													
+						</div>						
 					
+					</div>  
+				
+					<div class="mySlides" id="rlistmain">
+						<div class="rlist"></div>
 					</div>
+	
+					<div class="mySlides" id="alistmain">
+						<div class="alist"></div>
+					</div>	
 				</div>
-			
-			
-			
-				<!-- restaurant list box -->		
-				<div class="restaurantlistmain">
 				
+				<div class="w3-center">
+				   <div class="w3-section">
+				     <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">이전</button>
+				     <button class="w3-button w3-light-grey" onclick="plusDivs(1)">다음</button>
+				   </div>
+				   <button class="w3-button demo1" onclick="currentDiv(1)">등록 회원</button> 
+				   <button class="w3-button demo1" onclick="currentDiv(2)">등록 가게</button> 
+				   <button class="w3-button demo1" onclick="currentDiv(3)">가게 등록 신청</button> 
+				</div>
 				
-				</div>				
+				<!-- 삭제 시 비밀번호 확인 창 -->
+			 	<div class="opacitybox2"> 
+				</div> 
 				
-				
-				
-					
+				<div class="checkdelete1">
+					<div class="fonttext1">비밀번호 입력</div>
+					<div class="closedelete">x</div>
+					<input type="text" class="delectcheck" name="delectcheck">
+					<div class="btn btn-danger btn-sm gogogo">확인</div>
+				</div>
 			</div>
 			<!-- member + Restaurant data ==========================================-->
 			<div class="viewbox2">
+				<a href="${pageContext.request.contextPath}/admin/index.do">SMS</a>
 			</div>
 			<!-- member + Restaurant map ===========================================-->
 			<div class="viewbox3">
@@ -130,19 +200,81 @@
 			
 		</div>
 	</div>
-	<!-- admin login opacity box 													//--주석 제거해야함!!-->
-<!-- 	<div class="opacitybox"> -->
-<!-- 	</div> -->
+<!-- 	admin login opacity box  -->
+<!--  	<div class="opacitybox">  -->
+<!-- 	</div>  -->
 	
 </body>
 
 <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
+//viewbox1 delete button------------------------------------------
+$(".closedelete").click(function(){
+	$(".checkdelete1").hide();
+	$(".opacitybox2").hide();	
+});
+
+//viewbox1 - cmember delete check controller
+$(".checkdelete1").hide();
+$(".opacitybox2").hide();
+var delectcheck = $("input[name=delectcheck]").val();
+
+$(".deleteX").click(function(){ 
+
+	$(".checkdelete1").show();
+	$(".opacitybox2").show();
+	
+	$(".gogogo").click(function(){ 
+		delectcheck = $("input[name=delectcheck]").val();
+		var mid =  $(".deleteX").attr("id");
+
+		if(delectcheck == "admin123"){
+			alert("등록 해제 완료");				
+			$(".checkdelete1").hide();
+			$(".opacitybox2").hide();
+			location.href = "${pageContext.request.contextPath}/admin/cmemberdelete.do?mid=" + mid;
+			
+		}else{
+			alert("등록 해제 실패");
+			alert("mid : "+ mid);
+			$(".checkdelete1").hide();
+			$(".opacitybox2").hide();
+		}//else
+		
+	});//gogo click function
+});//deleteX click function
 
 
 
+//viewbox1 slide show------------------------------------------
+var slideIndex = 1;
+showDivs(slideIndex);
 
-// viewbox0 login script 
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo1");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-red", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-red";
+}
+
+// viewbox0 login script ------------------------------------------
 // $(".opacitybox").show();															//--주석 제거해야함!!
 $(".viewbox0").show();
 
@@ -172,7 +304,7 @@ function getInputValue(){
 		};
 };
 
-// manu bar script1 
+// manu bar script1------------------------------------------ 
 //로딩 이미지
 $(".ring1").hide();  
 $(".ring2").hide();
