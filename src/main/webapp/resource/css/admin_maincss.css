@@ -1,17 +1,36 @@
 @charset "UTF-8";
+/* 공용 start*************************************** */
+a {
+   text-decoration: none;
+   color: black;
+}
+
+a:link {
+/*    color: red; */
+   text-decoration: none;
+}
+
+a:visited {
+   color: black;
+   text-decoration: none;
+}
+
+a:hover {
+   color: black;
+   text-decoration: none;
+}
 /* head=============================== */
 .bodymainbox{
 	width: 1920px;
-	height: 938px;
+	height: 937px;
 	background-color: white;
 	float: left;
 }
 .navbarmain{
 	width: 235px;
-	height: 938px;
+	height: 937px;
 	background-color: #2A3F54;
 	float: left;
-	box-shadow: 5px 5px 5px 5px gray;
 }
 
 .nav1{
@@ -541,46 +560,52 @@
 
 .viewmainbox{
 	width: 1685px;
-	height: 938px;
+	height: 937px;
 	background-color: white;
 	float: left;
 }
 
 .viewbox1{
 	width: 1685px;
-	height: 938px;	
-	background-color: #F2F2F2;
+	height: 937px;	
+	background-color: white;
 	float: left;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .viewbox2{
 	width: 1685px;
-	height: 938px;	
+	height: 937px;	
 	background-color: green;
 	float: left;	
 }
 
 .viewbox3{
 	width: 1685px;
-	height: 938px;	
+	height: 937px;	
 	background-color: #ACFA58;
 	float: left;	
 }
 .viewbox4{
 	width: 1685px;
-	height: 938px;	
+	height: 937px;	
 	background-color: #D0A9F5;
 	float: left;	
 }
 .viewbox5{
 	width: 1685px;
-	height: 938px;	
+	height: 937px;	
 	background-color: gray;
 	float: left;	
 }
 .viewbox6{
 	width: 1685px;
-	height: 938px;	
+	height: 937px;	
 	background-color: blue;
 	float: left;	
 }
@@ -594,7 +619,7 @@
 
 .opacitybox{
 	width: 1920px;
-	height: 938px;
+	height: 937px;
 	opacity: 0.01;
 	position: absolute;
 	background-color: gray;
@@ -679,59 +704,278 @@
 }
 
 /* viewbox1 page =============== */
-.memberlistmain{
-	width: 500px;
-	height: 800px;
+.listmain{
+	width: 900px;
+	height: 700px;
 	float: left;
 	background-color: #E6E6E6;
-	margin-left: 200px;
-	margin-top: 69px;
+	margin-left: 395px;
+	margin-top: 119px;
 	box-shadow: 5px 5px 5px 5px gray;	
 }
 
-
-.restaurantlistmain{
-	width: 500px;
-	height: 800px;
+.clickmember{
+	width: 300px;
+	height: 50px;
 	float: left;
-	background-color: #E6E6E6;
-	margin-left: 290px;
-	margin-top: 69px;
-	box-shadow: 5px 5px 5px 5px gray;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 3px solid #D8D8D8;
+	border-right: 3px solid #D8D8D8;
+	cursor: pointer;
+	background-color: #F2F2F2;
 }
 
-.mlistbox1{
-	width: 500px;
-	height: 800px;
-	background-color: #E6E6E6;
+.clickrestaurant{
+	width: 300px;
+	height: 50px;
 	float: left;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 3px solid #D8D8D8;
+	border-right: 3px solid #D8D8D8;
+	cursor: pointer;
+}
+
+.clicknewjoin{
+	width: 300px;
+	height: 50px;
+	float: left;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 3px solid #D8D8D8;
+	cursor: pointer;
+}
+
+#mlistmain{
+	width: 1000px;
+	height: 600px; 
+	border: 1px solid #E6E6E6;
+}
+
+#rlistmain{
+	width: 1000px;
+	height: 600px; 
+	border: 1px solid #E6E6E6;
+}
+
+#alistmain{
+	width: 1000px;
+	height: 600px; 
+	border: 1px solid #E6E6E6;	
+}
+
+.mlist{
+	width: 1000px;
+	height: 40px;
+	background-color: white;
+	float: left;
+}
+
+.rlist{
+	width: 1000px;
+	height: 40px;
+	background-color: blue;
+	float: left;	
+}
+
+.alist{
+	width: 1000px;
+	height: 40px;
+	background-color: green;
+	float: left;	
+}
+
+.mlistid{
+	width: 150px;
+	height: 55px;
+	float: left;
+	border-right: 1px solid #E6E6E6;
+	border-bottom: 1px solid #E6E6E6;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 50px;
+}
+.mlistpw{
+	width: 150px;
+	height: 55px;
+	float: left;
+	border-right: 1px solid #E6E6E6;
+	border-bottom: 1px solid #E6E6E6;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 50px;	
+}
+.mlistname{
+	width: 100px;
+	height: 55px;
+	float: left;
+	border-right: 1px solid #E6E6E6;
+	border-bottom: 1px solid #E6E6E6;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 50px;	
+}
+.mlisttel{
+	width: 150px;
+	height: 55px;
+	float: left;
+	border-right: 1px solid #E6E6E6;
+	border-bottom: 1px solid #E6E6E6;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 50px;	
+}
+.mlistadress{
+	width: 270px;
+	height: 55px;
+	float: left;
+	border-right: 1px solid #E6E6E6;
+	border-bottom: 1px solid #E6E6E6;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 50px;	
+}
+.mlistdate{
+	width: 130px;
+	height: 55px;
+	float: left;
+	border-right: 1px solid #E6E6E6;
+	border-bottom: 1px solid #E6E6E6;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 50px;	
+}
+
+.mlistdelete{
+	width: 50px;
+	height: 55px;
+	float: left;
+	border-right: 1px solid #E6E6E6;
+	border-bottom: 1px solid #E6E6E6;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 50px;		
+}
+
+.mlistbox{
+	width: 1000px;
+	height: 550px;
+	float: left;
+	background-color: white;
+	margin-top: 15px;
+	border: 1px solid #E6E6E6;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+}
+
+.mlistTR{
+	width: 1000px;
+	height: 50px;	
+	border-bottom: 2px solid #D8D8D8;	
+	text-align: center;
+}
+
+.mlistidTD{
+	width: 150px;
+	border-right: 1px solid #E6E6E6;	
+	text-align: center;	
+}
+
+.mlistpwTD{
+	width: 150px;
+	border-right: 1px solid #E6E6E6;
+	border-left: 1px solid #E6E6E6;	
+	text-align: center;		
+}
+
+.mlistnameTD{
+	width: 100px;
+	border-right: 1px solid #E6E6E6;
+	border-left: 1px solid #E6E6E6;	
+	text-align: center;	
+}
+
+.mlisttelTD{
+	width: 150px;
+	border-right: 1px solid #E6E6E6;
+	border-left: 1px solid #E6E6E6;	
+	text-align: center;		
+}
+
+.mlistadressTD{
+	width: 270px;
+	border-right: 1px solid #E6E6E6;
+	border-left: 1px solid #E6E6E6;	
+	text-align: center;		
+}
+
+.mlistdateTD{
+	width: 130px;
+	border-right: 1px solid #E6E6E6;
+	border-left: 1px solid #E6E6E6;	
+	text-align: center;
+}
+
+.mlistdeleteTD{
+	width: 50px;
+	border-right: 1px solid #E6E6E6;
+	border-left: 1px solid #E6E6E6;	
+	text-align: center;	
 }
 
 
 
+.checkdelete1{
+	width: 300px;
+	height: 100px;
+	background-color: white;
+	z-index: 9999;
+	border: 1px solid #E6E6E6;
+	position: absolute;
+	top: 300px;
+	left: 950px;
+}
 
+.fonttext1{
+	font-size: 20px;
+	font-weight: bold;
+	width: 200px;
+	margin-left: 50px;
+	text-align: center;
+	height: 30px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.delectcheck{
+	width: 200px;
+	margin-left: 10px;
+	margin-top : 20px;
+	text-align: center;
+	height: 30px;
+	background-color: #E6E6E6;	
+}
+.gogogo{
+	width: 50px;
+	height: 30px;
+	margin-left: 10px;
+	text-align: center;
+	height: 30px;	
+	margin-top : -5px;		
+}
 
 
 
@@ -752,5 +996,10 @@
 
 
 
-
-
+/* 페이져 =============== */
+.pagepage1{
+	width: 700px;
+	margin-left: 430px;
+	position: absolute;
+	top: 635px;
+}
