@@ -1,25 +1,22 @@
 @charset "UTF-8";
 /* head=============================== */
-.navbar1{
-	background-color: #f0001e;
-	width: 1903px;
-	height: 78px;
-	float: left;
+body{
+	display: grid;
 }
 
-.navbar2{
+.navbar1{
 	background-color: #f0001e;
-	width: 1020px;
-	height: 78px;
+	width: 100%;
+	height: 90px;
 	float: left;
-	margin-left: 450px;
+	display: block;
 }
 
 .zgiyo{
 	width: 90px;
 	height: 38px;
 	float: left;
-	margin-left: 2.5px;
+	margin-left: 480px;
 	margin-top: 20px;
 }
 
@@ -28,9 +25,34 @@
 	width: 150px;
 	height: 40px;
 	border: 0.1px solid #A4A4A4;
-	margin-left: 760px;
+	margin-left: 720px;
 	margin-top: 20px;
 }
+
+.navbar2{
+	width: 100%;
+	height: 300px;	
+	float: left;
+}
+
+.navtext{
+	width: 100%;
+	margin-top: 20px;
+	margin-left: 586px;
+}
+
+.address{
+	width: 460px;
+	margin-top: 40px;
+	margin-left: 730px;
+}
+
+#list{
+	background-color: #ffffff;
+	position: relative;
+	z-index: 9999;
+}
+
 
 .login{
 	width: 60px;
@@ -60,84 +82,6 @@
 }
 
 /* body=============================== */
-
-.backgroundimg{
-	width: 475.75px;
-	height: 235px;
-	float: left;
-}
-
-.textbox{
-	position: relative;
-	width: 500px;
-	height: 200px;
-	left: 700px;
-	top: 100px;
-}
-
-.textbox1{
-	position: relative;
-	width: 420px;
-	height: 90px;	
-	left:40px;
-	top: 0px;	
-}
-
-.textbox2{
-	position: relative;
-	width: 420px;
-	height: 60px;
-	background-color: green;		
-	left:40px;
-	top: 5px;	
-}
-
-.where{
-	position: relative;
-	width: 130px;
-	height: 50px;		
-	left: 10px;
-	top: -300px;
-	z-index: 9999;	
-	font-size: 35px;
-	font-weight: 800;
-	color: white;
-}
-
-.delivery{
-	position: relative;
-	width: 100px;
-	height: 50px;		
-	left: 140px;
-	top: -300px;
-	z-index: 9999;	
-	font-size: 35px;
-	font-weight: 800;
-	color: #FE9A2E;		
-}
-
-.doing{
-	position: relative;
-	width: 250px;
-	height: 50px;		
-	left: 212px;
-	top: -300px;
-	z-index: 9999;
-	font-size: 35px;
-	font-weight: 800;
-	color: white;	
-}
-
-.textbox1-1{
-	position: relative;
-	width: 400px;
-	height: 50px;		
-	left: 80px;
-	top: -250px;
-	z-index: 9999;
-	font-size: 16px;
-	color: white;		
-}
 
 .imgboxmain{
 	width: 1903px;
@@ -302,7 +246,7 @@
 
 /* foot=============================== */
 .footermain1{
-	width: 1903px;
+	width: 100%;
 	height: 45px;
     background: #FBFBFB;
     border-top: 1px solid #d9d9d9;
@@ -311,7 +255,7 @@
 }
 
 .footermain2{
-	width: 1903px;
+	width: 100%;
 	height: 370px;
     background: #FBFBFB;
     border-bottom: 1px solid #d9d9d9;
@@ -422,7 +366,7 @@
 
 .footimg3{
 	float: left;	
-	width: 1903px;
+	width: 100%;
 	height: 370px;
 	cursor: pointer;
 }

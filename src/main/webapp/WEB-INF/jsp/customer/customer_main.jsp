@@ -14,10 +14,11 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_maincss.css">
+	<script src="${pageContext.request.contextPath}/resource/script/addressapi.js"></script>
 </head>
 <body>
-	<div class="navbar1">
-		<div class="navbar2">
+	<div class="header">
+		<div class="navbar1">
 			<img class="zgiyo" src="${pageContext.request.contextPath}/resource/image/home/즈기요.png">
 
 			<div class="boxbox">
@@ -25,26 +26,25 @@
 				<div class="join">회원가입</div>
 			</div>
 		</div>
-	</div>
-
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/1.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/2.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/3.jpg">
-	<img class="backgroundimg" src="${pageContext.request.contextPath}/resource/image/home/4.jpg">
-
-	<div class="textbox">
-		<div class="textbox1">
-			<div class="where">"어디로 </div>
-			<div class="delivery">배달</div>
-			<div class="doing">해 드릴까요?"</div>
-			<div class="textbox1-1">배달 받으실 동 이름으로 검색해주세요</div>
-		</div>
-		<div class="textbox2">
-			<div></div>
-			<div></div>
+		<div class="navbar2" style="background-image: url('${pageContext.request.contextPath}/resource/image/home/customer_main_bg.png');">
+			<div class="navtext">
+				<img src="${pageContext.request.contextPath}/resource/image/home/customer_main_text.png">
+			</div>
+			<div class="address">
+				<form name="form" id="form" method="post">
+					<input type="text" name="currentPage" value="1" style="display:none;"/> 
+					<input type="text" name="countPerPage" value="10" style="display:none;"/> 
+					<input type="text" name="resultType" value="json" style="display:none;"/> 
+					<input type="text" name="confmKey" value="U01TX0FVVEgyMDIwMDcyMjEwMTMyNDEwOTk3ODQ=" style="display:none;"/>
+					<input type="text" name="keyword" value="" onkeydown="enterSearch();" style="width: 400px; height: 40px"/>
+					<input type="button" onClick="getAddr();" value="검색" style="height: 40px"/>
+					<div id="list"></div>
+				</form>
+			</div>
 		</div>
 	</div>
 
+ 
 	<div class="imgboxmain">
 		<div class="imgboxmain1">
 			<div class="foodbox1">
