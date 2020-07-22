@@ -149,7 +149,7 @@
 							</table>													
 						</div>						
 					
-					</div>
+					</div>  
 				
 					<div class="mySlides" id="rlistmain">
 						<div class="rlist"></div>
