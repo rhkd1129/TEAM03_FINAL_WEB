@@ -94,13 +94,13 @@
 				<div class="w3-content" style="max-width:1000px; margin-top: 70px;">
 					<div class="mySlides" id="mlistmain">
 						<div class="mlist">
-							<div class="mlistid">아이디</div>
-							<div class="mlistpw">패스워드</div>						
-							<div class="mlistname">이름</div>
-							<div class="mlisttel">전화번호</div>		
-							<div class="mlistadress">주소</div>
-							<div class="mlistdate">가입 날짜</div>
-							<div class="mlistdelete">해제</div>	
+							<div class="mlistid">Id</div>
+							<div class="mlistpw">Password</div>						
+							<div class="mlistname">Name</div>
+							<div class="mlisttel">Tel</div>		
+							<div class="mlistadress">Adress</div>
+							<div class="mlistdate">Join Date</div>
+							<div class="mlistdelete">Unlock</div>	
 							
 						</div>
 						<div class="mlistbox">
@@ -114,7 +114,7 @@
 										<td class="mlisttelTD">${cmember.mtel}</td>
 										<td class="mlistadressTD">${cmember.madress}</td>																		
 										<td class="mlistdateTD">${cmember.mdate}</td>	
-										<td class="mlistdeleteTD"><div class="btn btn-danger btn-sm deleteX">X</div></td>						
+										<td class="mlistdeleteTD"><div id="${cmember.mid}" class="btn btn-danger btn-sm deleteX">X</div></td>						
 									</tr>
 								</c:forEach>
 							</table>
@@ -171,14 +171,19 @@
 				</div>
 				
 				<!-- 삭제 시 비밀번호 확인 창 -->
+			 	<div class="opacitybox2"> 
+				</div> 
+				
 				<div class="checkdelete1">
 					<div class="fonttext1">비밀번호 입력</div>
+					<div class="closedelete">x</div>
 					<input type="text" class="delectcheck" name="delectcheck">
 					<div class="btn btn-danger btn-sm gogogo">확인</div>
 				</div>
 			</div>
 			<!-- member + Restaurant data ==========================================-->
 			<div class="viewbox2">
+				<a href="${pageContext.request.contextPath}/admin/index.do">SMS</a>
 			</div>
 			<!-- member + Restaurant map ===========================================-->
 			<div class="viewbox3">
@@ -203,23 +208,37 @@
 
 <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
-//viewbox1 delete button
+//viewbox1 delete button------------------------------------------
+$(".closedelete").click(function(){
+	$(".checkdelete1").hide();
+	$(".opacitybox2").hide();	
+});
+
+//viewbox1 - cmember delete check controller
 $(".checkdelete1").hide();
+$(".opacitybox2").hide();
 var delectcheck = $("input[name=delectcheck]").val();
 
 $(".deleteX").click(function(){ 
+
 	$(".checkdelete1").show();
-		
+	$(".opacitybox2").show();
+	
 	$(".gogogo").click(function(){ 
 		delectcheck = $("input[name=delectcheck]").val();
-		
-		if(delectcheck == "admin123"){		
-			alert("등록 해제 완료");
+		var mid =  $(".deleteX").attr("id");
+
+		if(delectcheck == "admin123"){
+			alert("등록 해제 완료");				
 			$(".checkdelete1").hide();
-			location.href = "${pageContext.request.contextPath}/admin/cmemberdelete.do?mid=${cmember.mid}";
+			$(".opacitybox2").hide();
+			location.href = "${pageContext.request.contextPath}/admin/cmemberdelete.do?mid=" + mid;
+			
 		}else{
 			alert("등록 해제 실패");
+			alert("mid : "+ mid);
 			$(".checkdelete1").hide();
+			$(".opacitybox2").hide();
 		}//else
 		
 	});//gogo click function
@@ -227,7 +246,7 @@ $(".deleteX").click(function(){
 
 
 
-//viewbox1 slide show
+//viewbox1 slide show------------------------------------------
 var slideIndex = 1;
 showDivs(slideIndex);
 
@@ -255,14 +274,7 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-red";
 }
 
-
-
-
-
-
-
-
-// viewbox0 login script 
+// viewbox0 login script ------------------------------------------
 // $(".opacitybox").show();															//--주석 제거해야함!!
 $(".viewbox0").show();
 
@@ -292,7 +304,7 @@ function getInputValue(){
 		};
 };
 
-// manu bar script1 
+// manu bar script1------------------------------------------ 
 //로딩 이미지
 $(".ring1").hide();  
 $(".ring2").hide();

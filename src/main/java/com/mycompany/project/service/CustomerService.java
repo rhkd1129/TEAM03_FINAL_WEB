@@ -30,6 +30,8 @@ public class CustomerService {
 	
 	public void deleteCMember(String mid) {
 		customerDao.deleteByMid(mid);
+		System.out.println("2");
+
 	}
 
 }

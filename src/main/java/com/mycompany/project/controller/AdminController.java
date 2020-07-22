@@ -39,8 +39,24 @@ public class AdminController {
 	@GetMapping("/cmemberdelete.do")
 	public String cmemberDelete(String mid) {
 		customerService.deleteCMember(mid);
-		
+		System.out.println("3");
+
 		return "redirect:/admin/main.do";
 	}
+	
+	@RequestMapping("/index.do")
+	public String index() {
+		return "admin/index";
+	} 
+
+	@RequestMapping("/smssend.do")
+	public String smssend() {
+		return "admin/smssend";
+	}	
+	
+	@RequestMapping("/calljson.do")
+	public String calljson() {
+		return "admin/calljson";
+	}	
 
 }

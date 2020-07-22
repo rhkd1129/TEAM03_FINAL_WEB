@@ -36,6 +36,8 @@ public class CustomerDao extends EgovAbstractMapper{
 	
 	public void deleteByMid(String mid) {
 		delete("cmember.deleteByMid", mid);
+		System.out.println(mid);
+		System.out.println("1");
 	}
 
 }
