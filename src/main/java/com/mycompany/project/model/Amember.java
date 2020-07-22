@@ -2,17 +2,24 @@ package com.mycompany.project.model;
 
 public class Amember {
 	private int aid;
+	private String apassword;
 	private String aname;
 	private String atitle;
 	private String aadress;
-	private String rtel;
-	private String rcategory;
+	private String atel;
+	private String acategory;
 	
 	public int getAid() {
 		return aid;
 	}
 	public void setAid(int aid) {
 		this.aid = aid;
+	}
+	public String getApassword() {
+		return apassword;
+	}
+	public void setApassword(String apassword) {
+		this.apassword = apassword;
 	}
 	public String getAname() {
 		return aname;
@@ -32,17 +39,17 @@ public class Amember {
 	public void setAadress(String aadress) {
 		this.aadress = aadress;
 	}
-	public String getRtel() {
-		return rtel;
+	public String getAtel() {
+		return atel;
 	}
-	public void setRtel(String rtel) {
-		this.rtel = rtel;
+	public void setAtel(String atel) {
+		this.atel = atel;
 	}
-	public String getRcategory() {
-		return rcategory;
+	public String getAcategory() {
+		return acategory;
 	}
-	public void setRcategory(String rcategory) {
-		this.rcategory = rcategory;
+	public void setAcategory(String acategory) {
+		this.acategory = acategory;
 	}
 	
 }

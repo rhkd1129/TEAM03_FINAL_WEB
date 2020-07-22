@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.project.model.Amember;
 import com.mycompany.project.model.RloginForm;
 import com.mycompany.project.model.Rmember;
 import com.mycompany.project.service.RestaurantService;
@@ -33,13 +34,13 @@ public class RestaurantController {
 	}
 	
 	@GetMapping("/restaurant_join.do")
-	public String rjoinForm(Rmember rmember) {
+	public String rjoinForm(Amember amember) {
 		return "restaurant/restaurant_join";
 	}
 	
 	@PostMapping("/restaurant_join.do")
-	public String join(Rmember rmember) {
-		restaurantService.join(rmember);
+	public String join(Amember amember) {
+		restaurantService.join(amember);
 		return "redirect:/restaurant/restaurant_login.do";
 	}
 	

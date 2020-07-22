@@ -30,35 +30,35 @@
 		</div>
 
 		<div class="restaurantjoinform" style="width:576px">
-			<form:form method="post" modelAttribute="rmember">
+			<form:form method="post" modelAttribute="amember">
 				<ul>
 					<li>아이디</li>
 					<li>
-						<form:input path="rid" style="width:500px; height:50px;"/>
+						<form:input path="aid" style="width:500px; height:50px;"/>
 					</li>
 					<li>비밀번호</li>
 					<li>
-						<form:input path="rpassword" style="width:500px; height:50px;"/>
+						<form:input path="apassword" style="width:500px; height:50px;"/>
 					</li>
 					<li>이름</li>
 					<li>
-						<form:input path="rname" style="width:500px; height:50px;"/>
+						<form:input path="aname" style="width:500px; height:50px;"/>
 					</li>
 					<li>점포명</li>
 					<li>
-						<form:input path="rtitle" style="width:500px; height:50px;"/>
+						<form:input path="atitle" style="width:500px; height:50px;"/>
 					</li>
 					<li>주소</li>
 					<li>
-						<form:input path="radress" style="width:500px; height:50px;"/>
+						<form:input path="aadress" style="width:500px; height:50px;"/>
 					</li>
 					<li>전화번호</li>
 					<li>
-						<form:input path="rtel" style="width:500px; height:50px;"/>
+						<form:input path="atel" style="width:500px; height:50px;"/>
 					</li>
 					<li>업종</li>
 					<li>
-						<form:input path="rcategory" style="width:500px; height:50px;"/>
+						<form:input path="acategory" style="width:500px; height:50px;"/>
 					</li>				
 				</ul>
 				<input type="submit" value="가입" style="width:500px; height:50px; margin:20px"/>
