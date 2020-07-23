@@ -758,12 +758,12 @@ a:hover {
 #rlistmain{
 	width: 1000px;
 	height: 600px; 
+	border: 1px solid #E6E6E6;
 }
 
 #alistmain{
 	width: 1000px;
 	height: 600px; 
-	border: 1px solid #E6E6E6;	
 }
 
 .mlist{
@@ -776,7 +776,7 @@ a:hover {
 .rlist{
 	width: 1000px;
 	height: 40px;
-	background-color: white;
+	background-color: blue;
 	float: left;	
 }
 
@@ -786,9 +786,9 @@ a:hover {
 	background-color: green;
 	float: left;	
 }
-/* --------------------------- */
+
 .mlistid{
-	width: 150px;
+	width: 100px;
 	height: 55px;
 	float: left;
 	font-size: 20px;
@@ -801,7 +801,7 @@ a:hover {
     font-weight: bold;
 }
 .mlistpw{
-	width: 150px;
+	width: 120px;
 	height: 55px;
 	float: left;
 	font-size: 20px;
@@ -814,7 +814,7 @@ a:hover {
     font-weight: bold;
 }
 .mlistname{
-	width: 100px;
+	width: 120px;
 	height: 55px;
 	float: left;
 	font-size: 20px;
@@ -826,8 +826,9 @@ a:hover {
     font-size: 13px;
     font-weight: bold;	
 }
-.mlisttel{
-	width: 150px;
+
+.mlisttitle{
+	width: 170px;
 	height: 55px;
 	float: left;
 	font-size: 20px;
@@ -839,8 +840,9 @@ a:hover {
     font-size: 13px;
     font-weight: bold;
 }
+
 .mlistadress{
-	width: 270px;
+	width: 200px;
 	height: 55px;
 	float: left;
 	font-size: 20px;
@@ -852,8 +854,23 @@ a:hover {
     font-size: 13px;	
     font-weight: bold;
 }
-.mlistdate{
-	width: 130px;
+
+.mlisttel{
+	width: 120px;
+	height: 55px;
+	float: left;
+	font-size: 20px;
+	text-align: center;
+	line-height: 50px;
+    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+    border-bottom: 2px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.mlistcategory{
+	width: 120px;
 	height: 55px;
 	float: left;
 	font-size: 20px;
@@ -879,113 +896,6 @@ a:hover {
     font-size: 13px;
     font-weight: bold;		
 }
-/* --------------------------- */
-.rlistid{
-	width: 120px;
-	height: 55px;
-	float: left;
-	font-size: 20px;
-	text-align: center;
-	line-height: 50px;
-    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-    border-bottom: 2px solid #dee2e6;
-    border-top: 1px solid #dee2e6;
-    font-size: 13px;
-    font-weight: bold;
-}
-.rlistpw{
-	width: 120px;
-	height: 55px;
-	float: left;
-	font-size: 20px;
-	text-align: center;
-	line-height: 50px;
-    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-    border-bottom: 2px solid #dee2e6;
-    border-top: 1px solid #dee2e6;
-    font-size: 13px;
-    font-weight: bold;
-}
-.rlistname{
-	width: 120px;
-	height: 55px;
-	float: left;
-	font-size: 20px;
-	text-align: center;
-	line-height: 50px;
-    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-    border-bottom: 2px solid #dee2e6;
-    border-top: 1px solid #dee2e6;
-    font-size: 13px;
-    font-weight: bold;	
-}
-.rlisttel{
-	width: 150px;
-	height: 55px;
-	float: left;
-	font-size: 20px;
-	text-align: center;
-	line-height: 50px;
-    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-    border-bottom: 2px solid #dee2e6;
-    border-top: 1px solid #dee2e6;
-    font-size: 13px;
-    font-weight: bold;
-}
-.rlistadress{
-	width: 200px;
-	height: 55px;
-	float: left;
-	font-size: 20px;
-	text-align: center;
-	line-height: 50px;
-    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-    border-bottom: 2px solid #dee2e6;
-    border-top: 1px solid #dee2e6;
-    font-size: 13px;	
-    font-weight: bold;
-}
-
-.rlisttitle{
-	width: 140px;
-	height: 55px;
-	float: left;
-	font-size: 20px;
-	text-align: center;
-	line-height: 50px;
-    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-    border-bottom: 2px solid #dee2e6;
-    border-top: 1px solid #dee2e6;
-    font-size: 13px;
-    font-weight: bold;
-}
-.rlistcategory{
-	width: 100px;
-	height: 55px;
-	float: left;
-	font-size: 20px;
-	text-align: center;
-	line-height: 50px;
-    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-    border-bottom: 2px solid #dee2e6;
-    border-top: 1px solid #dee2e6;
-    font-size: 13px;	
-    font-weight: bold;
-}
-
-.rlistdelete{
-	width: 50px;
-	height: 55px;
-	float: left;
-	font-size: 20px;
-	text-align: center;
-	line-height: 50px;
-    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-    border-bottom: 2px solid #dee2e6;
-    border-top: 1px solid #dee2e6;
-    font-size: 13px;	
-    font-weight: bold;
-}
 
 .mlistbox{
 	width: 1000px;
@@ -1001,21 +911,6 @@ a:hover {
    user-select: none;
 }
 
-.rlistbox{
-	width: 1000px;
-	height: 550px;
-	float: left;
-	background-color: white;
-	margin-top: 15px;
-	/* 드래그 막기 */	
-   -ms-user-select: none; 
-   -moz-user-select: -moz-none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
-   user-select: none;
-}
-
-
 .mlistTR{
 	width: 1000px;
 	height: 50px;	
@@ -1024,92 +919,47 @@ a:hover {
     border-bottom: 1px solid #dee2e6;	
 }
 
-.rlistTR{
-	width: 1000px;
-	height: 50px;	
-	text-align: center;
-	font-size: 13px;
-    border-bottom: 1px solid #dee2e6;	
-}
-
-/* mlist ============== */
 .mlistidTD{
-	width: 150px;
-	text-align: center;	
-}
-
-.mlistpwTD{
-	width: 150px;
-	text-align: center;		
-}
-
-.mlistnameTD{
 	width: 100px;
 	text-align: center;	
 }
 
-.mlisttelTD{
-	width: 150px;
+.mlistpwTD{
+	width: 120px;
 	text-align: center;		
+}
+
+.mlistnameTD{
+	width: 120px;
+	text-align: center;	
+}
+
+.mlisttitleTD{
+	width: 170px;
+	text-align: center;
 }
 
 .mlistadressTD{
-	width: 270px;
+	width: 200px;
 	text-align: center;		
 }
 
-.mlistdateTD{
-	width: 130px;
-	text-align: center;
+.mlisttelTD{
+	width: 120px;
+	text-align: center;		
+}
+
+.mlistcategoryTD{
+	width: 120px;
+	text-align: center;	
 }
 
 .mlistdeleteTD{
 	width: 50px;
 	text-align: center;	
 }
-/* rlist ============== */
 
-.rlistidTD{
-	width: 120px;
-	text-align: center;	
-}
 
-.rlistpwTD{
-	width: 120px;
-	text-align: center;	
-}
-
-.rlistnameTD{
-	width: 120px;
-	text-align: center;		
-}
-
-.rlisttelTD{
-	width: 150px;
-	text-align: center;	
-}
-
-.rlistadressTD{
-	width: 200px;
-	text-align: center;		
-}
-
-.rlisttitleTD{
-	width: 140px;
-	text-align: center;		
-}
-
-.rlistcategoryTD{
-	width: 100px;
-	text-align: center;
-}
-
-.rlistdeleteTD{
-	width: 50px;
-	text-align: center;	
-}
-
-/*  */
 
 .checkdelete1{
 	width: 300px;
@@ -1155,51 +1005,6 @@ a:hover {
 	cursor: pointer;
 }
 
-/*  */
-.checkdelete2{
-	width: 300px;
-	height: 100px;
-	background-color: white;
-	z-index: 9999;
-	border: 1.5px solid #A4A4A4;
-	position: absolute;
-	top: 300px;
-	left: 950px;
-}
-
-.fonttext2{
-	font-size: 20px;
-	font-weight: bold;
-	width: 200px;
-	margin-left: 50px;
-	text-align: center;
-	height: 30px;
-}
-
-.delectcheck2{
-	width: 200px;
-	margin-left: 10px;
-	margin-top : 20px;
-	text-align: center;
-	height: 30px;
-	background-color: #E6E6E6;	
-}
-.gogogo2{
-	width: 50px;
-	height: 30px;
-	margin-left: 10px;
-	text-align: center;
-	height: 30px;	
-	margin-top : -5px;		
-}
-
-.closedelete2{
-	float: left;
-	margin-left: 285px;
-	margin-top: -35px;
-	cursor: pointer;
-}
-
 .opacitybox2{
 	width: 1920px;
 	height: 937px;
@@ -1238,42 +1043,6 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
   background-color: #FFFFFF;
 }
 
-/* 페이져 =============== */
-.pagepage1{
-	width: 700px;
-	margin-left: 385px;
-	position: absolute;
-	top: 635px;
-}
-
-.pagepage2{
-	width: 700px;
-	margin-left: 385px;
-	position: absolute;
-	top: 635px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1284,6 +1053,25 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 /* viewbox4 page =============== */
 /* viewbox5 page =============== */
 /* viewbox6 page =============== */
+
+
+
+
+
+
+
+
+
+
+/* 페이져 =============== */
+.pagepage1{
+	width: 700px;
+	margin-left: 385px;
+	position: absolute;
+	top: 635px;
+}
+
+
 
 
 

@@ -14,7 +14,7 @@
    <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
    <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss2.css">
 </head>
 <body style="overflow: hidden;" id="adminmainpage">
 	<div class="bodymainbox">
@@ -83,162 +83,82 @@
 			<div class="viewbox1">
 				<!-- member list box -->
 				<div class="w3-content" style="max-width:1000px; margin-top: 70px;">
-					<div class="mySlides" id="mlistmain">
+	
+					<div class="mySlides" id="alistmain">
 						<div class="mlist">
 							<div class="mlistid">Id</div>
 							<div class="mlistpw">Password</div>						
 							<div class="mlistname">Name</div>
-							<div class="mlisttel">Tel</div>		
+							<div class="mlisttitle">Title</div>		
 							<div class="mlistadress">Adress</div>
-							<div class="mlistdate">Join Date</div>
+							<div class="mlisttel">Tel</div>
+							<div class="mlistcategory">Rcategory</div>							
 							<div class="mlistdelete">Unlock</div>	
 							
 						</div>
 						<div class="mlistbox">
 							<!-- Customer Member List -->
 							<table>
-								<c:forEach var="cmember" items="${cmemberlist}">
+								<c:forEach var="rmember" items="${rmemberlist}">
 									<tr class="mlistTR">
-										<td class="mlistidTD">${cmember.mid}</td>
-										<td class="mlistpwTD">${cmember.mpassword}</td>								
-										<td class="mlistnameTD">${cmember.mname}</td>
-										<td class="mlisttelTD">${cmember.mtel}</td>
-										<td class="mlistadressTD">${cmember.madress}</td>																		
-										<td class="mlistdateTD">${cmember.mdate}</td>	
-										<td class="mlistdeleteTD"><div id="${cmember.mid}" class="btn btn-secondary btn-sm deleteX">X</div></td>						
+										<td class="mlistidTD">${rmember.rid}</td>
+										<td class="mlistpwTD">${rmember.rpassword}</td>								
+										<td class="mlistnameTD">${rmember.rname}</td>
+										<td class="mlisttitleTD">${rmember.rtitle}</td>
+										<td class="mlistadressTD">${rmember.radress}</td>
+										<td class="mlisttelTD">${rmember.rtel}</td>																		
+										<td class="mlistcategoryTD">${rmember.rcategory}</td>	
+										<td class="mlistdeleteTD"><div id="${rmember.rid}" class="btn btn-secondary btn-sm deleteX">X</div></td>						
 									</tr>
 								</c:forEach>
 							</table>
-							<input type="search" class="w3-button w3-white w3-border btn-sm search" placeholder="등록 회원 검색" />
+							<input type="search" class="w3-button w3-white w3-border btn-sm search" placeholder="회원명 검색" />
 							<button class="w3-button w3-white w3-border btn-sm" id="btnsearch">검색</button>
 							<!-- 하단 페이져 -->
 							<table class="pagepage1">	
 								<tr>							
 									<td colspan="6">
-										<a class="w3-button demo  btn-sm" onclick="viewPaging(1)">처음</a>		
+										<a class="w3-button demo  btn-sm" onclick="viewPaging2(1)">처음</a>		
 										
 										<c:if test="${pager.groupNo > 1}">
-											<a class="w3-button demo  btn-sm" onclick="viewPaging('${pager.startPageNo-pager.pagesPergroup}')">이전</a>	
+											<a class="w3-button demo  btn-sm" onclick="viewPaging2('${pager.startPageNo-pager.pagesPergroup}')">이전</a>	
 											<!-- <<=6~10 이전으로 가려면 -5(즉pagesPerGroup =5)를 빼준다   -->
 										</c:if>	
 										
 										<c:forEach var="i" begin="${pager.startPageNo}" end="${pager.endPageNo}">
 											<c:if test="${pager.pageNo != i}">	
 											<!-- 현재 페이지와 ${i}와 같다면 색을 변경 -->	
-												<a class="w3-button demo  btn-sm" onclick="viewPaging('${i}')"> ${i}</a>	
+												<a class="w3-button demo  btn-sm" onclick="viewPaging2('${i}')"> ${i}</a>	
 											</c:if>		
 											
 											<c:if test="${pager.pageNo == i}">
-												<a class="w3-button demo  btn-sm" onclick="viewPaging('${i}')"> ${i}</a>
+												<a class="w3-button demo  btn-sm" onclick="viewPaging2('${i}')"> ${i}</a>
 											</c:if>					
 										</c:forEach>
 										
 										<c:if test="${pager.groupNo < pager.totalGroupNo}">
-											<a class="w3-button demo  btn-sm" onclick="viewPaging('${pager.endPageNo+1}')">다음</a>	
+											<a class="w3-button demo  btn-sm" onclick="viewPaging2('${pager.endPageNo+1}')">다음</a>	
 										</c:if>				
-										<a class="w3-button demo  btn-sm" onclick="viewPaging('${pager.totalPageNo}')">맨끝</a>
+										<a class="w3-button demo  btn-sm" onclick="viewPaging2('${pager.totalPageNo}')">맨끝</a>
 									</td>
 								</tr>
 							</table>													
 						</div>						
-					
-					</div>  
-					<!-- 레스토랑 테이블 -->
-					<div class="mySlides" id="rlistmain">
-						<div class="rlist">
-							<div class="rlistid">Id</div>
-							<div class="rlistpw">Password</div>						
-							<div class="rlistname">Name</div>
-							<div class="rlisttel">Tel</div>		
-							<div class="rlistadress">Adress</div>
-							<div class="rlisttitle">Title</div>							
-							<div class="rlistcategory">Category</div>
-							<div class="rlistdelete">Unlock</div>	
-							
-						</div>
-						<div class="rlistbox">
-							<!-- Customer Member List -->
-							<table>
-								<c:forEach var="rmember" items="${rmemberlist}">
-									<tr class="rlistTR">
-										<td class="rlistidTD">${rmember.rid}</td>
-										<td class="rlistpwTD">${rmember.rpassword}</td>								
-										<td class="rlistnameTD">${rmember.rname}</td>
-										<td class="rlisttelTD">${rmember.rtel}</td>
-										<td class="rlistadressTD">${rmember.radress}</td>																		
-										<td class="rlisttitleTD">${rmember.rtitle}</td>	
-										<td class="rlistcategoryTD">${rmember.rcategory}</td>
-										<td class="rlistdeleteTD"><div id="${rmember.rid}" class="btn btn-secondary btn-sm deleteX2">X</div></td>						
-									</tr>
-								</c:forEach>
-							</table>
-							<input type="search" class="w3-button w3-white w3-border btn-sm search" placeholder="등록 가게 검색" />
-							<button class="w3-button w3-white w3-border btn-sm" id="btnsearch">검색</button>
-							<!-- 하단 페이져 -->
-							<table class="pagepage2">	
-								<tr>							
-									<td colspan="6">
-										<a class="w3-button demo  btn-sm" onclick="viewPaging1(1)">처음</a>		
-										
-										<c:if test="${pager1.groupNo1 > 1}">
-											<a class="w3-button demo  btn-sm" onclick="viewPaging1('${pager1.startPageNo1-pager1.pagesPergroup1}')">이전</a>	
-											<!-- <<=6~10 이전으로 가려면 -5(즉pagesPerGroup =5)를 빼준다   -->
-										</c:if>	
-										
-										<c:forEach var="k" begin="${pager1.startPageNo1}" end="${pager1.endPageNo1}">
-											<c:if test="${pager1.pageNo1 != k}">	
-											<!-- 현재 페이지와 ${i}와 같다면 색을 변경 -->	
-												<a class="w3-button demo  btn-sm" onclick="viewPaging1('${k}')"> ${k}</a>	
-											</c:if>		
-											
-											<c:if test="${pager1.pageNo1 == k}">
-												<a class="w3-button demo  btn-sm" onclick="viewPaging1('${k}')"> ${k}</a>
-											</c:if>					
-										</c:forEach>
-										
-										<c:if test="${pager1.groupNo1 < pager1.totalGroupNo1}">
-											<a class="w3-button demo  btn-sm" onclick="viewPaging1('${pager1.endPageNo1+1}')">다음</a>	
-										</c:if>				
-										<a class="w3-button demo  btn-sm" onclick="viewPaging1('${pager1.totalPageNo1}')">맨끝</a>
-									</td>
-								</tr>
-							</table>													
-						</div>			
-					</div>
-	
-					<div class="mySlides" id="alistmain">
-						<div class="alist"></div>
 					</div>	
+					
 				</div>
 				
-				<div class="w3-center">
-				   <div class="w3-section">
-				     <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">이전</button>
-				     <button class="w3-button w3-light-grey" onclick="plusDivs(1)">다음</button>
-				   </div>
-				   <button class="w3-button demo1" onclick="currentDiv(1)">등록 회원</button> 
-				   <button class="w3-button demo1" onclick="currentDiv(2)">등록 가게</button> 
-				   <button class="w3-button demo1" onclick="currentDiv(3)">가게 등록 신청</button> 
-				</div>
 				
-				<!-- 공용 삭제 시 비밀번호 확인 창 -->
+				<!-- 삭제 시 비밀번호 확인 창 -->
 			 	<div class="opacitybox2"> 
 				</div> 
-				<!-- 1 -->
+				
 				<div class="checkdelete1">
-					<div class="fonttext1">비밀번호 입력Ⅰ</div>
+					<div class="fonttext1">비밀번호 입력</div>
 					<div class="closedelete">x</div>
 					<input type="text" class="delectcheck" name="delectcheck">
 					<div class="btn btn-danger btn-sm gogogo">확인</div>
 				</div>
-				<!-- 2 -->
-				<div class="checkdelete2">
-					<div class="fonttext2">비밀번호 입력Ⅱ</div>
-					<div class="closedelete2">x</div>
-					<input type="text" class="delectcheck2" name="delectcheck2">
-					<div class="btn btn-danger btn-sm gogogo2">확인</div>
-				</div>				
-				
 			</div>
 			<!-- member + Restaurant data ==========================================-->
 			<div class="viewbox2">
@@ -265,11 +185,11 @@
 <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 /* 페이져 */
-function viewPaging(pageNo) {
+function viewPaging2(pageNo) {
    var pageNo = pageNo;
    $.ajax({
       type : "get", // get방식으로 자료를 전달
-      url : "${pageContext.request.contextPath}/admin/main.do?pageNo=" +pageNo,
+      url : "${pageContext.request.contextPath}/admin/main2.do?pageNo=" +pageNo,
       success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
          // 댓글목록을 실행한 결과를 가져온다.
          $("#adminmainpage").html(result);
@@ -277,19 +197,6 @@ function viewPaging(pageNo) {
    });
 };
 
-/* 페이져1 */
-function viewPaging1(pageNo1) {
-   var pageNo1 = pageNo1;
-   $.ajax({
-      type : "get", // get방식으로 자료를 전달
-      url : "${pageContext.request.contextPath}/admin/main.do?pageNo1=" +pageNo1,
-      success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
-         // 댓글목록을 실행한 결과를 가져온다.
-         $("#adminmainpage").html(result);
-      }
-   });
-};
-//등록 회원 start------------------------------------------------------------------------------------------------------
 //명단 삭제 취소 버튼------------------------------------------
 $(".closedelete").click(function(){
 	$(".checkdelete1").hide();
@@ -302,92 +209,30 @@ $(".opacitybox2").hide();
 var delectcheck = $("input[name=delectcheck]").val();
 
 $(".deleteX").click(function(){ 
-	var mid =  $(this).attr("id");
 
 	$(".checkdelete1").show();
 	$(".opacitybox2").show();
-
+	
 	$(".gogogo").click(function(){ 
 		delectcheck = $("input[name=delectcheck]").val();
-		if(delectcheck == "admin1"){			
-			alert("등록 회원 제명 완료");				
+		var mid =  $(".deleteX").attr("id");
+
+		if(delectcheck == "admin123"){
+			alert("등록 해제 완료");				
 			$(".checkdelete1").hide();
-			$(".opacitybox2").hide();
-			location.href = "${pageContext.request.contextPath}/admin/cmemberdelete.do?mid=" + mid;
-		
-		}else{	
-			alert("등록 회원 제명 실패");
-			$(".checkdelete1").hide();
-			$(".opacitybox2").hide();
-		}//else
-		
-	});//gogo click function
-});//deleteX click function
-//등록 회원 end------------------------------------------------------------------------------------------------------
-//등록 가게 start------------------------------------------------------------------------------------------------------
-//명단 삭제 취소 버튼------------------------------------------
-$(".closedelete2").click(function(){
-	$(".checkdelete2").hide();
-	$(".opacitybox2").hide();	
-});
-
-//명단 삭제 시 확인 뷰------------------------------------------
-$(".checkdelete2").hide();
-$(".opacitybox2").hide();
-var delectcheck2 = $("input[name=delectcheck2]").val();
-
-$(".deleteX2").click(function(){ 
-	var rid =  $(this).attr("id");
-
-	$(".checkdelete2").show();
-	$(".opacitybox2").show();
-	
-	$(".gogogo2").click(function(){ 
-		delectcheck2 = $("input[name=delectcheck2]").val();
-
-		if(delectcheck2 == "admin2"){
-			alert("등록 가게 제명 완료");				
-			$(".checkdelete2").hide();
 			$(".opacitybox2").hide();
 			location.href = "${pageContext.request.contextPath}/admin/rmemberdelete.do?rid=" + rid;
 			
-		}else{		
-			alert("등록 가게 제명 실패");
-			$(".checkdelete2").hide();
+		}else{
+			alert("등록 해제 실패");
+			$(".checkdelete1").hide();
 			$(".opacitybox2").hide();
 		}//else
 		
 	});//gogo click function
 });//deleteX click function
-//등록 가게 end------------------------------------------------------------------------------------------------------
 
-//viewbox1 slide show------------------------------------------
-var slideIndex = 1;
-showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo1");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-red", "");
-  }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-red";
-}
 
 // manu bar script1------------------------------------------ 
 //로딩 이미지

@@ -6,4 +6,19 @@
 			insert into restaurant (rid, rpassword, rname, rtitle, radress, rtel, rcategory)
 			values (#{rid}, #{rpassword}, #{rname}, #{rtitle}, #{radress}, #{rtel}, #{rcategory})
 		</insert>
+		
+		<select id="selectAllByPage" resultType="rmember">
+			select rid, rpassword, rname, rtitle, radress, rtel, rcategory
+			from restaurant order by rtel desc limit #{startIndex1}, #{rowsPerPage1}
+		</select>
+		
+		<select id="count" resultType="int">
+			select count(*) from restaurant
+		</select>
+		
+		<delete id="deleteByRid">
+			delete from restaurant where rid=#{rid}
+		</delete>
+		
+		
 	</mapper>
