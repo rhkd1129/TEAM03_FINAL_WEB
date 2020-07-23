@@ -29,7 +29,7 @@
 				<div class="nav2text1">Welcome,</div>
 				<div class="nav2text2">Administrator Yoon</div>
 			</div>
-			
+			 
 			<!-- /* Group1 */ -->
 			<div class=nav3>
 				<div class="nav3text1">Restaurant | Customer</div> 
