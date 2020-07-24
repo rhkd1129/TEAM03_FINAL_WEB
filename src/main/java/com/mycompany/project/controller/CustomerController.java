@@ -2,6 +2,7 @@ package com.mycompany.project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,6 +42,14 @@ public class CustomerController {
 	public String join(Cmember cmember) {
 		customerService.join(cmember);
 		return "redirect:/customer/customer_main.do";
+	}
+	
+	@GetMapping("/customer_search.do")
+	public String search(String roadAddr, String bdNm, Model model) {
+		String fullAddr = roadAddr + " " + bdNm;
+		model.addAttribute("fullAddr", fullAddr);
+				
+		return "customer/customer_search";
 	}
 
 }

@@ -36,7 +36,7 @@
 					<input type="text" name="countPerPage" value="100" style="display:none;"/> 
 					<input type="text" name="resultType" value="json" style="display:none;"/> 
 					<input type="text" name="confmKey" value="U01TX0FVVEgyMDIwMDcyMjEwMTMyNDEwOTk3ODQ=" style="display:none;"/>
-					<input type="text" name="keyword" value="" onkeydown="enterSearch();" style="width: 400px; height: 40px"/>
+					<input type="text" name="keyword" value="${fullAddr}" onkeydown="enterSearch();" style="width: 400px; height: 40px"/>
 					<input type="button" onClick="getAddr();" value="검색" style="height: 40px"/>
 					<div id="list"></div>
 				</form>
@@ -45,7 +45,7 @@
 	</div>
 
  
-	<div class="imgboxmain">
+	<%-- <div class="imgboxmain">
 		<div class="imgboxmain1">
 			<div class="foodbox1">
 				<div id="box1-1">
@@ -110,7 +110,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --%>
 
 
 	<!-- FOOTER START ======================================== -->
