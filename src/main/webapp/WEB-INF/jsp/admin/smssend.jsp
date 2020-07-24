@@ -1,4 +1,5 @@
-    <%@ page language="java" import="java.util.*, java.security.*, java.io.*, java.net.*" %>
+<%@ page language="java" import="java.util.*, java.security.*, java.io.*, java.net.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%response.setCharacterEncoding("UTF-8");%>
     <%! /**==============================================================
       Description        :  사용 함수 선언
@@ -224,6 +225,8 @@
     }
     
     %>
+    
+<c:redirect url="/admin/main.do"></c:redirect>
                 
                 
                 
