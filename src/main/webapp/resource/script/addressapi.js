@@ -30,37 +30,15 @@ function getAddr(){
 
 function makeListJson(jsonStr){
 	var htmlStr = "";
-	htmlStr += "<table>";
+	htmlStr += '<div id="searchedaddress"><table>';
 	$(jsonStr.results.juso).each(function(){
 		htmlStr += "<tr>";
-		htmlStr += "<td>"+this.roadAddr+"</td>";
-		/* htmlStr += "<td>"+this.roadAddrPart1+"</td>";
-		htmlStr += "<td>"+this.roadAddrPart2+"</td>";
-		htmlStr += "<td>"+this.jibunAddr+"</td>";
-		htmlStr += "<td>"+this.engAddr+"</td>";
-		htmlStr += "<td>"+this.zipNo+"</td>";
-		htmlStr += "<td>"+this.admCd+"</td>";
-		htmlStr += "<td>"+this.rnMgtSn+"</td>";
-		htmlStr += "<td>"+this.bdMgtSn+"</td>";
-		htmlStr += "<td>"+this.detBdNmList+"</td>"; */
-		//API 서비스 제공항목 확대 (2017.02)
-		htmlStr += "<td>"+this.bdNm+"</td>";
-		/* htmlStr += "<td>"+this.bdKdcd+"</td>";
-		htmlStr += "<td>"+this.siNm+"</td>";
-		htmlStr += "<td>"+this.sggNm+"</td>";
-		htmlStr += "<td>"+this.emdNm+"</td>";
-		htmlStr += "<td>"+this.liNm+"</td>";
-		htmlStr += "<td>"+this.rn+"</td>";
-		htmlStr += "<td>"+this.udrtYn+"</td>";
-		htmlStr += "<td>"+this.buldMnnm+"</td>";
-		htmlStr += "<td>"+this.buldSlno+"</td>";
-		htmlStr += "<td>"+this.mtYn+"</td>";
-		htmlStr += "<td>"+this.lnbrMnnm+"</td>";
-		htmlStr += "<td>"+this.lnbrSlno+"</td>";
-		htmlStr += "<td>"+this.emdNo+"</td>"; */
+		htmlStr += '<td id="eachaddress">';
+		htmlStr += '<a href="/project/customer/customer_search.do?roadAddr=' + this.roadAddr + "&bdNm=" + this.bdNm + '">'+this.roadAddr+ " " +this.bdNm+"</a>";
+		htmlStr += "</td>";
 		htmlStr += "</tr>"; 
 	});
-	htmlStr += "</table>";
+	htmlStr += "</table></div>";
 	$("#list").html(htmlStr);
 }
 

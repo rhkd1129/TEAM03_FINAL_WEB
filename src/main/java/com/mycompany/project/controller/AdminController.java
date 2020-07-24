@@ -48,7 +48,7 @@ public class AdminController {
 		
 		// Pager2
 		Pager1 pager1 = new Pager1(rowsPerPage1, 5 ,restaurantService.getTotalAdboardNo(), pageNo1);
-		model.addAttribute("pager1",pager1);
+		model.addAttribute("pager1", pager1);
 		session.setAttribute("pager1", pager1);
 		
 		List<Rmember> list1 = restaurantService.getList(pageNo1, rowsPerPage1);
