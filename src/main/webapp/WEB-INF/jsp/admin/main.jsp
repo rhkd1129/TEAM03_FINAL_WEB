@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- SMS import -->
 <%@ page import="sms.SMS" %>
 
 <!DOCTYPE html>
@@ -382,6 +383,11 @@
 
 <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
+$(document).ready(function(){	
+	console.log("gdgd")
+});
+
+
 //차량 도착 시 자동 문자 전송 [테스트] start =======================================================
 $(".carimage1").hide();
 $(".carimage2").hide();
@@ -501,8 +507,6 @@ $(".carimage11").hide();
 	   setTimeout(time1, 1000);
 	}		
 
-	
-	
 });
 
 //차량 도착 시 자동 문자 전송 [테스트] end =======================================================
