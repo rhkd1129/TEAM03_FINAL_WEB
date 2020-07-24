@@ -339,7 +339,7 @@
 			    				</td>
 			    			</tr>    	
 			    			<tr>
-			    				<td>
+			    				<td> 
 			    					<!-- 받는 사람 전화번호 설정 필요! -->
 									<input id="SMSinput" class="form-control" type="text" name="rphone" value="010-5059-8673" readonly="readonly">
 			    				</td>
