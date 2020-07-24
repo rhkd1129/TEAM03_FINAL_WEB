@@ -1,12 +1,19 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page import="sms.SMS" %>
 
 <!DOCTYPE html>
 <html>
 <head>
    <meta charset="UTF-8">
-   <title>Insert title here</title>
+   <title>Admin Page</title>
+   <!-- SMS import -->
+   	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.css">
+	
+	<!-- main import -->
    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
    <script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
@@ -14,7 +21,12 @@
    <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
    <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">
+   
+   <!-- css import -->
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">   
+   <!-- SMS import -->   
+   	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body style="overflow: hidden;" id="adminmainpage">
 	<div class="bodymainbox">
@@ -103,12 +115,16 @@
 										<td class="mlistpwTD">${cmember.mpassword}</td>								
 										<td class="mlistnameTD">${cmember.mname}</td>
 										<td class="mlisttelTD">${cmember.mtel}</td>
-										<td class="mlistadressTD">${cmember.madress}</td>																		
+										<td class="mlistadressTD">${cmember.madress}</td>																																																		
 										<td class="mlistdateTD">${cmember.mdate}</td>	
+<!-- 										<td> -->
+<%-- 											<fmt:formatDate value="${cmember.mdate}" pattern="yyyy년 MM월 dd일"/> --%>
+<!-- 										</td> -->									
 										<td class="mlistdeleteTD"><div id="${cmember.mid}" class="btn btn-secondary btn-sm deleteX">X</div></td>						
 									</tr>
 								</c:forEach>
 							</table>
+							<div class="pagenum1">현재 회원 가입자 수 : ${pager.totalRows}명</div>
 							<input type="search" class="w3-button w3-white w3-border btn-sm search" placeholder="등록 회원 검색" />
 							<button class="w3-button w3-white w3-border btn-sm" id="btnsearch">검색</button>
 							<!-- 하단 페이져 -->
@@ -119,7 +135,6 @@
 										
 										<c:if test="${pager.groupNo > 1}">
 											<a class="w3-button demo  btn-sm" onclick="viewPaging('${pager.startPageNo-pager.pagesPergroup}')">이전</a>	
-											<!-- <<=6~10 이전으로 가려면 -5(즉pagesPerGroup =5)를 빼준다   -->
 										</c:if>	
 										
 										<c:forEach var="i" begin="${pager.startPageNo}" end="${pager.endPageNo}">
@@ -174,6 +189,7 @@
 							</table>
 							<input type="search" class="w3-button w3-white w3-border btn-sm search" placeholder="등록 가게 검색" />
 							<button class="w3-button w3-white w3-border btn-sm" id="btnsearch">검색</button>
+							<div class="pagenum2">현재 회원 가입자 수 : ${pager1.totalRows1}명</div>							
 							<!-- 하단 페이져 -->
 							<table class="pagepage2">	
 								<tr>							
@@ -242,13 +258,115 @@
 			</div>
 			<!-- member + Restaurant data ==========================================-->
 			<div class="viewbox2">
-				<a href="${pageContext.request.contextPath}/admin/index.do">SMS</a>
+				<a href="${pageContext.request.contextPath}/admin/index.do">SMS 보내기</a>
+				
+				<div class="membercheck1">등록 회원 수 : ${pager.totalRows}</div>
+				<div class="membercheck2">등록 가게 수 : ${pager1.totalRows1}</div>
+				<div class="container">
+			    <form method="post" name="smsForm" action="smssend.do">
+			    	<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+			    		<thead>
+			    			<tr>
+			    				<td style="text-align: center;">문자 전송 양식</td>
+			    			</tr>
+			    		</thead>
+			    		<tbody>
+			    			<tr>
+			    				<td>
+			    					<!-- 받는 사람 이름 설정 필요! -->
+			      					<textarea class="form-control" maxlength="45" name="msg" style="width:1100px; height: 300px;">
+안녕하세요 ~님 즈기요입니다.
+주문하신 음식이 도착하였습니다.
+			      					</textarea>
+			    				</td>
+			    			</tr>    	
+			    			<tr>
+			    				<td>
+			    					<!-- 받는 사람 전화번호 설정 필요! -->
+									<input class="form-control" type="text" name="rphone" value="010-5059-8673">
+			    				</td>
+			    			</tr>  	
+			    			<tr>
+			    				<td>
+									(받는 번호는 010-0000-0000과 같이 전체 번호로 작성해주세요.)
+			    				</td>
+			    			</tr>  	
+			    			<tr>
+			    				<td>
+									남은 문자 잔여량 : <%= new SMS().getCount() %>
+			    				</td>
+			    			</tr>  	
+			    			<tr>
+			    				<td>
+			    					<input type="hidden" name="action" value="go">
+							        <input type="hidden" name="sphone1" value="010">
+							        <input type="hidden" name="sphone2" value="8832">
+							        <input type="hidden" name="sphone3" value="7217">
+							        <input class="btn btn-primary pull-right" id="sendmessage" type="submit" value="전송">
+			    				</td>
+			    			</tr>  	 									
+			    		</tbody>
+			    	</table>
+			
+			    </form>	<!-- SMS form  -->
+			   	</div>	<!-- container div -->			
 			</div>
 			<!-- member + Restaurant map ===========================================-->
 			<div class="viewbox3">
+				
+				<div class="line1-1"></div><div class="jumpline"></div><div class="line1-2"></div><div class="jumpline"></div><div class="line1-3"></div><div class="jumpline"></div>
+				<div class="line1-4"></div><div class="jumpline"></div><div class="line1-5"></div><div class="jumpline"></div><div class="line1-6"></div><div class="jumpline"></div>
+				<div class="line1-7"></div><div class="jumpline"></div><div class="line1-8"></div><div class="jumpline"></div><div class="line1-9"></div><div class="jumpline"></div>
+				<div class="line1-10"></div><div class="jumpline"></div><div class="line1-11"></div><div class="jumpline"></div><div class="line1-12"></div><div class="jumpline"></div>
+				<div class="line1-13"></div><div class="jumpline"></div><div class="line1-14"></div>
+				<div class="extrack1"></div>
+				<div class="extrack3"></div>
+				
+				<div class="line2-1"></div><div class="jumpline2"></div><div class="line2-2"></div><div class="jumpline2"></div><div class="line2-3"></div><div class="jumpline2"></div>
+				<div class="line2-4"></div><div class="jumpline2"></div><div class="line2-5"></div><div class="jumpline2"></div><div class="line2-6"></div><div class="jumpline2"></div>
+				<div class="line2-7"></div><div class="jumpline2"></div><div class="line2-8"></div><div class="jumpline2"></div><div class="line2-9"></div><div class="jumpline2"></div>
+				<div class="line2-10"></div><div class="jumpline2"></div><div class="line2-11"></div><div class="jumpline2"></div><div class="line2-12"></div><div class="jumpline2"></div>
+				<div class="line2-13"></div><div class="jumpline2"></div><div class="line2-14"></div>
+				<div class="extrack2"></div>
+				<div class="extrack4"></div>	
+				
+				<img class="flagimage" src="${pageContext.request.contextPath}/resource/image/admin/깃발.png">
+				<img class="homeimage" src="${pageContext.request.contextPath}/resource/image/admin/home.png">	
+				
+				<div class="light1"></div>
+					<img class="carimage1" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
+				<div class="light2"></div>
+					<img class="carimage2" src="${pageContext.request.contextPath}/resource/image/admin/car.png">				
+				<div class="light3"></div>
+					<img class="carimage3" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
+				<div class="light4"></div>
+					<img class="carimage4" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
+				<div class="light5"></div>
+					<img class="carimage5" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
+				<div class="light6"></div>
+					<img class="carimage6" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
+				<div class="light7"></div>
+					<img class="carimage7" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
+				<div class="light8"></div>
+					<img class="carimage8" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
+				<div class="light9"></div>
+					<img class="carimage9" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
+				<div class="light10"></div>	
+					<img class="carimage10" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
+				<div class="light11"></div>
+					<img class="carimage11" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
+				
+				
+				
+				
+				
+				
+				
+
 			</div>
 			<!-- member + device + instrument list =================================-->
 			<div class="viewbox4">
+				<div class="extrack2"></div>	
 			</div>
 			<!-- member + device + instrument data =================================-->
 			<div class="viewbox5">
@@ -264,6 +382,131 @@
 
 <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
+//차량 도착 시 자동 문자 전송 [테스트] start =======================================================
+$(".carimage1").hide();
+$(".carimage2").hide();
+$(".carimage3").hide();
+$(".carimage4").hide();
+$(".carimage5").hide();
+$(".carimage6").hide();
+$(".carimage7").hide();
+$(".carimage8").hide();
+$(".carimage9").hide();
+$(".carimage10").hide();
+$(".carimage11").hide();
+
+	
+	$(".flagimage").click(function(){	
+	stime = setTimeout(time1, 1000);
+	function time1(){
+		$(".light1").css("background", "red");
+		$(".carimage1").show();
+		
+		$(".light11").css("background", "green");
+		$(".carimage11").hide();
+	   setTimeout(time2, 1000);
+	}
+	
+	function time2(){
+		$(".light2").css("background", "red");
+		$(".carimage2").show();
+
+		$(".light1").css("background", "green");
+		$(".carimage1").hide();
+		
+	   setTimeout(time3, 1000);
+	}
+	
+	function time3(){
+		$(".light3").css("background", "red");
+		$(".carimage3").show();
+
+		$(".light2").css("background", "green");
+		$(".carimage2").hide();		
+	   setTimeout(time4, 1000);
+	}
+	
+	function time4(){
+		$(".light4").css("background", "red");
+		$(".carimage4").show();
+
+		$(".light3").css("background", "green");
+		$(".carimage3").hide();				
+	   setTimeout(time5, 1000);
+	}
+	
+	function time5(){
+		$(".light5").css("background", "red");
+		$(".carimage5").show();
+
+		$(".light4").css("background", "green");
+		$(".carimage4").hide();				
+	   setTimeout(time6, 1000);
+	}	
+	
+	function time6(){
+		$(".light6").css("background", "red");
+		$(".carimage6").show();
+		
+		$(".light5").css("background", "green");
+		$(".carimage5").hide();
+	   setTimeout(time7, 1000);
+	}
+	
+	function time7(){
+		$(".light7").css("background", "red");	
+		$(".carimage7").show();
+
+		$(".light6").css("background", "green");	
+		$(".carimage6").hide();	
+	   setTimeout(time8, 1000);
+	}
+	
+	function time8(){
+		$(".light8").css("background", "red");
+		$(".carimage8").show();
+
+		$(".light7").css("background", "green");
+		$(".carimage7").hide();		
+	   setTimeout(time9, 1000);
+	}
+	
+	function time9(){
+		$(".light9").css("background", "red");
+		$(".carimage9").show();
+
+		$(".light8").css("background", "green");
+		$(".carimage8").hide();				
+	   setTimeout(time10, 1000);
+	}
+	
+	function time10(){
+		$(".light10").css("background", "red");
+		$(".carimage10").show();
+
+		$(".light9").css("background", "green");
+		$(".carimage9").hide();				
+	   setTimeout(time11, 1000);
+	}		
+	
+	function time11(){
+		//자동 문자 전송하기
+		$("#sendmessage").trigger("click");
+		
+		$(".light11").css("background", "red");
+		$(".carimage11").show();
+
+		$(".light10").css("background", "green");
+		$(".carimage10").hide();				
+	   setTimeout(time1, 1000);
+	}		
+
+	
+	
+});
+
+//차량 도착 시 자동 문자 전송 [테스트] end =======================================================
+	
 /* 페이져 */
 function viewPaging(pageNo) {
    var pageNo = pageNo;

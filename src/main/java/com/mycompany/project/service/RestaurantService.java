@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mycompany.project.dao.RestaurantDao;
-import com.mycompany.project.model.Cmember;
 import com.mycompany.project.model.Rmember;
 
 @Service

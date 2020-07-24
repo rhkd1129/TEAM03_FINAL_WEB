@@ -581,14 +581,14 @@ a:hover {
 .viewbox2{
 	width: 1685px;
 	height: 937px;	
-	background-color: green;
+	background-color: white;
 	float: left;	
 }
 
 .viewbox3{
 	width: 1685px;
 	height: 937px;	
-	background-color: #ACFA58;
+	background-color: white;
 	float: left;	
 }
 .viewbox4{
@@ -1253,9 +1253,27 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	top: 635px;
 }
 
+.pagenum1{
+	position: absolute;
+	font-size: 20px;
+	top:30px;
+	left: 565px;
+	font-weight: bold;	
+	width: 250px;
+	text-align: center;
+	height: 30px;
+}
 
-
-
+.pagenum2{
+	position: absolute;
+	font-size: 20px;
+	top:30px;
+	left: 565px;
+	font-weight: bold;	
+	width: 250px;
+	text-align: center;
+	height: 30px;
+}
 
 
 
@@ -1280,7 +1298,614 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 
 
 /* viewbox2 page =============== */
+.extrack{	
+    background-color: white;
+    background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
+    background-position: 0 0, 25px 25px;
+    background-size: 50px 50px;
+	width: 200px;
+	height: 50px;
+	border: 1px solid #444;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* viewbox3 page =============== */
+/* 출발 지점 */
+.extrack1{	
+    background-color: white;
+    background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
+    background-position: 0 0, 25px 25px;
+    background-size: 10px 10px;
+	width: 25px;
+	height: 100px;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+	position: absolute;	
+	left: 280px;		
+}
+
+.extrack2{	
+    background-color: white;
+    background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
+    background-position: 0 0, 25px 25px;
+    background-size: 10px 10px;
+	width: 25px;
+	height: 100px;
+	border-top: 5px solid white;
+	border-bottom: 5px solid yellow;
+	position: absolute;	
+	left: 280px;
+	top : 100px;
+}
+
+.extrack3{	
+    background-color: white;
+    background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
+    background-position: 0 0, 25px 25px;
+    background-size: 10px 10px;
+	width: 25px;
+	height: 100px;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+	position: absolute;	
+	left: 1890px;		
+}
+
+.extrack4{	
+    background-color: white;
+    background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
+    background-position: 0 0, 25px 25px;
+    background-size: 10px 10px;
+	width: 25px;
+	height: 100px;
+	border-top: 5px solid white;
+	border-bottom: 5px solid yellow;
+	position: absolute;	
+	left: 1890px;
+	top : 100px;
+}
+
+.line1-1{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;
+}
+.line1-2{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+.line1-3{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+.line1-4{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+.line1-5{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+.line1-6{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+.line1-7{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+.line1-8{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+.line1-9{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+.line1-10{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+.line1-11{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+.line1-12{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+.line1-13{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+.line1-14{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;
+	border-bottom: 5px solid white;	
+}
+
+.line2-1{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-2{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-3{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-4{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-5{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-6{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-7{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-8{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-9{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-10{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-11{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-12{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-13{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+.line2-14{
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-bottom: 5px solid yellow;
+	border-top: 5px solid white;
+}
+
+.jumpline{
+	width: 20px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid yellow;	
+	border-bottom: 5px solid #848484;
+}
+
+.jumpline2{
+	width: 20px;
+	height: 100px;
+	float: left;
+	background-color: #848484;
+	border-top: 5px solid #848484;	
+	border-bottom: 5px solid yellow;
+}
+
+.homeimage{
+	width: 70px;
+	height: 70px;
+	border: 5px solid #848484;
+	position: absolute;
+	top: 220px;
+	left: 1800px;
+}
+
+.light1{
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	top: 145px;
+	left: 350px;	
+	float: left;
+	position: absolute;
+}
+
+.light2{
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	top: 145px;
+	left: 500px;	
+	float: left;
+	position: absolute;
+}
+
+.light3{
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	top: 145px;
+	left: 650px;	
+	float: left;
+	position: absolute;	
+}
+
+.light4{
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	top: 145px;
+	left: 800px;	
+	float: left;
+	position: absolute;
+}
+
+.light5{
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	top: 145px;
+	left: 950px;	
+	float: left;
+	position: absolute;
+}
+
+.light6{
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	top: 145px;
+	left: 1100px;	
+	float: left;
+	position: absolute;
+}
+
+.light7{
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	top: 145px;
+	left: 1250px;	
+	float: left;
+	position: absolute;
+}
+
+.light8{
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	top: 145px;
+	left: 1400px;	
+	float: left;
+	position: absolute;	
+}
+
+.light9{
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	top: 145px;
+	left: 1550px;	
+	float: left;
+	position: absolute;
+}
+
+.light10{
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	top: 145px;
+	left: 1700px;	
+	float: left;
+	position: absolute;
+}
+
+.light11{
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	top: 145px;
+	left: 1850px;	
+	float: left;
+	position: absolute;
+}
+
+.carimage1{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top:20px;
+	left: 300px;
+}
+
+.carimage2{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top:20px;
+	left: 450px;
+}
+
+.carimage3{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top:20px;
+	left: 600px;
+}
+
+.carimage4{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top:20px;
+	left: 750px;
+}
+
+.carimage5{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top:20px;
+	left: 900px;
+}
+
+.carimage6{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top:20px;
+	left: 1050px;
+}
+
+.carimage7{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top:20px;
+	left: 1200px;
+}
+
+.carimage8{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top:20px;
+	left: 1350px;
+}
+
+.carimage9{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top:20px;
+	left: 1500px;
+}
+
+.carimage10{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top:20px;
+	left: 1650px;
+}
+
+.carimage11{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top:20px;
+	left: 1800px;
+}
+
+.flagimage{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 200px;
+	left: 250px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* viewbox4 page =============== */
 /* viewbox5 page =============== */
 /* viewbox6 page =============== */
