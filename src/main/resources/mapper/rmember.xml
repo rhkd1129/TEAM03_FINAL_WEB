@@ -12,6 +12,11 @@
 			from restaurant order by rtel desc limit #{startIndex1}, #{rowsPerPage1}
 		</select>
 		
+		<select id="selectByAddr" resultType="rmember">
+			select rid, rpassword, rname, rtitle, radress, rtel, rcategory
+			from restaurant where radress like CONCAT('%',#{emdNm},'%')
+		</select>
+		
 		<select id="count" resultType="int">
 			select count(*) from restaurant
 		</select>
