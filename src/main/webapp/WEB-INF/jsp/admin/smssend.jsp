@@ -168,7 +168,7 @@
             wr.write("Content-type: multipart/form-data, boundary="+boundary+"\r\n");
             wr.write("\r\n");
 
-            // 데이터 전송
+            // 데이터 전송 
             wr.write(data);
             wr.flush();
 
