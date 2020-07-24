@@ -227,23 +227,4 @@
     %>
     
 <c:redirect url="/admin/main.do"></c:redirect>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+         

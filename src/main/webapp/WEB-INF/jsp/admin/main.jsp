@@ -63,6 +63,12 @@
 					<img class="btnHomeimg3" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
 					<div class="btnHometext3">Map</div>
 					<img class="ring3" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
+				</div>	
+				
+				<div class="btnHome9">
+					<img class="btnHomeimg9" src="${pageContext.request.contextPath}/resource/image/admin/message1.png">
+					<div class="btnHometext9">SMS</div>
+					<img class="ring9" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
 				</div>						
 			</div>		
 			<!-- /* Group2 */ -->
@@ -190,7 +196,7 @@
 							</table>
 							<input type="search" class="w3-button w3-white w3-border btn-sm search" placeholder="등록 가게 검색" />
 							<button class="w3-button w3-white w3-border btn-sm" id="btnsearch">검색</button>
-							<div class="pagenum2">현재 회원 가입자 수 : ${pager1.totalRows1}명</div>							
+							<div class="pagenum2">현재 등록 가게 수 : ${pager1.totalRows1}명</div>							
 							<!-- 하단 페이져 -->
 							<table class="pagepage2">	
 								<tr>							
@@ -259,58 +265,10 @@
 			</div>
 			<!-- member + Restaurant data ==========================================-->
 			<div class="viewbox2">
-				<a href="${pageContext.request.contextPath}/admin/index.do">SMS 보내기</a>
-				
-				<div class="membercheck1">등록 회원 수 : ${pager.totalRows}</div>
-				<div class="membercheck2">등록 가게 수 : ${pager1.totalRows1}</div>
-				<div class="container">
-			    <form method="post" name="smsForm" action="smssend.do">
-			    	<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-			    		<thead>
-			    			<tr>
-			    				<td style="text-align: center;">문자 전송 양식</td>
-			    			</tr>
-			    		</thead>
-			    		<tbody>
-			    			<tr>
-			    				<td>
-			    					<!-- 받는 사람 이름 설정 필요! -->
-			      					<textarea class="form-control" maxlength="45" name="msg" style="width:1100px; height: 300px;">
-안녕하세요 ~님 즈기요입니다.
-주문하신 음식이 도착하였습니다.
-			      					</textarea>
-			    				</td>
-			    			</tr>    	
-			    			<tr>
-			    				<td>
-			    					<!-- 받는 사람 전화번호 설정 필요! -->
-									<input class="form-control" type="text" name="rphone" value="010-5059-8673">
-			    				</td>
-			    			</tr>  	
-			    			<tr>
-			    				<td>
-									(받는 번호는 010-0000-0000과 같이 전체 번호로 작성해주세요.)
-			    				</td>
-			    			</tr>  	
-			    			<tr>
-			    				<td>
-									남은 문자 잔여량 : <%= new SMS().getCount() %>
-			    				</td>
-			    			</tr>  	
-			    			<tr>
-			    				<td>
-			    					<input type="hidden" name="action" value="go">
-							        <input type="hidden" name="sphone1" value="010">
-							        <input type="hidden" name="sphone2" value="8832">
-							        <input type="hidden" name="sphone3" value="7217">
-							        <input class="btn btn-primary pull-right" id="sendmessage" type="submit" value="전송">
-			    				</td>
-			    			</tr>  	 									
-			    		</tbody>
-			    	</table>
-			
-			    </form>	<!-- SMS form  -->
-			   	</div>	<!-- container div -->			
+
+
+
+
 			</div>
 			<!-- member + Restaurant map ===========================================-->
 			<div class="viewbox3">
@@ -356,15 +314,62 @@
 					<img class="carimage10" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
 				<div class="light11"></div>
 					<img class="carimage11" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				
-				
-				
-				
-				
-				
-				
-
 			</div>
+			
+			<!-- SMS Send Page =================================-->
+			<div class="viewbox9">
+				<a id="SMSrealpage" href="${pageContext.request.contextPath}/admin/index.do">[원본]SMS 보내기</a>
+
+				<div class="container" id="SMSCONTAINER">
+			    <form method="post" name="smsForm" action="smssend.do">
+			    	<table class="table table-striped" id="SMSTABLE" style="text-align: center; border: 1px solid #dddddd">
+			    		<thead>
+			    			<tr>
+			    				<td style="text-align: center; font-weight: bold;">문자 전송 양식</td>
+			    			</tr>
+			    		</thead>
+			    		<tbody>
+			    			<tr>
+			    				<td>
+			    					<!-- 받는 사람 이름 설정 필요! -->
+			      					<textarea id="SMStextarea" class="form-control" maxlength="45" name="msg" readonly="readonly">
+안녕하세요 전영재님 즈기요입니다.
+주문하신 음식이 도착하였습니다.♬
+			      					</textarea>
+			    				</td>
+			    			</tr>    	
+			    			<tr>
+			    				<td>
+			    					<!-- 받는 사람 전화번호 설정 필요! -->
+									<input id="SMSinput" class="form-control" type="text" name="rphone" value="010-5059-8673" readonly="readonly">
+			    				</td>
+			    			</tr>  	
+			    			<tr>
+			    				<td>
+									[주의 사항 : 『문자는 신중하게!』 『전송은 빠르게!』 『내용은 안전하게!』]
+			    				</td>
+			    			</tr>  	
+			    			<tr>
+			    				<td>
+									남은 문자 잔여량 : <%= new SMS().getCount() %>
+			    				</td>
+			    			</tr>  	
+			    			<tr>
+			    				<td>
+			    					<input type="hidden" name="action" value="go">
+							        <input type="hidden" name="sphone1" value="010">
+							        <input type="hidden" name="sphone2" value="8832">
+							        <input type="hidden" name="sphone3" value="7217">
+							        <input class="btn btn-primary pull-right" id="sendmessage" type="submit" value="전송">
+			    				</td>
+			    			</tr>  	 									
+			    		</tbody>
+			    	</table>
+			
+			    </form>	<!-- SMS form  -->
+			   	</div>	<!-- container div -->			
+			</div>			
+			
 			<!-- member + device + instrument list =================================-->
 			<div class="viewbox4">
 				<div class="extrack2"></div>	
@@ -383,11 +388,6 @@
 
 <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
-$(document).ready(function(){	
-	console.log("gdgd")
-});
-
-
 //차량 도착 시 자동 문자 전송 [테스트] start =======================================================
 $(".carimage1").hide();
 $(".carimage2").hide();
@@ -644,6 +644,7 @@ $(".ring3").hide();
 $(".ring4").hide();
 $(".ring5").hide();
 $(".ring6").hide();
+$(".ring9").hide();
 //뷰 박스
 $(".viewbox1").show();
 $(".viewbox2").hide();
@@ -651,7 +652,7 @@ $(".viewbox3").hide();
 $(".viewbox4").hide();
 $(".viewbox5").hide();
 $(".viewbox6").hide();
-
+$(".viewbox9").hide();
 $(document).ready(function(){	
 	
 		//<!-- /* Group1 */ -->
@@ -694,7 +695,14 @@ $(document).ready(function(){
 				$(".btnHome23").css("border-right","");	
 				$(".ring6").hide();
 				$(".viewbox6").hide();
-				check6 = 0;							
+				check6 = 0;	
+				
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");	
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;								
 				
 			}else if(check1 == 1){
 				$(".btnHome1").css("background-color","");
@@ -745,6 +753,13 @@ $(document).ready(function(){
 				$(".ring6").hide();
 				$(".viewbox6").hide();
 				check6 = 0;	
+				
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");	
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;								
 				
 			}else if(check2 == 1){
 				$(".btnHome2").css("background-color","");
@@ -797,12 +812,75 @@ $(document).ready(function(){
 				$(".viewbox6").hide();
 				check6 = 0;	
 				
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");	
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;					
+				
 			}else if(check3 == 1){
 				$(".btnHome3").css("background-color","");
 				$(".btnHome3").css("box-shadow","");
 				$(".btnHome3").css("border-right","");
 				$(".ring3").hide();
 				check3 = 0;		
+			};
+		});	
+		
+		var check9 = 0;
+		$(".btnHome9").click( function() {  
+			if(check9 == 0){		
+				$(".btnHome9").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome9").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome9").css("border-right","7px solid #1ABB9C");	
+				$(".ring9").show();
+				$(".viewbox9").show();			
+				check9 = 1;
+				
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");		
+				$(".ring1").hide();
+				$(".viewbox1").hide();
+				check1 = 0;	
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");	
+				$(".ring2").hide();
+				$(".viewbox2").hide();
+				check2 = 0;	
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");	
+				$(".ring3").hide();
+				$(".viewbox3").hide();
+				check3 = 0;					
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");		
+				$(".ring4").hide();
+				$(".viewbox4").hide();
+				check4 = 0;	
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");	
+				$(".ring5").hide();
+				$(".viewbox5").hide();
+				check5 = 0;					
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");	
+				$(".ring6").hide();
+				$(".viewbox6").hide();
+				check6 = 0;	
+				
+			}else if(check9 == 1){
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");
+				$(".ring9").hide();
+				check9 = 0;		
 			};
 		});	
 		
@@ -849,12 +927,19 @@ $(document).ready(function(){
 				$(".viewbox6").hide();
 				check6 = 0;	
 				
-			}else if(check4 == 1){
-				$(".btnHome21").css("background-color","");
-				$(".btnHome21").css("box-shadow","");
-				$(".btnHome21").css("border-right","");
+				$(".btnHome4").css("background-color","");
+				$(".btnHome4").css("box-shadow","");
+				$(".btnHome4").css("border-right","");	
 				$(".ring4").hide();
-				check4 = 0;	
+				$(".viewbox4").hide();
+				check0 = 0;						
+				
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");	
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;			
 			};
 		});	
 		
@@ -899,6 +984,13 @@ $(document).ready(function(){
 				$(".ring6").hide();
 				$(".viewbox6").hide();
 				check6 = 0;	
+				
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");	
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;							
 				
 			}else if(check5 == 1){
 				$(".btnHome22").css("background-color","");
@@ -949,7 +1041,14 @@ $(document).ready(function(){
 				$(".btnHome22").css("border-right","");	
 				$(".ring5").hide();
 				$(".viewbox5").hide();
-				check5 = 0;		
+				check5 = 0;	
+				
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");	
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;						
 				
 			}else if(check6 == 1){
 				$(".btnHome23").css("background-color","");
