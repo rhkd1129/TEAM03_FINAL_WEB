@@ -81,7 +81,7 @@ public class AdminController {
 		return "admin/adminlogin";
 	} 	
 	
-	//문자 메세지 페이지 이동
+	//문자 메세지 페이지 이동 (현재 admin.jsp에서 대신 역할 수행 중)
 	@RequestMapping("/index.do")
 	public String index() {
 		return "admin/index";
@@ -92,6 +92,7 @@ public class AdminController {
 	public String smssend() {
 		return "admin/smssend";
 	}	
+
 
 
 }

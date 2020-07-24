@@ -9,8 +9,7 @@
      * @return
      */
 
-     public static String nullcheck(String str,  String Defaultvalue ) throws Exception
-     {
+     public static String nullcheck(String str,  String Defaultvalue ) throws Exception{
           String ReturnDefault = "" ;
           if (str == null)
           {
@@ -50,6 +49,7 @@
         return result ;
     }
     %>
+    
     <%
     /**==============================================================
       Description        : 캐릭터셋 정의
@@ -57,7 +57,9 @@
       UTF-8: @ page contentType="text/html;charset=UTF-8
     ==============================================================**/
     %>
+    
     <%@ page contentType="text/html;charset=EUC-KR"%>
+    
     <%
     /**==============================================================
       Description        :  사용자 샘플코드
@@ -207,6 +209,7 @@
 
             if(nointeractive.equals("1") && !(Result.equals("Test Success!")) && !(Result.equals("success")) && !(Result.equals("reserved")) ) {
                 out.println("<script>alert('" + alert + "')</script>");
+	
             }
             else if(!(nointeractive.equals("1"))) {
                 out.println("<script>alert('" + alert + "')</script>");
@@ -215,6 +218,29 @@
         }
 
         out.println("<script>location.href='"+returnurl+"';</script>");
+        
+        //전송 완료 시  main으로 이동 함수 호출
+
     }
+    
     %>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
