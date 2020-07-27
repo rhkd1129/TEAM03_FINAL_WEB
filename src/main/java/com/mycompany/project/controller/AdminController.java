@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +23,8 @@ import com.mycompany.project.service.RestaurantService;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger("AdminController");
 	
 	//회원 명단 service 불러오기
 	@Autowired
@@ -45,6 +49,7 @@ public class AdminController {
 		
 		List<Cmember> list = customerService.getList(pageNo, rowsPerPage);
 		model.addAttribute("cmemberlist", list);
+		
 		
 		// Pager2
 		Pager1 pager1 = new Pager1(rowsPerPage1, 5 ,restaurantService.getTotalAdboardNo(), pageNo1);
