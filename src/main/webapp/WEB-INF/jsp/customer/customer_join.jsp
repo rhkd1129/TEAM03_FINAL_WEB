@@ -31,7 +31,7 @@
 				var phoneNumber = /^[0-9]{2,3}-?[0-9]{3,4}-?[0-9]{4}$/;
 				
 				if (idCheck != "1") {
-					alert("아이디 중복확인을 해주세요");
+					alert("아이디 중복확인을 해주세요.");
 					return false;
 				}
 				
