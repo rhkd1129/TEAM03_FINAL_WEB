@@ -1,8 +1,10 @@
 package com.mycompany.project.model;
 
+import java.sql.Date;
+
 public class Dmember {
 	private String dmid;
-	private String ddate;
+	private Date ddate;
 	private String dadress;
 	private String dmenu;
 	private int dprice;
@@ -14,10 +16,10 @@ public class Dmember {
 	public void setDmid(String dmid) {
 		this.dmid = dmid;
 	}
-	public String getDdate() {
+	public Date getDdate() {
 		return ddate;
 	}
-	public void setDdate(String ddate) {
+	public void setDdate(Date ddate) {
 		this.ddate = ddate;
 	}
 	public String getDadress() {

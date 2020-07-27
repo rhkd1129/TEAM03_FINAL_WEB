@@ -27,6 +27,7 @@ public class RestaurantService {
 	public Rmember getRmember(String rid) {
 		Rmember rmember = restaurantDao.selectByRid(rid);
 		return rmember;
+	}
 
 	//레스토랑 조합 가입하기
 	public void join(Rmember rmember) {

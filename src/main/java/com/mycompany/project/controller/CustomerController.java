@@ -114,6 +114,7 @@ public class CustomerController {
 		pw.write(json);
 		pw.flush();
 		pw.close();
+	}
 
 	@GetMapping("/customer_search.do")
 	public String search(String roadAddr, String bdNm, String siNm, String emdNm,  Model model) {

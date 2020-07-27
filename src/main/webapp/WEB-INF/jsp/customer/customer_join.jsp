@@ -19,6 +19,7 @@
 	
 	<script type="text/javascript">
 			function validation() {
+				var idCheck = $('#idCheck').val();
 				var customerId = document.getElementById("id");
 				var customerPassword = document.getElementById("password");
 				var customerName = document.getElementById("name");
@@ -28,6 +29,11 @@
 				var userPassword = /^(?=.*[a-z])(?=.*[0-9])[0-9A-Za-z$&+,:;=?@#|'<>.^*()%!-]{8,16}$/;
 				var userName = /^[가-힣]{2,6}$/;
 				var phoneNumber = /^[0-9]{2,3}-?[0-9]{3,4}-?[0-9]{4}$/;
+				
+				if (idCheck != "1") {
+					alert("아이디 중복확인을 해주세요");
+					return false;
+				}
 				
 				if ((customerId.value) == "") {
 			        alert("아이디를 입력해주세요.")
@@ -99,6 +105,7 @@
 							alert("사용 가능한 아이디 입니다.")
 							$("#id").attr("readonly",true)
 							$("#user_id").attr("href","#")
+							document.getElementById("idCheck").value="1";
 							
 						}else{
 							alert("이미 존재하는 아이디입니다.")
@@ -155,7 +162,10 @@
 				</ul>
 				<input type="submit" value="가입" style="width:500px; height:50px; margin:20px"/>
 			</form:form>
-			<div><a id="user_id" class="btn" href="javascript:id_check()">중복확인</a></div>
+			<div>
+				<a id="user_id" class="btn" href="javascript:id_check()">중복확인</a>
+				<input type="hidden" name="idCheck" id="idCheck" value="0">
+			</div>
 			
 		</div>
 	</div>

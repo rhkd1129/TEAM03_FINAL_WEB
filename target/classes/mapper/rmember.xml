@@ -31,5 +31,5 @@
 			delete from restaurant where rid=#{rid}
 		</delete>
 
-		
+	
 	</mapper>

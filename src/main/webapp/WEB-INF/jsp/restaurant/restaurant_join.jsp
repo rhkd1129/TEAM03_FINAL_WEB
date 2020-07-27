@@ -19,6 +19,7 @@
 	
 	<script type="text/javascript">
 			function validation() {
+				var idCheck = $('#idCheck').val();
 				var restaurantId = document.getElementById("id");
 				var restaurantPassword = document.getElementById("password");
 				var restaurantName = document.getElementById("name");
@@ -29,6 +30,11 @@
 				var ownerName = /^[가-힣]{2,6}$/;
 				var phoneNumber = /^[0-9]{2,3}-?[0-9]{3,4}-?[0-9]{4}$/;
 				var phoneNumber2 = /^(0(2|3[1-3]|4[1-4]|5[1-5]|6[1-4]))-?(\d{3,4})-?(\d{4})$/;
+				
+				if (idCheck != "1") {
+					alert("아이디 중복확인을 해주세요");
+					return false;
+				}
 				
 				if ((restaurantId.value) == "") {
 			        alert("아이디를 입력해주세요.")
@@ -98,6 +104,7 @@
 							alert("사용 가능한 아이디 입니다.")
 							$("#id").attr("readonly",true)
 							$("#owner_id").attr("href","#")
+							document.getElementById("idCheck").value="1";
 							
 						}else{
 							alert("이미 존재하는 아이디입니다.")
@@ -165,6 +172,7 @@
 			</form:form>
 			<form:form modelAttribute="rmember">
 				<a id="owner_id" class="btn" href="javascript:id_check()">중복확인</a>
+				<input type="hidden" name="idCheck" id="idCheck" value="0">
 			</form:form>
 			
 		</div>

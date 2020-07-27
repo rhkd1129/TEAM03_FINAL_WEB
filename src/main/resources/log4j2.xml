@@ -20,7 +20,7 @@
         </Logger>
     </Loggers>
 
-
+	<Loggers>
         <Logger name="java.sql" level="DEBUG" additivity="false">
             <AppenderRef ref="console" />
         </Logger>

@@ -25,6 +25,7 @@ public class RestaurantDao extends EgovAbstractMapper{
 	public Rmember selectByRid(String rid) {
 		Rmember rmember = selectOne("rmember.selectByRid", rid);
 		return rmember;
+	}
 
 	//레스토랑 가입 insert mapper 불러오기
 	public int insert(Rmember rmember) {
