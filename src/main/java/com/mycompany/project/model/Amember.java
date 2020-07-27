@@ -1,14 +1,16 @@
 package com.mycompany.project.model;
 
+import java.sql.Date;
+
 public class Amember {
 	private String aid;
 	private String apassword;
 	private String aname;
 	private String atitle;
-	private String aadress;
+	private String aadress;  
 	private String atel;
 	private String acategory;
-	private int adate;
+	private Date adate;
 	
 	public String getAid() {
 		return aid;
@@ -52,10 +54,10 @@ public class Amember {
 	public void setAcategory(String acategory) {
 		this.acategory = acategory;
 	}
-	public int getAdate() {
+	public Date getAdate() {
 		return adate;
 	}
-	public void setAdate(int adate) {
+	public void setAdate(Date adate) {
 		this.adate = adate;
 	}
 	
