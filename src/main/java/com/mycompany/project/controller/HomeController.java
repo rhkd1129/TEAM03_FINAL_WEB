@@ -16,5 +16,16 @@ public class HomeController {
 	public String main() {
 		return "home/main";
 	}
+	
+	@RequestMapping("/Sample.do")
+	public String sample() {
+		return "home/Sample";
+	}
+	
+	@RequestMapping("/jusoPopup.do")
+	public String jusoPopup() {
+		return "home/jusoPopup";
+	}
+
 
 }

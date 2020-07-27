@@ -14,13 +14,13 @@
 		</select>
 
 		<select id="selectAllByPage" resultType="rmember">
-			select rid, rpassword, rname, rtitle, radress, rtel, rcategory
+			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
 			from restaurant order by rtel desc limit #{startIndex1}, #{rowsPerPage1}
 		</select>
 
 		<select id="selectByAddr" resultType="rmember">
-			select rid, rpassword, rname, rtitle, radress, rtel, rcategory
-			from restaurant where radress like CONCAT('%',#{emdNm},'%')
+			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
+			from restaurant where radress like CONCAT('%',#{siNm},'%') and radress like CONCAT('%',#{emdNm},'%')
 		</select>
 
 		<select id="count" resultType="int">
@@ -31,5 +31,5 @@
 			delete from restaurant where rid=#{rid}
 		</delete>
 
-	
+
 	</mapper>
