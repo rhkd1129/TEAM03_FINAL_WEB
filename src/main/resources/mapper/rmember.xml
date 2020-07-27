@@ -14,7 +14,7 @@
 		
 		<select id="selectByAddr" resultType="rmember">
 			select rid, rpassword, rname, rtitle, radress, rtel, rcategory
-			from restaurant where radress like CONCAT('%',#{emdNm},'%')
+			from restaurant where radress like CONCAT('%',#{siNm},'%') and radress like CONCAT('%',#{emdNm},'%')
 		</select>
 		
 		<select id="count" resultType="int">
