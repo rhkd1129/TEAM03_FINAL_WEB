@@ -452,13 +452,13 @@
 	   },
 	   
 	   //추가
-	   xAxis: {
-		  className: 'highcharts-color-5',
-		  type: 'datetime',
-		  labels: {
-		  format: '{value:%Y-%M-%d}'
-	      },
-	   },
+	   //바꿔야할 점 : Oct : 현재 시간 / Jan ~ Sep을 이전 시간들로 수정
+	    xAxis: {
+	       className: 'highcharts-color-5',
+	       categories: ['07-18', '07-19', '07-20', '07-21', '07-22', '07-23',
+               '07-24', '07-25', '07-26', '07-27']		
+         },
+	           
 	   yAxis: [{
 	     className: 'highcharts-color-0',
 	     title: {
