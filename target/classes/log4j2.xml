@@ -6,11 +6,12 @@
             <PatternLayout pattern="%5p [%c.%M()] %m%n" />
         </Console>
     </Appenders>
-    
+
     <Loggers>
     	<Logger name="com.mycompany.project" level="DEBUG" additivity="false">
             <AppenderRef ref="console" />
         </Logger>
+
     	<Logger name="java.sql" level="DEBUG" additivity="false">
             <AppenderRef ref="console" />
         </Logger>
@@ -18,6 +19,13 @@
             <AppenderRef ref="console" />
         </Logger>
     </Loggers>
-    
-</Configuration>
 
+        <Logger name="java.sql" level="DEBUG" additivity="false">
+            <AppenderRef ref="console" />
+        </Logger>
+        <Logger name="jdbc.sqltiming" level="DEBUG" additivity="false">
+            <AppenderRef ref="console" />
+        </Logger>
+    </Loggers>
+
+</Configuration>

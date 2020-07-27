@@ -39,7 +39,7 @@
 			<div class="address">
 				<form name="form" id="form" method="post">
 					<input type="text" name="currentPage" value="1" style="display:none;"/> 
-					<input type="text" name="countPerPage" value="10" style="display:none;"/> 
+					<input type="text" name="countPerPage" value="100" style="display:none;"/> 
 					<input type="text" name="resultType" value="json" style="display:none;"/> 
 					<input type="text" name="confmKey" value="U01TX0FVVEgyMDIwMDcyMjEwMTMyNDEwOTk3ODQ=" style="display:none;"/>
 					<input type="text" name="keyword" value="" onkeydown="enterSearch();" style="width: 400px; height: 40px"/>

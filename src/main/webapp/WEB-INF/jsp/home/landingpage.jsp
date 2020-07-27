@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>즈기요</title>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
 		<script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
 		<script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
@@ -39,7 +39,7 @@
 				</div>
 				
 				<div class='column' style="text-align:center;">
-					<a href='${pageContext.request.contextPath}/admin/main.do'>
+					<a href='${pageContext.request.contextPath}/admin/adminlogin.do'>
 						<img class='enter_logo' id='enter_logo3' src="${pageContext.request.contextPath}/resource/image/home/zgiyo_app3.png">
 					</a>
 				</div>

@@ -94,173 +94,36 @@ body{
 
 /* body=============================== */
 
-.logout{
-	width: 150px;
-	height: 40px;
-	border: 1px solid white;
-	color: white;
-	background-color: #f0001e;
+.restaurant_list {
+ 	float: left;
+	width: 1152px;
+	padding: 0px;
+	margin-left: 20%;
 }
 
-.imgboxmain{
-	width: 1903px;
-	height: 930px;
+.restaurant{
 	float: left;
-	background-color: #fafafa;
+	width: 550px;
+	height: 200px;
+	margin: 13px;
+	border: 1px solid #d9d9d9;
 }
 
-.imgboxmain1{
-	width: 1015px;
-	height: 930px;
-	margin-left: 445px;
-	float: left;	
-}
-
-.foodbox1{
+.restaurant_logo{
 	float: left;
-	width: 1015px;
-	height: 225px;
+	width: 30%;
+	height: 100%;
 }
 
-.foodbox2{
+.restaurant_summary{
 	float: left;
-	width: 1015px;
-	height: 225px;
+	width: 70%;
+	height: 100%;
 }
 
-.foodbox3{
-	float: left;
-	width: 1015px;
-	height: 225px;
-}
-
-.foodbox4{
-	float: left;
-	width: 1015px;
-	height: 225px;
-}
-
-#box1-1{
-	float: left;
-	width: 250px;
-	height: 215.5px;	
-	border: 0.5px solid #D8D8D8;
-	margin-top: 9.5px;
-	background-color: rgb(251, 226, 206);
-	cursor: pointer;
-}
-
-#box1-2{
-	float: left;
-	width: 245px;
-	height: 215.5px;	
-	border: 0.5px solid #D8D8D8;
-	margin-left: 9.5px;
-	margin-top: 9.5px;
-	background-color: rgb(24, 21, 60);
-	cursor: pointer;	
-}
-
-.box1-1{
-	float: left;
-	width: 245px;
-	height: 215.5px;	
-	border: 0.5px solid #D8D8D8;
-	margin-left: 9.5px;
-	margin-top: 9.5px;
-	background-color: white;
-	cursor: pointer;
-}
-
-#box2-1{
-	float: left;
-	width: 250px;
-	height: 215.5px;	
-	border: 0.5px solid #D8D8D8;
-	margin-top: 9.5px;
-	background-color: white;
-	cursor: pointer;
-}
-
-.box2-1{
-	float: left;
-	width: 245px;
-	height: 215.5px;	
-	border: 0.5px solid #D8D8D8;
-	margin-left: 9.5px;
-	margin-top: 9.5px;
-	background-color: white;
-	cursor: pointer;
-}
-
-#box3-1{
-	float: left;
-	width: 250px;
-	height: 215.5px;	
-	border: 0.5px solid #D8D8D8;
-	margin-top: 9.5px;
-	background-color: white;
-	cursor: pointer;
-}
-
-.box3-1{
-	float: left;
-	width: 245px;
-	height: 215.5px;	
-	border: 0.5px solid #D8D8D8;
-	margin-left: 9.5px;
-	margin-top: 9.5px;
-	background-color: white;
-	cursor: pointer;	
-}
-
-#box4-1{
-	float: left;
-	width: 250px;
-	height: 215.5px;	
-	border: 0.5px solid #D8D8D8;
-	margin-top: 9.5px;
-	background-color: white;
-	cursor: pointer;
-}
-
-.box4-1{
-	float: left;
-	width: 245px;
-	height: 215.5px;	
-	border: 0.5px solid #D8D8D8;
-	margin-left: 9.5px;
-	margin-top: 9.5px;
-	background-color: white;
-	cursor: pointer;
-}
-
-.foodimg1{
-	width: 220px;
-	height: 210px;	
-	cursor: pointer;
-}
-
-.foodimg2{
-	width: 220px;
-	height: 213px;
-	margin-left: 23px;	
-	cursor: pointer;
-}
-
-.foodimg3{
-	width: 225px;
-	height: 213px;
-	margin-left: 23px;	
-	cursor: pointer;
-}
-
-.viewbox{
-	position: absolute;
-	font-weight: bold;
-	margin-left: 20px;
-	margin-top: 20px;
-	cursor: pointer;
+.restaurant_logo_img{
+	width: 160px;
+	height: 160px;
 }
 
 /* foot=============================== */

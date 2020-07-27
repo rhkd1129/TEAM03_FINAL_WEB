@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.mycompany.project.dao.CustomerDao;
 import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
+import com.mycompany.project.model.Rmember;
 
 @Service
 public class CustomerService {
@@ -55,5 +56,7 @@ public class CustomerService {
 		Cmember cmember = customerDao.selectByMid(mid);
 		return cmember;
 	}
+
+	
 
 }

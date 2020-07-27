@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-	
+
 	<mapper namespace="rmember">
 		<insert id="insert" parameterType="rmember">
 			insert into restaurant (rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate)
 			values (#{rid}, #{rpassword}, #{rname}, #{rtitle}, #{radress}, #{rtel}, #{rcategory}, NOW())
 		</insert>
-		
+
+
 		<select id="selectByRid" parameterType="String" resultType="rmember">
 			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate from restaurant
 			where rid = #{rid}
 		</select>
+
+		<select id="selectAllByPage" resultType="rmember">
+			select rid, rpassword, rname, rtitle, radress, rtel, rcategory
+			from restaurant order by rtel desc limit #{startIndex1}, #{rowsPerPage1}
+		</select>
+
+		<select id="selectByAddr" resultType="rmember">
+			select rid, rpassword, rname, rtitle, radress, rtel, rcategory
+			from restaurant where radress like CONCAT('%',#{emdNm},'%')
+		</select>
+
+		<select id="count" resultType="int">
+			select count(*) from restaurant
+		</select>
+
+		<delete id="deleteByRid">
+			delete from restaurant where rid=#{rid}
+		</delete>
+
+		
 	</mapper>

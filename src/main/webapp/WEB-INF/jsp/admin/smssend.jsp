@@ -1,4 +1,5 @@
-    <%@ page language="java" import="java.util.*, java.security.*, java.io.*, java.net.*" %>
+<%@ page language="java" import="java.util.*, java.security.*, java.io.*, java.net.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%response.setCharacterEncoding("UTF-8");%>
     <%! /**==============================================================
       Description        :  사용 함수 선언
@@ -9,8 +10,7 @@
      * @return
      */
 
-     public static String nullcheck(String str,  String Defaultvalue ) throws Exception
-     {
+     public static String nullcheck(String str,  String Defaultvalue ) throws Exception{
           String ReturnDefault = "" ;
           if (str == null)
           {
@@ -50,6 +50,7 @@
         return result ;
     }
     %>
+    
     <%
     /**==============================================================
       Description        : 캐릭터셋 정의
@@ -57,7 +58,9 @@
       UTF-8: @ page contentType="text/html;charset=UTF-8
     ==============================================================**/
     %>
+    
     <%@ page contentType="text/html;charset=EUC-KR"%>
+    
     <%
     /**==============================================================
       Description        :  사용자 샘플코드
@@ -166,7 +169,7 @@
             wr.write("Content-type: multipart/form-data, boundary="+boundary+"\r\n");
             wr.write("\r\n");
 
-            // 데이터 전송
+            // 데이터 전송 
             wr.write(data);
             wr.flush();
 
@@ -207,6 +210,7 @@
 
             if(nointeractive.equals("1") && !(Result.equals("Test Success!")) && !(Result.equals("success")) && !(Result.equals("reserved")) ) {
                 out.println("<script>alert('" + alert + "')</script>");
+	
             }
             else if(!(nointeractive.equals("1"))) {
                 out.println("<script>alert('" + alert + "')</script>");
@@ -215,6 +219,12 @@
         }
 
         out.println("<script>location.href='"+returnurl+"';</script>");
+        
+        //전송 완료 시  main으로 이동 함수 호출
+
     }
+    
     %>
-                
+    
+<c:redirect url="/admin/main.do"></c:redirect>
+         
