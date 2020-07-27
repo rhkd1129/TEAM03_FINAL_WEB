@@ -2,6 +2,8 @@ package com.mycompany.project.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,7 @@ import com.mycompany.project.model.Rmember;
 
 @Service
 public class RestaurantService {
+	private static final Logger LOGGER = LoggerFactory.getLogger(RestaurantService.class); 
 	
 	//레스토랑 dao 불러오기
 	@Autowired
@@ -37,5 +40,11 @@ public class RestaurantService {
 		restaurantDao.deleteByRid(rid);
 		System.out.println("2");
 
+	}
+
+	public List<Rmember> getRestaurantList(String siNm, String emdNm) {
+		List<Rmember> list = restaurantDao.selectByAddr(siNm, emdNm);
+		LOGGER.info("실행");
+		return list;
 	}
 }

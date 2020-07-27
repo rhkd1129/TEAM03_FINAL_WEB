@@ -34,7 +34,11 @@ function makeListJson(jsonStr){
 	$(jsonStr.results.juso).each(function(){
 		htmlStr += "<tr>";
 		htmlStr += '<td id="eachaddress">';
-		htmlStr += '<a href="/project/customer/customer_search.do?roadAddr=' + this.roadAddr + "&bdNm=" + this.bdNm + '">'+this.roadAddr+ " " +this.bdNm+"</a>";
+		htmlStr += '<a href="/project/customer/customer_search.do?roadAddr=' + this.roadAddr 
+		+ "&siNm=" + this.siNm
+		+ "&emdNm=" + this.emdNm
+		+ "&bdNm=" + this.bdNm 
+		+ '">'+this.roadAddr+ " " +this.bdNm+"</a>";
 		htmlStr += "</td>";
 		htmlStr += "</tr>"; 
 	});

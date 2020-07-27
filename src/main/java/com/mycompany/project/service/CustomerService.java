@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.mycompany.project.dao.CustomerDao;
 import com.mycompany.project.model.Cmember;
+import com.mycompany.project.model.Rmember;
 
 @Service
 public class CustomerService {
@@ -33,5 +34,7 @@ public class CustomerService {
 		System.out.println("2");
 
 	}
+
+	
 
 }

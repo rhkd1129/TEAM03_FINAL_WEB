@@ -46,16 +46,18 @@
 
  
 	<div class="restaurant_list">
-		<c:forEach var="restaurant" items="${restaurantList}">
+		<c:forEach var="restaurant" items="restaurantList">
 		
 		<div class="restaurant" style="cursor:pointer;" 
-			onclick="location.href='${pageContext.request.contextPath}/customer/customer_r_info.do?rid=${restaurant.rid}';">
+			onclick="location.href='${pageContext.request.contextPath}/customer/restaurant_detail.do?rid=${restaurant.rid}';">
 			<div class="restaurant_logo">
-				<img class="restaurant_logo_img" src="${pageContext.request.contextPath}/resource/image/restaurant/logo/${restaurant.rid}.png">
+				<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/${restaurant.rid}.png">
 			</div>
 			<div class="restaurant_summary">
 				<table>
-					<tr class="restaurant_title"><td>${restaurant.rtitle}</td></tr>
+					<tr class="restaurant_title"><td>${restaurant.rid}</td></tr>
+					<tr class="restaurant_title"><td></td></tr>
+					<tr class="restaurant_title"><td></td></tr>
 				</table>
 			</div>
 		</div>
