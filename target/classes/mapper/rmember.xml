@@ -3,17 +3,17 @@
 	
 	<mapper namespace="rmember">
 		<insert id="insert" parameterType="rmember">
-			insert into restaurant (rid, rpassword, rname, rtitle, radress, rtel, rcategory)
+			insert into restaurant (rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate)
 			values (#{rid}, #{rpassword}, #{rname}, #{rtitle}, #{radress}, #{rtel}, #{rcategory})
 		</insert>
 		
 		<select id="selectAllByPage" resultType="rmember">
-			select rid, rpassword, rname, rtitle, radress, rtel, rcategory
+			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
 			from restaurant order by rtel desc limit #{startIndex1}, #{rowsPerPage1}
 		</select>
 		
 		<select id="selectByAddr" resultType="rmember">
-			select rid, rpassword, rname, rtitle, radress, rtel, rcategory
+			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
 			from restaurant where radress like CONCAT('%',#{siNm},'%') and radress like CONCAT('%',#{emdNm},'%')
 		</select>
 		

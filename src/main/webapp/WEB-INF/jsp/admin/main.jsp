@@ -177,11 +177,11 @@
 					<div class="mySlides" id="rlistmain">
 						<div class="rlist">
 							<div class="rlistid">Id</div>
-							<div class="rlistpw">Password</div>						
+							<div class="rlistpw">Title</div>						
 							<div class="rlistname">Name</div>
 							<div class="rlisttel">Tel</div>		
 							<div class="rlistadress">Adress</div>
-							<div class="rlisttitle">Title</div>							
+							<div class="rlisttitle">Date</div>							
 							<div class="rlistcategory">Category</div>
 							<div class="rlistdelete">Unlock</div>	
 							
@@ -192,11 +192,13 @@
 								<c:forEach var="rmember" items="${rmemberlist}">
 									<tr class="rlistTR">
 										<td class="rlistidTD">${rmember.rid}</td>
-										<td class="rlistpwTD">${rmember.rpassword}</td>								
+										<td class="rlistpwTD">${rmember.rtitle}</td>								
 										<td class="rlistnameTD">${rmember.rname}</td>
 										<td class="rlisttelTD">${rmember.rtel}</td>
 										<td class="rlistadressTD">${rmember.radress}</td>																		
-										<td class="rlisttitleTD">${rmember.rtitle}</td>	
+										<td class="rlisttitleTD">
+											<fmt:formatDate value="${rmember.rdate}" pattern="yyyy년 MM월 dd일"/>
+										</td>	
 										<td class="rlistcategoryTD">${rmember.rcategory}</td>
 										<td class="rlistdeleteTD"><div id="${rmember.rid}" class="btn btn-secondary btn-sm deleteX2">X</div></td>						
 									</tr>
