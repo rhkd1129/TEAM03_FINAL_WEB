@@ -136,7 +136,7 @@
 											<fmt:formatDate value="${cmember.mdate}" pattern="yyyy년 MM월 dd일"/>
 										</td>									
 										<td class="mlistdeleteTD"><div id="${cmember.mid}" class="btn btn-secondary btn-sm deleteX">X</div></td>						
-									</tr>
+									</tr>  
 								</c:forEach>
 							</table>
 							<div class="pagenum1">현재 회원 가입자 수 : ${pager.totalRows}명</div>
