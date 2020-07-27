@@ -1,12 +1,14 @@
 package com.mycompany.project.model;
 
+import java.sql.Date;
+
 public class Cmember {
 	private String mid;
 	private String mpassword;
 	private String mname;
 	private String mtel;
 	private String madress;
-	private int mdate;
+	private Date mdate;
 	
 	public String getMid() {
 		return mid;
@@ -38,11 +40,13 @@ public class Cmember {
 	public void setMadress(String madress) {
 		this.madress = madress;
 	}
-	public int getMdate() {
+	public Date getMdate() {
 		return mdate;
 	}
-	public void setMdate(int mdate) {
+	public void setMdate(Date mdate) {
 		this.mdate = mdate;
 	}
+
+	
 
 }

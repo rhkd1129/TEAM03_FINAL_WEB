@@ -7,29 +7,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta charset="UTF-8">
-   <title>Admin Page</title>
-   <!-- SMS import -->
-   	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.css">
-	
-	<!-- main import -->
-   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
-   <script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
-   <script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
-   <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
-   <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
+    <title>Admin Page</title>
+    <meta charset="UTF-8"> 
+    
+    <!-- SMS import 1 (필요x?) -->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+<!-- 	<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+      
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.css">	
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
+    <script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
+    <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>  
    
-   <!-- css import -->
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">   
-   <!-- SMS import -->   
-   	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
+    <!-- hichart --> 
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>	
+	
+    <!-- css import -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">  
+    
+
+    
+<!--   SMS import 2 (필요x?)  -->
+<!--   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> 	 -->
+	
 </head>
-<body style="overflow: hidden;" id="adminmainpage">
+<body style="overflow: hidden;" id="adminmainpage" class="nav-md">
 	<div class="bodymainbox">
 		<!-- /* 메뉴바 bigbox */ ------------------------------------------------------------------------>
 		<div class="navbarmain">
@@ -123,10 +132,9 @@
 										<td class="mlistnameTD">${cmember.mname}</td>
 										<td class="mlisttelTD">${cmember.mtel}</td>
 										<td class="mlistadressTD">${cmember.madress}</td>																																																		
-										<td class="mlistdateTD">${cmember.mdate}</td>	
-<!-- 										<td> -->
-<%-- 											<fmt:formatDate value="${cmember.mdate}" pattern="yyyy년 MM월 dd일"/> --%>
-<!-- 										</td> -->									
+										<td class="mlistdateTD">
+											<fmt:formatDate value="${cmember.mdate}" pattern="yyyy년 MM월 dd일"/>
+										</td>									
 										<td class="mlistdeleteTD"><div id="${cmember.mid}" class="btn btn-secondary btn-sm deleteX">X</div></td>						
 									</tr>
 								</c:forEach>
@@ -265,6 +273,45 @@
 			</div>
 			<!-- member + Restaurant data ==========================================-->
 			<div class="viewbox2">
+			
+				<figure class="highcharts-figure">
+				    <div id="container"></div>
+				</figure>
+				
+				<a href="${pageContext.request.contextPath}/admin/chart.do">chart page</a>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
+
+
 
 
 
@@ -341,12 +388,12 @@
 			    			<tr>
 			    				<td> 
 			    					<!-- 받는 사람 전화번호 설정 필요! -->
-									<input id="SMSinput" class="form-control" type="text" name="rphone" value="010-5059-8673" readonly="readonly">
+									<input id="SMSinput" class="form-control" type="text" name="rphone" value="010-8832-7217" readonly="readonly">
 			    				</td>
 			    			</tr>  	
 			    			<tr>
 			    				<td>
-									[주의 사항 : 『문자는 신중하게!』 『전송은 빠르게!』 『내용은 안전하게!』]
+									주의 사항 : 『문자는 신중하게!』 『전송은 빠르게!』 『내용은 안전하게!』
 			    				</td>
 			    			</tr>  	
 			    			<tr>
@@ -386,8 +433,91 @@
 	
 </body>
 
-<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
-<script>
+<!-- SMS import 3 (필요x?) 	 -->
+<!-- <script src="//code.jquery.com/jquery-3.4.1.min.js"></script> -->
+<script type="text/javascript">
+
+// hichart js
+ Highcharts.chart('container', {
+
+	   chart: {
+	     type: 'column',
+	     styledMode: true
+	   },
+
+	   title: {
+	     text: '등록 회원 및 등록 가게 현황'
+	   },
+	   
+	   //추가
+	   xAxis: {
+		  className: 'highcharts-color-5',
+		  type: 'datetime',
+		  labels: {
+		  format: '{value:%Y-%M-%d}'
+	      },
+	   },
+	   yAxis: [{
+	     className: 'highcharts-color-0',
+	     title: {
+	       text: '등록 회원 명단'
+	     }
+	   }, {
+	     className: 'highcharts-color-1',
+	     opposite: true,
+	     title: {
+	       text: '등록 가게 명단'
+	     }
+	   }],
+
+	   plotOptions: {
+	     column: {	    	 
+	       borderRadius: 5
+	     }	 	     
+	   },
+	   
+	   //hichart 하단 링크 제거
+	   credits: {
+           enabled: false
+       },
+       
+       //hichart 상단 메뉴 제거
+       exporting: {
+           enabled: false
+       },       
+
+	   series: [{
+		 name: '회원 수',
+	     data: [5, 13, 20, 27, 36, 38, 47, 54, 56, 61]
+	   }, {
+		 name: '가게 수',
+	     data: [2, 10, 17, 18, 20, 24, 30, 33, 37, 43],
+	     yAxis: 1
+	   }]
+
+	 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //차량 도착 시 자동 문자 전송 [테스트] start =======================================================
 $(".carimage1").hide();
 $(".carimage2").hide();

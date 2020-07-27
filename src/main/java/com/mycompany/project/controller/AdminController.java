@@ -93,6 +93,10 @@ public class AdminController {
 		return "admin/smssend";
 	}	
 
-
+	//차트 예제
+	@RequestMapping("/chart.do")
+	public String chart() {
+		return "admin/chart";
+	}	
 
 }
