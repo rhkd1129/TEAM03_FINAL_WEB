@@ -3,7 +3,7 @@
 	
 	<mapper namespace="amember">
 		<insert id="insert" parameterType="amember">
-			insert into admin (aid, apassword, aname, atitle, aadress, atel, acategory)
-			values (#{aid}, #{apassword}, #{aname}, #{atitle}, #{aadress}, #{atel}, #{acategory})
+			insert into admin (aid, apassword, aname, atitle, aadress, atel, acategory, adate)
+			values (#{aid}, #{apassword}, #{aname}, #{atitle}, #{aadress}, #{atel}, #{acategory}, NOW())
 		</insert>
 	</mapper>

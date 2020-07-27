@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.mycompany.project.dao.RestaurantDao;
 import com.mycompany.project.model.Amember;
+import com.mycompany.project.model.Rmember;
 
 @Service
 public class RestaurantService {
@@ -14,6 +15,11 @@ public class RestaurantService {
 	
 	public void join(Amember amember) {
 		restaurantDao.insert(amember);
+	}
+
+	public Rmember getRmember(String rid) {
+		Rmember rmember = restaurantDao.selectByRid(rid);
+		return rmember;
 	}
 
 }

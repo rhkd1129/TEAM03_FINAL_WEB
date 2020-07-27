@@ -1,18 +1,19 @@
 package com.mycompany.project.model;
 
 public class Amember {
-	private int aid;
+	private String aid;
 	private String apassword;
 	private String aname;
 	private String atitle;
 	private String aadress;
 	private String atel;
 	private String acategory;
+	private int adate;
 	
-	public int getAid() {
+	public String getAid() {
 		return aid;
 	}
-	public void setAid(int aid) {
+	public void setAid(String aid) {
 		this.aid = aid;
 	}
 	public String getApassword() {
@@ -50,6 +51,12 @@ public class Amember {
 	}
 	public void setAcategory(String acategory) {
 		this.acategory = acategory;
+	}
+	public int getAdate() {
+		return adate;
+	}
+	public void setAdate(int adate) {
+		this.adate = adate;
 	}
 	
 }

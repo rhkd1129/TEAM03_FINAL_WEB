@@ -8,6 +8,7 @@ public class Rmember {
 	private String radress;
 	private String rtel;
 	private String rcategory;
+	private int rdate;
 	
 	public String getRid() {
 		return rid;
@@ -50,6 +51,12 @@ public class Rmember {
 	}
 	public void setRcategory(String rcategory) {
 		this.rcategory = rcategory;
+	}
+	public int getRdate() {
+		return rdate;
+	}
+	public void setRdate(int rdate) {
+		this.rdate = rdate;
 	}
 	
 }

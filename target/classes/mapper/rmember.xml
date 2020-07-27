@@ -3,7 +3,12 @@
 	
 	<mapper namespace="rmember">
 		<insert id="insert" parameterType="rmember">
-			insert into restaurant (rid, rpassword, rname, rtitle, radress, rtel, rcategory)
-			values (#{rid}, #{rpassword}, #{rname}, #{rtitle}, #{radress}, #{rtel}, #{rcategory})
+			insert into restaurant (rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate)
+			values (#{rid}, #{rpassword}, #{rname}, #{rtitle}, #{radress}, #{rtel}, #{rcategory}, NOW())
 		</insert>
+		
+		<select id="selectByRid" parameterType="String" resultType="rmember">
+			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate from restaurant
+			where rid = #{rid}
+		</select>
 	</mapper>

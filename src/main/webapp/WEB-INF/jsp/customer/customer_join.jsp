@@ -14,17 +14,15 @@
 	<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/maincss.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_maincss.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_logincss.css">
 	
 	<script type="text/javascript">
 			function validation() {
-				console.log("인태시 바보 멍청이ㄹㅇㄻㅇㄻㅇㅁㅅㅎㅁㅁㄹㄹㄹㄹㄹㄹㄹㄹㄹ");
 				var customerId = document.getElementById("id");
 				var customerPassword = document.getElementById("password");
 				var customerName = document.getElementById("name");
 				var customerTel = document.getElementById("tel");
-				var customerAdress = document.getElementById("adress");
 				
 				var userId = /^[A-Za-z0-9+]{6,12}$/;
 				var userPassword = /^(?=.*[a-z])(?=.*[0-9])[0-9A-Za-z$&+,:;=?@#|'<>.^*()%!-]{8,16}$/;
@@ -32,40 +30,40 @@
 				var phoneNumber = /^[0-9]{2,3}-?[0-9]{3,4}-?[0-9]{4}$/;
 				
 				if ((customerId.value) == "") {
-			        alert("아이디를 입력해주세요")
+			        alert("아이디를 입력해주세요.")
 			        return false;
 			    }
 				
-			    if (!check(userId, customerId, "대/소문자 구분 없이 6~12자리의 알파벳+숫자로 입력해주세요")) {
+			    if (!check(userId, customerId, "대/소문자 구분 없이 6~12자리의 알파벳+숫자로 입력해주세요.")) {
 			        return false;
 			    }
 			    
 			    if ((customerPassword.value) == "") {
-			        alert("비밀번호를 입력해주세요")
+			        alert("비밀번호를 입력해주세요.")
 			        customerPassword.focus();
 			        return false;
 			    }
 			    
-			    if (!check(userPassword, customerPassword, "최소 하나의 소문자와 숫자가 포함된\n8~16자리의 비밀번호를 입력해주세요")) {
+			    if (!check(userPassword, customerPassword, "최소 하나의 소문자와 숫자가 포함된\n8~16자리의 비밀번호를 입력해주세요.")) {
 			        return false;
 			    }
 			    
 			    if ((customerName.value)=="") {
-		            alert("이름을 입력해 주세요");
+		            alert("이름을 입력해 주세요.");
 		            customerName.focus();
 		            return false;
 		        }
 		        
-		        if (!check(userName, customerName, "이름이 잘못 되었습니다")) {
+		        if (!check(userName, customerName, "이름이 잘못 되었습니다.")) {
 		            return false;
 		        }
 				
 				if ((customerTel.value) == "") {
-					alert("전화번호를 입력해주세요");
+					alert("전화번호를 입력해주세요.");
 			        return false;
 			    }
 				
-			    if (!check(phoneNumber, customerTel, "전화번호를 제대로 입력해주세요 ex)01x-xxxx-xxxx")) {
+			    if (!check(phoneNumber, customerTel, "전화번호를 제대로 입력해주세요. ex)01x-xxxx-xxxx")) {
 			    	return false;
 			    }
 			    
@@ -79,7 +77,45 @@
 			    what.value="";
 			    what.focus();
 			}
-		</script>
+	</script>
+	<script type="text/javascript">
+			function id_check(){
+				var customerId = document.getElementById("id");
+				var userId = /^[A-Za-z0-9+]{6,12}$/;
+				console.log("11111111111111111111111111111111")
+				$.ajax({
+					url:"idcheck.do",
+					type:"post",
+					data:{mid:$("#id").val()},
+					success: function(data) {
+						console.log("22222222222222222222222222222222222222222")
+						if(data.result == "success"){
+							if ($("#id").val() == "") {
+								alert("아이디를 입력해주세요.")
+								return false;
+							} else if (!check(userId, customerId, "대/소문자 구분 없이 6~12자리의 알파벳+숫자로 입력해주세요.")) {
+								return false;
+						}
+							alert("사용 가능한 아이디 입니다.")
+							$("#id").attr("readonly",true)
+							$("#user_id").attr("href","#")
+							
+						}else{
+							alert("이미 존재하는 아이디입니다.")
+						}
+					}
+				})
+			}
+			
+			function check(re, what, message) {
+			    if (re.test(what.value)) {
+			       return true;
+			    }
+			    alert(message);
+			    what.value="";
+			    what.focus();
+			}
+	</script>
 </head>
 <body>
 	<div class="navbar1">
@@ -119,6 +155,7 @@
 				</ul>
 				<input type="submit" value="가입" style="width:500px; height:50px; margin:20px"/>
 			</form:form>
+			<div><a id="user_id" class="btn" href="javascript:id_check()">중복확인</a></div>
 			
 		</div>
 	</div>

@@ -7,6 +7,11 @@
 			values (#{mid}, #{mpassword}, #{mname}, #{mtel}, #{madress}, NOW())
 		</insert>
 		
+		<select id="selectByMid" parameterType="String" resultType="cmember">
+			select mid, mpassword, mname, mtel, madress, mdate from customer
+			where mid = #{mid}
+		</select>
+		
 		<select id="selectAllByPage" resultType="cmember">
 			select mid, mpassword, mname, mtel, mdate, madress
 			from customer order by mtel desc limit #{startIndex}, #{rowsPerPage}

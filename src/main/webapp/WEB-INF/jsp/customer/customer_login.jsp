@@ -14,7 +14,7 @@
 	<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/maincss.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_maincss.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_logincss.css">
 </head>
 <body>
@@ -36,9 +36,15 @@
 					<li>
 						<form:input path="mid" style="width:500px; height:50px;"/>
 					</li>
+					<li>
+						<form:errors path="mid" style="color:red"/>
+					</li>
 					<li>비밀번호</li>
 					<li>
-						<form:input path="mpassword" style="width:500px; height:50px;"/>
+						<form:password path="mpassword" style="width:500px; height:50px;"/>
+					</li>
+					<li>
+						<form:errors path="mpassword" style="color:red"/>
 					</li>				
 				</ul>
 				<input type="submit" value="로그인" style="width:500px; height:50px; margin:20px"/>
