@@ -36,9 +36,6 @@
 	
     <!-- css import -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">  
-    
-	<!--SMS import 2 (필요x?)  -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	
 </head>
 <script type="text/javascript">
@@ -50,7 +47,7 @@ var persenttotalmember = (totalmembernum / 100) * 100;
 //회원 데이터 * px 값
 var persentpx = persenttotalmember * 7.4;//170.2px
 
-$("#onebarpersent").css("width",persentpx);
+$("#onebarpersent").css("width",String(persentpx));
 
 //최근 10일간 신규 가게 등록 수
 var Rtotalmembernum = ${RTodayNolist} + ${RYesterday1Nolist} + ${RYesterday2Nolist} + ${RYesterday3Nolist} + ${RYesterday4Nolist}
@@ -59,7 +56,7 @@ var Rpersenttotalmember = (Rtotalmembernum / 100) * 100;
 //가게 데이터 * px 값
 var Rpersentpx = Rpersenttotalmember * 7.4; //118.4px
 
-$("#twobarpersent").css("width",Rpersentpx);
+$("#twobarpersent").css("width",String(Rpersentpx));
 </script>
 <body style="overflow: hidden;" id="adminmainpage" class="nav-md">
 	<div class="bodymainbox">
@@ -298,26 +295,30 @@ $("#twobarpersent").css("width",Rpersentpx);
 			</div>
 			<!-- member + Restaurant data ==========================================-->
 			<div class="viewbox2">
-			
-				<figure class="highcharts-figure">
-				    <div id="container"></div>
+				<!-- 즈기요 성장 차트 ------------------------------------------------------>
+				<figure class="highcharts-figure2">
+				    <div id="container2"></div>
+				</figure>
+				
+				
+				<!-- 회원수 , 가게수 차트 + 바 ----------------------------------------------->
+				<figure class="highcharts-figure1">
+				    <div id="container1"></div>
 				</figure>
 				
 				<div class="progress">
 				    <div class="progress-bar progress-bar-info progress-bar-striped" id="onebarpersent" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" 
-				     style="width:300px;">
-				      회원 목표치 : <script type="text/javascript">document.write(persenttotalmember);</script> %
+				     style="width:50px;">
+				      7월 회원 목표치 : <script type="text/javascript">document.write(persenttotalmember);</script> %
 				    </div>
 			    </div>
 				
 				<div class="progress">
 			    	<div class="progress-bar progress-bar-success progress-bar-striped" id="twobarpersent"  role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" 
-			    	style="width:300px;">
-			      	가게 목표치 : <script type="text/javascript">document.write(Rpersenttotalmember);</script> %
+			    	style="width:50px;">
+			      	  7월 가게 목표치 : <script type="text/javascript">document.write(Rpersenttotalmember);</script> %
 			    	</div>
 			    </div>
-				
-				<!-- 총 게이지 : 1%당 7.4px로 계산 -->
 				
 				
 				
@@ -389,6 +390,13 @@ $("#twobarpersent").css("width",Rpersentpx);
 					<img class="carimage10" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
 				<div class="light11"></div>
 					<img class="carimage11" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
+					
+				<!-- 만들어야할 것들 -->	
+				<!-- 1. IOT트랙 맵 구현 -->
+				<!-- 2. 현재 매장의 위치, 가맹점의 위치, 고객들의 위치 구현 -->
+				<!-- 3. 고객 주문 시 맵에 주문창 생성 , 도착 시 주문창 제거 -->
+				<!-- 4. 최단 경로 자동 설정ㄴ -->
+		
 			</div>
 			
 			<!-- SMS Send Page =================================-->
@@ -447,27 +455,99 @@ $("#twobarpersent").css("width",Rpersentpx);
 			
 			<!-- member + device + instrument list =================================-->
 			<div class="viewbox4">
-				<div class="extrack2"></div>	
+					ssssssssssssssssssssssss
 			</div>
 			<!-- member + device + instrument data =================================-->
 			<div class="viewbox5">
+					aaaaaaaaaaaaaaaaaaaaaaaa
 			</div>
 			<!-- member + device + instrument map =================================-->
 			<div class="viewbox6">
+					dddddddddddddddddddddddd
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			</div>
 			
 		</div>
 	</div>
 	
 </body>
-
-<!-- SMS import 3 (필요x?) 	 -->
-<!-- <script src="//code.jquery.com/jquery-3.4.1.min.js"></script> -->
 <script type="text/javascript">
+/* Map script */
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+//Progress bar [중복 주의!!!]--------------------------------------------------------------------------- 
+//최근 10일간 신규 회원 등록 수
+var totalmembernum = ${TodayNolist} + ${Yesterday1Nolist} + ${Yesterday2Nolist} + ${Yesterday3Nolist} + ${Yesterday4Nolist}
++${Yesterday5Nolist} + ${Yesterday6Nolist} + ${Yesterday7Nolist} + ${Yesterday8Nolist} + ${Yesterday9Nolist};
+var persenttotalmember = (totalmembernum / 100) * 100;
+//회원 데이터 * px 값
+var persentpx = persenttotalmember * 7.4;//170.2px
+
+$("#onebarpersent").css("width",String(persentpx));
+
+//최근 10일간 신규 가게 등록 수
+var Rtotalmembernum = ${RTodayNolist} + ${RYesterday1Nolist} + ${RYesterday2Nolist} + ${RYesterday3Nolist} + ${RYesterday4Nolist}
++${RYesterday5Nolist} + ${RYesterday6Nolist} + ${RYesterday7Nolist} + ${RYesterday8Nolist} + ${RYesterday9Nolist};
+var Rpersenttotalmember = (Rtotalmembernum / 100) * 100;
+//가게 데이터 * px 값
+var Rpersentpx = Rpersenttotalmember * 7.4; //118.4px
+
+$("#twobarpersent").css("width",String(Rpersentpx));
 
 //---------------------------------------------------------------------------  
 //공동 사용 (현재 날짜)
@@ -662,13 +742,123 @@ if(nineyesterDay < 10) { nineyesterDay = "0" + nineyesterDay; }
 
 var nineyesterDate = nineyesterMonth + "-" + nineyesterDay;// 연도는 길어서 제외
 
-//--------------------------------------------------------------------------- 
-// hichart js
-Highcharts.chart('container', {
+//hichart script--------------------------------------------------------------------------- 
+/* 즈기요 성장량 계산 */
+
+//멤버 성장률
+var yes9 = yester9list*33.33;
+var yes8 = yester8list*33.33;
+var yes7 = yester7list*33.33;
+var yes6 = yester6list*33.33;
+var yes5 = yester5list*33.33;
+var yes4 = yester4list*33.33;
+var yes3 = yester3list*33.33;
+var yes2 = yester2list*33.33;
+var yes1 = yester1list*33.33;
+var yes0 = todaylist*33.33;
+
+//가게 성장률
+var Ryes9 = Ryester9list*33.33;
+var Ryes8 = Ryester8list*33.33;
+var Ryes7 = Ryester7list*33.33;
+var Ryes6 = Ryester6list*33.33;
+var Ryes5 = Ryester5list*33.33;
+var Ryes4 = Ryester4list*33.33;
+var Ryes3 = Ryester3list*33.33;
+var Ryes2 = Ryester2list*33.33;
+var Ryes1 = Ryester1list*33.33;
+var Ryes0 = Rtodaylist*33.33;
+
+//멤버 , 가게 성장률 평균
+var chart0 = (yes0 + Ryes0) / 2;
+var chart1 = (yes1 + Ryes1) / 2;
+var chart2 = (yes2 + Ryes2) / 2;
+var chart3 = (yes3 + Ryes3) / 2;
+var chart4 = (yes4 + Ryes4) / 2;
+var chart5 = (yes5 + Ryes5) / 2;
+var chart6 = (yes6 + Ryes6) / 2;
+var chart7 = (yes7 + Ryes7) / 2;
+var chart8 = (yes8 + Ryes8) / 2;
+var chart9 = (yes9 + Ryes9) / 2;
+
+//3분야 평균점[이동평균]
+var realchart1 = (chart0 + chart1 + chart2) / 3
+var realchart2 = (chart1 + chart2 + chart3) / 3
+var realchart3 = (chart2 + chart3 + chart4) / 3
+var realchart4 = (chart3 + chart4 + chart5) / 3
+var realchart5 = (chart4 + chart5 + chart6) / 3
+var realchart6 = (chart5 + chart6 + chart7) / 3
+var realchart7 = (chart6 + chart7 + chart8) / 3
+var realchart8 = (chart7 + chart8 + chart9) / 3
+
+//소수점 반올림
+chart9 = Math.round(chart9);
+realchart8 = Math.round(realchart8);
+realchart7 = Math.round(realchart7);
+realchart6 = Math.round(realchart6);
+realchart5 = Math.round(realchart5);
+realchart4 = Math.round(realchart4);
+realchart3 = Math.round(realchart3);
+realchart2 = Math.round(realchart2);
+realchart1 = Math.round(realchart1);
+chart0 = Math.round(chart0);
+
+// 즈기요 성장 차트------------------------------------------------
+Highcharts.chart('container2', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: ''
+    },
+    subtitle: {
+        text: '그룹 성장 현황'
+    },
+    xAxis: {
+        categories: [nineyesterDate , eightyesterDate , sevenyesterDate , sixyesterDate , fiveyesterDate , fouryesterDate ,
+     	   threeyesterDate , twoyesterDate , yesterDate , todayDate]
+    },
+    yAxis: {
+        title: {
+            text: '성장량 (1일 기준 : 100)'
+        }
+    },
+    //hichart 하단 링크 제거
+    credits: {
+           enabled: false
+       },
+       
+       //hichart 상단 메뉴 제거
+    exporting: {
+        enabled: false
+    },   
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series: [{
+        name: '성장량',
+        data: [chart9, realchart8, realchart7, realchart6, realchart5, realchart4, realchart3, realchart2, realchart1, chart0]
+    }, {
+        name: '매출액',
+        data: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    }]
+});
+
+
+// 회원수 , 가게수 차트 + 바------------------------------------------------
+Highcharts.chart('container1', {
 
    chart: {
      type: 'column',
      styledMode: true
+   },
+   subtitle: {
+       text: '이용자 현황'
    },
 
    title: {
@@ -707,9 +897,9 @@ Highcharts.chart('container', {
       },
       
       //hichart 상단 메뉴 제거
-      exporting: {
-          enabled: false
-      },       
+   exporting: {
+       enabled: false
+   },       
 
    series: [{
 	 name: '회원 수',
@@ -1282,19 +1472,20 @@ $(document).ready(function(){
 				$(".viewbox6").hide();
 				check6 = 0;	
 				
-				$(".btnHome4").css("background-color","");
-				$(".btnHome4").css("box-shadow","");
-				$(".btnHome4").css("border-right","");	
-				$(".ring4").hide();
-				$(".viewbox4").hide();
-				check0 = 0;						
-				
 				$(".btnHome9").css("background-color","");
 				$(".btnHome9").css("box-shadow","");
 				$(".btnHome9").css("border-right","");	
 				$(".ring9").hide();
 				$(".viewbox9").hide();
 				check9 = 0;			
+				
+			}else if(check4 == 1){
+				$(".btnHome4").css("background-color","");
+				$(".btnHome4").css("box-shadow","");
+				$(".btnHome4").css("border-right","");	
+				$(".ring4").hide();
+				$(".viewbox4").hide();
+				check4 = 0;						
 			};
 		});	
 		
