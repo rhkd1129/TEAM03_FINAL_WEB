@@ -1,5 +1,7 @@
 package com.mycompany.project.model;
 
+import java.sql.Date;
+
 public class Rmember {
 	private String rid;
 	private String rpassword;
@@ -8,7 +10,14 @@ public class Rmember {
 	private String radress;
 	private String rtel;
 	private String rcategory;
+	private Date rdate;
 	
+	public Date getRdate() {
+		return rdate;
+	}
+	public void setRdate(Date rdate) {
+		this.rdate = rdate;
+	}
 	public String getRid() {
 		return rid;
 	}

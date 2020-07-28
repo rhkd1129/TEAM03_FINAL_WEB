@@ -20,6 +20,51 @@
 			delete from customer where mid=#{mid}
 		</delete>
 		
+		<select id="countbytoday" resultType="int">
+			select count(*) from customer where mdate = date_format(now(),'%Y-%m-%d')
+		</select>
+		
+		<select id="countbyyesterday" resultType="int">
+			select count(*) from customer where mdate = CURDATE() - INTERVAL 1 DAY;
+		</select>		
+		
+		<select id="countby2day" resultType="int">
+			select count(*) from customer where mdate = CURDATE() - INTERVAL 2 DAY;
+		</select>				
+		
+		<select id="countby3day" resultType="int">
+			select count(*) from customer where mdate = CURDATE() - INTERVAL 3 DAY;
+		</select>			
+		
+		<select id="countby4day" resultType="int">
+			select count(*) from customer where mdate = CURDATE() - INTERVAL 4 DAY;
+		</select>			
+		
+		<select id="countby5day" resultType="int">
+			select count(*) from customer where mdate = CURDATE() - INTERVAL 5 DAY;
+		</select>		
+		
+		<select id="countby6day" resultType="int">
+			select count(*) from customer where mdate = CURDATE() - INTERVAL 6 DAY;
+		</select>				
+		
+		<select id="countby7day" resultType="int">
+			select count(*) from customer where mdate = CURDATE() - INTERVAL 7 DAY;
+		</select>			
+		
+		<select id="countby8day" resultType="int">
+			select count(*) from customer where mdate = CURDATE() - INTERVAL 8 DAY;
+		</select>			
+		
+		<select id="countby9day" resultType="int">
+			select count(*) from customer where mdate = CURDATE() - INTERVAL 9 DAY;
+		</select>		
+		
+		
+		
+		
+		
+		
 		
 		
 		

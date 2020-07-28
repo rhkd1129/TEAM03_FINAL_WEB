@@ -1,6 +1,8 @@
 package com.mycompany.project.model;
 
-import java.util.Date;
+
+import java.sql.Date;
+
 
 public class Cmember {
 	private String mid;
@@ -9,7 +11,7 @@ public class Cmember {
 	private String mtel;
 	private String madress;
 	private Date mdate;
-	
+
 	public String getMid() {
 		return mid;
 	}
@@ -46,5 +48,7 @@ public class Cmember {
 	public void setMdate(Date mdate) {
 		this.mdate = mdate;
 	}
+
+
 
 }
