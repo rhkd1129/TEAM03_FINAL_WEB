@@ -452,7 +452,7 @@ var totalmembernum = ${TodayNolist} + ${Yesterday1Nolist} + ${Yesterday2Nolist} 
 var persenttotalmember = (totalmembernum / 100) * 100;
 alert("현재 가입 멤버 현황 : " + persenttotalmember+"%");
 
-
+ 
 
 
 
