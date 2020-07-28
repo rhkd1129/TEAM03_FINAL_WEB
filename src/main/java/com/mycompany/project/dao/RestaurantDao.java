@@ -55,4 +55,64 @@ public class RestaurantDao extends EgovAbstractMapper{
 		return list;
 	}
 	
+	public int Rcountbytoday() {
+		int RtodayRows = selectOne("rmember.Rcountbytoday");
+//		System.out.println("DAO RtodayRows : " + RtodayRows);
+		return RtodayRows;
+	}
+	
+	public int Rcountbyyesterday() {
+		int RyesterdayRows = selectOne("rmember.Rcountbyyesterday");
+//		System.out.println("DAO RyesterdayRows : " + RyesterdayRows);
+		return RyesterdayRows;
+	}	
+	
+	public int Rcountby2day() {
+		int Ryesterday2Rows = selectOne("rmember.Rcountby2day");
+//		System.out.println("DAO Ryesterday2Rows : " + Ryesterday2Rows);
+		return Ryesterday2Rows;
+	}		
+	
+	public int Rcountby3day() {
+		int Ryesterday3Rows = selectOne("rmember.Rcountby3day");
+//		System.out.println("DAO Ryesterday3Rows : " + Ryesterday3Rows);
+		return Ryesterday3Rows;
+	}	
+	
+	public int Rcountby4day() {
+		int Ryesterday4Rows = selectOne("rmember.Rcountby4day");
+//		System.out.println("DAO Ryesterday4Rows : " + Ryesterday4Rows);
+		return Ryesterday4Rows;
+	}
+	
+	public int Rcountby5day() {
+		int Ryesterday5Rows = selectOne("rmember.Rcountby5day");
+//		System.out.println("DAO Ryesterday5Rows : " + Ryesterday5Rows);
+		return Ryesterday5Rows;
+	}	
+	
+	public int Rcountby6day() {
+		int Ryesterday6Rows = selectOne("rmember.Rcountby6day");
+//		System.out.println("DAO Ryesterday6Rows : " + Ryesterday6Rows);
+		return Ryesterday6Rows;
+	}		
+	
+	public int Rcountby7day() {
+		int Ryesterday7Rows = selectOne("rmember.Rcountby7day");
+//		System.out.println("DAO Ryesterday7Rows : " + Ryesterday7Rows);
+		return Ryesterday7Rows;
+	}	
+	
+	public int Rcountby8day() {
+		int Ryesterday8Rows = selectOne("rmember.Rcountby8day");
+//		System.out.println("DAO Ryesterday8Rows : " + Ryesterday8Rows);
+		return Ryesterday8Rows;
+	}
+	
+	public int Rcountby9day() {
+		int Ryesterday9Rows = selectOne("rmember.Rcountby9day");
+//		System.out.println("DAO Ryesterday9Rows : " + Ryesterday9Rows);
+		return Ryesterday9Rows;
+	}			
+	
 }

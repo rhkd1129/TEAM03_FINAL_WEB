@@ -11,8 +11,8 @@
     <meta charset="UTF-8"> 
     
     <!-- SMS import 1 (필요x?) -->
-<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
-<!-- 	<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.css">	
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -22,8 +22,13 @@
     <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
     <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>  
+    
+    <!-- gage bar import -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
    
-    <!-- hichart --> 
+    <!-- hichart import --> 
     <script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -32,10 +37,8 @@
     <!-- css import -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">  
     
-
-    
-<!--   SMS import 2 (필요x?)  -->
-<!--   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> 	 -->
+	<!--SMS import 2 (필요x?)  -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	
 </head>
 <body style="overflow: hidden;" id="adminmainpage" class="nav-md">
@@ -280,18 +283,19 @@
 				    <div id="container"></div>
 				</figure>
 				
-				<a href="${pageContext.request.contextPath}/admin/chart.do">chart page</a>
+				<div class="progress">
+				    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:400px;">
+				      회원 목표치 : <script type="text/javascript">document.write(persenttotalmember);</script> %
+				    </div>
+			    </div>
 				
+				<div class="progress">
+			    	<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:300px;">
+			      	가게 목표치 : %
+			    	</div>
+			    </div>
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+				<!-- 총 게이지 : 1%당 7.4px로 계산 -->
 				
 				
 				
@@ -438,67 +442,280 @@
 <!-- SMS import 3 (필요x?) 	 -->
 <!-- <script src="//code.jquery.com/jquery-3.4.1.min.js"></script> -->
 <script type="text/javascript">
+//Progress bar --------------------------------------------------------------------------- 
+// 최근 10일간 신규 회원 등록 수
 
+var totalmembernum = ${TodayNolist} + ${Yesterday1Nolist} + ${Yesterday2Nolist} + ${Yesterday3Nolist} + ${Yesterday4Nolist}
+					 +${Yesterday5Nolist} + ${Yesterday6Nolist} + ${Yesterday7Nolist} + ${Yesterday8Nolist} + ${Yesterday9Nolist};
+							
+// alert("현재 가입 멤버 현황 : " + totalmembernum);
+var persenttotalmember = (totalmembernum / 100) * 100;
+alert("현재 가입 멤버 현황 : " + persenttotalmember+"%");
+
+
+
+
+
+// 최근 10일간 신규 가게 등록 수
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------  
+//공동 사용 (현재 날짜)
+var nowDate = new Date();
+
+// 즈기요 회원 가입 오늘 날짜
+var todaylist = ${TodayNolist};
+// 즈기요 회원 가입 어제 날짜
+var yester1list = ${Yesterday1Nolist};
+// 즈기요 회원 가입 2일전 날짜
+var yester2list = ${Yesterday2Nolist};
+// 즈기요 회원 가입 3일전 날짜
+var yester3list = ${Yesterday3Nolist};
+// 즈기요 회원 가입 4일전 날짜
+var yester4list = ${Yesterday4Nolist};
+// 즈기요 회원 가입 5일전 날짜
+var yester5list = ${Yesterday5Nolist};
+// 즈기요 회원 가입 6일전 날짜
+var yester6list = ${Yesterday6Nolist};
+// 즈기요 회원 가입 7일전 날짜
+var yester7list = ${Yesterday7Nolist};
+// 즈기요 회원 가입 8일전 날짜
+var yester8list = ${Yesterday8Nolist};
+// 즈기요 회원 가입 9일전 날짜
+var yester9list = ${Yesterday9Nolist};
+
+//즈기요 가게 등록 오늘 날짜
+var Rtodaylist = ${RTodayNolist};
+// 즈기요 가게 등록 어제 날짜
+var Ryester1list = ${RYesterday1Nolist};
+// 즈기요 가게 등록 2일전 날짜
+var Ryester2list = ${RYesterday2Nolist};
+// 즈기요 가게 등록 3일전 날짜
+var Ryester3list = ${RYesterday3Nolist};
+// 즈기요 가게 등록 4일전 날짜
+var Ryester4list = ${RYesterday4Nolist};
+// 즈기요 가게 등록 5일전 날짜
+var Ryester5list = ${RYesterday5Nolist};
+// 즈기요 가게 등록 6일전 날짜
+var Ryester6list = ${RYesterday6Nolist};
+// 즈기요 가게 등록 7일전 날짜
+var Ryester7list = ${RYesterday7Nolist};
+// 즈기요 가게 등록 8일전 날짜
+var Ryester8list = ${RYesterday8Nolist};
+// 즈기요 가게 등록 9일전 날짜
+var Ryester9list = ${RYesterday9Nolist};
+
+//---------------------------------------------------------------------------     
+//오늘 날짜
+var nowYear = nowDate.getFullYear();
+var nowMonth = nowDate.getMonth() +1;
+var nowDay = nowDate.getDate();
+
+if(nowMonth < 10) { nowMonth = "0" + nowMonth; }
+if(nowDay < 10) { nowDay = "0" + nowDay; }
+
+//오늘 날짜 결과
+var todayDate = nowMonth + "-" + nowDay;// 연도는 길어서 제외
+
+//---------------------------------------------------------------------------
+
+//1일전 날짜
+var yesterDate = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
+nowDate.setTime(yesterDate);
+
+var yesterYear = nowDate.getFullYear();
+var yesterMonth = nowDate.getMonth() +1;
+var yesterDay = nowDate.getDate();
+
+if(yesterMonth < 10) { yesterMonth = "0" + yesterMonth; }
+if(yesterDay < 10) { yesterDay = "0" + yesterDay; }
+//어제 날짜 결과
+var yesterDate = yesterMonth + "-" + yesterDay;// 연도는 길어서 제외
+
+//---------------------------------------------------------------------------   
+
+//2일전 날짜
+var twoyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
+nowDate.setTime(twoyesterday);
+
+var twoyesterYear = nowDate.getFullYear();
+var twoyesterMonth = nowDate.getMonth() +1;
+var twoyesterDay = nowDate.getDate();
+
+if(twoyesterMonth < 10) { twoyesterMonth = "0" + twoyesterMonth; }
+if(twoyesterDay < 10) { twoyesterDay = "0" + twoyesterDay; }
+
+var twoyesterDate = twoyesterMonth + "-" + twoyesterDay;// 연도는 길어서 제외
+
+//---------------------------------------------------------------------------  
+
+//3일전 날짜
+var threeyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
+nowDate.setTime(threeyesterday);
+
+var threeyesterYear = nowDate.getFullYear();
+var threeyesterMonth = nowDate.getMonth() +1;
+var threeyesterDay = nowDate.getDate();
+
+if(threeyesterMonth < 10) { threeyesterMonth = "0" + threeyesterMonth; }
+if(threeyesterDay < 10) { threeyesterDay = "0" + threeyesterDay; }
+
+var threeyesterDate = threeyesterMonth + "-" + threeyesterDay;// 연도는 길어서 제외
+
+//---------------------------------------------------------------------------  
+   
+//4일전 날짜
+var fouryesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
+nowDate.setTime(fouryesterday);
+
+var fouryesterYear = nowDate.getFullYear();
+var fouryesterMonth = nowDate.getMonth() +1;
+var fouryesterDay = nowDate.getDate();
+
+if(fouryesterMonth < 10) { fouryesterMonth = "0" + fouryesterMonth; }
+if(fouryesterDay < 10) { fouryesterDay = "0" + fouryesterDay; }
+
+var fouryesterDate = fouryesterMonth + "-" + fouryesterDay;// 연도는 길어서 제외
+
+//---------------------------------------------------------------------------
+   
+//5일전 날짜
+var fiveyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
+nowDate.setTime(fiveyesterday);
+
+var fiveyesterYear = nowDate.getFullYear();
+var fiveyesterMonth = nowDate.getMonth() +1;
+var fiveyesterDay = nowDate.getDate();
+
+if(fiveyesterMonth < 10) { fiveyesterMonth = "0" + fiveyesterMonth; }
+if(fiveyesterDay < 10) { fiveyesterDay = "0" + fiveyesterDay; }
+
+var fiveyesterDate = fiveyesterMonth + "-" + fiveyesterDay;// 연도는 길어서 제외
+
+//---------------------------------------------------------------------------   
+   
+//6일전 날짜
+var sixyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
+nowDate.setTime(sixyesterday);
+
+var sixyesterYear = nowDate.getFullYear();
+var sixyesterMonth = nowDate.getMonth() +1;
+var sixyesterDay = nowDate.getDate();
+
+if(sixyesterMonth < 10) { sixyesterMonth = "0" + sixyesterMonth; }
+if(sixyesterDay < 10) { sixyesterDay = "0" + sixyesterDay; }
+
+var sixyesterDate = sixyesterMonth + "-" + sixyesterDay;// 연도는 길어서 제외
+
+//---------------------------------------------------------------------------  
+   
+//7일전 날짜
+var sevenyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
+nowDate.setTime(sevenyesterday);
+
+var sevenyesterYear = nowDate.getFullYear();
+var sevenyesterMonth = nowDate.getMonth() +1;
+var sevenyesterDay = nowDate.getDate();
+
+if(sevenyesterMonth < 10) { sevenyesterMonth = "0" + sevenyesterMonth; }
+if(sevenyesterDay < 10) { sevenyesterDay = "0" + sevenyesterDay; }
+
+var sevenyesterDate = sevenyesterMonth + "-" + sevenyesterDay;// 연도는 길어서 제외
+
+//---------------------------------------------------------------------------   
+   
+//8일전 날짜
+var eightyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
+nowDate.setTime(eightyesterday);
+
+var eightyesterYear = nowDate.getFullYear();
+var eightyesterMonth = nowDate.getMonth() +1;
+var eightyesterDay = nowDate.getDate();
+
+if(eightyesterMonth < 10) { eightyesterMonth = "0" + eightyesterMonth; }
+if(eightyesterDay < 10) { eightyesterDay = "0" + eightyesterDay; }
+
+var eightyesterDate = eightyesterMonth + "-" + eightyesterDay;// 연도는 길어서 제외
+
+//---------------------------------------------------------------------------   
+    
+//9일전 날짜
+var nineyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
+nowDate.setTime(nineyesterday);
+
+var nineyesterYear = nowDate.getFullYear();
+var nineyesterMonth = nowDate.getMonth() +1;
+var nineyesterDay = nowDate.getDate();
+
+if(nineyesterMonth < 10) { nineyesterMonth = "0" + nineyesterMonth; }
+if(nineyesterDay < 10) { nineyesterDay = "0" + nineyesterDay; }
+
+var nineyesterDate = nineyesterMonth + "-" + nineyesterDay;// 연도는 길어서 제외
+
+//--------------------------------------------------------------------------- 
 // hichart js
- Highcharts.chart('container', {
+Highcharts.chart('container', {
 
-	   chart: {
-	     type: 'column',
-	     styledMode: true
-	   },
+   chart: {
+     type: 'column',
+     styledMode: true
+   },
 
-	   title: {
-	     text: '등록 회원 및 등록 가게 현황'
-	   },
-	   
-	   //추가
-	   //바꿔야할 점 : Oct : 현재 시간 / Jan ~ Sep을 이전 시간들로 수정
-	    xAxis: {
-	       className: 'highcharts-color-5',
-	       categories: ['07-18', '07-19', '07-20', '07-21', '07-22', '07-23',
-               '07-24', '07-25', '07-26', '07-27']		
-         },
-	           
-	   yAxis: [{
-	     className: 'highcharts-color-0',
-	     title: {
-	       text: '등록 회원 명단'
-	     }
-	   }, {
-	     className: 'highcharts-color-1',
-	     opposite: true,
-	     title: {
-	       text: '등록 가게 명단'
-	     }
-	   }],
+   title: {
+     text: ''
+   },
+   
+   //추가 항목 (중요★★★★★)
+    xAxis: {
+       className: 'highcharts-color-5',
+       categories: [nineyesterDate , eightyesterDate , sevenyesterDate , sixyesterDate , fiveyesterDate , fouryesterDate ,
+    	   threeyesterDate , twoyesterDate , yesterDate , todayDate]		
+        },
+           
+   yAxis: [{
+     className: 'highcharts-color-0',
+     title: {
+       text: '등록 회원 명단'
+     }
+   }, {
+     className: 'highcharts-color-1',
+     opposite: true,
+     title: {
+       text: '등록 가게 명단'
+     }
+   }],
 
-	   plotOptions: {
-	     column: {	    	 
-	       borderRadius: 5
-	     }	 	     
-	   },
-	   
-	   //hichart 하단 링크 제거
-	   credits: {
-           enabled: false
-       },
-       
-       //hichart 상단 메뉴 제거
-       exporting: {
-           enabled: false
-       },       
+   plotOptions: {
+     column: {	    	 
+       borderRadius: 5
+     }	 	     
+   },
+   
+   //hichart 하단 링크 제거
+   credits: {
+          enabled: false
+      },
+      
+      //hichart 상단 메뉴 제거
+      exporting: {
+          enabled: false
+      },       
 
-	   series: [{
-		 name: '회원 수',
-	     data: [5, 13, 20, 27, 36, 38, 47, 54, 56, 61]
-	   }, {
-		 name: '가게 수',
-	     data: [2, 10, 17, 18, 20, 24, 30, 33, 37, 43],
-	     yAxis: 1
-	   }]
+   series: [{
+	 name: '회원 수',
+     data: [yester9list, yester8list, yester7list, yester6list, yester5list, yester4list, yester3list, yester2list, yester1list, todaylist]
+   }, {
+	 name: '가게 수',
+     data: [Ryester9list, Ryester8list, Ryester7list, Ryester6list, Ryester5list, Ryester4list, Ryester3list, Ryester2list, Ryester1list, Rtodaylist],
+     yAxis: 1
+   }]
 
-	 });
-
+ });
 
 
 
@@ -519,6 +736,7 @@
 
 
 
+//--------------------------------------------------------------------------------------
 
 //차량 도착 시 자동 문자 전송 [테스트] start =======================================================
 $(".carimage1").hide();
