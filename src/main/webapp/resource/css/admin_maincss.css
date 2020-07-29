@@ -2,6 +2,9 @@
 /* hichart --------------------------*/
 @import 'https://code.highcharts.com/css/highcharts.css';
 
+/* 구글 테두리 스타일 제거******************************** */
+*:focus { outline:none; }
+
 /* 공용 start*************************************** */
 a {
    text-decoration: none;
@@ -668,19 +671,19 @@ a:hover {
 .viewbox4{
 	width: 1685px;
 	height: 937px;	
-	background-color: #D0A9F5;
+	background-color: white;
 	float: left;	
 }
 .viewbox5{
 	width: 1685px;
 	height: 937px;	
-	background-color: gray;
+	background-color: white;
 	float: left;	
 }
 .viewbox6{
 	width: 1685px;
 	height: 937px;	
-	background-color: blue;
+	background-color: white;
 	float: left;	
 }
 
@@ -2048,8 +2051,8 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 
 
 /* hichart ---------------------------------------*/
-
-.highcharts-figure, .highcharts-data-table table {
+/* 회원수 , 가게수 차트 + 바  */
+.highcharts-figure1, .highcharts-data-table table {
     min-width: 310px; 
 	max-width: 800px;
     margin-left: 10px;
@@ -2112,6 +2115,46 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	stroke-width: 2px;
 }
 
+/* 즈기요 성장 차트  */
+.highcharts-figure2, .highcharts-data-table table {
+    min-width: 360px; 
+    max-width: 800px;
+    margin-left: 10px;
+}
+
+.highcharts-data-table table {
+	font-family: Verdana, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+
+
+
+
+
 
 /* Progress bar ------------------------- */
 
@@ -2120,6 +2163,26 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	margin-left: 25px;
 	margin-top: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
