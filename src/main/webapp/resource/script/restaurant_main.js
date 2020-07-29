@@ -223,9 +223,7 @@ $('#menu8').click(function() {
 });
 
 $(".zgiyo").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/landingpage.do";
+    location.href = "/project/home/landingpage.do";
 });
-
-
 
 

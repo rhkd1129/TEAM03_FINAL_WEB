@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.menuRegistForm{
+	width: 40%;
+	float: left;
+	border-right: 1px solid #a6abab;
+}
+
+.menuList{
+	width: 60%;
+	float: left;
+}

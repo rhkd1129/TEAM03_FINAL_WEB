@@ -14,7 +14,36 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_maincss.css">
+	<script>
+			function registMenu() {
+				var frno = ${rno}
+			    var form = $('#menuReigister')[0];
 	
+			    // FormData 객체 생성
+			    var formData = new FormData(form);
+	
+			    // 코드로 동적으로 데이터 추가 가능.
+				formData.append("frno", frno);
+	
+			    $.ajax({
+			        type: "POST",
+			        enctype: 'multipart/form-data',
+			        url: "${pageContext.request.contextPath}/restaurant/restaurant_manage_menu_register.do",
+			        data: formData,
+			        processData: false,
+			        contentType: false,
+			        cache: false,
+			        timeout: 600000,
+			        success: function (result) {
+			        	alert("메뉴가 성공적으로 등록되었습니다.");
+			            $(".content2").html(result);
+			        },
+			        error: function (e) {
+			            console.log("ERROR : ", e);
+			        }
+			    });
+			}
+		</script>
 </head>
 <body>
 	<div class="navbar1">
