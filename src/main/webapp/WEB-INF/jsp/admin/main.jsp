@@ -1086,7 +1086,7 @@ function viewPaging1(pageNo1) {
        console.log("고고고2");
       }
 
-      }
+      
 
    });
 };

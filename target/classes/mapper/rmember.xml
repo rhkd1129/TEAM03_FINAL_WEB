@@ -4,7 +4,7 @@
 	<mapper namespace="rmember">
 		<insert id="insert" parameterType="rmember" useGeneratedKeys="true" keyProperty="rno">
 			insert into restaurant (rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate)
-			values (#{rid}, #{rpassword}, #{rname}, #{rtitle}, #{radress}, #{rtel}, #{rcategory})
+			values (#{rid}, #{rpassword}, #{rname}, #{rtitle}, #{radress}, #{rtel}, #{rcategory}, NOW())
 		</insert>
 		
 		<select id="selectAllByPage" resultType="rmember">
@@ -15,6 +15,10 @@
 		<select id="selectByAddr" resultType="rmember">
 			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
 			from restaurant where radress like CONCAT('%',#{siNm},'%') and radress like CONCAT('%',#{emdNm},'%')
+		</select>
+		
+		<select id="selectRnoByRid" resultType="int">
+			select rno from restaurant where rid=#{rid}
 		</select>
 		
 		<select id="count" resultType="int">

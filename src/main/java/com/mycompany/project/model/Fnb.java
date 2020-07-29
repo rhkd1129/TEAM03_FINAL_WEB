@@ -2,7 +2,7 @@ package com.mycompany.project.model;
 
 public class Fnb {
 	private int fno;
-	private String frid;
+	private int frno;
 	private String fcategory;
 	private String fname;
 	private int fprice;
@@ -15,11 +15,11 @@ public class Fnb {
 	public void setFno(int fno) {
 		this.fno = fno;
 	}
-	public String getFrid() {
-		return frid;
+	public int getFrno() {
+		return frno;
 	}
-	public void setFrid(String frid) {
-		this.frid = frid;
+	public void setFrno(int frid) {
+		this.frno = frid;
 	}
 	public String getFcategory() {
 		return fcategory;

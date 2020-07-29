@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mycompany.project.dao.RestaurantDao;
+import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.Rmember;
 
 @Service
@@ -116,6 +117,15 @@ public class RestaurantService {
 		int RYesterday9No = restaurantDao.Rcountby9day();
 //		System.out.println("Service RYesterday9No : " + RYesterday9No);
 		return RYesterday9No;
+	}
+
+	public int getRnoByRid(String rid) {
+		int rno = restaurantDao.selectRnoByRid(rid);
+		return rno;
+	}
+
+	public void registerNewMenu(Fnb fnb) {
+		restaurantDao.insertNewMenu(fnb);
 	}		
 	
 	
