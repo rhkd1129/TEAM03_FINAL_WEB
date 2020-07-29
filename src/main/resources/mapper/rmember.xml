@@ -5,7 +5,7 @@
 		<insert id="insert" parameterType="rmember" useGeneratedKeys="true" keyProperty="rno">
 			insert into restaurant (rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate)
 			values (#{rid}, #{rpassword}, #{rname}, #{rtitle}, #{radress}, #{rtel}, #{rcategory})
-		</insert>
+		</insert> 
 		
 		<select id="selectAllByPage" resultType="rmember">
 			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
