@@ -36,7 +36,7 @@
 
     <!-- css import -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">
-
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/mapcss.css">
 </head>
 <script type="text/javascript">
 //Progress bar ---------------------------------------------------------------------------
@@ -48,7 +48,8 @@ var persenttotalmember = (totalmembernum / 100) * 100;
 var persentpx = persenttotalmember * 7.4;
 
 $("#onebarpersent").css("width",String(persentpx));
-$('.change_greeting1').text(String(persenttotalmember));
+//현재 사용 x (but 사용 바로 가능)
+$('.change_greeting1').text("7월 회원 목표량 : " + String(persenttotalmember) + "%");
 
 //최근 10일간 신규 가게 등록 수
 var Rtotalmembernum = ${RTodayNolist} + ${RYesterday1Nolist} + ${RYesterday2Nolist} + ${RYesterday3Nolist} + ${RYesterday4Nolist}
@@ -58,7 +59,8 @@ var Rpersenttotalmember = (Rtotalmembernum / 100) * 100;
 var Rpersentpx = Rpersenttotalmember * 7.4;
 
 $("#twobarpersent").css("width",String(Rpersentpx));
-$('.change_greeting2').text(String(Rpersenttotalmember));
+//현재 사용 x (but 사용 바로 가능)
+$('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmember) + "%");
 
 </script>
 <body style="overflow: hidden;" id="adminmainpage" class="nav-md">
@@ -311,105 +313,112 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 
 				<div class="progress">
 				    <div class="progress-bar progress-bar-info progress-bar-striped" id="onebarpersent" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"
-				     style="width:50px;">
-				      <div class="change_greeting1">100%</div>
+				     style="width:50px;">7월 회원 목표량: ${pager.totalRows}%
+<!-- 				      <div class="change_greeting1">100%</div> -->
 <!--  					document.write(persenttotalmember) -->
 				    </div>
 			    </div>
 
 				<div class="progress">
 			    	<div class="progress-bar progress-bar-success progress-bar-striped" id="twobarpersent"  role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"
-			    	style="width:50px;">
-			      	  <div class="change_greeting2">100%</div>
+			    	style="width:50px;">7월 가게 목표량: ${pager1.totalRows1}%
+<!-- 			      	  <div class="change_greeting2">100%</div> -->
 			    	</div>
 			    </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+				<!-- 하이차트 2개 추가 필요!!! -->
 
 			</div>
-			<!-- member + Restaurant map ===========================================-->
+			
+			<!-- member + Restaurant map ===========================================-->			
 			<div class="viewbox3">
-
-				<div class="line1-1"></div><div class="jumpline"></div><div class="line1-2"></div><div class="jumpline"></div><div class="line1-3"></div><div class="jumpline"></div>
+				<!-- 좌측 상단 곡선 도로 -->
+				<img class="range1" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">			
+				<!-- 상단 직선 도로 (상부) -->
+				<div class="jumpline"></div><div class="line1-3"></div><div class="jumpline"></div>
 				<div class="line1-4"></div><div class="jumpline"></div><div class="line1-5"></div><div class="jumpline"></div><div class="line1-6"></div><div class="jumpline"></div>
 				<div class="line1-7"></div><div class="jumpline"></div><div class="line1-8"></div><div class="jumpline"></div><div class="line1-9"></div><div class="jumpline"></div>
 				<div class="line1-10"></div><div class="jumpline"></div><div class="line1-11"></div><div class="jumpline"></div><div class="line1-12"></div><div class="jumpline"></div>
-				<div class="line1-13"></div><div class="jumpline"></div><div class="line1-14"></div>
-				<div class="extrack1"></div>
-				<div class="extrack3"></div>
-
-				<div class="line2-1"></div><div class="jumpline2"></div><div class="line2-2"></div><div class="jumpline2"></div><div class="line2-3"></div><div class="jumpline2"></div>
+				<div class="line1-13"></div>				
+				<!-- 우측 상단 곡선 도로 -->
+				<img class="range2" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">				
+				<!-- 상단 직선 도로 (하부) -->
+				<div class="jumpline2"></div><div class="line2-3"></div><div class="jumpline2"></div>
 				<div class="line2-4"></div><div class="jumpline2"></div><div class="line2-5"></div><div class="jumpline2"></div><div class="line2-6"></div><div class="jumpline2"></div>
 				<div class="line2-7"></div><div class="jumpline2"></div><div class="line2-8"></div><div class="jumpline2"></div><div class="line2-9"></div><div class="jumpline2"></div>
 				<div class="line2-10"></div><div class="jumpline2"></div><div class="line2-11"></div><div class="jumpline2"></div><div class="line2-12"></div><div class="jumpline2"></div>
-				<div class="line2-13"></div><div class="jumpline2"></div><div class="line2-14"></div>
-				<div class="extrack2"></div>
-				<div class="extrack4"></div>
-
-				<img class="flagimage" src="${pageContext.request.contextPath}/resource/image/admin/깃발.png">
-				<img class="homeimage" src="${pageContext.request.contextPath}/resource/image/admin/home.png">
-
-				<div class="light1"></div>
-					<img class="carimage1" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light2"></div>
-					<img class="carimage2" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light3"></div>
-					<img class="carimage3" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light4"></div>
-					<img class="carimage4" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light5"></div>
-					<img class="carimage5" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light6"></div>
-					<img class="carimage6" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light7"></div>
-					<img class="carimage7" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light8"></div>
-					<img class="carimage8" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light9"></div>
-					<img class="carimage9" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light10"></div>
-					<img class="carimage10" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light11"></div>
-					<img class="carimage11" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-
-
-				<img id="pingimage1" src="${pageContext.request.contextPath}/resource/image/admin/ping.png">
-
-
-
-				<!-- 만들어야할 것들 -->
-
-
-				<!-- 만들어야할 것들 -->
-
-				<!-- 1. IOT트랙 맵 구현 -->
-				<!-- 2. 현재 매장의 위치, 가맹점의 위치, 고객들의 위치 구현 -->
-				<!-- 3. 고객 주문 시 맵에 주문창 생성 , 도착 시 주문창 제거 -->
-				<!-- 4. 최단 경로 자동 설정ㄴ -->
-
+				<div class="line2-13"></div>
+				<!-- 좌측 직선 도로  -->
+				<div class="bigleftline">
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- ////------- -->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+				</div>
+				
+				<!-- 차트 페이지  -->
+				<div class="centerchartpage1">
+				
+				
+				
+				
+				</div>
+				
+				<!-- 좌측 하단 곡선 도로 -->
+				<img class="range3" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">				
+				<!-- 좌측 직선 도로 -->
+				<div class="bigrightline">				
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- ////------- -->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+				</div>				
+				<!-- 하단 우측 곡선 도로 -->
+				<img class="range4" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">
+				<!-- 하단 직선 도로 (상부) -->
+				<div class="jumpline"></div><div class="line1-3"></div><div class="jumpline"></div>
+				<div class="line1-4"></div><div class="jumpline"></div><div class="line1-5"></div><div class="jumpline"></div><div class="line1-6"></div><div class="jumpline"></div>
+				<div class="line1-7"></div><div class="jumpline"></div><div class="line1-8"></div><div class="jumpline"></div><div class="line1-9"></div><div class="jumpline"></div>
+				<div class="line1-10"></div><div class="jumpline"></div><div class="line1-11"></div><div class="jumpline"></div><div class="line1-12"></div><div class="jumpline"></div>
+				<div class="line1-13"></div>								
+				<!-- 하단 직선 도로 (하부) -->
+				<div class="Sjumpline2"></div><div class="line2-3"></div><div class="jumpline2"></div>
+				<div class="line2-4"></div><div class="jumpline2"></div><div class="line2-5"></div><div class="jumpline2"></div><div class="line2-6"></div><div class="jumpline2"></div>
+				<div class="line2-7"></div><div class="jumpline2"></div><div class="line2-8"></div><div class="jumpline2"></div><div class="line2-9"></div><div class="jumpline2"></div>
+				<div class="line2-10"></div><div class="jumpline2"></div><div class="line2-11"></div><div class="jumpline2"></div><div class="line2-12"></div><div class="jumpline2"></div>
+				<div class="line2-13"></div>
+				<!-- 인차선 곡선 도로 (동서남북) -->
+				<img class="insideimageline1" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">
+				<img class="insideimageline2" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">			
+				<img class="insideimageline3" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">
+				<img class="insideimageline4" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">	
+						
+				<!-- 곡선 차선 (중앙차선) -->		
+				<img class="insideimageline5" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">								
+				<img class="insideimageline6" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">	
+				<img class="insideimageline7" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">
+				<img class="insideimageline8" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">	
+				
+				<!-- 짤짤이 제거 (인차선 곡선 도로 인해 생긴 노란픽셀 제거) -->
+				<div class="deleteyellowline1"></div>
+				<div class="deleteyellowline2"></div>				
+				<div class="deleteyellowline3"></div>
+				<div class="deleteyellowline4"></div>									
 			</div>
 
 			<!-- SMS Send Page =================================-->
@@ -470,73 +479,51 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 			<div class="viewbox4">
 
 			</div>
+			
 			<!-- member + device + instrument data =================================-->
 			<div class="viewbox5">
 
 			</div>
+			
 			<!-- member + device + instrument map =================================-->
-
-			<div class="viewbox6">
-				<div></div>
-
-
-
-
-
-			</div><!-- viewbox6 end -->
+			<div class="viewbox6"> <!-- 1685 * 937 -->
+				
+			</div>
 		</div>
 	</div>
 
 </body>
 <script type="text/javascript">
 /* Map script */
-//마우스 휠 js
-$(window).bind('mousewheel', function(event) {
-    if (event.originalEvent.wheelDelta >= 0) {
-
-        console.log('Scroll up');
-
-		document.getElementById("pingimage1").addEventListener("wheel", myFunction);
-        function myFunction() {
-      	  this.style.transform = "scale( 2.0 )";
-      	};
-
-    }
-    if (event.originalEvent.wheelDelta < 0) {
-
-        console.log('Scroll down');
-
-        document.getElementById("pingimage1").addEventListener("wheel", myFunction);
-        function myFunction() {
-        	  this.style.transform = "scale( 1.0 )";
-        };
-
-    }
-});
-//---------------------------------------------------------------------------
 
 
-//Progress bar [중복 주의!!!]---------------------------------------------------------------------------
-//최근 10일간 신규 회원 등록 수
-var totalmembernum = ${TodayNolist} + ${Yesterday1Nolist} + ${Yesterday2Nolist} + ${Yesterday3Nolist} + ${Yesterday4Nolist}
-+${Yesterday5Nolist} + ${Yesterday6Nolist} + ${Yesterday7Nolist} + ${Yesterday8Nolist} + ${Yesterday9Nolist};
-var persenttotalmember = (totalmembernum / 100) * 100;
-//회원 데이터 * px 값
-var persentpx = persenttotalmember * 7.4;//170.2px
 
-$("#onebarpersent").css("width",String(persentpx));
 
-//최근 10일간 신규 가게 등록 수
-var Rtotalmembernum = ${RTodayNolist} + ${RYesterday1Nolist} + ${RYesterday2Nolist} + ${RYesterday3Nolist} + ${RYesterday4Nolist}
-+${RYesterday5Nolist} + ${RYesterday6Nolist} + ${RYesterday7Nolist} + ${RYesterday8Nolist} + ${RYesterday9Nolist};
-var Rpersenttotalmember = (Rtotalmembernum / 100) * 100;
-//가게 데이터 * px 값
-var Rpersentpx = Rpersenttotalmember * 7.4; //118.4px
 
-$("#twobarpersent").css("width",String(Rpersentpx));
+
+
+
+
+
 
 //---------------------------------------------------------------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------
 //공동 사용 (현재 날짜)
 var nowDate = new Date();
 
@@ -789,6 +776,28 @@ realchart3 = Math.round(realchart3);
 realchart2 = Math.round(realchart2);
 realchart1 = Math.round(realchart1);
 chart0 = Math.round(chart0);
+
+//Progress bar ---------------------------------------------------------------------------
+//최근 10일간 신규 회원 등록 수
+var totalmembernum = ${TodayNolist} + ${Yesterday1Nolist} + ${Yesterday2Nolist} + ${Yesterday3Nolist} + ${Yesterday4Nolist}
++${Yesterday5Nolist} + ${Yesterday6Nolist} + ${Yesterday7Nolist} + ${Yesterday8Nolist} + ${Yesterday9Nolist};
+var persenttotalmember = (totalmembernum / 100) * 100;
+//회원 데이터 * px 값
+var persentpx = persenttotalmember * 7.4;
+
+$("#onebarpersent").css("width",String(persentpx));
+$('.change_greeting1').text("7월 회원 목표량 : " + String(persenttotalmember) + "%");
+
+//최근 10일간 신규 가게 등록 수
+var Rtotalmembernum = ${RTodayNolist} + ${RYesterday1Nolist} + ${RYesterday2Nolist} + ${RYesterday3Nolist} + ${RYesterday4Nolist}
++${RYesterday5Nolist} + ${RYesterday6Nolist} + ${RYesterday7Nolist} + ${RYesterday8Nolist} + ${RYesterday9Nolist};
+var Rpersenttotalmember = (Rtotalmembernum / 100) * 100;
+//가게 데이터 * px 값
+var Rpersentpx = Rpersenttotalmember * 7.4;
+
+$("#twobarpersent").css("width",String(Rpersentpx));
+$('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmember) + "%");
+
 
 // 즈기요 성장 차트------------------------------------------------
 Highcharts.chart('container2', {
