@@ -48,5 +48,10 @@ public class CustomerDao extends EgovAbstractMapper{
 		Cmember cmember = selectOne("cmember.selectByMid", mid);
 		return cmember;
 	}
+	
+	public String getSaltByMid(String salt) {
+		String csalt = selectOne("cmember.getSaltByMid", salt);
+		return csalt;
+	}
 
 }

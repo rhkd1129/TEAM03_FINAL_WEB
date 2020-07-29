@@ -9,7 +9,8 @@ public class Cmember {
 	private String mtel;
 	private String madress;
 	private Date mdate;
-
+	private String salt;
+	
 	public String getMid() {
 		return mid;
 	}
@@ -45,6 +46,12 @@ public class Cmember {
 	}
 	public void setMdate(Date mdate) {
 		this.mdate = mdate;
+	}
+	public String getSalt() {
+		return salt;
+	}
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 
 }

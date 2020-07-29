@@ -28,7 +28,6 @@
 				</c:if>
 				<c:if test="${sessionMid != null}">
 					<button type="button" class="logout" onclick="location.href='${pageContext.request.contextPath}/customer/logout.do'">로그아웃</button>
-					<%-- <div class="logout"><a href="${pageContext.request.contextPath}/customer/logout.do"></a>로그아웃</div> --%>
 				</c:if>
 			</div>
 		</div>

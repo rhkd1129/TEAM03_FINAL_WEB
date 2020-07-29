@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mycompany.project.SHA256.SHA256Util;
 import com.mycompany.project.dao.CustomerDao;
 import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
@@ -25,6 +26,11 @@ public class CustomerService {
 		if (dbCmember == null) {
 			return LOGIN_MID_FAIL;
 		} else {
+			String salt = customerDao.getSaltByMid(cloginForm.getMid());
+			String password = cloginForm.getMpassword();
+			
+			password = SHA256Util.getEncrypt(password, salt);
+			cloginForm.setMpassword(password);
 			if (dbCmember.getMpassword().equals(cloginForm.getMpassword())) {
 				return LOGIN_SUCCESS;
 			} else {
@@ -34,6 +40,14 @@ public class CustomerService {
 	}
 	
 	public void join(Cmember cmember) {
+		String salt = SHA256Util.generateSalt();
+		cmember.setSalt(salt);
+		
+		String password = cmember.getMpassword();
+		password = SHA256Util.getEncrypt(password, salt);
+		
+		cmember.setMpassword(password);
+		
 		customerDao.insert(cmember);
 	}
 	

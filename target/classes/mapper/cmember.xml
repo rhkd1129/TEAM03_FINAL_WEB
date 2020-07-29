@@ -2,14 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 	
 	<mapper namespace="cmember">
-		<insert id="insert" parameterType="cmember">
-			insert into customer (mid, mpassword, mname, mtel, madress, mdate)
-			values (#{mid}, #{mpassword}, #{mname}, #{mtel}, #{madress}, NOW())
+		<insert id="insert">
+			insert into customer (mid, mpassword, mname, mtel, madress, mdate, salt)
+			values (#{mid}, #{mpassword}, #{mname}, #{mtel}, #{madress}, NOW(), #{salt})
 		</insert>
 		
-		<select id="selectByMid" parameterType="String" resultType="cmember">
+		<select id="selectByMid" resultType="cmember">
 			select mid, mpassword, mname, mtel, madress, mdate from customer
 			where mid = #{mid}
+		</select>
+		
+		<select id="getSaltByMid" resultType="string">
+			select salt from customer where mid = #{mid}
 		</select>
 		
 		<select id="selectAllByPage" resultType="cmember">
