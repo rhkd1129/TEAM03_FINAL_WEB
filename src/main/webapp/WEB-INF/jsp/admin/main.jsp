@@ -36,7 +36,7 @@
 
     <!-- css import -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">
-
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/mapcss.css">
 </head>
 <script type="text/javascript">
 //Progress bar ---------------------------------------------------------------------------
@@ -48,7 +48,8 @@ var persenttotalmember = (totalmembernum / 100) * 100;
 var persentpx = persenttotalmember * 7.4;
 
 $("#onebarpersent").css("width",String(persentpx));
-$('.change_greeting1').text(String(persenttotalmember));
+//현재 사용 x (but 사용 바로 가능)
+$('.change_greeting1').text("7월 회원 목표량 : " + String(persenttotalmember) + "%");
 
 //최근 10일간 신규 가게 등록 수
 var Rtotalmembernum = ${RTodayNolist} + ${RYesterday1Nolist} + ${RYesterday2Nolist} + ${RYesterday3Nolist} + ${RYesterday4Nolist}
@@ -58,7 +59,8 @@ var Rpersenttotalmember = (Rtotalmembernum / 100) * 100;
 var Rpersentpx = Rpersenttotalmember * 7.4;
 
 $("#twobarpersent").css("width",String(Rpersentpx));
-$('.change_greeting2').text(String(Rpersenttotalmember));
+//현재 사용 x (but 사용 바로 가능)
+$('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmember) + "%");
 
 </script>
 <body style="overflow: hidden;" id="adminmainpage" class="nav-md">
@@ -311,16 +313,16 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 
 				<div class="progress">
 				    <div class="progress-bar progress-bar-info progress-bar-striped" id="onebarpersent" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"
-				     style="width:50px;">
-				      <div class="change_greeting1">100%</div>
+				     style="width:50px;">7월 회원 목표량: ${pager.totalRows}%
+<!-- 				      <div class="change_greeting1">100%</div> -->
 <!--  					document.write(persenttotalmember) -->
 				    </div>
 			    </div>
 
 				<div class="progress">
 			    	<div class="progress-bar progress-bar-success progress-bar-striped" id="twobarpersent"  role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"
-			    	style="width:50px;">
-			      	  <div class="change_greeting2">100%</div>
+			    	style="width:50px;">7월 가게 목표량: ${pager1.totalRows1}%
+<!-- 			      	  <div class="change_greeting2">100%</div> -->
 			    	</div>
 			    </div>
 
@@ -476,8 +478,148 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 			</div>
 			<!-- member + device + instrument map =================================-->
 
-			<div class="viewbox6">
-				<div></div>
+			<div class="viewbox6"> <!-- 1685 * 937 -->
+				<div class="jumpline111"></div>
+				<div class="jumpline222"></div>
+			
+				<!-- 직선 차선 그룹   -->
+				<!-- 1번째 줄  -->
+				<div class="mapline1"><div class="mapline1A1"></div><div class="mapline1A2"></div><div class="mapline1A3"></div><div class="mapline1A4"></div></div>
+				<div class="mapline1"><div class="mapline1A5"></div><div class="mapline1A6"></div><div class="mapline1A7"></div><div class="mapline1A8"></div></div>
+				<div class="mapline1"><div class="mapline1A9"></div><div class="mapline1A10"></div><div class="mapline1A11"></div><div class="mapline1A12"></div></div>
+				<div class="mapline1"><div class="mapline1A13"></div><div class="mapline1A14"></div><div class="mapline1A15"></div><div class="mapline1A16"></div></div>
+				<div class="mapline1"><div class="mapline1A17"></div><div class="mapline1A18"></div><div class="mapline1A19"></div><div class="mapline1A20"></div></div>
+				<div class="mapline1"><div class="mapline1A21"></div><div class="mapline1A22"></div><div class="mapline1A23"></div><div class="mapline1A24"></div></div>
+				<div class="mapline1"><div class="mapline1A25"></div><div class="mapline1A26"></div><div class="mapline1A27"></div><div class="mapline1A28"></div></div>
+				<div class="mapline1"><div class="mapline1A29"></div><div class="mapline1A30"></div><div class="mapline1A31"></div><div class="mapline1A32"></div></div>
+				<div class="mapline1"><div class="mapline1A33"></div><div class="mapline1A34"></div><div class="mapline1A35"></div><div class="mapline1A36"></div></div>
+				<div class="mapline1"><div class="mapline1A37"></div><div class="mapline1A38"></div><div class="mapline1A39"></div><div class="mapline1A40"></div></div>
+				<div class="mapline1"><div class="mapline1A41"></div><div class="mapline1A42"></div><div class="mapline1A43"></div><div class="mapline1A44"></div></div>
+				<div class="mapline1"><div class="mapline1A45"></div><div class="mapline1A46"></div><div class="mapline1A47"></div><div class="mapline1A48"></div></div>
+				<div class="mapline1"><div class="mapline1A49"></div><div class="mapline1A50"></div><div class="mapline1A51"></div><div class="mapline1A52"></div></div>
+				<div class="mapline1"><div class="mapline1A53"></div><div class="mapline1A54"></div><div class="mapline1A55"></div><div class="mapline1A56"></div></div>
+				<div class="mapline1"><div class="mapline1A57"></div><div class="mapline1A58"></div><div class="mapline1A59"></div><div class="mapline1A60"></div></div>
+				<div class="mapline1"><div class="mapline1A61"></div><div class="mapline1A62"></div><div class="mapline1A63"></div><div class="mapline1A64"></div></div>
+				<div class="mapline1"><div class="mapline1A65"></div><div class="mapline1A66"></div><div class="mapline1A67"></div><div class="mapline1A68"></div></div>
+				<div class="mapline1"><div class="mapline1A69"></div><div class="mapline1A70"></div><div class="mapline1A71"></div><div class="mapline1A72"></div></div>
+				<div class="mapline1"><div class="mapline1A73"></div><div class="mapline1A74"></div><div class="mapline1A75"></div><div class="mapline1A76"></div></div>
+				<div class="mapline1"><div class="mapline1A77"></div><div class="mapline1A78"></div><div class="mapline1A79"></div><div class="mapline1A80"></div></div>
+				<div class="mapline1"><div class="mapline1A81"></div><div class="mapline1A82"></div><div class="mapline1A83"></div><div class="mapline1A84"></div></div>
+				<div class="mapline1"><div class="mapline1A85"></div><div class="mapline1A86"></div><div class="mapline1A87"></div><div class="mapline1A88"></div></div>
+				<div class="mapline1"><div class="mapline1A89"></div><div class="mapline1A90"></div><div class="mapline1A91"></div><div class="mapline1A92"></div></div>
+				<div class="mapline1"><div class="mapline1A93"></div><div class="mapline1A94"></div><div class="mapline1A95"></div><div class="mapline1A96"></div></div>
+				<div class="mapline1"><div class="mapline1A97"></div><div class="mapline1A98"></div><div class="mapline1A99"></div><div class="mapline1A100"></div></div>
+				<div class="mapline1"><div class="mapline1A101"></div><div class="mapline1A102"></div><div class="mapline1A103"></div><div class="mapline1A104"></div></div>
+				<div class="mapline1"><div class="mapline1A105"></div><div class="mapline1A106"></div><div class="mapline1A107"></div><div class="mapline1A108"></div></div>
+				<div class="mapline1"><div class="mapline1A109"></div><div class="mapline1A110"></div><div class="mapline1A111"></div><div class="mapline1A112"></div></div>
+				<div class="mapline1"><div class="mapline1A113"></div><div class="mapline1A114"></div><div class="mapline1A115"></div><div class="mapline1A116"></div></div>
+				<div class="mapline1"><div class="mapline1A117"></div><div class="mapline1A118"></div><div class="mapline1A119"></div><div class="mapline1A120"></div></div>
+				<div class="mapline1"><div class="mapline1A121"></div><div class="mapline1A122"></div><div class="mapline1A123"></div><div class="mapline1A124"></div></div>
+				<div class="mapline1"><div class="mapline1A125"></div><div class="mapline1A126"></div><div class="mapline1A127"></div><div class="mapline1A128"></div></div>
+				<div class="mapline1 mapline1-1"><div class="mapline1A129"></div><div class="mapline1A130"></div><div class="mapline1A131"></div><div class="mapline1A132"></div></div>
+				
+				<!-- 2번째 줄  -->
+				<div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div>
+				<div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div>
+				<div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div>
+				<div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div>
+				<div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div>
+				<div class="mapline2"></div><div class="mapline2"></div><div class="mapline2 mapline2-2"></div>
+
+				<!-- 3번째 줄  -->
+				<div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div>
+				<div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div>
+				<div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div>
+				<div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div>
+				<div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div>
+				<div class="mapline3"></div><div class="mapline3"></div><div class="mapline3 mapline3-3"></div>
+
+				<!-- 4번째 줄  -->
+				<div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div>
+				<div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div>
+				<div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div>
+				<div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div>
+				<div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div>
+				<div class="mapline4"></div><div class="mapline4"></div><div class="mapline4 mapline4-4"></div>
+
+				<!-- 5번째 줄  -->
+				<div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div>
+				<div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div>
+				<div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div>
+				<div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div>
+				<div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div>
+				<div class="mapline5"></div><div class="mapline5"></div><div class="mapline5 mapline5-5"></div>
+
+				<!-- 6번째 줄  -->
+				<div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div>
+				<div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div>
+				<div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div>
+				<div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div>
+				<div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div>
+				<div class="mapline6"></div><div class="mapline6"></div><div class="mapline6 mapline6-6"></div>
+
+				<!-- 아래 차선 그룹  -->
+				<!-- 1번쨰 줄  -->
+				<div class="mapline7"></div><div class="mapline7"></div><div class="mapline7"></div>
+				<div class="mapline7"></div><div class="mapline7"></div><div class="mapline7 mapline7-7"></div>
+
+				<!-- 간략 차트 페이지  -->
+				<div class="maplineMAP">
+					<div class="maplineMAPhead">배송 현황</div>
+				
+				</div>
+
+				<!-- 2번쨰 줄  -->
+				<div class="mapline8"></div><div class="mapline8"></div><div class="mapline8"></div>
+				<div class="mapline8"></div><div class="mapline8"></div><div class="mapline8 mapline8-8"></div>
+
+				<!-- 3번쨰 줄  -->
+				<div class="mapline9"></div><div class="mapline9"></div><div class="mapline9"></div>
+				<div class="mapline9"></div><div class="mapline9"></div><div class="mapline9 mapline9-9"></div>
+
+				<!-- 4번쨰 줄  -->
+				<div class="mapline10"></div><div class="mapline10"></div><div class="mapline10"></div>
+				<div class="mapline10"></div><div class="mapline10"></div><div class="mapline10 mapline10-10"></div>
+
+				<!-- 5번쨰 줄  -->
+				<div class="mapline11"></div><div class="mapline11"></div><div class="mapline11"></div>
+				<div class="mapline11"></div><div class="mapline11"></div><div class="mapline11 mapline11-11"></div>
+
+				<!-- 6번쨰 줄  -->
+				<div class="mapline12"></div><div class="mapline12"></div><div class="mapline12"></div>
+				<div class="mapline12"></div><div class="mapline12"></div><div class="mapline12 mapline12-12"></div>
+
+				<!-- 7번쨰 줄  -->
+				<div class="mapline13"></div><div class="mapline13"></div><div class="mapline13"></div>
+				<div class="mapline13"></div><div class="mapline13"></div><div class="mapline13 mapline13-13"></div>
+
+				<!-- 8번쨰 줄  -->
+				<div class="mapline14"></div><div class="mapline14"></div><div class="mapline14"></div>
+				<div class="mapline14"></div><div class="mapline14"></div><div class="mapline14 mapline14-14"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -491,52 +633,46 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 <script type="text/javascript">
 /* Map script */
 //마우스 휠 js
-$(window).bind('mousewheel', function(event) {
-    if (event.originalEvent.wheelDelta >= 0) {
+// $(window).bind('mousewheel', function(event) {
+//     if (event.originalEvent.wheelDelta >= 0) {
 
-        console.log('Scroll up');
+//         console.log('Scroll up');
 
-		document.getElementById("pingimage1").addEventListener("wheel", myFunction);
-        function myFunction() {
-      	  this.style.transform = "scale( 2.0 )";
-      	};
+// 		document.getElementById("pingimage1").addEventListener("wheel", myFunction);
+//         function myFunction() {
+//       	  this.style.transform = "scale( 2.0 )";
+//       	};
 
-    }
-    if (event.originalEvent.wheelDelta < 0) {
+//     }
+//     if (event.originalEvent.wheelDelta < 0) {
 
-        console.log('Scroll down');
+//         console.log('Scroll down');
 
-        document.getElementById("pingimage1").addEventListener("wheel", myFunction);
-        function myFunction() {
-        	  this.style.transform = "scale( 1.0 )";
-        };
+//         document.getElementById("pingimage1").addEventListener("wheel", myFunction);
+//         function myFunction() {
+//         	  this.style.transform = "scale( 1.0 )";
+//         };
 
-    }
-});
+//     }
+// });
 //---------------------------------------------------------------------------
 
 
-//Progress bar [중복 주의!!!]---------------------------------------------------------------------------
-//최근 10일간 신규 회원 등록 수
-var totalmembernum = ${TodayNolist} + ${Yesterday1Nolist} + ${Yesterday2Nolist} + ${Yesterday3Nolist} + ${Yesterday4Nolist}
-+${Yesterday5Nolist} + ${Yesterday6Nolist} + ${Yesterday7Nolist} + ${Yesterday8Nolist} + ${Yesterday9Nolist};
-var persenttotalmember = (totalmembernum / 100) * 100;
-//회원 데이터 * px 값
-var persentpx = persenttotalmember * 7.4;//170.2px
 
-$("#onebarpersent").css("width",String(persentpx));
 
-//최근 10일간 신규 가게 등록 수
-var Rtotalmembernum = ${RTodayNolist} + ${RYesterday1Nolist} + ${RYesterday2Nolist} + ${RYesterday3Nolist} + ${RYesterday4Nolist}
-+${RYesterday5Nolist} + ${RYesterday6Nolist} + ${RYesterday7Nolist} + ${RYesterday8Nolist} + ${RYesterday9Nolist};
-var Rpersenttotalmember = (Rtotalmembernum / 100) * 100;
-//가게 데이터 * px 값
-var Rpersentpx = Rpersenttotalmember * 7.4; //118.4px
 
-$("#twobarpersent").css("width",String(Rpersentpx));
+
+
+
+
+
+
+
+
+
+
 
 //---------------------------------------------------------------------------
-
 //공동 사용 (현재 날짜)
 var nowDate = new Date();
 
@@ -789,6 +925,28 @@ realchart3 = Math.round(realchart3);
 realchart2 = Math.round(realchart2);
 realchart1 = Math.round(realchart1);
 chart0 = Math.round(chart0);
+
+//Progress bar ---------------------------------------------------------------------------
+//최근 10일간 신규 회원 등록 수
+var totalmembernum = ${TodayNolist} + ${Yesterday1Nolist} + ${Yesterday2Nolist} + ${Yesterday3Nolist} + ${Yesterday4Nolist}
++${Yesterday5Nolist} + ${Yesterday6Nolist} + ${Yesterday7Nolist} + ${Yesterday8Nolist} + ${Yesterday9Nolist};
+var persenttotalmember = (totalmembernum / 100) * 100;
+//회원 데이터 * px 값
+var persentpx = persenttotalmember * 7.4;
+
+$("#onebarpersent").css("width",String(persentpx));
+$('.change_greeting1').text("7월 회원 목표량 : " + String(persenttotalmember) + "%");
+
+//최근 10일간 신규 가게 등록 수
+var Rtotalmembernum = ${RTodayNolist} + ${RYesterday1Nolist} + ${RYesterday2Nolist} + ${RYesterday3Nolist} + ${RYesterday4Nolist}
++${RYesterday5Nolist} + ${RYesterday6Nolist} + ${RYesterday7Nolist} + ${RYesterday8Nolist} + ${RYesterday9Nolist};
+var Rpersenttotalmember = (Rtotalmembernum / 100) * 100;
+//가게 데이터 * px 값
+var Rpersentpx = Rpersenttotalmember * 7.4;
+
+$("#twobarpersent").css("width",String(Rpersentpx));
+$('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmember) + "%");
+
 
 // 즈기요 성장 차트------------------------------------------------
 Highcharts.chart('container2', {

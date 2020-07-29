@@ -1,0 +1,563 @@
+@charset "UTF-8";
+
+.jumpline111{
+	width: 1685px;
+	height: 100px;
+	float: left;
+	background-color: white;
+}
+
+.jumpline222{
+	width: 20px;
+	height: 937px;
+	float: left;
+	background-color: white;
+}
+
+/* 첫번째 그룹 */
+.mapline1{
+	width: 50px;
+	height: 50px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	float: left;
+}
+
+.mapline1-1{
+	border-right: 1px solid black;
+	float: left;
+}
+
+.mapline1A1{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline1A2{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline1A3{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline1A4{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: gray;
+}
+
+.mapline1A5{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline1A6{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline1A7{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline1A8{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: gray;
+}
+
+.mapline1A9{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline1A10{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline1A11{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline1A12{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: gray;
+}
+
+.mapline1A13{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline1A14{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline1A15{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline1A16{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: gray;
+}
+
+.mapline1A17{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline1A18{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline1A19{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline1A20{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: gray;
+}
+
+.mapline1A21{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline1A22{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline1A23{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline1A24{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: gray;
+}
+
+.mapline1A25{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline1A26{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline1A27{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline1A28{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 2번쨰 줄 시작---------------------------- */
+.mapline2{
+	width: 50px;
+	height: 50px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	float: left;
+}
+
+.mapline2-2{
+	border-right: 1px solid black;
+	float: left;
+}
+
+.mapline3{
+	width: 50px;
+	height: 50px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	float: left;
+}
+
+.mapline3-3{
+	border-right: 1px solid black;
+	float: left;
+}
+
+.mapline4{
+	width: 50px;
+	height: 50px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	float: left;
+}
+
+.mapline4-4{
+	border-right: 1px solid black;
+	float: left;
+}
+
+.mapline5{
+	width: 50px;
+	height: 50px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	float: left;
+}
+
+.mapline5-5{
+	border-right: 1px solid black;
+	float: left;
+}
+
+.mapline6{
+	width: 50px;
+	height: 50px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	float: left;
+	border-bottom: 1px solid black;
+}
+
+.mapline6-6{
+	border-right: 1px solid black;
+	float: left;
+	border-bottom: 1px solid black;
+}
+
+
+/* 두번째 그룹 */
+.mapline7{
+	width: 50px;
+	height: 50px;
+	float: left;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.mapline7-7{
+	border-right: 1px solid black;
+}
+
+.maplineMAP{
+	width: 1340px;
+	height: 390px;
+	float: right;
+	background-color: white;
+	margin-right: 14px;
+	margin-top: 10px;
+	border: 1px solid #D8D8D8;
+}
+
+.maplineMAPhead{
+	width: 1338px;
+	height: 50px;
+	float: left;
+	background-color: white;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 45px;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.mapline8{
+	width: 50px;
+	height: 50px;
+	float: left;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.mapline8-8{
+	border-right: 1px solid black;
+}
+
+.mapline9{
+	width: 50px;
+	height: 50px;
+	float: left;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.mapline9-9{
+	border-right: 1px solid black;
+}
+
+.mapline10{
+	width: 50px;
+	height: 50px;
+	float: left;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.mapline10-10{
+	border-right: 1px solid black;
+}
+
+.mapline11{
+	width: 50px;
+	height: 50px;
+	float: left;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.mapline11-11{
+	border-right: 1px solid black;
+}
+
+.mapline12{
+	width: 50px;
+	height: 50px;
+	float: left;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.mapline12-12{
+	border-right: 1px solid black;
+}
+
+.mapline13{
+	width: 50px;
+	height: 50px;
+	float: left;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.mapline13-13{
+	border-right: 1px solid black;
+}
+
+.mapline14{
+	width: 50px;
+	height: 50px;
+	float: left;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.mapline14-14{
+	border-right: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
