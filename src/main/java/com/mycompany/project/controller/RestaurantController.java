@@ -78,12 +78,16 @@ public class RestaurantController {
 	@PostMapping("/restaurant_manage_menu_register.do")
 	public String write(String frid, String fname, String fcategory, int fprice, MultipartFile fimage) throws Exception{
 		LOGGER.info("실행");
-
+		LOGGER.info(frid);
+		LOGGER.info(fname);
+		LOGGER.info(fcategory);
+		LOGGER.info(""+fprice);
+		
 		String saveDir = "C:/Temp/Images/Restaurant/menu/";
 		String saveFileName = fimage.getOriginalFilename();
 		File filePath = new File(saveDir + saveFileName);
 		fimage.transferTo(filePath);
 		
-		return "redirect:/restaurant_manage_menu_register.do";
+		return "restaurant/restaurant_manage_menu_register";
 	}
 }

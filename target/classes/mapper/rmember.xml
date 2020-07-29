@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 	
 	<mapper namespace="rmember">
-		<insert id="insert" parameterType="rmember">
+		<insert id="insert" parameterType="rmember" useGeneratedKeys="true" keyProperty="rno">
 			insert into restaurant (rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate)
 			values (#{rid}, #{rpassword}, #{rname}, #{rtitle}, #{radress}, #{rtel}, #{rcategory})
 		</insert>

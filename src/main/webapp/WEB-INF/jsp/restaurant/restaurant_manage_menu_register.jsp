@@ -22,7 +22,7 @@
 			    var formData = new FormData(form);
 	
 			    // 코드로 동적으로 데이터 추가 가능.
-				// formData.append("userId", "testUser!");
+				formData.append("frid", "testUser!");
 	
 			    $.ajax({
 			        type: "POST",
@@ -33,8 +33,9 @@
 			        contentType: false,
 			        cache: false,
 			        timeout: 600000,
-			        success: function (data) {
-			            console.log("SUCCESS : ", data);
+			        success: function (result) {
+			        	alert("메뉴가 성공적으로 등록되었습니다.");
+			            $(".content2").html(result);
 			        },
 			        error: function (e) {
 			            console.log("ERROR : ", e);
