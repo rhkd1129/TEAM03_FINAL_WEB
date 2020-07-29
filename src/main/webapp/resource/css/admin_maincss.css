@@ -1925,6 +1925,55 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	cursor: pointer;
 }
 
+/* #pingimage1{ */
+/* 	width: 50px; */
+/* 	height: 50px; */
+/* 	position: absolute; */
+/* 	left: 600px; */
+/* 	top: 500px; */
+/* } */
+
+
+@keyframes ball {
+    0% {
+        top:0px;
+    }
+    95% {
+        width: 100px;
+    }
+    to {
+        top:300px;
+        width:115px;
+        height:90px
+    } 
+}
+
+#pingimage1{
+  position:relative;
+  left: 100px;
+  top:0;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:white;
+  animation:ball 1s ease-in Infinite Alternate;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* viewbox9 */
+
 #SMStextarea{
 	width:1100px;
 	height: 300px;
@@ -2017,13 +2066,22 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 
 
 /* viewbox4 page =============== */
+
 /* viewbox5 page =============== */
+
 /* viewbox6 page =============== */
-
-
-
-
-
+/* 마우스 휠 테스트 css */
+/* #jb { */
+/* 	width: 100px; */
+/* 	height: 100px; */
+/* 	background-color: orange; */
+/* 	transition: all ease 1s; */
+/* 	text-align: center; */
+/* 	font-size: 25px; */
+/* 	color: white; */
+/* 	line-height: 100px; */
+/* 	float: left; */
+/* } */
 
 
 
@@ -2163,24 +2221,6 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	margin-left: 25px;
 	margin-top: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

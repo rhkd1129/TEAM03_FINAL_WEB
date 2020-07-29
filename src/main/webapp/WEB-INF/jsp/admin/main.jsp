@@ -45,18 +45,21 @@ var totalmembernum = ${TodayNolist} + ${Yesterday1Nolist} + ${Yesterday2Nolist} 
 +${Yesterday5Nolist} + ${Yesterday6Nolist} + ${Yesterday7Nolist} + ${Yesterday8Nolist} + ${Yesterday9Nolist};
 var persenttotalmember = (totalmembernum / 100) * 100;
 //회원 데이터 * px 값
-var persentpx = persenttotalmember * 7.4;//170.2px
+var persentpx = persenttotalmember * 7.4;
 
 $("#onebarpersent").css("width",String(persentpx));
+$('.change_greeting1').text(String(persenttotalmember));
 
 //최근 10일간 신규 가게 등록 수
 var Rtotalmembernum = ${RTodayNolist} + ${RYesterday1Nolist} + ${RYesterday2Nolist} + ${RYesterday3Nolist} + ${RYesterday4Nolist}
 +${RYesterday5Nolist} + ${RYesterday6Nolist} + ${RYesterday7Nolist} + ${RYesterday8Nolist} + ${RYesterday9Nolist};
 var Rpersenttotalmember = (Rtotalmembernum / 100) * 100;
 //가게 데이터 * px 값
-var Rpersentpx = Rpersenttotalmember * 7.4; //118.4px
+var Rpersentpx = Rpersenttotalmember * 7.4;
 
 $("#twobarpersent").css("width",String(Rpersentpx));
+$('.change_greeting2').text(String(Rpersenttotalmember));
+
 </script>
 <body style="overflow: hidden;" id="adminmainpage" class="nav-md">
 	<div class="bodymainbox">
@@ -309,14 +312,15 @@ $("#twobarpersent").css("width",String(Rpersentpx));
 				<div class="progress">
 				    <div class="progress-bar progress-bar-info progress-bar-striped" id="onebarpersent" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"
 				     style="width:50px;">
-				      7월 회원 목표치 : <script type="text/javascript">document.write(persenttotalmember);</script> %
+				      <div class="change_greeting1">100%</div>
+<!--  					document.write(persenttotalmember) -->
 				    </div>
 			    </div>
 
 				<div class="progress">
 			    	<div class="progress-bar progress-bar-success progress-bar-striped" id="twobarpersent"  role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"
 			    	style="width:50px;">
-			      	  7월 가게 목표치 : <script type="text/javascript">document.write(Rpersenttotalmember);</script> %
+			      	  <div class="change_greeting2">100%</div>
 			    	</div>
 			    </div>
 
@@ -391,7 +395,16 @@ $("#twobarpersent").css("width",String(Rpersentpx));
 				<div class="light11"></div>
 					<img class="carimage11" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
 
+
+				<img id="pingimage1" src="${pageContext.request.contextPath}/resource/image/admin/ping.png">
+
+
+
 				<!-- 만들어야할 것들 -->
+
+
+				<!-- 만들어야할 것들 -->
+
 				<!-- 1. IOT트랙 맵 구현 -->
 				<!-- 2. 현재 매장의 위치, 가맹점의 위치, 고객들의 위치 구현 -->
 				<!-- 3. 고객 주문 시 맵에 주문창 생성 , 도착 시 주문창 제거 -->
@@ -455,70 +468,59 @@ $("#twobarpersent").css("width",String(Rpersentpx));
 
 			<!-- member + device + instrument list =================================-->
 			<div class="viewbox4">
-					ssssssssssssssssssssssss
+
 			</div>
 			<!-- member + device + instrument data =================================-->
 			<div class="viewbox5">
-					aaaaaaaaaaaaaaaaaaaaaaaa
+
 			</div>
 			<!-- member + device + instrument map =================================-->
+
 			<div class="viewbox6">
-					dddddddddddddddddddddddd
+				<div></div>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			</div>
-
+			</div><!-- viewbox6 end -->
 		</div>
 	</div>
 
 </body>
 <script type="text/javascript">
 /* Map script */
+//마우스 휠 js
+$(window).bind('mousewheel', function(event) {
+    if (event.originalEvent.wheelDelta >= 0) {
+
+        console.log('Scroll up');
+
+		document.getElementById("pingimage1").addEventListener("wheel", myFunction);
+        function myFunction() {
+      	  this.style.transform = "scale( 2.0 )";
+      	};
+
+    }
+    if (event.originalEvent.wheelDelta < 0) {
+
+        console.log('Scroll down');
+
+        document.getElementById("pingimage1").addEventListener("wheel", myFunction);
+        function myFunction() {
+        	  this.style.transform = "scale( 1.0 )";
+        };
+
+    }
+});
 
 
 
 
 
+
+
+//---------------------------------------------------------------------------
 
 
 
@@ -550,6 +552,7 @@ var Rpersentpx = Rpersenttotalmember * 7.4; //118.4px
 $("#twobarpersent").css("width",String(Rpersentpx));
 
 //---------------------------------------------------------------------------
+
 //공동 사용 (현재 날짜)
 var nowDate = new Date();
 
@@ -1065,6 +1068,7 @@ function viewPaging(pageNo) {
       success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
          // 댓글목록을 실행한 결과를 가져온다.
          $("#adminmainpage").html(result);
+      console.log("고고고1");
       }
    });
 };
@@ -1078,7 +1082,12 @@ function viewPaging1(pageNo1) {
       success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
          // 댓글목록을 실행한 결과를 가져온다.
          $("#adminmainpage").html(result);
+
+       console.log("고고고2");
       }
+
+      }
+
    });
 };
 //등록 회원 start------------------------------------------------------------------------------------------------------
