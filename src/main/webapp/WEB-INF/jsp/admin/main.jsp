@@ -474,6 +474,31 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 			</div>
 			<!-- member + device + instrument data =================================-->
 			<div class="viewbox5">
+				<img class="rouline" src="${pageContext.request.contextPath}/resource/image/admin/곡선배경제거.png">
+				<img class="strline" src="${pageContext.request.contextPath}/resource/image/admin/직선배경제거2.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 			</div>
 			<!-- member + device + instrument map =================================-->

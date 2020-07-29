@@ -2244,3 +2244,58 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rouline{
+	width: 350px;
+	height: 350px;
+	float: left;
+
+}
+
+.strline{
+	width: 350px;
+	height: 175px;
+	float: left;
+	margin-left: -24px;
+	margin-top: -5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
