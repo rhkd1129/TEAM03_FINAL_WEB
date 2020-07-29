@@ -285,7 +285,9 @@
 				
 				<div class="progress">
 				    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:400px;">
-				      회원 목표치 : <script type="text/javascript">document.write(persenttotalmember);</script> %
+				      회원 목표치 : <script type="text/javascript">
+				    			document.write(persenttotalmember);
+				    		</script> %
 				    </div>
 			    </div>
 				

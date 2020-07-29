@@ -56,7 +56,7 @@
 	<div class="main2">
 		<div class="menu">
 			<div class="menu1" id='menu5'>
-				a
+				메뉴 등록
 			</div>
 			<div class="menu2" id='menu6'>
 				b
