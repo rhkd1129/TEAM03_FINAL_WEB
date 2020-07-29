@@ -8,38 +8,38 @@
 <html>
 <head>
     <title>Admin Page</title>
-    <meta charset="UTF-8"> 
-    
+    <meta charset="UTF-8">
+
     <!-- SMS import 1 (필요x?) -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.css">	
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
     <script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
     <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
-    <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>  
-    
+    <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
+
     <!-- gage bar import -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
-   
-    <!-- hichart import --> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- hichart import -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
-	<script src="https://code.highcharts.com/modules/accessibility.js"></script>	
-	
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
     <!-- css import -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">  
-	
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">
+
 </head>
 <script type="text/javascript">
-//Progress bar --------------------------------------------------------------------------- 
+//Progress bar ---------------------------------------------------------------------------
 //최근 10일간 신규 회원 등록 수
 var totalmembernum = ${TodayNolist} + ${Yesterday1Nolist} + ${Yesterday2Nolist} + ${Yesterday3Nolist} + ${Yesterday4Nolist}
 +${Yesterday5Nolist} + ${Yesterday6Nolist} + ${Yesterday7Nolist} + ${Yesterday8Nolist} + ${Yesterday9Nolist};
@@ -70,66 +70,66 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 				<div class="nav1text1">Admin Page</div>
 			</div>
 			<div class=nav2>
-				<img class="nav2img1" src="${pageContext.request.contextPath}/resource/image/admin/윤봉길.png">				
+				<img class="nav2img1" src="${pageContext.request.contextPath}/resource/image/admin/윤봉길.png">
 				<div class="nav2text1">Welcome,</div>
 				<div class="nav2text2">Administrator Yoon</div>
 			</div>
-			 
+
 			<!-- /* Group1 */ -->
 			<div class=nav3>
-				<div class="nav3text1">Restaurant | Customer</div> 
-				
+				<div class="nav3text1">Restaurant | Customer</div>
+
 				<div class="btnHome1">
 					<img class="btnHomeimg1" src="${pageContext.request.contextPath}/resource/image/admin/list1.png">
 					<div class="btnHometext1">List</div>
 					<img class="ring1" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
 				</div>
-				
+
 				<div class="btnHome2">
 					<img class="btnHomeimg2" src="${pageContext.request.contextPath}/resource/image/admin/data.png">
 					<div class="btnHometext2">Data</div>
 					<img class="ring2" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
-				</div>			
-				
+				</div>
+
 				<div class="btnHome3">
 					<img class="btnHomeimg3" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
 					<div class="btnHometext3">Map</div>
 					<img class="ring3" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
-				</div>	
-				
+				</div>
+
 				<div class="btnHome9">
 					<img class="btnHomeimg9" src="${pageContext.request.contextPath}/resource/image/admin/message1.png">
 					<div class="btnHometext9">SMS</div>
 					<img class="ring9" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
-				</div>						
-			</div>		
+				</div>
+			</div>
 			<!-- /* Group2 */ -->
 			<div class=nav4>
-				<div class="nav4text1">Device | Instrument</div> 
-				
+				<div class="nav4text1">Device | Instrument</div>
+
 				<div class="btnHome21">
 					<img class="btnHomeimg21" src="${pageContext.request.contextPath}/resource/image/admin/list1.png">
 					<div class="btnHometext21">List</div>
 					<img class="ring4" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
 				</div>
-				
+
 				<div class="btnHome22">
 					<img class="btnHomeimg22" src="${pageContext.request.contextPath}/resource/image/admin/data.png">
 					<div class="btnHometext22">Data</div>
 					<img class="ring5" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
-				</div>				
-				
+				</div>
+
 				<div class="btnHome23">
 					<img class="btnHomeimg23" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
 					<div class="btnHometext23">Map</div>
 					<img class="ring6" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
-				</div>						
-			</div>			
+				</div>
+			</div>
 		</div>
-		
+
 		<!-- /* 뷰박스 bigbox */ ------------------------------------------------------------------------>
-		<div class="viewmainbox">		
-			
+		<div class="viewmainbox">
+
 			<!-- member + restaurant list ==========================================-->
 			<div class="viewbox1">
 				<!-- member list box -->
@@ -137,13 +137,13 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 					<div class="mySlides" id="mlistmain">
 						<div class="mlist">
 							<div class="mlistid">Id</div>
-							<div class="mlistpw">Password</div>						
+							<div class="mlistpw">Password</div>
 							<div class="mlistname">Name</div>
-							<div class="mlisttel">Tel</div>		
+							<div class="mlisttel">Tel</div>
 							<div class="mlistadress">Adress</div>
 							<div class="mlistdate">Join Date</div>
-							<div class="mlistdelete">Unlock</div>	
-							
+							<div class="mlistdelete">Unlock</div>
+
 						</div>
 						<div class="mlistbox">
 							<!-- Customer Member List -->
@@ -151,63 +151,63 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 								<c:forEach var="cmember" items="${cmemberlist}">
 									<tr class="mlistTR">
 										<td class="mlistidTD">${cmember.mid}</td>
-										<td class="mlistpwTD">${cmember.mpassword}</td>								
+										<td class="mlistpwTD">${cmember.mpassword}</td>
 										<td class="mlistnameTD">${cmember.mname}</td>
 										<td class="mlisttelTD">${cmember.mtel}</td>
-										<td class="mlistadressTD">${cmember.madress}</td>																																																		
+										<td class="mlistadressTD">${cmember.madress}</td>
 										<td class="mlistdateTD">
 											<fmt:formatDate value="${cmember.mdate}" pattern="yyyy년 MM월 dd일"/>
-										</td>									
-										<td class="mlistdeleteTD"><div id="${cmember.mid}" class="btn btn-secondary btn-sm deleteX">X</div></td>						
-									</tr>  
+										</td>
+										<td class="mlistdeleteTD"><div id="${cmember.mid}" class="btn btn-secondary btn-sm deleteX">X</div></td>
+									</tr>
 								</c:forEach>
 							</table>
 							<div class="pagenum1">현재 회원 가입자 수 : ${pager.totalRows}명</div>
 							<input type="search" class="w3-button w3-white w3-border btn-sm search" placeholder="등록 회원 검색" />
 							<button class="w3-button w3-white w3-border btn-sm" id="btnsearch">검색</button>
 							<!-- 하단 페이져 -->
-							<table class="pagepage1">	
-								<tr>							
+							<table class="pagepage1">
+								<tr>
 									<td colspan="6">
-										<a class="w3-button demo  btn-sm" onclick="viewPaging(1)">처음</a>		
-										
+										<a class="w3-button demo  btn-sm" onclick="viewPaging(1)">처음</a>
+
 										<c:if test="${pager.groupNo > 1}">
-											<a class="w3-button demo  btn-sm" onclick="viewPaging('${pager.startPageNo-pager.pagesPergroup}')">이전</a>	
-										</c:if>	
-										
+											<a class="w3-button demo  btn-sm" onclick="viewPaging('${pager.startPageNo-pager.pagesPergroup}')">이전</a>
+										</c:if>
+
 										<c:forEach var="i" begin="${pager.startPageNo}" end="${pager.endPageNo}">
-											<c:if test="${pager.pageNo != i}">	
-											<!-- 현재 페이지와 ${i}와 같다면 색을 변경 -->	
-												<a class="w3-button demo  btn-sm" onclick="viewPaging('${i}')"> ${i}</a>	
-											</c:if>		
-											
+											<c:if test="${pager.pageNo != i}">
+											<!-- 현재 페이지와 ${i}와 같다면 색을 변경 -->
+												<a class="w3-button demo  btn-sm" onclick="viewPaging('${i}')"> ${i}</a>
+											</c:if>
+
 											<c:if test="${pager.pageNo == i}">
 												<a class="w3-button demo  btn-sm" onclick="viewPaging('${i}')"> ${i}</a>
-											</c:if>					
+											</c:if>
 										</c:forEach>
-										
+
 										<c:if test="${pager.groupNo < pager.totalGroupNo}">
-											<a class="w3-button demo  btn-sm" onclick="viewPaging('${pager.endPageNo+1}')">다음</a>	
-										</c:if>				
+											<a class="w3-button demo  btn-sm" onclick="viewPaging('${pager.endPageNo+1}')">다음</a>
+										</c:if>
 										<a class="w3-button demo  btn-sm" onclick="viewPaging('${pager.totalPageNo}')">맨끝</a>
 									</td>
 								</tr>
-							</table>													
-						</div>						
-					
-					</div>  
+							</table>
+						</div>
+
+					</div>
 					<!-- 레스토랑 테이블 -->
 					<div class="mySlides" id="rlistmain">
 						<div class="rlist">
 							<div class="rlistid">Id</div>
-							<div class="rlistpw">Title</div>						
+							<div class="rlistpw">Title</div>
 							<div class="rlistname">Name</div>
-							<div class="rlisttel">Tel</div>		
+							<div class="rlisttel">Tel</div>
 							<div class="rlistadress">Adress</div>
-							<div class="rlisttitle">Date</div>							
+							<div class="rlisttitle">Date</div>
 							<div class="rlistcategory">Category</div>
-							<div class="rlistdelete">Unlock</div>	
-							
+							<div class="rlistdelete">Unlock</div>
+
 						</div>
 						<div class="rlistbox">
 							<!-- Customer Member List -->
@@ -215,71 +215,71 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 								<c:forEach var="rmember" items="${rmemberlist}">
 									<tr class="rlistTR">
 										<td class="rlistidTD">${rmember.rid}</td>
-										<td class="rlistpwTD">${rmember.rtitle}</td>								
+										<td class="rlistpwTD">${rmember.rtitle}</td>
 										<td class="rlistnameTD">${rmember.rname}</td>
 										<td class="rlisttelTD">${rmember.rtel}</td>
-										<td class="rlistadressTD">${rmember.radress}</td>																		
+										<td class="rlistadressTD">${rmember.radress}</td>
 										<td class="rlisttitleTD">
 											<fmt:formatDate value="${rmember.rdate}" pattern="yyyy년 MM월 dd일"/>
-										</td>	
+										</td>
 										<td class="rlistcategoryTD">${rmember.rcategory}</td>
-										<td class="rlistdeleteTD"><div id="${rmember.rid}" class="btn btn-secondary btn-sm deleteX2">X</div></td>						
+										<td class="rlistdeleteTD"><div id="${rmember.rid}" class="btn btn-secondary btn-sm deleteX2">X</div></td>
 									</tr>
 								</c:forEach>
 							</table>
 							<input type="search" class="w3-button w3-white w3-border btn-sm search" placeholder="등록 가게 검색" />
 							<button class="w3-button w3-white w3-border btn-sm" id="btnsearch">검색</button>
-							<div class="pagenum2">현재 등록 가게 수 : ${pager1.totalRows1}명</div>							
+							<div class="pagenum2">현재 등록 가게 수 : ${pager1.totalRows1}명</div>
 							<!-- 하단 페이져 -->
-							<table class="pagepage2">	
-								<tr>							
+							<table class="pagepage2">
+								<tr>
 									<td colspan="6">
-										<a class="w3-button demo  btn-sm" onclick="viewPaging1(1)">처음</a>		
-										
+										<a class="w3-button demo  btn-sm" onclick="viewPaging1(1)">처음</a>
+
 										<c:if test="${pager1.groupNo1 > 1}">
-											<a class="w3-button demo  btn-sm" onclick="viewPaging1('${pager1.startPageNo1-pager1.pagesPergroup1}')">이전</a>	
+											<a class="w3-button demo  btn-sm" onclick="viewPaging1('${pager1.startPageNo1-pager1.pagesPergroup1}')">이전</a>
 											<!-- <<=6~10 이전으로 가려면 -5(즉pagesPerGroup =5)를 빼준다   -->
-										</c:if>	
-										
+										</c:if>
+
 										<c:forEach var="k" begin="${pager1.startPageNo1}" end="${pager1.endPageNo1}">
-											<c:if test="${pager1.pageNo1 != k}">	
-											<!-- 현재 페이지와 ${i}와 같다면 색을 변경 -->	
-												<a class="w3-button demo  btn-sm" onclick="viewPaging1('${k}')"> ${k}</a>	
-											</c:if>		
-											
+											<c:if test="${pager1.pageNo1 != k}">
+											<!-- 현재 페이지와 ${i}와 같다면 색을 변경 -->
+												<a class="w3-button demo  btn-sm" onclick="viewPaging1('${k}')"> ${k}</a>
+											</c:if>
+
 											<c:if test="${pager1.pageNo1 == k}">
 												<a class="w3-button demo  btn-sm" onclick="viewPaging1('${k}')"> ${k}</a>
-											</c:if>					
+											</c:if>
 										</c:forEach>
-										
+
 										<c:if test="${pager1.groupNo1 < pager1.totalGroupNo1}">
-											<a class="w3-button demo  btn-sm" onclick="viewPaging1('${pager1.endPageNo1+1}')">다음</a>	
-										</c:if>				
+											<a class="w3-button demo  btn-sm" onclick="viewPaging1('${pager1.endPageNo1+1}')">다음</a>
+										</c:if>
 										<a class="w3-button demo  btn-sm" onclick="viewPaging1('${pager1.totalPageNo1}')">맨끝</a>
 									</td>
 								</tr>
-							</table>													
-						</div>			
+							</table>
+						</div>
 					</div>
-	
+
 					<div class="mySlides" id="alistmain">
 						<div class="alist"></div>
-					</div>	
+					</div>
 				</div>
-				
+
 				<div class="w3-center">
 				   <div class="w3-section">
 				     <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">이전</button>
 				     <button class="w3-button w3-light-grey" onclick="plusDivs(1)">다음</button>
 				   </div>
-				   <button class="w3-button demo1" onclick="currentDiv(1)">등록 회원</button> 
-				   <button class="w3-button demo1" onclick="currentDiv(2)">등록 가게</button> 
-				   <button class="w3-button demo1" onclick="currentDiv(3)">가게 등록 신청</button> 
+				   <button class="w3-button demo1" onclick="currentDiv(1)">등록 회원</button>
+				   <button class="w3-button demo1" onclick="currentDiv(2)">등록 가게</button>
+				   <button class="w3-button demo1" onclick="currentDiv(3)">가게 등록 신청</button>
 				</div>
-				
+
 				<!-- 공용 삭제 시 비밀번호 확인 창 -->
-			 	<div class="opacitybox2"> 
-				</div> 
+			 	<div class="opacitybox2">
+				</div>
 				<!-- 1 -->
 				<div class="checkdelete1">
 					<div class="fonttext1">비밀번호 입력Ⅰ</div>
@@ -293,8 +293,8 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 					<div class="closedelete2">x</div>
 					<input type="text" class="delectcheck2" name="delectcheck2">
 					<div class="btn btn-danger btn-sm gogogo2">확인</div>
-				</div>				
-				
+				</div>
+
 			</div>
 			<!-- member + Restaurant data ==========================================-->
 			<div class="viewbox2">
@@ -302,46 +302,46 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 				<figure class="highcharts-figure2">
 				    <div id="container2"></div>
 				</figure>
-				
-				
+
+
 				<!-- 회원수 , 가게수 차트 + 바 ----------------------------------------------->
 				<figure class="highcharts-figure1">
 				    <div id="container1"></div>
 				</figure>
-				
+
 				<div class="progress">
-				    <div class="progress-bar progress-bar-info progress-bar-striped" id="onebarpersent" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" 
+				    <div class="progress-bar progress-bar-info progress-bar-striped" id="onebarpersent" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"
 				     style="width:50px;">
 				      <div class="change_greeting1">100%</div>
 <!--  					document.write(persenttotalmember) -->
 				    </div>
 			    </div>
-				
+
 				<div class="progress">
-			    	<div class="progress-bar progress-bar-success progress-bar-striped" id="twobarpersent"  role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" 
+			    	<div class="progress-bar progress-bar-success progress-bar-striped" id="twobarpersent"  role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"
 			    	style="width:50px;">
 			      	  <div class="change_greeting2">100%</div>
 			    	</div>
 			    </div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -352,7 +352,7 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 			</div>
 			<!-- member + Restaurant map ===========================================-->
 			<div class="viewbox3">
-				
+
 				<div class="line1-1"></div><div class="jumpline"></div><div class="line1-2"></div><div class="jumpline"></div><div class="line1-3"></div><div class="jumpline"></div>
 				<div class="line1-4"></div><div class="jumpline"></div><div class="line1-5"></div><div class="jumpline"></div><div class="line1-6"></div><div class="jumpline"></div>
 				<div class="line1-7"></div><div class="jumpline"></div><div class="line1-8"></div><div class="jumpline"></div><div class="line1-9"></div><div class="jumpline"></div>
@@ -360,22 +360,22 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 				<div class="line1-13"></div><div class="jumpline"></div><div class="line1-14"></div>
 				<div class="extrack1"></div>
 				<div class="extrack3"></div>
-				
+
 				<div class="line2-1"></div><div class="jumpline2"></div><div class="line2-2"></div><div class="jumpline2"></div><div class="line2-3"></div><div class="jumpline2"></div>
 				<div class="line2-4"></div><div class="jumpline2"></div><div class="line2-5"></div><div class="jumpline2"></div><div class="line2-6"></div><div class="jumpline2"></div>
 				<div class="line2-7"></div><div class="jumpline2"></div><div class="line2-8"></div><div class="jumpline2"></div><div class="line2-9"></div><div class="jumpline2"></div>
 				<div class="line2-10"></div><div class="jumpline2"></div><div class="line2-11"></div><div class="jumpline2"></div><div class="line2-12"></div><div class="jumpline2"></div>
 				<div class="line2-13"></div><div class="jumpline2"></div><div class="line2-14"></div>
 				<div class="extrack2"></div>
-				<div class="extrack4"></div>	
-				
+				<div class="extrack4"></div>
+
 				<img class="flagimage" src="${pageContext.request.contextPath}/resource/image/admin/깃발.png">
-				<img class="homeimage" src="${pageContext.request.contextPath}/resource/image/admin/home.png">	
-				
+				<img class="homeimage" src="${pageContext.request.contextPath}/resource/image/admin/home.png">
+
 				<div class="light1"></div>
 					<img class="carimage1" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
 				<div class="light2"></div>
-					<img class="carimage2" src="${pageContext.request.contextPath}/resource/image/admin/car.png">				
+					<img class="carimage2" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
 				<div class="light3"></div>
 					<img class="carimage3" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
 				<div class="light4"></div>
@@ -390,23 +390,28 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 					<img class="carimage8" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
 				<div class="light9"></div>
 					<img class="carimage9" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light10"></div>	
+				<div class="light10"></div>
 					<img class="carimage10" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
 				<div class="light11"></div>
 					<img class="carimage11" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-					
+
+
 				<img id="pingimage1" src="${pageContext.request.contextPath}/resource/image/admin/ping.png">
-					
-					
-					
-				<!-- 만들어야할 것들 -->					
+
+
+
+				<!-- 만들어야할 것들 -->
+
+
+				<!-- 만들어야할 것들 -->
+
 				<!-- 1. IOT트랙 맵 구현 -->
 				<!-- 2. 현재 매장의 위치, 가맹점의 위치, 고객들의 위치 구현 -->
 				<!-- 3. 고객 주문 시 맵에 주문창 생성 , 도착 시 주문창 제거 -->
 				<!-- 4. 최단 경로 자동 설정ㄴ -->
-		
+
 			</div>
-			
+
 			<!-- SMS Send Page =================================-->
 			<div class="viewbox9">
 				<a id="SMSrealpage" href="${pageContext.request.contextPath}/admin/index.do">[원본]SMS 보내기</a>
@@ -428,23 +433,23 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 주문하신 음식이 도착하였습니다.♬
 			      					</textarea>
 			    				</td>
-			    			</tr>    	
+			    			</tr>
 			    			<tr>
-			    				<td> 
+			    				<td>
 			    					<!-- 받는 사람 전화번호 설정 필요! -->
 									<input id="SMSinput" class="form-control" type="text" name="rphone" value="010-8832-7217" readonly="readonly">
 			    				</td>
-			    			</tr>  	
+			    			</tr>
 			    			<tr>
 			    				<td>
 									주의 사항 : 『문자는 신중하게!』 『전송은 빠르게!』 『내용은 안전하게!』
 			    				</td>
-			    			</tr>  	
+			    			</tr>
 			    			<tr>
 			    				<td>
 									남은 문자 잔여량 : <%= new SMS().getCount() %>
 			    				</td>
-			    			</tr>  	
+			    			</tr>
 			    			<tr>
 			    				<td>
 			    					<input type="hidden" name="action" value="go">
@@ -453,58 +458,59 @@ $('.change_greeting2').text(String(Rpersenttotalmember));
 							        <input type="hidden" name="sphone3" value="7217">
 							        <input class="btn btn-primary pull-right" id="sendmessage" type="submit" value="전송">
 			    				</td>
-			    			</tr>  	 									
+			    			</tr>
 			    		</tbody>
 			    	</table>
-			
+
 			    </form>	<!-- SMS form  -->
-			   	</div>	<!-- container div -->			
-			</div>			
-			
+			   	</div>	<!-- container div -->
+			</div>
+
 			<!-- member + device + instrument list =================================-->
 			<div class="viewbox4">
-				
+
 			</div>
 			<!-- member + device + instrument data =================================-->
 			<div class="viewbox5">
-				
+
 			</div>
 			<!-- member + device + instrument map =================================-->
-			<div class="viewbox6">	
+
+			<div class="viewbox6">
 				<div></div>
-				
-			
-			
-			
-			
+
+
+
+
+
 			</div><!-- viewbox6 end -->
 		</div>
 	</div>
-	
+
 </body>
 <script type="text/javascript">
 /* Map script */
 //마우스 휠 js
 $(window).bind('mousewheel', function(event) {
     if (event.originalEvent.wheelDelta >= 0) {
-    	
+
         console.log('Scroll up');
-        
+
 		document.getElementById("pingimage1").addEventListener("wheel", myFunction);
         function myFunction() {
       	  this.style.transform = "scale( 2.0 )";
       	};
-      	
+
     }
     if (event.originalEvent.wheelDelta < 0) {
-    	
+
         console.log('Scroll down');
-        
+
         document.getElementById("pingimage1").addEventListener("wheel", myFunction);
         function myFunction() {
         	  this.style.transform = "scale( 1.0 )";
-        };       
-        
+        };
+
     }
 });
 
@@ -513,7 +519,40 @@ $(window).bind('mousewheel', function(event) {
 
 
 
-//---------------------------------------------------------------------------  
+
+//---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+//Progress bar [중복 주의!!!]---------------------------------------------------------------------------
+//최근 10일간 신규 회원 등록 수
+var totalmembernum = ${TodayNolist} + ${Yesterday1Nolist} + ${Yesterday2Nolist} + ${Yesterday3Nolist} + ${Yesterday4Nolist}
++${Yesterday5Nolist} + ${Yesterday6Nolist} + ${Yesterday7Nolist} + ${Yesterday8Nolist} + ${Yesterday9Nolist};
+var persenttotalmember = (totalmembernum / 100) * 100;
+//회원 데이터 * px 값
+var persentpx = persenttotalmember * 7.4;//170.2px
+
+$("#onebarpersent").css("width",String(persentpx));
+
+//최근 10일간 신규 가게 등록 수
+var Rtotalmembernum = ${RTodayNolist} + ${RYesterday1Nolist} + ${RYesterday2Nolist} + ${RYesterday3Nolist} + ${RYesterday4Nolist}
++${RYesterday5Nolist} + ${RYesterday6Nolist} + ${RYesterday7Nolist} + ${RYesterday8Nolist} + ${RYesterday9Nolist};
+var Rpersenttotalmember = (Rtotalmembernum / 100) * 100;
+//가게 데이터 * px 값
+var Rpersentpx = Rpersenttotalmember * 7.4; //118.4px
+
+$("#twobarpersent").css("width",String(Rpersentpx));
+
+//---------------------------------------------------------------------------
+
 //공동 사용 (현재 날짜)
 var nowDate = new Date();
 
@@ -559,7 +598,7 @@ var Ryester8list = ${RYesterday8Nolist};
 // 즈기요 가게 등록 9일전 날짜
 var Ryester9list = ${RYesterday9Nolist};
 
-//---------------------------------------------------------------------------     
+//---------------------------------------------------------------------------
 //오늘 날짜
 var nowYear = nowDate.getFullYear();
 var nowMonth = nowDate.getMonth() +1;
@@ -586,7 +625,7 @@ if(yesterDay < 10) { yesterDay = "0" + yesterDay; }
 //어제 날짜 결과
 var yesterDate = yesterMonth + "-" + yesterDay;// 연도는 길어서 제외
 
-//---------------------------------------------------------------------------   
+//---------------------------------------------------------------------------
 
 //2일전 날짜
 var twoyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
@@ -601,7 +640,7 @@ if(twoyesterDay < 10) { twoyesterDay = "0" + twoyesterDay; }
 
 var twoyesterDate = twoyesterMonth + "-" + twoyesterDay;// 연도는 길어서 제외
 
-//---------------------------------------------------------------------------  
+//---------------------------------------------------------------------------
 
 //3일전 날짜
 var threeyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
@@ -616,8 +655,8 @@ if(threeyesterDay < 10) { threeyesterDay = "0" + threeyesterDay; }
 
 var threeyesterDate = threeyesterMonth + "-" + threeyesterDay;// 연도는 길어서 제외
 
-//---------------------------------------------------------------------------  
-   
+//---------------------------------------------------------------------------
+
 //4일전 날짜
 var fouryesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
 nowDate.setTime(fouryesterday);
@@ -632,7 +671,7 @@ if(fouryesterDay < 10) { fouryesterDay = "0" + fouryesterDay; }
 var fouryesterDate = fouryesterMonth + "-" + fouryesterDay;// 연도는 길어서 제외
 
 //---------------------------------------------------------------------------
-   
+
 //5일전 날짜
 var fiveyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
 nowDate.setTime(fiveyesterday);
@@ -646,8 +685,8 @@ if(fiveyesterDay < 10) { fiveyesterDay = "0" + fiveyesterDay; }
 
 var fiveyesterDate = fiveyesterMonth + "-" + fiveyesterDay;// 연도는 길어서 제외
 
-//---------------------------------------------------------------------------   
-   
+//---------------------------------------------------------------------------
+
 //6일전 날짜
 var sixyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
 nowDate.setTime(sixyesterday);
@@ -661,8 +700,8 @@ if(sixyesterDay < 10) { sixyesterDay = "0" + sixyesterDay; }
 
 var sixyesterDate = sixyesterMonth + "-" + sixyesterDay;// 연도는 길어서 제외
 
-//---------------------------------------------------------------------------  
-   
+//---------------------------------------------------------------------------
+
 //7일전 날짜
 var sevenyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
 nowDate.setTime(sevenyesterday);
@@ -676,8 +715,8 @@ if(sevenyesterDay < 10) { sevenyesterDay = "0" + sevenyesterDay; }
 
 var sevenyesterDate = sevenyesterMonth + "-" + sevenyesterDay;// 연도는 길어서 제외
 
-//---------------------------------------------------------------------------   
-   
+//---------------------------------------------------------------------------
+
 //8일전 날짜
 var eightyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
 nowDate.setTime(eightyesterday);
@@ -691,8 +730,8 @@ if(eightyesterDay < 10) { eightyesterDay = "0" + eightyesterDay; }
 
 var eightyesterDate = eightyesterMonth + "-" + eightyesterDay;// 연도는 길어서 제외
 
-//---------------------------------------------------------------------------   
-    
+//---------------------------------------------------------------------------
+
 //9일전 날짜
 var nineyesterday = nowDate.getTime() - (1 * 24 * 60 * 60 * 1000);
 nowDate.setTime(nineyesterday);
@@ -706,7 +745,7 @@ if(nineyesterDay < 10) { nineyesterDay = "0" + nineyesterDay; }
 
 var nineyesterDate = nineyesterMonth + "-" + nineyesterDay;// 연도는 길어서 제외
 
-//hichart script--------------------------------------------------------------------------- 
+//hichart script---------------------------------------------------------------------------
 /* 즈기요 성장량 계산 */
 
 //멤버 성장률
@@ -791,11 +830,11 @@ Highcharts.chart('container2', {
     credits: {
            enabled: false
        },
-       
+
        //hichart 상단 메뉴 제거
     exporting: {
         enabled: false
-    },   
+    },
     plotOptions: {
         line: {
             dataLabels: {
@@ -828,14 +867,14 @@ Highcharts.chart('container1', {
    title: {
      text: ''
    },
-   
+
    //추가 항목 (중요★★★★★)
     xAxis: {
        className: 'highcharts-color-5',
        categories: [nineyesterDate , eightyesterDate , sevenyesterDate , sixyesterDate , fiveyesterDate , fouryesterDate ,
-    	   threeyesterDate , twoyesterDate , yesterDate , todayDate]		
+    	   threeyesterDate , twoyesterDate , yesterDate , todayDate]
         },
-           
+
    yAxis: [{
      className: 'highcharts-color-0',
      title: {
@@ -850,20 +889,20 @@ Highcharts.chart('container1', {
    }],
 
    plotOptions: {
-     column: {	    	 
+     column: {
        borderRadius: 5
-     }	 	     
+     }
    },
-   
+
    //hichart 하단 링크 제거
    credits: {
           enabled: false
       },
-      
+
       //hichart 상단 메뉴 제거
    exporting: {
        enabled: false
-   },       
+   },
 
    series: [{
 	 name: '회원 수',
@@ -910,116 +949,116 @@ $(".carimage9").hide();
 $(".carimage10").hide();
 $(".carimage11").hide();
 
-	
-	$(".flagimage").click(function(){	
+
+	$(".flagimage").click(function(){
 	stime = setTimeout(time1, 1000);
 	function time1(){
 		$(".light1").css("background", "red");
 		$(".carimage1").show();
-		
+
 		$(".light11").css("background", "green");
 		$(".carimage11").hide();
 	   setTimeout(time2, 1000);
 	}
-	
+
 	function time2(){
 		$(".light2").css("background", "red");
 		$(".carimage2").show();
 
 		$(".light1").css("background", "green");
 		$(".carimage1").hide();
-		
+
 	   setTimeout(time3, 1000);
 	}
-	
+
 	function time3(){
 		$(".light3").css("background", "red");
 		$(".carimage3").show();
 
 		$(".light2").css("background", "green");
-		$(".carimage2").hide();		
+		$(".carimage2").hide();
 	   setTimeout(time4, 1000);
 	}
-	
+
 	function time4(){
 		$(".light4").css("background", "red");
 		$(".carimage4").show();
 
 		$(".light3").css("background", "green");
-		$(".carimage3").hide();				
+		$(".carimage3").hide();
 	   setTimeout(time5, 1000);
 	}
-	
+
 	function time5(){
 		$(".light5").css("background", "red");
 		$(".carimage5").show();
 
 		$(".light4").css("background", "green");
-		$(".carimage4").hide();				
+		$(".carimage4").hide();
 	   setTimeout(time6, 1000);
-	}	
-	
+	}
+
 	function time6(){
 		$(".light6").css("background", "red");
 		$(".carimage6").show();
-		
+
 		$(".light5").css("background", "green");
 		$(".carimage5").hide();
 	   setTimeout(time7, 1000);
 	}
-	
+
 	function time7(){
-		$(".light7").css("background", "red");	
+		$(".light7").css("background", "red");
 		$(".carimage7").show();
 
-		$(".light6").css("background", "green");	
-		$(".carimage6").hide();	
+		$(".light6").css("background", "green");
+		$(".carimage6").hide();
 	   setTimeout(time8, 1000);
 	}
-	
+
 	function time8(){
 		$(".light8").css("background", "red");
 		$(".carimage8").show();
 
 		$(".light7").css("background", "green");
-		$(".carimage7").hide();		
+		$(".carimage7").hide();
 	   setTimeout(time9, 1000);
 	}
-	
+
 	function time9(){
 		$(".light9").css("background", "red");
 		$(".carimage9").show();
 
 		$(".light8").css("background", "green");
-		$(".carimage8").hide();				
+		$(".carimage8").hide();
 	   setTimeout(time10, 1000);
 	}
-	
+
 	function time10(){
 		$(".light10").css("background", "red");
 		$(".carimage10").show();
 
 		$(".light9").css("background", "green");
-		$(".carimage9").hide();				
+		$(".carimage9").hide();
 	   setTimeout(time11, 1000);
-	}		
-	
+	}
+
 	function time11(){
 		//자동 문자 전송하기
 		$("#sendmessage").trigger("click");
-		
+
 		$(".light11").css("background", "red");
 		$(".carimage11").show();
 
 		$(".light10").css("background", "green");
-		$(".carimage10").hide();				
+		$(".carimage10").hide();
 	   setTimeout(time1, 1000);
-	}		
+	}
 
 });
 
 //차량 도착 시 자동 문자 전송 [테스트] end =======================================================
-	
+
 /* 페이져 */
 function viewPaging(pageNo) {
    var pageNo = pageNo;
@@ -1043,15 +1082,19 @@ function viewPaging1(pageNo1) {
       success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
          // 댓글목록을 실행한 결과를 가져온다.
          $("#adminmainpage").html(result);
+
        console.log("고고고2");
-      } 
+      }
+
+      }
+
    });
 };
 //등록 회원 start------------------------------------------------------------------------------------------------------
 //명단 삭제 취소 버튼------------------------------------------
 $(".closedelete").click(function(){
 	$(".checkdelete1").hide();
-	$(".opacitybox2").hide();	
+	$(".opacitybox2").hide();
 });
 
 //명단 삭제 시 확인 뷰------------------------------------------
@@ -1059,26 +1102,26 @@ $(".checkdelete1").hide();
 $(".opacitybox2").hide();
 var delectcheck = $("input[name=delectcheck]").val();
 
-$(".deleteX").click(function(){ 
+$(".deleteX").click(function(){
 	var mid =  $(this).attr("id");
 
 	$(".checkdelete1").show();
 	$(".opacitybox2").show();
 
-	$(".gogogo").click(function(){ 
+	$(".gogogo").click(function(){
 		delectcheck = $("input[name=delectcheck]").val();
-		if(delectcheck == "admin1"){			
-			alert("등록 회원 제명 완료");				
+		if(delectcheck == "admin1"){
+			alert("등록 회원 제명 완료");
 			$(".checkdelete1").hide();
 			$(".opacitybox2").hide();
 			location.href = "${pageContext.request.contextPath}/admin/cmemberdelete.do?mid=" + mid;
-		
-		}else{	
+
+		}else{
 			alert("등록 회원 제명 실패");
 			$(".checkdelete1").hide();
 			$(".opacitybox2").hide();
 		}//else
-		
+
 	});//gogo click function
 });//deleteX click function
 //등록 회원 end------------------------------------------------------------------------------------------------------
@@ -1086,7 +1129,7 @@ $(".deleteX").click(function(){
 //명단 삭제 취소 버튼------------------------------------------
 $(".closedelete2").click(function(){
 	$(".checkdelete2").hide();
-	$(".opacitybox2").hide();	
+	$(".opacitybox2").hide();
 });
 
 //명단 삭제 시 확인 뷰------------------------------------------
@@ -1094,27 +1137,27 @@ $(".checkdelete2").hide();
 $(".opacitybox2").hide();
 var delectcheck2 = $("input[name=delectcheck2]").val();
 
-$(".deleteX2").click(function(){ 
+$(".deleteX2").click(function(){
 	var rid =  $(this).attr("id");
 
 	$(".checkdelete2").show();
 	$(".opacitybox2").show();
-	
-	$(".gogogo2").click(function(){ 
+
+	$(".gogogo2").click(function(){
 		delectcheck2 = $("input[name=delectcheck2]").val();
 
 		if(delectcheck2 == "admin2"){
-			alert("등록 가게 제명 완료");				
+			alert("등록 가게 제명 완료");
 			$(".checkdelete2").hide();
 			$(".opacitybox2").hide();
 			location.href = "${pageContext.request.contextPath}/admin/rmemberdelete.do?rid=" + rid;
-			
-		}else{		
+
+		}else{
 			alert("등록 가게 제명 실패");
 			$(".checkdelete2").hide();
 			$(".opacitybox2").hide();
 		}//else
-		
+
 	});//gogo click function
 });//deleteX click function
 //등록 가게 end------------------------------------------------------------------------------------------------------
@@ -1135,21 +1178,21 @@ function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demo1");
-  if (n > x.length) {slideIndex = 1}    
+  if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" w3-red", "");
   }
-  x[slideIndex-1].style.display = "block";  
+  x[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " w3-red";
 }
 
-// manu bar script1------------------------------------------ 
+// manu bar script1------------------------------------------
 //로딩 이미지
-$(".ring1").hide();  
+$(".ring1").hide();
 $(".ring2").hide();
 $(".ring3").hide();
 $(".ring4").hide();
@@ -1164,413 +1207,413 @@ $(".viewbox4").hide();
 $(".viewbox5").hide();
 $(".viewbox6").hide();
 $(".viewbox9").hide();
-$(document).ready(function(){	
-	
+$(document).ready(function(){
+
 		//<!-- /* Group1 */ -->
 		var check1 = 0;
-		$(".btnHome1").click( function() {  
-			if(check1 == 0){		
+		$(".btnHome1").click( function() {
+			if(check1 == 0){
 				$(".btnHome1").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
 				$(".btnHome1").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
-				$(".btnHome1").css("border-right","7px solid #1ABB9C");		
+				$(".btnHome1").css("border-right","7px solid #1ABB9C");
 				$(".ring1").show();
 				$(".viewbox1").show();
 				check1 = 1;
-				
-				$(".btnHome2").css("background-color","");
-				$(".btnHome2").css("box-shadow","");
-				$(".btnHome2").css("border-right","");	
-				$(".ring2").hide();
-				$(".viewbox2").hide();
-				check2 = 0;	
-				$(".btnHome3").css("background-color","");
-				$(".btnHome3").css("box-shadow","");
-				$(".btnHome3").css("border-right","");	
-				$(".ring3").hide();
-				$(".viewbox3").hide();
-				check3 = 0;	
-				$(".btnHome21").css("background-color","");
-				$(".btnHome21").css("box-shadow","");
-				$(".btnHome21").css("border-right","");	
-				$(".ring4").hide();
-				$(".viewbox4").hide();
-				check4 = 0;	
-				$(".btnHome22").css("background-color","");
-				$(".btnHome22").css("box-shadow","");	
-				$(".btnHome22").css("border-right","");	
-				$(".ring5").hide();
-				$(".viewbox5").hide();
-				check5 = 0;					
-				$(".btnHome23").css("background-color","");
-				$(".btnHome23").css("box-shadow","");
-				$(".btnHome23").css("border-right","");	
-				$(".ring6").hide();
-				$(".viewbox6").hide();
-				check6 = 0;	
-				
-				$(".btnHome9").css("background-color","");
-				$(".btnHome9").css("box-shadow","");
-				$(".btnHome9").css("border-right","");	
-				$(".ring9").hide();
-				$(".viewbox9").hide();
-				check9 = 0;								
-				
-			}else if(check1 == 1){
-				$(".btnHome1").css("background-color","");
-				$(".btnHome1").css("box-shadow","");
-				$(".btnHome1").css("border-right","");	
-				$(".ring1").hide();
-				check1 = 0;			
-			};
-		});	
-		
-		var check2 = 0;
-		$(".btnHome2").click( function() {  
-			if(check2 == 0){		
-				$(".btnHome2").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
-				$(".btnHome2").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
-				$(".btnHome2").css("border-right","7px solid #1ABB9C");	
-				$(".ring2").show();
-				$(".viewbox2").show();				
-				check2 = 1;
-				
-				$(".btnHome1").css("background-color","");
-				$(".btnHome1").css("box-shadow","");
-				$(".btnHome1").css("border-right","");	
-				$(".ring1").hide();
-				$(".viewbox1").hide();
-				check1 = 0;	
-				$(".btnHome3").css("background-color","");			
-				$(".btnHome3").css("box-shadow","");
-				$(".btnHome3").css("border-right","");
-				$(".ring3").hide();
-				$(".viewbox3").hide();
-				check3 = 0;	
-				$(".btnHome21").css("background-color","");				
-				$(".btnHome21").css("box-shadow","");
-				$(".btnHome21").css("border-right","");	
-				$(".ring4").hide();
-				$(".viewbox4").hide();
-				check4 = 0;	
-				$(".btnHome22").css("background-color","");
-				$(".btnHome22").css("box-shadow","");
-				$(".btnHome22").css("border-right","");	
-				$(".ring5").hide();
-				$(".viewbox5").hide();
-				check5 = 0;					
-				$(".btnHome23").css("background-color","");
-				$(".btnHome23").css("box-shadow","");
-				$(".btnHome23").css("border-right","");	
-				$(".ring6").hide();
-				$(".viewbox6").hide();
-				check6 = 0;	
-				
-				$(".btnHome9").css("background-color","");
-				$(".btnHome9").css("box-shadow","");
-				$(".btnHome9").css("border-right","");	
-				$(".ring9").hide();
-				$(".viewbox9").hide();
-				check9 = 0;								
-				
-			}else if(check2 == 1){
+
 				$(".btnHome2").css("background-color","");
 				$(".btnHome2").css("box-shadow","");
 				$(".btnHome2").css("border-right","");
 				$(".ring2").hide();
-				check2 = 0;		
-			};
-		});	
-		
-		var check3 = 0;
-		$(".btnHome3").click( function() {  
-			if(check3 == 0){		
-				$(".btnHome3").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
-				$(".btnHome3").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
-				$(".btnHome3").css("border-right","7px solid #1ABB9C");	
-				$(".ring3").show();
-				$(".viewbox3").show();
-				$(".viewbox0").hide();			
-				check3 = 1;
-				
-				$(".btnHome1").css("background-color","");
-				$(".btnHome1").css("box-shadow","");
-				$(".btnHome1").css("border-right","");		
-				$(".ring1").hide();
-				$(".viewbox1").hide();
-				check1 = 0;	
-				$(".btnHome2").css("background-color","");
-				$(".btnHome2").css("box-shadow","");
-				$(".btnHome2").css("border-right","");	
-				$(".ring2").hide();
 				$(".viewbox2").hide();
-				check2 = 0;	
-				$(".btnHome21").css("background-color","");
-				$(".btnHome21").css("box-shadow","");
-				$(".btnHome21").css("border-right","");		
-				$(".ring4").hide();
-				$(".viewbox4").hide();
-				check4 = 0;	
-				$(".btnHome22").css("background-color","");
-				$(".btnHome22").css("box-shadow","");
-				$(".btnHome22").css("border-right","");	
-				$(".ring5").hide();
-				$(".viewbox5").hide();
-				check5 = 0;					
-				$(".btnHome23").css("background-color","");
-				$(".btnHome23").css("box-shadow","");
-				$(".btnHome23").css("border-right","");	
-				$(".ring6").hide();
-				$(".viewbox6").hide();
-				check6 = 0;	
-				
-				$(".btnHome9").css("background-color","");
-				$(".btnHome9").css("box-shadow","");
-				$(".btnHome9").css("border-right","");	
-				$(".ring9").hide();
-				$(".viewbox9").hide();
-				check9 = 0;					
-				
-			}else if(check3 == 1){
+				check2 = 0;
 				$(".btnHome3").css("background-color","");
 				$(".btnHome3").css("box-shadow","");
 				$(".btnHome3").css("border-right","");
 				$(".ring3").hide();
-				check3 = 0;		
-			};
-		});	
-		
-		var check9 = 0;
-		$(".btnHome9").click( function() {  
-			if(check9 == 0){		
-				$(".btnHome9").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
-				$(".btnHome9").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
-				$(".btnHome9").css("border-right","7px solid #1ABB9C");	
-				$(".ring9").show();
-				$(".viewbox9").show();			
-				check9 = 1;
-				
-				$(".btnHome1").css("background-color","");
-				$(".btnHome1").css("box-shadow","");
-				$(".btnHome1").css("border-right","");		
-				$(".ring1").hide();
-				$(".viewbox1").hide();
-				check1 = 0;	
-				$(".btnHome2").css("background-color","");
-				$(".btnHome2").css("box-shadow","");
-				$(".btnHome2").css("border-right","");	
-				$(".ring2").hide();
-				$(".viewbox2").hide();
-				check2 = 0;	
-				$(".btnHome3").css("background-color","");
-				$(".btnHome3").css("box-shadow","");
-				$(".btnHome3").css("border-right","");	
-				$(".ring3").hide();
 				$(".viewbox3").hide();
-				check3 = 0;					
+				check3 = 0;
 				$(".btnHome21").css("background-color","");
 				$(".btnHome21").css("box-shadow","");
-				$(".btnHome21").css("border-right","");		
+				$(".btnHome21").css("border-right","");
 				$(".ring4").hide();
 				$(".viewbox4").hide();
-				check4 = 0;	
+				check4 = 0;
 				$(".btnHome22").css("background-color","");
 				$(".btnHome22").css("box-shadow","");
-				$(".btnHome22").css("border-right","");	
+				$(".btnHome22").css("border-right","");
 				$(".ring5").hide();
 				$(".viewbox5").hide();
-				check5 = 0;					
-				$(".btnHome23").css("background-color","");
-				$(".btnHome23").css("box-shadow","");
-				$(".btnHome23").css("border-right","");	
-				$(".ring6").hide();
-				$(".viewbox6").hide();
-				check6 = 0;	
-				
-			}else if(check9 == 1){
-				$(".btnHome9").css("background-color","");
-				$(".btnHome9").css("box-shadow","");
-				$(".btnHome9").css("border-right","");
-				$(".ring9").hide();
-				check9 = 0;		
-			};
-		});	
-		
-		//<!-- /* Group2 */ -->
-		var check4 = 0;
-		$(".btnHome21").click( function() {  
-			if(check4 == 0){		
-				$(".btnHome21").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
-				$(".btnHome21").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
-				$(".btnHome21").css("border-right","7px solid #1ABB9C");	
-				$(".ring4").show();
-				$(".viewbox4").show();
-				$(".viewbox0").hide();				
-				check4 = 1;
-				/* others */
-				$(".btnHome1").css("background-color","");
-				$(".btnHome1").css("box-shadow","");
-				$(".btnHome1").css("border-right","");	
-				$(".ring1").hide();
-				$(".viewbox1").hide();
-				check1 = 0;	
-				$(".btnHome2").css("background-color","");
-				$(".btnHome2").css("box-shadow","");
-				$(".btnHome2").css("border-right","");		
-				$(".ring2").hide();
-				$(".viewbox2").hide();
-				check2 = 0;					
-				$(".btnHome3").css("background-color","");
-				$(".btnHome3").css("box-shadow","");
-				$(".btnHome3").css("border-right","");	
-				$(".ring3").hide();
-				$(".viewbox3").hide();
-				check3 = 0;	
-				$(".btnHome22").css("background-color","");
-				$(".btnHome22").css("box-shadow","");
-				$(".btnHome22").css("border-right","");	
-				$(".ring5").hide();
-				$(".viewbox5").hide();
-				check5 = 0;	
+				check5 = 0;
 				$(".btnHome23").css("background-color","");
 				$(".btnHome23").css("box-shadow","");
 				$(".btnHome23").css("border-right","");
 				$(".ring6").hide();
 				$(".viewbox6").hide();
-				check6 = 0;	
-				
+				check6 = 0;
+
 				$(".btnHome9").css("background-color","");
 				$(".btnHome9").css("box-shadow","");
-				$(".btnHome9").css("border-right","");	
+				$(".btnHome9").css("border-right","");
 				$(".ring9").hide();
 				$(".viewbox9").hide();
-				check9 = 0;			
-				
+				check9 = 0;
+
+			}else if(check1 == 1){
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");
+				$(".ring1").hide();
+				check1 = 0;
+			};
+		});
+
+		var check2 = 0;
+		$(".btnHome2").click( function() {
+			if(check2 == 0){
+				$(".btnHome2").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome2").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome2").css("border-right","7px solid #1ABB9C");
+				$(".ring2").show();
+				$(".viewbox2").show();
+				check2 = 1;
+
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");
+				$(".ring1").hide();
+				$(".viewbox1").hide();
+				check1 = 0;
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");
+				$(".ring3").hide();
+				$(".viewbox3").hide();
+				check3 = 0;
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");
+				$(".ring4").hide();
+				$(".viewbox4").hide();
+				check4 = 0;
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");
+				$(".ring5").hide();
+				$(".viewbox5").hide();
+				check5 = 0;
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");
+				$(".ring6").hide();
+				$(".viewbox6").hide();
+				check6 = 0;
+
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;
+
+			}else if(check2 == 1){
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");
+				$(".ring2").hide();
+				check2 = 0;
+			};
+		});
+
+		var check3 = 0;
+		$(".btnHome3").click( function() {
+			if(check3 == 0){
+				$(".btnHome3").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome3").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome3").css("border-right","7px solid #1ABB9C");
+				$(".ring3").show();
+				$(".viewbox3").show();
+				$(".viewbox0").hide();
+				check3 = 1;
+
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");
+				$(".ring1").hide();
+				$(".viewbox1").hide();
+				check1 = 0;
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");
+				$(".ring2").hide();
+				$(".viewbox2").hide();
+				check2 = 0;
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");
+				$(".ring4").hide();
+				$(".viewbox4").hide();
+				check4 = 0;
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");
+				$(".ring5").hide();
+				$(".viewbox5").hide();
+				check5 = 0;
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");
+				$(".ring6").hide();
+				$(".viewbox6").hide();
+				check6 = 0;
+
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;
+
+			}else if(check3 == 1){
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");
+				$(".ring3").hide();
+				check3 = 0;
+			};
+		});
+
+		var check9 = 0;
+		$(".btnHome9").click( function() {
+			if(check9 == 0){
+				$(".btnHome9").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome9").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome9").css("border-right","7px solid #1ABB9C");
+				$(".ring9").show();
+				$(".viewbox9").show();
+				check9 = 1;
+
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");
+				$(".ring1").hide();
+				$(".viewbox1").hide();
+				check1 = 0;
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");
+				$(".ring2").hide();
+				$(".viewbox2").hide();
+				check2 = 0;
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");
+				$(".ring3").hide();
+				$(".viewbox3").hide();
+				check3 = 0;
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");
+				$(".ring4").hide();
+				$(".viewbox4").hide();
+				check4 = 0;
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");
+				$(".ring5").hide();
+				$(".viewbox5").hide();
+				check5 = 0;
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");
+				$(".ring6").hide();
+				$(".viewbox6").hide();
+				check6 = 0;
+
+			}else if(check9 == 1){
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");
+				$(".ring9").hide();
+				check9 = 0;
+			};
+		});
+
+		//<!-- /* Group2 */ -->
+		var check4 = 0;
+		$(".btnHome21").click( function() {
+			if(check4 == 0){
+				$(".btnHome21").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome21").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome21").css("border-right","7px solid #1ABB9C");
+				$(".ring4").show();
+				$(".viewbox4").show();
+				$(".viewbox0").hide();
+				check4 = 1;
+				/* others */
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");
+				$(".ring1").hide();
+				$(".viewbox1").hide();
+				check1 = 0;
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");
+				$(".ring2").hide();
+				$(".viewbox2").hide();
+				check2 = 0;
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");
+				$(".ring3").hide();
+				$(".viewbox3").hide();
+				check3 = 0;
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");
+				$(".ring5").hide();
+				$(".viewbox5").hide();
+				check5 = 0;
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");
+				$(".ring6").hide();
+				$(".viewbox6").hide();
+				check6 = 0;
+
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;
+
 			}else if(check4 == 1){
 				$(".btnHome4").css("background-color","");
 				$(".btnHome4").css("box-shadow","");
-				$(".btnHome4").css("border-right","");	
+				$(".btnHome4").css("border-right","");
 				$(".ring4").hide();
 				$(".viewbox4").hide();
-				check4 = 0;						
+				check4 = 0;
 			};
-		});	
-		
+		});
+
 		var check5 = 0;
-		$(".btnHome22").click( function() {  
-			if(check5 == 0){		
+		$(".btnHome22").click( function() {
+			if(check5 == 0){
 				$(".btnHome22").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
 				$(".btnHome22").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
 				$(".btnHome22").css("border-right","7px solid #1ABB9C");
 				$(".ring5").show();
 				$(".viewbox5").show();
-				$(".viewbox0").hide();				
+				$(".viewbox0").hide();
 				check5 = 1;
-				/* others */	
+				/* others */
 				$(".btnHome1").css("background-color","");
 				$(".btnHome1").css("box-shadow","");
-				$(".btnHome1").css("border-right","");	
+				$(".btnHome1").css("border-right","");
 				$(".ring1").hide();
 				$(".viewbox1").hide();
-				check1 = 0;	
+				check1 = 0;
 				$(".btnHome2").css("background-color","");
 				$(".btnHome2").css("box-shadow","");
-				$(".btnHome2").css("border-right","");	
+				$(".btnHome2").css("border-right","");
 				$(".ring2").hide();
 				$(".viewbox2").hide();
-				check2 = 0;					
+				check2 = 0;
 				$(".btnHome3").css("background-color","");
 				$(".btnHome3").css("box-shadow","");
-				$(".btnHome3").css("border-right","");	
+				$(".btnHome3").css("border-right","");
 				$(".ring3").hide();
 				$(".viewbox3").hide();
-				check3 = 0;	
+				check3 = 0;
 				$(".btnHome21").css("background-color","");
 				$(".btnHome21").css("box-shadow","");
-				$(".btnHome21").css("border-right","");	
+				$(".btnHome21").css("border-right","");
 				$(".ring4").hide();
 				$(".viewbox4").hide();
-				check4 = 0;	
+				check4 = 0;
 				$(".btnHome23").css("background-color","");
 				$(".btnHome23").css("box-shadow","");
-				$(".btnHome23").css("border-right","");		
+				$(".btnHome23").css("border-right","");
 				$(".ring6").hide();
 				$(".viewbox6").hide();
-				check6 = 0;	
-				
+				check6 = 0;
+
 				$(".btnHome9").css("background-color","");
 				$(".btnHome9").css("box-shadow","");
-				$(".btnHome9").css("border-right","");	
+				$(".btnHome9").css("border-right","");
 				$(".ring9").hide();
 				$(".viewbox9").hide();
-				check9 = 0;							
-				
+				check9 = 0;
+
 			}else if(check5 == 1){
 				$(".btnHome22").css("background-color","");
 				$(".btnHome22").css("box-shadow","");
 				$(".btnHome22").css("border-right","");
 				$(".ring5").hide();
-				check5 = 0;		
+				check5 = 0;
 			};
-		});	
-		
+		});
+
 		var check6 = 0;
-		$(".btnHome23").click( function() {  
-			if(check6 == 0){		
+		$(".btnHome23").click( function() {
+			if(check6 == 0){
 				$(".btnHome23").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
 				$(".btnHome23").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
 				$(".btnHome23").css("border-right","7px solid #1ABB9C");
 				$(".ring6").show();
 				$(".viewbox6").show();
-				$(".viewbox0").hide();				
+				$(".viewbox0").hide();
 				check6 = 1;
 				/* others */
 				$(".btnHome1").css("background-color","");
 				$(".btnHome1").css("box-shadow","");
-				$(".btnHome1").css("border-right","");	
+				$(".btnHome1").css("border-right","");
 				$(".ring1").hide();
 				$(".viewbox1").hide();
-				check1 = 0;	
+				check1 = 0;
 				$(".btnHome2").css("background-color","");
 				$(".btnHome2").css("box-shadow","");
-				$(".btnHome2").css("border-right","");	
+				$(".btnHome2").css("border-right","");
 				$(".ring2").hide();
 				$(".viewbox2").hide();
-				check2 = 0;					
+				check2 = 0;
 				$(".btnHome3").css("background-color","");
 				$(".btnHome3").css("box-shadow","");
-				$(".btnHome3").css("border-right","");	
+				$(".btnHome3").css("border-right","");
 				$(".ring3").hide();
 				$(".viewbox3").hide();
-				check3 = 0;					
+				check3 = 0;
 				$(".btnHome21").css("background-color","");
 				$(".btnHome21").css("box-shadow","");
-				$(".btnHome21").css("border-right","");	
+				$(".btnHome21").css("border-right","");
 				$(".ring4").hide();
 				$(".viewbox4").hide();
-				check4 = 0;		
+				check4 = 0;
 				$(".btnHome22").css("background-color","");
 				$(".btnHome22").css("box-shadow","");
-				$(".btnHome22").css("border-right","");	
+				$(".btnHome22").css("border-right","");
 				$(".ring5").hide();
 				$(".viewbox5").hide();
-				check5 = 0;	
-				
+				check5 = 0;
+
 				$(".btnHome9").css("background-color","");
 				$(".btnHome9").css("box-shadow","");
-				$(".btnHome9").css("border-right","");	
+				$(".btnHome9").css("border-right","");
 				$(".ring9").hide();
 				$(".viewbox9").hide();
-				check9 = 0;						
-				
+				check9 = 0;
+
 			}else if(check6 == 1){
 				$(".btnHome23").css("background-color","");
 				$(".btnHome23").css("box-shadow","");
-				$(".btnHome23").css("border-right","");	
-				$(".ring6").hide();				
-				check6 = 0;		
+				$(".btnHome23").css("border-right","");
+				$(".ring6").hide();
+				check6 = 0;
 			};
-		});	
-});	
+		});
+});
 
 </script>
 </html>

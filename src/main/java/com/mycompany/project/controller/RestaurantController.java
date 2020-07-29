@@ -1,10 +1,16 @@
 package com.mycompany.project.controller;
 
+import java.io.File;
+import java.util.Date;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.project.model.RloginForm;
 import com.mycompany.project.model.Rmember;
@@ -13,6 +19,7 @@ import com.mycompany.project.service.RestaurantService;
 @Controller
 @RequestMapping("/restaurant")
 public class RestaurantController {
+	private static final Logger LOGGER = LoggerFactory.getLogger(RestaurantController.class); 
 	
 	@Autowired
 	private RestaurantService restaurantService;
@@ -62,5 +69,21 @@ public class RestaurantController {
 	public String orderInquiry() {
 		return "restaurant/restaurant_order_inquiry";
 	}
+	
+	@GetMapping("/restaurant_manage_menu_register.do")
+	public String manageMenu() {
+		return "restaurant/restaurant_manage_menu_register";
+	}
+	
+	@PostMapping("/restaurant_manage_menu_register.do")
+	public String write(String frid, String fname, String fcategory, int fprice, MultipartFile fimage) throws Exception{
+		LOGGER.info("실행");
 
+		String saveDir = "C:/Temp/Images/Restaurant/menu/";
+		String saveFileName = fimage.getOriginalFilename();
+		File filePath = new File(saveDir + saveFileName);
+		fimage.transferTo(filePath);
+		
+		return "redirect:/restaurant_manage_menu_register.do";
+	}
 }
