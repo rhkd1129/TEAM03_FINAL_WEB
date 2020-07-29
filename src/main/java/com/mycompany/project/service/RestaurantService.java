@@ -126,10 +126,18 @@ public class RestaurantService {
 
 	public void registerNewMenu(Fnb fnb) {
 		restaurantDao.insertNewMenu(fnb);
-	}		
-	
-	
-	
+	}
+
+	public List<Fnb> getFoodListByFrno(int frno) {
+		List<Fnb> list = restaurantDao.selectFoodListByFrno(frno);
+		return list;
+	}
+
+	public List<Fnb> getBeverageListByFrno(int frno) {
+		List<Fnb> list = restaurantDao.selectBeverageListByFrno(frno);
+		return list;
+	}
+
 	
 	
 	

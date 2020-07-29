@@ -1,6 +1,7 @@
 package com.mycompany.project.controller;
 
 import java.io.File;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +29,7 @@ public class RestaurantController {
 	@RequestMapping("/restaurant_main.do") 
 	public String main(int rno, Model model) {
 		model.addAttribute("rno", rno);
+		
 		return "restaurant/restaurant_main";
 	}
 	
@@ -74,13 +76,19 @@ public class RestaurantController {
 		return "restaurant/restaurant_order_inquiry";
 	}
 	
-	@GetMapping("/restaurant_manage_menu_register.do")
-	public String manageMenu() {
-		return "restaurant/restaurant_manage_menu_register";
+	@GetMapping("/restaurant_manage_menu.do")
+	public String manageMenu(int rno, Model model) {
+		int frno = rno;
+		List<Fnb> foodList = restaurantService.getFoodListByFrno(frno);
+		List<Fnb> beverageList = restaurantService.getBeverageListByFrno(frno);
+		model.addAttribute("foodList", foodList);
+		model.addAttribute("beverageList", beverageList);
+		return "restaurant/restaurant_manage_menu";
 	}
 	
-	@PostMapping("/restaurant_manage_menu_register.do")
+	@PostMapping("/restaurant_manage_menu.do")
 	public String registerMenu(int frno, String fname, String fcategory, int fprice, MultipartFile fimage) throws Exception{
+		
 		Fnb fnb = new Fnb();
 		fnb.setFrno(frno);
 		fnb.setFcategory(fcategory);
@@ -92,8 +100,9 @@ public class RestaurantController {
 		fnb.setFimage(imageUrl);
 		File filePath = new File(saveDir + saveFileName);
 		fimage.transferTo(filePath);
+		LOGGER.info("실행");
 		restaurantService.registerNewMenu(fnb);
 		
-		return "restaurant/restaurant_manage_menu_register";
+		return "redirect:/restaurant/restaurant_manage_menu.do?rno="+frno;
 	}
 }

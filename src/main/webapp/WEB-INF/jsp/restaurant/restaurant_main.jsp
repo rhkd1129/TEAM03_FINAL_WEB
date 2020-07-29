@@ -28,7 +28,7 @@
 			    $.ajax({
 			        type: "POST",
 			        enctype: 'multipart/form-data',
-			        url: "${pageContext.request.contextPath}/restaurant/restaurant_manage_menu_register.do",
+			        url: "${pageContext.request.contextPath}/restaurant/restaurant_manage_menu.do",
 			        data: formData,
 			        processData: false,
 			        contentType: false,
@@ -49,6 +49,10 @@
 	<div class="navbar1">
 		<div class="navbar2">
 			<img class="zgiyo" src="${pageContext.request.contextPath}/resource/image/home/즈기요.png">
+			<div class="restaurantNo">
+				<div>등록번호</div>
+				<div id="rno">${rno}</div>
+			</div>
 		</div>
 	</div>
 	
