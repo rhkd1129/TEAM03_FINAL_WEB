@@ -53,7 +53,7 @@
 	float: left;
 	width: 24.5px;
 	height: 24.5px;
-	background-color: gray;
+	background-color: #2EFEF7;
 }
 
 .mapline1A5{
@@ -81,7 +81,7 @@
 	float: left;
 	width: 24.5px;
 	height: 24.5px;
-	background-color: gray;
+	background-color: #2EFEF7;
 }
 
 .mapline1A9{
@@ -109,7 +109,7 @@
 	float: left;
 	width: 24.5px;
 	height: 24.5px;
-	background-color: gray;
+	background-color: #2EFEF7;
 }
 
 .mapline1A13{
@@ -137,97 +137,8 @@
 	float: left;
 	width: 24.5px;
 	height: 24.5px;
-	background-color: gray;
+	background-color: #2EFEF7;
 }
-
-.mapline1A17{
-	float: left;
-	width: 24.5px;
-	height: 24.5px;
-	background-color: red;
-}
-
-.mapline1A18{
-	float: left;
-	width: 24.5px;
-	height: 24.5px;
-	background-color: blue;
-}
-
-.mapline1A19{
-	float: left;
-	width: 24.5px;
-	height: 24.5px;
-	background-color: green;
-}
-
-.mapline1A20{
-	float: left;
-	width: 24.5px;
-	height: 24.5px;
-	background-color: gray;
-}
-
-.mapline1A21{
-	float: left;
-	width: 24.5px;
-	height: 24.5px;
-	background-color: red;
-}
-
-.mapline1A22{
-	float: left;
-	width: 24.5px;
-	height: 24.5px;
-	background-color: blue;
-}
-
-.mapline1A23{
-	float: left;
-	width: 24.5px;
-	height: 24.5px;
-	background-color: green;
-}
-
-.mapline1A24{
-	float: left;
-	width: 24.5px;
-	height: 24.5px;
-	background-color: gray;
-}
-
-.mapline1A25{
-	float: left;
-	width: 24.5px;
-	height: 24.5px;
-	background-color: red;
-}
-
-.mapline1A26{
-	float: left;
-	width: 24.5px;
-	height: 24.5px;
-	background-color: blue;
-}
-
-.mapline1A27{
-	float: left;
-	width: 24.5px;
-	height: 24.5px;
-	background-color: green;
-}
-
-.mapline1A28{
-	float: left;
-	width: 24.5px;
-	height: 24.5px;
-	background-color: gray;
-}
-
-
-
-
-
 
 
 
@@ -325,6 +236,143 @@
 	float: left;
 }
 
+.mapline2A1{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline2A2{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline2A3{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline2A4{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: #2EFEF7;
+}
+
+.mapline2A5{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline2A6{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline2A7{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline2A8{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: #2EFEF7;
+}
+
+.mapline2A9{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline2A10{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline2A11{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline2A12{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: #2EFEF7;
+}
+
+.mapline2A13{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline2A14{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline2A15{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline2A16{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: #2EFEF7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 3번째 줄 시작 */
+
 .mapline3{
 	width: 50px;
 	height: 50px;
@@ -338,6 +386,138 @@
 	float: left;
 }
 
+.mapline3A1{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline3A2{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline3A3{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline3A4{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: #2EFEF7;
+}
+
+.mapline3A5{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline3A6{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline3A7{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline3A8{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: #2EFEF7;
+}
+
+.mapline3A9{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline3A10{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline3A11{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline3A12{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: #2EFEF7;
+}
+
+.mapline3A13{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline3A14{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline3A15{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline3A16{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: #2EFEF7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 4번째 줄 시작 */
 .mapline4{
 	width: 50px;
 	height: 50px;
@@ -351,6 +531,153 @@
 	float: left;
 }
 
+.mapline4A1{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline4A2{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline4A3{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline4A4{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: #2EFEF7;
+}
+
+.mapline4A5{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline4A6{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline4A7{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline4A8{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: #2EFEF7;
+}
+
+.mapline4A9{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline4A10{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline4A11{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline4A12{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: #2EFEF7;
+}
+
+.mapline4A13{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: red;
+}
+
+.mapline4A14{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: blue;
+}
+
+.mapline4A15{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: green;
+}
+
+.mapline4A16{
+	float: left;
+	width: 24.5px;
+	height: 24.5px;
+	background-color: #2EFEF7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 5번째 줄 시작 */
 .mapline5{
 	width: 50px;
 	height: 50px;

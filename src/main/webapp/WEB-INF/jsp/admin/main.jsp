@@ -327,91 +327,98 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 			    </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+				<!-- 하이차트 2개 추가 필요!!! -->
 
 			</div>
-			<!-- member + Restaurant map ===========================================-->
+			
+			<!-- member + Restaurant map ===========================================-->			
 			<div class="viewbox3">
-
-				<div class="line1-1"></div><div class="jumpline"></div><div class="line1-2"></div><div class="jumpline"></div><div class="line1-3"></div><div class="jumpline"></div>
+				<!-- 좌측 상단 곡선 도로 -->
+				<img class="range1" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">			
+				<!-- 상단 직선 도로 (상부) -->
+				<div class="jumpline"></div><div class="line1-3"></div><div class="jumpline"></div>
 				<div class="line1-4"></div><div class="jumpline"></div><div class="line1-5"></div><div class="jumpline"></div><div class="line1-6"></div><div class="jumpline"></div>
 				<div class="line1-7"></div><div class="jumpline"></div><div class="line1-8"></div><div class="jumpline"></div><div class="line1-9"></div><div class="jumpline"></div>
 				<div class="line1-10"></div><div class="jumpline"></div><div class="line1-11"></div><div class="jumpline"></div><div class="line1-12"></div><div class="jumpline"></div>
-				<div class="line1-13"></div><div class="jumpline"></div><div class="line1-14"></div>
-				<div class="extrack1"></div>
-				<div class="extrack3"></div>
-
-				<div class="line2-1"></div><div class="jumpline2"></div><div class="line2-2"></div><div class="jumpline2"></div><div class="line2-3"></div><div class="jumpline2"></div>
+				<div class="line1-13"></div>				
+				<!-- 우측 상단 곡선 도로 -->
+				<img class="range2" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">				
+				<!-- 상단 직선 도로 (하부) -->
+				<div class="jumpline2"></div><div class="line2-3"></div><div class="jumpline2"></div>
 				<div class="line2-4"></div><div class="jumpline2"></div><div class="line2-5"></div><div class="jumpline2"></div><div class="line2-6"></div><div class="jumpline2"></div>
 				<div class="line2-7"></div><div class="jumpline2"></div><div class="line2-8"></div><div class="jumpline2"></div><div class="line2-9"></div><div class="jumpline2"></div>
 				<div class="line2-10"></div><div class="jumpline2"></div><div class="line2-11"></div><div class="jumpline2"></div><div class="line2-12"></div><div class="jumpline2"></div>
-				<div class="line2-13"></div><div class="jumpline2"></div><div class="line2-14"></div>
-				<div class="extrack2"></div>
-				<div class="extrack4"></div>
-
-				<img class="flagimage" src="${pageContext.request.contextPath}/resource/image/admin/깃발.png">
-				<img class="homeimage" src="${pageContext.request.contextPath}/resource/image/admin/home.png">
-
-				<div class="light1"></div>
-					<img class="carimage1" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light2"></div>
-					<img class="carimage2" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light3"></div>
-					<img class="carimage3" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light4"></div>
-					<img class="carimage4" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light5"></div>
-					<img class="carimage5" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light6"></div>
-					<img class="carimage6" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light7"></div>
-					<img class="carimage7" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light8"></div>
-					<img class="carimage8" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light9"></div>
-					<img class="carimage9" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light10"></div>
-					<img class="carimage10" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-				<div class="light11"></div>
-					<img class="carimage11" src="${pageContext.request.contextPath}/resource/image/admin/car.png">
-
-
-				<img id="pingimage1" src="${pageContext.request.contextPath}/resource/image/admin/ping.png">
-
-
-
-				<!-- 만들어야할 것들 -->
-
-
-				<!-- 만들어야할 것들 -->
-
-				<!-- 1. IOT트랙 맵 구현 -->
-				<!-- 2. 현재 매장의 위치, 가맹점의 위치, 고객들의 위치 구현 -->
-				<!-- 3. 고객 주문 시 맵에 주문창 생성 , 도착 시 주문창 제거 -->
-				<!-- 4. 최단 경로 자동 설정ㄴ -->
-
+				<div class="line2-13"></div>
+				<!-- 좌측 직선 도로  -->
+				<div class="bigleftline">
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- ////------- -->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+				</div>
+				
+				<!-- 차트 페이지  -->
+				<div class="centerchartpage1">
+				
+				
+				
+				
+				</div>
+				
+				<!-- 좌측 하단 곡선 도로 -->
+				<img class="range3" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">				
+				<!-- 좌측 직선 도로 -->
+				<div class="bigrightline">				
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- ////------- -->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+					<div class="leftline3"></div><div class="leftline4"></div><!-- //// --------->
+					<div class="jumpline3"></div><div class="jumpline4"></div><!-- 점프선 -->
+				</div>				
+				<!-- 하단 우측 곡선 도로 -->
+				<img class="range4" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">
+				<!-- 하단 직선 도로 (상부) -->
+				<div class="jumpline"></div><div class="line1-3"></div><div class="jumpline"></div>
+				<div class="line1-4"></div><div class="jumpline"></div><div class="line1-5"></div><div class="jumpline"></div><div class="line1-6"></div><div class="jumpline"></div>
+				<div class="line1-7"></div><div class="jumpline"></div><div class="line1-8"></div><div class="jumpline"></div><div class="line1-9"></div><div class="jumpline"></div>
+				<div class="line1-10"></div><div class="jumpline"></div><div class="line1-11"></div><div class="jumpline"></div><div class="line1-12"></div><div class="jumpline"></div>
+				<div class="line1-13"></div>								
+				<!-- 하단 직선 도로 (하부) -->
+				<div class="Sjumpline2"></div><div class="line2-3"></div><div class="jumpline2"></div>
+				<div class="line2-4"></div><div class="jumpline2"></div><div class="line2-5"></div><div class="jumpline2"></div><div class="line2-6"></div><div class="jumpline2"></div>
+				<div class="line2-7"></div><div class="jumpline2"></div><div class="line2-8"></div><div class="jumpline2"></div><div class="line2-9"></div><div class="jumpline2"></div>
+				<div class="line2-10"></div><div class="jumpline2"></div><div class="line2-11"></div><div class="jumpline2"></div><div class="line2-12"></div><div class="jumpline2"></div>
+				<div class="line2-13"></div>
+				<!-- 인차선 곡선 도로 (동서남북) -->
+				<img class="insideimageline1" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">
+				<img class="insideimageline2" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">			
+				<img class="insideimageline3" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">
+				<img class="insideimageline4" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">	
+						
+				<!-- 곡선 차선 (중앙차선) -->		
+				<img class="insideimageline5" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">								
+				<img class="insideimageline6" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">	
+				<img class="insideimageline7" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">
+				<img class="insideimageline8" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">	
+				
+				<!-- 짤짤이 제거 (인차선 곡선 도로 인해 생긴 노란픽셀 제거) -->
+				<div class="deleteyellowline1"></div>
+				<div class="deleteyellowline2"></div>				
+				<div class="deleteyellowline3"></div>
+				<div class="deleteyellowline4"></div>									
 			</div>
 
 			<!-- SMS Send Page =================================-->
@@ -472,214 +479,33 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 			<div class="viewbox4">
 
 			</div>
+			
 			<!-- member + device + instrument data =================================-->
 			<div class="viewbox5">
-				<img class="rouline" src="${pageContext.request.contextPath}/resource/image/admin/곡선배경제거.png">
-				<img class="strline" src="${pageContext.request.contextPath}/resource/image/admin/직선배경제거2.png">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 			</div>
-			<!-- member + device + instrument map =================================-->
-
-			<div class="viewbox6"> <!-- 1685 * 937 -->
-				<div class="jumpline111"></div>
-				<div class="jumpline222"></div>
 			
-				<!-- 직선 차선 그룹   -->
-				<!-- 1번째 줄  -->
-				<div class="mapline1"><div class="mapline1A1"></div><div class="mapline1A2"></div><div class="mapline1A3"></div><div class="mapline1A4"></div></div>
-				<div class="mapline1"><div class="mapline1A5"></div><div class="mapline1A6"></div><div class="mapline1A7"></div><div class="mapline1A8"></div></div>
-				<div class="mapline1"><div class="mapline1A9"></div><div class="mapline1A10"></div><div class="mapline1A11"></div><div class="mapline1A12"></div></div>
-				<div class="mapline1"><div class="mapline1A13"></div><div class="mapline1A14"></div><div class="mapline1A15"></div><div class="mapline1A16"></div></div>
-				<div class="mapline1"><div class="mapline1A17"></div><div class="mapline1A18"></div><div class="mapline1A19"></div><div class="mapline1A20"></div></div>
-				<div class="mapline1"><div class="mapline1A21"></div><div class="mapline1A22"></div><div class="mapline1A23"></div><div class="mapline1A24"></div></div>
-				<div class="mapline1"><div class="mapline1A25"></div><div class="mapline1A26"></div><div class="mapline1A27"></div><div class="mapline1A28"></div></div>
-				<div class="mapline1"><div class="mapline1A29"></div><div class="mapline1A30"></div><div class="mapline1A31"></div><div class="mapline1A32"></div></div>
-				<div class="mapline1"><div class="mapline1A33"></div><div class="mapline1A34"></div><div class="mapline1A35"></div><div class="mapline1A36"></div></div>
-				<div class="mapline1"><div class="mapline1A37"></div><div class="mapline1A38"></div><div class="mapline1A39"></div><div class="mapline1A40"></div></div>
-				<div class="mapline1"><div class="mapline1A41"></div><div class="mapline1A42"></div><div class="mapline1A43"></div><div class="mapline1A44"></div></div>
-				<div class="mapline1"><div class="mapline1A45"></div><div class="mapline1A46"></div><div class="mapline1A47"></div><div class="mapline1A48"></div></div>
-				<div class="mapline1"><div class="mapline1A49"></div><div class="mapline1A50"></div><div class="mapline1A51"></div><div class="mapline1A52"></div></div>
-				<div class="mapline1"><div class="mapline1A53"></div><div class="mapline1A54"></div><div class="mapline1A55"></div><div class="mapline1A56"></div></div>
-				<div class="mapline1"><div class="mapline1A57"></div><div class="mapline1A58"></div><div class="mapline1A59"></div><div class="mapline1A60"></div></div>
-				<div class="mapline1"><div class="mapline1A61"></div><div class="mapline1A62"></div><div class="mapline1A63"></div><div class="mapline1A64"></div></div>
-				<div class="mapline1"><div class="mapline1A65"></div><div class="mapline1A66"></div><div class="mapline1A67"></div><div class="mapline1A68"></div></div>
-				<div class="mapline1"><div class="mapline1A69"></div><div class="mapline1A70"></div><div class="mapline1A71"></div><div class="mapline1A72"></div></div>
-				<div class="mapline1"><div class="mapline1A73"></div><div class="mapline1A74"></div><div class="mapline1A75"></div><div class="mapline1A76"></div></div>
-				<div class="mapline1"><div class="mapline1A77"></div><div class="mapline1A78"></div><div class="mapline1A79"></div><div class="mapline1A80"></div></div>
-				<div class="mapline1"><div class="mapline1A81"></div><div class="mapline1A82"></div><div class="mapline1A83"></div><div class="mapline1A84"></div></div>
-				<div class="mapline1"><div class="mapline1A85"></div><div class="mapline1A86"></div><div class="mapline1A87"></div><div class="mapline1A88"></div></div>
-				<div class="mapline1"><div class="mapline1A89"></div><div class="mapline1A90"></div><div class="mapline1A91"></div><div class="mapline1A92"></div></div>
-				<div class="mapline1"><div class="mapline1A93"></div><div class="mapline1A94"></div><div class="mapline1A95"></div><div class="mapline1A96"></div></div>
-				<div class="mapline1"><div class="mapline1A97"></div><div class="mapline1A98"></div><div class="mapline1A99"></div><div class="mapline1A100"></div></div>
-				<div class="mapline1"><div class="mapline1A101"></div><div class="mapline1A102"></div><div class="mapline1A103"></div><div class="mapline1A104"></div></div>
-				<div class="mapline1"><div class="mapline1A105"></div><div class="mapline1A106"></div><div class="mapline1A107"></div><div class="mapline1A108"></div></div>
-				<div class="mapline1"><div class="mapline1A109"></div><div class="mapline1A110"></div><div class="mapline1A111"></div><div class="mapline1A112"></div></div>
-				<div class="mapline1"><div class="mapline1A113"></div><div class="mapline1A114"></div><div class="mapline1A115"></div><div class="mapline1A116"></div></div>
-				<div class="mapline1"><div class="mapline1A117"></div><div class="mapline1A118"></div><div class="mapline1A119"></div><div class="mapline1A120"></div></div>
-				<div class="mapline1"><div class="mapline1A121"></div><div class="mapline1A122"></div><div class="mapline1A123"></div><div class="mapline1A124"></div></div>
-				<div class="mapline1"><div class="mapline1A125"></div><div class="mapline1A126"></div><div class="mapline1A127"></div><div class="mapline1A128"></div></div>
-				<div class="mapline1 mapline1-1"><div class="mapline1A129"></div><div class="mapline1A130"></div><div class="mapline1A131"></div><div class="mapline1A132"></div></div>
+			<!-- member + device + instrument map =================================-->
+			<div class="viewbox6"> <!-- 1685 * 937 -->
 				
-				<!-- 2번째 줄  -->
-				<div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div>
-				<div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div>
-				<div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div>
-				<div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div>
-				<div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div><div class="mapline2"></div>
-				<div class="mapline2"></div><div class="mapline2"></div><div class="mapline2 mapline2-2"></div>
-
-				<!-- 3번째 줄  -->
-				<div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div>
-				<div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div>
-				<div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div>
-				<div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div>
-				<div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div><div class="mapline3"></div>
-				<div class="mapline3"></div><div class="mapline3"></div><div class="mapline3 mapline3-3"></div>
-
-				<!-- 4번째 줄  -->
-				<div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div>
-				<div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div>
-				<div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div>
-				<div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div>
-				<div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div><div class="mapline4"></div>
-				<div class="mapline4"></div><div class="mapline4"></div><div class="mapline4 mapline4-4"></div>
-
-				<!-- 5번째 줄  -->
-				<div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div>
-				<div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div>
-				<div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div>
-				<div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div>
-				<div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div><div class="mapline5"></div>
-				<div class="mapline5"></div><div class="mapline5"></div><div class="mapline5 mapline5-5"></div>
-
-				<!-- 6번째 줄  -->
-				<div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div>
-				<div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div>
-				<div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div>
-				<div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div>
-				<div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div><div class="mapline6"></div>
-				<div class="mapline6"></div><div class="mapline6"></div><div class="mapline6 mapline6-6"></div>
-
-				<!-- 아래 차선 그룹  -->
-				<!-- 1번쨰 줄  -->
-				<div class="mapline7"></div><div class="mapline7"></div><div class="mapline7"></div>
-				<div class="mapline7"></div><div class="mapline7"></div><div class="mapline7 mapline7-7"></div>
-
-				<!-- 간략 차트 페이지  -->
-				<div class="maplineMAP">
-					<div class="maplineMAPhead">배송 현황</div>
-				
-				</div>
-
-				<!-- 2번쨰 줄  -->
-				<div class="mapline8"></div><div class="mapline8"></div><div class="mapline8"></div>
-				<div class="mapline8"></div><div class="mapline8"></div><div class="mapline8 mapline8-8"></div>
-
-				<!-- 3번쨰 줄  -->
-				<div class="mapline9"></div><div class="mapline9"></div><div class="mapline9"></div>
-				<div class="mapline9"></div><div class="mapline9"></div><div class="mapline9 mapline9-9"></div>
-
-				<!-- 4번쨰 줄  -->
-				<div class="mapline10"></div><div class="mapline10"></div><div class="mapline10"></div>
-				<div class="mapline10"></div><div class="mapline10"></div><div class="mapline10 mapline10-10"></div>
-
-				<!-- 5번쨰 줄  -->
-				<div class="mapline11"></div><div class="mapline11"></div><div class="mapline11"></div>
-				<div class="mapline11"></div><div class="mapline11"></div><div class="mapline11 mapline11-11"></div>
-
-				<!-- 6번쨰 줄  -->
-				<div class="mapline12"></div><div class="mapline12"></div><div class="mapline12"></div>
-				<div class="mapline12"></div><div class="mapline12"></div><div class="mapline12 mapline12-12"></div>
-
-				<!-- 7번쨰 줄  -->
-				<div class="mapline13"></div><div class="mapline13"></div><div class="mapline13"></div>
-				<div class="mapline13"></div><div class="mapline13"></div><div class="mapline13 mapline13-13"></div>
-
-				<!-- 8번쨰 줄  -->
-				<div class="mapline14"></div><div class="mapline14"></div><div class="mapline14"></div>
-				<div class="mapline14"></div><div class="mapline14"></div><div class="mapline14 mapline14-14"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			</div><!-- viewbox6 end -->
+			</div>
 		</div>
 	</div>
 
 </body>
 <script type="text/javascript">
 /* Map script */
-//마우스 휠 js
-// $(window).bind('mousewheel', function(event) {
-//     if (event.originalEvent.wheelDelta >= 0) {
 
-//         console.log('Scroll up');
 
-// 		document.getElementById("pingimage1").addEventListener("wheel", myFunction);
-//         function myFunction() {
-//       	  this.style.transform = "scale( 2.0 )";
-//       	};
 
-//     }
-//     if (event.originalEvent.wheelDelta < 0) {
 
-//         console.log('Scroll down');
 
-//         document.getElementById("pingimage1").addEventListener("wheel", myFunction);
-//         function myFunction() {
-//         	  this.style.transform = "scale( 1.0 )";
-//         };
 
-//     }
-// });
+
+
+
+
+
 //---------------------------------------------------------------------------
 
 
