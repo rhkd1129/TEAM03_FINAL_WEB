@@ -3,6 +3,7 @@ package com.mycompany.project.model;
 import java.sql.Date;
 
 public class Rmember {
+	private int rno;
 	private String rid;
 	private String rpassword;
 	private String rname;
@@ -11,7 +12,22 @@ public class Rmember {
 	private String rtel;
 	private String rcategory;
 	private Date rdate;
-	
+
+
+
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+	public Date getRdate() {
+		return rdate;
+	}
+	public void setRdate(Date rdate) {
+		this.rdate = rdate;
+	}
+
 	public String getRid() {
 		return rid;
 	}
@@ -60,5 +76,5 @@ public class Rmember {
 	public void setRdate(Date rdate) {
 		this.rdate = rdate;
 	}
-	
+
 }

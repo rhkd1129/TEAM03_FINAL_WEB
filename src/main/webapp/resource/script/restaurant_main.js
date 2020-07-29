@@ -155,6 +155,14 @@ $('#menu5').click(function() {
 		'background-color' : '#d7dada',
 		'color' : '#a6abab'
 	})
+	
+	$.ajax({
+		type : "get", 
+		url : "restaurant_manage_menu_register.do",
+		success : function(result) { 
+			$(".content2").html(result);
+		}
+	});
 });
 
 $('#menu6').click(function() {
@@ -217,3 +225,7 @@ $('#menu8').click(function() {
 $(".zgiyo").click(function(){
     location.href = "${pageContext.request.contextPath}/home/landingpage.do";
 });
+
+
+
+

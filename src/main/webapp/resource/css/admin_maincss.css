@@ -2,6 +2,9 @@
 /* hichart --------------------------*/
 @import 'https://code.highcharts.com/css/highcharts.css';
 
+/* 구글 테두리 스타일 제거******************************** */
+*:focus { outline:none; }
+
 /* 공용 start*************************************** */
 a {
    text-decoration: none;
@@ -668,19 +671,19 @@ a:hover {
 .viewbox4{
 	width: 1685px;
 	height: 937px;	
-	background-color: #D0A9F5;
+	background-color: white;
 	float: left;	
 }
 .viewbox5{
 	width: 1685px;
 	height: 937px;	
-	background-color: gray;
+	background-color: white;
 	float: left;	
 }
 .viewbox6{
 	width: 1685px;
 	height: 937px;	
-	background-color: blue;
+	background-color: white;
 	float: left;	
 }
 
@@ -1922,6 +1925,55 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	cursor: pointer;
 }
 
+/* #pingimage1{ */
+/* 	width: 50px; */
+/* 	height: 50px; */
+/* 	position: absolute; */
+/* 	left: 600px; */
+/* 	top: 500px; */
+/* } */
+
+
+@keyframes ball {
+    0% {
+        top:0px;
+    }
+    95% {
+        width: 100px;
+    }
+    to {
+        top:300px;
+        width:115px;
+        height:90px
+    } 
+}
+
+#pingimage1{
+  position:relative;
+  left: 100px;
+  top:0;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:white;
+  animation:ball 1s ease-in Infinite Alternate;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* viewbox9 */
+
 #SMStextarea{
 	width:1100px;
 	height: 300px;
@@ -2014,8 +2066,22 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 
 
 /* viewbox4 page =============== */
+
 /* viewbox5 page =============== */
+
 /* viewbox6 page =============== */
+/* 마우스 휠 테스트 css */
+/* #jb { */
+/* 	width: 100px; */
+/* 	height: 100px; */
+/* 	background-color: orange; */
+/* 	transition: all ease 1s; */
+/* 	text-align: center; */
+/* 	font-size: 25px; */
+/* 	color: white; */
+/* 	line-height: 100px; */
+/* 	float: left; */
+/* } */
 
 
 
@@ -2042,16 +2108,13 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 
 
 
-
-
-
-
-
-/* hichart --------------------------*/
-.highcharts-figure, .highcharts-data-table table {
-  min-width: 310px; 
+/* hichart ---------------------------------------*/
+/* 회원수 , 가게수 차트 + 바  */
+.highcharts-figure1, .highcharts-data-table table {
+    min-width: 310px; 
 	max-width: 800px;
-  margin: 1em auto;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .highcharts-data-table table {
@@ -2064,22 +2127,22 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	max-width: 500px;
 }
 .highcharts-data-table caption {
-  padding: 1em 0;
-  font-size: 1.2em;
-  color: #555;
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
 }
 .highcharts-data-table th {
 	font-weight: 600;
-  padding: 0.5em;
+    padding: 0.5em;
 }
 .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
-  padding: 0.5em;
+    padding: 0.5em;
 }
 .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
-  background: #f8f8f8;
+    background: #f8f8f8;
 }
 .highcharts-data-table tr:hover {
-  background: #f1f7ff;
+    background: #f1f7ff;
 }
 
 
@@ -2109,4 +2172,58 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 .highcharts-yaxis .highcharts-axis-line {
 	stroke-width: 2px;
 }
+
+/* 즈기요 성장 차트  */
+.highcharts-figure2, .highcharts-data-table table {
+    min-width: 360px; 
+    max-width: 800px;
+    margin-left: 10px;
+}
+
+.highcharts-data-table table {
+	font-family: Verdana, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+
+
+
+
+
+
+/* Progress bar ------------------------- */
+
+.progress{
+	width: 740px;
+	margin-left: 25px;
+	margin-top: 5px;
+}
+
+
+
+
+
 
