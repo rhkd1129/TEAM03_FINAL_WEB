@@ -123,7 +123,17 @@ public class RestaurantDao extends EgovAbstractMapper{
 	}
 
 	public void insertNewMenu(Fnb fnb) {
-		insert("rmember.insertNewMenu", fnb);
+		insert("fnb.insertNewMenu", fnb);
+	}
+
+	public List<Fnb> selectFoodListByFrno(int frno) {
+		List<Fnb> list = selectList("fnb.selectFoodList", frno);
+		return list;
+	}
+
+	public List<Fnb> selectBeverageListByFrno(int frno) {
+		List<Fnb> list = selectList("fnb.selectBeverageList", frno);
+		return list;
 	}			
 	
 }

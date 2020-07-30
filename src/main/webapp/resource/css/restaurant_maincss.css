@@ -84,6 +84,19 @@
 	cursor: pointer;
 }
 
+.restaurantNo{
+	float: left;
+	width: 200px;
+	height: 10px;
+	color: white;
+	margin-top: 20px;
+	margin-left: 50px;
+}
+
+#id{
+	float: left;
+}
+
 /* body=============================== */
 
 .menu {

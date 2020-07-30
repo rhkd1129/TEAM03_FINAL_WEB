@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+	<mapper namespace="fnb">
+		<insert id="insertNewMenu" parameterType="fnb" useGeneratedKeys="true" keyProperty="fno">
+			insert into fnb (frno, fcategory, fname, fprice, fimage)
+			values (#{frno}, #{fcategory}, #{fname}, #{fprice}, #{fimage})
+		</insert>
+		
+		<select id="selectFoodList" resultType="fnb">
+			select fname, fprice, fimage from fnb where frno=#{frno} and fcategory='food'
+		</select>
+		
+		<select id="selectBeverageList" resultType="fnb">
+			select fname, fprice, fimage from fnb where frno=#{frno} and fcategory='beverage'
+		</select>
+	</mapper>

@@ -14,11 +14,11 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 		<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_order_queuecss.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_manage_menu_resgistercss.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_manage_menucss.css">
 		
 	</head>
 	<body class="content2">
-		<div class="menuRegistForm">
+		<div class="menuRegistForm" style="height:100%">
 		<form id="menuReigister" method="post" enctype="multipart/form-data">
 			<ul>
 				<li>메뉴명</li>
@@ -44,11 +44,24 @@
 			<input id="menuSubmit" type="button" value="확인" onclick="registMenu();">
 		</form>
 		</div>
+
 		
-		<div class="menuList">
-			<c:forEach var="food" items="${foodList}">
+		<div class="menuList" style="height:100%;">
+			<div class="foodList" style="height:50%; overflow:auto;">
+					<c:forEach var="fnb" items="${foodList}">
+						<div id="food" style="background-color: #d7dada">${fnb.fname}</div>
+						<div>
+							<img src="${fnb.fimage}">
+						</div>
+					</c:forEach>
+			</div>
 			
-			</c:forEach>
+			<div class="beverageList" style="height:50%; overflow:auto;">
+					<c:forEach var="fnb" items="${beverageList}">
+						<div id="beverage" style="background-color: #d7dada">${fnb.fname}</div>
+					</c:forEach>
+			</div>
+			
 		</div>
 	</body>
 	
