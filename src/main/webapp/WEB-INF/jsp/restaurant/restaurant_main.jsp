@@ -63,6 +63,9 @@
 		<div class="navtab2" id='navtab2'>
 			매장관리
 		</div>
+		<div class="navtab3" id='navtab3'>
+			<a href="${pageContext.request.contextPath}/restaurant/restaurant_car_control.do">차량제어</a>
+		</div>
 	</div>
 	
 	<div class="main1">

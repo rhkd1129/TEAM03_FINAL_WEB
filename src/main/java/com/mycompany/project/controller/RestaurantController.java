@@ -105,4 +105,9 @@ public class RestaurantController {
 		
 		return "redirect:/restaurant/restaurant_manage_menu.do?rno="+frno;
 	}
+	
+	@GetMapping("/restaurant_car_control.do")
+	public String carControl() {
+		return "restaurant/restaurant_car_control";
+	}
 }

@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* button css start--------- */
+.movebutton{
+	background-color: #E6E6E6;
+	width: 400px;
+	height: 199px;
+	margin-top: 0px;
+	float: left;
+	border-bottom-right-radius: 20px;
+}
+
+#left{
+	position: absolute;
+	margin-left: 20px;
+	margin-top: 85px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
+
+#right{
+	position: absolute;	
+	margin-left: 90px;
+	margin-top: 85px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
+
+#up{
+	position: absolute;	
+	margin-left: 55px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+	margin-top: 50px;
+}
+
+#down{
+	position: absolute;
+	margin-left: 55px;	
+	margin-top: 120px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+	line-height: 0px;
+}
+
+#stop{
+	position: absolute;
+	margin-left: 55px;	
+	margin-top: 85px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
