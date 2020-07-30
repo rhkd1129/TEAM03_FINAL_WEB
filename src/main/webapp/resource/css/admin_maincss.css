@@ -1708,6 +1708,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 200px;
 	height: 200px;
 	float: left;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
 }
 
 .range2{
@@ -1715,6 +1721,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	height: 200px;
 	float: right;
 	transform : rotate(90deg);
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .range3{
@@ -1724,6 +1736,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	position: absolute;
 	bottom: 8px;
 	left: 230px;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .range4{
@@ -1731,6 +1749,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	height: 200px;
 	transform : rotate(180deg);
 	float: right;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .centerchartpage1{
@@ -1746,6 +1770,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	position: absolute;
 	left: 425px;
 	top: 195px;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .insideimageline2{
@@ -1755,6 +1785,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	right: 200px;
 	top: 195px;
 	transform : rotate(90deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .insideimageline3{
@@ -1764,6 +1800,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	left: 425px;
 	bottom: 202px;
 	transform : rotate(270deg);
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .insideimageline4{
@@ -1773,6 +1815,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	right: 200px;
 	bottom: 202px;
 	transform : rotate(180deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .insideimageline5{
@@ -1781,6 +1829,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	position: absolute;
 	left: 310px;
 	top: 95px;	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .insideimageline6{
@@ -1790,6 +1844,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	right: 80px;
 	top: 95px;	
 	transform : rotate(90deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .insideimageline7{
@@ -1799,6 +1859,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	left: 315px;
 	bottom: 100px;	
 	transform : rotate(270deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .insideimageline8{
@@ -1808,6 +1874,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	right: 85px;
 	bottom: 105px;	
 	transform : rotate(180deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
 .deleteyellowline1{
@@ -1848,9 +1920,9 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 
 .startpatternbox{
 	width: 25px;
-	height: 200px;
+	height: 190px;
 	position: absolute;
-	top: 0px;
+	top: 5px;
 	right: 350px;
  	background-color: white;
  	background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
@@ -1873,12 +1945,11 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    user-select: none;
 }
 
+/* 위치 표시 (통통이) */
 .fa{
 	width: 100px;
 	height: 100px;	
 }
-
-
 
 @keyframes ball {
     0% {
@@ -1902,31 +1973,228 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
   height:100px;
   border-radius:50%;
   background:white;
-  animation:ball 1s ease-in Infinite Alternate;
+  animation:ball 1s ease-in Infinite Alternate;  
 }
 
+.centerchartpageMAIN{
+	float: left;
+	width: 1150px;
+	height: 450px;
+	margin-left: 65px;
+	margin-top: 40px;
+	background-color: white;
+	border: 1px solid #DBDBDB;
+	border-radius: 20px;
+}
 
+.traficimg1{
+	width: 60px;
+	height: 110px;
+	position: absolute;
+	left: 700px;
+	top: 100px;	
+	transform : rotate(270deg);	
+	z-index: 10;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
 
+.traficimg2{
+	width: 60px;
+	height: 110px;
+	position: absolute;
+	left: 1420px;
+	top: 100px;	
+	transform : rotate(270deg);	
+	z-index: 10;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
 
+.traficimg3{
+	width: 60px;
+	height: 110px;
+	position: absolute;
+	left: 1000px;
+	bottom: 100px;
+	transform : rotate(90deg);
+	z-index: 10;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;		
+}
 
+.traficimg4{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	left: 1222px;
+	top: 80px;	
+	z-index: 10;
+	transform: perspective(600px) rotateY(70deg);
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
 
+.traficimg5{
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	left: 235px;
+	top: 40px;	
+	z-index: 10;
+	transform : rotate(315deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
 
+.traficimg6{
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	right: 15px;
+	top: 35px;	
+	z-index: 10;
+	transform : rotate(45deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
 
+.traficimg7{
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	left: 250px;
+	bottom: 40px;	
+	z-index: 10;
+	transform : rotate(220deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
 
+.traficimg8{
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	right: 20px;
+	bottom: 40px;	
+	z-index: 10;
+	transform : rotate(135deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
 
+.crosswalkbox{
+	width: 80px;
+	height: 200px;
+	position: absolute;
+	top: 0px;
+	left: 1300px;
+}
 
+.crosswalk1{
+	width: 80px;
+	height: 15px;
+	background-color: white; 
+}
 
+.crosswalk2{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
 
+.crosswalk3{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
 
+.crosswalk4{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
 
+.crosswalk5{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
 
+.crosswalk6{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
 
+.crosswalk7{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
 
+.crosswalk8{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
 
+.crosswalk0{
+	width: 80px;
+	height: 12px;
+}
 
-
-
-
+.traficlightbox{
+	width: 5px;
+	height: 130px;
+	position: absolute;
+	background-color: #585858;
+	top: 70px;
+	left: 1250px;
+	z-index: 11;
+}
+.traficlightbox2{
+	width: 100px;
+	height: 5px;
+	position: absolute;
+	background-color: #585858;
+	top: 195px;
+	left: 1207px;
+	z-index: 11;
+	transform: perspective(600px) rotateY(85deg);
+}
 
 
 

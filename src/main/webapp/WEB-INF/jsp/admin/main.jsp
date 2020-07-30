@@ -67,7 +67,7 @@ $("#twobarpersent").css("width",String(Rpersentpx));
 $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmember) + "%");
 
 </script>
-<body style="overflow: hidden;" id="adminmainpage" class="nav-md">
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
 	<div class="bodymainbox">
 		<!-- /* 메뉴바 bigbox */ ------------------------------------------------------------------------>
 		<div class="navbarmain">
@@ -377,10 +377,13 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				
 				<!-- 차트 페이지  -->
 				<div class="centerchartpage1">
+					<div class="centerchartpageMAIN">
+						
 					
-				
-				
-				
+					
+					
+					
+					</div>
 				</div>
 				
 				<!-- 좌측 하단 곡선 도로 -->
@@ -432,33 +435,49 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				<div class="deleteyellowline4"></div>	
 				
 				<!-- 출발선 박스 -->
-				<div class="startpatternbox"></div>
-
-
-
-
+				<div class="startpatternbox"></div>			
 				
+				<!-- 예시 이미지들 -->				
+				<img class="traficimg1" src="${pageContext.request.contextPath}/resource/image/trafic/빨강차.png">					
+				<img class="traficimg2" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">					
+				<img class="traficimg3" src="${pageContext.request.contextPath}/resource/image/trafic/하양차.png">					
 				
+				<!-- 신호등 -->	
+				<div class="traficlightbox"></div>			
+				<div class="traficlightbox2"></div>
+				<img class="traficimg4" src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png">
+													
+				<!-- 횡단보도  -->
+				<div class="crosswalkbox">
+					<div class="crosswalk0"></div>
+					<div class="crosswalk1"></div>
+					<div class="crosswalk0"></div>
+					<div class="crosswalk2"></div>
+					<div class="crosswalk0"></div>
+					<div class="crosswalk3"></div>	
+					<div class="crosswalk0"></div>			
+					<div class="crosswalk4"></div>
+					<div class="crosswalk0"></div>
+					<div class="crosswalk5"></div>
+					<div class="crosswalk0"></div>
+					<div class="crosswalk6"></div>	
+					<div class="crosswalk0"></div>			
+					<div class="crosswalk7"></div>
+					<div class="crosswalk0"></div>																			
+				</div>
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-												
+				<!-- 급커브 (좌상, 우상, 좌하, 우하)  -->
+				<img class="traficimg5" src="${pageContext.request.contextPath}/resource/image/trafic/급커브.png">
+				<img class="traficimg6" src="${pageContext.request.contextPath}/resource/image/trafic/급커브.png">
+				<img class="traficimg7" src="${pageContext.request.contextPath}/resource/image/trafic/급커브.png">
+				<img class="traficimg8" src="${pageContext.request.contextPath}/resource/image/trafic/급커브.png">
+					
+					
+					
+					
+					
+					
+									
 			</div>
 
 			<!-- SMS Send Page =================================-->
@@ -527,7 +546,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 			
 			<!-- member + device + instrument map =================================-->
 			<div class="viewbox6"> <!-- 1685 * 937 -->
-				33333333333333333333
+				33333333333333333333		
 			</div>
 			<!-- device controller =================================-->
 			<div class="viewbox7"> <!-- 1685 * 937 -->
@@ -544,7 +563,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					<img id = "cameraView" style="width:600px; height:399px">					
 				</div>
 				
-				
+				<a href="${pageContext.request.contextPath}/admin/movetrack.do">track</a>
 				
 				
 				
@@ -1309,37 +1328,37 @@ var nineyesterDate = nineyesterMonth + "-" + nineyesterDay;// 연도는 길어�
 
 
 //viewbox1 script start---------------------------------------------------------------
-/* 페이져 */
-function viewPaging(pageNo) {
-   var pageNo = pageNo;
-   $.ajax({
-      type : "get", // get방식으로 자료를 전달
-      url : "${pageContext.request.contextPath}/admin/main.do?pageNo=" +pageNo,
-      success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
-         // 댓글목록을 실행한 결과를 가져온다.
-         $("#adminmainpage").html(result);
-      console.log("고고고1");
-      }
-   });
-};
+  /* 페이져 */
+  function viewPaging(pageNo) {
+     var pageNo = pageNo;
+     $.ajax({
+        type : "get", // get방식으로 자료를 전달
+        url : "${pageContext.request.contextPath}/admin/main.do?pageNo=" +pageNo,
+        success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
+           // 댓글목록을 실행한 결과를 가져온다.
+           $("#adminmainpage").html(result);
+//            location.href = "${pageContext.request.contextPath}/admin/main.do?pageNo=" +pageNo;
+            console.log(pageNo);
+            console.log("고고고1");
+        }
+     });
+  };
 
-/* 페이져1 */
-function viewPaging1(pageNo1) {
-   var pageNo1 = pageNo1;
-   $.ajax({
-      type : "get", // get방식으로 자료를 전달
-      url : "${pageContext.request.contextPath}/admin/main.do?pageNo1=" +pageNo1,
-      success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
-         // 댓글목록을 실행한 결과를 가져온다.
-         $("#adminmainpage").html(result);
-
-       console.log("고고고2");
-      }
-
-
-
-   });
-};
+  /* 페이져1 */
+  function viewPaging1(pageNo1) {
+     var pageNo1 = pageNo1;
+     $.ajax({
+        type : "get", // get방식으로 자료를 전달
+        url : "${pageContext.request.contextPath}/admin/main.do?pageNo1=" +pageNo1,
+        success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
+           // 댓글목록을 실행한 결과를 가져온다.
+           $("#adminmainpage").html(result);
+//            location.href = "${pageContext.request.contextPath}/admin/main.do?pageNo1=" +pageNo1;
+			console.log(pageNo1);
+            console.log("고고고2");
+        }
+     });
+  };
 
 //명단 삭제 취소 버튼------------------------------------------
 $(".closedelete").click(function(){
