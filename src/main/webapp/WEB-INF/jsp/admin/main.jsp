@@ -8,6 +8,7 @@
 <html>
 <head>
     <title>Admin Page</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/resource/image/admin/관리자.png">
     <meta charset="UTF-8">
     
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">

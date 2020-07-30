@@ -1441,7 +1441,12 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 
 
 /* viewbox2 page =============== */
+/* Progress bar ------------------------- */
 
+.progress{
+	width: 650px;
+	margin-left: 75px;
+}
 
 /* viewbox3 page =============== */
 .line1-3{
@@ -2033,20 +2038,90 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 /* viewbox5 page =============== */
 
 /* viewbox6 page =============== */
-/* 마우스 휠 테스트 css */
-/* #jb { */
-/* 	width: 100px; */
-/* 	height: 100px; */
-/* 	background-color: orange; */
-/* 	transition: all ease 1s; */
-/* 	text-align: center; */
-/* 	font-size: 25px; */
-/* 	color: white; */
-/* 	line-height: 100px; */
-/* 	float: left; */
-/* } */
 
+/* viewbox7 page =============== */
+/* button css start--------- */
+.movebutton{
+	background-color: #E6E6E6;
+	width: 200px;
+	height: 199px;
+	margin-top: 0px;
+	float: left;
+	border-radius: 20px;
+}
 
+#left{
+	position: absolute;
+	margin-left: 20px;
+	margin-top: 85px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
+
+#right{
+	position: absolute;	
+	margin-left: 90px;
+	margin-top: 85px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
+
+#up{
+	position: absolute;	
+	margin-left: 55px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+	margin-top: 50px;
+}
+
+#down{
+	position: absolute;
+	margin-left: 55px;	
+	margin-top: 120px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+	line-height: 0px;
+}
+
+#stop{
+	position: absolute;
+	margin-left: 55px;	
+	margin-top: 85px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
+
+.ViewBox{
+	width:  600px;
+	height: 400px;	
+	margin-top: 400px;
+}
+
+/* button css end--------- */
 
 
 
@@ -2188,110 +2263,3 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
     background: #f1f7ff;
 }
 
-
-
-
-
-
-
-/* Progress bar ------------------------- */
-
-.progress{
-	width: 650px;
-	margin-left: 75px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* button css start--------- */
-.movebutton{
-	background-color: #E6E6E6;
-	width: 200px;
-	height: 199px;
-	margin-top: 0px;
-	float: left;
-	border-radius: 20px;
-}
-
-#left{
-	position: absolute;
-	margin-left: 20px;
-	margin-top: 85px;
-	color: #fff;
-    background-color: #bd2130;
-    border-color: #b21f2d;
-    width: 30px;
-    height: 30px;
-	text-align: center;
-	line-height: 0px;
-}
-
-#right{
-	position: absolute;	
-	margin-left: 90px;
-	margin-top: 85px;
-	color: #fff;
-    background-color: #bd2130;
-    border-color: #b21f2d;
-    width: 30px;
-    height: 30px;
-	text-align: center;
-	line-height: 0px;
-}
-
-#up{
-	position: absolute;	
-	margin-left: 55px;
-	color: #fff;
-    background-color: #bd2130;
-    border-color: #b21f2d;
-    width: 30px;
-    height: 30px;
-	text-align: center;
-	line-height: 0px;
-	margin-top: 50px;
-}
-
-#down{
-	position: absolute;
-	margin-left: 55px;	
-	margin-top: 120px;
-    color: #fff;
-    background-color: #bd2130;
-    border-color: #b21f2d;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-	line-height: 0px;
-}
-
-#stop{
-	position: absolute;
-	margin-left: 55px;	
-	margin-top: 85px;
-    color: #fff;
-    background-color: #bd2130;
-    border-color: #b21f2d;
-    width: 30px;
-    height: 30px;
-	text-align: center;
-	line-height: 0px;
-}
-
-.ViewBox{
-	width:  600px;
-	height: 400px;	
-	margin-top: 400px;
-}
-
-/* button css end--------- */
