@@ -163,14 +163,6 @@ public class AdminController {
 		model.addAttribute("RYesterday9Nolist", Ryesterday9list);
 //		System.out.println("9일전 명단 수 : " + Ryesterday9list);			
 		
-	
-		
-		
-		
-		
-		
-		
-		
 		return "admin/main";
 	}
 	
@@ -215,5 +207,11 @@ public class AdminController {
 	public String chart() {
 		return "admin/chart";
 	}	
+	
+	//움직이는 트랙
+	@RequestMapping("/movetrack.do")
+	public String movetrack() {
+		return "admin/movetrack";
+	}		
 
 }

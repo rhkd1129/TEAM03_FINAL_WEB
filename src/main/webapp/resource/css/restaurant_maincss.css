@@ -40,6 +40,14 @@
 	border-right: 1px solid #000000;
 }
 
+.navtab3{
+	background-color: #313535;
+	width: 20%;
+	height: 100%;
+	float: left;
+	border-right: 1px solid #000000;
+}
+
 .zgiyo{
 	width: 108px;
 	height: 47px;
@@ -82,6 +90,19 @@
 	background-color: #f0001e;
 	margin-left: 5px;
 	cursor: pointer;
+}
+
+.restaurantNo{
+	float: left;
+	width: 200px;
+	height: 10px;
+	color: white;
+	margin-top: 20px;
+	margin-left: 50px;
+}
+
+#id{
+	float: left;
 }
 
 /* body=============================== */

@@ -8,10 +8,13 @@
 		</insert>
 
 
+
 		<select id="selectByRid" parameterType="String" resultType="rmember">
 			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate from restaurant
 			where rid = #{rid}
 		</select>
+
+
 
 		<select id="selectAllByPage" resultType="rmember">
 			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
@@ -23,6 +26,13 @@
 			from restaurant where radress like CONCAT('%',#{siNm},'%') and radress like CONCAT('%',#{emdNm},'%')
 		</select>
 
+
+
+		<select id="selectRnoByRid" resultType="int">
+			select rno from restaurant where rid=#{rid}
+		</select>
+
+
 		<select id="count" resultType="int">
 			select count(*) from restaurant
 		</select>
@@ -30,7 +40,7 @@
 		<delete id="deleteByRid">
 			delete from restaurant where rid=#{rid}
 		</delete>
-		
+
 		<select id="Rcountbytoday" resultType="int">
 			select count(*) from restaurant where rdate = date_format(now(),'%Y-%m-%d')
 		</select>

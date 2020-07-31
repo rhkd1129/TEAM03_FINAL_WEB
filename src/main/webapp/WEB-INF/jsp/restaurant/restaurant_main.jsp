@@ -14,12 +14,45 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_maincss.css">
+	<script>
+			function registMenu() {
+				var frno = ${rno}
+			    var form = $('#menuReigister')[0];
 	
+			    // FormData 객체 생성
+			    var formData = new FormData(form);
+	
+			    // 코드로 동적으로 데이터 추가 가능.
+				formData.append("frno", frno);
+	
+			    $.ajax({
+			        type: "POST",
+			        enctype: 'multipart/form-data',
+			        url: "${pageContext.request.contextPath}/restaurant/restaurant_manage_menu.do",
+			        data: formData,
+			        processData: false,
+			        contentType: false,
+			        cache: false,
+			        timeout: 600000,
+			        success: function (result) {
+			        	alert("메뉴가 성공적으로 등록되었습니다.");
+			            $(".content2").html(result);
+			        },
+			        error: function (e) {
+			            console.log("ERROR : ", e);
+			        }
+			    });
+			}
+		</script>
 </head>
 <body>
 	<div class="navbar1">
 		<div class="navbar2">
 			<img class="zgiyo" src="${pageContext.request.contextPath}/resource/image/home/즈기요.png">
+			<div class="restaurantNo">
+				<div>등록번호</div>
+				<div id="rno">${rno}</div>
+			</div>
 		</div>
 	</div>
 	
@@ -29,6 +62,9 @@
 		</div>
 		<div class="navtab2" id='navtab2'>
 			매장관리
+		</div>
+		<div class="navtab3" id='navtab3'>
+			<a href="${pageContext.request.contextPath}/restaurant/restaurant_car_control.do">차량제어</a>
 		</div>
 	</div>
 	

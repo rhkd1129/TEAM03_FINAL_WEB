@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.menuRegistForm{
+	width: 40%;
+	float: left;
+}
+
+.menuList{
+	width: 60%;
+	float: left;
+}
+
+#food{
+	height: 150px;
+	border-bottom: 2px solid #a6abab;
+}
+
+#beverage{
+	height: 150px;
+	border-bottom: 2px solid #a6abab;
+}

@@ -34,6 +34,8 @@ $('#navtab2').click(function() {
 	$(".content1").hide();
 });
 
+
+
 $('#menu1').click(function() {
 	$(this).css({
 		'background-color' : '#ffffff',
@@ -156,9 +158,12 @@ $('#menu5').click(function() {
 		'color' : '#a6abab'
 	})
 	
+	var rno = $('#rno').text();
+	console.log(rno)
+	
 	$.ajax({
 		type : "get", 
-		url : "restaurant_manage_menu_register.do",
+		url : "restaurant_manage_menu.do?rno="+rno,
 		success : function(result) { 
 			$(".content2").html(result);
 		}
@@ -223,9 +228,7 @@ $('#menu8').click(function() {
 });
 
 $(".zgiyo").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/landingpage.do";
+    location.href = "/project/home/landingpage.do";
 });
-
-
 
 

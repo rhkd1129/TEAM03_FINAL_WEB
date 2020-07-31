@@ -496,6 +496,51 @@ a:hover {
    width: 50px;
 }
 
+.btnHome24{
+	width: 230px;
+	height: 45px;
+	background-color: #2A3F54;
+	cursor: pointer;
+	float: left;
+	text-decoration: none;
+	display: block;
+	box-sizing: border-box;
+	margin-top: 2px;
+}
+
+.btnHomeimg24{
+	width: 27px;
+	height: 27px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 8px;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;		
+}
+
+.btnHometext24{
+	font-family: "Helvetica Neue", 
+	Roboto, Arial, "Droid Sans", sans-serif;
+	text-decoration: none;	
+	text-shadow: rgba(0,0,0,0.25) 0 -1px 0;
+    color: #E7E7E7;
+    font-weight: 500;	
+	margin-left: 50px;
+	margin-top: 13px;	
+	font-size: 13px;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+   width: 50px;
+}
+
 .ring1{
 	width: 30px;
 	height: 30px;
@@ -595,8 +640,7 @@ a:hover {
    user-select: none;
    margin-left: 120px;
    position: absolute;
-   margin-top: -25px;   
-   
+   margin-top: -25px;     
    -webkit-animation: rotation 2s infinite linear;
 }
 
@@ -613,8 +657,22 @@ a:hover {
    margin-left: 130px;
    margin-top: -25px;
    position: absolute;
-   
-   
+   -webkit-animation: rotation 2s infinite linear;
+}
+
+.ring7{
+	width: 30px;
+	height: 30px;
+	float: left;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+   margin-left: 130px;
+   margin-top: -25px;
+   position: absolute;
    -webkit-animation: rotation 2s infinite linear;
 }
 
@@ -674,12 +732,14 @@ a:hover {
 	background-color: white;
 	float: left;	
 }
+
 .viewbox5{
 	width: 1685px;
 	height: 937px;	
 	background-color: white;
 	float: left;	
 }
+
 .viewbox6{
 	width: 1685px;
 	height: 937px;	
@@ -687,6 +747,12 @@ a:hover {
 	float: left;	
 }
 
+.viewbox7{
+	width: 1685px;
+	height: 937px;	
+	background-color: white;
+	float: left;	
+}
 
 /* admin login page  = viewbox0*/
 .viewbox0{
@@ -1375,106 +1441,19 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 
 
 /* viewbox2 page =============== */
-.extrack{	
-    background-color: white;
-    background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
-    background-position: 0 0, 25px 25px;
-    background-size: 50px 50px;
-	width: 200px;
-	height: 50px;
-	border: 1px solid #444;
+/* Progress bar ------------------------- */
 
+.progress{
+	width: 650px;
+	margin-left: 75px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* viewbox3 page =============== */
-/* 출발 지점 */
-.extrack1{	
-    background-color: white;
-    background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
-    background-position: 0 0, 25px 25px;
-    background-size: 10px 10px;
-	width: 25px;
-	height: 100px;
-	border-top: 5px solid yellow;
-	border-bottom: 5px solid white;	
-	position: absolute;	
-	left: 280px;		
-}
-
-.extrack2{	
-    background-color: white;
-    background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
-    background-position: 0 0, 25px 25px;
-    background-size: 10px 10px;
-	width: 25px;
-	height: 100px;
-	border-top: 5px solid white;
-	border-bottom: 5px solid yellow;
-	position: absolute;	
-	left: 280px;
-	top : 100px;
-}
-
-.extrack3{	
-    background-color: white;
-    background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
-    background-position: 0 0, 25px 25px;
-    background-size: 10px 10px;
-	width: 25px;
-	height: 100px;
-	border-top: 5px solid yellow;
-	border-bottom: 5px solid white;	
-	position: absolute;	
-	left: 1890px;		
-}
-
-.extrack4{	
-    background-color: white;
-    background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
-    background-position: 0 0, 25px 25px;
-    background-size: 10px 10px;
-	width: 25px;
-	height: 100px;
-	border-top: 5px solid white;
-	border-bottom: 5px solid yellow;
-	position: absolute;	
-	left: 1890px;
-	top : 100px;
-}
-
-.line1-1{
-	width: 100px;
-	height: 100px;
-	float: left;
-	background-color: #848484;
-	border-top: 5px solid yellow;
-	border-bottom: 5px solid white;
-}
-.line1-2{
-	width: 100px;
-	height: 100px;
-	float: left;
-	background-color: #848484;
-	border-top: 5px solid yellow;
-	border-bottom: 5px solid white;	
-}
 .line1-3{
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid yellow;
 	border-bottom: 5px solid white;	
 }
@@ -1482,7 +1461,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid yellow;
 	border-bottom: 5px solid white;	
 }
@@ -1490,7 +1469,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid yellow;
 	border-bottom: 5px solid white;	
 }
@@ -1498,7 +1477,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid yellow;
 	border-bottom: 5px solid white;	
 }
@@ -1506,7 +1485,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid yellow;
 	border-bottom: 5px solid white;	
 }
@@ -1514,7 +1493,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid yellow;
 	border-bottom: 5px solid white;	
 }
@@ -1522,7 +1501,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid yellow;
 	border-bottom: 5px solid white;	
 }
@@ -1530,7 +1509,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid yellow;
 	border-bottom: 5px solid white;	
 }
@@ -1538,7 +1517,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid yellow;
 	border-bottom: 5px solid white;	
 }
@@ -1546,48 +1525,24 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid yellow;
 	border-bottom: 5px solid white;	
 }
 .line1-13{
-	width: 100px;
+	width: 65px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
-	border-top: 5px solid yellow;
-	border-bottom: 5px solid white;	
-}
-.line1-14{
-	width: 100px;
-	height: 100px;
-	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid yellow;
 	border-bottom: 5px solid white;	
 }
 
-.line2-1{
-	width: 100px;
-	height: 100px;
-	float: left;
-	background-color: #848484;
-	border-bottom: 5px solid yellow;
-	border-top: 5px solid white;
-}
-.line2-2{
-	width: 100px;
-	height: 100px;
-	float: left;
-	background-color: #848484;
-	border-bottom: 5px solid yellow;
-	border-top: 5px solid white;
-}
 .line2-3{
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-bottom: 5px solid yellow;
 	border-top: 5px solid white;
 }
@@ -1595,7 +1550,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-bottom: 5px solid yellow;
 	border-top: 5px solid white;
 }
@@ -1603,7 +1558,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-bottom: 5px solid yellow;
 	border-top: 5px solid white;
 }
@@ -1611,7 +1566,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-bottom: 5px solid yellow;
 	border-top: 5px solid white;
 }
@@ -1619,7 +1574,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-bottom: 5px solid yellow;
 	border-top: 5px solid white;
 }
@@ -1627,7 +1582,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-bottom: 5px solid yellow;
 	border-top: 5px solid white;
 }
@@ -1635,7 +1590,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-bottom: 5px solid yellow;
 	border-top: 5px solid white;
 }
@@ -1643,7 +1598,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-bottom: 5px solid yellow;
 	border-top: 5px solid white;
 }
@@ -1651,7 +1606,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-bottom: 5px solid yellow;
 	border-top: 5px solid white;
 }
@@ -1659,32 +1614,43 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-bottom: 5px solid yellow;
 	border-top: 5px solid white;
 }
 .line2-13{
-	width: 100px;
+	width: 65px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-bottom: 5px solid yellow;
 	border-top: 5px solid white;
 }
-.line2-14{
+
+.leftline3{
 	width: 100px;
-	height: 100px;
-	float: left;
-	background-color: #848484;
-	border-bottom: 5px solid yellow;
-	border-top: 5px solid white;
+	height: 80px;
+	border-left: 5px solid yellow;
+	border-right: 5px solid white;
+	background-color: #888888;
+	float: left;	
 }
+
+.leftline4{
+	width: 100px;
+	height: 80px;
+	border-left: 5px solid white;
+	border-right: 5px solid yellow;
+	float: left;		
+	background-color: #888888;	
+}
+
 
 .jumpline{
 	width: 20px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid yellow;	
 	border-bottom: 5px solid #848484;
 }
@@ -1693,246 +1659,297 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 	width: 20px;
 	height: 100px;
 	float: left;
-	background-color: #848484;
+	background-color: #888888;
 	border-top: 5px solid #848484;	
 	border-bottom: 5px solid yellow;
 }
 
-.homeimage{
-	width: 70px;
+.jumpline3{
+	width: 100px;
+	height: 22.8px;
+	border-left: 5px solid yellow;
+	background-color: #888888;
+	float: left;	
+}
+
+.jumpline4{
+	width: 100px;
+	height: 22.8px;
+	border-right: 5px solid yellow;
+	float: left;		
+	background-color: #888888;
+}
+
+.Sjumpline2{
+	width: 20px;
+	height: 100px;
+	float: left;
+	background-color: #888888;
+	border-top: 5px solid #848484;	
+	border-bottom: 5px solid yellow;
+	margin-left: 200px;	
+}
+
+.bigleftline{
+	width: 200px;
+	height: 537px;
+	background-color: white;
+	float: left;
+}
+
+.bigrightline{
+	width: 200px;
+	height: 530px;
+	background-color: white;
+	float: right;
+}
+
+.range1{
+	width: 200px;
+	height: 200px;
+	float: left;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+}
+
+.range2{
+	width: 200px;
+	height: 200px;
+	float: right;
+	transform : rotate(90deg);
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.range3{
+	width: 200px;
+	height: 200px;
+	transform : rotate(270deg);
+	position: absolute;
+	bottom: 8px;
+	left: 230px;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.range4{
+	width: 200px;
+	height: 200px;
+	transform : rotate(180deg);
+	float: right;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.centerchartpage1{
+	float: left;
+	width: 1280px;
+	height: 530px;
+	background-color: white;
+}
+
+.insideimageline1{
+	width: 110px;
+	height: 110px;
+	position: absolute;
+	left: 425px;
+	top: 195px;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.insideimageline2{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 200px;
+	top: 195px;
+	transform : rotate(90deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.insideimageline3{
+	width: 110px;
+	height: 110px;
+	position: absolute;
+	left: 425px;
+	bottom: 202px;
+	transform : rotate(270deg);
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.insideimageline4{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 200px;
+	bottom: 202px;
+	transform : rotate(180deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.insideimageline5{
+	width: 110px;
 	height: 70px;
-	border: 5px solid #848484;
 	position: absolute;
-	top: 220px;
-	left: 1800px;
+	left: 310px;
+	top: 95px;	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
 }
 
-.light1{
-	border-radius: 5px;
+.insideimageline6{
+	width: 110px;
+	height: 70px;
+	position: absolute;
+	right: 80px;
+	top: 95px;	
+	transform : rotate(90deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.insideimageline7{
+	width: 100px;
+	height: 80px;
+	position: absolute;
+	left: 315px;
+	bottom: 100px;	
+	transform : rotate(270deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.insideimageline8{
+	width: 100px;
+	height: 70px;
+	position: absolute;
+	right: 85px;
+	bottom: 105px;	
+	transform : rotate(180deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.deleteyellowline1{
 	width: 10px;
 	height: 10px;
-	background-color: green;
-	top: 145px;
-	left: 350px;	
-	float: left;
 	position: absolute;
+	background-color: #888888;
+	top: 190px;
+	left: 420px;
 }
 
-.light2{
-	border-radius: 5px;
+.deleteyellowline2{
 	width: 10px;
 	height: 10px;
-	background-color: green;
-	top: 145px;
-	left: 500px;	
-	float: left;
 	position: absolute;
+	background-color: #888888;	
+	top: 190px;
+	right: 195px;	
 }
 
-.light3{
-	border-radius: 5px;
-	width: 10px;
-	height: 10px;
-	background-color: green;
-	top: 145px;
-	left: 650px;	
-	float: left;
-	position: absolute;	
-}
-
-.light4{
-	border-radius: 5px;
-	width: 10px;
-	height: 10px;
-	background-color: green;
-	top: 145px;
-	left: 800px;	
-	float: left;
+.deleteyellowline3{
+	width: 12px;
+	height: 12px;
 	position: absolute;
+	background-color: #888888;
+	top: 729px;
+	left: 422px;		
 }
 
-.light5{
-	border-radius: 5px;
-	width: 10px;
-	height: 10px;
-	background-color: green;
-	top: 145px;
-	left: 950px;	
-	float: left;
+.deleteyellowline4{
+	width: 12px;
+	height: 12px;
 	position: absolute;
+	background-color: #888888;
+	top: 729px;
+	right: 195px;		
 }
 
-.light6{
-	border-radius: 5px;
-	width: 10px;
-	height: 10px;
-	background-color: green;
-	top: 145px;
-	left: 1100px;	
-	float: left;
+.startpatternbox{
+	width: 25px;
+	height: 190px;
 	position: absolute;
+	top: 5px;
+	right: 350px;
+ 	background-color: white;
+ 	background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
+  	background-position: 0 0, 15px 15px;
+ 	background-size: 10px 10px;	
 }
 
-.light7{
-	border-radius: 5px;
-	width: 10px;
-	height: 10px;
-	background-color: green;
-	top: 145px;
-	left: 1250px;	
-	float: left;
+/* bettery gage */
+#bettery{
 	position: absolute;
-}
-
-.light8{
-	border-radius: 5px;
-	width: 10px;
-	height: 10px;
-	background-color: green;
-	top: 145px;
-	left: 1400px;	
-	float: left;
-	position: absolute;	
-}
-
-.light9{
-	border-radius: 5px;
-	width: 10px;
-	height: 10px;
-	background-color: green;
-	top: 145px;
-	left: 1550px;	
-	float: left;
-	position: absolute;
-}
-
-.light10{
-	border-radius: 5px;
-	width: 10px;
-	height: 10px;
-	background-color: green;
-	top: 145px;
-	left: 1700px;	
-	float: left;
-	position: absolute;
-}
-
-.light11{
-	border-radius: 5px;
-	width: 10px;
-	height: 10px;
-	background-color: green;
-	top: 145px;
-	left: 1850px;	
-	float: left;
-	position: absolute;
-}
-
-.carimage1{
+	top: 400px;
+	left: 400px;
 	width: 100px;
-	height: 50px;
-	position: absolute;
-	top:20px;
-	left: 300px;
+	height: 100px;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
 }
 
-.carimage2{
+/* 위치 표시 (통통이) */
+.fa{
 	width: 100px;
-	height: 50px;
-	position: absolute;
-	top:20px;
-	left: 450px;
+	height: 100px;	
 }
-
-.carimage3{
-	width: 100px;
-	height: 50px;
-	position: absolute;
-	top:20px;
-	left: 600px;
-}
-
-.carimage4{
-	width: 100px;
-	height: 50px;
-	position: absolute;
-	top:20px;
-	left: 750px;
-}
-
-.carimage5{
-	width: 100px;
-	height: 50px;
-	position: absolute;
-	top:20px;
-	left: 900px;
-}
-
-.carimage6{
-	width: 100px;
-	height: 50px;
-	position: absolute;
-	top:20px;
-	left: 1050px;
-}
-
-.carimage7{
-	width: 100px;
-	height: 50px;
-	position: absolute;
-	top:20px;
-	left: 1200px;
-}
-
-.carimage8{
-	width: 100px;
-	height: 50px;
-	position: absolute;
-	top:20px;
-	left: 1350px;
-}
-
-.carimage9{
-	width: 100px;
-	height: 50px;
-	position: absolute;
-	top:20px;
-	left: 1500px;
-}
-
-.carimage10{
-	width: 100px;
-	height: 50px;
-	position: absolute;
-	top:20px;
-	left: 1650px;
-}
-
-.carimage11{
-	width: 100px;
-	height: 50px;
-	position: absolute;
-	top:20px;
-	left: 1800px;
-}
-
-.flagimage{
-	width: 50px;
-	height: 50px;
-	position: absolute;
-	top: 200px;
-	left: 250px;
-	cursor: pointer;
-}
-
-/* #pingimage1{ */
-/* 	width: 50px; */
-/* 	height: 50px; */
-/* 	position: absolute; */
-/* 	left: 600px; */
-/* 	top: 500px; */
-/* } */
-
 
 @keyframes ball {
     0% {
@@ -1956,9 +1973,228 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
   height:100px;
   border-radius:50%;
   background:white;
-  animation:ball 1s ease-in Infinite Alternate;
+  animation:ball 1s ease-in Infinite Alternate;  
 }
 
+.centerchartpageMAIN{
+	float: left;
+	width: 1150px;
+	height: 450px;
+	margin-left: 65px;
+	margin-top: 40px;
+	background-color: white;
+	border: 1px solid #DBDBDB;
+	border-radius: 20px;
+}
+
+.traficimg1{
+	width: 60px;
+	height: 110px;
+	position: absolute;
+	left: 700px;
+	top: 100px;	
+	transform : rotate(270deg);	
+	z-index: 10;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.traficimg2{
+	width: 60px;
+	height: 110px;
+	position: absolute;
+	left: 1420px;
+	top: 100px;	
+	transform : rotate(270deg);	
+	z-index: 10;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.traficimg3{
+	width: 60px;
+	height: 110px;
+	position: absolute;
+	left: 1000px;
+	bottom: 100px;
+	transform : rotate(90deg);
+	z-index: 10;
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;		
+}
+
+.traficimg4{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	left: 1222px;
+	top: 80px;	
+	z-index: 10;
+	transform: perspective(600px) rotateY(70deg);
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.traficimg5{
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	left: 235px;
+	top: 40px;	
+	z-index: 10;
+	transform : rotate(315deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.traficimg6{
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	right: 15px;
+	top: 35px;	
+	z-index: 10;
+	transform : rotate(45deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.traficimg7{
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	left: 250px;
+	bottom: 40px;	
+	z-index: 10;
+	transform : rotate(220deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.traficimg8{
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	right: 20px;
+	bottom: 40px;	
+	z-index: 10;
+	transform : rotate(135deg);	
+	/* 드래그 막기 */	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;	
+}
+
+.crosswalkbox{
+	width: 80px;
+	height: 200px;
+	position: absolute;
+	top: 0px;
+	left: 1300px;
+}
+
+.crosswalk1{
+	width: 80px;
+	height: 15px;
+	background-color: white; 
+}
+
+.crosswalk2{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
+
+.crosswalk3{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
+
+.crosswalk4{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
+
+.crosswalk5{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
+
+.crosswalk6{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
+
+.crosswalk7{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
+
+.crosswalk8{
+	width: 80px;
+	height: 15px;
+	background-color: white; 	
+}
+
+.crosswalk0{
+	width: 80px;
+	height: 12px;
+}
+
+.traficlightbox{
+	width: 5px;
+	height: 130px;
+	position: absolute;
+	background-color: #585858;
+	top: 70px;
+	left: 1250px;
+	z-index: 11;
+}
+.traficlightbox2{
+	width: 100px;
+	height: 5px;
+	position: absolute;
+	background-color: #585858;
+	top: 195px;
+	left: 1207px;
+	z-index: 11;
+	transform: perspective(600px) rotateY(85deg);
+}
 
 
 
@@ -2070,18 +2306,105 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 /* viewbox5 page =============== */
 
 /* viewbox6 page =============== */
-/* 마우스 휠 테스트 css */
-/* #jb { */
-/* 	width: 100px; */
-/* 	height: 100px; */
-/* 	background-color: orange; */
-/* 	transition: all ease 1s; */
-/* 	text-align: center; */
-/* 	font-size: 25px; */
-/* 	color: white; */
-/* 	line-height: 100px; */
-/* 	float: left; */
-/* } */
+
+/* viewbox7 page =============== */
+/* button css start--------- */
+.movebutton{
+	background-color: #E6E6E6;
+	width: 200px;
+	height: 199px;
+	margin-top: 0px;
+	float: left;
+	border-radius: 20px;
+}
+
+#left{
+	position: absolute;
+	margin-left: 20px;
+	margin-top: 85px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
+
+#right{
+	position: absolute;	
+	margin-left: 90px;
+	margin-top: 85px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
+
+#up{
+	position: absolute;	
+	margin-left: 55px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+	margin-top: 50px;
+}
+
+#down{
+	position: absolute;
+	margin-left: 55px;	
+	margin-top: 120px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+	line-height: 0px;
+}
+
+#stop{
+	position: absolute;
+	margin-left: 55px;	
+	margin-top: 85px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
+
+.ViewBox{
+	width:  600px;
+	height: 400px;	
+	margin-top: 400px;
+}
+
+/* button css end--------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2207,23 +2530,4 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
 }
-
-
-
-
-
-
-
-/* Progress bar ------------------------- */
-
-.progress{
-	width: 740px;
-	margin-left: 25px;
-	margin-top: 5px;
-}
-
-
-
-
-
 

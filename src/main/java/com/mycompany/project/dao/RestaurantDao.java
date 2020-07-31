@@ -9,6 +9,8 @@ import com.mycompany.project.model.Amember;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
+
+import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.Rmember;
 
 import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
@@ -128,6 +130,28 @@ public class RestaurantDao extends EgovAbstractMapper{
 		int Ryesterday9Rows = selectOne("rmember.Rcountby9day");
 //		System.out.println("DAO Ryesterday9Rows : " + Ryesterday9Rows);
 		return Ryesterday9Rows;
+	}
+
+
+
+
+	public int selectRnoByRid(String rid) {
+		int rno = selectOne("rmember.selectRnoByRid", rid);
+		return rno;
+	}
+
+	public void insertNewMenu(Fnb fnb) {
+		insert("fnb.insertNewMenu", fnb);
+	}
+
+	public List<Fnb> selectFoodListByFrno(int frno) {
+		List<Fnb> list = selectList("fnb.selectFoodList", frno);
+		return list;
+	}
+
+	public List<Fnb> selectBeverageListByFrno(int frno) {
+		List<Fnb> list = selectList("fnb.selectBeverageList", frno);
+		return list;
 	}
 
 
