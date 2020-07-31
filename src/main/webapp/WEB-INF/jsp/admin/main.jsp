@@ -10,14 +10,14 @@
     <title>Admin Page</title>
     <link rel="icon" href="${pageContext.request.contextPath}/resource/image/admin/관리자.png">
     <meta charset="UTF-8">
-    
+
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
     <script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
     <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
     <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-    
+
     <!-- SMS import 1 (필요x?) -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     <!-- gage bar import -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -65,7 +65,6 @@ var Rpersentpx = Rpersenttotalmember * 7.4;
 $("#twobarpersent").css("width",String(Rpersentpx));
 //현재 사용 x (but 사용 바로 가능)
 $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmember) + "%");
-
 </script>
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false" id="adminmainpage">
 	<div class="bodymainbox">
@@ -123,8 +122,8 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					<img class="btnHomeimg24" src="${pageContext.request.contextPath}/resource/image/admin/controller1.png">
 					<div class="btnHometext24">Manual</div>
 					<img class="ring7" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
-				</div>				
-				
+				</div>
+
 				<div class="btnHome22">
 					<img class="btnHomeimg22" src="${pageContext.request.contextPath}/resource/image/admin/data.png">
 					<div class="btnHometext22">Data</div>
@@ -136,7 +135,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					<div class="btnHometext23">Map</div>
 					<img class="ring6" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
 				</div>
-				
+
 			</div>
 		</div>
 
@@ -341,19 +340,19 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				<!-- 하이차트 2개 추가 필요!!! -->
 
 			</div>
-			
-			<!-- member + Restaurant map ===========================================-->			
+
+			<!-- member + Restaurant map ===========================================-->
 			<div class="viewbox3">
 				<!-- 좌측 상단 곡선 도로 -->
-				<img class="range1" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">			
+				<img class="range1" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">
 				<!-- 상단 직선 도로 (상부) -->
 				<div class="jumpline"></div><div class="line1-3"></div><div class="jumpline"></div>
 				<div class="line1-4"></div><div class="jumpline"></div><div class="line1-5"></div><div class="jumpline"></div><div class="line1-6"></div><div class="jumpline"></div>
 				<div class="line1-7"></div><div class="jumpline"></div><div class="line1-8"></div><div class="jumpline"></div><div class="line1-9"></div><div class="jumpline"></div>
 				<div class="line1-10"></div><div class="jumpline"></div><div class="line1-11"></div><div class="jumpline"></div><div class="line1-12"></div><div class="jumpline"></div>
-				<div class="line1-13"></div>				
+				<div class="line1-13"></div>
 				<!-- 우측 상단 곡선 도로 -->
-				<img class="range2" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">				
+				<img class="range2" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">
 				<!-- 상단 직선 도로 (하부) -->
 				<div class="jumpline2"></div><div class="line2-3"></div><div class="jumpline2"></div>
 				<div class="line2-4"></div><div class="jumpline2"></div><div class="line2-5"></div><div class="jumpline2"></div><div class="line2-6"></div><div class="jumpline2"></div>
@@ -374,22 +373,22 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					<div class="leftline3"></div><div class="leftline4"></div>
 					<div class="jumpline3"></div><div class="jumpline4"></div>
 				</div>
-				
+
 				<!-- 차트 페이지  -->
 				<div class="centerchartpage1">
 					<div class="centerchartpageMAIN">
-						
-					
-					
-					
-					
+
+
+
+
+
 					</div>
 				</div>
-				
+
 				<!-- 좌측 하단 곡선 도로 -->
-				<img class="range3" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">				
+				<img class="range3" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">
 				<!-- 좌측 직선 도로 -->
-				<div class="bigrightline">				
+				<div class="bigrightline">
 					<div class="jumpline3"></div><div class="jumpline4"></div>
 					<div class="leftline3"></div><div class="leftline4"></div>
 					<div class="jumpline3"></div><div class="jumpline4"></div>
@@ -401,7 +400,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					<div class="jumpline3"></div><div class="jumpline4"></div>
 					<div class="leftline3"></div><div class="leftline4"></div>
 					<div class="jumpline3"></div><div class="jumpline4"></div>
-				</div>				
+				</div>
 				<!-- 하단 우측 곡선 도로 -->
 				<img class="range4" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">
 				<!-- 하단 직선 도로 (상부) -->
@@ -409,7 +408,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				<div class="line1-4"></div><div class="jumpline"></div><div class="line1-5"></div><div class="jumpline"></div><div class="line1-6"></div><div class="jumpline"></div>
 				<div class="line1-7"></div><div class="jumpline"></div><div class="line1-8"></div><div class="jumpline"></div><div class="line1-9"></div><div class="jumpline"></div>
 				<div class="line1-10"></div><div class="jumpline"></div><div class="line1-11"></div><div class="jumpline"></div><div class="line1-12"></div><div class="jumpline"></div>
-				<div class="line1-13"></div>								
+				<div class="line1-13"></div>
 				<!-- 하단 직선 도로 (하부) -->
 				<div class="Sjumpline2"></div><div class="line2-3"></div><div class="jumpline2"></div>
 				<div class="line2-4"></div><div class="jumpline2"></div><div class="line2-5"></div><div class="jumpline2"></div><div class="line2-6"></div><div class="jumpline2"></div>
@@ -418,35 +417,35 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				<div class="line2-13"></div>
 				<!-- 인차선 곡선 도로 (동서남북) -->
 				<img class="insideimageline1" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">
-				<img class="insideimageline2" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">			
+				<img class="insideimageline2" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">
 				<img class="insideimageline3" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">
-				<img class="insideimageline4" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">	
-						
-				<!-- 곡선 차선 (중앙차선) -->		
-				<img class="insideimageline5" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">								
-				<img class="insideimageline6" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">	
+				<img class="insideimageline4" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">
+
+				<!-- 곡선 차선 (중앙차선) -->
+				<img class="insideimageline5" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">
+				<img class="insideimageline6" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">
 				<img class="insideimageline7" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">
-				<img class="insideimageline8" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">	
-				
+				<img class="insideimageline8" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">
+
 				<!-- 짤짤이 제거 (인차선 곡선 도로 인해 생긴 노란픽셀 제거) -->
 				<div class="deleteyellowline1"></div>
-				<div class="deleteyellowline2"></div>				
+				<div class="deleteyellowline2"></div>
 				<div class="deleteyellowline3"></div>
-				<div class="deleteyellowline4"></div>	
-				
+				<div class="deleteyellowline4"></div>
+
 				<!-- 출발선 박스 -->
-				<div class="startpatternbox"></div>			
-				
-				<!-- 예시 이미지들 -->				
-				<img class="traficimg1" src="${pageContext.request.contextPath}/resource/image/trafic/빨강차.png">					
-				<img class="traficimg2" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">					
-				<img class="traficimg3" src="${pageContext.request.contextPath}/resource/image/trafic/하양차.png">					
-				
-				<!-- 신호등 -->	
-				<div class="traficlightbox"></div>			
+				<div class="startpatternbox"></div>
+
+				<!-- 예시 이미지들 -->
+				<img class="traficimg1" src="${pageContext.request.contextPath}/resource/image/trafic/빨강차.png">
+				<img class="traficimg2" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg3" src="${pageContext.request.contextPath}/resource/image/trafic/하양차.png">
+
+				<!-- 신호등 -->
+				<div class="traficlightbox"></div>
 				<div class="traficlightbox2"></div>
 				<img class="traficimg4" src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png">
-													
+
 				<!-- 횡단보도  -->
 				<div class="crosswalkbox">
 					<div class="crosswalk0"></div>
@@ -454,30 +453,30 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					<div class="crosswalk0"></div>
 					<div class="crosswalk2"></div>
 					<div class="crosswalk0"></div>
-					<div class="crosswalk3"></div>	
-					<div class="crosswalk0"></div>			
+					<div class="crosswalk3"></div>
+					<div class="crosswalk0"></div>
 					<div class="crosswalk4"></div>
 					<div class="crosswalk0"></div>
 					<div class="crosswalk5"></div>
 					<div class="crosswalk0"></div>
-					<div class="crosswalk6"></div>	
-					<div class="crosswalk0"></div>			
+					<div class="crosswalk6"></div>
+					<div class="crosswalk0"></div>
 					<div class="crosswalk7"></div>
-					<div class="crosswalk0"></div>																			
+					<div class="crosswalk0"></div>
 				</div>
-				
+
 				<!-- 급커브 (좌상, 우상, 좌하, 우하)  -->
 				<img class="traficimg5" src="${pageContext.request.contextPath}/resource/image/trafic/급커브.png">
 				<img class="traficimg6" src="${pageContext.request.contextPath}/resource/image/trafic/급커브.png">
 				<img class="traficimg7" src="${pageContext.request.contextPath}/resource/image/trafic/급커브.png">
 				<img class="traficimg8" src="${pageContext.request.contextPath}/resource/image/trafic/급커브.png">
-					
-					
-					
-					
-					
-					
-									
+
+
+
+
+
+
+
 			</div>
 
 			<!-- SMS Send Page =================================-->
@@ -538,15 +537,15 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 			<div class="viewbox4">
 				11111111111111111111
 			</div>
-			
+
 			<!-- member + device + instrument data =================================-->
 			<div class="viewbox5">
 				22222222222222222222
 			</div>
-			
+
 			<!-- member + device + instrument map =================================-->
 			<div class="viewbox6"> <!-- 1685 * 937 -->
-				33333333333333333333		
+				33333333333333333333
 			</div>
 			<!-- device controller =================================-->
 			<div class="viewbox7"> <!-- 1685 * 937 -->
@@ -557,42 +556,42 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					<button class="btn btn-danger btn-sm" id="up">▲</button>
 					<button class="btn btn-danger btn-sm" id="down">▼</button>
 					<button class="btn btn-danger btn-sm" id="stop">■</button>
-				</div>					
-				
-				<div class="ViewBox">
-					<img id = "cameraView" style="width:600px; height:399px">					
 				</div>
-				
+
+				<div class="ViewBox">
+					<img id = "cameraView" style="width:600px; height:399px">
+				</div>
+
 				<a href="${pageContext.request.contextPath}/admin/movetrack.do">track</a>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>
 		</div>
 	</div>
 
@@ -673,7 +672,7 @@ $(document).ready(function(){
 				$(".btnHome24").css("border-right","");
 				$(".ring7").hide();
 				$(".viewbox7").hide();
-				check7 = 0;								
+				check7 = 0;
 
 			}else if(check1 == 1){
 				$(".btnHome1").css("background-color","");
@@ -735,7 +734,7 @@ $(document).ready(function(){
 				$(".btnHome24").css("border-right","");
 				$(".ring7").hide();
 				$(".viewbox7").hide();
-				check7 = 0;					
+				check7 = 0;
 
 			}else if(check2 == 1){
 				$(".btnHome2").css("background-color","");
@@ -798,7 +797,7 @@ $(document).ready(function(){
 				$(".btnHome24").css("border-right","");
 				$(".ring7").hide();
 				$(".viewbox7").hide();
-				check7 = 0;					
+				check7 = 0;
 
 			}else if(check3 == 1){
 				$(".btnHome3").css("background-color","");
@@ -860,7 +859,7 @@ $(document).ready(function(){
 				$(".btnHome24").css("border-right","");
 				$(".ring7").hide();
 				$(".viewbox7").hide();
-				check7 = 0;					
+				check7 = 0;
 
 			}else if(check9 == 1){
 				$(".btnHome9").css("background-color","");
@@ -918,7 +917,7 @@ $(document).ready(function(){
 				$(".btnHome24").css("border-right","");
 				$(".ring7").hide();
 				$(".viewbox7").hide();
-				check7 = 0;					
+				check7 = 0;
 				$(".btnHome9").css("background-color","");
 				$(".btnHome9").css("box-shadow","");
 				$(".btnHome9").css("border-right","");
@@ -982,7 +981,7 @@ $(document).ready(function(){
 				$(".btnHome24").css("border-right","");
 				$(".ring7").hide();
 				$(".viewbox7").hide();
-				check7 = 0;	
+				check7 = 0;
 				$(".btnHome9").css("background-color","");
 				$(".btnHome9").css("box-shadow","");
 				$(".btnHome9").css("border-right","");
@@ -1045,7 +1044,7 @@ $(document).ready(function(){
 				$(".btnHome24").css("border-right","");
 				$(".ring7").hide();
 				$(".viewbox7").hide();
-				check7 = 0;	
+				check7 = 0;
 				$(".btnHome9").css("background-color","");
 				$(".btnHome9").css("box-shadow","");
 				$(".btnHome9").css("border-right","");
@@ -1108,7 +1107,7 @@ $(document).ready(function(){
 				$(".btnHome23").css("border-right","");
 				$(".ring6").hide();
 				$(".viewbox6").hide();
-				check6 = 0;							
+				check6 = 0;
 				$(".btnHome9").css("background-color","");
 				$(".btnHome9").css("box-shadow","");
 				$(".btnHome9").css("border-right","");
@@ -1123,10 +1122,10 @@ $(document).ready(function(){
 				$(".ring7").hide();
 				check7 = 0;
 			};
-		});		
-		
-		
-		
+		});
+
+
+
 });
 //[공용]manu script end---------------------------------------------------------------
 
@@ -1336,9 +1335,7 @@ var nineyesterDate = nineyesterMonth + "-" + nineyesterDay;// 연도는 길어�
         url : "${pageContext.request.contextPath}/admin/main.do?pageNo=" +pageNo,
         success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
            // 댓글목록을 실행한 결과를 가져온다.
-           $("#adminbodybox1").html(result);
-//            location.href = "${pageContext.request.contextPath}/admin/main.do?pageNo=" +pageNo;
-            console.log(result);
+           $("#adminmainpage").html(result);
             console.log(pageNo);
             console.log("고고고1");
         }
@@ -1353,14 +1350,13 @@ var nineyesterDate = nineyesterMonth + "-" + nineyesterDay;// 연도는 길어�
         url : "${pageContext.request.contextPath}/admin/main.do?pageNo1=" +pageNo1,
         success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
            // 댓글목록을 실행한 결과를 가져온다.
-           $("#adminbodybox1").html(result);
-//            	location.href = "${pageContext.request.contextPath}/admin/main.do?pageNo1=" +pageNo1;
-				
-				console.log(pageNo1);
-	            console.log("고고고2");
+           $("#adminmainpage").html(result);
+			console.log(pageNo1);
+            console.log("고고고2");
         }
      });
   };
+//location.href = "${pageContext.request.contextPath}/admin/main.do?pageNo=" +pageNo;
 
 //명단 삭제 취소 버튼------------------------------------------
 $(".closedelete").click(function(){
@@ -1803,30 +1799,30 @@ $(".carimage11").hide();
 
 // 	/* 차량 좌회전 */
 // 	function TurnLeft() {
-		
+
 // 		var message = new Paho.MQTT.Message("left");
 // 		message.destinationName = "/Control/Direction/FrontWheel";
 // 		message.qos = 0;
 
-// 		client.send(message); 		
+// 		client.send(message);
 // 	}
 // 	/* 차량 우회전 */
 // 	function TurnRight() {
-		
+
 // 		var message = new Paho.MQTT.Message("right");
 // 		message.destinationName = "/Control/Direction/FrontWheel";
 // 		message.qos = 0;
 
-// 		client.send(message); 		
+// 		client.send(message);
 // 	}
 // 	/* 차량 정지 */
 // 	function TurnStop() {
-		
+
 // 		var message = new Paho.MQTT.Message("stop");
 // 		message.destinationName = "/Control/Direction/FrontWheel";
 // 		message.qos = 0;
 
-// 		client.send(message); 		
+// 		client.send(message);
 // 	}
 // 	/* 모터 start */
 // 	function MotorAccel() {
@@ -1834,34 +1830,34 @@ $(".carimage11").hide();
 // 		message.destinationName = "/Control/Motor";
 // 		message.qos = 0;
 
-// 		client.send(message);		
+// 		client.send(message);
 // 	}
-// 	/* 모터 end */	
+// 	/* 모터 end */
 // 	function MotorBreak() {
 // 		var message = new Paho.MQTT.Message("break");
 // 		message.destinationName = "/Control/Motor";
 // 		message.qos = 0;
 
-// 		client.send(message);	
+// 		client.send(message);
 // 	}
-	
+
 // 	function MotorBackword() {
-		
+
 // 		var message = new Paho.MQTT.Message("backword");
 // 		message.destinationName = "/Control/Motor";
 // 		message.qos = 0;
 
-// 		client.send(message);		
+// 		client.send(message);
 // 	}
 
 	/* 키 안에 담는 객체 = 꼭필요 중요★★★★★ --------------------------------------------------------------------- */
 	var keyValue = {};
-   
-   /* 키를 땟을 때 ----------------------------------------------------------------------- */ 
+
+   /* 키를 땟을 때 ----------------------------------------------------------------------- */
    function stopInterval(action){
 	   /* 전진 키 땠을때 */
 	      if(keyValue[87]=='up')
-	      { 
+	      {
 	    	 console.log(keyValue[2]);
 	         console.log("앞으로 끝")
 	         $("#up").css("background-color", "#bd2130");
@@ -1902,7 +1898,7 @@ $(".carimage11").hide();
 	         console.log("정지 스탑")
 	         $("#stop").css("background-color", "#bd2130");
 	         $("#stop").css("border-color", "#FF0000");
-	      }	      
+	      }
    }
 
    /* 키를 눌렀을 때 ------------------------------------------------- */
@@ -1923,7 +1919,7 @@ $(".carimage11").hide();
 	         $("#down").css("border-color", "#0040FF");
 	         MotorBackword();
 	      }
-	   
+
 	      /* 우회전 키 눌렀을때 */
 	      if(keyValue[68]=='down')
 	      {
@@ -1931,7 +1927,7 @@ $(".carimage11").hide();
 	         $("#right").css("background-color", "#2E64FE");
 	         $("#right").css("border-color", "#0040FF");
 	         TurnRight();
-	      }   
+	      }
 	      /* 좌회전 키 눌렀을때 */
 	      if(keyValue[65]=='down')
 	      {
@@ -1947,7 +1943,7 @@ $(".carimage11").hide();
 	         $("#stop").css("background-color", "#2E64FE");
 	         $("#stop").css("border-color", "#0040FF");
 	         MotorBreak();
-	      }	      
+	      }
    }, 30);
    /* 키 눌렀을 때 이벤트를 실행하겠다 */
    document.addEventListener('keydown', function(event) {
@@ -1955,7 +1951,7 @@ $(".carimage11").hide();
       keyValue[event.keyCode] = 'down';
    }, true);
    /* 키 땠을 때 이벤트를 실행하겠다 */
-   document.addEventListener('keyup', function(event) {   
+   document.addEventListener('keyup', function(event) {
 	  //event.preventDefault();
       keyValue[event.keyCode] = 'up';
       stopInterval()
