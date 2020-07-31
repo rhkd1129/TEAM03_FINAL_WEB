@@ -1904,6 +1904,7 @@ $(".deleteX").click(function(){
 	$(".checkdelete1").show();
 	$(".opacitybox2").show();
 
+
 	$(".gogogo").click(function(){
 		delectcheck = $("input[name=delectcheck]").val();
 		if(delectcheck == "admin1"){
@@ -2403,6 +2404,61 @@ $(document).ready(function(){
 
 // 		client.send(message);
 // 	}
+
+
+// 	/* 차량 좌회전 */
+// 	function TurnLeft() {
+
+// 		var message = new Paho.MQTT.Message("left");
+// 		message.destinationName = "/Control/Direction/FrontWheel";
+// 		message.qos = 0;
+
+// 		client.send(message);
+// 	}
+// 	/* 차량 우회전 */
+// 	function TurnRight() {
+
+// 		var message = new Paho.MQTT.Message("right");
+// 		message.destinationName = "/Control/Direction/FrontWheel";
+// 		message.qos = 0;
+
+// 		client.send(message);
+// 	}
+// 	/* 차량 정지 */
+// 	function TurnStop() {
+
+// 		var message = new Paho.MQTT.Message("stop");
+// 		message.destinationName = "/Control/Direction/FrontWheel";
+// 		message.qos = 0;
+
+// 		client.send(message);
+// 	}
+// 	/* 모터 start */
+// 	function MotorAccel() {
+// 		var message = new Paho.MQTT.Message("accel");
+// 		message.destinationName = "/Control/Motor";
+// 		message.qos = 0;
+
+// 		client.send(message);
+// 	}
+// 	/* 모터 end */
+// 	function MotorBreak() {
+// 		var message = new Paho.MQTT.Message("break");
+// 		message.destinationName = "/Control/Motor";
+// 		message.qos = 0;
+
+// 		client.send(message);
+// 	}
+
+// 	function MotorBackword() {
+
+// 		var message = new Paho.MQTT.Message("backword");
+// 		message.destinationName = "/Control/Motor";
+// 		message.qos = 0;
+
+// 		client.send(message);
+// 	}
+
 
 	/* 키 안에 담는 객체 = 꼭필요 중요★★★★★ --------------------------------------------------------------------- */
 	var keyValue = {};

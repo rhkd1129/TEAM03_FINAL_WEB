@@ -20,7 +20,7 @@
 				<table>
 					<tr>
 						<td class="oredertime">	
-							13:22
+							13:23
 						</td>
 						<td class="orederdetail">
 							<img src="${pageContext.request.contextPath}/resource/image/restaurant/order_temp.png">
@@ -50,7 +50,7 @@
 				<table>
 					<tr>
 						<td class="oredertime">	
-							13:22
+							13:21
 						</td>
 						<td class="orederdetail">
 							<img src="${pageContext.request.contextPath}/resource/image/restaurant/order_temp.png">
