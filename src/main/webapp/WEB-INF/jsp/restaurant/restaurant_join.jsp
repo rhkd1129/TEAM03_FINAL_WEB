@@ -31,11 +31,6 @@
 				var phoneNumber = /^[0-9]{2,3}-?[0-9]{3,4}-?[0-9]{4}$/;
 				var phoneNumber2 = /^(0(2|3[1-3]|4[1-4]|5[1-5]|6[1-4]))-?(\d{3,4})-?(\d{4})$/;
 				
-				if (idCheck != "1") {
-					alert("아이디 중복확인을 해주세요.");
-					return false;
-				}
-				
 				if ((restaurantId.value) == "") {
 			        alert("아이디를 입력해주세요.")
 			        return false;
@@ -44,6 +39,11 @@
 				if (!check(ownerId, restaurantId, "대/소문자 구분 없이 6~12자리의 알파벳+숫자로 입력해주세요.")) {
 			        return false;
 			    }
+				
+				if (idCheck != "1") {
+					alert("아이디 중복확인을 해주세요.");
+					return false;
+				}
 			    
 				if ((restaurantPassword.value) == "") {
 			        alert("비밀번호를 입력해주세요.")

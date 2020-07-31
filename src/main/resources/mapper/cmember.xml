@@ -16,6 +16,45 @@
 			select salt from customer where mid = #{mid}
 		</select>
 		
+		<update id="loginFailCount">
+			update customer set login_fail_count = login_fail_count + 1
+			where mid = #{mid}
+		</update>
+		
+		<update id="loginTryDate">
+			update customer set latest_login_try_date = NOW()
+			where mid = #{mid} and login_lock = 'N'
+		</update>
+		
+		<select id="getFailCountByMid" resultType="int">
+			select login_fail_count from customer
+			where mid = #{mid}
+		</select>
+		
+		<select id="getLoginLockByMid" resultType="string">
+			select login_lock from customer
+			where mid = #{mid}
+		</select>
+		
+		<update id="loginLock">
+			update customer set login_lock = 'Y',
+								lock_count = lock_count + 1
+			where mid = #{mid}
+		</update>
+		
+		<select id="getLoginTryDate" resultType="string">
+			select latest_login_try_date from customer
+			where mid = #{mid}
+		</select>
+		
+		<update id="resetLoginLock">
+			update customer set login_lock = "N",
+								login_fail_count = 0,
+								lock_count = 0,
+								latest_login_try_date = NOW()
+			where mid = #{mid}
+		</update>
+		
 		<select id="selectAllByPage" resultType="cmember">
 			select mid, mpassword, mname, mtel, mdate, madress
 			from customer order by mtel desc limit #{startIndex}, #{rowsPerPage}

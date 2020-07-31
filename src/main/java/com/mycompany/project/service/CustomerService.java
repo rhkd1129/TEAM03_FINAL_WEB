@@ -9,7 +9,6 @@ import com.mycompany.project.SHA256.SHA256Util;
 import com.mycompany.project.dao.CustomerDao;
 import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
-import com.mycompany.project.model.Rmember;
 
 @Service
 public class CustomerService {
@@ -25,18 +24,49 @@ public class CustomerService {
 		Cmember dbCmember = customerDao.selectByMid(cloginForm.getMid());
 		if (dbCmember == null) {
 			return LOGIN_MID_FAIL;
+			
 		} else {
 			String salt = customerDao.getSaltByMid(cloginForm.getMid());
 			String password = cloginForm.getMpassword();
 			
 			password = SHA256Util.getEncrypt(password, salt);
 			cloginForm.setMpassword(password);
+			
 			if (dbCmember.getMpassword().equals(cloginForm.getMpassword())) {
 				return LOGIN_SUCCESS;
+				
 			} else {
 				return LOGIN_MAPSSWORD_FAIL;
+				
 			}
 		}
+	}
+	
+	public void loginFailCount(String mid) {
+		customerDao.loginFailCount(mid);		
+	}
+	
+	public int getFailCount(CloginForm cloginForm) {
+		int failCount = customerDao.getFailCountByMid(cloginForm.getMid());
+		return failCount;
+	}
+	
+	public void loginLock(String mid) {
+		customerDao.loginLock(mid);
+	}
+	
+	public String getLoginLock(CloginForm cloginForm) {
+		String loginLock = customerDao.getLoginLockByMid(cloginForm.getMid());
+		return loginLock;
+	}
+	
+	public String getLoginTryDate(CloginForm cloginForm) {
+		String loginTryDate = customerDao.getLoginTryDateByMid(cloginForm.getMid());
+		return loginTryDate;
+	}
+	
+	public void resetLoginLock(String mid) {
+		customerDao.resetLoginLock(mid);
 	}
 	
 	public void join(Cmember cmember) {
@@ -139,9 +169,6 @@ public class CustomerService {
 		int Yesterday9No = customerDao.countby9day();
 //		System.out.println("Service Yesterday9No : " + Yesterday9No);
 		return Yesterday9No;
-	}	
-	
-	
-	
+	}
 	
 }

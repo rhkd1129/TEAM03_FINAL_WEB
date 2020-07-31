@@ -12,22 +12,13 @@ public class Rmember {
 	private String rtel;
 	private String rcategory;
 	private Date rdate;
-
-
-
+	
 	public int getRno() {
 		return rno;
 	}
 	public void setRno(int rno) {
 		this.rno = rno;
 	}
-	public Date getRdate() {
-		return rdate;
-	}
-	public void setRdate(Date rdate) {
-		this.rdate = rdate;
-	}
-
 	public String getRid() {
 		return rid;
 	}

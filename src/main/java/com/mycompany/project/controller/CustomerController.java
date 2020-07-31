@@ -2,6 +2,9 @@ package com.mycompany.project.controller;
 
 
 import java.io.PrintWriter;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -26,7 +29,7 @@ import com.mycompany.project.service.RestaurantService;
 
 @Controller
 @RequestMapping("/customer")
-public class CustomerController {
+public class CustomerController{
 	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
 
 	@Autowired
@@ -44,29 +47,100 @@ public class CustomerController {
 	public String loginForm(CloginForm cloginForm) {
 		return "customer/customer_login";
 	}
-
+	
 	@PostMapping("/customer_login.do")
-	public String login(CloginForm cloginForm, BindingResult bindingResult, HttpSession session) {
-
+	public String login(CloginForm cloginForm, BindingResult bindingResult,
+						HttpServletResponse response, HttpSession session) throws Exception {
+		
+		String mid = cloginForm.getMid();		
 		int loginResult = customerService.login(cloginForm);
 		String returnPage = "customer/customer_login";
-
+		
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		PrintWriter out = response.getWriter();
+		
 		if(bindingResult.hasErrors()) {
 			return returnPage;
 		}
+		
+		String latestLoginTryDate = customerService.getLoginTryDate(cloginForm);
+		
+		java.sql.Timestamp latestTryDate = java.sql.Timestamp.valueOf(latestLoginTryDate);
+		
+		Calendar cal = Calendar.getInstance();
+		cal.setTimeInMillis(latestTryDate.getTime());
+		cal.add(Calendar.SECOND, 600);
+		Timestamp latestTryDate10 = new Timestamp(cal.getTime().getTime());
+		
+		SimpleDateFormat latestTryDate10Format = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분 ss초");
+		String Date10Format =  latestTryDate10Format.format(latestTryDate10);
+		
+		long nowTime = System.currentTimeMillis();
+		Timestamp currentTime = new Timestamp(nowTime);		
+		boolean timeCompare = currentTime.after(latestTryDate10);
 
 		if (loginResult == CustomerService.LOGIN_SUCCESS) {
-			session.setAttribute("sessionMid", cloginForm.getMid());
-			returnPage = "redirect:/customer/customer_main.do";
+			String loginLock = customerService.getLoginLock(cloginForm);
+			System.out.println(loginLock);
+			
+			if (loginLock.equals("N")) {
+				session.setAttribute("sessionMid", cloginForm.getMid());
+				
+				customerService.resetLoginLock(mid);
+				
+				returnPage = "redirect:/customer/customer_main.do";
+			
+			}
+			
+			if (loginLock.equals("Y") && timeCompare == true) {				
+				session.setAttribute("sessionMid", cloginForm.getMid());
+				
+				customerService.resetLoginLock(mid);
+				
+				returnPage = "redirect:/customer/customer_main.do";
+				
+			}
+			
+			if (loginLock.equals("Y") && timeCompare == false) {
+				customerService.loginFailCount(mid);
+				
+				out.println("<script>alert('아직 10분이 지나지 않았습니다.\\n" + Date10Format + " 이후에 로그인이 가능합니다.');</script>");
+				out.flush();
+				
+				return "customer/customer_login";
+			}
+			
 		} else if (loginResult == CustomerService.LOGIN_MID_FAIL) {
-			LOGGER.info("dighdfkdj");
 			bindingResult.rejectValue("mid", "login.mid.fail");
 			// returnPage = "customer/customer_login";
 			return returnPage;
+			
 		} else if (loginResult == CustomerService.LOGIN_MAPSSWORD_FAIL) {
+			customerService.loginFailCount(mid);
+			int failCount = customerService.getFailCount(cloginForm);
+			
+			if (failCount < 5) {
+			out.println("<script>alert('비밀번호를 (" + failCount + "/5)회 틀렸습니다.\\n5회 이상 틀릴 경우, 10분간 로그인을 할 수 없습니다.');</script>");
+			out.flush();
+			
+			}
+			
+			if (failCount >= 5) {
+				customerService.loginLock(mid);
+				
+				out.println("<script>alert('비밀번호 오류 횟수 초과로 인해, 10분간 로그인을 할 수 없습니다.');</script>");
+				out.flush();
+				// out.close();
+			}
+			
+			System.out.println(failCount);
+
 			bindingResult.rejectValue("mpassword", "login.mpassword.fail");
 			// returnPage = "customer/customer_login";
 			return returnPage;
+			
 		}
 		return returnPage;
 	}

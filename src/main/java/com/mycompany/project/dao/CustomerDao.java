@@ -4,13 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.inject.Inject;
-
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.mycompany.project.model.Cmember;
-import com.mycompany.project.model.Rmember;
 
 import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
 
@@ -50,9 +46,37 @@ public class CustomerDao extends EgovAbstractMapper{
 		return cmember;
 	}
 
-	public String getSaltByMid(String salt) {
-		String csalt = selectOne("cmember.getSaltByMid", salt);
+	public String getSaltByMid(String mid) {
+		String csalt = selectOne("cmember.getSaltByMid", mid);
 		return csalt;
+	}
+	
+	public void loginFailCount(String mid) {
+		update("cmember.loginFailCount", mid);
+		update("cmember.loginTryDate", mid);
+	}
+	
+	public int getFailCountByMid(String mid) {
+		int failCount = selectOne("cmember.getFailCountByMid", mid);
+		return failCount;
+	}
+	
+	public void loginLock(String mid) {
+		update("cmember.loginLock", mid);
+	}
+	
+	public String getLoginLockByMid(String mid) {
+		String loginLock = selectOne("cmember.getLoginLockByMid", mid);
+		return loginLock;
+	}
+	
+	public String getLoginTryDateByMid(String mid) {
+		String loginTryDate = selectOne("cmember.getLoginTryDate", mid);
+		return loginTryDate;
+	}
+	
+	public void resetLoginLock(String mid) {
+		update("cmember.resetLoginLock", mid);
 	}
 
 	public int countbytoday() {
@@ -114,6 +138,5 @@ public class CustomerDao extends EgovAbstractMapper{
 //		System.out.println("DAO yesterday9Rows : " + yesterday9Rows);
 		return yesterday9Rows;
 	}
-
 
 }
