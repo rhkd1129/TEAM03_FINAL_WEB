@@ -67,7 +67,7 @@ $("#twobarpersent").css("width",String(Rpersentpx));
 $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmember) + "%");
 
 </script>
-<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false" id="adminmainpage">
 	<div class="bodymainbox">
 		<!-- /* 메뉴바 bigbox */ ------------------------------------------------------------------------>
 		<div class="navbarmain">
@@ -1336,8 +1336,9 @@ var nineyesterDate = nineyesterMonth + "-" + nineyesterDay;// 연도는 길어�
         url : "${pageContext.request.contextPath}/admin/main.do?pageNo=" +pageNo,
         success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
            // 댓글목록을 실행한 결과를 가져온다.
-           $("#adminmainpage").html(result);
+           $("#adminbodybox1").html(result);
 //            location.href = "${pageContext.request.contextPath}/admin/main.do?pageNo=" +pageNo;
+            console.log(result);
             console.log(pageNo);
             console.log("고고고1");
         }
@@ -1352,10 +1353,11 @@ var nineyesterDate = nineyesterMonth + "-" + nineyesterDay;// 연도는 길어�
         url : "${pageContext.request.contextPath}/admin/main.do?pageNo1=" +pageNo1,
         success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
            // 댓글목록을 실행한 결과를 가져온다.
-           $("#adminmainpage").html(result);
-//            location.href = "${pageContext.request.contextPath}/admin/main.do?pageNo1=" +pageNo1;
-			console.log(pageNo1);
-            console.log("고고고2");
+           $("#adminbodybox1").html(result);
+//            	location.href = "${pageContext.request.contextPath}/admin/main.do?pageNo1=" +pageNo1;
+				
+				console.log(pageNo1);
+	            console.log("고고고2");
         }
      });
   };

@@ -95,13 +95,13 @@
 				메뉴 등록
 			</div>
 			<div class="menu2" id='menu6'>
-				b
+				고객 관리
 			</div>
 			<div class="menu3" id='menu7'>
-				c
+				광고 관리
 			</div>
 			<div class="menu4" id='menu8'>
-				d
+				데이터 조회
 			</div>
 		</div>
 		
