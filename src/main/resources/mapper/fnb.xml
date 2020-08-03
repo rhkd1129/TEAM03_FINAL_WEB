@@ -7,11 +7,17 @@
 			values (#{frno}, #{fcategory}, #{fname}, #{fprice}, #{fimage})
 		</insert>
 		
+		
+		
 		<select id="selectFoodList" resultType="fnb">
-			select fname, fprice, fimage from fnb where frno=#{frno} and fcategory='food'
+			select fno, fname, fprice, fimage from fnb where frno=#{frno} and fcategory='food'
 		</select>
 		
 		<select id="selectBeverageList" resultType="fnb">
-			select fname, fprice, fimage from fnb where frno=#{frno} and fcategory='beverage'
+			select fno, fname, fprice, fimage from fnb where frno=#{frno} and fcategory='beverage'
+		</select>
+		
+		<select id="selectBtFnb" resultType="fnb">
+			select fno, fname, fcategory, fprice, fimage from fnb where frno=#{frno}
 		</select>
 	</mapper>

@@ -10,7 +10,7 @@ $('#menu_tab').click(function() {
 	
 	$.ajax({
 		type : "get", 
-		url : "customer_r_menu.do",
+		url : "customer_r_menu.do?rno="+rno,
 		success : function(result) { 
 			$(".restaurant_info_main").html(result);
 		}
@@ -31,12 +31,14 @@ $('#review_tab').click(function() {
 	
 	$.ajax({
 		type : "get", 
-		url : "customer_r_review.do",
+		url : "customer_r_review.do?rno="+rno,
 		success : function(result) { 
 			$(".restaurant_info_main").html(result);
 		}
 	});
 	
 });
+
+
 
 

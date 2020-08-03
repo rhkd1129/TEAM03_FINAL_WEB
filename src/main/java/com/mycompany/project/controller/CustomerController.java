@@ -70,21 +70,32 @@ public class CustomerController {
 	@GetMapping("/customer_r_info.do")
 	public String detail(int rno, Model model) {
 		Rmember rmember = restaurantService.getRestaurantInfoByRno(rno);
-		List<Fnb> foodList = restaurantService.getFoodListByFrno(rno);
-		List<Fnb> beverageList = restaurantService.getBeverageListByFrno(rno);
+		model.addAttribute("rno", rno);
 		model.addAttribute("rmember", rmember);
-		model.addAttribute("foodList", foodList);
-		model.addAttribute("beverageList", beverageList);
 		return "customer/customer_r_info";
 	}
 
 	@GetMapping("/customer_r_menu.do")
-	public String menu() {
+	public String menu(int rno, Model model) {
+
+		List<Fnb> foodList = restaurantService.getFoodListByFrno(rno);
+		List<Fnb> beverageList = restaurantService.getBeverageListByFrno(rno);
+		model.addAttribute("foodList", foodList);
+		model.addAttribute("beverageList", beverageList);
 		return "customer/customer_r_menu";
 	}
 	
 	@GetMapping("/customer_r_review.do")
-	public String review() {
+	public String review(int rno, Model model) {
 		return "customer/customer_r_review";
+	}
+	
+	@GetMapping("/customer_order_table.do")
+	public String orderTable(int fno, Model model) {
+		Fnb fnb = customerService.getFnbByFno(fno);
+		
+		customerService.addOrderTable(fnb);
+	
+		return "customer/customer_order_table";
 	}
 }
