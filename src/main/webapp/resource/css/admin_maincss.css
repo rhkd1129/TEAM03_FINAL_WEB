@@ -751,7 +751,7 @@ a:hover {
    width: 1690px;
    height: 937px;   
    background-color: #0B2F3A;
-   float: left;   
+   float: left;         
 }
 
 /* admin login page  = viewbox0*/
@@ -2753,9 +2753,6 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
   background-position: 99% 50%;
 }
 
-
-
-
 .rightbox1-2{
    width: 250px;
    height: 745px;
@@ -2963,7 +2960,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
   top: 200px;
   left:700px;
   background:#d9e5e9;
-  border:1px solid #386980;
+  border:2px solid #848484;
   overflow:hidden;
 /*   아래 부분은 애니메이션 효과를 위한 부분 */
   visibility: collapse;
@@ -2983,8 +2980,8 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 /* 닫기 버튼으로 사용할 라벨 */
 .closer {
   position:absolute;
-  width:30px;
-  height:30px;
+  width:1px;
+  height:1px;
   top:0;
   right:0;
   background:#eee;
@@ -2998,6 +2995,9 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 .text {
   display:inline-block;
   padding:20px;
+  width: 600px;
+  height: 298px;
+  float: left;
 }
 .text h3 {
   font-size:19px;
@@ -3013,6 +3013,47 @@ input#modal[type=checkbox]:checked ~ .box_modal {
   -webkit-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
   transform: scale(1, 1);
+}
+
+.textimagebox{
+	width: 590px;
+	height: 298px;
+	margin-top: -20px;
+	margin-left: -20px;
+}
+
+#sampleimageid1{
+	margin-top: 50px;
+	float: left;
+}
+
+.texttextbox{
+	width: 410px;
+	height: 298px;
+	float: left;
+	border-left: 2px solid #848484;	
+	margin-left: 5px;
+}
+
+.imagenametext{
+	width: 410px;
+	height: 50px;
+	float: left;
+	border-bottom: 2px solid #848484;	
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	
+}
+
+.imageintroducetext{
+	width: 410px;
+	height: 248px;
+	float: left;	
+	text-align: center;
+	font-size: 27px;	
+	line-height: 100px;
+	
 }
 
 .list{	
@@ -3099,88 +3140,253 @@ ul{
 /* viewbox6 page =============== */
 
 /* viewbox7 page =============== */
-/* button css start--------- */
-.movebutton{
-   background-color: #E6E6E6;
-   width: 200px;
-   height: 199px;
-   margin-top: 0px;
+
+#cameraView2{
+	width:1348px;
+	border-top: 2px solid #A4A4A4;
+	border-bottom: 2px solid #A4A4A4;
+	height:846px;
+	float: left;
+	border: 2px solid #848484;
+    margin-left: 45px;
+    margin-top: 43px;
+}
+
+.viewbox7databox{
+	width: 252px;
+	height: 846px;
+	float: left;
+	border-right: 2px solid #848484;
+	border-top: 2px solid #848484;
+	border-bottom: 2px solid #848484;
+    margin-top: 43px;
+}
+
+.controllerbox{
+	width: 800px;
+	height: 400px;
+	float: left;
+	perspective: 500px;
+	position: absolute;
+	top: 400px;
+	left: 550px;
+}
+
+.gostraight{
+	width: 100px;
+	height: 100px;
+	background-color: #FA5858;
+	color: #FE2E2E;
+	font-size: 35px;
+	font-weight: bold;
+	margin-left: 350px;
+	margin-top: 40px;
+	float:left;
+	border: 1px solid #FF0000;	
+   /* 드래그 막기 */      
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none; 
+   transform: rotateX(45deg); 
+   opacity: 0.5;
+   border-radius: 15px;
+   box-shadow: 0 9px #999; 
+}
+
+.gostraight:hover {background-color: #3e8e41}
+
+.gostraight:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transform: rotateX(46deg); 
+  border-radius: 15px;
+  margin-top: 39px;
+}
+
+.gostop{
+	width: 120px;
+	height: 120px;
+	background-color: #FA5858;
+	color: #FE2E2E;
+	font-size: 80px;
+	font-weight: bold;
+	margin-left: -108px;
+	margin-top: 130px;
+	float:left;	
+	border: 1px solid #FF0000;
+   /* 드래그 막기 */   
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none; 
+   transform: rotateX(45deg); 
+   opacity: 0.5;  
+      border-radius: 15px;
+   box-shadow: 0 9px #999;   
+}
+
+.gostop:hover {background-color: #3e8e41}
+
+.gostop:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transform: rotateX(46deg); 
+  border-radius: 15px;
+  margin-top: 129px;
+}
+
+.goback{
+	width: 140px;
+	height: 140px;
+	background-color: #FA5858;
+	color: #FE2E2E;
+	font-size: 35px;
+	font-weight: bold;
+	margin-left: -130px;
+	margin-top: 250px;
+	float:left;
+	border: 1px solid #FF0000;	
+   /* 드래그 막기 */   
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none; 
+   transform: rotateX(45deg); 
+   opacity: 0.5; 
+      border-radius: 15px;
+   box-shadow: 0 9px #999; 
+}
+
+.goback:hover {background-color: #3e8e41}
+
+.goback:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transform: rotateX(46deg); 
+  border-radius: 15px;
+  margin-top: 249px;
+}
+
+.goleft{
+	width: 110px;
+	height: 110px;
+	background-color: #FA5858;
+	color: #FE2E2E;
+	font-size: 35px;
+	font-weight: bold;
+	margin-left: -290px;
+	margin-top: 135px;
+	float:left;
+	border: 1px solid #FF0000;	
+   /* 드래그 막기 */   
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none; 
+   transform: rotateX(45deg); 
+   opacity: 0.5;     
+      border-radius: 15px;
+   box-shadow: 0 9px #999;  
+}
+
+.goleft:hover {background-color: #3e8e41}
+
+.goleft:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transform: rotateX(46deg); 
+  border-radius: 15px;
+  margin-top: 134px;
+}
+
+.goright{
+	width: 110px;
+	height: 110px;
+	background-color: #FA5858;
+	color: #FE2E2E;
+	font-size: 35px;
+	font-weight: bold;
+	margin-left: 25px;
+	margin-top: 135px;
+	float:left;
+	border: 1px solid #FF0000; 	
+   /* 드래그 막기 */   
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none; 
+   transform: rotateX(45deg);
+   opacity: 0.5;   
+      border-radius: 15px;
+   box-shadow: 0 9px #999; 
+}
+
+.goright:hover {background-color: #3e8e41}
+
+.goright:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transform: rotateX(46deg); 
+  border-radius: 15px;
+  margin-top: 134px;
+}
+
+.buttonicon{
+	width: 50px;
+	height: 50px;
+}
+
+.positionbox{
+   width: 248px;
+   height: 180px;
    float: left;
-   border-radius: 20px;
-}
-
-#left{
+   background-color: #0B2F3A;
    position: absolute;
-   margin-left: 20px;
-   margin-top: 85px;
-   color: #fff;
-    background-color: #bd2130;
-    border-color: #b21f2d;
-    width: 30px;
-    height: 30px;
-   text-align: center;
-   line-height: 0px;
+   left: 340px;
+   bottom: 130px;
+   opacity: 0.7;
 }
 
-#right{
-   position: absolute;   
-   margin-left: 90px;
-   margin-top: 85px;
-   color: #fff;
-    background-color: #bd2130;
-    border-color: #b21f2d;
-    width: 30px;
-    height: 30px;
-   text-align: center;
-   line-height: 0px;
+.positionbox2{
+   width: 248px;
+   height: 180px;
+   float: left;
+   opacity: 1;
+   border: 3px solid #848484;
+   opacity: 0.7;
 }
 
-#up{
-   position: absolute;   
-   margin-left: 55px;
-   color: #fff;
-    background-color: #bd2130;
-    border-color: #b21f2d;
-    width: 30px;
-    height: 30px;
-   text-align: center;
-   line-height: 0px;
-   margin-top: 50px;
+.positionbox4{
+  position: absolute;
+  display: inline-block;
+  left: 180px;
+  bottom: 143px;
+  width: 13px;
+  height: 13px;
+  background-color: red;
+  border : 3px solid #F5A9A9;
+  border-radius: 7.5px;
+  -webkit-animation:blink 0.7s ease-in-out infinite alternate;
 }
 
-#down{
-   position: absolute;
-   margin-left: 55px;   
-   margin-top: 120px;
-    color: #fff;
-    background-color: #bd2130;
-    border-color: #b21f2d;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-   line-height: 0px;
+@-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:0.8;}
 }
 
-#stop{
-   position: absolute;
-   margin-left: 55px;   
-   margin-top: 85px;
-    color: #fff;
-    background-color: #bd2130;
-    border-color: #b21f2d;
-    width: 30px;
-    height: 30px;
-   text-align: center;
-   line-height: 0px;
-}
 
-.ViewBox{
-   width:  600px;
-   height: 400px;   
-   margin-top: 400px;
-}
 
-/* button css end--------- */
 
 
 

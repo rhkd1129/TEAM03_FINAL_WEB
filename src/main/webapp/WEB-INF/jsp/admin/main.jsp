@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<!-- w3school import2 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- gage bar import -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -603,29 +606,20 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 			<div class="viewbox4">
 				<div class="viewbox4mainbox">
 					<div class="leftbox1">
+					
 						<div class="leftbox1-1">
 							<div class="sampleimagetext">탐지 이미지: 샘플</div>
 							<img id="sampleimageid" class="sampleimage1" src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png">
 			                <label for="modal" class="button">확대</label>               
 						</div>
+						
 						<div class="leftbox1-2">
 						 	  <ul id="ul_id">
 							  	 <div class="ulname">탐지 리스트</div>
 							  	 <div class="uljumpbox"></div>
 							  </ul> 
-
-
-
-
-
-
-
-
-
-
-
-
 						</div>
+						
 						<div class="leftbox1-3">
 	             		   <div class="minimaptext">위치 정보</div>
 	                       <img class="minimapimage1" src="${pageContext.request.contextPath}/resource/image/admin/minimap.png">
@@ -638,20 +632,22 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
   						<!-- leftbox1-1의 모달창 -->
                   		<input type="checkbox" id="modal" class="hidden">
 	                     <div class="box_modal">
-	                       <label for="modal" class="closer" id="closed">x</label>
+	                       <label for="modal" class="closer" id="closed"></label>
 	                       <div class="text">
-	                         <h3>모달 윈도우</h3>
-	                         <p>다람쥐 헌 쳇바퀴에 타고파.</p>
+	                       		<div class="textimagebox">
+		                      	    <img id="sampleimageid1" class="sampleimage1" src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png">	                       	   	                       
+		                       		<div class="texttextbox">
+		                       			<div class="imagenametext">횡단보도</div>
+		                       			<div class="imageintroducetext">살어리 살어리였다 청산에 살어리였다.</div>		                       		
+		                       		</div>
+	                       		</div>                       
 	                       </div>
 	                     </div>
 						
 						<!-- MQTT -->
 						<img id="cameraView" 
-						style="width:1094px; height:650px; margin-top: 90px; float: left;
-						border-bottom: 2px solid #A4A4A4; border-top: 2px solid #A4A4A4;">	
-
-
-
+						style="width:1094px; height:650px; float: left;
+						border-bottom: 2px solid #A4A4A4; border-bottom: 2px solid #A4A4A4;">	
 					</div>
 
 					<div class="rightbox1">
@@ -694,8 +690,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				/* li 14시 맨 앞 li 삭제 */
 				lilength = $("ul li").length;
 				if(lilength == 14){
-					var smallid = countnum - 14;
-					console.log(smallid);	
+					var smallid = countnum - 14;	
 					$("#"+smallid).remove();
 				}
 				
@@ -703,45 +698,113 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				/* 1 */
 				if(batteryrandom >= 0 && batteryrandom < 11){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/100.png";
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/100.png";				
+					$('.imagenametext').text("[주의 사항] 100Km 제한");
+					$('.imageintroducetext').text("제한속도 100Km 이내로 주행하시기 바랍니다.");
+					
+					/* 재미용 */
+					$('.sampleimagetext').text("탐지 이미지 : 100Km");			
+					$('.minimapping').css("left","450px");						
 				}
 				/* 2 */
 				if(batteryrandom >= 11 && batteryrandom < 21){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/60.png";
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/60.png";				
+					$('.imagenametext').text("[주의 사항] 60Km 제한");
+					$('.imageintroducetext').text("제한속도 60Km 이내로 주행하시기 바랍니다.");
+					
+					/* 재미용 */
+					$('.sampleimagetext').text("탐지 이미지 : 60Km");						
+					$('.minimapping').css("left","440px");					
 				}
 				/* 3 */
 				if(batteryrandom >= 21 && batteryrandom < 31){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/급커브주의.png";
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/급커브주의.png";				
+					$('.imagenametext').text("[주의 사항] 급커브");
+					$('.imageintroducetext').text("급커브 주의 구간입니다. 서행하시기 바랍니다.");
+					
+					/* 재미용 */
+					$('.sampleimagetext').text("탐지 이미지 : 급커브");						
+					$('.minimapping').css("left","430px");					
 				}				
 				/* 4 */
 				if(batteryrandom >= 31 && batteryrandom < 41){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/방지턱주의.png";
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/방지턱주의.png";				
+					$('.imagenametext').text("[주의 사항] 방지턱");
+					$('.imageintroducetext').text("전방에 방지턱을 발견하였습니다. 서행하시기 바랍니다.");
+					
+					/* 재미용 */
+					$('.sampleimagetext').text("탐지 이미지 : 방지턱");						
+					$('.minimapping').css("left","420px");					
 				}				
 				/* 5 */
 				if(batteryrandom >= 41 && batteryrandom < 51){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/사람.png";
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/사람.png";				
+					$('.imagenametext').text("[주의 사항] 사람");
+					$('.imageintroducetext').text("전방에 사람을 발견햇습니다. 서행하시기 바랍니다.");
+					
+					/* 재미용 */
+					$('.sampleimagetext').text("탐지 이미지 : 사람");					
+					$('.minimapping').css("left","410px");					
 				}				
 				/* 6 */				
 				if(batteryrandom >= 51 && batteryrandom < 61){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";				
+					$('.imagenametext').text("[주의 사항] 신호등");
+					$('.imageintroducetext').text("전방에 신호등 구간입니다. 신호에 맞춰서 주행하시기 바랍니다.");	
+					
+					/* 재미용 */
+					$('.sampleimagetext').text("탐지 이미지 : 신호등");					
+					$('.minimapping').css("left","400px");					
 				}				
 				/* 7 */
 				if(batteryrandom >= 61 && batteryrandom < 71){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/어린이보호구역.png";
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/어린이보호구역.png";				
+					$('.imagenametext').text("[주의 사항] 스쿨존");
+					$('.imageintroducetext').text("스쿨존에 진입하였습니다. 어린이 보행 구간 주의 바랍니다.");
+					
+					/* 재미용 */
+					$('.sampleimagetext').text("탐지 이미지 : 스쿨존");					
+					$('.minimapping').css("left","390px");				
 				}				
 				/* 8 */
 				if(batteryrandom >= 71 && batteryrandom < 81){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/정지.png";
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/정지.png";				
+					$('.imagenametext').text("[주의 사항] 정지");
+					$('.imageintroducetext').text("전방에 정지 구간입니다. 정지해주시기 바랍니다.");	
+					
+					/* 재미용 */
+					$('.sampleimagetext').text("탐지 이미지 : 정지");					
+					$('.minimapping').css("left","380px");					
 				}				
 				/* 9 */
 				if(batteryrandom >= 81 && batteryrandom < 91){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/콘.png";
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/콘.png";				
+					$('.imagenametext').text("[주의 사항] 장애물");
+					$('.imageintroducetext').text("전방에 장애물 또는 공사 구간입니다. 서행하시기 바랍니다.");
+					
+					/* 재미용 */
+					$('.sampleimagetext').text("탐지 이미지 : 장애물");					
+					$('.minimapping').css("left","370px");					
 				}				
 				/* 10 */
 				if(batteryrandom >= 91 && batteryrandom < 100){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";
-				}					
-				
-			
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";				
+					$('.imagenametext').text("[주의 사항] 횡단보도");
+					$('.imageintroducetext').text("전방에 횡단보도 구간입니다. 신호에 맞춰서 가시기 바랍니다.");
+					
+					/* 재미용 */
+					$('.sampleimagetext').text("탐지 이미지 : 횡단보도");					
+					$('.minimapping').css("left","360px");					
+				}											
 		    }, 1000); 
 	   	    
 		  	/* 요소 내용 변경 */
@@ -778,6 +841,8 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					var cameraView = $("#cameraView").attr(
 							"src", "data:image/jpg;base64,"+message.payloadString);
 					
+					var cameraView = $("#cameraView2").attr(
+							"src", "data:image/jpg;base64,"+message.payloadString);
 				}
 				var message = new Paho.MQTT.Message("frame arrived");
 				message.destinationName = "/Frame/Flag";
@@ -887,22 +952,41 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 			</div>
 			<!-- device controller =================================-->
 			<div class="viewbox7"> <!-- 1685 * 937 -->
-				<div class="movebutton">
-					<!-- 자동차 조종 방향키 -->
-					<button class="btn btn-danger btn-sm" id="left">◀</button>
-					<button class="btn btn-danger btn-sm" id="right">▶</button>
-					<button class="btn btn-danger btn-sm" id="up">▲</button>
-					<button class="btn btn-danger btn-sm" id="down">▼</button>
-					<button class="btn btn-danger btn-sm" id="stop">■</button>
+				<!-- MQTT -->
+				<img id="cameraView2">
+				<div class="viewbox7databox">
+				
 				</div>
-
-				<div class="ViewBox">
-					<img id = "cameraView" style="width:600px; height:399px">
+				
+				<div class="positionbox">
+                      <img class="positionbox2" src="${pageContext.request.contextPath}/resource/image/admin/minimap.png">
+                      <div class="positionbox4"></div>
 				</div>
-
-				<a href="${pageContext.request.contextPath}/admin/movetrack.do">track</a>
-
-
+				
+				
+				
+				
+				
+				
+				
+				<!-- Controller box -->
+				<div class="controllerbox">
+					<button type="button" class="gostraight" id="gostraight">
+						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/전진.png">
+					</button>
+					<button type="button" class="gostop" id="gostop">
+<%-- 						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/.png">					 --%>
+					</button>
+					<button type="button" class="goback" id="goback">
+						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/후진.png">					
+					</button>
+					<button type="button" class="goleft" id="goleft">
+						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/왼쪽.png">					
+					</button>
+					<button type="button" class="goright" id="goright">
+						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/오른쪽.png">				
+					</button>	
+				</div>
 
 
 
@@ -912,8 +996,6 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 
 </body>
 <script type="text/javascript">
-
-
 //[공용]manu script start---------------------------------------------------------------
 //로딩 이미지
 $(".ring1").hide();
@@ -2090,44 +2172,40 @@ function gocarfunction(){
 	      {
 	    	 console.log(keyValue[2]);
 	         console.log("앞으로 끝")
-	         $("#up").css("background-color", "#bd2130");
-	         $("#up").css("border-color", "#FF0000");
+	         $(".gostraight").css("border-color", "#FF0000");
+	         $(".gostraight").css("background-color", "#FA5858");
 	         keyValue[87]=''
-	         //MotorBreak();
 	      }
 	      /* 후진 키 땠을때 */
 	      if(keyValue[83]=='up')
 	      {
 	         console.log("뒤로 끝")
-	         $("#down").css("background-color","#bd2130");
-	         $("#down").css("border-color", "#FF0000");
+	         $(".goback").css("border-color", "#FF0000");
+	         $(".goback").css("background-color", "#FA5858");
 	         keyValue[83]=''
-	         //MotorBackword()
 	      }
 	      /* 우회전 키 땠을때 */
 	      if(keyValue[68]=='up')
 	      {
 	         console.log("우회전 끝")
-	         $("#right").css("background-color", "#bd2130");
-	         $("#right").css("border-color", "#FF0000");
+	         $(".goright").css("border-color", "#FF0000");
+	         $(".goright").css("background-color", "#FA5858");
 	         keyValue[68]=''
-	         TurnStop()
 	      }
 	      /* 좌회전 키 땠을때 */
 	      if(keyValue[65]=='up')
 	      {
 	         console.log("좌회전 끝")
-	         $("#left").css("background-color", "#bd2130");
-	         $("#left").css("border-color", "#FF0000");
+	         $(".goleft").css("border-color", "#FF0000");
+	         $(".goleft").css("background-color", "#FA5858");
 	         keyValue[65]=''
-	         TurnStop()
 	      }
 	      /* 정지 키 땠을때 */
 	      if(keyValue[32]=='up')
 	      {
 	         console.log("정지 스탑")
-	         $("#stop").css("background-color", "#bd2130");
-	         $("#stop").css("border-color", "#FF0000");
+	         $(".gostop").css("border-color", "#FF0000");
+	         $(".gostop").css("background-color", "#FA5858");
 	      }
    }
 
@@ -2137,43 +2215,44 @@ function gocarfunction(){
 	      if(keyValue[87]=='down')
 	      {
 	         console.log("앞으로")
-	         $("#up").css("background-color", "#2E64FE");
-	         $("#up").css("border-color", "#0040FF");
-	         MotorAccel();
+	         $(".gostraight").css("border-color", "#2E64FE");
+	         $(".gostraight").css("background-color", "#2E64FE");
+	         document.getElementById("gostraight").click();
 	  	 }
 	      /* 후진 키 눌렀을때 */
 	      if(keyValue[83]=='down')
 	      {
 	         console.log("뒤로")
-	         $("#down").css("background-color", "#2E64FE");
-	         $("#down").css("border-color", "#0040FF");
-	         MotorBackword();
+	         $(".goback").css("border-color", "#2E64FE");
+	         $(".goback").css("background-color", "#2E64FE");
+	         document.getElementById("goback").click();
 	      }
 
 	      /* 우회전 키 눌렀을때 */
 	      if(keyValue[68]=='down')
 	      {
 	         console.log("우회전")
-	         $("#right").css("background-color", "#2E64FE");
-	         $("#right").css("border-color", "#0040FF");
-	         TurnRight();
+	         $(".goright").css("border-color", "#2E64FE");
+	         $(".goright").css("background-color", "#2E64FE");
+	         document.getElementById("goright").click();
 	      }
 	      /* 좌회전 키 눌렀을때 */
 	      if(keyValue[65]=='down')
 	      {
 	         console.log("좌회전")
-	         $("#left").css("background-color", "#2E64FE");
-	         $("#left").css("border-color", "#0040FF");
-	         TurnLeft();
+	         $(".goleft").css("border-color", "#2E64FE");
+	         $(".goleft").css("background-color", "#2E64FE");
+	         document.getElementById("goleft").click();
 	      }
 	      /* 정지 키 눌렀을때 */
 	      if(keyValue[32]=='down')
 	      {
 	         console.log("정지")
-	         $("#stop").css("background-color", "#2E64FE");
-	         $("#stop").css("border-color", "#0040FF");
-	         MotorBreak();
+	         $(".gostop").css("border-color", "#2E64FE");
+	         $(".gostop").css("background-color", "#2E64FE");
+	         document.getElementById("gostop").click();
 	      }
+
    }, 30);
    /* 키 눌렀을 때 이벤트를 실행하겠다 */
    document.addEventListener('keydown', function(event) {
@@ -2188,6 +2267,7 @@ function gocarfunction(){
    }, true);
 
 // viewbox7 script end---------------------------------------------------------------
+
 
 
 </script>
