@@ -604,20 +604,30 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 						<div class="leftbox1-1">
 							<div class="sampleimagetext">탐지 이미지: 샘플</div>
 							<img class="sampleimage1" src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png">
+			                <label for="modal" class="button">확대</label>               
 						</div>
 						<div class="leftbox1-2">
 
 						</div>
 						<div class="leftbox1-3">
-
+	             		   <div class="minimaptext">위치 정보</div>
+	                       <img class="minimapimage1" src="${pageContext.request.contextPath}/resource/image/admin/minimap.png">
+	                       <div class="minimaplocationtext">좌표! : 163.975 / 542.399</div>
+	                       <div class="minimapping"></div>
 						</div>
 					</div>
 
 					<div class="centerbox1">
-						<img class="examplecenterimage" src="${pageContext.request.contextPath}/resource/image/device/상우.jpg">
-						<img class="warning" src="${pageContext.request.contextPath}/resource/image/device/warning.png">
-
-
+  						<!-- leftbox1-1의 모달창 -->
+                  		<input type="checkbox" id="modal" class="hidden">
+	                     <div class="box_modal">
+	                       <label for="modal" class="closer" id="closed">x</label>
+	                       <div class="text">
+	                         <h3>모달 윈도우</h3>
+	                         <p>다람쥐 헌 쳇바퀴에 타고파.</p>
+	                       </div>
+	                     </div>
+						
 
 
 
@@ -637,7 +647,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 								<img class="bettery4" src="${pageContext.request.contextPath}/resource/image/device/battery4.png">
 								<div class="todayday">0000-00-00</div>
 							</div>
-							<div class="glow-on-hover autohand">AUTO</div>
+							<div class="changemode">AUTO</div>
 						</div>
 						<div class="rightbox1-2">
 							<div class="orderlistpage">주문 상세 내역</div>
@@ -647,15 +657,22 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 			</div>
 
 			<script type="text/javascript">
+			document.addEventListener('keydown', function(event) {
+				if (event.keyCode === 27) {
+					console.log("ddddd");
+					document.getElementById("closed").click();
+				}
+			}, true);
+			
 			var automanual = 0;
-			$(".autohand").click(function(){
+			$(".changemode").click(function(){
 				automanual += 1;
 				console.log(automanual);
 				if(automanual %2 == 0){
-					$('.autohand').text("MANUAL");
+					$('.changemode').text("MANUAL");
 				}
 				if(automanual %2 == 1){
-					$('.autohand').text("AUTO");
+					$('.changemode').text("AUTO");
 				}
 			});
 
