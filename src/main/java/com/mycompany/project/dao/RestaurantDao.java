@@ -134,6 +134,11 @@ public class RestaurantDao extends EgovAbstractMapper{
 	public List<Fnb> selectBeverageListByFrno(int frno) {
 		List<Fnb> list = selectList("fnb.selectBeverageList", frno);
 		return list;
+	}
+
+	public Rmember selecRestaurantInfoByRno(int rno) {
+		Rmember rmember = selectOne("rmember.selectByRno", rno);
+		return rmember;
 	}			
 	
 }
