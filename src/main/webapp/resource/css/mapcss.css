@@ -1,65 +1,9 @@
 @charset "UTF-8";
-$grid:30px;
-html,body,div{margin:0;padding:0}
-@mixin prefix($prop,$val){
-  -webkit-#{$prop}:#{$val};
-  -o-#{$prop}:#{$val};
-  -ms-#{$prop}:#{$val};
-  -moz-#{$prop}:#{$val};
-  #{$prop}:#{$val}
-}
-@mixin inadd($prop,$val){
-  #{$prop}:-webkit-#{$val};
-  #{$prop}:-o-#{$val};
-  #{$prop}:-ms-#{$val};
-  #{$prop}:-moz-#{$val};
-  #{$prop}:#{$val};
-}
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content; 
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @-ms-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  } 
-}
-@include keyframes(road_animation) {
-  0% {
-    background-position:0 0;
-  }
-  100% {
-    background-position:0 #{$grid*2};
-  } 
-}
-#viewer{
-  @include prefix('perspective','800px');
-  #camera{
-    @include prefix('transform','rotateX(60deg)');
-    .grass{
-      position:absolute;left:0;top:0;right:0;bottom:0;
-    @include inadd('background-image','linear-gradient(top left,#080 0,#090 100%)');
-    @include prefix('background-size',$grid);
-    @include prefix('animation','road_animation .1s linear infinite');
-      height:#{$grid*20};
-    .road{position:absolute;left:40%;right:40%;top:0;bottom:0;
-      &:after,&:before{content:'';position:absolute;left:49%;right:49%;top:0;bottom:0;background-color:#fff}
-      @include inadd('background-image','linear-gradient(top left,#334 0,#444 100%)');
-      @include prefix('background-size',#{$grid/10});
-      @include prefix('animation','road_animation .1s linear infinite');
-    }
-    }
-  }
-}
 
-#runrun{
-	color: white;
-}
+
+
+
+
 
 
 
