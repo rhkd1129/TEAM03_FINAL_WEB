@@ -3210,13 +3210,14 @@ ul{
 	width: 120px;
 	height: 120px;
 	background-color: #FA5858;
-	color: #FE2E2E;
-	font-size: 80px;
+	color: #5882FA;
+	font-size: 70px;
 	font-weight: bold;
 	margin-left: -108px;
 	margin-top: 130px;
 	float:left;	
 	border: 1px solid #FF0000;
+	line-height: 50px;
    /* 드래그 막기 */   
    -ms-user-select: none; 
    -moz-user-select: -moz-none;
@@ -3225,7 +3226,7 @@ ul{
    user-select: none; 
    transform: rotateX(45deg); 
    opacity: 0.5;  
-      border-radius: 15px;
+   border-radius: 15px;
    box-shadow: 0 9px #999;   
 }
 
@@ -3281,7 +3282,7 @@ ul{
 	color: #FE2E2E;
 	font-size: 35px;
 	font-weight: bold;
-	margin-left: -290px;
+	margin-left: -280px;
 	margin-top: 135px;
 	float:left;
 	border: 1px solid #FF0000;	
@@ -3355,7 +3356,7 @@ ul{
    position: absolute;
    left: 340px;
    bottom: 130px;
-   opacity: 0.7;
+   opacity: 0.8;
 }
 
 .positionbox2{
@@ -3364,7 +3365,7 @@ ul{
    float: left;
    opacity: 1;
    border: 3px solid #848484;
-   opacity: 0.7;
+   opacity: 0.8;
 }
 
 .positionbox4{

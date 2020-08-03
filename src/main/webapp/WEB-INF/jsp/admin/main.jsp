@@ -974,9 +974,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					<button type="button" class="gostraight" id="gostraight">
 						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/전진.png">
 					</button>
-					<button type="button" class="gostop" id="gostop">
-<%-- 						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/.png">					 --%>
-					</button>
+					<button type="button" class="gostop" id="gostop">■</button>
 					<button type="button" class="goback" id="goback">
 						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/후진.png">					
 					</button>
@@ -2215,16 +2213,16 @@ function gocarfunction(){
 	      if(keyValue[87]=='down')
 	      {
 	         console.log("앞으로")
-	         $(".gostraight").css("border-color", "#2E64FE");
-	         $(".gostraight").css("background-color", "#2E64FE");
+	         $(".gostraight").css("border-color", "#31B404");
+	         $(".gostraight").css("background-color", "#3e8e41");
 	         document.getElementById("gostraight").click();
 	  	 }
 	      /* 후진 키 눌렀을때 */
 	      if(keyValue[83]=='down')
 	      {
 	         console.log("뒤로")
-	         $(".goback").css("border-color", "#2E64FE");
-	         $(".goback").css("background-color", "#2E64FE");
+	         $(".goback").css("border-color", "#31B404");
+	         $(".goback").css("background-color", "#3e8e41");
 	         document.getElementById("goback").click();
 	      }
 
@@ -2232,24 +2230,24 @@ function gocarfunction(){
 	      if(keyValue[68]=='down')
 	      {
 	         console.log("우회전")
-	         $(".goright").css("border-color", "#2E64FE");
-	         $(".goright").css("background-color", "#2E64FE");
+	         $(".goright").css("border-color", "#31B404");
+	         $(".goright").css("background-color", "#3e8e41");
 	         document.getElementById("goright").click();
 	      }
 	      /* 좌회전 키 눌렀을때 */
 	      if(keyValue[65]=='down')
 	      {
 	         console.log("좌회전")
-	         $(".goleft").css("border-color", "#2E64FE");
-	         $(".goleft").css("background-color", "#2E64FE");
+	         $(".goleft").css("border-color", "#31B404");
+	         $(".goleft").css("background-color", "#3e8e41");
 	         document.getElementById("goleft").click();
 	      }
 	      /* 정지 키 눌렀을때 */
 	      if(keyValue[32]=='down')
 	      {
 	         console.log("정지")
-	         $(".gostop").css("border-color", "#2E64FE");
-	         $(".gostop").css("background-color", "#2E64FE");
+	         $(".gostop").css("border-color", "#31B404");
+	         $(".gostop").css("background-color", "#3e8e41");
 	         document.getElementById("gostop").click();
 	      }
 
