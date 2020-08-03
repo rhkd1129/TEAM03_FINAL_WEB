@@ -16,9 +16,11 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_r_infocss.css">
 	<script src="${pageContext.request.contextPath}/resource/script/addressapi.js"></script>
 	<script>
+		var rno = ${rno}
+		console.log(rno)
 		$(function(){
 			
-			$(this).css({
+			$('#menu_tab').css({
 				'background-color' : '#ffffff',
 				'color': '#000000'
 			})
@@ -29,7 +31,7 @@
 			
 			$.ajax({
 				type : "get", 
-				url : "customer_r_review.do",
+				url : "customer_r_menu.do?rno="+rno,
 				success : function(result) { 
 					$(".restaurant_info_main").html(result);
 				}
@@ -38,16 +40,18 @@
 	</script>
 	<script>
 		$(document).ready(function() {
-	
+			
 			// 기존 css에서 플로팅 배너 위치(top)값을 가져와 저장한다.
 			var floatPosition = parseInt($("#floatMenu").css('top'));
 			// 250px 이런식으로 가져오므로 여기서 숫자만 가져온다. parseInt( 값 );
 	
 			$(window).scroll(function() {
 				// 현재 스크롤 위치를 가져온다.
+				
 				var scrollTop = $(window).scrollTop();
 				var newPosition = scrollTop + floatPosition + "px";
-	
+				
+					
 				/* 애니메이션 없이 바로 따라감
 				 $("#floatMenu").css('top', newPosition);
 				 */
@@ -76,7 +80,7 @@
 		</div>
 		<div class="navbar2" style="background-image: url('${pageContext.request.contextPath}/resource/image/home/customer_main_bg.png');">
 			<div class="navtext">
-				<img src="${pageContext.request.contextPath}/resource/image/home/customer_main_text.png">
+				<img class="navimg" src="${pageContext.request.contextPath}/resource/image/home/customer_main_text.png">
 			</div>
 			<div class="address">
 				<form name="form" id="form" method="post">
@@ -93,8 +97,8 @@
 	</div>
 
  
-	<div class="restaurant_detail">
-		<div class="restaurant_info">
+	<div class="restaurant_detail" id="restaurant_detail"> 
+		<div class="restaurant_info" id="restaurant_info">
 			<div class="restaurant_title">
 				${rmember.rtitle}
 			</div>
@@ -112,7 +116,8 @@
 		</div>
 		
 		<div id="floatMenu">
-			주문표 
+			<div id="floatMenu1">주문표</div>
+			<div id="floatMenu2">하이</div>
 		</div>
 	</div>
 

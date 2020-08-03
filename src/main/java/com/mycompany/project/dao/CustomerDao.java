@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import com.mycompany.project.model.Cmember;
+import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.Rmember;
 
 import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
@@ -99,6 +100,15 @@ public class CustomerDao extends EgovAbstractMapper{
 		int yesterday9Rows = selectOne("cmember.countby9day");
 //		System.out.println("DAO yesterday9Rows : " + yesterday9Rows);
 		return yesterday9Rows;
+	}
+
+	public Fnb selectFnbByFno(int fno) {
+		Fnb fnb = selectOne("fnb.selectByFno", fno);
+		return fnb;
+	}
+
+	public void insertOrderTable(Fnb fnb) {
+		insert("fnb.insertOrderTable", fnb);
 	}		
 
 }
