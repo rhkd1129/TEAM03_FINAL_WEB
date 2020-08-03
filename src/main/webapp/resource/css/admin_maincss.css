@@ -2909,6 +2909,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
   width: 13px;
   height: 13px;
   background-color: red;
+  border : 3px solid #F5A9A9;
   border-radius: 7.5px;
   -webkit-animation:blink 0.7s ease-in-out infinite alternate;
 }
@@ -3014,15 +3015,44 @@ input#modal[type=checkbox]:checked ~ .box_modal {
   transform: scale(1, 1);
 }
 
+.list{	
+	width: 248px;
+	height: 37px;
+	text-align: center;
+}
 
+.listbox{
+	width: 248px;
+	height: 396px;	
+}
 
+.ulname{
+	color: #A4A4A4;
+	height: 35px;
+	text-align: center;
+	border-bottom: 2px solid #848484;
+	line-height: 30px;
+	width: 248px;
+	font-size: 18px;
+}
 
+.uljumpbox{
+	width: 248px;
+	float: left;
+	height: 10px;
+}
 
+.lilist{
+	color: #BDBDBD;
+	font-size: 17px;
+	text-align: center;
+	margin-left: 0px;
+}
 
-
-
-
-
+ul{
+   list-style:none;
+   padding-left:0px;
+}
 
 
 
