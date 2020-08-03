@@ -153,6 +153,11 @@ public class RestaurantService {
 		return list;
 	}
 
+	public Rmember getRestaurantInfoByRno(int rno) {
+		Rmember rmember = restaurantDao.selecRestaurantInfoByRno(rno);
+		return rmember;
+	}
+
 
 
 

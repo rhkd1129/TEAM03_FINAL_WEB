@@ -21,8 +21,13 @@
 			from restaurant order by rtel desc limit #{startIndex1}, #{rowsPerPage1}
 		</select>
 
+		<select id="selectByRno" resultType="rmember">
+			select rno, rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
+			from restaurant where rno=#{rno}
+		</select>
+		
 		<select id="selectByAddr" resultType="rmember">
-			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
+			select rno, rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
 			from restaurant where radress like CONCAT('%',#{siNm},'%') and radress like CONCAT('%',#{emdNm},'%')
 		</select>
 

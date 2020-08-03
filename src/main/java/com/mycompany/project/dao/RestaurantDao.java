@@ -154,5 +154,9 @@ public class RestaurantDao extends EgovAbstractMapper{
 		return list;
 	}
 
+	public Rmember selecRestaurantInfoByRno(int rno) {
+		Rmember rmember = selectOne("rmember.selectByRno", rno);
+		return rmember;
+	}
 
 }

@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
+import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.Rmember;
 import com.mycompany.project.service.CustomerService;
 import com.mycompany.project.service.RestaurantService;
@@ -199,5 +200,25 @@ public class CustomerController{
 		return "customer/customer_search";
 
 	}
+	
+	@GetMapping("/customer_r_info.do")
+	public String detail(int rno, Model model) {
+		Rmember rmember = restaurantService.getRestaurantInfoByRno(rno);
+		List<Fnb> foodList = restaurantService.getFoodListByFrno(rno);
+		List<Fnb> beverageList = restaurantService.getBeverageListByFrno(rno);
+		model.addAttribute("rmember", rmember);
+		model.addAttribute("foodList", foodList);
+		model.addAttribute("beverageList", beverageList);
+		return "customer/customer_r_info";
+	}
 
+	@GetMapping("/customer_r_menu.do")
+	public String menu() {
+		return "customer/customer_r_menu";
+	}
+	
+	@GetMapping("/customer_r_review.do")
+	public String review() {
+		return "customer/customer_r_review";
+	}
 }

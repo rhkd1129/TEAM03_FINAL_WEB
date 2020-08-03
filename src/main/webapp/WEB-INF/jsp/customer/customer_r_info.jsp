@@ -6,15 +6,63 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>${rmember.rtitle}</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_searchcss.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_r_infocss.css">
 	<script src="${pageContext.request.contextPath}/resource/script/addressapi.js"></script>
+	<script>
+		$(function(){
+			
+			$(this).css({
+				'background-color' : '#ffffff',
+				'color': '#000000'
+			})
+			$('#review_tab').css({
+				'color': '#ffffff',
+				'background-color' : '#313535',
+			})
+			
+			$.ajax({
+				type : "get", 
+				url : "customer_r_review.do",
+				success : function(result) { 
+					$(".restaurant_info_main").html(result);
+				}
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function() {
+	
+			// 기존 css에서 플로팅 배너 위치(top)값을 가져와 저장한다.
+			var floatPosition = parseInt($("#floatMenu").css('top'));
+			// 250px 이런식으로 가져오므로 여기서 숫자만 가져온다. parseInt( 값 );
+	
+			$(window).scroll(function() {
+				// 현재 스크롤 위치를 가져온다.
+				var scrollTop = $(window).scrollTop();
+				var newPosition = scrollTop + floatPosition + "px";
+	
+				/* 애니메이션 없이 바로 따라감
+				 $("#floatMenu").css('top', newPosition);
+				 */
+	
+				$("#floatMenu").stop().animate({
+					"top" : newPosition
+				}, 500);
+	
+			}).scroll();
+	
+		});
+		
+		
+
+	</script>
 </head>
 <body>
 	<div class="header">
@@ -45,24 +93,27 @@
 	</div>
 
  
-	<div class="restaurant_list">
-		<c:forEach var="restaurant" items="restaurantList">
-		
-		<div class="restaurant" style="cursor:pointer;" 
-			onclick="location.href='${pageContext.request.contextPath}/customer/restaurant_detail.do?rid=${restaurant.rid}';">
-			<div class="restaurant_logo">
-				<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/${restaurant.rid}.png">
+	<div class="restaurant_detail">
+		<div class="restaurant_info">
+			<div class="restaurant_title">
+				${rmember.rtitle}
 			</div>
-			<div class="restaurant_summary">
-				<table>
-					<tr class="restaurant_title"><td>${restaurant.rid}</td></tr>
-					<tr class="restaurant_title"><td></td></tr>
-					<tr class="restaurant_title"><td></td></tr>
-				</table>
+			<div class="restaurant_info_tab">
+				<div class="menu_tab" id="menu_tab">
+					메뉴
+				</div>
+				<div class="review_tab" id="review_tab">
+					리뷰
+				</div>
+			</div>
+			<div class="restaurant_info_main">
+				content
 			</div>
 		</div>
 		
-		</c:forEach>
+		<div id="floatMenu">
+			주문표 
+		</div>
 	</div>
 
 
@@ -121,6 +172,6 @@ $(".join").click(function(){
 $(".zgiyo").click(function(){
     location.href = "${pageContext.request.contextPath}/home/landingpage.do";
 });
-
 </script>
+<script src="${pageContext.request.contextPath}/resource/script/customer_r_info.js"></script>
 </html>

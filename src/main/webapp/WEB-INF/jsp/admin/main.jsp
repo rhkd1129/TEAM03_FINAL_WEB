@@ -40,7 +40,9 @@
 
     <!-- css import -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/mapcss.css">
+
+	<!-- MQTT impoert -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
 </head>
 <script type="text/javascript">
 //Progress bar ---------------------------------------------------------------------------
@@ -65,6 +67,7 @@ var Rpersentpx = Rpersenttotalmember * 7.4;
 $("#twobarpersent").css("width",String(Rpersentpx));
 //현재 사용 x (but 사용 바로 가능)
 $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmember) + "%");
+
 </script>
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false" id="adminmainpage">
 	<div class="bodymainbox">
@@ -114,7 +117,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 
 				<div class="btnHome21">
 					<img class="btnHomeimg21" src="${pageContext.request.contextPath}/resource/image/admin/automatic1.png">
-					<div class="btnHometext21">Automatic</div>
+					<div class="btnHometext21">Auto</div>
 					<img class="ring4" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
 				</div>
 
@@ -132,7 +135,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 
 				<div class="btnHome23">
 					<img class="btnHomeimg23" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
-					<div class="btnHometext23">Map</div>
+					<div class="btnHometext23">CCTV</div>
 					<img class="ring6" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
 				</div>
 
@@ -376,6 +379,8 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 
 				<!-- 차트 페이지  -->
 				<div class="centerchartpage1">
+					<div class="btn-danger btn-sm" id="CslideUp">▲</div>
+					<div class="btn-danger btn-sm" id="CslideDown">▼</div>
 					<div class="centerchartpageMAIN">
 
 
@@ -434,6 +439,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				<div class="deleteyellowline4"></div>
 
 				<!-- 출발선 박스 -->
+
 				<div class="startpatternbox"></div>
 
 				<!-- 예시 이미지들 -->
@@ -471,12 +477,72 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				<img class="traficimg7" src="${pageContext.request.contextPath}/resource/image/trafic/급커브.png">
 				<img class="traficimg8" src="${pageContext.request.contextPath}/resource/image/trafic/급커브.png">
 
+				<!-- 배달 도착 지점 (집)  -->
+				<div class="homefrontyard"></div>
+				<img class="traficimg9" src="${pageContext.request.contextPath}/resource/image/trafic/집.png">
+				<img class="fa" src="${pageContext.request.contextPath}/resource/image/admin/ping.png">
+
+
+				<!-- 차량 에니메이션 실험  -->
+				<img class="traficimg2" id="traficimg2" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+
+				<img class="traficimg2-1" id="traficimg2-1" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg2-2" id="traficimg2-2" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg2-3" id="traficimg2-3" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg2-4" id="traficimg2-4" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg2-5" id="traficimg2-5" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg2-6" id="traficimg2-6" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg2-7" id="traficimg2-7" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg2-8" id="traficimg2-8" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg2-9" id="traficimg2-9" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg2-10" id="traficimg2-10" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg2-11" id="traficimg2-11" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg2-12" id="traficimg2-12" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+				<img class="traficimg2-13" id="traficimg2-13" src="${pageContext.request.contextPath}/resource/image/trafic/초록차.png">
+
+				<script type="text/javascript">
+				//직선으로 좌로가기 (상부)
+				$(document).ready(function(){
+					  $('.traficimg2').click(function(){
+					      $(this).css('-webkit-animation-name','iteration-count');
+					      self.setTimeout("hideDiv()",7000);//차량 숨기기
+
+					      self.setTimeout("gocarfunction()",7000);//좌회전
+
+					  });
+					});
+				function hideDiv(){
+					  document.getElementById("traficimg2").style.display="none";
+					}
+
+
+				//직선으로 내려가기 (좌부)
+				$(document).ready(function(){
+					$('.traficimg2-12').click(function(){
+					      $(this).css('-webkit-animation-name','iteration-count2');
+					      self.setTimeout("hideDiv21()",3000);//차량 숨기기
+						});
+					});
+				function hideDiv21(){
+					  document.getElementById("traficimg2-12").style.display="none";
+					};
+
+
+				$(document).ready(function(){
+					$(".centerchartpageMAIN").hide();
+					  $("#CslideUp").click(function(){
+					    $(".centerchartpageMAIN").slideUp();
+					    console.log("slideUp");
+					  });
+					  $("#CslideDown").click(function(){
+					    $(".centerchartpageMAIN").slideDown();
+					    console.log("slideDown");
+					  });
+					});
 
 
 
-
-
-
+				</script>
 			</div>
 
 			<!-- SMS Send Page =================================-->
@@ -535,8 +601,280 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 
 			<!-- member + device + instrument list =================================-->
 			<div class="viewbox4">
-				11111111111111111111
+				<div class="viewbox4mainbox">
+					<div class="leftbox1">
+						<div class="leftbox1-1">
+							<div class="sampleimagetext">탐지 이미지: 샘플</div>
+							<img id="sampleimageid" class="sampleimage1" src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png">
+			                <label for="modal" class="button">확대</label>
+						</div>
+						<div class="leftbox1-2">
+						 	  <ul id="ul_id">
+							  	 <div class="ulname">탐지 리스트</div>
+							  	 <div class="uljumpbox"></div>
+							  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+						</div>
+						<div class="leftbox1-3">
+	             		   <div class="minimaptext">위치 정보</div>
+	                       <img class="minimapimage1" src="${pageContext.request.contextPath}/resource/image/admin/minimap.png">
+	                       <div class="minimaplocationtext">좌표 : 163.975 / 542.399</div>
+	                       <div class="minimapping"></div>
+						</div>
+					</div>
+
+					<div class="centerbox1">
+  						<!-- leftbox1-1의 모달창 -->
+                  		<input type="checkbox" id="modal" class="hidden">
+	                     <div class="box_modal">
+	                       <label for="modal" class="closer" id="closed">x</label>
+	                       <div class="text">
+	                         <h3>모달 윈도우</h3>
+	                         <p>다람쥐 헌 쳇바퀴에 타고파.</p>
+	                       </div>
+	                     </div>
+
+						<!-- MQTT -->
+						<img id="cameraView"
+						style="width:1094px; height:650px; margin-top: 90px; float: left;
+						border-bottom: 2px solid #A4A4A4; border-top: 2px solid #A4A4A4;">
+
+
+
+					</div>
+
+					<div class="rightbox1">
+						<div class="rightbox1-1">
+							<div class="wifibettory">
+								<img class="wifi0" src="${pageContext.request.contextPath}/resource/image/device/와이파이1.png">
+								<img class="wifi1" src="${pageContext.request.contextPath}/resource/image/device/와이파이2.png">
+								<img class="wifi2" src="${pageContext.request.contextPath}/resource/image/device/와이파이3.png">
+								<img class="wifi3" src="${pageContext.request.contextPath}/resource/image/device/와이파이4.png">
+								<img class="bettery1" src="${pageContext.request.contextPath}/resource/image/device/battery1.png">
+								<img class="bettery2" src="${pageContext.request.contextPath}/resource/image/device/battery2.png">
+								<img class="bettery3" src="${pageContext.request.contextPath}/resource/image/device/battery3.png">
+								<img class="bettery4" src="${pageContext.request.contextPath}/resource/image/device/battery4.png">
+								<div class="todayday">0000-00-00</div>
+							</div>
+							<div class="changemode">AUTO</div>
+						</div>
+						<div class="rightbox1-2">
+							<div class="orderlistpage">주문 상세 내역</div>
+						</div>
+					</div>
+				</div>
 			</div>
+
+			<script type="text/javascript">
+			/* 리스트 배열 예제 start */
+	   		/* 변수 모음 */
+	   		var batteryrandom = 2;
+		  	var countnum = 0;
+		  	var lilength = 0;
+
+	   		/* 1초마다 새로 값 생성 */
+		  	setInterval(function(action){
+		  		/* 난수 0~99 생성 */
+		  		batteryrandom = Math.floor(Math.random() * 100);
+
+		  		/* 아이디 +1 */
+		  		countnum +=1;
+
+				/* li 14시 맨 앞 li 삭제 */
+				lilength = $("ul li").length;
+				if(lilength == 14){
+					var smallid = countnum - 14;
+					console.log(smallid);
+					$("#"+smallid).remove();
+				}
+
+				/* 0~10, 11~20, 21~30 ... 91~99 이미지 지정 변경 */
+				/* 1 */
+				if(batteryrandom >= 0 && batteryrandom < 11){
+					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/100.png";
+				}
+				/* 2 */
+				if(batteryrandom >= 11 && batteryrandom < 21){
+					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/60.png";
+				}
+				/* 3 */
+				if(batteryrandom >= 21 && batteryrandom < 31){
+					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/급커브주의.png";
+				}
+				/* 4 */
+				if(batteryrandom >= 31 && batteryrandom < 41){
+					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/방지턱주의.png";
+				}
+				/* 5 */
+				if(batteryrandom >= 41 && batteryrandom < 51){
+					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/사람.png";
+				}
+				/* 6 */
+				if(batteryrandom >= 51 && batteryrandom < 61){
+					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";
+				}
+				/* 7 */
+				if(batteryrandom >= 61 && batteryrandom < 71){
+					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/어린이보호구역.png";
+				}
+				/* 8 */
+				if(batteryrandom >= 71 && batteryrandom < 81){
+					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/정지.png";
+				}
+				/* 9 */
+				if(batteryrandom >= 81 && batteryrandom < 91){
+					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/콘.png";
+				}
+				/* 10 */
+				if(batteryrandom >= 91 && batteryrandom < 100){
+					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";
+				}
+
+
+		    }, 1000);
+
+		  	/* 요소 내용 변경 */
+	   		$('.lilist').text("타켓 : " + batteryrandom);
+
+			/* 뒤로가기 */
+			$("#gomainpage").click(function(){
+			    location.href = "${pageContext.request.contextPath}/admin/main.do";
+			});
+
+			/* 1초마다 리스트 추가 */
+			setInterval(function(action){
+				add();
+		   }, 1000);
+
+			/* 리스트 추가 */
+			function add(){
+			    $("#ul_id").append("<li id="+countnum+" class='lilist'>"+"탐지 결과 : "+batteryrandom+"</li>");
+			}
+			/* 리스트 배열 예제 end */
+
+			/* MQTT start */
+			$(function(){
+				client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
+				client.onMessageArrived = onMessageArrived;
+				client.connect({onSuccess:onConnect});
+			});
+			/* 연결 완료 및 클라이언트 값 구독 */
+			function onConnect() {
+				client.subscribe("/Camera");
+			}
+			function onMessageArrived(message) {
+				if(message.destinationName == "/Camera") {
+					var cameraView = $("#cameraView").attr(
+							"src", "data:image/jpg;base64,"+message.payloadString);
+
+				}
+				var message = new Paho.MQTT.Message("frame arrived");
+				message.destinationName = "/Frame/Flag";
+				message.qos = 0;
+				client.send(message);
+			}
+			/* MQTT end */
+
+			/* 모달창 esc로 제거 */
+			document.addEventListener('keydown', function(event) {
+				if (event.keyCode === 27) {
+					console.log("ddddd");
+					document.getElementById("closed").click();
+				}
+			}, true);
+
+			/* 오토모드 수동모드 선택 */
+			var automanual = 0;
+			$(".changemode").click(function(){
+				automanual += 1;
+				console.log(automanual);
+				if(automanual %2 == 0){
+					$('.changemode').text("MANUAL");
+				}
+				if(automanual %2 == 1){
+					$('.changemode').text("AUTO");
+				}
+			});
+
+			/* 배터리 량 변경 */
+			var batteryrandom = Math.floor(Math.random() * 100); // 0 ~ 99
+			$(".bettery1").hide();
+			$(".bettery2").hide();
+			$(".bettery3").hide();
+			$(".bettery4").hide();
+
+			if(batteryrandom <= 25){	//0~25
+				$(".bettery1").show();
+			}else if(batteryrandom <= 50 && batteryrandom > 25){
+				$(".bettery2").show();	//26~50
+			}else if(batteryrandom <= 75 && batteryrandom > 50){
+				$(".bettery3").show();	//51~75
+			}else if(batteryrandom <= 100 && batteryrandom > 75){
+				$(".bettery4").show();	//76~100
+			}
+
+			/* 와이파이  */
+			$(".wifi0").show();
+			$(".wifi1").hide();
+			$(".wifi2").hide();
+			$(".wifi3").hide();
+
+			$(document).ready(function(){
+				wifitime = setTimeout(wifi0, 500);
+
+				function wifi0(){
+					$(".wifi0").show();
+
+					$(".wifi3").hide();
+				   setTimeout(wifi1, 500);
+				}
+
+				function wifi1(){
+					$(".wifi1").show();
+
+					$(".wifi0").hide();
+				   setTimeout(wifi2, 500);
+				}
+
+				function wifi2(){
+					$(".wifi2").show();
+
+					$(".wifi1").hide();
+				   setTimeout(wifi3, 500);
+				}
+
+				function wifi3(){
+					$(".wifi3").show();
+
+					$(".wifi2").hide();
+				   setTimeout(wifi0, 500);
+				}
+			});
+
+			/* 오늘 날짜  */
+			var nowDate = new Date();
+			var nowYear = nowDate.getFullYear();
+			var nowMonth = nowDate.getMonth() +1;
+			var nowDay = nowDate.getDate();
+
+			if(nowMonth < 10) { nowMonth = "0" + nowMonth; }
+			if(nowDay < 10) { nowDay = "0" + nowDay; }
+
+			//오늘 날짜 결과
+			var todayDate = nowYear + "-" + nowMonth + "-" + nowDay;
+			$('.todayday').text(String(todayDate));
+			</script>
 
 			<!-- member + device + instrument data =================================-->
 			<div class="viewbox5">
@@ -563,29 +901,6 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				</div>
 
 				<a href="${pageContext.request.contextPath}/admin/movetrack.do">track</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -930,7 +1245,6 @@ $(document).ready(function(){
 				$(".btnHome4").css("box-shadow","");
 				$(".btnHome4").css("border-right","");
 				$(".ring4").hide();
-				$(".viewbox4").hide();
 				check4 = 0;
 			};
 		});
@@ -1652,83 +1966,83 @@ Highcharts.chart('container1', {
 
 
 //viewbox3 script start---------------------------------------------------------------
-$(".carimage1").hide();
-$(".carimage2").hide();
-$(".carimage3").hide();
-$(".carimage4").hide();
-$(".carimage5").hide();
-$(".carimage6").hide();
-$(".carimage7").hide();
-$(".carimage8").hide();
-$(".carimage9").hide();
-$(".carimage10").hide();
-$(".carimage11").hide();
+$(".traficimg2-1").hide();
+$(".traficimg2-2").hide();
+$(".traficimg2-3").hide();
+$(".traficimg2-4").hide();
+$(".traficimg2-5").hide();
+$(".traficimg2-6").hide();
+$(".traficimg2-7").hide();
+$(".traficimg2-8").hide();
+$(".traficimg2-9").hide();
+$(".traficimg2-10").hide();
+$(".traficimg2-11").hide();
+$(".traficimg2-12").show();
+$(".traficimg2-13").hide();
 
-
-	$(".flagimage").click(function(){
-	stime = setTimeout(time1, 1000);
+function gocarfunction(){
+	stime = setTimeout(time1, 100);
 	function time1(){
-		$(".light1").css("background", "red");
-		$(".carimage1").show();
+		$(".traficimg2-2").show();
+		$(".traficimg2-").css("", "");
+		$(".traficimg2-").css("", "");
 
-		$(".light11").css("background", "green");
-		$(".carimage11").hide();
-	   setTimeout(time2, 1000);
+		$(".traficimg2-1").hide();
+	   setTimeout(time2, 100);
 	}
 
 	function time2(){
-		$(".light2").css("background", "red");
-		$(".carimage2").show();
+		$(".traficimg2-3").show();
+		$(".traficimg2-").css("", "");
+		$(".traficimg2-").css("", "");
 
-		$(".light1").css("background", "green");
-		$(".carimage1").hide();
-
-	   setTimeout(time3, 1000);
+		$(".traficimg2-2").hide();
+	   setTimeout(time3, 100);
 	}
 
 	function time3(){
-		$(".light3").css("background", "red");
-		$(".carimage3").show();
+		$(".traficimg2-4").show();
+		$(".traficimg2-").css("", "");
+		$(".traficimg2-").css("", "");
 
-		$(".light2").css("background", "green");
-		$(".carimage2").hide();
-	   setTimeout(time4, 1000);
+		$(".traficimg2-3").hide();
+	   setTimeout(time4, 100);
 	}
 
 	function time4(){
-		$(".light4").css("background", "red");
-		$(".carimage4").show();
+		$(".traficimg2-5").show();
+		$(".traficimg2-").css("", "");
+		$(".traficimg2-").css("", "");
 
-		$(".light3").css("background", "green");
-		$(".carimage3").hide();
-	   setTimeout(time5, 1000);
+		$(".traficimg2-4").hide();
+	   setTimeout(time5, 100);
 	}
 
 	function time5(){
-		$(".light5").css("background", "red");
-		$(".carimage5").show();
+		$(".traficimg2-6").show();
+		$(".traficimg2-").css("", "");
+		$(".traficimg2-").css("", "");
 
-		$(".light4").css("background", "green");
-		$(".carimage4").hide();
-	   setTimeout(time6, 1000);
+		$(".traficimg2-5").hide();
+	   setTimeout(time6, 100);
 	}
 
 	function time6(){
-		$(".light6").css("background", "red");
-		$(".carimage6").show();
+		$(".traficimg2-7").show();
+		$(".traficimg2-").css("", "");
+		$(".traficimg2-").css("", "");
 
-		$(".light5").css("background", "green");
-		$(".carimage5").hide();
-	   setTimeout(time7, 1000);
+		$(".traficimg2-6").hide();
+	   setTimeout(time7, 100);
 	}
 
 	function time7(){
-		$(".light7").css("background", "red");
-		$(".carimage7").show();
+		$(".traficimg2-8").show();
+		$(".traficimg2-").css("", "");
+		$(".traficimg2-").css("", "");
 
-		$(".light6").css("background", "green");
-		$(".carimage6").hide();
-	   setTimeout(time8, 1000);
+		$(".traficimg2-7").hide();
+	   setTimeout(time8, 100);
 	}
 
 
@@ -2286,124 +2600,46 @@ $(document).ready(function(){
 				check9 = 0;
 
 	function time8(){
-		$(".light8").css("background", "red");
-		$(".carimage8").show();
+		$(".traficimg2-9").show();
+		$(".traficimg2-").css("", "");
+		$(".traficimg2-").css("", "");
+
 
 
 		$(".light7").css("background", "green");
 		$(".carimage7").hide();
 	   setTimeout(time9, 1000);
+
+		$(".traficimg2-8").hide();
+	   setTimeout(time9, 100);
+
 	}
 
 	function time9(){
-		$(".light9").css("background", "red");
-		$(".carimage9").show();
+		$(".traficimg2-10").show();
+		$(".traficimg2-").css("", "");
+		$(".traficimg2-").css("", "");
 
-		$(".light8").css("background", "green");
-		$(".carimage8").hide();
-	   setTimeout(time10, 1000);
+		$(".traficimg2-9").hide();
+	   setTimeout(time10, 100);
 	}
 
 	function time10(){
-		$(".light10").css("background", "red");
-		$(".carimage10").show();
+		$(".traficimg2-11").show();
+		$(".traficimg2-").css("", "");
+		$(".traficimg2-").css("", "");
 
-		$(".light9").css("background", "green");
-		$(".carimage9").hide();
-	   setTimeout(time11, 1000);
+		$(".traficimg2-10").hide();
+	   setTimeout(time11, 100);
 	}
 
-	function time11(){
-		//자동 문자 전송하기
-		$("#sendmessage").trigger("click");
-
-		$(".light11").css("background", "red");
-		$(".carimage11").show();
-
-		$(".light10").css("background", "green");
-		$(".carimage10").hide();
-	   setTimeout(time1, 1000);
-	}
-
-});
+};
 
 //viewbox3 script end---------------------------------------------------------------
 
 
 //viewbox7 script start---------------------------------------------------------------
-/* MQTT 연결 (광휘컴퓨터) */
-// $(function(){
-// 	client = new Paho.MQTT.Client("192.168.3.224", 61614, new Date().getTime().toString());
-// 	client.onMessageArrived = onMessageArrived;
-// 	client.connect({onSuccess:onConnect});
-// });
 
-/* 연결 완료 및 클라이언트 값 구독 */
-// function onConnect() {
-// 	console.log("mqtt broker connected")
-// 	client.subscribe("/sensor");
-// 	client.subscribe("/camerapub");
-// }
-
-/* 구독한 메세지 받는 객체 생성 */
-// function onMessageArrived(message) {
-// 	if(message.destinationName == "/camerapub") {
-// 		var cameraView = $("#cameraView").attr(
-// 				"src", "data:image/jpg;base64,"+message.payloadString);
-// 	}
-
-// 	/* 차량 좌회전 */
-// 	function TurnLeft() {
-
-// 		var message = new Paho.MQTT.Message("left");
-// 		message.destinationName = "/Control/Direction/FrontWheel";
-// 		message.qos = 0;
-
-// 		client.send(message);
-// 	}
-// 	/* 차량 우회전 */
-// 	function TurnRight() {
-
-// 		var message = new Paho.MQTT.Message("right");
-// 		message.destinationName = "/Control/Direction/FrontWheel";
-// 		message.qos = 0;
-
-// 		client.send(message);
-// 	}
-// 	/* 차량 정지 */
-// 	function TurnStop() {
-
-// 		var message = new Paho.MQTT.Message("stop");
-// 		message.destinationName = "/Control/Direction/FrontWheel";
-// 		message.qos = 0;
-
-// 		client.send(message);
-// 	}
-// 	/* 모터 start */
-// 	function MotorAccel() {
-// 		var message = new Paho.MQTT.Message("accel");
-// 		message.destinationName = "/Control/Motor";
-// 		message.qos = 0;
-
-// 		client.send(message);
-// 	}
-// 	/* 모터 end */
-// 	function MotorBreak() {
-// 		var message = new Paho.MQTT.Message("break");
-// 		message.destinationName = "/Control/Motor";
-// 		message.qos = 0;
-
-// 		client.send(message);
-// 	}
-
-// 	function MotorBackword() {
-
-// 		var message = new Paho.MQTT.Message("backword");
-// 		message.destinationName = "/Control/Motor";
-// 		message.qos = 0;
-
-// 		client.send(message);
-// 	}
 
 
 // 	/* 차량 좌회전 */
