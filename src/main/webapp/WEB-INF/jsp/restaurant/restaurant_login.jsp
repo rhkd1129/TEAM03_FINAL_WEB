@@ -42,7 +42,7 @@
 					</li>				
 				</ul>
 				<input type="submit" value="로그인" style="width:500px; height:50px; margin:20px"/>
-				<input type="button" onclick="location.href='${pageContext.request.contextPath}/restaurant/restaurant_join.do';"
+				<input type="button" onclick="location.href='${pageContext.request.contextPath}/restaurant/restaurant_join.do'"
 						value="회원가입" style="width:500px; height:50px; margin:20px"/>
 				
 			</form:form>

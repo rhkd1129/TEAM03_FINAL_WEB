@@ -5,10 +5,7 @@
 		<typeAliases>
 			<typeAlias alias="cmember" type="com.mycompany.project.model.Cmember"/>
 			<typeAlias alias="rmember" type="com.mycompany.project.model.Rmember"/>
-
 			<typeAlias alias="amember" type="com.mycompany.project.model.Amember"/>
-
 			<typeAlias alias="fnb" type="com.mycompany.project.model.Fnb"/>
-
 		</typeAliases>
 	</configuration>

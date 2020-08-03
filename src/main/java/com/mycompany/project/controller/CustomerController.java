@@ -64,26 +64,26 @@ public class CustomerController{
 		if(bindingResult.hasErrors()) {
 			return returnPage;
 		}
-		
-		String latestLoginTryDate = customerService.getLoginTryDate(cloginForm);
-		
-		java.sql.Timestamp latestTryDate = java.sql.Timestamp.valueOf(latestLoginTryDate);
-		
-		Calendar cal = Calendar.getInstance();
-		cal.setTimeInMillis(latestTryDate.getTime());
-		cal.add(Calendar.SECOND, 600);
-		Timestamp latestTryDate10 = new Timestamp(cal.getTime().getTime());
-		
-		SimpleDateFormat latestTryDate10Format = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분 ss초");
-		String Date10Format =  latestTryDate10Format.format(latestTryDate10);
-		
-		long nowTime = System.currentTimeMillis();
-		Timestamp currentTime = new Timestamp(nowTime);		
-		boolean timeCompare = currentTime.after(latestTryDate10);
 
 		if (loginResult == CustomerService.LOGIN_SUCCESS) {
 			String loginLock = customerService.getLoginLock(cloginForm);
 			System.out.println(loginLock);
+			
+			String latestLoginTryDate = customerService.getLoginTryDate(cloginForm);
+			
+			java.sql.Timestamp latestTryDate = java.sql.Timestamp.valueOf(latestLoginTryDate);
+			
+			Calendar cal = Calendar.getInstance();
+			cal.setTimeInMillis(latestTryDate.getTime());
+			cal.add(Calendar.SECOND, 600);
+			Timestamp latestTryDate10 = new Timestamp(cal.getTime().getTime());
+			
+			SimpleDateFormat latestTryDate10Format = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분 ss초");
+			String Date10Format =  latestTryDate10Format.format(latestTryDate10);
+			
+			long nowTime = System.currentTimeMillis();
+			Timestamp currentTime = new Timestamp(nowTime);		
+			boolean timeCompare = currentTime.after(latestTryDate10);
 			
 			if (loginLock.equals("N")) {
 				session.setAttribute("sessionMid", cloginForm.getMid());
@@ -102,7 +102,7 @@ public class CustomerController{
 				returnPage = "redirect:/customer/customer_main.do";
 				
 			}
-			
+			 
 			if (loginLock.equals("Y") && timeCompare == false) {
 				customerService.loginFailCount(mid);
 				
@@ -113,6 +113,8 @@ public class CustomerController{
 			}
 			
 		} else if (loginResult == CustomerService.LOGIN_MID_FAIL) {
+			out.println("<script>alert('아이디를 확인해주세요.');</script>");
+			out.flush();
 			bindingResult.rejectValue("mid", "login.mid.fail");
 			// returnPage = "customer/customer_login";
 			return returnPage;
