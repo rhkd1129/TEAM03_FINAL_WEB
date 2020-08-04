@@ -499,13 +499,15 @@ a:hover {
 .btnHome24{
    width: 230px;
    height: 45px;
-   background-color: #2A3F54;
+   background-color: linear-gradient(#334556, #2C4257),#2A3F54;
    cursor: pointer;
    float: left;
    text-decoration: none;
    display: block;
    box-sizing: border-box;
    margin-top: 2px;
+   box-shadow: rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0;
+   border-right: 7px solid #1ABB9C;
 }
 
 .btnHomeimg24{

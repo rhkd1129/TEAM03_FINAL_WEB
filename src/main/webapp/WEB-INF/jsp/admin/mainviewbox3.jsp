@@ -378,6 +378,21 @@ $(".btnHome21").click(function(){
 	location.href = "${pageContext.request.contextPath}/admin/mainviewbox5.do";
 });
 
+/* 수동 페이지 이동 Ajax */
+$(".btnHome24").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/mainviewbox6.do";
+});
+
+/* 차트 페이지 이동 Ajax */
+$(".btnHome22").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/mainviewbox7.do";
+});
+
+/* CCTV 페이지 이동 Ajax */
+$(".btnHome23").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/mainviewbox8.do";
+});
+
 
 
 
