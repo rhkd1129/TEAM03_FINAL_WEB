@@ -226,17 +226,40 @@ public class CustomerController{
 	}
 
 	@GetMapping("/customer_order_table.do")
-	public String orderTable(int fno, int rno, Model model, HttpSession session) {
+	public String orderTable(Model model, HttpSession session) {
+		String bmid = (String) session.getAttribute("sessionMid");
+		List<BeforeOrder> list = customerService.getOrderTable(bmid);
+		model.addAttribute("orderTableList", list);
+		return "customer/customer_order_table";
+	}
+	
+	@GetMapping("/customer_insert_order_table.do")
+	public String insertOrderTable(int fno, int rno, Model model, HttpSession session) {
 		Fnb fnb = customerService.getFnbByFno(fno);
 		BeforeOrder beforeOrder = new BeforeOrder();
-		String bmid = (String) session.getAttribute("loginMid");
+		String bmid = (String) session.getAttribute("sessionMid");
 		beforeOrder.setBmid(bmid);
 		beforeOrder.setBrno(rno);
 		beforeOrder.setBfname(fnb.getFname());
 		beforeOrder.setBfprice(fnb.getFprice());
-
 		customerService.addOrderTable(beforeOrder);
 
-		return "customer/customer_order_table";
+		
+		
+		return "redirect:/customer/customer_order_table.do";
+	}
+	
+	@GetMapping("/customer_delete_order_table.do")
+	public String deleteOrderTable(int bno) {
+		
+		customerService.removeOrderTable(bno);
+		
+		return "redirect:/customer/customer_order_table.do";
+	}
+	
+	@GetMapping("/customer_order.do")
+	public String order() {
+		
+		return "customer/customer_order";
 	}
 }

@@ -17,7 +17,7 @@
 			select fno, fname, fprice, fimage from fnb where frno=#{frno} and fcategory='beverage'
 		</select>
 		
-		<select id="selectBtFnb" resultType="fnb">
-			select fno, fname, fcategory, fprice, fimage from fnb where frno=#{frno}
+		<select id="selectByFno" resultType="fnb">
+			select fno, fname, fcategory, fprice, fimage from fnb where fno=#{fno}
 		</select>
 	</mapper>

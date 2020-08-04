@@ -26,11 +26,11 @@
 						<li>
 							<div class="food">
 								<a id="foodInsert" onclick="foodInsert(${fnb.fno});" >
-								<div>${fnb.fname}</div>
-								<div>
-									<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/1.png"
-										 style="width: 50px; height: 50px">
-								</div>
+									<div>${fnb.fname}</div>
+									<div>
+										<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/1.png"
+											 style="width: 50px; height: 50px">
+									</div>
 								</a>
 							</div>
 						</li>
@@ -45,11 +45,13 @@
 					<c:forEach var="fnb" items="${beverageList}">
 						<li>
 							<div class="beverage">
-								<div>${fnb.fname}</div>
-								<div>
-									<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/1.png"
-										 style="width: 50px; height: 50px">
-								</div>
+								<a id="foodInsert" onclick="foodInsert(${fnb.fno});" >
+									<div>${fnb.fname}</div>
+									<div>
+										<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/1.png"
+											 style="width: 50px; height: 50px">
+									</div>
+								</a>
 							</div>
 						</li>
 					</c:forEach>
@@ -59,18 +61,7 @@
 		</div>
 	</body>
 	<script>
-		var rno = ${rno}
-	
-		function foodInsert(fno) {
-			var fno = fno
-			$.ajax({
-				type : "get",
-				url : "${pageContext.request.contextPath}/customer/customer_order_table.do?fno="+fno + "&rno=" + rno,
-				success : function(result) {
-					$("#floatMenu1").html(result);
-				}
-			});
-		}
+		
 	
 		$('.foodtap').click(function() {
 			$(".foodList").toggle();

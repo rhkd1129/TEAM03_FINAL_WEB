@@ -151,4 +151,13 @@ public class CustomerDao extends EgovAbstractMapper{
 		insert("beforeOrder.insertOrderTable", beforeOrder);
 	}
 
+	public List<BeforeOrder> selectOrderTableByBmid(String bmid) {
+		List<BeforeOrder> list = selectList("beforeOrder.selecOrderTable", bmid);
+		return list;
+	}
+
+	public void insertOrderTable(int bno) {
+		delete("beforeOrder.deleteOrderTable", bno);
+	}
+
 }

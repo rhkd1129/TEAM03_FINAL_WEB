@@ -187,6 +187,15 @@ public class CustomerService {
 		customerDao.insertOrderTable(beforeOrder);
 	}
 
+	public List<BeforeOrder> getOrderTable(String bmid) {
+		List<BeforeOrder> list = customerDao.selectOrderTableByBmid(bmid);
+		return list;
+	}
+
+	public void removeOrderTable(int bno) {
+		customerDao.insertOrderTable(bno);
+	}
+
 
 
 
