@@ -198,10 +198,16 @@ public class AdminController {
 		return "admin/smssend";
 	}	
 
-	//차트 예제
+	//차트 예제1
 	@RequestMapping("/chart.do")
 	public String chart() {
 		return "admin/chart";
+	}	
+	
+	//차트 예제2
+	@RequestMapping("/zzz.do")
+	public String zzz() {
+		return "admin/zzz";
 	}	
 	
 	//움직이는 트랙

@@ -124,7 +124,12 @@
 				<img id="cameraView2">
 				<div class="viewbox7databox">
 					<a style="color: white; font-size: 20px; font-weight: bold;" 
-					href="${pageContext.request.contextPath}/admin/chart.do">실험 페이지로 이동</a>
+					href="${pageContext.request.contextPath}/admin/chart.do">실험 페이지로 이동1</a>
+				
+					<a style="color: white; font-size: 20px; font-weight: bold;" 
+					href="${pageContext.request.contextPath}/admin/zzz.do">실험 페이지로 이동2</a>
+				
+				
 				
 				</div>
 				

@@ -14,39 +14,156 @@
       <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
       <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	  <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/mapcss.css">
-   </head>
-   <body>
-      <h5 class="alert alert-success" style="text-align: center;">Manual 실험 페이지</h5>
-      <div id="gomainpage">Manual 페이지 이동</div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-   </body>
-   <script type="text/javascript">
-		/* 뒤로가기 */
-		$("#gomainpage").click(function(){
-		    location.href = "${pageContext.request.contextPath}/admin/mainviewbox6.do";
-		}); 
+</head>
+<body>
 
-   </script>
+  <div id="world" class="world">
+
+	<h1 class="ground">ground</h1>
+
+	<ul class="building block-1">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+
+	<ul class="building block-2">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-3">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-4">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-5">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-6">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-7">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-8">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-9">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-10">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-11">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="car car-1">Car
+		<li class="roof">roof</li>
+		<li class="door-left">door left</li>
+		<li class="front">front</li>
+		<li class="door-right">door right</li>
+		<li class="trunk">trunk</li>
+	</ul>
+	
+	<ul class="car car-2">Car
+		<li class="roof">roof</li>
+		<li class="door-left">door left</li>
+		<li class="front">front</li>
+		<li class="door-right">door right</li>
+		<li class="trunk">trunk</li>
+	</ul>
+	
+	<ul class="car car-3">Car
+		<li class="roof">roof</li>
+		<li class="door-left">door left</li>
+		<li class="front">front</li>
+		<li class="door-right">door right</li>
+		<li class="trunk">trunk</li>
+	</ul>
+	
+	<p class="road road-1">road</p>
+	<p class="road road-2">road</p>
+	<p class="road road-3">road</p>
+
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</body>
+<script type="text/javascript">
+/* 뒤로가기 */
+$("#gomainpage").click(function(){
+    location.href = "${pageContext.request.contextPath}/admin/mainviewbox6.do";
+}); 
+/* script 시작 */
+
+
+
+
+
+</script>
 </html>
