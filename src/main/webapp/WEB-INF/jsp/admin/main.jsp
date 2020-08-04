@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Page</title>
+    <title>관리자 페이지</title>
     <link rel="icon" href="${pageContext.request.contextPath}/resource/image/admin/관리자.png">
     <meta charset="UTF-8">
 
@@ -967,7 +967,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				
 				
 				
-				
+				   
 				
 				<!-- Controller box -->
 				<div class="controllerbox">
