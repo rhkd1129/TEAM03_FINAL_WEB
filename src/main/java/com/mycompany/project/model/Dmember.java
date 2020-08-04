@@ -10,17 +10,17 @@ public class Dmember {
 	private int dprice;
 	private String drestaurant;
 	
-	public Date getDdate() {
-		return ddate;
-	}
-	public void setDdate(Date ddate) {
-		this.ddate = ddate;
-	}
 	public String getDmid() {
 		return dmid;
 	}
 	public void setDmid(String dmid) {
 		this.dmid = dmid;
+	}
+	public Date getDdate() {
+		return ddate;
+	}
+	public void setDdate(Date ddate) {
+		this.ddate = ddate;
 	}
 	public String getDadress() {
 		return dadress;
@@ -46,5 +46,5 @@ public class Dmember {
 	public void setDrestaurant(String drestaurant) {
 		this.drestaurant = drestaurant;
 	}
-	
+
 }

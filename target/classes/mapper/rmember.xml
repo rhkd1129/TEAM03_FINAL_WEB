@@ -7,6 +7,15 @@
 			values (#{rid}, #{rpassword}, #{rname}, #{rtitle}, #{radress}, #{rtel}, #{rcategory}, NOW())
 		</insert>
 
+
+
+		<select id="selectByRid" parameterType="String" resultType="rmember">
+			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate from restaurant
+			where rid = #{rid}
+		</select>
+
+
+
 		<select id="selectAllByPage" resultType="rmember">
 			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
 			from restaurant order by rtel desc limit #{startIndex1}, #{rowsPerPage1}
@@ -22,9 +31,12 @@
 			from restaurant where radress like CONCAT('%',#{siNm},'%') and radress like CONCAT('%',#{emdNm},'%')
 		</select>
 
+
+
 		<select id="selectRnoByRid" resultType="int">
 			select rno from restaurant where rid=#{rid}
 		</select>
+
 
 		<select id="count" resultType="int">
 			select count(*) from restaurant
@@ -73,6 +85,7 @@
 		<select id="Rcountby9day" resultType="int">
 			select count(*) from restaurant where rdate = CURDATE() - INTERVAL 9 DAY;
 		</select>
+
 
 
 

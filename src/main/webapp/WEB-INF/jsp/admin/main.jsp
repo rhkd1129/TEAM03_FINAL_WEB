@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+
 	<!-- w3school import2 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -43,7 +43,7 @@
 
     <!-- css import -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">
-	
+
 	<!-- MQTT impoert -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
 </head>
@@ -606,20 +606,20 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 			<div class="viewbox4">
 				<div class="viewbox4mainbox">
 					<div class="leftbox1">
-					
+
 						<div class="leftbox1-1">
 							<div class="sampleimagetext">탐지 이미지: 샘플</div>
 							<img id="sampleimageid" class="sampleimage1" src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png">
-			                <label for="modal" class="button">확대</label>               
+			                <label for="modal" class="button">확대</label>
 						</div>
-						
+
 						<div class="leftbox1-2">
 						 	  <ul id="ul_id">
 							  	 <div class="ulname">탐지 리스트</div>
 							  	 <div class="uljumpbox"></div>
-							  </ul> 
+							  </ul>
 						</div>
-						
+
 						<div class="leftbox1-3">
 	             		   <div class="minimaptext">위치 정보</div>
 	                       <img class="minimapimage1" src="${pageContext.request.contextPath}/resource/image/admin/minimap.png">
@@ -635,19 +635,19 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 	                       <label for="modal" class="closer" id="closed"></label>
 	                       <div class="text">
 	                       		<div class="textimagebox">
-		                      	    <img id="sampleimageid1" class="sampleimage1" src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png">	                       	   	                       
+		                      	    <img id="sampleimageid1" class="sampleimage1" src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png">
 		                       		<div class="texttextbox">
 		                       			<div class="imagenametext">횡단보도</div>
-		                       			<div class="imageintroducetext">살어리 살어리였다 청산에 살어리였다.</div>		                       		
+		                       			<div class="imageintroducetext">살어리 살어리였다 청산에 살어리였다.</div>
 		                       		</div>
-	                       		</div>                       
+	                       		</div>
 	                       </div>
 	                     </div>
-						
+
 						<!-- MQTT -->
-						<img id="cameraView" 
+						<img id="cameraView"
 						style="width:1094px; height:650px; float: left;
-						border-bottom: 2px solid #A4A4A4; border-bottom: 2px solid #A4A4A4;">	
+						border-bottom: 2px solid #A4A4A4; border-bottom: 2px solid #A4A4A4;">
 					</div>
 
 					<div class="rightbox1">
@@ -678,154 +678,154 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 	   		var batteryrandom = 2;
 		  	var countnum = 0;
 		  	var lilength = 0;
-		  	
+
 	   		/* 1초마다 새로 값 생성 */
 		  	setInterval(function(action){
 		  		/* 난수 0~99 생성 */
-		  		batteryrandom = Math.floor(Math.random() * 100); 
-		  		
+		  		batteryrandom = Math.floor(Math.random() * 100);
+
 		  		/* 아이디 +1 */
 		  		countnum +=1;
-		  		
+
 				/* li 14시 맨 앞 li 삭제 */
 				lilength = $("ul li").length;
 				if(lilength == 14){
-					var smallid = countnum - 14;	
+					var smallid = countnum - 14;
 					$("#"+smallid).remove();
 				}
-				
+
 				/* 0~10, 11~20, 21~30 ... 91~99 이미지 지정 변경 */
 				/* 1 */
 				if(batteryrandom >= 0 && batteryrandom < 11){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/100.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/100.png";				
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/100.png";
 					$('.imagenametext').text("[주의 사항] 100Km 제한");
 					$('.imageintroducetext').text("제한속도 100Km 이내로 주행하시기 바랍니다.");
-					
+
 					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 100Km");			
-					$('.minimapping').css("left","450px");						
+					$('.sampleimagetext').text("탐지 이미지 : 100Km");
+					$('.minimapping').css("left","450px");
 				}
 				/* 2 */
 				if(batteryrandom >= 11 && batteryrandom < 21){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/60.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/60.png";				
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/60.png";
 					$('.imagenametext').text("[주의 사항] 60Km 제한");
 					$('.imageintroducetext').text("제한속도 60Km 이내로 주행하시기 바랍니다.");
-					
+
 					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 60Km");						
-					$('.minimapping').css("left","440px");					
+					$('.sampleimagetext').text("탐지 이미지 : 60Km");
+					$('.minimapping').css("left","440px");
 				}
 				/* 3 */
 				if(batteryrandom >= 21 && batteryrandom < 31){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/급커브주의.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/급커브주의.png";				
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/급커브주의.png";
 					$('.imagenametext').text("[주의 사항] 급커브");
 					$('.imageintroducetext').text("급커브 주의 구간입니다. 서행하시기 바랍니다.");
-					
+
 					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 급커브");						
-					$('.minimapping').css("left","430px");					
-				}				
+					$('.sampleimagetext').text("탐지 이미지 : 급커브");
+					$('.minimapping').css("left","430px");
+				}
 				/* 4 */
 				if(batteryrandom >= 31 && batteryrandom < 41){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/방지턱주의.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/방지턱주의.png";				
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/방지턱주의.png";
 					$('.imagenametext').text("[주의 사항] 방지턱");
 					$('.imageintroducetext').text("전방에 방지턱을 발견하였습니다. 서행하시기 바랍니다.");
-					
+
 					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 방지턱");						
-					$('.minimapping').css("left","420px");					
-				}				
+					$('.sampleimagetext').text("탐지 이미지 : 방지턱");
+					$('.minimapping').css("left","420px");
+				}
 				/* 5 */
 				if(batteryrandom >= 41 && batteryrandom < 51){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/사람.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/사람.png";				
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/사람.png";
 					$('.imagenametext').text("[주의 사항] 사람");
 					$('.imageintroducetext').text("전방에 사람을 발견햇습니다. 서행하시기 바랍니다.");
-					
+
 					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 사람");					
-					$('.minimapping').css("left","410px");					
-				}				
-				/* 6 */				
+					$('.sampleimagetext').text("탐지 이미지 : 사람");
+					$('.minimapping').css("left","410px");
+				}
+				/* 6 */
 				if(batteryrandom >= 51 && batteryrandom < 61){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";				
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";
 					$('.imagenametext').text("[주의 사항] 신호등");
-					$('.imageintroducetext').text("전방에 신호등 구간입니다. 신호에 맞춰서 주행하시기 바랍니다.");	
-					
+					$('.imageintroducetext').text("전방에 신호등 구간입니다. 신호에 맞춰서 주행하시기 바랍니다.");
+
 					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 신호등");					
-					$('.minimapping').css("left","400px");					
-				}				
+					$('.sampleimagetext').text("탐지 이미지 : 신호등");
+					$('.minimapping').css("left","400px");
+				}
 				/* 7 */
 				if(batteryrandom >= 61 && batteryrandom < 71){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/어린이보호구역.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/어린이보호구역.png";				
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/어린이보호구역.png";
 					$('.imagenametext').text("[주의 사항] 스쿨존");
 					$('.imageintroducetext').text("스쿨존에 진입하였습니다. 어린이 보행 구간 주의 바랍니다.");
-					
+
 					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 스쿨존");					
-					$('.minimapping').css("left","390px");				
-				}				
+					$('.sampleimagetext').text("탐지 이미지 : 스쿨존");
+					$('.minimapping').css("left","390px");
+				}
 				/* 8 */
 				if(batteryrandom >= 71 && batteryrandom < 81){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/정지.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/정지.png";				
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/정지.png";
 					$('.imagenametext').text("[주의 사항] 정지");
-					$('.imageintroducetext').text("전방에 정지 구간입니다. 정지해주시기 바랍니다.");	
-					
+					$('.imageintroducetext').text("전방에 정지 구간입니다. 정지해주시기 바랍니다.");
+
 					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 정지");					
-					$('.minimapping').css("left","380px");					
-				}				
+					$('.sampleimagetext').text("탐지 이미지 : 정지");
+					$('.minimapping').css("left","380px");
+				}
 				/* 9 */
 				if(batteryrandom >= 81 && batteryrandom < 91){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/콘.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/콘.png";				
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/콘.png";
 					$('.imagenametext').text("[주의 사항] 장애물");
 					$('.imageintroducetext').text("전방에 장애물 또는 공사 구간입니다. 서행하시기 바랍니다.");
-					
+
 					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 장애물");					
-					$('.minimapping').css("left","370px");					
-				}				
+					$('.sampleimagetext').text("탐지 이미지 : 장애물");
+					$('.minimapping').css("left","370px");
+				}
 				/* 10 */
 				if(batteryrandom >= 91 && batteryrandom < 100){
 					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";				
+					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";
 					$('.imagenametext').text("[주의 사항] 횡단보도");
 					$('.imageintroducetext').text("전방에 횡단보도 구간입니다. 신호에 맞춰서 가시기 바랍니다.");
-					
+
 					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 횡단보도");					
-					$('.minimapping').css("left","360px");					
-				}											
-		    }, 1000); 
-	   	    
+					$('.sampleimagetext').text("탐지 이미지 : 횡단보도");
+					$('.minimapping').css("left","360px");
+				}
+		    }, 1000);
+
 		  	/* 요소 내용 변경 */
 	   		$('.lilist').text("타켓 : " + batteryrandom);
-	   		
+
 			/* 뒤로가기 */
 			$("#gomainpage").click(function(){
 			    location.href = "${pageContext.request.contextPath}/admin/main.do";
-			}); 
-			
+			});
+
 			/* 1초마다 리스트 추가 */
 			setInterval(function(action){
 				add();
-		   }, 1000); 			
-			
+		   }, 1000);
+
 			/* 리스트 추가 */
-			function add(){  
-			    $("#ul_id").append("<li id="+countnum+" class='lilist'>"+"탐지 결과 : "+batteryrandom+"</li>");  
-			}  
+			function add(){
+			    $("#ul_id").append("<li id="+countnum+" class='lilist'>"+"탐지 결과 : "+batteryrandom+"</li>");
+			}
 			/* 리스트 배열 예제 end */
-			
+
 			/* MQTT start */
 			$(function(){
 				client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
@@ -840,7 +840,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				if(message.destinationName == "/Camera") {
 					var cameraView = $("#cameraView").attr(
 							"src", "data:image/jpg;base64,"+message.payloadString);
-					
+
 					var cameraView = $("#cameraView2").attr(
 							"src", "data:image/jpg;base64,"+message.payloadString);
 				}
@@ -850,7 +850,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				client.send(message);
 			}
 			/* MQTT end */
-			
+
 			/* 모달창 esc로 제거 */
 			document.addEventListener('keydown', function(event) {
 				if (event.keyCode === 27) {
@@ -858,7 +858,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					document.getElementById("closed").click();
 				}
 			}, true);
-			
+
 			/* 오토모드 수동모드 선택 */
 			var automanual = 0;
 			$(".changemode").click(function(){
@@ -955,20 +955,20 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 				<!-- MQTT -->
 				<img id="cameraView2">
 				<div class="viewbox7databox">
-				
+
 				</div>
-				
+
 				<div class="positionbox">
                       <img class="positionbox2" src="${pageContext.request.contextPath}/resource/image/admin/minimap.png">
                       <div class="positionbox4"></div>
 				</div>
-				
-				
-				
-				
-				
-				
-				
+
+
+
+
+
+
+
 				<!-- Controller box -->
 				<div class="controllerbox">
 					<button type="button" class="gostraight" id="gostraight">
@@ -976,14 +976,14 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					</button>
 					<button type="button" class="gostop" id="gostop">■</button>
 					<button type="button" class="goback" id="goback">
-						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/후진.png">					
+						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/후진.png">
 					</button>
 					<button type="button" class="goleft" id="goleft">
-						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/왼쪽.png">					
+						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/왼쪽.png">
 					</button>
 					<button type="button" class="goright" id="goright">
-						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/오른쪽.png">				
-					</button>	
+						<img class="buttonicon" src="${pageContext.request.contextPath}/resource/image/trafic/오른쪽.png">
+					</button>
 				</div>
 
 
@@ -2125,13 +2125,574 @@ function gocarfunction(){
 	   setTimeout(time8, 100);
 	}
 
+
+//--------------------------------------------------------------------------------------
+
+//차량 도착 시 자동 문자 전송 [테스트] start =======================================================
+$(".carimage1").hide();
+$(".carimage2").hide();
+$(".carimage3").hide();
+$(".carimage4").hide();
+$(".carimage5").hide();
+$(".carimage6").hide();
+$(".carimage7").hide();
+$(".carimage8").hide();
+$(".carimage9").hide();
+$(".carimage10").hide();
+$(".carimage11").hide();
+
+
+	$(".flagimage").click(function(){
+	stime = setTimeout(time1, 1000);
+	function time1(){
+		$(".light1").css("background", "red");
+		$(".carimage1").show();
+
+		$(".light11").css("background", "green");
+		$(".carimage11").hide();
+	   setTimeout(time2, 1000);
+	}
+
+	function time2(){
+		$(".light2").css("background", "red");
+		$(".carimage2").show();
+
+		$(".light1").css("background", "green");
+		$(".carimage1").hide();
+
+	   setTimeout(time3, 1000);
+	}
+
+	function time3(){
+		$(".light3").css("background", "red");
+		$(".carimage3").show();
+
+		$(".light2").css("background", "green");
+		$(".carimage2").hide();
+	   setTimeout(time4, 1000);
+	}
+
+	function time4(){
+		$(".light4").css("background", "red");
+		$(".carimage4").show();
+
+		$(".light3").css("background", "green");
+		$(".carimage3").hide();
+	   setTimeout(time5, 1000);
+	}
+
+	function time5(){
+		$(".light5").css("background", "red");
+		$(".carimage5").show();
+
+		$(".light4").css("background", "green");
+		$(".carimage4").hide();
+	   setTimeout(time6, 1000);
+	}
+
+	function time6(){
+		$(".light6").css("background", "red");
+		$(".carimage6").show();
+
+		$(".light5").css("background", "green");
+		$(".carimage5").hide();
+	   setTimeout(time7, 1000);
+	}
+
+	function time7(){
+		$(".light7").css("background", "red");
+		$(".carimage7").show();
+
+		$(".light6").css("background", "green");
+		$(".carimage6").hide();
+	   setTimeout(time8, 1000);
+	}
+
+	function time8(){
+		$(".light8").css("background", "red");
+		$(".carimage8").show();
+
+		$(".light7").css("background", "green");
+		$(".carimage7").hide();
+	   setTimeout(time9, 1000);
+	}
+
+	function time9(){
+		$(".light9").css("background", "red");
+		$(".carimage9").show();
+
+		$(".light8").css("background", "green");
+		$(".carimage8").hide();
+	   setTimeout(time10, 1000);
+	}
+
+	function time10(){
+		$(".light10").css("background", "red");
+		$(".carimage10").show();
+
+		$(".light9").css("background", "green");
+		$(".carimage9").hide();
+	   setTimeout(time11, 1000);
+	}
+
+	function time11(){
+		//자동 문자 전송하기
+		$("#sendmessage").trigger("click");
+
+		$(".light11").css("background", "red");
+		$(".carimage11").show();
+
+		$(".light10").css("background", "green");
+		$(".carimage10").hide();
+	   setTimeout(time1, 1000);
+	}
+
+});
+
+//차량 도착 시 자동 문자 전송 [테스트] end =======================================================
+
+/* 페이져 */
+function viewPaging(pageNo) {
+   var pageNo = pageNo;
+   $.ajax({
+      type : "get", // get방식으로 자료를 전달
+      url : "${pageContext.request.contextPath}/admin/main.do?pageNo=" +pageNo,
+      success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
+         // 댓글목록을 실행한 결과를 가져온다.
+         $("#adminmainpage").html(result);
+      console.log("고고고1");
+      }
+   });
+};
+
+/* 페이져1 */
+function viewPaging1(pageNo1) {
+   var pageNo1 = pageNo1;
+   $.ajax({
+      type : "get", // get방식으로 자료를 전달
+      url : "${pageContext.request.contextPath}/admin/main.do?pageNo1=" +pageNo1,
+      success : function(result) { // 자료를 보내는것이 성공했을때 출력되는 메시지
+         // 댓글목록을 실행한 결과를 가져온다.
+         $("#adminmainpage").html(result);
+
+       console.log("고고고2");
+      }
+
+   });
+};
+//등록 회원 start------------------------------------------------------------------------------------------------------
+//명단 삭제 취소 버튼------------------------------------------
+$(".closedelete").click(function(){
+	$(".checkdelete1").hide();
+	$(".opacitybox2").hide();
+});
+
+//명단 삭제 시 확인 뷰------------------------------------------
+$(".checkdelete1").hide();
+$(".opacitybox2").hide();
+var delectcheck = $("input[name=delectcheck]").val();
+
+$(".deleteX").click(function(){
+	var mid =  $(this).attr("id");
+
+	$(".checkdelete1").show();
+	$(".opacitybox2").show();
+
+
+	$(".gogogo").click(function(){
+		delectcheck = $("input[name=delectcheck]").val();
+		if(delectcheck == "admin1"){
+			alert("등록 회원 제명 완료");
+			$(".checkdelete1").hide();
+			$(".opacitybox2").hide();
+			location.href = "${pageContext.request.contextPath}/admin/cmemberdelete.do?mid=" + mid;
+
+		}else{
+			alert("등록 회원 제명 실패");
+			$(".checkdelete1").hide();
+			$(".opacitybox2").hide();
+		}//else
+
+	});//gogo click function
+});//deleteX click function
+//등록 회원 end------------------------------------------------------------------------------------------------------
+//등록 가게 start------------------------------------------------------------------------------------------------------
+//명단 삭제 취소 버튼------------------------------------------
+$(".closedelete2").click(function(){
+	$(".checkdelete2").hide();
+	$(".opacitybox2").hide();
+});
+
+//명단 삭제 시 확인 뷰------------------------------------------
+$(".checkdelete2").hide();
+$(".opacitybox2").hide();
+var delectcheck2 = $("input[name=delectcheck2]").val();
+
+$(".deleteX2").click(function(){
+	var rid =  $(this).attr("id");
+
+	$(".checkdelete2").show();
+	$(".opacitybox2").show();
+
+	$(".gogogo2").click(function(){
+		delectcheck2 = $("input[name=delectcheck2]").val();
+
+		if(delectcheck2 == "admin2"){
+			alert("등록 가게 제명 완료");
+			$(".checkdelete2").hide();
+			$(".opacitybox2").hide();
+			location.href = "${pageContext.request.contextPath}/admin/rmemberdelete.do?rid=" + rid;
+
+		}else{
+			alert("등록 가게 제명 실패");
+			$(".checkdelete2").hide();
+			$(".opacitybox2").hide();
+		}//else
+
+	});//gogo click function
+});//deleteX click function
+//등록 가게 end------------------------------------------------------------------------------------------------------
+
+//viewbox1 slide show------------------------------------------
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo1");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-red", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-red";
+}
+
+// manu bar script1------------------------------------------
+//로딩 이미지
+$(".ring1").hide();
+$(".ring2").hide();
+$(".ring3").hide();
+$(".ring4").hide();
+$(".ring5").hide();
+$(".ring6").hide();
+$(".ring9").hide();
+//뷰 박스
+$(".viewbox1").show();
+$(".viewbox2").hide();
+$(".viewbox3").hide();
+$(".viewbox4").hide();
+$(".viewbox5").hide();
+$(".viewbox6").hide();
+$(".viewbox9").hide();
+$(document).ready(function(){
+
+		//<!-- /* Group1 */ -->
+		var check1 = 0;
+		$(".btnHome1").click( function() {
+			if(check1 == 0){
+				$(".btnHome1").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome1").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome1").css("border-right","7px solid #1ABB9C");
+				$(".ring1").show();
+				$(".viewbox1").show();
+				check1 = 1;
+
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");
+				$(".ring2").hide();
+				$(".viewbox2").hide();
+				check2 = 0;
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");
+				$(".ring3").hide();
+				$(".viewbox3").hide();
+				check3 = 0;
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");
+				$(".ring4").hide();
+				$(".viewbox4").hide();
+				check4 = 0;
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");
+				$(".ring5").hide();
+				$(".viewbox5").hide();
+				check5 = 0;
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");
+				$(".ring6").hide();
+				$(".viewbox6").hide();
+				check6 = 0;
+
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;
+
+			}else if(check1 == 1){
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");
+				$(".ring1").hide();
+				check1 = 0;
+			};
+		});
+
+		var check2 = 0;
+		$(".btnHome2").click( function() {
+			if(check2 == 0){
+				$(".btnHome2").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome2").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome2").css("border-right","7px solid #1ABB9C");
+				$(".ring2").show();
+				$(".viewbox2").show();
+				check2 = 1;
+
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");
+				$(".ring1").hide();
+				$(".viewbox1").hide();
+				check1 = 0;
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");
+				$(".ring3").hide();
+				$(".viewbox3").hide();
+				check3 = 0;
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");
+				$(".ring4").hide();
+				$(".viewbox4").hide();
+				check4 = 0;
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");
+				$(".ring5").hide();
+				$(".viewbox5").hide();
+				check5 = 0;
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");
+				$(".ring6").hide();
+				$(".viewbox6").hide();
+				check6 = 0;
+
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;
+
+			}else if(check2 == 1){
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");
+				$(".ring2").hide();
+				check2 = 0;
+			};
+		});
+
+		var check3 = 0;
+		$(".btnHome3").click( function() {
+			if(check3 == 0){
+				$(".btnHome3").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome3").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome3").css("border-right","7px solid #1ABB9C");
+				$(".ring3").show();
+				$(".viewbox3").show();
+				$(".viewbox0").hide();
+				check3 = 1;
+
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");
+				$(".ring1").hide();
+				$(".viewbox1").hide();
+				check1 = 0;
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");
+				$(".ring2").hide();
+				$(".viewbox2").hide();
+				check2 = 0;
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");
+				$(".ring4").hide();
+				$(".viewbox4").hide();
+				check4 = 0;
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");
+				$(".ring5").hide();
+				$(".viewbox5").hide();
+				check5 = 0;
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");
+				$(".ring6").hide();
+				$(".viewbox6").hide();
+				check6 = 0;
+
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;
+
+			}else if(check3 == 1){
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");
+				$(".ring3").hide();
+				check3 = 0;
+			};
+		});
+
+		var check9 = 0;
+		$(".btnHome9").click( function() {
+			if(check9 == 0){
+				$(".btnHome9").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome9").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome9").css("border-right","7px solid #1ABB9C");
+				$(".ring9").show();
+				$(".viewbox9").show();
+				check9 = 1;
+
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");
+				$(".ring1").hide();
+				$(".viewbox1").hide();
+				check1 = 0;
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");
+				$(".ring2").hide();
+				$(".viewbox2").hide();
+				check2 = 0;
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");
+				$(".ring3").hide();
+				$(".viewbox3").hide();
+				check3 = 0;
+				$(".btnHome21").css("background-color","");
+				$(".btnHome21").css("box-shadow","");
+				$(".btnHome21").css("border-right","");
+				$(".ring4").hide();
+				$(".viewbox4").hide();
+				check4 = 0;
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");
+				$(".ring5").hide();
+				$(".viewbox5").hide();
+				check5 = 0;
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");
+				$(".ring6").hide();
+				$(".viewbox6").hide();
+				check6 = 0;
+
+			}else if(check9 == 1){
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");
+				$(".ring9").hide();
+				check9 = 0;
+			};
+		});
+
+		//<!-- /* Group2 */ -->
+		var check4 = 0;
+		$(".btnHome21").click( function() {
+			if(check4 == 0){
+				$(".btnHome21").css("background-color","linear-gradient(#334556, #2C4257),#2A3F54");
+				$(".btnHome21").css("box-shadow","rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0");
+				$(".btnHome21").css("border-right","7px solid #1ABB9C");
+				$(".ring4").show();
+				$(".viewbox4").show();
+				$(".viewbox0").hide();
+				check4 = 1;
+				/* others */
+				$(".btnHome1").css("background-color","");
+				$(".btnHome1").css("box-shadow","");
+				$(".btnHome1").css("border-right","");
+				$(".ring1").hide();
+				$(".viewbox1").hide();
+				check1 = 0;
+				$(".btnHome2").css("background-color","");
+				$(".btnHome2").css("box-shadow","");
+				$(".btnHome2").css("border-right","");
+				$(".ring2").hide();
+				$(".viewbox2").hide();
+				check2 = 0;
+				$(".btnHome3").css("background-color","");
+				$(".btnHome3").css("box-shadow","");
+				$(".btnHome3").css("border-right","");
+				$(".ring3").hide();
+				$(".viewbox3").hide();
+				check3 = 0;
+				$(".btnHome22").css("background-color","");
+				$(".btnHome22").css("box-shadow","");
+				$(".btnHome22").css("border-right","");
+				$(".ring5").hide();
+				$(".viewbox5").hide();
+				check5 = 0;
+				$(".btnHome23").css("background-color","");
+				$(".btnHome23").css("box-shadow","");
+				$(".btnHome23").css("border-right","");
+				$(".ring6").hide();
+				$(".viewbox6").hide();
+				check6 = 0;
+
+				$(".btnHome9").css("background-color","");
+				$(".btnHome9").css("box-shadow","");
+				$(".btnHome9").css("border-right","");
+				$(".ring9").hide();
+				$(".viewbox9").hide();
+				check9 = 0;
+
 	function time8(){
 		$(".traficimg2-9").show();
 		$(".traficimg2-").css("", "");
 		$(".traficimg2-").css("", "");
 
+
+
+		$(".light7").css("background", "green");
+		$(".carimage7").hide();
+	   setTimeout(time9, 1000);
+
 		$(".traficimg2-8").hide();
 	   setTimeout(time9, 100);
+
 	}
 
 	function time9(){
@@ -2158,6 +2719,61 @@ function gocarfunction(){
 
 
 //viewbox7 script start---------------------------------------------------------------
+
+
+
+// 	/* 차량 좌회전 */
+// 	function TurnLeft() {
+
+// 		var message = new Paho.MQTT.Message("left");
+// 		message.destinationName = "/Control/Direction/FrontWheel";
+// 		message.qos = 0;
+
+// 		client.send(message);
+// 	}
+// 	/* 차량 우회전 */
+// 	function TurnRight() {
+
+// 		var message = new Paho.MQTT.Message("right");
+// 		message.destinationName = "/Control/Direction/FrontWheel";
+// 		message.qos = 0;
+
+// 		client.send(message);
+// 	}
+// 	/* 차량 정지 */
+// 	function TurnStop() {
+
+// 		var message = new Paho.MQTT.Message("stop");
+// 		message.destinationName = "/Control/Direction/FrontWheel";
+// 		message.qos = 0;
+
+// 		client.send(message);
+// 	}
+// 	/* 모터 start */
+// 	function MotorAccel() {
+// 		var message = new Paho.MQTT.Message("accel");
+// 		message.destinationName = "/Control/Motor";
+// 		message.qos = 0;
+
+// 		client.send(message);
+// 	}
+// 	/* 모터 end */
+// 	function MotorBreak() {
+// 		var message = new Paho.MQTT.Message("break");
+// 		message.destinationName = "/Control/Motor";
+// 		message.qos = 0;
+
+// 		client.send(message);
+// 	}
+
+// 	function MotorBackword() {
+
+// 		var message = new Paho.MQTT.Message("backword");
+// 		message.destinationName = "/Control/Motor";
+// 		message.qos = 0;
+
+// 		client.send(message);
+// 	}
 
 
 	/* 키 안에 담는 객체 = 꼭필요 중요★★★★★ --------------------------------------------------------------------- */

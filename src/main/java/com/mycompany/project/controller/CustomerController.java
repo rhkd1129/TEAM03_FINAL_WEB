@@ -1,14 +1,22 @@
 package com.mycompany.project.controller;
 
+
+import java.io.PrintWriter;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,42 +31,164 @@ import com.mycompany.project.service.RestaurantService;
 
 @Controller
 @RequestMapping("/customer")
-public class CustomerController {
-	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class); 
-	
+public class CustomerController{
+	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
+
 	@Autowired
 	private CustomerService customerService;
-	
+
 	@Autowired
 	private RestaurantService restaurantService;
-	
+
 	@RequestMapping("/customer_main.do")
 	public String main() {
 		return "customer/customer_main";
 	}
-	
+
 	@GetMapping("/customer_login.do")
 	public String loginForm(CloginForm cloginForm) {
 		return "customer/customer_login";
 	}
-	
+
 	@PostMapping("/customer_login.do")
-	public String login(CloginForm cloginForm, HttpSession session) {
-		session.setAttribute("loginMid", cloginForm.getMid());
+	public String login(CloginForm cloginForm, BindingResult bindingResult,
+						HttpServletResponse response, HttpSession session) throws Exception {
+
+		String mid = cloginForm.getMid();
+		int loginResult = customerService.login(cloginForm);
+		String returnPage = "customer/customer_login";
+
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+
+		PrintWriter out = response.getWriter();
+
+		if(bindingResult.hasErrors()) {
+			return returnPage;
+		}
+
+		if (loginResult == CustomerService.LOGIN_SUCCESS) {
+			String loginLock = customerService.getLoginLock(cloginForm);
+			System.out.println(loginLock);
+
+			String latestLoginTryDate = customerService.getLoginTryDate(cloginForm);
+
+			java.sql.Timestamp latestTryDate = java.sql.Timestamp.valueOf(latestLoginTryDate);
+
+			Calendar cal = Calendar.getInstance();
+			cal.setTimeInMillis(latestTryDate.getTime());
+			cal.add(Calendar.SECOND, 600);
+			Timestamp latestTryDate10 = new Timestamp(cal.getTime().getTime());
+
+			SimpleDateFormat latestTryDate10Format = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분 ss초");
+			String Date10Format =  latestTryDate10Format.format(latestTryDate10);
+
+			long nowTime = System.currentTimeMillis();
+			Timestamp currentTime = new Timestamp(nowTime);
+			boolean timeCompare = currentTime.after(latestTryDate10);
+
+			if (loginLock.equals("N")) {
+				session.setAttribute("sessionMid", cloginForm.getMid());
+
+				customerService.resetLoginLock(mid);
+
+				returnPage = "redirect:/customer/customer_main.do";
+
+			}
+
+			if (loginLock.equals("Y") && timeCompare == true) {
+				session.setAttribute("sessionMid", cloginForm.getMid());
+
+				customerService.resetLoginLock(mid);
+
+				returnPage = "redirect:/customer/customer_main.do";
+
+			}
+
+			if (loginLock.equals("Y") && timeCompare == false) {
+				customerService.loginFailCount(mid);
+
+				out.println("<script>alert('아직 10분이 지나지 않았습니다.\\n" + Date10Format + " 이후에 로그인이 가능합니다.');</script>");
+				out.flush();
+
+				return "customer/customer_login";
+			}
+
+		} else if (loginResult == CustomerService.LOGIN_MID_FAIL) {
+			out.println("<script>alert('아이디를 확인해주세요.');</script>");
+			out.flush();
+			bindingResult.rejectValue("mid", "login.mid.fail");
+			// returnPage = "customer/customer_login";
+			return returnPage;
+
+		} else if (loginResult == CustomerService.LOGIN_MAPSSWORD_FAIL) {
+			customerService.loginFailCount(mid);
+			int failCount = customerService.getFailCount(cloginForm);
+
+			if (failCount < 5) {
+			out.println("<script>alert('비밀번호를 (" + failCount + "/5)회 틀렸습니다.\\n5회 이상 틀릴 경우, 10분간 로그인을 할 수 없습니다.');</script>");
+			out.flush();
+
+			}
+
+			if (failCount >= 5) {
+				customerService.loginLock(mid);
+
+				out.println("<script>alert('비밀번호 오류 횟수 초과로 인해, 10분간 로그인을 할 수 없습니다.');</script>");
+				out.flush();
+				// out.close();
+			}
+
+			System.out.println(failCount);
+
+			bindingResult.rejectValue("mpassword", "login.mpassword.fail");
+			// returnPage = "customer/customer_login";
+			return returnPage;
+
+		}
+		return returnPage;
+	}
+
+	@GetMapping("/logout.do")
+	public String logout(HttpSession session) {
+		LOGGER.info("아아아아아아아ㅏ아아ㅏ아앙");
+		session.invalidate();
 		return "redirect:/customer/customer_main.do";
 	}
-	
+
 	@GetMapping("/customer_join.do")
 	public String joinForm(Cmember cmember) {
 		return "customer/customer_join";
 	}
-	
+
 	@PostMapping("/customer_join.do")
 	public String join(Cmember cmember) {
 		customerService.join(cmember);
 		return "redirect:/customer/customer_main.do";
 	}
-	
+
+
+	// @ResponseBody
+	@PostMapping("/idcheck.do")
+	public void idCheck(String mid, HttpServletResponse response) throws Exception {
+		LOGGER.info("로거거거거거거거거거거걱거ㅓ");
+		String result = "overlapID";
+		Cmember cmember = customerService.getCmember(mid);
+		if (cmember == null) {
+			result = "success";
+		}
+
+		response.setContentType("application/json; charset=UTF-8");
+
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("result", result);
+		String json = jsonObject.toString();
+		PrintWriter pw = response.getWriter();
+		pw.write(json);
+		pw.flush();
+		pw.close();
+	}
+
 	@GetMapping("/customer_search.do")
 	public String search(String roadAddr, String bdNm, String siNm, String emdNm,  Model model) {
 		String fullAddr = roadAddr + " " + bdNm;
@@ -67,10 +197,11 @@ public class CustomerController {
 		model.addAttribute("restaurantList", list);
 		LOGGER.info("실행");
 		LOGGER.info("" + list);
-				
+
 		return "customer/customer_search";
+
 	}
-	
+
 	@GetMapping("/customer_r_info.do")
 	public String detail(int rno, Model model) {
 		Rmember rmember = restaurantService.getRestaurantInfoByRno(rno);
@@ -88,12 +219,12 @@ public class CustomerController {
 		model.addAttribute("beverageList", beverageList);
 		return "customer/customer_r_menu";
 	}
-	
+
 	@GetMapping("/customer_r_review.do")
 	public String review(int rno, Model model) {
 		return "customer/customer_r_review";
 	}
-	
+
 	@GetMapping("/customer_order_table.do")
 	public String orderTable(int fno, int rno, Model model, HttpSession session) {
 		Fnb fnb = customerService.getFnbByFno(fno);
@@ -103,9 +234,9 @@ public class CustomerController {
 		beforeOrder.setBrno(rno);
 		beforeOrder.setBfname(fnb.getFname());
 		beforeOrder.setBfprice(fnb.getFprice());
-		
+
 		customerService.addOrderTable(beforeOrder);
-	
+
 		return "customer/customer_order_table";
 	}
 }
