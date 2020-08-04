@@ -95,9 +95,11 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/customer_order_table.do")
-	public String orderTable(int fno, int rno, Model model) {
+	public String orderTable(int fno, int rno, Model model, HttpSession session) {
 		Fnb fnb = customerService.getFnbByFno(fno);
 		BeforeOrder beforeOrder = new BeforeOrder();
+		String bmid = (String) session.getAttribute("loginMid");
+		beforeOrder.setBmid(bmid);
 		beforeOrder.setBrno(rno);
 		beforeOrder.setBfname(fnb.getFname());
 		beforeOrder.setBfprice(fnb.getFprice());
