@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mycompany.project.dao.CustomerDao;
+import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.Cmember;
 import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.Rmember;
@@ -111,8 +112,8 @@ public class CustomerService {
 		return fnb;
 	}
 
-	public void addOrderTable(Fnb fnb) {
-		customerDao.insertOrderTable(fnb);
+	public void addOrderTable(BeforeOrder beforeOrder) {
+		customerDao.insertOrderTable(beforeOrder);
 	}	
 	
 	

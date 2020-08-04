@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
+import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.Cmember;
 import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.Rmember;
@@ -107,8 +108,8 @@ public class CustomerDao extends EgovAbstractMapper{
 		return fnb;
 	}
 
-	public void insertOrderTable(Fnb fnb) {
-		insert("fnb.insertOrderTable", fnb);
+	public void insertOrderTable(BeforeOrder beforeOrder) {
+		insert("beforeOrder.insertOrderTable", beforeOrder);
 	}		
 
 }

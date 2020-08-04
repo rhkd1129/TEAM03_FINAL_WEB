@@ -59,11 +59,13 @@
 		</div>
 	</body>
 	<script>
+		var rno = ${rno}
+	
 		function foodInsert(fno) {
 			var fno = fno
 			$.ajax({
 				type : "get",
-				url : "${pageContext.request.contextPath}/customer/customer_order_table.do?fno="+fno,
+				url : "${pageContext.request.contextPath}/customer/customer_order_table.do?fno="+fno + "&rno=" + rno,
 				success : function(result) {
 					$("#floatMenu1").html(result);
 				}

@@ -6,5 +6,6 @@
 			<typeAlias alias="cmember" type="com.mycompany.project.model.Cmember"/>
 			<typeAlias alias="rmember" type="com.mycompany.project.model.Rmember"/>
 			<typeAlias alias="fnb" type="com.mycompany.project.model.Fnb"/>
+			<typeAlias alias="beforeOrder" type="com.mycompany.project.model.BeforeOrder"/>
 		</typeAliases>
 	</configuration>

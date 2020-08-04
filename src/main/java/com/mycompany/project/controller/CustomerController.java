@@ -2,6 +2,8 @@ package com.mycompany.project.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
 import com.mycompany.project.model.Fnb;
@@ -40,7 +43,8 @@ public class CustomerController {
 	}
 	
 	@PostMapping("/customer_login.do")
-	public String login(CloginForm cloginForm) {
+	public String login(CloginForm cloginForm, HttpSession session) {
+		session.setAttribute("loginMid", cloginForm.getMid());
 		return "redirect:/customer/customer_main.do";
 	}
 	
@@ -91,10 +95,14 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/customer_order_table.do")
-	public String orderTable(int fno, Model model) {
+	public String orderTable(int fno, int rno, Model model) {
 		Fnb fnb = customerService.getFnbByFno(fno);
+		BeforeOrder beforeOrder = new BeforeOrder();
+		beforeOrder.setBrno(rno);
+		beforeOrder.setBfname(fnb.getFname());
+		beforeOrder.setBfprice(fnb.getFprice());
 		
-		customerService.addOrderTable(fnb);
+		customerService.addOrderTable(beforeOrder);
 	
 		return "customer/customer_order_table";
 	}
