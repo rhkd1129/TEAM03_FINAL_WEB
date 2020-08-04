@@ -16,5 +16,7 @@
 	</head>
 	<body>
 		<h5 class="alert alert-success">/리뷰.jsp</h5>
+		
+		
 	</body>
 </html>
