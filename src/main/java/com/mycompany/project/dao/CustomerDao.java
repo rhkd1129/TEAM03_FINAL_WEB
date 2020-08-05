@@ -4,18 +4,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import com.mycompany.project.model.Cmember;
+import com.mycompany.project.model.Comment;
 
 import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
 
 @Repository
 public class CustomerDao extends EgovAbstractMapper{
 
-	public int insert(Cmember cmember) {
-		int crows = insert("cmember.insert", cmember);
-		return crows;
+	public void insert(Cmember cmember) {
+		insert("cmember.insert", cmember);
 	}
 
 	public List<Cmember> selectAll(int pageNo, int rowsPerPage) {
@@ -56,6 +57,10 @@ public class CustomerDao extends EgovAbstractMapper{
 		update("cmember.loginTryDate", mid);
 	}
 	
+	public void updateLoginTryDate(String mid) {
+		update("cmember.loginTryDate", mid);
+	}
+	
 	public int getFailCountByMid(String mid) {
 		int failCount = selectOne("cmember.getFailCountByMid", mid);
 		return failCount;
@@ -77,6 +82,21 @@ public class CustomerDao extends EgovAbstractMapper{
 	
 	public void resetLoginLock(String mid) {
 		update("cmember.resetLoginLock", mid);
+	}
+	
+	public void insertComment(Comment comment) {
+		insert("comment.insert", comment);
+	}
+	
+	public float averageRating(Comment comment) {
+		float averageRating = selectOne("comment.averageRating", comment);
+		return averageRating;
+	}
+	
+	public List<Comment> reviewList(Comment comment) {
+		Map<String, String> map = new HashMap<>();
+		List<Comment> reviewList = selectList("comment.selectAllByCno", map);
+		return reviewList;
 	}
 
 	public int countbytoday() {

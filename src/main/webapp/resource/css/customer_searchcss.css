@@ -94,6 +94,14 @@ body{
 
 /* body=============================== */
 
+.logout{
+	width: 150px;
+	height: 40px;
+	border: 1px solid white;
+	color: white;
+	background-color: #f0001e;
+}
+
 .restaurant_list {
  	float: left;
 	width: 1152px;

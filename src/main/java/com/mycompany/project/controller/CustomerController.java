@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
+import com.mycompany.project.model.Comment;
 import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.Rmember;
 import com.mycompany.project.service.CustomerService;
@@ -162,12 +163,30 @@ public class CustomerController{
 
 	@PostMapping("/customer_join.do")
 	public String join(Cmember cmember) {
+		String mid = cmember.getMid();
 		customerService.join(cmember);
+		customerService.loginTryDate(mid);
 		return "redirect:/customer/customer_main.do";
 	}
+	
+	@PostMapping("/customer_r_review.do")
+	public String comment(Comment comment, HttpSession session) {
+		String cmid = (String)session.getAttribute("sessionMid");
+		comment.setCmid(cmid);
+		
+		customerService.insertComment(comment);
+		
+		float averageRating = customerService.averageRating(comment);
+		double avgRating = (Math.round(averageRating*10)/10.0);
+		
+		List<Comment> reviewList = customerService.reviewList(comment);
+		System.out.println(reviewList);
+		System.out.println(averageRating);
+		System.out.println(avgRating);
+		
+		return "redirect:/customer/customer_r_info.do?rno=1";
+	}
 
-
-	// @ResponseBody
 	@PostMapping("/idcheck.do")
 	public void idCheck(String mid, HttpServletResponse response) throws Exception {
 		LOGGER.info("로거거거거거거거거거거걱거ㅓ");

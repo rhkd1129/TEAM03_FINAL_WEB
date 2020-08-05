@@ -9,6 +9,7 @@ import com.mycompany.project.SHA256.SHA256Util;
 import com.mycompany.project.dao.CustomerDao;
 import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
+import com.mycompany.project.model.Comment;
 
 @Service
 public class CustomerService {
@@ -60,6 +61,10 @@ public class CustomerService {
 		return loginLock;
 	}
 	
+	public void loginTryDate(String mid) {
+		customerDao.updateLoginTryDate(mid);
+	}
+	
 	public String getLoginTryDate(CloginForm cloginForm) {
 		String loginTryDate = customerDao.getLoginTryDateByMid(cloginForm.getMid());
 		return loginTryDate;
@@ -79,6 +84,20 @@ public class CustomerService {
 		cmember.setMpassword(password);
 		
 		customerDao.insert(cmember);
+	}
+	
+	public void insertComment(Comment comment) {
+		customerDao.insertComment(comment);
+	}
+	
+	public float averageRating(Comment comment) {
+		float averageRating = customerDao.averageRating(comment);
+		return averageRating;
+	}
+	
+	public List<Comment> reviewList(Comment comment) {
+		List<Comment> reviewList = customerDao.reviewList(comment);
+		return reviewList;
 	}
 	
 	public List<Cmember> getList(int pageNo, int rowsPerPage) {

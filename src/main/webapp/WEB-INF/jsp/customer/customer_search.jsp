@@ -22,8 +22,13 @@
 			<img class="zgiyo" src="${pageContext.request.contextPath}/resource/image/home/즈기요.png">
 
 			<div class="boxbox">
-				<div class="login">로그인</div>
-				<div class="join">회원가입</div>
+				<c:if test="${sessionMid == null}">
+					<div class="login">로그인</div>
+					<div class="join">회원가입</div>
+				</c:if>
+				<c:if test="${sessionMid != null}">
+					<button type="button" class="logout">로그아웃</button>
+				</c:if>
 			</div>
 		</div>
 		<div class="navbar2" style="background-image: url('${pageContext.request.contextPath}/resource/image/home/customer_main_bg.png');">
@@ -110,6 +115,10 @@
 <script type="text/javascript">
 $(".login").click(function(){
     location.href = "${pageContext.request.contextPath}/customer/customer_login.do";
+});
+
+$(".logout").click(function(){
+    location.href = "${pageContext.request.contextPath}/customer/logout.do";
 });
 
 $(".join").click(function(){
