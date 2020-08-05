@@ -26,6 +26,7 @@ import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
 import com.mycompany.project.model.Fnb;
+import com.mycompany.project.model.Order;
 import com.mycompany.project.model.Rmember;
 import com.mycompany.project.service.CustomerService;
 import com.mycompany.project.service.RestaurantService;
@@ -191,10 +192,10 @@ public class CustomerController{
 	}
 
 	@GetMapping("/customer_search.do")
-	public String search(String roadAddr, String bdNm, String siNm, String emdNm,  Model model) {
+	public String search(String roadAddr, String bdNm, String siNm, String emdNm,  Model model, HttpSession session) {
 		String fullAddr = roadAddr + " " + bdNm;
 		List<Rmember> list = restaurantService.getRestaurantList(siNm, emdNm);
-		model.addAttribute("fullAddr", fullAddr);
+		session.setAttribute("fullAddr", fullAddr);
 		model.addAttribute("restaurantList", list);
 		LOGGER.info("실행");
 		LOGGER.info("" + list);
@@ -259,29 +260,24 @@ public class CustomerController{
 	}
 	
 	@GetMapping("/customer_payment.do")
-	public String payment(Model model, HttpSession session) {
+	public String payment(int rno, Model model, HttpSession session) {
 		String bmid = (String) session.getAttribute("sessionMid");
 		List<BeforeOrder> list = customerService.getOrderTable(bmid);
+		model.addAttribute("rno", rno);
 		model.addAttribute("orderTableList", list);
 		return "customer/customer_payment";
 	}
 	
-	@GetMapping("/customer_kakaopay.do")
-	public String kakaopay(HttpServletRequest request, HttpServletResponse response, int sum) {
-		String name = "김광희";
-	    String email = "rhkd1129@gmail.com";
-	    String phone = "010-7748-5699";
-	    String address = "서울특별시 송파구 백제고분로27길 8 301호";
-	    int totalPrice = sum;
+	@PostMapping("/customer_kakaopay.do")
+	public String checkOut(HttpServletRequest request, HttpServletResponse response, Order order) {
 	    
-	    request.setAttribute("name", name);
-	    request.setAttribute("email", email);
-	    request.setAttribute("phone", phone);
-	    request.setAttribute("address", address);
+		int totalPrice = order.getOtotalprice();
+		System.out.println(order.getOfulladdr());
 	    request.setAttribute("totalPrice", totalPrice);
 		
 		return "customer/customer_kakaopay";
 	}
+	
 	
 	@GetMapping("/customer_payment_success.do")
 	public String paymentSuccess(Model model, HttpSession session) {

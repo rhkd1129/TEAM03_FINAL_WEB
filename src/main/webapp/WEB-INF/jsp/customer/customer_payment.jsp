@@ -29,21 +29,7 @@
 					}
 					i = i + 1
 				}
-				$('#sum').text(sum + "원");		
-						
-			});
-			
-			$('#navtab2').click(function() {
-				$(this).css({
-					'background-color' : '#f4001f'
-				})
-				$('#navtab1').css({
-					'background-color' : '#313535',
-				})
-				$(".main2").show();
-				$(".main1").hide();
-				$(".content2").show();
-				$(".content1").hide();
+				$('#sum').text(sum);
 			});
 	</script>
 </head>
@@ -63,95 +49,100 @@
 			</div>
 		</div>
 	</div>
- 
-	<div class="paymentMain">
-		<div class="paymentMainFrame">
-			<div class="paymentTop">
-				결제하기
-			</div>
-			<div class="paymentBody">
-				<div class="paymentInfo">
-					배달 정보
+ 	<form id="paymentDetail" method="post" >
+		<div class="paymentMain">
+			<div class="paymentMainFrame">
+				<div class="paymentTop">
+					결제하기
 				</div>
-				<div class="paymentInfoContent">
-					<table style="width: 100%;">
-						<tr id="paymentInfoContentRows">
-							<td id="paymentInfoContentColumn1">주소</td>
-							<td>
-								<input style="width:95%;">
-							</td>
-						</tr>
-						<tr id="paymentInfoContentRows">
-							<td id="paymentInfoContentColumn1"></td>
-							<td>
-								<input placeholder="(필수) 상세주소 입력" style="width:95%;">
-							</td>
-						</tr>
-						<tr id="paymentInfoContentRows">
-							<td id="paymentInfoContentColumn1">휴대전화번호</td>
-							<td>
-								<input placeholder="(필수) 휴대전화 번호 입력" style="width:95%;">
-							</td>
-						</tr>
-					</table>
-				</div>
-				<div class="paymentRequirement">
-					주문시 요청사항
-				</div>
-				<div class="paymentRequirementContent">
-					<textarea rows="3" cols="100"></textarea>
-				</div>
-				<div class="paymentMethod">
-					결제수단 선택
-				</div>
-				<div class="paymentMethodContent">
-					결제수단 선택
-				</div>
-			</div>
-			
-		</div>
-	</div>
-	<div class="paymentSide">
-		<div class="paymentSideFrame">
-			<div class="paymentSideTop">
-				주문 내역
-			</div>
-			<div class="paymentSideBody">
-				<c:forEach var="beforeOrder" items="${orderTableList}" varStatus="status">
-					<table style="width:100%; margin-top: 2px; margin-bottom: 2px; border-bottom: 1px solid #d7dada;">
-						<tr style="height: 30px">
-							<td colspan="2" style="font-size: 17px; font-weight: bold; padding-left: 10px;">${beforeOrder.bfname}</td>
+					<div class="paymentBody">
+						<div class="paymentInfo">
+							배달 정보
+						</div>
+						<div class="paymentInfoContent">
+							<table style="width: 100%;">
+								<tr id="paymentInfoContentRows" style="display: none;">
+									<td id="paymentInfoContentColumn1">가게 번호</td>
+									<td>
+										<input name="orno" value="${rno}" style="width:95%;">
+									</td>
+								</tr>
 							
-						</tr>	
-						<tr style="height: 30px">
-							<td id="price${status.count}" style="width: 100px; padding-left: 10px; text-align: right">${beforeOrder.bfprice}</td>
-							<td style="width: 20px; text-align: left">원</td>
-							<td id="count${status.count}" style="width:40px; text-align: right">${beforeOrder.bcount}</td>
-							<td style="width: 40px;">개</td>
-							<td id="flag${status.count}" style="display: none;">${status.last}</td>
-						</tr>
-					</table>
-				</c:forEach>
+								<tr id="paymentInfoContentRows">
+									<td id="paymentInfoContentColumn1">주소</td>
+									<td>
+										<input name="ofulladdr" value="${fullAddr}" style="width:95%;">
+									</td>
+								</tr>
+								<tr id="paymentInfoContentRows">
+									<td id="paymentInfoContentColumn1"></td>
+									<td>
+										<input name="odetailaddr" placeholder="(필수) 상세주소 입력" style="width:95%;">
+									</td>
+								</tr>
+								<tr id="paymentInfoContentRows">
+									<td id="paymentInfoContentColumn1">휴대전화번호</td>
+									<td>
+										<input name="otel" placeholder="(필수) 휴대전화 번호 입력" style="width:95%;">
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="paymentRequirement">
+							주문시 요청사항
+						</div>
+						<div class="paymentRequirementContent">
+							<textarea name="orequirement" rows="3" cols="100"></textarea>
+						</div>
+						<div class="paymentMethod">
+							결제수단 선택
+						</div>
+						<div class="paymentMethodContent">
+							결제수단 선택
+						</div>
+					</div>
+				
+				
 			</div>
-			<div style="height: 50px; color:#f4001f; font-size:20px; font-weight: bold; text-align: right; background-color: #ffffbe;">
-			 	<table style="width: 100%;">
-			 		<tr>
-			 			<td style="text-align: left;">총 결제 금액 :</td>
-			 			<td id="sum" style="text-align: right;">0원</td>
-			 		</tr>
-			 	</table>
-			</div>
-				<div class="payment" style="height: 50px; color:#ffffff; font-size:25px; font-weight: bold; text-align: center; background-color: #f4001f;">
-					 결제하기
+		</div>
+		<div class="paymentSide">
+			<div class="paymentSideFrame">
+				<div class="paymentSideTop">
+					주문 내역
 				</div>
-			</div>
-	</div>
-	
-
-
-
-
-
+				<div class="paymentSideBody">
+					<c:forEach var="beforeOrder" items="${orderTableList}" varStatus="status">
+						<table style="width:100%; margin-top: 2px; margin-bottom: 2px; border-bottom: 1px solid #d7dada;">
+							<tr style="height: 30px">
+								<td colspan="2" style="font-size: 17px; font-weight: bold; padding-left: 10px;">${beforeOrder.bfname}</td>
+								
+							</tr>	
+							<tr style="height: 30px">
+								<td id="price${status.count}" style="width: 100px; padding-left: 10px; text-align: right">${beforeOrder.bfprice}</td>
+								<td style="width: 20px; text-align: left">원</td>
+								<td id="count${status.count}" style="width:40px; text-align: right">${beforeOrder.bcount}</td>
+								<td style="width: 40px;">개</td>
+								<td id="flag${status.count}" style="display: none;">${status.last}</td>
+							</tr>
+						</table>
+					</c:forEach>
+				</div>
+				<div style="height: 50px; color:#f4001f; font-size:20px; font-weight: bold; text-align: right; background-color: #ffffbe;">
+				 	<table style="width: 100%;">
+				 		<tr>
+				 			<td style="text-align: left;">총 결제 금액 :</td>
+				 			<td id="sum" style="text-align: right;">
+				 			</td>
+				 			<td>원</td>
+				 		</tr>
+				 	</table>
+				</div>
+					<div class="payment">
+						 <input id="paymentSubmit" type="submit" style="width:100%; height: 50px; color:#ffffff; font-size:25px; font-weight: bold; text-align: center; background-color: #f4001f;" value="결제하기">
+					</div>
+				</div>
+		</div>
+	</form>
 
 
 
@@ -198,10 +189,6 @@ $(".join").click(function(){
 
 $(".zgiyo").click(function(){
     location.href = "${pageContext.request.contextPath}/home/landingpage.do";
-});
-
-$('.payment').click(function() {
-	location.href = "${pageContext.request.contextPath}/customer/customer_kakaopay.do?sum="+sum;
 });
 
 </script>
