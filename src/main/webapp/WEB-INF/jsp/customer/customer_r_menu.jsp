@@ -13,9 +13,64 @@
 		<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 		<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_r_menucss.css">
 	</head>
 	<body>
-		<h5 class="alert alert-success">/메뉴.jsp</h5>
-		
+		<div class="menuList" style="width:768px; height:100%;">
+			<div class="foodtap">
+				먹을거
+			</div>
+			<div class="foodList" style="display: none;">
+				<ul>
+					<c:forEach var="fnb" items="${foodList}">
+						<li>
+							<div class="food">
+								<a id="foodInsert" onclick="foodInsert(${fnb.fno});" >
+									<div>${fnb.fname}</div>
+									<div>
+										<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/1.png"
+											 style="width: 50px; height: 50px">
+									</div>
+								</a>
+							</div>
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+			<div class="beveragetap">
+				마실거
+			</div>
+			<div class="beverageList" style="display: none;">
+				<ul>
+					<c:forEach var="fnb" items="${beverageList}">
+						<li>
+							<div class="beverage">
+								<a id="foodInsert" onclick="foodInsert(${fnb.fno});" >
+									<div>${fnb.fname}</div>
+									<div>
+										<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/1.png"
+											 style="width: 50px; height: 50px">
+									</div>
+								</a>
+							</div>
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+			
+		</div>
 	</body>
+	<script>
+		
+	
+		$('.foodtap').click(function() {
+			$(".foodList").toggle();
+			
+		});
+		
+		$('.beveragetap').click(function() {
+			$(".beverageList").toggle();
+			
+		});
+	</script>
 </html>

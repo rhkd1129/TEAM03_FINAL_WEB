@@ -37,7 +37,11 @@ body{
 
 .navtext{
 	width: 100%;
+	margin-left: 0px;
 	margin-top: 20px;
+}
+
+.navimg{
 	margin-left: 586px;
 }
 
@@ -112,13 +116,13 @@ body{
 
 .restaurant_info{
 	width: 768px;
-	height: 5000px;
 	border: 1px solid #d7dada;
 }
 
 .restaurant_title{
 	padding-left: 20px;
 	font-size: 30px;
+	font-weight: bold;
 	height: 60px;
 	border-bottom: 1px solid #d7dada;
 }
@@ -130,6 +134,7 @@ body{
 .menu_tab{
 	width:50%;
 	font-size: 30px;
+	font-weight: bold;
 	height: 60px;
 	float: left;
 	border-right: 1px solid #d7dada;
@@ -141,6 +146,7 @@ body{
 .review_tab{
 	width:50%;
 	font-size: 30px;
+	font-weight: bold;
 	height: 60px;
 	float: left;
 	border-bottom: 1px solid #d7dada;
@@ -156,14 +162,30 @@ body{
 	float: left;
 	position: absolute;
 	top: 400px;
-	margin-left: 770px;
-	width: 382px;
+	margin-left: 775px;
+	width: 377px;
 	height: 500px;
+	
+	
+}
+
+#floatMenu1{
 	background-color: #313535;
 	color: #fff;
-	text-align: left;
-	font-size: 30px
+	width: 377px;
+	height: 50px;
+	text-align: center;
+	font-size: 30px;
 }
+
+#floatMenu2{
+	width: 377px;
+	height: 450px;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+
 
 
 /* foot=============================== */

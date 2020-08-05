@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
 import com.mycompany.project.model.Comment;
@@ -49,20 +51,20 @@ public class CustomerController{
 	public String loginForm(CloginForm cloginForm) {
 		return "customer/customer_login";
 	}
-	
+
 	@PostMapping("/customer_login.do")
 	public String login(CloginForm cloginForm, BindingResult bindingResult,
 						HttpServletResponse response, HttpSession session) throws Exception {
-		
-		String mid = cloginForm.getMid();		
+
+		String mid = cloginForm.getMid();
 		int loginResult = customerService.login(cloginForm);
 		String returnPage = "customer/customer_login";
-		
+
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		
+
 		PrintWriter out = response.getWriter();
-		
+
 		if(bindingResult.hasErrors()) {
 			return returnPage;
 		}
@@ -70,81 +72,81 @@ public class CustomerController{
 		if (loginResult == CustomerService.LOGIN_SUCCESS) {
 			String loginLock = customerService.getLoginLock(cloginForm);
 			System.out.println(loginLock);
-			
+
 			String latestLoginTryDate = customerService.getLoginTryDate(cloginForm);
-			
+
 			java.sql.Timestamp latestTryDate = java.sql.Timestamp.valueOf(latestLoginTryDate);
-			
+
 			Calendar cal = Calendar.getInstance();
 			cal.setTimeInMillis(latestTryDate.getTime());
 			cal.add(Calendar.SECOND, 600);
 			Timestamp latestTryDate10 = new Timestamp(cal.getTime().getTime());
-			
+
 			SimpleDateFormat latestTryDate10Format = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분 ss초");
 			String Date10Format =  latestTryDate10Format.format(latestTryDate10);
-			
+
 			long nowTime = System.currentTimeMillis();
-			Timestamp currentTime = new Timestamp(nowTime);		
+			Timestamp currentTime = new Timestamp(nowTime);
 			boolean timeCompare = currentTime.after(latestTryDate10);
-			
+
 			if (loginLock.equals("N")) {
 				session.setAttribute("sessionMid", cloginForm.getMid());
-				
+
 				customerService.resetLoginLock(mid);
-				
+
 				returnPage = "redirect:/customer/customer_main.do";
-			
+
 			}
-			
-			if (loginLock.equals("Y") && timeCompare == true) {				
+
+			if (loginLock.equals("Y") && timeCompare == true) {
 				session.setAttribute("sessionMid", cloginForm.getMid());
-				
+
 				customerService.resetLoginLock(mid);
-				
+
 				returnPage = "redirect:/customer/customer_main.do";
-				
+
 			}
-			 
+
 			if (loginLock.equals("Y") && timeCompare == false) {
 				customerService.loginFailCount(mid);
-				
+
 				out.println("<script>alert('아직 10분이 지나지 않았습니다.\\n" + Date10Format + " 이후에 로그인이 가능합니다.');</script>");
 				out.flush();
-				
+
 				return "customer/customer_login";
 			}
-			
+
 		} else if (loginResult == CustomerService.LOGIN_MID_FAIL) {
 			out.println("<script>alert('아이디를 확인해주세요.');</script>");
 			out.flush();
 			bindingResult.rejectValue("mid", "login.mid.fail");
 			// returnPage = "customer/customer_login";
 			return returnPage;
-			
+
 		} else if (loginResult == CustomerService.LOGIN_MAPSSWORD_FAIL) {
 			customerService.loginFailCount(mid);
 			int failCount = customerService.getFailCount(cloginForm);
-			
+
 			if (failCount < 5) {
 			out.println("<script>alert('비밀번호를 (" + failCount + "/5)회 틀렸습니다.\\n5회 이상 틀릴 경우, 10분간 로그인을 할 수 없습니다.');</script>");
 			out.flush();
-			
+
 			}
-			
+
 			if (failCount >= 5) {
 				customerService.loginLock(mid);
-				
+
 				out.println("<script>alert('비밀번호 오류 횟수 초과로 인해, 10분간 로그인을 할 수 없습니다.');</script>");
 				out.flush();
 				// out.close();
 			}
-			
+
 			System.out.println(failCount);
 
 			bindingResult.rejectValue("mpassword", "login.mpassword.fail");
 			// returnPage = "customer/customer_login";
 			return returnPage;
-			
+
 		}
 		return returnPage;
 	}
@@ -219,25 +221,92 @@ public class CustomerController{
 		return "customer/customer_search";
 
 	}
-	
+
 	@GetMapping("/customer_r_info.do")
 	public String detail(int rno, Model model) {
 		Rmember rmember = restaurantService.getRestaurantInfoByRno(rno);
-		List<Fnb> foodList = restaurantService.getFoodListByFrno(rno);
-		List<Fnb> beverageList = restaurantService.getBeverageListByFrno(rno);
+		model.addAttribute("rno", rno);
 		model.addAttribute("rmember", rmember);
-		model.addAttribute("foodList", foodList);
-		model.addAttribute("beverageList", beverageList);
 		return "customer/customer_r_info";
 	}
 
 	@GetMapping("/customer_r_menu.do")
-	public String menu() {
+	public String menu(int rno, Model model) {
+
+		List<Fnb> foodList = restaurantService.getFoodListByFrno(rno);
+		List<Fnb> beverageList = restaurantService.getBeverageListByFrno(rno);
+		model.addAttribute("foodList", foodList);
+		model.addAttribute("beverageList", beverageList);
 		return "customer/customer_r_menu";
 	}
-	
+
 	@GetMapping("/customer_r_review.do")
-	public String review() {
+	public String review(int rno, Model model) {
 		return "customer/customer_r_review";
 	}
+
+	@GetMapping("/customer_order_table.do")
+	public String orderTable(Model model, HttpSession session) {
+		String bmid = (String) session.getAttribute("sessionMid");
+		List<BeforeOrder> list = customerService.getOrderTable(bmid);
+		model.addAttribute("orderTableList", list);
+		return "customer/customer_order_table";
+	}
+	
+	@GetMapping("/customer_insert_order_table.do")
+	public String insertOrderTable(int fno, int rno, Model model, HttpSession session) {
+		Fnb fnb = customerService.getFnbByFno(fno);
+		BeforeOrder beforeOrder = new BeforeOrder();
+		String bmid = (String) session.getAttribute("sessionMid");
+		beforeOrder.setBmid(bmid);
+		beforeOrder.setBrno(rno);
+		beforeOrder.setBfname(fnb.getFname());
+		beforeOrder.setBfprice(fnb.getFprice());
+		customerService.addOrderTable(beforeOrder);
+
+		
+		
+		return "redirect:/customer/customer_order_table.do";
+	}
+	
+	@GetMapping("/customer_delete_order_table.do")
+	public String deleteOrderTable(int bno) {
+		
+		customerService.removeOrderTable(bno);
+		
+		return "redirect:/customer/customer_order_table.do";
+	}
+	
+	@GetMapping("/customer_payment.do")
+	public String payment(Model model, HttpSession session) {
+		String bmid = (String) session.getAttribute("sessionMid");
+		List<BeforeOrder> list = customerService.getOrderTable(bmid);
+		model.addAttribute("orderTableList", list);
+		return "customer/customer_payment";
+	}
+	
+	@GetMapping("/customer_kakaopay.do")
+	public String kakaopay(HttpServletRequest request, HttpServletResponse response, int sum) {
+		String name = "김광희";
+	    String email = "rhkd1129@gmail.com";
+	    String phone = "010-7748-5699";
+	    String address = "서울특별시 송파구 백제고분로27길 8 301호";
+	    int totalPrice = sum;
+	    
+	    request.setAttribute("name", name);
+	    request.setAttribute("email", email);
+	    request.setAttribute("phone", phone);
+	    request.setAttribute("address", address);
+	    request.setAttribute("totalPrice", totalPrice);
+		
+		return "customer/customer_kakaopay";
+	}
+	
+	@GetMapping("/customer_payment_success.do")
+	public String paymentSuccess(Model model, HttpSession session) {
+		
+		return "customer/customer_payment_success";
+	}
+	
+	
 }

@@ -8,5 +8,6 @@
 			<typeAlias alias="amember" type="com.mycompany.project.model.Amember"/>
 			<typeAlias alias="comment" type="com.mycompany.project.model.Comment"/>
 			<typeAlias alias="fnb" type="com.mycompany.project.model.Fnb"/>
+			<typeAlias alias="beforeOrder" type="com.mycompany.project.model.BeforeOrder"/>
 		</typeAliases>
 	</configuration>

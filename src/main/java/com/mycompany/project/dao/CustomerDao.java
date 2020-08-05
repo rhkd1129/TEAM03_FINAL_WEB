@@ -7,8 +7,14 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.Cmember;
+
 import com.mycompany.project.model.Comment;
+
+import com.mycompany.project.model.Fnb;
+import com.mycompany.project.model.Rmember;
+
 
 import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
 
@@ -51,48 +57,48 @@ public class CustomerDao extends EgovAbstractMapper{
 		String csalt = selectOne("cmember.getSaltByMid", mid);
 		return csalt;
 	}
-	
+
 	public void loginFailCount(String mid) {
 		update("cmember.loginFailCount", mid);
 		update("cmember.loginTryDate", mid);
 	}
-	
+
 	public void updateLoginTryDate(String mid) {
 		update("cmember.loginTryDate", mid);
 	}
-	
+
 	public int getFailCountByMid(String mid) {
 		int failCount = selectOne("cmember.getFailCountByMid", mid);
 		return failCount;
 	}
-	
+
 	public void loginLock(String mid) {
 		update("cmember.loginLock", mid);
 	}
-	
+
 	public String getLoginLockByMid(String mid) {
 		String loginLock = selectOne("cmember.getLoginLockByMid", mid);
 		return loginLock;
 	}
-	
+
 	public String getLoginTryDateByMid(String mid) {
 		String loginTryDate = selectOne("cmember.getLoginTryDate", mid);
 		return loginTryDate;
 	}
-	
+
 	public void resetLoginLock(String mid) {
 		update("cmember.resetLoginLock", mid);
 	}
-	
+
 	public void insertComment(Comment comment) {
 		insert("comment.insert", comment);
 	}
-	
+
 	public float averageRating(Comment comment) {
 		float averageRating = selectOne("comment.averageRating", comment);
 		return averageRating;
 	}
-	
+
 	public List<Comment> reviewList(Comment comment) {
 		Map<String, String> map = new HashMap<>();
 		List<Comment> reviewList = selectList("comment.selectAllByCno", map);
@@ -157,6 +163,24 @@ public class CustomerDao extends EgovAbstractMapper{
 		int yesterday9Rows = selectOne("cmember.countby9day");
 //		System.out.println("DAO yesterday9Rows : " + yesterday9Rows);
 		return yesterday9Rows;
+	}
+
+	public Fnb selectFnbByFno(int fno) {
+		Fnb fnb = selectOne("fnb.selectByFno", fno);
+		return fnb;
+	}
+
+	public void insertOrderTable(BeforeOrder beforeOrder) {
+		insert("beforeOrder.insertOrderTable", beforeOrder);
+	}
+
+	public List<BeforeOrder> selectOrderTableByBmid(String bmid) {
+		List<BeforeOrder> list = selectList("beforeOrder.selecOrderTable", bmid);
+		return list;
+	}
+
+	public void insertOrderTable(int bno) {
+		delete("beforeOrder.deleteOrderTable", bno);
 	}
 
 }

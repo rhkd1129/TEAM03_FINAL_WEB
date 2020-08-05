@@ -14,62 +14,156 @@
       <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
       <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	  <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/mapcss.css">
-   </head>
-   <body>
-   <script type="text/javascript">
-   		/* 변수 모음 */
-   		var batteryrandom = 2;
-	  	var countnum = 0;
-	  	var lilength = 0;
-	  	
-   		/* 1초마다 새로 값 생성 */
-	  	setInterval(function(action){
-	  		batteryrandom = Math.floor(Math.random() * 100); // 0 ~ 99
-	  		countnum +=1;
-	  		
-			/* li 갯수 구하기 */
-			lilength = $("ul li").length;
-			if(lilength == 11){
-				var smallid = countnum - 10;
-				console.log(smallid);	
-				$("#"+smallid).remove();
-			}
-		
-	    }, 1000); 
-   	    
-	  	/* 요소 내용 변경 */
-   		$('.battery').text("타켓 : " + batteryrandom);
-   		
-		/* 뒤로가기 */
-		$("#gomainpage").click(function(){
-		    location.href = "${pageContext.request.contextPath}/admin/main.do";
-		}); 
-		
-		/* 1초마다 리스트 추가 */
-		setInterval(function(action){
-			add();
-	   }, 1000); 			
-		
-		/* 리스트 추가 */
-		function add(){  
-		    $("#ul_id").append("<li id="+countnum+" class='battery'>"+"탐지 결과 : "+batteryrandom+"</li>");  
-		}  
-		
-	  	
-   </script>
-      <h5 class="alert alert-success" style="text-align: center;">리스트 실험 페이지</h5>
-      <div id="gomainpage">메인으로 이동</div>
-      <div id="appendlist">그만</div>
-      
-      <!-- 제목 -->
-	  <div>번호</div>
-	  <!--- 리스트 --->
-	  <ul id="ul_id">
-	  	 <li>--</li>
-	  </ul>   
-      
-      
-   </body>
- 	<script type="text/javascript">
- 	</script>
+</head>
+<body>
+
+  <div id="world" class="world">
+
+	<h1 class="ground">ground</h1>
+
+	<ul class="building block-1">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+
+	<ul class="building block-2">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-3">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-4">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-5">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-6">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-7">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-8">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-9">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-10">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="building block-11">Building
+		<li class="top">roof</li>
+		<li class="west">west wall</li>
+		<li class="north">north wall</li>
+		<li class="east">east wall</li>
+		<li class="south">south wall</li>
+	</ul>
+	
+	<ul class="car car-1">Car
+		<li class="roof">roof</li>
+		<li class="door-left">door left</li>
+		<li class="front">front</li>
+		<li class="door-right">door right</li>
+		<li class="trunk">trunk</li>
+	</ul>
+	
+	<ul class="car car-2">Car
+		<li class="roof">roof</li>
+		<li class="door-left">door left</li>
+		<li class="front">front</li>
+		<li class="door-right">door right</li>
+		<li class="trunk">trunk</li>
+	</ul>
+	
+	<ul class="car car-3">Car
+		<li class="roof">roof</li>
+		<li class="door-left">door left</li>
+		<li class="front">front</li>
+		<li class="door-right">door right</li>
+		<li class="trunk">trunk</li>
+	</ul>
+	
+	<p class="road road-1">road</p>
+	<p class="road road-2">road</p>
+	<p class="road road-3">road</p>
+
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</body>
+<script type="text/javascript">
+/* 뒤로가기 */
+$("#gomainpage").click(function(){
+    location.href = "${pageContext.request.contextPath}/admin/mainviewbox6.do";
+}); 
+/* script 시작 */
+
+
+
+
+
+</script>
 </html>

@@ -226,5 +226,5 @@
     
     %>
     
-<c:redirect url="/admin/main.do"></c:redirect>
+<c:redirect url="/admin/mainviewbox4.do"></c:redirect>
          

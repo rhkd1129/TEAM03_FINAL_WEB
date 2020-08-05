@@ -47,10 +47,10 @@
 						"src", "data:image/jpg;base64,"+message.payloadString);
 				
 			}
-			var message = new Paho.MQTT.Message("frame arrived");
+			/* var message = new Paho.MQTT.Message("frame arrived");
 			message.destinationName = "/Frame/Flag";
 			message.qos = 0;
-			client.send(message);
+			client.send(message); */
 		}
 	</script>
 	<script src="${pageContext.request.contextPath}/resource/script/restaurant_car_control.js"></script>

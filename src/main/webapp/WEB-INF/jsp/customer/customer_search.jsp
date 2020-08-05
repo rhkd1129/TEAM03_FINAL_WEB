@@ -33,7 +33,7 @@
 		</div>
 		<div class="navbar2" style="background-image: url('${pageContext.request.contextPath}/resource/image/home/customer_main_bg.png');">
 			<div class="navtext">
-				<img src="${pageContext.request.contextPath}/resource/image/home/customer_main_text.png">
+				<img class="navimg" src="${pageContext.request.contextPath}/resource/image/home/customer_main_text.png">
 			</div>
 			<div class="address">
 				<form name="form" id="form" method="post">
