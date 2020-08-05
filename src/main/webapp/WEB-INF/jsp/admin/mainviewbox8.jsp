@@ -1,22 +1,27 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- SMS import -->
+<%@ page import="sms.SMS" %>
 
 <!DOCTYPE html>
-<html id="adminmainpage">
+<html>
 <head>
-   <meta charset="UTF-8">
-   <title>Insert title here</title>
-   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
-   <script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
-   <script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
-   <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
-   <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/admin_maincss.css">
+    <title>관리자 페이지</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/resource/image/admin/관리자.png">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
+    <script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
+    <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- css import -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/mainviewbox8css.css">
 </head>
-<body style="overflow: hidden;">
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false" id="adminmainpage">
 	<div class="bodymainbox">
 		<!-- /* 메뉴바 bigbox */ ------------------------------------------------------------------------>
 		<div class="navbarmain">
@@ -76,59 +81,88 @@
 				<div class="btnHome23">
 					<img class="btnHomeimg23" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
 					<div class="btnHometext23">CCTV</div>
+					<img class="ring6" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
 				</div>
 
 			</div>
 		</div>
-		
+
 		<!-- /* 뷰박스 bigbox */ ------------------------------------------------------------------------>
 		<div class="viewmainbox">
-			<!-- admin 관리 전 재로그인 진행 -->
-			<div class="viewbox0">
-				<div class="admainbox">
-					<div class="adfirst">Security System</div>
-					<div class="adname">Admin Name : </div><input type="text" class="adname1" name="inputIdName">
-					<div class="adpassword">Admin Password : </div><input type="text" class="adpassword1" name="inputPwName">			
-					<input type="button" class="btn btn-secondary" id="adbutton" value="Login">
-				</div>					
-			</div>			
-			
+			<!-- member + device + instrument data =================================-->
+			<div class="viewbox7">
+				mainviewbox8
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
 		</div>
 	</div>
-<!-- 	admin login opacity box  -->
- 	<div class="opacitybox"> 
-	</div> 
-	
+
 </body>
-<script>
-// viewbox0 login script ------------------------------------------
-$(".opacitybox").show();															//--주석 제거해야함!!
-$(".viewbox0").show();
-//enter 눌렀을 때 버튼 실행(함수)
-document.addEventListener('keydown', function(event) {
-	if (event.keyCode === 13) {
-		getInputValue();
-	}
-}, true);
-//click 눌렀을 때 버튼 실행(함수)
-$("#adbutton").click(function(){
-	getInputValue();
+<script type="text/javascript">
+/* 회원 리스트 페이지 이동 Ajax */
+$(".btnHome1").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/mainviewbox1_1.do";
 });
 
+/* 가게 차트 페이지 이동 Ajax */
+$(".btnHome2").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/mainviewbox2.do";
+});
 
-function getInputValue(){
-	//ID and PW
-	var valueByIdName = $("input[name=inputIdName]").val();
-	var valueByPwName = $("input[name=inputPwName]").val();	
+/* 지도 페이지 이동 Ajax */
+$(".btnHome3").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/mainviewbox3.do";
+});
 
-		if(valueByIdName == "admin123" && valueByPwName =="admin123"){
-			alert("관리자 페이지에 오신 것을 환영합니다.");  			
-			/* admin 로그인 순간 이동 */
-			location.href = "${pageContext.request.contextPath}/admin/mainviewbox1_1.do"		
-		}else{
-			alert("다시 입력하시기 바랍니다.");	
-			$(".opacitybox").show();  									
-		};
-};
+/* 문자 페이지 이동 Ajax */
+$(".btnHome9").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/mainviewbox4.do";
+});
+
+/* 오토모드 페이지 이동 Ajax */
+$(".btnHome21").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/mainviewbox5.do";
+});
+
+/* 수동 페이지 이동 Ajax */
+$(".btnHome24").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/mainviewbox6.do";
+});
+
+/* 차트 페이지 이동 Ajax */
+$(".btnHome22").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/mainviewbox7.do";
+});
 </script>
 </html>
