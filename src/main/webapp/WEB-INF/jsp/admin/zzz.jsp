@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-   <head>
+<head>
       <meta charset="UTF-8">
       <title>Insert title here</title>
       <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
@@ -13,8 +13,14 @@
       <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
       <script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-          <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/zzz.css">
-   </head>
+      
+      <!-- css import -->
+      <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/zzz.css">
+      	
+	 <!-- MQTT impoert -->	 
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+  
+</head>
 <body>
 <!-- 도로 차선 container -->
 <div id='container'> 
@@ -34,82 +40,84 @@
     </div> 
 </div>
 
-<!-- Jetson Car image -->
-<%-- <img class="jetsoncar" src="${pageContext.request.contextPath}/resource/image/trafic/jetsoncar.png"> --%>
+<!-- 데이터 페이지 -->
+<div class="datapage"></div>
 
-<img class="crosswalkimage" id="crosswalkimage" src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png">
+<!-- Jetson 이미지 -->
+<img class="jetsoncar" src="${pageContext.request.contextPath}/resource/image/trafic/jetsoncar.png">
+
+<!-- 표지판 이미지 -->
+<div class="traficboard">
+	<div class="traficimagebox">
+		<img class="crosswalkimage" id="crosswalkimage" src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png">
+	</div>
+	<div class="traficstick"></div>
+</div>	
 
 
+
+<!-- MQTT 연동 -->
+<img id="cameraView9">
 
 
 </body>
 
 <script type="text/javascript">
-$(document).ready(function(){
-	$('.crosswalkimage').click(function(){
-		$(this).css('-webkit-animation-name','iteration-count');
-		
-	});
-});
+// $('.traficboard').click(function(){
+// 	$(this).css('-webkit-animation-name','iteration-count');		
+// });
 
-		
 /* 무작위로 이미지 띄우기 */	
 var Numrandom = 2;
-
 setInterval(function(action){	
-	
 	Numrandom = Math.floor(Math.random() * 100); 
-	clickfunctionimage();
-	/* 0~10, 11~20, 21~30 ... 91~99 이미지 지정 변경 */
-	/* 1 */
-	if(Numrandom >= 0 && Numrandom < 11){
-		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/100.png";
-						
-	}
-	/* 2 */
-	if(Numrandom >= 11 && Numrandom < 21){
-		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/60.png";
-				
-	}
-	/* 3 */
-	if(Numrandom >= 21 && Numrandom < 31){
-		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/급커브주의.png";
-				
-	}				
-	/* 4 */
-	if(Numrandom >= 31 && Numrandom < 41){
-		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/방지턱주의.png";
-				
-	}				
-	/* 5 */
-	if(Numrandom >= 41 && Numrandom < 51){
-		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/사람.png";
-				
-	}				
-	/* 6 */				
-	if(Numrandom >= 51 && Numrandom < 61){
-		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";
-				
-	}				
-	/* 7 */
-	if(Numrandom >= 61 && Numrandom < 71){
-		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/어린이보호구역.png";
-			
-	}				
-	/* 8 */
-	if(Numrandom >= 71 && Numrandom < 81){
-		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/정지.png";
-			
-	}				
-	/* 9 */
-	if(Numrandom >= 81 && Numrandom < 91){
-		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/콘.png";				
-	}				
-	/* 10 */
-	if(Numrandom >= 91 && Numrandom < 100){
-		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";			
-	}											
-}, 8000); 
 
+	/* 객체 인식이 없을 때 */
+	if(Numrandom >= 0 && Numrandom < 26){
+// 		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/흰바탕.png";
+		$(".traficboard").css("display","none");		
+	
+	}				
+	
+	/* 횡단보도가 인식 되었을 때 */
+	if(Numrandom >= 26 && Numrandom < 61){
+		$(".traficboard").css("display","block");
+		$(".traficboard").css('-webkit-animation-name','iteration-count');
+		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";
+			
+	}				
+			
+	/* 신호등이 인식 되었을 때 */
+	if(Numrandom >= 61 && Numrandom < 100){
+		$(".traficboard").css("display","block");
+		$(".traficboard").css('-webkit-animation-name','iteration-count');
+		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";			
+	
+	}	
+	
+}, 6000); 
+
+
+/* MQTT start */
+$(function(){
+	client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
+	client.onMessageArrived = onMessageArrived;
+	client.connect({onSuccess:onConnect});
+});
+/* 연결 완료 및 클라이언트 값 구독 */
+function onConnect() {
+	client.subscribe("/Camera");
+}
+function onMessageArrived(message) {
+	if(message.destinationName == "/Camera") {
+		var cameraView = $("#cameraView9").attr(
+				"src", "data:image/jpg;base64,"+message.payloadString);
+	}
+	var message = new Paho.MQTT.Message("frame arrived");
+	message.destinationName = "/Frame/Flag";
+	message.qos = 0;
+	client.send(message);
+}
+/* MQTT end */
 </script>
 </html>
