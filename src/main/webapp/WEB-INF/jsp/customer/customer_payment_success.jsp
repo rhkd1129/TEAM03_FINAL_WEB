@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_maincss.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_ordercss.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_paymentcss.css">
 	<script src="${pageContext.request.contextPath}/resource/script/addressapi.js"></script>
 </head>
 <body>
@@ -34,11 +34,10 @@
 		</div>
 	</div>
  
-	<div class="orderMain">
-	
-	
+	<div class="paymentMain" style="font-size: 50px;">
+		결제 성공!
 	</div>
-
+	
 
 
 

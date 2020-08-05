@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -257,9 +258,36 @@ public class CustomerController{
 		return "redirect:/customer/customer_order_table.do";
 	}
 	
-	@GetMapping("/customer_order.do")
-	public String order() {
-		
-		return "customer/customer_order";
+	@GetMapping("/customer_payment.do")
+	public String payment(Model model, HttpSession session) {
+		String bmid = (String) session.getAttribute("sessionMid");
+		List<BeforeOrder> list = customerService.getOrderTable(bmid);
+		model.addAttribute("orderTableList", list);
+		return "customer/customer_payment";
 	}
+	
+	@GetMapping("/customer_kakaopay.do")
+	public String kakaopay(HttpServletRequest request, HttpServletResponse response, int sum) {
+		String name = "김광희";
+	    String email = "rhkd1129@gmail.com";
+	    String phone = "010-7748-5699";
+	    String address = "서울특별시 송파구 백제고분로27길 8 301호";
+	    int totalPrice = sum;
+	    
+	    request.setAttribute("name", name);
+	    request.setAttribute("email", email);
+	    request.setAttribute("phone", phone);
+	    request.setAttribute("address", address);
+	    request.setAttribute("totalPrice", totalPrice);
+		
+		return "customer/customer_kakaopay";
+	}
+	
+	@GetMapping("/customer_payment_success.do")
+	public String paymentSuccess(Model model, HttpSession session) {
+		
+		return "customer/customer_payment_success";
+	}
+	
+	
 }

@@ -59,8 +59,8 @@
 		<div id="sum" style="width: 377px; height: 50px; color:#f4001f; font-size:20px; font-weight: bold; text-align: right; background-color: #d7dada; border: 1px solid #313535;">
 		 합계 : 0원
 		</div>
-		<a href="${pageContext.request.contextPath}/customer/customer_order.do" style="text-decoration: none;">
-		<div onclick="order();" style="width: 377px; height: 50px; color:#ffffff; font-size:25px; font-weight: bold; text-align: center; background-color: #f4001f;">
+		<a href="${pageContext.request.contextPath}/customer/customer_payment.do" style="text-decoration: none;">
+		<div style="width: 377px; height: 50px; color:#ffffff; font-size:25px; font-weight: bold; text-align: center; background-color: #f4001f;">
 		 주문하기
 		</div>
 		</a>

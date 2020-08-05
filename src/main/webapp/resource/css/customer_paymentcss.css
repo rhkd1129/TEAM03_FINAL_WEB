@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+.paymentMain{
+	float: left;
+	width: 40%;
+	height: 1000px;
+	margin-left: 20%;
+}
+
+.paymentMainFrame{
+	margin-top: 30px;
+	margin-left: 9px;
+	margin-right: 9px;
+	margin-bottom: 30px;
+}
+
+.paymentBody{
+	border: 1px solid #d7dada;
+}
+
+.paymentTop{
+	height: 50px;
+	padding-top: 5px;
+	padding-left: 10px;
+	background-color: #313535;
+	color: #ffffff;
+	font-size: 23px;
+	border: 1px solid #313535;
+}
+
+
+.paymentInfo{
+	height: 50px;
+	padding-top: 5px;
+	padding-left: 10px;
+	background-color: #d7dada;
+	color: #000000;
+	font-size: 23px;
+}
+
+#paymentInfoContentRows{
+	height: 60px;
+}
+
+#paymentInfoContentColumn1{
+	font-size: 18px;
+	font-weight: bold;
+	padding-left: 10px;
+	width: 20%;
+}
+
+.paymentRequirement{
+	height: 50px;
+	padding-top: 5px;
+	padding-left: 10px;
+	background-color: #d7dada;
+	color: #000000;
+	font-size: 23px;
+}
+
+.paymentRequirementContent{
+	padding-top: 10px;
+	padding-left: 10px;	
+	padding-bottom: 10px;
+}
+
+.paymentMethod{
+	height: 50px;
+	padding-top: 5px;
+	padding-left: 10px;
+	background-color: #d7dada;
+	color: #000000;
+	font-size: 23px;
+} 
+
+
+
+.paymentSide{
+	float: left;
+	width: 20%;
+	height: 300px;
+	margin-top: -1000px;
+	margin-left: 60%;
+}
+
+.paymentSideFrame{
+	margin-top: 30px;
+	margin-left: 9px;
+	margin-right: 9px;
+	margin-bottom: 30px;
+	border: 1px solid #d7dada;	
+}
+
+.paymentSideTop{
+	height: 50px;
+	background-color: #d7dada;
+	font-size: 20px;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-left: 10px;
+}
+
+.paymentSideBody{
+	height: 350px; 
+	overflow: auto;
+	border-bottom: 1px solid #d7dada;
+}
+
+
