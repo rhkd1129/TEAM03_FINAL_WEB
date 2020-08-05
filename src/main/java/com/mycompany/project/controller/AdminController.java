@@ -199,9 +199,9 @@ public class AdminController {
 	}	
 
 	//차트 예제1
-	@RequestMapping("/chart.do")
-	public String chart() {
-		return "admin/chart";
+	@RequestMapping("/canvas.do")
+	public String canvas() {
+		return "admin/canvas";
 	}	
 	
 	//차트 예제2

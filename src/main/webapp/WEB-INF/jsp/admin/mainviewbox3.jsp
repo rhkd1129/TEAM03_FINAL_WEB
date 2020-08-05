@@ -376,11 +376,19 @@ $(".btnHome9").click(function(){
 /* 오토모드 페이지 이동 Ajax */
 $(".btnHome21").click(function(){
 	location.href = "${pageContext.request.contextPath}/admin/mainviewbox5.do";
+	var message = new Paho.MQTT.Message("AutoChg");
+	message.destinationName = "/Frame/Auto";
+	message.qos = 0;
+	client.send(message);		
 });
 
 /* 수동 페이지 이동 Ajax */
 $(".btnHome24").click(function(){
 	location.href = "${pageContext.request.contextPath}/admin/mainviewbox6.do";
+	var message = new Paho.MQTT.Message("ManualChg");
+	message.destinationName = "/Frame/Auto";
+	message.qos = 0;
+	client.send(message);		
 });
 
 /* 차트 페이지 이동 Ajax */

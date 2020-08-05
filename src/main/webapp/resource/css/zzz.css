@@ -22,7 +22,6 @@
 
 /* 표지판 css */
 .traficboard{
-/*   top:20px; */
   animation-iteration-count:1
 }
 
@@ -36,10 +35,11 @@
   }
 }
 
-.traficboard{
+.traficboard{	
    cursor: pointer;
+   animation-iteration-count:1000;
    animation-timing-function:linear;
-   animation-duration:8s;
+   animation-duration:9s;
 	width: 200px;
 	height: 250px;
 	position: absolute;
@@ -120,8 +120,41 @@
 	bottom: 10px;
 	z-index: 351;
 	transform : rotate(3deg); 
+    /* 드래그 막기 */   
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+     user-select: none; 	
 }
 
+/* 과속 방지턱 */
+.speedbump{
+	width: 590px;
+	height: 3000px;
+	position: absolute;
+	top: 250px;
+	left: 700px;
+}
+
+.realspeedbump{
+	width: 590px;
+	height: 3000px;
+	-webkit-animation: drive 4s infinite linear;
+    -moz-animation: drive 3s infinite linear;
+  	-ms-animation: drive 4s infinite linear;
+  	-o-animation: drive 4s infinite linear;
+     animation: drive 4s infinite linear;   
+}
+
+.realspeedbump2{
+	width: 590px;
+	height: 100px;
+	margin-top: 0px;
+	background: repeating-linear-gradient(-45deg, white, white 10px, #F7D358 0, #F7D358 20px);	
+}
+
+/* 차선 애니메이션 */
 html{
 	background-color: red;
 	background-image: url('../image/trafic/흙1.jpg');
@@ -138,7 +171,7 @@ body {
 #landscape {
     width:70%;
     margin-left:15%;
-    height:1000px;		/* 윗 길이 늘여줌 (전체적으로 커짐 */
+    height:1000px;		/* 윗 길이 늘여줌 (전체적으로 커짐) */
     overflow:hidden;
     position:fixed;
     bottom:0;
@@ -188,8 +221,9 @@ body {
     to { transform: translateY(512px); }
 }
 
-
 .center {
     margin-top:1px;
     text-align:center;
 }
+
+/* 차선 애니메이션 */
