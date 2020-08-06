@@ -4,17 +4,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.Cmember;
 import com.mycompany.project.model.Fnb;
+import com.mycompany.project.model.OrderReceipt;
 import com.mycompany.project.model.Rmember;
+import com.mycompany.project.service.CustomerService;
 
 import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
 
 @Repository
 public class CustomerDao extends EgovAbstractMapper{
+	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerDao.class);
 
 	public int insert(Cmember cmember) {
 		int crows = insert("cmember.insert", cmember);
@@ -158,6 +163,27 @@ public class CustomerDao extends EgovAbstractMapper{
 
 	public void insertOrderTable(int bno) {
 		delete("beforeOrder.deleteOrderTable", bno);
+	}
+
+	public void insertOrder(OrderReceipt orderReceipt) {
+		insert("orderReceipt.insertOrder", orderReceipt);
+	}
+
+	public int selectOnobyOmid(String omid) {
+		int ono = selectOne("orderReceipt.selectOnobyOmid", omid);
+		return ono;
+	}
+
+	public void udateOnoAtBo(int ono, String omid) {
+		LOGGER.info("실행");
+		LOGGER.info(""+ono);
+		LOGGER.info(omid);
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("bono", ono);
+		map.put("bmid", omid);
+		
+		update("beforeOrder.udateBonoAtBo", map);	
 	}
 
 }

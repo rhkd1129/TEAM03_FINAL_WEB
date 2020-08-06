@@ -8,7 +8,9 @@ $('#navtab2').css({
 $(".main1").show();
 $(".main2").hide();
 
+
 $('#navtab1').click(function() {
+	
 	$(this).css({
 		'background-color' : '#f4001f'
 	})
@@ -35,8 +37,11 @@ $('#navtab2').click(function() {
 });
 
 
-
+//restaurant_order_queue.do
 $('#menu1').click(function() {
+	var rno = $('#rno').text();
+	console.log(rno)
+	
 	$(this).css({
 		'background-color' : '#ffffff',
 		'color' : '#000000'
@@ -55,14 +60,17 @@ $('#menu1').click(function() {
 	})
 	$.ajax({
 		type : "get", 
-		url : "restaurant_order_queue.do",
+		url : "restaurant_order_queue.do?rno="+rno,
 		success : function(result) { 
 			$(".content1").html(result);
 		}
 	});
 });
 
+//restaurant_order_processing.do
 $('#menu2').click(function() {
+	var rno = $('#rno').text();
+	
 	$(this).css({
 		'background-color' : '#ffffff',
 		'color' : '#000000'
@@ -81,7 +89,7 @@ $('#menu2').click(function() {
 	})
 	$.ajax({
 		type : "get", 
-		url : "restaurant_order_processing.do",
+		url : "restaurant_order_processing.do?rno="+rno,
 		success : function(result) { 
 			$(".content1").html(result);
 		}
@@ -89,6 +97,8 @@ $('#menu2').click(function() {
 });
 
 $('#menu3').click(function() {
+	var rno = $('#rno').text();
+	
 	$(this).css({
 		'background-color' : '#ffffff',
 		'color' : '#000000'
@@ -107,7 +117,7 @@ $('#menu3').click(function() {
 	})
 	$.ajax({
 		type : "get", 
-		url : "restaurant_order_complete.do",
+		url : "restaurant_order_complete.do?rno="+rno,
 		success : function(result) { 
 			$(".content1").html(result);
 		}
@@ -115,6 +125,8 @@ $('#menu3').click(function() {
 });
 
 $('#menu4').click(function() {
+	var rno = $('#rno').text();
+	
 	$(this).css({
 		'background-color' : '#ffffff',
 		'color' : '#000000'
@@ -133,7 +145,7 @@ $('#menu4').click(function() {
 	})
 	$.ajax({
 		type : "get", 
-		url : "restaurant_order_inquiry.do",
+		url : "restaurant_order_inquiry.do?rno="+rno,
 		success : function(result) { 
 			$(".content1").html(result);
 		}

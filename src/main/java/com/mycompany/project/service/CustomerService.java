@@ -2,15 +2,20 @@ package com.mycompany.project.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springmodules.validation.bean.conf.loader.annotation.handler.Length;
 
 import com.mycompany.project.SHA256.SHA256Util;
+import com.mycompany.project.controller.CustomerController;
 import com.mycompany.project.dao.CustomerDao;
 
 import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.Cmember;
 import com.mycompany.project.model.Fnb;
+import com.mycompany.project.model.OrderReceipt;
 import com.mycompany.project.model.Rmember;
 
 import com.mycompany.project.model.CloginForm;
@@ -19,6 +24,7 @@ import com.mycompany.project.model.CloginForm;
 
 @Service
 public class CustomerService {
+	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerService.class);
 
 	@Autowired
 	private CustomerDao customerDao;
@@ -194,6 +200,46 @@ public class CustomerService {
 
 	public void removeOrderTable(int bno) {
 		customerDao.insertOrderTable(bno);
+	}
+
+	public void makeOrderInfo(OrderReceipt orderReceipt) {
+		String osummary = "";
+		int max = 0;
+		int maxIndex = 0;
+		List<BeforeOrder> boList = customerDao.selectOrderTableByBmid(orderReceipt.getOmid());
+		if(boList.size()>1) {
+			for(int i = 0; i < boList.size(); i++) {
+				BeforeOrder br = boList.get(i);
+				int temp = br.getBfprice();
+				if(temp > max) {
+					max = temp;
+					maxIndex = i;
+				}
+				
+			osummary = boList.get(maxIndex).getBfname() + " 외 " + (boList.size()-1) + "개";
+				
+			} 
+		
+		} else {
+			osummary = boList.get(maxIndex).getBfname() + "1개";
+		}
+		
+		orderReceipt.setOsummary(osummary);
+		
+		customerDao.insertOrder(orderReceipt);
+		
+	}
+
+	public int getOnoByOmid(String omid) {
+		int ono = customerDao.selectOnobyOmid(omid);
+		
+		return ono;
+	}
+
+	public void setOnoAtBo(int ono, String omid) {
+		LOGGER.info("실행");
+		customerDao.udateOnoAtBo(ono, omid);
+		
 	}
 
 

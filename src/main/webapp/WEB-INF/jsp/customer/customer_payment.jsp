@@ -30,6 +30,7 @@
 					i = i + 1
 				}
 				$('#sum').text(sum);
+				$('#test').val(sum);
 			});
 	</script>
 </head>
@@ -49,7 +50,7 @@
 			</div>
 		</div>
 	</div>
- 	<form id="paymentDetail" method="post" >
+ 	<form id="paymentDetail" method="post" action="${pageContext.request.contextPath}/customer/customer_kakaopay.do">
 		<div class="paymentMain">
 			<div class="paymentMainFrame">
 				<div class="paymentTop">
@@ -65,6 +66,7 @@
 									<td id="paymentInfoContentColumn1">가게 번호</td>
 									<td>
 										<input name="orno" value="${rno}" style="width:95%;">
+										<input id="test" name="ototalprice" value="">
 									</td>
 								</tr>
 							
@@ -115,7 +117,7 @@
 						<table style="width:100%; margin-top: 2px; margin-bottom: 2px; border-bottom: 1px solid #d7dada;">
 							<tr style="height: 30px">
 								<td colspan="2" style="font-size: 17px; font-weight: bold; padding-left: 10px;">${beforeOrder.bfname}</td>
-								
+									
 							</tr>	
 							<tr style="height: 30px">
 								<td id="price${status.count}" style="width: 100px; padding-left: 10px; text-align: right">${beforeOrder.bfprice}</td>
@@ -137,10 +139,10 @@
 				 		</tr>
 				 	</table>
 				</div>
-					<div class="payment">
-						 <input id="paymentSubmit" type="submit" style="width:100%; height: 50px; color:#ffffff; font-size:25px; font-weight: bold; text-align: center; background-color: #f4001f;" value="결제하기">
-					</div>
+				<div class="payment">
+					 <input id="paymentSubmit" type="submit" style="width:100%; height: 50px; color:#ffffff; font-size:25px; font-weight: bold; text-align: center; background-color: #f4001f;" value="결제하기">
 				</div>
+			</div>
 		</div>
 	</form>
 

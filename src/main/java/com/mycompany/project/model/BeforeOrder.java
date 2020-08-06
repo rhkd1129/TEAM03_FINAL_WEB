@@ -11,6 +11,7 @@ public class BeforeOrder {
 	private int bfprice;
 	private int bcount;
 	private Date bdate;
+	private int bcheckout;
 	
 	public Date getBdate() {
 		return bdate;
@@ -59,6 +60,12 @@ public class BeforeOrder {
 	}
 	public void setBcount(int bcount) {
 		this.bcount = bcount;
+	}
+	public int getBcheckout() {
+		return bcheckout;
+	}
+	public void setBcheckout(int bcheckout) {
+		this.bcheckout = bcheckout;
 	}
 	
 }

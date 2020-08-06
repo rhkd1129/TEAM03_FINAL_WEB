@@ -16,51 +16,40 @@
 	</head>
 	<body>
 		<div class="orderlist" >
+			<c:forEach var="orderReceipt" items="${orderList}">
 			<div class="order">
 				<table>
 					<tr>
 						<td class="oredertime">	
-							13:23
+							<fmt:formatDate value="${orderReceipt.odate}" pattern="HH:mm"/>
 						</td>
 						<td class="orederdetail">
-							<img src="${pageContext.request.contextPath}/resource/image/restaurant/order_temp.png">
+							${orderReceipt.ototalprice}원 <br>
+							${orderReceipt.osummary} <br>
+							${orderReceipt.ofulladdr} 
+							${orderReceipt.odetailaddr}
 						</td>
 						<td class="orederstatus">
-							<button>접수하기</button>
+							<button onclick="takeOver(${orderReceipt.ono})">접수하기</button>
 						</td>
 					</tr>
 				</table>
 			</div>
-			<div class="order">
-				<table>
-					<tr>
-						<td class="oredertime">	
-							13:22
-						</td>
-						<td class="orederdetail">
-							<img src="${pageContext.request.contextPath}/resource/image/restaurant/order_temp.png">
-						</td>
-						<td class="orederstatus">
-							<button>접수하기</button>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="order">
-				<table>
-					<tr>
-						<td class="oredertime">	
-							13:21
-						</td>
-						<td class="orederdetail">
-							<img src="${pageContext.request.contextPath}/resource/image/restaurant/order_temp.png">
-						</td>
-						<td class="orederstatus">
-							<button>접수하기</button>
-						</td>
-					</tr>
-				</table>
-			</div>
+			</c:forEach>
+			
 		</div>
 	</body>
+	<script>
+		function takeOver(ono) {
+			var ono = ono;
+			$.ajax({
+				type : "get", 
+				url : "restaurant_order_takeover.do?ono="+ono,
+				success : function(result) { 
+					$(".content1").html(result);
+				}
+			})			
+		}
+		
+	</script>
 </html>

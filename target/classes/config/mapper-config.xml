@@ -8,5 +8,6 @@
 			<typeAlias alias="amember" type="com.mycompany.project.model.Amember"/>
 			<typeAlias alias="fnb" type="com.mycompany.project.model.Fnb"/>
 			<typeAlias alias="beforeOrder" type="com.mycompany.project.model.BeforeOrder"/>
+			<typeAlias alias="orderReceipt" type="com.mycompany.project.model.OrderReceipt"/>
 		</typeAliases>
 	</configuration>
