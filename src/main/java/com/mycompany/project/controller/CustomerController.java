@@ -26,7 +26,7 @@ import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
 import com.mycompany.project.model.Fnb;
-import com.mycompany.project.model.Order;
+import com.mycompany.project.model.OrderReceipt;
 import com.mycompany.project.model.Rmember;
 import com.mycompany.project.service.CustomerService;
 import com.mycompany.project.service.RestaurantService;
@@ -35,6 +35,7 @@ import com.mycompany.project.service.RestaurantService;
 @RequestMapping("/customer")
 public class CustomerController{
 	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
+	private OrderReceipt globalOr;
 
 	@Autowired
 	private CustomerService customerService;
@@ -269,18 +270,26 @@ public class CustomerController{
 	}
 	
 	@PostMapping("/customer_kakaopay.do")
-	public String checkOut(HttpServletRequest request, HttpServletResponse response, Order order) {
-	    
-		int totalPrice = order.getOtotalprice();
-		System.out.println(order.getOfulladdr());
-	    request.setAttribute("totalPrice", totalPrice);
+	public String checkOut(HttpServletRequest request, HttpServletResponse response, HttpSession session, OrderReceipt orderReceipt) {
+		String omid = (String) session.getAttribute("sessionMid");
+		orderReceipt.setOmid(omid);
+		
+		globalOr = orderReceipt;
+		
+		int totalPrice = orderReceipt.getOtotalprice();
+		request.setAttribute("totalPrice", totalPrice);
+		
  		
 		return "customer/customer_kakaopay";
 	}
 	
 	
 	@GetMapping("/customer_payment_success.do")
-	public String paymentSuccess(Model model, HttpSession session) {
+	public String paymentSuccess(HttpServletRequest request, HttpServletResponse response, Model model, HttpSession session) {
+		String omid = (String) session.getAttribute("sessionMid");
+		customerService.makeOrderInfo(globalOr);
+		int ono = customerService.getOnoByOmid(omid);
+		customerService.setOnoAtBo(ono, omid);
 		
 		return "customer/customer_payment_success";
 	}

@@ -2,9 +2,9 @@ package com.mycompany.project.model;
 
 import java.util.Date;
 
-public class Order {
+public class OrderReceipt {
 	private int ono;
-	private int orid;
+	private int orno;
 	private String omid;
 	private String osummary;
 	private Date odate;
@@ -26,11 +26,11 @@ public class Order {
 	public void setOno(int ono) {
 		this.ono = ono;
 	}
-	public int getOrid() {
-		return orid;
+	public int getOrno() {
+		return orno;
 	}
-	public void setOrid(int orid) {
-		this.orid = orid;
+	public void setOrno(int orno) {
+		this.orno = orno;
 	}
 	public String getOmid() {
 		return omid;

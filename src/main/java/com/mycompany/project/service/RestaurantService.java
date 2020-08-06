@@ -12,7 +12,7 @@ import com.mycompany.project.dao.RestaurantDao;
 import com.mycompany.project.model.Amember;
 
 import com.mycompany.project.model.Fnb;
-
+import com.mycompany.project.model.OrderReceipt;
 import com.mycompany.project.model.Rmember;
 
 @Service
@@ -156,6 +156,21 @@ public class RestaurantService {
 	public Rmember getRestaurantInfoByRno(int rno) {
 		Rmember rmember = restaurantDao.selecRestaurantInfoByRno(rno);
 		return rmember;
+	}
+
+	public List<OrderReceipt> getOrderList(int orno) {
+		List<OrderReceipt> list = restaurantDao.selectOrderByOrno(orno);
+		return list;
+	}
+
+	public void takeoverOrder(int ono) {
+		restaurantDao.udateByTakeover(ono);
+		
+	}
+
+	public List<OrderReceipt> getProcessingList(int orno) {
+		List<OrderReceipt> list = restaurantDao.selectProcessingByOrno(orno);
+		return list;
 	}
 
 
