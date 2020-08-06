@@ -274,7 +274,7 @@ public class CustomerController{
 		int totalPrice = order.getOtotalprice();
 		System.out.println(order.getOfulladdr());
 	    request.setAttribute("totalPrice", totalPrice);
-		
+ 		
 		return "customer/customer_kakaopay";
 	}
 	
