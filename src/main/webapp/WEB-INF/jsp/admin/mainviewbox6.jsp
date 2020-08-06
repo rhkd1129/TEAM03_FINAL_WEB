@@ -142,8 +142,8 @@
 							<div class="orderlistpage">주문 상세 내역</div>
 							
 							<div class="oneperson">1인칭 AUTO MODE</div>
-							<div class="maping">Map</div>			
-										
+							<div class="maping">Canvas Map</div>			
+							<div class="maping2">Ping Controller</div>				
 										
 										
 										
@@ -189,6 +189,11 @@
 $(".maping").click(function(){
 	location.href = "${pageContext.request.contextPath}/admin/canvas.do";	
 });
+
+$(".maping2").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/canvas2.do";	
+});
+
 /* 오토모드 선택 */
 $(".changemode").click(function(){
 	location.href = "${pageContext.request.contextPath}/admin/mainviewbox5.do";
