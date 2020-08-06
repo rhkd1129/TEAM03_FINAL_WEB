@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>관리자 페이지</title>
+    <title>수동 조작 페이지</title>
     <link rel="icon" href="${pageContext.request.contextPath}/resource/image/admin/관리자.png">
     <meta charset="UTF-8">
 
@@ -122,35 +122,39 @@
 			<div class="viewbox7"> <!-- 1685 * 937 -->
 				<!-- MQTT -->
 				<img id="cameraView2">
-				<div class="viewbox7databox">
-					<a style="color: white; font-size: 20px; font-weight: bold;" 
-					href="${pageContext.request.contextPath}/admin/chart.do">실험 페이지로 이동1</a>
-				
-					<a style="color: white; font-size: 20px; font-weight: bold;" 
-					href="${pageContext.request.contextPath}/admin/zzz.do">실험 페이지로 이동2</a>
-				
-				
-				
+				<div class="viewbox7databox">				
+					<div class="rightbox1">
+						<div class="rightbox1-1">
+							<div class="wifibettory">
+								<img class="wifi0" src="${pageContext.request.contextPath}/resource/image/device/와이파이1.png">
+								<img class="wifi1" src="${pageContext.request.contextPath}/resource/image/device/와이파이2.png">
+								<img class="wifi2" src="${pageContext.request.contextPath}/resource/image/device/와이파이3.png">
+								<img class="wifi3" src="${pageContext.request.contextPath}/resource/image/device/와이파이4.png">
+								<img class="bettery1" src="${pageContext.request.contextPath}/resource/image/device/battery1.png">
+								<img class="bettery2" src="${pageContext.request.contextPath}/resource/image/device/battery2.png">
+								<img class="bettery3" src="${pageContext.request.contextPath}/resource/image/device/battery3.png">
+								<img class="bettery4" src="${pageContext.request.contextPath}/resource/image/device/battery4.png">
+								<div class="todayday">0000-00-00</div>
+							</div>
+							<div class="changemode">Move<br>Auto</div>
+						</div>
+						<div class="rightbox1-2">
+							<div class="orderlistpage">주문 상세 내역</div>
+							
+							<div class="oneperson">1인칭 AUTO MODE</div>
+							<div class="maping">Map</div>			
+										
+										
+										
+										
+										
+										
+										
+										
+													
+						</div>
+					</div>			
 				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
 				
 				
 				<!-- pointping box (no position) -->
@@ -181,7 +185,28 @@
 
 </body>
 <script type="text/javascript">
-//viewbox7 script start---------------------------------------------------------------
+/* 조작 설정 script start------------------------------------------- */
+$(".maping").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/canvas.do";	
+});
+/* 오토모드 선택 */
+$(".changemode").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/mainviewbox5.do";
+	var message = new Paho.MQTT.Message("AutoChg");
+	message.destinationName = "/Frame/Auto";
+	message.qos = 0;
+	client.send(message);		
+});
+
+$(".oneperson").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/zzz.do";
+	var message = new Paho.MQTT.Message("AutoChg");
+	message.destinationName = "/Frame/Auto";
+	message.qos = 0;
+	client.send(message);		
+});
+/* 조작 설정 script end------------------------------------------- */
+
 /* MQTT start */
 $(function(){
 	client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
@@ -336,6 +361,10 @@ $(".btnHome9").click(function(){
 /* 오토모드 페이지 이동 Ajax */
 $(".btnHome21").click(function(){
 	location.href = "${pageContext.request.contextPath}/admin/mainviewbox5.do";
+	var message = new Paho.MQTT.Message("AutoChg");
+	message.destinationName = "/Frame/Auto";
+	message.qos = 0;
+	client.send(message);	
 });
 
 /* 차트 페이지 이동 Ajax */
@@ -347,5 +376,86 @@ $(".btnHome22").click(function(){
 $(".btnHome23").click(function(){
 	location.href = "${pageContext.request.contextPath}/admin/mainviewbox8.do";
 });
+
+/* --------------------------------------------------------------------------- */
+/* 배터리 량 변경 */
+var batteryrandom = Math.floor(Math.random() * 100); // 0 ~ 99
+$(".bettery1").hide();
+$(".bettery2").hide();
+$(".bettery3").hide();
+$(".bettery4").hide();
+
+if(batteryrandom <= 25){	//0~25
+	$(".bettery1").show();
+}else if(batteryrandom <= 50 && batteryrandom > 25){
+	$(".bettery2").show();	//26~50
+}else if(batteryrandom <= 75 && batteryrandom > 50){
+	$(".bettery3").show();	//51~75
+}else if(batteryrandom <= 100 && batteryrandom > 75){
+	$(".bettery4").show();	//76~100
+}
+
+/* 와이파이  */
+$(".wifi0").show();
+$(".wifi1").hide();
+$(".wifi2").hide();
+$(".wifi3").hide();
+
+$(document).ready(function(){
+	wifitime = setTimeout(wifi0, 500);
+
+	function wifi0(){
+		$(".wifi0").show();
+
+		$(".wifi3").hide();
+	   setTimeout(wifi1, 500);
+	}
+
+	function wifi1(){
+		$(".wifi1").show();
+
+		$(".wifi0").hide();
+	   setTimeout(wifi2, 500);
+	}
+
+	function wifi2(){
+		$(".wifi2").show();
+
+		$(".wifi1").hide();
+	   setTimeout(wifi3, 500);
+	}
+
+	function wifi3(){
+		$(".wifi3").show();
+
+		$(".wifi2").hide();
+	   setTimeout(wifi0, 500);
+	}
+});
+
+/* 오늘 날짜  */
+var nowDate = new Date();
+var nowYear = nowDate.getFullYear();
+var nowMonth = nowDate.getMonth() +1;
+var nowDay = nowDate.getDate();
+
+if(nowMonth < 10) { nowMonth = "0" + nowMonth; }
+if(nowDay < 10) { nowDay = "0" + nowDay; }
+
+//오늘 날짜 결과
+var todayDate = nowYear + "-" + nowMonth + "-" + nowDay;
+$('.todayday').text(String(todayDate));
+
+//---------------------------------------------------------------------------
+//오늘 날짜
+var nowYear = nowDate.getFullYear();
+var nowMonth = nowDate.getMonth() +1;
+var nowDay = nowDate.getDate();
+
+if(nowMonth < 10) { nowMonth = "0" + nowMonth; }
+if(nowDay < 10) { nowDay = "0" + nowDay; }
+
+//오늘 날짜 결과
+var todayDate = nowMonth + "-" + nowDay;// 연도는 길어서 제외
 </script>
 </html>

@@ -26,9 +26,14 @@
 <div id='container'> 
     <div id='landscape'>
       <div id='road'>
-          <div class='center'>
-          		<!-- 표지판 예제 -->
-          		<div></div>
+          <div class='center'>   
+                 
+          		<!-- 방지턱 예제 -->
+          		<div class="speedbump">
+          			<div class="realspeedbump">
+          				<div class="realspeedbump2"></div>
+          			</div>
+          		</div>
           		<!-- 좌측 차선 -->
           		<div class="leftcarline"></div>
           		<!-- 우측 차선 -->
@@ -63,39 +68,50 @@
 </body>
 
 <script type="text/javascript">
-// $('.traficboard').click(function(){
-// 	$(this).css('-webkit-animation-name','iteration-count');		
-// });
-
 /* 무작위로 이미지 띄우기 */	
 var Numrandom = 2;
 setInterval(function(action){	
-	Numrandom = Math.floor(Math.random() * 100); 
-
+	Numrandom = Math.floor(Math.random() * 100); 	
+	console.log(Numrandom);
 	/* 객체 인식이 없을 때 */
 	if(Numrandom >= 0 && Numrandom < 26){
-// 		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/흰바탕.png";
-		$(".traficboard").css("display","none");		
-	
+		$(".traficboard").css('-webkit-animation-name','iteration-count');
+		$(".traficboard").css("display","none");	
+		
+		$("#road").css("-webkit-animation","drive 300s infinite linear");	
+		$("#road").css("-moz-animation","drive 300s infinite linear");	
+		$("#road").css("-ms-animation","drive 200s infinite linear");	
+		$("#road").css("-o-animation","drive 300s infinite linear");	
+		$("#road").css("animation","drive 300s infinite linear");	
 	}				
 	
 	/* 횡단보도가 인식 되었을 때 */
 	if(Numrandom >= 26 && Numrandom < 61){
 		$(".traficboard").css("display","block");
 		$(".traficboard").css('-webkit-animation-name','iteration-count');
-		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";
-			
+		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";			
+		
+		$("#road").css("-webkit-animation","drive 3s infinite linear");	
+		$("#road").css("-moz-animation","drive 3s infinite linear");	
+		$("#road").css("-ms-animation","drive 2s infinite linear");	
+		$("#road").css("-o-animation","drive 3s infinite linear");	
+		$("#road").css("animation","drive 3s infinite linear");	
 	}				
 			
 	/* 신호등이 인식 되었을 때 */
 	if(Numrandom >= 61 && Numrandom < 100){
 		$(".traficboard").css("display","block");
 		$(".traficboard").css('-webkit-animation-name','iteration-count');
-		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";			
-	
+		document.getElementById("crosswalkimage").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";				
+		
+		$("#road").css("-webkit-animation","drive 3s infinite linear");	
+		$("#road").css("-moz-animation","drive 3s infinite linear");	
+		$("#road").css("-ms-animation","drive 2s infinite linear");	
+		$("#road").css("-o-animation","drive 3s infinite linear");	
+		$("#road").css("animation","drive 3s infinite linear");	
 	}	
 	
-}, 6000); 
+}, 9000); 
 
 
 /* MQTT start */

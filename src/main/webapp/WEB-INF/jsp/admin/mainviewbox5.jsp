@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>관리자 페이지</title>
+    <title>자동 조작 페이지</title>
     <link rel="icon" href="${pageContext.request.contextPath}/resource/image/admin/관리자.png">
     <meta charset="UTF-8">
 
@@ -242,7 +242,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 								<img class="bettery4" src="${pageContext.request.contextPath}/resource/image/device/battery4.png">
 								<div class="todayday">0000-00-00</div>
 							</div>
-							<div class="changemode">AUTO</div>
+							<div class="changemode">Move<br>Manual</div>
 						</div>
 						<div class="rightbox1-2">
 							<div class="orderlistpage">주문 상세 내역</div>
@@ -255,6 +255,17 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 
 </body>
 <script type="text/javascript">
+/* 조작 설정 script start------------------------------------------- */
+/* 오토모드 -> 수동모드 선택 */
+$(".changemode").click(function(){
+	location.href = "${pageContext.request.contextPath}/admin/mainviewbox6.do";
+	var message = new Paho.MQTT.Message("ManualChg");
+	message.destinationName = "/Frame/Auto";
+	message.qos = 0;
+	client.send(message);	
+});
+/* 조작 설정 script end------------------------------------------- */
+
 $(".checkboxhiddengo").hide();
 $(".viewbox9").hide();
 $(".viewbox4").show();
@@ -282,6 +293,10 @@ $(".btnHome9").click(function(){
 /* 수동 페이지 이동 Ajax */
 $(".btnHome24").click(function(){
 	location.href = "${pageContext.request.contextPath}/admin/mainviewbox6.do";
+	var message = new Paho.MQTT.Message("ManualChg");
+	message.destinationName = "/Frame/Auto";
+	message.qos = 0;
+	client.send(message);	
 });
 
 /* 차트 페이지 이동 Ajax */
@@ -295,271 +310,258 @@ $(".btnHome23").click(function(){
 });
 //---------------------------------------------------------------------------
 /* 리스트 배열 예제 start */
-	   		/* 변수 모음 */
-	   		var batteryrandom = 2;
-		  	var countnum = 0;
-		  	var lilength = 0;
-		  	
-	   		/* 1초마다 새로 값 생성 */
-		  	setInterval(function(action){
-		  		/* 난수 0~99 생성 */
-		  		batteryrandom = Math.floor(Math.random() * 100); 
-		  		
-		  		/* 아이디 +1 */
-		  		countnum +=1;
-		  		
-				/* li 14시 맨 앞 li 삭제 */
-				lilength = $("ul li").length;
-				if(lilength == 14){
-					var smallid = countnum - 14;	
-					$("#"+smallid).remove();
-				}
-				
-				/* 0~10, 11~20, 21~30 ... 91~99 이미지 지정 변경 */
-				/* 1 */
-				if(batteryrandom >= 0 && batteryrandom < 11){
-					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/100.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/100.png";				
-					$('.imagenametext').text("[주의 사항] 100Km 제한");
-					$('.imageintroducetext').text("제한속도 100Km 이내로 주행하시기 바랍니다.");
-					
-					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 100Km");			
-					$('.minimapping').css("left","450px");						
-				}
-				/* 2 */
-				if(batteryrandom >= 11 && batteryrandom < 21){
-					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/60.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/60.png";				
-					$('.imagenametext').text("[주의 사항] 60Km 제한");
-					$('.imageintroducetext').text("제한속도 60Km 이내로 주행하시기 바랍니다.");
-					
-					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 60Km");						
-					$('.minimapping').css("left","440px");					
-				}
-				/* 3 */
-				if(batteryrandom >= 21 && batteryrandom < 31){
-					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/급커브주의.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/급커브주의.png";				
-					$('.imagenametext').text("[주의 사항] 급커브");
-					$('.imageintroducetext').text("급커브 주의 구간입니다. 서행하시기 바랍니다.");
-					
-					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 급커브");						
-					$('.minimapping').css("left","430px");					
-				}				
-				/* 4 */
-				if(batteryrandom >= 31 && batteryrandom < 41){
-					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/방지턱주의.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/방지턱주의.png";				
-					$('.imagenametext').text("[주의 사항] 방지턱");
-					$('.imageintroducetext').text("전방에 방지턱을 발견하였습니다. 서행하시기 바랍니다.");
-					
-					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 방지턱");						
-					$('.minimapping').css("left","420px");					
-				}				
-				/* 5 */
-				if(batteryrandom >= 41 && batteryrandom < 51){
-					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/사람.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/사람.png";				
-					$('.imagenametext').text("[주의 사항] 사람");
-					$('.imageintroducetext').text("전방에 사람을 발견햇습니다. 서행하시기 바랍니다.");
-					
-					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 사람");					
-					$('.minimapping').css("left","410px");					
-				}				
-				/* 6 */				
-				if(batteryrandom >= 51 && batteryrandom < 61){
-					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";				
-					$('.imagenametext').text("[주의 사항] 신호등");
-					$('.imageintroducetext').text("전방에 신호등 구간입니다. 신호에 맞춰서 주행하시기 바랍니다.");	
-					
-					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 신호등");					
-					$('.minimapping').css("left","400px");					
-				}				
-				/* 7 */
-				if(batteryrandom >= 61 && batteryrandom < 71){
-					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/어린이보호구역.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/어린이보호구역.png";				
-					$('.imagenametext').text("[주의 사항] 스쿨존");
-					$('.imageintroducetext').text("스쿨존에 진입하였습니다. 어린이 보행 구간 주의 바랍니다.");
-					
-					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 스쿨존");					
-					$('.minimapping').css("left","390px");				
-				}				
-				/* 8 */
-				if(batteryrandom >= 71 && batteryrandom < 81){
-					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/정지.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/정지.png";				
-					$('.imagenametext').text("[주의 사항] 정지");
-					$('.imageintroducetext').text("전방에 정지 구간입니다. 정지해주시기 바랍니다.");	
-					
-					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 정지");					
-					$('.minimapping').css("left","380px");					
-				}				
-				/* 9 */
-				if(batteryrandom >= 81 && batteryrandom < 91){
-					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/콘.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/콘.png";				
-					$('.imagenametext').text("[주의 사항] 장애물");
-					$('.imageintroducetext').text("전방에 장애물 또는 공사 구간입니다. 서행하시기 바랍니다.");
-					
-					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 장애물");					
-					$('.minimapping').css("left","370px");					
-				}				
-				/* 10 */
-				if(batteryrandom >= 91 && batteryrandom < 100){
-					document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";
-					document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";				
-					$('.imagenametext').text("[주의 사항] 횡단보도");
-					$('.imageintroducetext').text("전방에 횡단보도 구간입니다. 신호에 맞춰서 가시기 바랍니다.");
-					
-					/* 재미용 */
-					$('.sampleimagetext').text("탐지 이미지 : 횡단보도");					
-					$('.minimapping').css("left","360px");					
-				}											
-		    }, 1000); 
-	   	    
-		  	/* 요소 내용 변경 */
-	   		$('.lilist').text("타켓 : " + batteryrandom);
-	   		
-			/* 뒤로가기 */
-			$("#gomainpage").click(function(){
-			    location.href = "${pageContext.request.contextPath}/admin/main.do";
-			}); 
-			
-			/* 1초마다 리스트 추가 */
-			setInterval(function(action){
-				add();
-		   }, 1000); 			
-			
-			/* 리스트 추가 */
-			function add(){  
-			    $("#ul_id").append("<li id="+countnum+" class='lilist'>"+"탐지 결과 : "+batteryrandom+"</li>");  
-			}  
-			/* 리스트 배열 예제 end */
-			
-			/* MQTT start */
-			$(function(){
-				client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
-				client.onMessageArrived = onMessageArrived;
-				client.connect({onSuccess:onConnect});
-			});
-			/* 연결 완료 및 클라이언트 값 구독 */
-			function onConnect() {
-				client.subscribe("/Camera");
-			}
-			function onMessageArrived(message) {
-				if(message.destinationName == "/Camera") {
-					var cameraView = $("#cameraView").attr(
-							"src", "data:image/jpg;base64,"+message.payloadString);
-					
-					var cameraView = $("#cameraView2").attr(
-							"src", "data:image/jpg;base64,"+message.payloadString);
-				}
-				var message = new Paho.MQTT.Message("frame arrived");
-				message.destinationName = "/Frame/Flag";
-				message.qos = 0;
-				client.send(message);
-			}
-			/* MQTT end */
-			
-			/* 모달창 esc로 제거 */
-			document.addEventListener('keydown', function(event) {
-				if (event.keyCode === 27) {
-					console.log("ddddd");
-					document.getElementById("closed").click();
-				}
-			}, true);
-			
-			/* 오토모드 수동모드 선택 */
-			var automanual = 0;
-			$(".changemode").click(function(){
-				automanual += 1;
-				console.log(automanual);
-				if(automanual %2 == 0){
-					$('.changemode').text("MANUAL");
-				}
-				if(automanual %2 == 1){
-					$('.changemode').text("AUTO");
-				}
-			});
+	/* 변수 모음 */
+	var batteryrandom = 2;
+ 	var countnum = 0;
+ 	var lilength = 0;
+ 	
+ 		/* 1초마다 새로 값 생성 */
+ 	setInterval(function(action){
+ 		/* 난수 0~99 생성 */
+ 		batteryrandom = Math.floor(Math.random() * 100); 
+ 		
+ 		/* 아이디 +1 */
+ 		countnum +=1;
+ 		
+	/* li 14시 맨 앞 li 삭제 */
+	lilength = $("ul li").length;
+	if(lilength == 14){
+		var smallid = countnum - 14;	
+		$("#"+smallid).remove();
+	}
+	
+	/* 0~10, 11~20, 21~30 ... 91~99 이미지 지정 변경 */
+	/* 1 */
+	if(batteryrandom >= 0 && batteryrandom < 11){
+		document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/100.png";
+		document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/100.png";				
+		$('.imagenametext').text("[주의 사항] 100Km 제한");
+		$('.imageintroducetext').text("제한속도 100Km 이내로 주행하시기 바랍니다.");
+		
+		/* 재미용 */
+		$('.sampleimagetext').text("탐지 이미지 : 100Km");			
+		$('.minimapping').css("left","450px");						
+	}
+	/* 2 */
+	if(batteryrandom >= 11 && batteryrandom < 21){
+		document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/60.png";
+		document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/60.png";				
+		$('.imagenametext').text("[주의 사항] 60Km 제한");
+		$('.imageintroducetext').text("제한속도 60Km 이내로 주행하시기 바랍니다.");
+		
+		/* 재미용 */
+		$('.sampleimagetext').text("탐지 이미지 : 60Km");						
+		$('.minimapping').css("left","440px");					
+	}
+	/* 3 */
+	if(batteryrandom >= 21 && batteryrandom < 31){
+		document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/급커브주의.png";
+		document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/급커브주의.png";				
+		$('.imagenametext').text("[주의 사항] 급커브");
+		$('.imageintroducetext').text("급커브 주의 구간입니다. 서행하시기 바랍니다.");
+		
+		/* 재미용 */
+		$('.sampleimagetext').text("탐지 이미지 : 급커브");						
+		$('.minimapping').css("left","430px");					
+	}				
+	/* 4 */
+	if(batteryrandom >= 31 && batteryrandom < 41){
+		document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/방지턱주의.png";
+		document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/방지턱주의.png";				
+		$('.imagenametext').text("[주의 사항] 방지턱");
+		$('.imageintroducetext').text("전방에 방지턱을 발견하였습니다. 서행하시기 바랍니다.");
+		
+		/* 재미용 */
+		$('.sampleimagetext').text("탐지 이미지 : 방지턱");						
+		$('.minimapping').css("left","420px");					
+	}				
+	/* 5 */
+	if(batteryrandom >= 41 && batteryrandom < 51){
+		document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/사람.png";
+		document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/사람.png";				
+		$('.imagenametext').text("[주의 사항] 사람");
+		$('.imageintroducetext').text("전방에 사람을 발견햇습니다. 서행하시기 바랍니다.");
+		
+		/* 재미용 */
+		$('.sampleimagetext').text("탐지 이미지 : 사람");					
+		$('.minimapping').css("left","410px");					
+	}				
+	/* 6 */				
+	if(batteryrandom >= 51 && batteryrandom < 61){
+		document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";
+		document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/신호등.png";				
+		$('.imagenametext').text("[주의 사항] 신호등");
+		$('.imageintroducetext').text("전방에 신호등 구간입니다. 신호에 맞춰서 주행하시기 바랍니다.");	
+		
+		/* 재미용 */
+		$('.sampleimagetext').text("탐지 이미지 : 신호등");					
+		$('.minimapping').css("left","400px");					
+	}				
+	/* 7 */
+	if(batteryrandom >= 61 && batteryrandom < 71){
+		document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/어린이보호구역.png";
+		document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/어린이보호구역.png";				
+		$('.imagenametext').text("[주의 사항] 스쿨존");
+		$('.imageintroducetext').text("스쿨존에 진입하였습니다. 어린이 보행 구간 주의 바랍니다.");
+		
+		/* 재미용 */
+		$('.sampleimagetext').text("탐지 이미지 : 스쿨존");					
+		$('.minimapping').css("left","390px");				
+	}				
+	/* 8 */
+	if(batteryrandom >= 71 && batteryrandom < 81){
+		document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/정지.png";
+		document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/정지.png";				
+		$('.imagenametext').text("[주의 사항] 정지");
+		$('.imageintroducetext').text("전방에 정지 구간입니다. 정지해주시기 바랍니다.");	
+		
+		/* 재미용 */
+		$('.sampleimagetext').text("탐지 이미지 : 정지");					
+		$('.minimapping').css("left","380px");					
+	}				
+	/* 9 */
+	if(batteryrandom >= 81 && batteryrandom < 91){
+		document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/콘.png";
+		document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/콘.png";				
+		$('.imagenametext').text("[주의 사항] 장애물");
+		$('.imageintroducetext').text("전방에 장애물 또는 공사 구간입니다. 서행하시기 바랍니다.");
+		
+		/* 재미용 */
+		$('.sampleimagetext').text("탐지 이미지 : 장애물");					
+		$('.minimapping').css("left","370px");					
+	}				
+	/* 10 */
+	if(batteryrandom >= 91 && batteryrandom < 100){
+		document.getElementById("sampleimageid").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";
+		document.getElementById("sampleimageid1").src="${pageContext.request.contextPath}/resource/image/trafic/횡단보도.png";				
+		$('.imagenametext').text("[주의 사항] 횡단보도");
+		$('.imageintroducetext').text("전방에 횡단보도 구간입니다. 신호에 맞춰서 가시기 바랍니다.");
+		
+		/* 재미용 */
+		$('.sampleimagetext').text("탐지 이미지 : 횡단보도");					
+		$('.minimapping').css("left","360px");					
+	}											
+   }, 1000); 
+ 	    
+ 	/* 요소 내용 변경 */
+ 		$('.lilist').text("타켓 : " + batteryrandom);
+ 		
+/* 뒤로가기 */
+$("#gomainpage").click(function(){
+    location.href = "${pageContext.request.contextPath}/admin/main.do";
+}); 
 
-			/* 배터리 량 변경 */
-			var batteryrandom = Math.floor(Math.random() * 100); // 0 ~ 99
-			$(".bettery1").hide();
-			$(".bettery2").hide();
-			$(".bettery3").hide();
-			$(".bettery4").hide();
+/* 1초마다 리스트 추가 */
+setInterval(function(action){
+	add();
+  }, 1000); 			
 
-			if(batteryrandom <= 25){	//0~25
-				$(".bettery1").show();
-			}else if(batteryrandom <= 50 && batteryrandom > 25){
-				$(".bettery2").show();	//26~50
-			}else if(batteryrandom <= 75 && batteryrandom > 50){
-				$(".bettery3").show();	//51~75
-			}else if(batteryrandom <= 100 && batteryrandom > 75){
-				$(".bettery4").show();	//76~100
-			}
+/* 리스트 추가 */
+function add(){  
+    $("#ul_id").append("<li id="+countnum+" class='lilist'>"+"탐지 결과 : "+batteryrandom+"</li>");  
+}  
+/* 리스트 배열 예제 end */
 
-			/* 와이파이  */
-			$(".wifi0").show();
-			$(".wifi1").hide();
-			$(".wifi2").hide();
-			$(".wifi3").hide();
+/* MQTT start */
+$(function(){
+	client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
+	client.onMessageArrived = onMessageArrived;
+	client.connect({onSuccess:onConnect});
+});
+/* 연결 완료 및 클라이언트 값 구독 */
+function onConnect() {
+	client.subscribe("/Camera");
+}
+function onMessageArrived(message) {
+	if(message.destinationName == "/Camera") {
+		var cameraView = $("#cameraView").attr(
+				"src", "data:image/jpg;base64,"+message.payloadString);
+		
+		var cameraView = $("#cameraView2").attr(
+				"src", "data:image/jpg;base64,"+message.payloadString);
+	}
+	var message = new Paho.MQTT.Message("frame arrived");
+	message.destinationName = "/Frame/Flag";
+	message.qos = 0;
+	client.send(message);
+}
+/* MQTT end */
 
-			$(document).ready(function(){
-				wifitime = setTimeout(wifi0, 500);
+/* 모달창 esc로 제거 */
+document.addEventListener('keydown', function(event) {
+	if (event.keyCode === 27) {
+		console.log("ddddd");
+		document.getElementById("closed").click();
+	}
+}, true);
 
-				function wifi0(){
-					$(".wifi0").show();
+/* 배터리 량 변경 */
+var batteryrandom = Math.floor(Math.random() * 100); // 0 ~ 99
+$(".bettery1").hide();
+$(".bettery2").hide();
+$(".bettery3").hide();
+$(".bettery4").hide();
 
-					$(".wifi3").hide();
-				   setTimeout(wifi1, 500);
-				}
+if(batteryrandom <= 25){	//0~25
+	$(".bettery1").show();
+}else if(batteryrandom <= 50 && batteryrandom > 25){
+	$(".bettery2").show();	//26~50
+}else if(batteryrandom <= 75 && batteryrandom > 50){
+	$(".bettery3").show();	//51~75
+}else if(batteryrandom <= 100 && batteryrandom > 75){
+	$(".bettery4").show();	//76~100
+}
 
-				function wifi1(){
-					$(".wifi1").show();
+/* 와이파이  */
+$(".wifi0").show();
+$(".wifi1").hide();
+$(".wifi2").hide();
+$(".wifi3").hide();
 
-					$(".wifi0").hide();
-				   setTimeout(wifi2, 500);
-				}
+$(document).ready(function(){
+	wifitime = setTimeout(wifi0, 500);
 
-				function wifi2(){
-					$(".wifi2").show();
+	function wifi0(){
+		$(".wifi0").show();
 
-					$(".wifi1").hide();
-				   setTimeout(wifi3, 500);
-				}
+		$(".wifi3").hide();
+	   setTimeout(wifi1, 500);
+	}
 
-				function wifi3(){
-					$(".wifi3").show();
+	function wifi1(){
+		$(".wifi1").show();
 
-					$(".wifi2").hide();
-				   setTimeout(wifi0, 500);
-				}
-			});
+		$(".wifi0").hide();
+	   setTimeout(wifi2, 500);
+	}
 
-			/* 오늘 날짜  */
-			var nowDate = new Date();
-			var nowYear = nowDate.getFullYear();
-			var nowMonth = nowDate.getMonth() +1;
-			var nowDay = nowDate.getDate();
+	function wifi2(){
+		$(".wifi2").show();
 
-			if(nowMonth < 10) { nowMonth = "0" + nowMonth; }
-			if(nowDay < 10) { nowDay = "0" + nowDay; }
+		$(".wifi1").hide();
+	   setTimeout(wifi3, 500);
+	}
 
-			//오늘 날짜 결과
-			var todayDate = nowYear + "-" + nowMonth + "-" + nowDay;
-			$('.todayday').text(String(todayDate));
+	function wifi3(){
+		$(".wifi3").show();
+
+		$(".wifi2").hide();
+	   setTimeout(wifi0, 500);
+	}
+});
+
+/* 오늘 날짜  */
+var nowDate = new Date();
+var nowYear = nowDate.getFullYear();
+var nowMonth = nowDate.getMonth() +1;
+var nowDay = nowDate.getDate();
+
+if(nowMonth < 10) { nowMonth = "0" + nowMonth; }
+if(nowDay < 10) { nowDay = "0" + nowDay; }
+
+//오늘 날짜 결과
+var todayDate = nowYear + "-" + nowMonth + "-" + nowDay;
+$('.todayday').text(String(todayDate));
 
 //---------------------------------------------------------------------------
 //오늘 날짜
