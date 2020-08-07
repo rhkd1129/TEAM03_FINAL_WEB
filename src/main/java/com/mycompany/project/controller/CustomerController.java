@@ -4,7 +4,9 @@ package com.mycompany.project.controller;
 import java.io.PrintWriter;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
+import com.mycompany.project.model.Comment;
 import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.OrderReceipt;
 import com.mycompany.project.model.Rmember;
@@ -166,12 +170,61 @@ public class CustomerController{
 
 	@PostMapping("/customer_join.do")
 	public String join(Cmember cmember) {
+		String mid = cmember.getMid();
 		customerService.join(cmember);
+		customerService.loginTryDate(mid);
 		return "redirect:/customer/customer_main.do";
 	}
+	
+	@PostMapping("/customer_r_review.do")
+	public String comment(ModelMap model, Comment comment, HttpSession session) {
+		String cmid = (String)session.getAttribute("sessionMid");	
+		comment.setCmid(cmid);
+		
+		customerService.insertComment(comment);
+		
+		/*double averageRating = customerService.averageRating(comment);
+		double avgRating = (Math.round(averageRating*10)/10.0);
+		System.out.println(averageRating);
+		System.out.println(avgRating);
+		
+		HashMap<String, Object> hashMap = new HashMap<>();
+		List<Comment> list = new ArrayList<>();
+		
+		list = customerService.reviewList(comment);
+		hashMap.put("review", list);
+		
+		System.out.println(hashMap);
+		
+		System.out.println(list);
+		
+		model.addAttribute("review", list);*/
+		
+		return "redirect:/customer/customer_r_info.do?rno=1";
+	}
+	
+	@GetMapping("/customer_r_review.do")
+	public String review(int rno, Model model, Comment comment) {
+		double averageRating = customerService.averageRating(comment);
+		double avgRating = (Math.round(averageRating*10)/10.0);
+		System.out.println(averageRating);
+		System.out.println(avgRating);
+		comment.setCavgrating(avgRating);
+		
+		HashMap<String, Object> hashMap = new HashMap<>();
+		List<Comment> list = new ArrayList<>();
+		
+		list = customerService.reviewList(comment);
+		hashMap.put("review", list);
+		
+		System.out.println(hashMap);
+		
+		System.out.println(list);
+		
+		model.addAttribute("review", list);
+		return "customer/customer_r_review";
+	}
 
-
-	// @ResponseBody
 	@PostMapping("/idcheck.do")
 	public void idCheck(String mid, HttpServletResponse response) throws Exception {
 		LOGGER.info("로거거거거거거거거거거걱거ㅓ");
@@ -221,11 +274,6 @@ public class CustomerController{
 		model.addAttribute("foodList", foodList);
 		model.addAttribute("beverageList", beverageList);
 		return "customer/customer_r_menu";
-	}
-
-	@GetMapping("/customer_r_review.do")
-	public String review(int rno, Model model) {
-		return "customer/customer_r_review";
 	}
 
 	@GetMapping("/customer_order_table.do")

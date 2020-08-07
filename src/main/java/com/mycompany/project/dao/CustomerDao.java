@@ -10,10 +10,13 @@ import org.springframework.stereotype.Repository;
 
 import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.Cmember;
+import com.mycompany.project.model.Comment;
 import com.mycompany.project.model.Fnb;
+
 import com.mycompany.project.model.OrderReceipt;
 import com.mycompany.project.model.Rmember;
 import com.mycompany.project.service.CustomerService;
+
 
 import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
 
@@ -21,9 +24,8 @@ import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
 public class CustomerDao extends EgovAbstractMapper{
 	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerDao.class);
 
-	public int insert(Cmember cmember) {
-		int crows = insert("cmember.insert", cmember);
-		return crows;
+	public void insert(Cmember cmember) {
+		insert("cmember.insert", cmember);
 	}
 
 	public List<Cmember> selectAll(int pageNo, int rowsPerPage) {
@@ -64,6 +66,10 @@ public class CustomerDao extends EgovAbstractMapper{
 		update("cmember.loginTryDate", mid);
 	}
 
+	public void updateLoginTryDate(String mid) {
+		update("cmember.loginTryDate", mid);
+	}
+
 	public int getFailCountByMid(String mid) {
 		int failCount = selectOne("cmember.getFailCountByMid", mid);
 		return failCount;
@@ -85,6 +91,20 @@ public class CustomerDao extends EgovAbstractMapper{
 
 	public void resetLoginLock(String mid) {
 		update("cmember.resetLoginLock", mid);
+	}
+
+	public void insertComment(Comment comment) {
+		insert("comment.insert", comment);
+	}
+
+	public double averageRating(Comment comment) {
+		double averageRating = selectOne("comment.averageRating", comment);
+		return averageRating;
+	}
+
+	public List<Comment> reviewList(Comment comment) {
+		List<Comment> reviewList = selectList("comment.selectAllByCno", comment);
+		return reviewList;
 	}
 
 	public int countbytoday() {
@@ -178,12 +198,12 @@ public class CustomerDao extends EgovAbstractMapper{
 		LOGGER.info("실행");
 		LOGGER.info(""+ono);
 		LOGGER.info(omid);
-		
+
 		Map<String, Object> map = new HashMap<>();
 		map.put("bono", ono);
 		map.put("bmid", omid);
-		
-		update("beforeOrder.udateBonoAtBo", map);	
+
+		update("beforeOrder.udateBonoAtBo", map);
 	}
 
 }

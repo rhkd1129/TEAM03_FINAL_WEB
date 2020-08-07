@@ -6,6 +6,7 @@
 			<typeAlias alias="cmember" type="com.mycompany.project.model.Cmember"/>
 			<typeAlias alias="rmember" type="com.mycompany.project.model.Rmember"/>
 			<typeAlias alias="amember" type="com.mycompany.project.model.Amember"/>
+			<typeAlias alias="comment" type="com.mycompany.project.model.Comment"/>
 			<typeAlias alias="fnb" type="com.mycompany.project.model.Fnb"/>
 			<typeAlias alias="beforeOrder" type="com.mycompany.project.model.BeforeOrder"/>
 			<typeAlias alias="orderReceipt" type="com.mycompany.project.model.OrderReceipt"/>

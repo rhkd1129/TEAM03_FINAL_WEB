@@ -14,11 +14,15 @@ import com.mycompany.project.dao.CustomerDao;
 
 import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.Cmember;
+
+import com.mycompany.project.model.Comment;
+
 import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.OrderReceipt;
 import com.mycompany.project.model.Rmember;
 
 import com.mycompany.project.model.CloginForm;
+
 
 
 
@@ -73,6 +77,10 @@ public class CustomerService {
 		return loginLock;
 	}
 
+	public void loginTryDate(String mid) {
+		customerDao.updateLoginTryDate(mid);
+	}
+
 	public String getLoginTryDate(CloginForm cloginForm) {
 		String loginTryDate = customerDao.getLoginTryDateByMid(cloginForm.getMid());
 		return loginTryDate;
@@ -92,6 +100,20 @@ public class CustomerService {
 		cmember.setMpassword(password);
 
 		customerDao.insert(cmember);
+	}
+
+	public void insertComment(Comment comment) {
+		customerDao.insertComment(comment);
+	}
+
+	public double averageRating(Comment comment) {
+		double averageRating = customerDao.averageRating(comment);
+		return averageRating;
+	}
+
+	public List<Comment> reviewList(Comment comment) {
+		List<Comment> reviewList = customerDao.reviewList(comment);
+		return reviewList;
 	}
 
 	public List<Cmember> getList(int pageNo, int rowsPerPage) {

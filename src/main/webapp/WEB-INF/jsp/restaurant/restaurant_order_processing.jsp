@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_order_queuecss.css">
 	</head>
 	<body>
-		<div class="orderlist" >
+		<div class="processinglist" >
 			<c:forEach var="orderReceipt" items="${processingList}">
 			<div class="order">
 				<table>
@@ -31,7 +31,7 @@
 							${orderReceipt.odetailaddr}
 						</td>
 						<td class="orederstatus">
-							<button>배달중</button>
+							<button>준비중</button>
 						</td>
 					</tr>
 				</table>
