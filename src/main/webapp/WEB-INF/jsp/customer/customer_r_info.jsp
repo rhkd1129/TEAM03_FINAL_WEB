@@ -32,11 +32,11 @@
 				}, 500);
 			}).scroll();
 		});
-		
+
 		var rno = ${rno}
-		
+
 		$(function(){
-			
+
 			$('#menu_tab').css({
 				'background-color' : '#ffffff',
 				'color': '#000000'
@@ -45,15 +45,15 @@
 				'color': '#ffffff',
 				'background-color' : '#313535',
 			})
-			
+
 			$.ajax({
-				type : "get", 
+				type : "get",
 				url : "customer_r_menu.do?rno="+rno,
-				success : function(result) { 
+				success : function(result) {
 					$(".restaurant_info_main").html(result);
 				}
 			});
-			
+
 			$.ajax({
 				type : "get",
 				url : "${pageContext.request.contextPath}/customer/customer_order_table.do?",
@@ -61,9 +61,9 @@
 					$("#floatMenu2").html(result);
 				}
 			});
-			
+
 		});
-		
+
 		function foodInsert(fno) {
 			var fno = fno
 			$.ajax({
@@ -74,7 +74,7 @@
 				}
 			});
 		}
-		
+
 		function foodDelete(bno) {
 			var fno = bno
 			$.ajax({
@@ -85,18 +85,23 @@
 				}
 			});
 		}
-		
-		
+
+
 	</script>
 	</head>
 	<body>
 		<div class="header">
 			<div class="navbar1">
 				<img class="zgiyo" src="${pageContext.request.contextPath}/resource/image/home/즈기요.png">
-	
+
 				<div class="boxbox">
-					<div class="login">로그인</div>
-					<div class="join">회원가입</div>
+          <c:if test="${sessionMid == null}">
+            <div class="login">로그인</div>
+            <div class="join">회원가입</div>
+          </c:if>
+          <c:if test="${sessionMid != null}">
+            <button type="button" class="logout">로그아웃</button>
+          </c:if>
 				</div>
 			</div>
 			<div class="navbar2" style="background-image: url('${pageContext.request.contextPath}/resource/image/home/customer_main_bg.png');">
@@ -105,9 +110,9 @@
 				</div>
 				<div class="address">
 					<form name="form" id="form" method="post">
-						<input type="text" name="currentPage" value="1" style="display:none;"/> 
-						<input type="text" name="countPerPage" value="100" style="display:none;"/> 
-						<input type="text" name="resultType" value="json" style="display:none;"/> 
+						<input type="text" name="currentPage" value="1" style="display:none;"/>
+						<input type="text" name="countPerPage" value="100" style="display:none;"/>
+						<input type="text" name="resultType" value="json" style="display:none;"/>
 						<input type="text" name="confmKey" value="U01TX0FVVEgyMDIwMDcyMjEwMTMyNDEwOTk3ODQ=" style="display:none;"/>
 						<input type="text" name="keyword" value="${fullAddr}" onkeydown="enterSearch();" style="width: 400px; height: 40px"/>
 						<input type="button" onClick="getAddr();" value="검색" style="height: 40px"/>
@@ -116,9 +121,9 @@
 				</div>
 			</div>
 		</div>
-	
-	 
-		<div class="restaurant_detail" id="restaurant_detail"> 
+
+
+		<div class="restaurant_detail" id="restaurant_detail">
 			<div class="restaurant_info" id="restaurant_info">
 				<div class="restaurant_title">
 					${rmember.rtitle}
@@ -135,14 +140,14 @@
 					content
 				</div>
 			</div>
-			
+
 			<div id="floatMenu" >
 				<div id="floatMenu1">주문표</div>
 				<div id="floatMenu2">content</div>
 			</div>
 		</div>
-	
-	
+
+
 		<!-- FOOTER START ======================================== -->
 		<div class="footermain1">
 			<div class="footer1-1">
@@ -153,7 +158,7 @@
 				<div class="footer1-2-5">즈기요사장님</div>
 				<div class="footer1-2-6">입점문의</div>
 				<div class="footer1-2-7">공지사항</div>
-	
+
 				<div class="foot1-2">
 					<img class="footimg1" src="${pageContext.request.contextPath}/resource/image/home/footer/face.png">
 					페이스북
@@ -164,22 +169,26 @@
 				</div>
 			</div>
 		</div>
-	
+
 		<div class="footermain2">
 			<img class="footimg3" src="${pageContext.request.contextPath}/resource/image/home/footer/footer.png">
 		</div>
 		<!-- FOOTER END ======================================== -->
 	</body>
-	
+
 	<script type="text/javascript">
 	$(".login").click(function(){
 	    location.href = "${pageContext.request.contextPath}/customer/customer_login.do";
 	});
-	
+
+  $(".logout").click(function(){
+      location.href = "${pageContext.request.contextPath}/customer/logout.do";
+  });
+
 	$(".join").click(function(){
 	    location.href = "${pageContext.request.contextPath}/customer/customer_join.do";
 	});
-	
+
 	$(".zgiyo").click(function(){
 	    location.href = "${pageContext.request.contextPath}/home/landingpage.do";
 	});

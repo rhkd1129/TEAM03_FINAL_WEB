@@ -23,11 +23,11 @@
 
 			<div class="boxbox">
 				<c:if test="${sessionMid == null}">
-					<div class="login"><a href="${pageContext.request.contextPath}/customer/customer_login.do"></a>로그인</div>
-					<div class="join"><a href="${pageContext.request.contextPath}/customer/customer_join.do"></a>회원가입</div>
+					<div class="login">로그인</div>
+					<div class="join">회원가입</div>
 				</c:if>
 				<c:if test="${sessionMid != null}">
-					<button type="button" class="logout" onclick="location.href='${pageContext.request.contextPath}/customer/logout.do'">로그아웃</button>
+					<button type="button" class="logout">로그아웃</button>
 				</c:if>
 			</div>
 		</div>
@@ -41,7 +41,7 @@
 					<input type="text" name="countPerPage" value="100" style="display:none;"/> 
 					<input type="text" name="resultType" value="json" style="display:none;"/> 
 					<input type="text" name="confmKey" value="U01TX0FVVEgyMDIwMDcyMjEwMTMyNDEwOTk3ODQ=" style="display:none;"/>
-					<input type="text" name="keyword" value="" onkeydown="enterSearch();" style="width: 400px; height: 40px"/>
+					<input type="text" name="keyword" value="" onkeydown="enterSearch();" style="width: 400px; height: 40px" autofocus="autofocus"/>
 					<input type="button" onClick="getAddr();" value="검색" style="height: 40px"/>
 					<div id="list"></div>
 				</form>
