@@ -141,7 +141,7 @@
 				<ul>
 					<li>아이디</li>
 					<li>
-						<form:input id="id" path="mid" style="width:500px; height:50px;"/>
+						<form:input id="id" path="mid" style="width:500px; height:50px;" autofocus="autofocus"/>
 					</li>
 					<li>비밀번호</li>
 					<li>

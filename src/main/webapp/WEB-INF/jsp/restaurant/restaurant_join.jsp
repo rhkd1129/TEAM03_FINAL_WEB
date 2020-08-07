@@ -147,6 +147,7 @@
 					<li>
 						<form:password id="password" path="apassword" style="width:500px; height:50px;"/>
 					</li>
+					
 					<li>이름</li>
 					<li>
 						<form:input id="name" path="aname" style="width:500px; height:50px;"/>

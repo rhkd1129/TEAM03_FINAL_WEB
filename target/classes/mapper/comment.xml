@@ -7,11 +7,11 @@
 			values (#{cno}, #{crno}, #{cmid}, #{crating}, NOW(), #{ccontent}, #{cmenu})
 		</insert>
 		
-		<select id="averageRating" resultType="float">
+		<select id="averageRating" resultType="double">
 			select avg(crating) from comment
 		</select>
 		
-		<select id="selectAllByCno" resultType="comment">
+		<select id="selectAllByCno" resultType="map">
 			select cno, crno, cmid, crating, cdate, ccontent, cmenu
 			from comment order by cno desc
 		</select>

@@ -4,17 +4,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.Cmember;
-
 import com.mycompany.project.model.Comment;
-
 import com.mycompany.project.model.Fnb;
-import com.mycompany.project.model.Rmember;
-
 
 import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
 
@@ -94,14 +89,13 @@ public class CustomerDao extends EgovAbstractMapper{
 		insert("comment.insert", comment);
 	}
 
-	public float averageRating(Comment comment) {
-		float averageRating = selectOne("comment.averageRating", comment);
+	public double averageRating(Comment comment) {
+		double averageRating = selectOne("comment.averageRating", comment);
 		return averageRating;
 	}
 
 	public List<Comment> reviewList(Comment comment) {
-		Map<String, String> map = new HashMap<>();
-		List<Comment> reviewList = selectList("comment.selectAllByCno", map);
+		List<Comment> reviewList = selectList("comment.selectAllByCno", comment);
 		return reviewList;
 	}
 

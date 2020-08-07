@@ -100,8 +100,8 @@ public class CustomerService {
 		customerDao.insertComment(comment);
 	}
 
-	public float averageRating(Comment comment) {
-		float averageRating = customerDao.averageRating(comment);
+	public double averageRating(Comment comment) {
+		double averageRating = customerDao.averageRating(comment);
 		return averageRating;
 	}
 

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.mycompany.project.model.Amember;
 import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.RloginForm;
 import com.mycompany.project.model.Rmember;
@@ -46,13 +47,13 @@ public class RestaurantController {
    }
    
    @GetMapping("/restaurant_join.do")
-   public String rjoinForm(Rmember rmember) {
+   public String rjoinForm(Amember amember) {
       return "restaurant/restaurant_join";
    }
    
    @PostMapping("/restaurant_join.do")
-   public String join(Rmember rmember) {
-      restaurantService.join(rmember);
+   public String join(Amember amember) {
+      restaurantService.join(amember);
       return "redirect:/restaurant/restaurant_login.do";
    }
    

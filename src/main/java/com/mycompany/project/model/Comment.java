@@ -10,7 +10,14 @@ public class Comment {
 	private Date cdate;
 	private String ccontent;
 	private String cmenu;
+	private double cavgrating;
 	
+	public double getCavgrating() {
+		return cavgrating;
+	}
+	public void setCavgrating(double cavgrating) {
+		this.cavgrating = cavgrating;
+	}
 	public int getCno() {
 		return cno;
 	}
