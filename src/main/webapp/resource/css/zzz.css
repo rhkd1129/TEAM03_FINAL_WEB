@@ -6,7 +6,7 @@
 	left: 400px;
 	width: 1520px;
 	height: 140px;
-	background-color: navy;
+/* 	background-color: navy; */
 	z-index: 1000;/* 1000으로 변경해야함 (실험시 300) */
 }
 
@@ -116,9 +116,9 @@
 	width: 650px;
 	height: 500px;
 	position: absolute;
-	right: 350px;
+	right: 355px;
 	bottom: 10px;
-	z-index: 351;
+	z-index: 500;
 	transform : rotate(3deg); 
     /* 드래그 막기 */   
     -ms-user-select: none; 
@@ -129,29 +129,50 @@
 }
 
 /* 과속 방지턱 */
-.speedbump{
-	width: 590px;
-	height: 3000px;
-	position: absolute;
-	top: 250px;
-	left: 700px;
-}
+/* .speedbump{ */
+/* 	width: 900px; */
+/* 	height: 200px; */
+/* 	position: absolute; */
+/* 	top: 50px; */
+/* 	left: 500px; */
+/* } */
 
-.realspeedbump{
-	width: 590px;
-	height: 3000px;
-	-webkit-animation: drive 4s infinite linear;
-    -moz-animation: drive 3s infinite linear;
-  	-ms-animation: drive 4s infinite linear;
-  	-o-animation: drive 4s infinite linear;
-     animation: drive 4s infinite linear;   
-}
+/* .realspeedbump{ */
+/* 	width: 900px; */
+/* 	height: 200px;   */
+/* 	/* 관찰자 시점을 설정 */ */
+/*     transform-style: preserve-3d; */
+/*     perspective: 500px; */
+/* } */
 
-.realspeedbump2{
-	width: 590px;
-	height: 100px;
-	margin-top: 0px;
-	background: repeating-linear-gradient(-45deg, white, white 10px, #F7D358 0, #F7D358 20px);	
+/* .realspeedbump2{ */
+/* 	width: 350px; */
+/* 	height: 100px; */
+/* 	margin-left: 480px; */
+/* 	background: repeating-linear-gradient(-45deg, white, white 10px, #F7D358 0, #F7D358 20px);	 */
+/*     transform: rotateX(40deg); */
+/*    animation-iteration-count:1; */
+/*    animation-timing-function:linear; */
+/*    animation-duration:9s; */
+/* } */
+
+/* .realspeedbump2{ */
+/*   animation-iteration-count1:1 */
+/* } */
+
+
+
+
+
+
+@-webkit-keyframes iteration-count{
+  from{
+    top: 50px;
+  }
+  to{
+    top: 1500px;
+    right: -1050px;
+  }
 }
 
 /* 차선 애니메이션 */

@@ -119,7 +119,7 @@
 								<c:forEach var="cmember" items="${cmemberlist}">
 									<tr class="mlistTR">
 										<td class="mlistidTD">${cmember.mid}</td>
-										<td class="mlistpwTD">${cmember.mpassword}</td>
+										<td style="overflow: hidden; text-overflow: ellipsis;" class="mlistpwTD">${cmember.mpassword}</td>
 										<td class="mlistnameTD">${cmember.mname}</td>
 										<td class="mlisttelTD">${cmember.mtel}</td>
 										<td class="mlistadressTD">${cmember.madress}</td>
@@ -187,6 +187,17 @@
 
 </body>
 <script type="text/javascript">
+/* 글자수 처리 */
+$(".mlistpwTD").each(function(){
+    var length = 5; //표시할 글자수 정하기
+
+    $(this).each(function(){
+        if( $(this).text().length >= length ){
+            $(this).text( $(this).text().substr(0,length)+'...') 
+        }
+    });
+});
+
 /* 가게 리스트 페이지 이동 Ajax */
 $(".golist2page").click(function(){
 	$.ajax({

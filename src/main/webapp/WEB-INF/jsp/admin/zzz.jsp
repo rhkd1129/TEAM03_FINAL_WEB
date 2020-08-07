@@ -28,12 +28,6 @@
       <div id='road'>
           <div class='center'>   
                  
-          		<!-- 방지턱 예제 -->
-          		<div class="speedbump">
-          			<div class="realspeedbump">
-          				<div class="realspeedbump2"></div>
-          			</div>
-          		</div>
           		<!-- 좌측 차선 -->
           		<div class="leftcarline"></div>
           		<!-- 우측 차선 -->
@@ -44,6 +38,13 @@
       </div>
     </div> 
 </div>
+
+<!-- 방지턱 예제 -->
+<!-- <div class="speedbump"> -->
+<!--     <div class="realspeedbump"> -->
+<!--      	<div class="realspeedbump2"></div> -->
+<!--     </div> -->
+<!-- </div> -->
 
 <!-- 데이터 페이지 -->
 <div class="datapage"></div>
@@ -110,6 +111,18 @@ setInterval(function(action){
 		$("#road").css("-o-animation","drive 3s infinite linear");	
 		$("#road").css("animation","drive 3s infinite linear");	
 	}	
+	
+// 	/* 방지턱 인식 되었을 때 */
+// 	if(Numrandom >= 61 && Numrandom < 100){
+// 		$(".realspeedbump2").css("display","block");
+// 		$(".realspeedbump2").css('-webkit-animation-name','iteration-count1');				
+		
+// 		$("#road").css("-webkit-animation","drive 3s infinite linear");	
+// 		$("#road").css("-moz-animation","drive 3s infinite linear");	
+// 		$("#road").css("-ms-animation","drive 2s infinite linear");	
+// 		$("#road").css("-o-animation","drive 3s infinite linear");	
+// 		$("#road").css("animation","drive 3s infinite linear");	
+// 	}	
 	
 }, 9000); 
 

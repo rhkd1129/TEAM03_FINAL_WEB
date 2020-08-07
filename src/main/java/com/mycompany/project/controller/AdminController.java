@@ -198,10 +198,16 @@ public class AdminController {
 		return "admin/smssend";
 	}	
 
-	//차트 예제1
+	//canvas1
 	@RequestMapping("/canvas.do")
 	public String canvas() {
 		return "admin/canvas";
+	}	
+
+	//canvas2
+	@RequestMapping("/canvas2.do")
+	public String canvas2() {
+		return "admin/canvas2";
 	}	
 	
 	//차트 예제2
