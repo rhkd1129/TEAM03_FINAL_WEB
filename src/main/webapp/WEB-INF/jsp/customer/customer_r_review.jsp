@@ -164,9 +164,9 @@
 				
 				<select name="menu" id="menu">
 					<option value='' selected>--선택--</option>
-						<c:forEach var="orderReceipt" items="${menuList}">
-							<option id="selectedMenu">${orderReceipt.osummary}</option>
-						</c:forEach>
+					<c:forEach var="orderReceipt" items="${menuList}">
+						<option id="selectedMenu">${orderReceipt.osummary}</option>
+					</c:forEach>
 				</select>
 				
 				<div style="margin-top:60px; float:left;">
