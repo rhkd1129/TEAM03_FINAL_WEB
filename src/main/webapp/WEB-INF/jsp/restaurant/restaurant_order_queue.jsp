@@ -13,9 +13,11 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 		<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_order_queuecss.css">
+		<script>
+		</script>
 	</head>
 	<body>
-		<div class="orderlist" >
+		<div class="orderlist" id="orderlist">
 			<c:forEach var="orderReceipt" items="${orderList}">
 			<div class="order">
 				<table>
