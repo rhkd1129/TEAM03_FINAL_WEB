@@ -192,6 +192,8 @@
 	$(".zgiyo").click(function(){
 	    location.href = "${pageContext.request.contextPath}/home/landingpage.do";
 	});
+	
+	
 	</script>
 	<script src="${pageContext.request.contextPath}/resource/script/customer_r_info.js"></script>
 </html>

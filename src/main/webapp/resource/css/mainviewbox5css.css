@@ -2733,8 +2733,8 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
   float: left;
   font-weight: bold;
   font-style: normal;
-  font-size: 17px;
-  line-height: 90px;
+  font-size: 16px;
+  line-height: 40px;
   text-align : center;
   letter-spacing: 0.3em;
   color: rgba(223,190,106,0.7);

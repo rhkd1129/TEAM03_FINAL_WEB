@@ -30,6 +30,7 @@ import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
 import com.mycompany.project.model.Comment;
 import com.mycompany.project.model.Fnb;
+import com.mycompany.project.model.OrderReceipt;
 import com.mycompany.project.model.Rmember;
 import com.mycompany.project.service.CustomerService;
 import com.mycompany.project.service.RestaurantService;
@@ -38,6 +39,7 @@ import com.mycompany.project.service.RestaurantService;
 @RequestMapping("/customer")
 public class CustomerController{
 	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
+	private OrderReceipt globalOr;
 
 	@Autowired
 	private CustomerService customerService;
@@ -244,10 +246,10 @@ public class CustomerController{
 	}
 
 	@GetMapping("/customer_search.do")
-	public String search(String roadAddr, String bdNm, String siNm, String emdNm,  Model model) {
+	public String search(String roadAddr, String bdNm, String siNm, String emdNm,  Model model, HttpSession session) {
 		String fullAddr = roadAddr + " " + bdNm;
 		List<Rmember> list = restaurantService.getRestaurantList(siNm, emdNm);
-		model.addAttribute("fullAddr", fullAddr);
+		session.setAttribute("fullAddr", fullAddr);
 		model.addAttribute("restaurantList", list);
 		LOGGER.info("실행");
 		LOGGER.info("" + list);
@@ -307,32 +309,35 @@ public class CustomerController{
 	}
 	
 	@GetMapping("/customer_payment.do")
-	public String payment(Model model, HttpSession session) {
+	public String payment(int rno, Model model, HttpSession session) {
 		String bmid = (String) session.getAttribute("sessionMid");
 		List<BeforeOrder> list = customerService.getOrderTable(bmid);
+		model.addAttribute("rno", rno);
 		model.addAttribute("orderTableList", list);
 		return "customer/customer_payment";
 	}
 	
-	@GetMapping("/customer_kakaopay.do")
-	public String kakaopay(HttpServletRequest request, HttpServletResponse response, int sum) {
-		String name = "김광희";
-	    String email = "rhkd1129@gmail.com";
-	    String phone = "010-7748-5699";
-	    String address = "서울특별시 송파구 백제고분로27길 8 301호";
-	    int totalPrice = sum;
-	    
-	    request.setAttribute("name", name);
-	    request.setAttribute("email", email);
-	    request.setAttribute("phone", phone);
-	    request.setAttribute("address", address);
-	    request.setAttribute("totalPrice", totalPrice);
+	@PostMapping("/customer_kakaopay.do")
+	public String checkOut(HttpServletRequest request, HttpServletResponse response, HttpSession session, OrderReceipt orderReceipt) {
+		String omid = (String) session.getAttribute("sessionMid");
+		orderReceipt.setOmid(omid);
 		
+		globalOr = orderReceipt;
+		
+		int totalPrice = orderReceipt.getOtotalprice();
+		request.setAttribute("totalPrice", totalPrice);
+		
+ 		
 		return "customer/customer_kakaopay";
 	}
 	
+	
 	@GetMapping("/customer_payment_success.do")
-	public String paymentSuccess(Model model, HttpSession session) {
+	public String paymentSuccess(HttpServletRequest request, HttpServletResponse response, Model model, HttpSession session) {
+		String omid = (String) session.getAttribute("sessionMid");
+		customerService.makeOrderInfo(globalOr);
+		int ono = customerService.getOnoByOmid(omid);
+		customerService.setOnoAtBo(ono, omid);
 		
 		return "customer/customer_payment_success";
 	}

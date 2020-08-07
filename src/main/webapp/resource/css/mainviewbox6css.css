@@ -2733,8 +2733,8 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
   float: left;
   font-weight: bold;
   font-style: normal;
-  font-size: 17px;
-  line-height: 90px;
+  font-size: 16px;
+  line-height: 45px;
   text-align : center;
   letter-spacing: 0.3em;
   color: rgba(223,190,106,0.7);
@@ -2757,7 +2757,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 
 .rightbox1-2{
    width: 250px;
-   height: 745px;
+   height: 742px;
    float: left;
    background-color: #0B2F3A;
 }
@@ -3531,11 +3531,26 @@ ul{
     background: #f1f7ff;
 }
 
+.oneperson{
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;	
+}
 
+.maping{
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;	
+}
 
-
-
-
+.maping2{
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;	
+}
 
 
 

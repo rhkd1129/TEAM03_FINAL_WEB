@@ -121,7 +121,7 @@
 								<c:forEach var="rmember" items="${rmemberlist}">
 									<tr class="rlistTR">
 										<td class="rlistidTD">${rmember.rid}</td>
-										<td class="rlistpwTD">${rmember.rtitle}</td>
+										<td style="overflow: hidden; text-overflow: ellipsis;" class="rlistpwTD">${rmember.rtitle}</td>
 										<td class="rlistnameTD">${rmember.rname}</td>
 										<td class="rlisttelTD">${rmember.rtel}</td>
 										<td class="rlistadressTD">${rmember.radress}</td>
@@ -190,6 +190,17 @@
 
 </body>
 <script>
+/* 글자수 처리 */
+$(".rlistpwTD").each(function(){
+    var length = 5; //표시할 글자수 정하기
+
+    $(this).each(function(){
+        if( $(this).text().length >= length ){
+            $(this).text( $(this).text().substr(0,length)+'...') 
+        }
+    });
+});
+
 /* 회원 리스트 페이지 이동 Ajax */
 $(".golist1page").click(function(){
 	$.ajax({
@@ -230,11 +241,19 @@ $(".btnHome9").click(function(){
 /* 오토모드 페이지 이동 Ajax */
 $(".btnHome21").click(function(){
 	location.href = "${pageContext.request.contextPath}/admin/mainviewbox5.do";
+	var message = new Paho.MQTT.Message("AutoChg");
+	message.destinationName = "/Frame/Auto";
+	message.qos = 0;
+	client.send(message);		
 });
 
 /* 수동 페이지 이동 Ajax */
 $(".btnHome24").click(function(){
 	location.href = "${pageContext.request.contextPath}/admin/mainviewbox6.do";
+	var message = new Paho.MQTT.Message("ManualChg");
+	message.destinationName = "/Frame/Auto";
+	message.qos = 0;
+	client.send(message);		
 });
 
 /* 차트 페이지 이동 Ajax */

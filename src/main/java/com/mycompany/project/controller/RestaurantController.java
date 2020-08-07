@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.project.model.Amember;
 import com.mycompany.project.model.Fnb;
+import com.mycompany.project.model.OrderReceipt;
 import com.mycompany.project.model.RloginForm;
 import com.mycompany.project.model.Rmember;
 import com.mycompany.project.service.RestaurantService;
@@ -58,12 +59,22 @@ public class RestaurantController {
    }
    
    @GetMapping("/restaurant_order_queue.do")
-   public String orderQueue() {
+   public String orderQueue(int rno, Model model) {
+	  List<OrderReceipt> orderList = restaurantService.getOrderList(rno);
+	  model.addAttribute("orderList", orderList);
       return "restaurant/restaurant_order_queue";
    }
    
+   @GetMapping("/restaurant_order_takeover.do")
+   public String takeOver(int ono, Model model) {
+	   restaurantService.takeoverOrder(ono);
+	   return "restaurant/restaurant_order_queue";
+   }
+   
    @GetMapping("/restaurant_order_processing.do")
-   public String orderProcessing() {
+   public String orderProcessing(int rno, Model model) {
+	   	List<OrderReceipt> processingList = restaurantService.getProcessingList(rno);
+		 model.addAttribute("processingList", processingList);
       return "restaurant/restaurant_order_processing";
    }
    

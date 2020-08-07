@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.mycompany.project.model.Fnb;
+import com.mycompany.project.model.OrderReceipt;
 import com.mycompany.project.model.Rmember;
 
 import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
@@ -157,6 +158,21 @@ public class RestaurantDao extends EgovAbstractMapper{
 	public Rmember selecRestaurantInfoByRno(int rno) {
 		Rmember rmember = selectOne("rmember.selectByRno", rno);
 		return rmember;
+	}
+
+	public List<OrderReceipt> selectOrderByOrno(int orno) {
+		List<OrderReceipt> list = selectList("orderReceipt.selectOrderByOrno", orno);
+		return list;
+	}
+
+	public void udateByTakeover(int ono) {
+		update("orderReceipt.udateByTakeover", ono);
+		
+	}
+
+	public List<OrderReceipt> selectProcessingByOrno(int orno) {
+		List<OrderReceipt> list = selectList("orderReceipt.selectProcessingByOrno", orno);
+		return list;
 	}
 
 }

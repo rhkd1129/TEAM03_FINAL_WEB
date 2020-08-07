@@ -1166,7 +1166,9 @@ a:hover {
    height: 50px;   
    text-align: center;
    font-size: 13px;
-    border-bottom: 1px solid #dee2e6;   
+   border-bottom: 1px solid #dee2e6;  
+   text-overflow: ellipsis;
+   overflow: hidden; 
 }
 
 .rlistTR{
@@ -1185,7 +1187,7 @@ a:hover {
 
 .mlistpwTD{
    width: 150px;
-   text-align: center;      
+   text-align: center;  
 }
 
 .mlistnameTD{

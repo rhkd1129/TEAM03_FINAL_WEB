@@ -13,8 +13,30 @@
 		<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 		<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_order_queuecss.css">
 	</head>
 	<body>
-		<h5 class="alert alert-success">/xxx.jsp</h5>
+		<div class="orderlist" >
+			<c:forEach var="orderReceipt" items="${processingList}">
+			<div class="order">
+				<table>
+					<tr>
+						<td class="oredertime">	
+							<fmt:formatDate value="${orderReceipt.odate}" pattern="HH:mm"/>
+						</td>
+						<td class="orederdetail">
+							${orderReceipt.ototalprice}원 <br>
+							${orderReceipt.osummary} <br>
+							${orderReceipt.ofulladdr} 
+							${orderReceipt.odetailaddr}
+						</td>
+						<td class="orederstatus">
+							<button>배달중</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</c:forEach>
+		</div>
 	</body>
 </html>
