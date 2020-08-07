@@ -153,7 +153,6 @@
 		</div>
 	
 		<h1 style="margin-top:20px; margin-bottom:50px;">Customer Review</h1>
-
 			<form id="commentForm" method="post">
 				<table>
 					<tr>
@@ -162,29 +161,21 @@
 						<th class="avgrating">별점 평균: ${comment.cavgrating}</th>
 					</tr>
 				</table>
-				<%-- <table>
-					<tr>
-						<th id="rateYo"></th>
-						<th class="counter" id="rating" style="font-size:30px; padding-left:5px; padding-top:20px;"></th>
-						<th style="float:left; margin-left:50px; font-size:30px; padding-top:31px;">평균 별점: ${comment.cavgrating}</th>
-					</tr>
-				</table> --%>
-				<%-- <div id="rateYo" style="float:left"></div>
-				<div class="counter" id="rating" style="font-size:30px"></div>
-				<div style="float:left; margin-left:50px; font-size:30px;">${comment.cavgrating}</div> --%>
-					<select name="menu" id="menu">
-						<option value='' selected>--선택--</option>
-							<c:forEach var="orderReceipt" items="${menuList}">
-								<option id="selectedMenu">${orderReceipt.osummary}</option>
-							</c:forEach>
-					</select>
-					
+				
+				<select name="menu" id="menu">
+					<option value='' selected>--선택--</option>
+						<c:forEach var="orderReceipt" items="${menuList}">
+							<option id="selectedMenu">${orderReceipt.osummary}</option>
+						</c:forEach>
+				</select>
+				
 				<div style="margin-top:60px; float:left;">
 					<textarea id="commentReview" name="ccontent" rows="3" cols="85" style="resize:none"></textarea>
 				</div>
 				<div style="margin-top:57px; margin-left:10px; float:left;">
 					<input id="commentReview_savebtn" class="commentSubmit" type="button" value="등록" onclick="commentRegist()"/>
 				</div>
+				
 			</form>
 		
 		<table style="margin-top:180px">
@@ -211,13 +202,13 @@
 							<c:set var="texts" value="${comment.ccontent}"/>${fn:length(texts)}
 						</td>
 						<c:if test="${fn:length(texts) < 235}">
-							<td style="padding-bottom:50px;" colspan="7">${comment.ccontent}</td>
+							<td style="padding-bottom:50px; white-space:pre-line;" colspan="7">${comment.ccontent}</td>
 						</c:if>
 						<c:if test="${fn:length(texts) >= 235}">
 							<td style="padding-bottom:50px" colspan="7">
 								<details>
 									<summary>장문 리뷰 펼치기</summary>
-									<p>${comment.ccontent}</p>
+									<p style="white-space:pre-line;">${comment.ccontent}</p>
 								</details>
 							</td>
 						</c:if>
