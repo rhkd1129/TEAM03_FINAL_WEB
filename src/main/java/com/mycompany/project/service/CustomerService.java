@@ -264,6 +264,14 @@ public class CustomerService {
 		
 	}
 
+	public List<OrderReceipt> getMenuList(String mid) {
+		List<OrderReceipt> list = customerDao.selectMenuListByOmid(mid);
+		return list;
+	}
+
+
+	
+
 
 
 

@@ -183,45 +183,32 @@ public class CustomerController{
 		
 		customerService.insertComment(comment);
 		
-		/*double averageRating = customerService.averageRating(comment);
-		double avgRating = (Math.round(averageRating*10)/10.0);
-		System.out.println(averageRating);
-		System.out.println(avgRating);
-		
-		HashMap<String, Object> hashMap = new HashMap<>();
-		List<Comment> list = new ArrayList<>();
-		
-		list = customerService.reviewList(comment);
-		hashMap.put("review", list);
-		
-		System.out.println(hashMap);
-		
-		System.out.println(list);
-		
-		model.addAttribute("review", list);*/
-		
 		return "redirect:/customer/customer_r_info.do?rno=1";
 	}
 	
 	@GetMapping("/customer_r_review.do")
-	public String review(int rno, Model model, Comment comment) {
+	public String review(HttpSession session, int rno, Model model, Comment comment, OrderReceipt orderReceipt) {
 		double averageRating = customerService.averageRating(comment);
 		double avgRating = (Math.round(averageRating*10)/10.0);
+		
+		String mid = (String) session.getAttribute("sessionMid");
+		
 		System.out.println(averageRating);
 		System.out.println(avgRating);
 		comment.setCavgrating(avgRating);
 		
-		HashMap<String, Object> hashMap = new HashMap<>();
 		List<Comment> list = new ArrayList<>();
-		
 		list = customerService.reviewList(comment);
-		hashMap.put("review", list);
-		
-		System.out.println(hashMap);
 		
 		System.out.println(list);
 		
-		model.addAttribute("review", list);
+		model.addAttribute("list", list);
+		
+		List<OrderReceipt> menuList = customerService.getMenuList(mid);
+		
+		System.out.println(menuList);
+		model.addAttribute("menuList", menuList);
+		
 		return "customer/customer_r_review";
 	}
 

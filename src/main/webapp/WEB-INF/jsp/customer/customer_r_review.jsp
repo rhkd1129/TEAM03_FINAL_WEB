@@ -36,6 +36,7 @@
 
 			function commentRegist() {
 	             var crating = document.getElementById('rating').innerText;
+	             var cmenu = $('#menu option:selected').val();
 	             var form = $('#commentForm')[0];
 
 	             // FormData 객체 생성
@@ -43,6 +44,7 @@
 
 	             // 코드로 동적으로 데이터 추가 가능
 	             formData.append("crating", crating);
+	             formData.append("cmenu", cmenu);
 
 	             $.ajax({
 	                 type: "POST",
@@ -107,6 +109,14 @@
 				position:absolute;
 				padding-left:550px;
 			}
+			
+			#menu {
+				position:absolute;
+				margin-left:350px;
+				margin-top:15px;
+				padding-right:50px;
+				
+			}
 		</style>
 		
 	</head>
@@ -116,7 +126,7 @@
 		</div>
 		<h3>사장님 한마디</h3>
 		<div>
-			안녕하세요! 교촌치킨 가락2호점입니다.<br>
+			안녕하세요! 교촌치킨 삼전점입니다.<br>
 			저희 가게를 찾아주셔서 감사드리구요. 조금 부족한 부분이 있어도
 			이해해주시고 응원해주셔서 정말 감사드립니다.
 			항상 철저한 위생과 서비스에 신경쓰도록 하겠습니다.
@@ -144,7 +154,6 @@
 	
 		<h1 style="margin-top:20px; margin-bottom:50px;">Customer Review</h1>
 
-		<c:if test="${sessionMid != null}">
 			<form id="commentForm" method="post">
 				<table>
 					<tr>
@@ -163,7 +172,13 @@
 				<%-- <div id="rateYo" style="float:left"></div>
 				<div class="counter" id="rating" style="font-size:30px"></div>
 				<div style="float:left; margin-left:50px; font-size:30px;">${comment.cavgrating}</div> --%>
-				
+					<select name="menu" id="menu">
+						<option value='' selected>--선택--</option>
+							<c:forEach var="orderReceipt" items="${menuList}">
+								<option id="selectedMenu">${orderReceipt.osummary}</option>
+							</c:forEach>
+					</select>
+					
 				<div style="margin-top:60px; float:left;">
 					<textarea id="commentReview" name="ccontent" rows="3" cols="85" style="resize:none"></textarea>
 				</div>
@@ -171,7 +186,6 @@
 					<input id="commentReview_savebtn" class="commentSubmit" type="button" value="등록" onclick="commentRegist()"/>
 				</div>
 			</form>
-		</c:if>
 		
 		<table style="margin-top:180px">
 			<thead>
@@ -180,11 +194,11 @@
 					<th style="text-align:center; padding-bottom:30px; width:100px;">ID</th>
 					<th style="text-align:center; padding-bottom:30px; width:150px;">메뉴</th>
 					<th style="text-align:center; padding-bottom:30px; width:50px;">별점</th>
-					<th style="text-align:center; padding-bottom:30px; width:150px;">주문일</th>
+					<th style="text-align:center; padding-bottom:30px; width:150px;">작성일</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="comment" items="${review}" varStatus="status">
+				<c:forEach var="comment" items="${list}" varStatus="status">
 					<tr>
 						<td style="width:50px; padding-bottom:30px;"><c:out value="${status.count}"></c:out></td>
 						<td style="text-align:center; width:100px; padding-bottom:30px;"><c:out value="${comment.cmid}"></c:out></td>

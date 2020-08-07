@@ -20,6 +20,9 @@
 			select * from order_receipt where orno = #{orno} and ostatus = 1 order by odate desc
 		</select>
 		
+		<select id="selectMenuListByOmid" resultType="orderReceipt">
+			select * from order_receipt where omid = #{omid}
+		</select>
 		
 		<update id="udateByTakeover">
 			update order_receipt set ostatus = 1

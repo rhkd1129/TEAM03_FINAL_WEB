@@ -12,11 +12,7 @@ import com.mycompany.project.model.BeforeOrder;
 import com.mycompany.project.model.Cmember;
 import com.mycompany.project.model.Comment;
 import com.mycompany.project.model.Fnb;
-
 import com.mycompany.project.model.OrderReceipt;
-import com.mycompany.project.model.Rmember;
-import com.mycompany.project.service.CustomerService;
-
 
 import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
 
@@ -205,5 +201,12 @@ public class CustomerDao extends EgovAbstractMapper{
 
 		update("beforeOrder.udateBonoAtBo", map);
 	}
+
+	public List<OrderReceipt> selectMenuListByOmid(String omid) {
+		List<OrderReceipt> list = selectList("orderReceipt.selectMenuListByOmid", omid);
+		return list;
+	}
+
+	
 
 }
