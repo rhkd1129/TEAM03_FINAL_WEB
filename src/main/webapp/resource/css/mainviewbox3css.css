@@ -29,7 +29,7 @@ a:hover {
 .bodymainbox{
    width: 1920px;
    height: 937px;
-   background-color: white;
+      background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;   
    float: left;
 }
 .navbarmain{
@@ -691,7 +691,7 @@ a:hover {
 .viewmainbox{
    width: 1685px;
    height: 937px;
-   background-color: white;
+  	background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    float: left;
 }
 
@@ -718,7 +718,7 @@ a:hover {
 .viewbox3{
    width: 1685px;
    height: 937px;   
-   background-color: #31B404;
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;   
    float: left;   
 }
 
@@ -854,7 +854,7 @@ a:hover {
    width: 900px;
    height: 700px;
    float: left;
-   background-color: #E6E6E6;
+     background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;   
    margin-left: 395px;
    margin-top: 119px;
    box-shadow: 5px 5px 5px 5px gray;   
@@ -1456,96 +1456,107 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top: 5px solid yellow;
-   border-bottom: 5px solid white;   
+   border-bottom: 5px solid white;     background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;   
+   
 }
 .line1-4{
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top: 5px solid yellow;
-   border-bottom: 5px solid white;   
+   border-bottom: 5px solid white; 
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;     
 }
 .line1-5{
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top: 5px solid yellow;
-   border-bottom: 5px solid white;   
+   border-bottom: 5px solid white; 
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;   
 }
 .line1-6{
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top: 5px solid yellow;
-   border-bottom: 5px solid white;   
+   border-bottom: 5px solid white; 
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;   
 }
 .line1-7{
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top: 5px solid yellow;
-   border-bottom: 5px solid white;   
+   border-bottom: 5px solid white; 
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;   
 }
 .line1-8{
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top: 5px solid yellow;
-   border-bottom: 5px solid white;   
+   border-bottom: 5px solid white; 
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;    
 }
 .line1-9{
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top: 5px solid yellow;
-   border-bottom: 5px solid white;   
+   border-bottom: 5px solid white;  
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;   
 }
 .line1-10{
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top: 5px solid yellow;
-   border-bottom: 5px solid white;   
+   border-bottom: 5px solid white; 
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;    
 }
 .line1-11{
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top: 5px solid yellow;
    border-bottom: 5px solid white;   
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;   
 }
 .line1-12{
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top: 5px solid yellow;
-   border-bottom: 5px solid white;   
+   border-bottom: 5px solid white; 
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;   
 }
 .line1-13{
    width: 65px;
    height: 100px;
    float: left;
-   background-color: #888888;
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top: 5px solid yellow;
-   border-bottom: 5px solid white;   
+   border-bottom: 5px solid white;  
+      background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;  
 }
 
 .line2-3{
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-bottom: 5px solid yellow;
    border-top: 5px solid white;
 }
@@ -1553,7 +1564,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-bottom: 5px solid yellow;
    border-top: 5px solid white;
 }
@@ -1561,7 +1572,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-bottom: 5px solid yellow;
    border-top: 5px solid white;
 }
@@ -1569,7 +1580,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-bottom: 5px solid yellow;
    border-top: 5px solid white;
 }
@@ -1577,7 +1588,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-bottom: 5px solid yellow;
    border-top: 5px solid white;
 }
@@ -1585,7 +1596,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-bottom: 5px solid yellow;
    border-top: 5px solid white;
 }
@@ -1593,7 +1604,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-bottom: 5px solid yellow;
    border-top: 5px solid white;
 }
@@ -1601,7 +1612,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-bottom: 5px solid yellow;
    border-top: 5px solid white;
 }
@@ -1609,7 +1620,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-bottom: 5px solid yellow;
    border-top: 5px solid white;
 }
@@ -1617,7 +1628,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 100px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-bottom: 5px solid yellow;
    border-top: 5px solid white;
 }
@@ -1625,7 +1636,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 65px;
    height: 100px;
    float: left;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-bottom: 5px solid yellow;
    border-top: 5px solid white;
 }
@@ -1635,7 +1646,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    height: 80px;
    border-left: 5px solid yellow;
    border-right: 5px solid white;
-   background-color: #888888;
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    float: left;   
 }
 
@@ -1645,7 +1656,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    border-left: 5px solid white;
    border-right: 5px solid yellow;
    float: left;      
-   background-color: #888888;   
+background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat; 
 }
 
 
@@ -1653,17 +1664,17 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 20px;
    height: 100px;
    float: left;
-   background-color: #888888;
-   border-top: 5px solid yellow;   
-   border-bottom: 5px solid #848484;
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
+/*    border-top: 5px solid yellow;    */
+/*    border-bottom: 5px solid #848484; */
 }
 
 .jumpline2{
    width: 20px;
    height: 100px;
    float: left;
-   background-color: #888888;
-   border-top: 5px solid #848484;   
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
+/*    border-top: 5px solid #848484;    */
    border-bottom: 5px solid yellow;
 }
 
@@ -1671,7 +1682,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 100px;
    height: 22.8px;
    border-left: 5px solid yellow;
-   background-color: #888888;
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    float: left;   
 }
 
@@ -1680,14 +1691,14 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    height: 22.8px;
    border-right: 5px solid yellow;
    float: left;      
-   background-color: #888888;
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
 }
 
 .Sjumpline2{
    width: 20px;
    height: 100px;
    float: left;
-   background-color: #888888;
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top: 5px solid #848484;   
    border-bottom: 5px solid yellow;
    margin-left: 200px;   
@@ -1765,6 +1776,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 1280px;
    height: 530px;
    background-color: #31B404;
+   
 }
 
 .insideimageline1{
@@ -1889,7 +1901,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 10px;
    height: 10px;
    position: absolute;
-   background-color: #888888;
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    top: 190px;
    left: 420px;
 }
@@ -1898,7 +1910,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 10px;
    height: 10px;
    position: absolute;
-   background-color: #888888;   
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    top: 190px;
    right: 195px;   
 }
@@ -1907,7 +1919,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 12px;
    height: 12px;
    position: absolute;
-   background-color: #888888;
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    top: 729px;
    left: 422px;      
 }
@@ -1916,7 +1928,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    width: 12px;
    height: 12px;
    position: absolute;
-   background-color: #888888;
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    top: 729px;
    right: 195px;      
 }
@@ -2428,7 +2440,7 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
    bottom: 300px;   
    z-index: 10;
    transform : rotate(0deg);
-   background-color : #888888;
+     	background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
    border-top : 3px solid yellow;      
    border-bottom: 3px solid yellow;
    border-right: 3px solid yellow;      

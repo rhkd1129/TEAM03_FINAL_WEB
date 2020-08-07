@@ -15,34 +15,58 @@
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_maincss.css">
 	<script>
-		function registMenu() {
-			var frno = ${rno}
-		    var form = $('#menuReigister')[0];
-
-		    // FormData 객체 생성
-		    var formData = new FormData(form);
-
-		    // 코드로 동적으로 데이터 추가 가능.
-			formData.append("frno", frno);
-
-		    $.ajax({
-		        type: "POST",
-		        enctype: 'multipart/form-data',
-		        url: "${pageContext.request.contextPath}/restaurant/restaurant_manage_menu.do",
-		        data: formData,
-		        processData: false,
-		        contentType: false,
-		        cache: false,
-		        timeout: 600000,
-		        success: function (result) {
-		        	alert("메뉴가 성공적으로 등록되었습니다.");
-		            $(".content2").html(result);
-		        },
-		        error: function (e) {
-		            console.log("ERROR : ", e);
-		        }
-		    });
-		}
+		$(function(){
+			var rno = ${rno}
+			
+			$(function(){
+				client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
+				client.onMessageArrived = onMessageArrived;
+				client.connect({onSuccess:onConnect});
+			});
+			/* 연결 완료 및 클라이언트 값 구독 */
+			function onConnect() {
+				client.subscribe("/Camera");
+			}
+			
+			function onMessageArrived(message) {
+				if(message.destinationName == "/Camera") {
+					var cameraView = $("#cameraView").attr(
+							"src", "data:image/jpg;base64,"+message.payloadString);
+					
+				}
+				/* var message = new Paho.MQTT.Message("frame arrived");
+				message.destinationName = "/Frame/Flag";
+				message.qos = 0;
+				client.send(message); */
+			}			
+			
+			
+			$('#menu1').css({
+				'background-color' : '#ffffff',
+				'color' : '#000000'
+			})
+			$('#menu2').css({
+				'background-color' : '#d7dada',
+				'color' : '#a6abab'
+			})
+			$('#menu3').css({
+				'background-color' : '#d7dada',
+				'color' : '#a6abab'
+			})
+			$('#menu4').css({
+				'background-color' : '#d7dada',
+				'color' : '#a6abab'
+			})
+			
+			$.ajax({
+				type : "get", 
+				url : "restaurant_order_queue.do?rno="+rno,
+				success : function(result) { 
+					$(".content1").html(result)
+				}
+			});
+		})
+	
 	</script>
 </head>
 <body>
@@ -139,4 +163,34 @@
 
 </body>
 <script src="${pageContext.request.contextPath}/resource/script/restaurant_main.js"></script>
+<script>
+	function registMenu() {
+		var frno = ${rno}
+	    var form = $('#menuReigister')[0];
+	
+	    // FormData 객체 생성
+	    var formData = new FormData(form);
+	
+	    // 코드로 동적으로 데이터 추가 가능.
+		formData.append("frno", frno);
+	
+	    $.ajax({
+	        type: "POST",
+	        enctype: 'multipart/form-data',
+	        url: "${pageContext.request.contextPath}/restaurant/restaurant_manage_menu.do",
+	        data: formData,
+	        processData: false,
+	        contentType: false,
+	        cache: false,
+	        timeout: 600000,
+	        success: function (result) {
+	        	alert("메뉴가 성공적으로 등록되었습니다.");
+	            $(".content2").html(result);
+	        },
+	        error: function (e) {
+	            console.log("ERROR : ", e);
+	        }
+	    });
+	}
+</script>
 </html>

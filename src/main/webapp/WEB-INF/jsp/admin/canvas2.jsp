@@ -57,7 +57,7 @@ function component(width, height, color, x, y, type) {
     this.width = width;
     this.height = height;
     this.speed = 0;
-    this.angle = -Math.PI / 2;;		//Math.PI / 2;
+    this.angle = -Math.PI / 2;		//Math.PI / 2;
     this.moveAngle = 0;
     this.x = x;
     this.y = y;
@@ -146,22 +146,41 @@ function updateGameArea() {
 		console.log("하부 곡선");
 	}	  
 	//12번	
-	if (myGamePiece.x >= 155 && myGamePiece.x <= 400 && myGamePiece.y >= 449 && myGamePiece.y <= 450) {
+	if (myGamePiece.x >= 155 && myGamePiece.x <= 405 && myGamePiece.y >= 449 && myGamePiece.y <= 450) {
 		myGamePiece.speed=1; 		
 		console.log("하부 직선2");
 	}		
-// // 	//13번	
-// 	if (myGamePiece.x >= 160 && myGamePiece.x <= 400 && myGamePiece.y >= 444 && myGamePiece.y <= 450) {
-// 		myGamePiece.speed=1; 		
-// 		console.log("하부 직선");
-// 	}	              	
-          
-    
-    
-    
-    
-    
-    
+	//13번	
+	if (myGamePiece.x >= 405 && myGamePiece.x <= 450 && myGamePiece.y >= 405 && myGamePiece.y <= 450) {
+		myGamePiece.moveAngle = -1.302;
+		myGamePiece.speed=1; 		
+		console.log("하부 곡선");
+	}	    	
+	//14번	
+	if (myGamePiece.x >= 445 && myGamePiece.x <= 450 && myGamePiece.y <= 405 && myGamePiece.y >= 95) {
+		myGamePiece.speed=1; 		
+		console.log("우부 직선");
+	}	          
+	//15번	
+	if (myGamePiece.x >= 405 && myGamePiece.x <= 449 && myGamePiece.y <= 95 && myGamePiece.y >= 49.99) {
+		myGamePiece.moveAngle = -1.2715;
+		myGamePiece.speed=1; 		
+		console.log("우부 곡선");
+	}	 	
+	//조건 세팅
+	if(myGamePiece.y  <= 50 && myGamePiece.x >= 405 && myGamePiece.x <= 406.99){
+		console.log("위치 세팅 ------")
+		myGamePiece.y = 50;
+		myGamePiece.x = 404;
+		myGamePiece.angle = -Math.PI / 2;
+	}
+ 	//16번	
+	if (myGamePiece.x >= 380 && myGamePiece.x <= 404 && myGamePiece.y == 50 && myGamePiece.angle == -Math.PI / 2) {
+		myGamePiece.y = 50;
+		myGamePiece.speed=1; 		
+		console.log("최종 직선");
+	}	 
+	
 	console.log(myGamePiece.x, myGamePiece.y);
     myGamePiece.newPos();
     myGamePiece.update();
