@@ -61,16 +61,28 @@
 	             });
 	         }
 			
-			function fnMore2()
-			{
-			  document.getElementById("divMore2").style.display="";
-			  document.getElementById("bMore2").style.display="none";
+			function fnMore2() {
+				document.getElementById("divMore2").style.display="";
+				document.getElementById("bMore2").style.display="none";
 			}
 
-			function fnMore3()
-			{
-			  document.getElementById("divMore2").style.display="none";
-			  document.getElementById("bMore2").style.display="";
+			function fnMore3() {
+				document.getElementById("divMore2").style.display="none";
+				document.getElementById("bMore2").style.display="";
+			}
+			
+			function reviewBefore(count) {
+				var count = count;
+				
+				document.getElementById("reviewBefore" + count).style.display="";
+				document.getElementById("reviewAfter" + count).style.display="none";
+			}
+
+			function reviewAfter(count) {
+				var count = count;
+				
+				document.getElementById("reviewBefore" + count).style.display="none";
+				document.getElementById("reviewAfter" + count).style.display="";
 			}
 		</script>
 		<style>
@@ -115,7 +127,6 @@
 				margin-left:350px;
 				margin-top:15px;
 				padding-right:50px;
-				
 			}
 		</style>
 		
@@ -134,7 +145,7 @@
 		</div>
 		
 		<b id="bMore2" onclick="fnMore2()" 
-		 style="color: #f44336; cursor: pointer; font-size: 12pt; font-weight: normal;"> 
+		 style="color: #f44336; cursor: pointer; font-weight: normal;"> 
 		    더보기
 		</b>
 		<br />
@@ -146,7 +157,7 @@
 		  ex) 리뷰 참여, 허니스파클링<br>
 		  치킨과 함께 서비스도 받으시고 간단하게 리뷰 작성해주시면 됩니다!
 		  <b onclick="fnMore3()" 
-		  style="color: #f44336; cursor: pointer; font-size: 12pt; font-weight: normal;"> 
+		  style="color: #f44336; cursor: pointer; font-weight: normal;"> 
 		    접기
 		  </b>
 		
@@ -158,7 +169,7 @@
 					<tr>
 						<th id="rateYo"></th>
 						<th class="counter" id="rating"></th>
-						<th class="avgrating">별점 평균: ${comment.cavgrating}</th>
+						<th class="avgrating">평점 평균: ${comment.cavgrating}</th>
 					</tr>
 				</table>
 				
@@ -184,7 +195,7 @@
 					<th style="padding-bottom:30px; width:50px;">번호</th>
 					<th style="text-align:center; padding-bottom:30px; width:100px;">ID</th>
 					<th style="text-align:center; padding-bottom:30px; width:150px;">메뉴</th>
-					<th style="text-align:center; padding-bottom:30px; width:50px;">별점</th>
+					<th style="text-align:center; padding-bottom:30px; width:50px;">평점</th>
 					<th style="text-align:center; padding-bottom:30px; width:150px;">작성일</th>
 				</tr>
 			</thead>
@@ -205,11 +216,19 @@
 							<td style="padding-bottom:50px; white-space:pre-line;" colspan="7">${comment.ccontent}</td>
 						</c:if>
 						<c:if test="${fn:length(texts) >= 235}">
-							<td style="padding-bottom:50px" colspan="7">
-								<details>
-									<summary>장문 리뷰 펼치기</summary>
-									<p style="white-space:pre-line;">${comment.ccontent}</p>
-								</details>
+							<td style="padding-bottom:50px; white-space:pre-line;" colspan="7">
+								${fn:substring(comment.ccontent, 0, 236)}
+								<b id="reviewBefore${status.count}" onclick="reviewAfter(${status.count})"
+									style="color:#f44336; cursor:pointer; font-weight:normal;">
+									더보기
+								</b>
+								<b id="reviewAfter${status.count}" onclick="reviewBefore(${status.count})"
+									style="display:none; white-space:pre-line; font-weight:normal;">
+									${fn:substring(comment.ccontent, 236, fn:length(texts))}
+									<b style="color:#f44336; cursor:pointer; font-weight:normal;">
+										접기
+									</b>
+								</b>
 							</td>
 						</c:if>
 					</tr>

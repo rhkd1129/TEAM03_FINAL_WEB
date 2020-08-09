@@ -28,6 +28,7 @@
 				</c:if>
 				<c:if test="${sessionMid != null}">
 					<button type="button" class="logout">로그아웃</button>
+					<div class="orderDetails">주문내역</div>
 				</c:if>
 			</div>
 		</div>
@@ -172,6 +173,10 @@ $(".logout").click(function(){
 
 $(".join").click(function(){
     location.href = "${pageContext.request.contextPath}/customer/customer_join.do";
+});
+
+$(".orderDetails").click(function(){
+    location.href = "${pageContext.request.contextPath}/customer/customer_order_details.do";
 });
 
 $(".zgiyo").click(function(){
