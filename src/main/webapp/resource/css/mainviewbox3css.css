@@ -1665,7 +1665,7 @@ background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textu
    height: 100px;
    float: left;
    background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
-/*    border-top: 5px solid yellow;    */
+   border-top: 5px solid yellow;   
 /*    border-bottom: 5px solid #848484; */
 }
 
@@ -1698,8 +1698,7 @@ background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textu
    width: 20px;
    height: 100px;
    float: left;
-   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;
-   border-top: 5px solid #848484;   
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;  
    border-bottom: 5px solid yellow;
    margin-left: 200px;   
 }
@@ -1719,9 +1718,11 @@ background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textu
 }
 
 .range1{
-   width: 200px;
-   height: 200px;
+   width: 203px;
+   height: 203px;
    float: left;
+   margin-top: -3px;
+   margin-left: -3px;
    /* 드래그 막기 */   
    -ms-user-select: none; 
    -moz-user-select: -moz-none;
@@ -1731,9 +1732,11 @@ background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textu
 }
 
 .range2{
-   width: 200px;
-   height: 200px;
+   width: 203px;
+   height: 203px;
    float: right;
+   margin-top: -3px;
+   margin-right: -3px;
    transform : rotate(90deg);
    /* 드래그 막기 */   
    -ms-user-select: none; 
@@ -1744,8 +1747,10 @@ background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textu
 }
 
 .range3{
-   width: 200px;
-   height: 200px;
+   width: 203px;
+   height: 203px;
+   margin-bottom: -3px;
+   margin-left: -3px;
    transform : rotate(270deg);
    position: absolute;
    bottom: 8px;
@@ -1759,8 +1764,10 @@ background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textu
 }
 
 .range4{
-   width: 200px;
-   height: 200px;
+   width: 203px;
+   height: 203px;
+   margin-bottom: -3px;
+   margin-right: -3px;   
    transform : rotate(180deg);
    float: right;
    /* 드래그 막기 */   
@@ -1773,9 +1780,9 @@ background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textu
 
 .centerchartpage1{
    float: left;
-   width: 1280px;
+   width: 1285px;
    height: 530px;
-   background-color: #31B404;
+   background-color: white;
    
 }
 

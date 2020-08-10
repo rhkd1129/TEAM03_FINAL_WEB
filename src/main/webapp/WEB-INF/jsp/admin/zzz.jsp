@@ -50,7 +50,7 @@
 <div class="datapage"></div>
 
 <!-- Jetson 이미지 -->
-<img class="jetsoncar" src="${pageContext.request.contextPath}/resource/image/trafic/jetsoncar.png">
+<%-- <img class="jetsoncar" src="${pageContext.request.contextPath}/resource/image/trafic/jetsoncar.png"> --%>
 
 <!-- 표지판 이미지 -->
 <div class="traficboard">

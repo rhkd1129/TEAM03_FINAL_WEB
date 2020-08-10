@@ -17,7 +17,6 @@ canvas {
 </style>
 </head>
 <body onload="startGame()">
-
 <script>
 var myGamePiece;
 
@@ -52,12 +51,13 @@ var myGameArea = {
     }
 }
 
+
 function component(width, height, color, x, y, type) {
     this.type = type;
     this.width = width;
     this.height = height;
     this.speed = 0;
-    this.angle = -Math.PI / 2;		//Math.PI / 2;
+    this.angle = -Math.PI / 2;
     this.moveAngle = 0;
     this.x = x;
     this.y = y;

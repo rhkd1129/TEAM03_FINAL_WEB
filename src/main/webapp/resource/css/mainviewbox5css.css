@@ -2903,13 +2903,13 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
 .minimapping {
   position: absolute;
   display: inline-block;
-  bottom: 238px;
+  bottom: 236px;
   left: 460px;
-  width: 13px;
-  height: 13px;
+  width: 15px;
+  height: 15px;
   background-color: red;
   border : 3px solid #F5A9A9;
-  border-radius: 7.5px;
+  border-radius: 9px;
   -webkit-animation:blink 0.7s ease-in-out infinite alternate;
 }
 

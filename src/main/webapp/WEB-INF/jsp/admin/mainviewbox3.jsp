@@ -68,6 +68,11 @@
 					<img class="btnHomeimg9" src="${pageContext.request.contextPath}/resource/image/admin/message1.png">
 					<div class="btnHometext9">SMS</div>
 				</div>
+
+				<div class="btnHome23">
+					<img class="btnHomeimg23" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
+					<div class="btnHometext23">Chatting</div>
+				</div>				
 			</div>
 			<!-- /* Group2 */ -->
 			<div class=nav4>
@@ -88,11 +93,6 @@
 					<div class="btnHometext22">Data</div>
 				</div>
 
-				<div class="btnHome23">
-					<img class="btnHomeimg23" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
-					<div class="btnHometext23">CCTV</div>
-				</div>
-
 			</div>
 		</div>
 
@@ -101,7 +101,7 @@
 			<!-- member + Restaurant map ===========================================-->
 			<div class="viewbox3">
 				<!-- 좌측 상단 곡선 도로 -->
-				<img class="range1" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">
+				<img class="range1" src="${pageContext.request.contextPath}/resource/image/trafic/곡선이미지.png">
 				<!-- 상단 직선 도로 (상부) -->
 				<div class="jumpline"></div><div class="line1-3"></div><div class="jumpline"></div>
 				<div class="line1-4"></div><div class="jumpline"></div><div class="line1-5"></div><div class="jumpline"></div><div class="line1-6"></div><div class="jumpline"></div>
@@ -109,7 +109,7 @@
 				<div class="line1-10"></div><div class="jumpline"></div><div class="line1-11"></div><div class="jumpline"></div><div class="line1-12"></div><div class="jumpline"></div>
 				<div class="line1-13"></div>
 				<!-- 우측 상단 곡선 도로 -->
-				<img class="range2" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">
+				<img class="range2" src="${pageContext.request.contextPath}/resource/image/trafic/곡선이미지.png">
 				<!-- 상단 직선 도로 (하부) -->
 				<div class="jumpline2"></div><div class="line2-3"></div><div class="jumpline2"></div>
 				<div class="line2-4"></div><div class="jumpline2"></div><div class="line2-5"></div><div class="jumpline2"></div><div class="line2-6"></div><div class="jumpline2"></div>
@@ -145,7 +145,7 @@
 				</div>
 
 				<!-- 좌측 하단 곡선 도로 -->
-				<img class="range3" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">
+				<img class="range3" src="${pageContext.request.contextPath}/resource/image/trafic/곡선이미지.png">
 				<!-- 좌측 직선 도로 -->
 				<div class="bigrightline">
 					<div class="jumpline3"></div><div class="jumpline4"></div>
@@ -161,7 +161,7 @@
 					<div class="jumpline3"></div><div class="jumpline4"></div>
 				</div>
 				<!-- 하단 우측 곡선 도로 -->
-				<img class="range4" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성.png">
+				<img class="range4" src="${pageContext.request.contextPath}/resource/image/trafic/곡선이미지.png">
 				<!-- 하단 직선 도로 (상부) -->
 				<div class="jumpline"></div><div class="line1-3"></div><div class="jumpline"></div>
 				<div class="line1-4"></div><div class="jumpline"></div><div class="line1-5"></div><div class="jumpline"></div><div class="line1-6"></div><div class="jumpline"></div>
@@ -175,10 +175,10 @@
 				<div class="line2-10"></div><div class="jumpline2"></div><div class="line2-11"></div><div class="jumpline2"></div><div class="line2-12"></div><div class="jumpline2"></div>
 				<div class="line2-13"></div>
 				<!-- 인차선 곡선 도로 (동서남북) -->
-				<img class="insideimageline1" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">
-				<img class="insideimageline2" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">
-				<img class="insideimageline3" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">
-				<img class="insideimageline4" src="${pageContext.request.contextPath}/resource/image/admin/곡선완성S.png">
+				<img class="insideimageline1" src="${pageContext.request.contextPath}/resource/image/trafic/내각라인.png">
+				<img class="insideimageline2" src="${pageContext.request.contextPath}/resource/image/trafic/내각라인.png">
+				<img class="insideimageline3" src="${pageContext.request.contextPath}/resource/image/trafic/내각라인.png">
+				<img class="insideimageline4" src="${pageContext.request.contextPath}/resource/image/trafic/내각라인.png">
 
 				<!-- 곡선 차선 (중앙차선) -->
 				<img class="insideimageline5" src="${pageContext.request.contextPath}/resource/image/admin/곡선.png">
