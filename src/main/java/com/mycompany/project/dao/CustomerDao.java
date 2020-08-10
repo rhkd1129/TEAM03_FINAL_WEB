@@ -13,6 +13,7 @@ import com.mycompany.project.model.Cmember;
 import com.mycompany.project.model.Comment;
 import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.OrderReceipt;
+import com.mycompany.project.model.Rmember;
 
 import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
 
