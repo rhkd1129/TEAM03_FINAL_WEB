@@ -80,7 +80,7 @@
 
 				<div class="btnHome22">
 					<img class="btnHomeimg22" src="${pageContext.request.contextPath}/resource/image/admin/data.png">
-					<div class="btnHometext22">Talk</div>
+					<div class="btnHometext22">Chatting</div>
 				</div>
 
 				<div class="btnHome23">
