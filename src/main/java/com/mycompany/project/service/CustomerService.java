@@ -237,32 +237,33 @@ public class CustomerService {
 					max = temp;
 					maxIndex = i;
 				}
-				
+
 			osummary = boList.get(maxIndex).getBfname() + " 외 " + (boList.size()-1) + "개";
-				
-			} 
-		
+
+			}
+
 		} else {
 			osummary = boList.get(maxIndex).getBfname() + "1개";
 		}
-		
+
 		orderReceipt.setOsummary(osummary);
-		
+
 		customerDao.insertOrder(orderReceipt);
-		
+
 	}
 
 	public int getOnoByOmid(String omid) {
 		int ono = customerDao.selectOnobyOmid(omid);
-		
+
 		return ono;
 	}
 
 	public void setOnoAtBo(int ono, String omid) {
 		LOGGER.info("실행");
 		customerDao.udateOnoAtBo(ono, omid);
-		
+
 	}
+
 
 	public List<OrderReceipt> getMenuList(String mid) {
 		List<OrderReceipt> list = customerDao.selectMenuListByOmid(mid);
@@ -270,8 +271,14 @@ public class CustomerService {
 	}
 
 
-	
 
+
+
+
+	public String getRtitleByRno(int rno) {
+		String rtitle = customerDao.selectRtitleByRno(rno);
+		return rtitle;
+	}
 
 
 

@@ -13,6 +13,7 @@ public class OrderReceipt {
 	private String otel;
 	private String orequirement;
 	private int ototalprice;
+	private int ostatus;
 	
 	public String getOrequirement() {
 		return orequirement;
@@ -73,6 +74,12 @@ public class OrderReceipt {
 	}
 	public void setOtotalprice(int ototalprice) {
 		this.ototalprice = ototalprice;
+	}
+	public int getOstatus() {
+		return ostatus;
+	}
+	public void setOstatus(int ostatus) {
+		this.ostatus = ostatus;
 	}
 	
 	

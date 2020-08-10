@@ -320,11 +320,16 @@ public class CustomerController{
 	
 	
 	@GetMapping("/customer_payment_success.do")
-	public String paymentSuccess(HttpServletRequest request, HttpServletResponse response, Model model, HttpSession session) {
+	public String paymentSuccess(Model model, HttpSession session) {
 		String omid = (String) session.getAttribute("sessionMid");
 		customerService.makeOrderInfo(globalOr);
 		int ono = customerService.getOnoByOmid(omid);
 		customerService.setOnoAtBo(ono, omid);
+		
+		int rno = globalOr.getOrno();
+		String rtitle = customerService.getRtitleByRno(rno);
+		model.addAttribute("rtitle", rtitle);
+		
 		
 		return "customer/customer_payment_success";
 	}

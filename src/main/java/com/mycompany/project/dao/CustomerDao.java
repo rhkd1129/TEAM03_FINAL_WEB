@@ -202,11 +202,19 @@ public class CustomerDao extends EgovAbstractMapper{
 		update("beforeOrder.udateBonoAtBo", map);
 	}
 
+
 	public List<OrderReceipt> selectMenuListByOmid(String omid) {
 		List<OrderReceipt> list = selectList("orderReceipt.selectMenuListByOmid", omid);
 		return list;
 	}
 
-	
+
+
+	public String selectRtitleByRno(int rno) {
+		Rmember rmember = selectOne("rmember.selectByRno", rno);
+		return rmember.getRtitle();
+	}
+
+
 
 }

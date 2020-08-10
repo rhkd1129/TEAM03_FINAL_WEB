@@ -6,27 +6,32 @@
 			insert into order_receipt (orno, omid, osummary, odate, ofulladdr, odetailaddr, otel, orequirement, ototalprice, ostatus)
 			values (#{orno}, #{omid}, #{osummary}, NOW(), #{ofulladdr}, #{odetailaddr}, #{otel}, #{orequirement}, #{ototalprice}, 0)
 		</insert>
-		
+
 		<select id="selectOnobyOmid" resultType="int">
 			select ono from order_receipt
 			where omid = #{omid} order by odate desc limit 1
 		</select>
-		
+
 		<select id="selectOrderByOrno" resultType="orderReceipt">
 			select * from order_receipt where orno = #{orno} and ostatus = 0 order by odate desc
 		</select>
-		
+
 		<select id="selectProcessingByOrno" resultType="orderReceipt">
-			select * from order_receipt where orno = #{orno} and ostatus = 1 order by odate desc
+			select * from order_receipt where orno = #{orno} and ostatus>=1 and 2>=ostatus order by odate desc
 		</select>
-		
+
 		<select id="selectMenuListByOmid" resultType="orderReceipt">
 			select * from order_receipt where omid = #{omid}
 		</select>
-		
+
 		<update id="udateByTakeover">
 			update order_receipt set ostatus = 1
 			where ono = #{ono}
 		</update>
-		
+
+		<update id="updateByComplete">
+			update order_receipt set ostatus = 3
+			where ono = #{ono}
+		</update>
+
 	</mapper>

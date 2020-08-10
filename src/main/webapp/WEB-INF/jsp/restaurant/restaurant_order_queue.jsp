@@ -31,6 +31,9 @@
 							${orderReceipt.ofulladdr} 
 							${orderReceipt.odetailaddr}
 						</td>
+						<td class="orederbutton">
+							<button>주문 거절</button>
+						</td>
 						<td class="orederstatus">
 							<button onclick="takeOver(${orderReceipt.ono})">접수하기</button>
 						</td>

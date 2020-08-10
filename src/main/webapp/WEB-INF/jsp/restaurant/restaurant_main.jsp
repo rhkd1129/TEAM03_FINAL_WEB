@@ -13,6 +13,7 @@
 	<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_maincss.css">
 	<script>
 		$(function(){
@@ -26,13 +27,17 @@
 			/* 연결 완료 및 클라이언트 값 구독 */
 			function onConnect() {
 				client.subscribe("/Camera");
+				client.subscribe("/DeliveryCar/#");
 			}
 			
 			function onMessageArrived(message) {
-				if(message.destinationName == "/Camera") {
-					var cameraView = $("#cameraView").attr(
-							"src", "data:image/jpg;base64,"+message.payloadString);
+				if(message.destinationName == "/DeliveryCar/DeliveryComplete") {
 					
+					var ono = JSON.parse(message.payloadString).ono;
+					ono = parseInt(ono);
+					// var ono = JSON.parse(message.payloadString).ono;
+					console.log(ono)
+					completeDelivery(ono)
 				}
 				/* var message = new Paho.MQTT.Message("frame arrived");
 				message.destinationName = "/Frame/Flag";
@@ -67,6 +72,18 @@
 			});
 		})
 	
+		function completeDelivery(ono){
+			var rno = ${rno}
+			var ono = ono
+			$.ajax({
+				type : "get", 
+				url : "restaurant_order_delivery_complete.do?rno="+ rno + "&ono="+ono,
+				success : function(result) { 
+					$(".content1").html(result)
+				}
+			});
+		}
+		
 	</script>
 </head>
 <body>
@@ -108,7 +125,7 @@
 			</div>
 		</div>
 		
-		<div class="content1">
+		<div class="content1" style="overflow: auto;">
 		content1
 		</div>
 	</div>

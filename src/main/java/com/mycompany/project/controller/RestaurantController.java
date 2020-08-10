@@ -78,6 +78,13 @@ public class RestaurantController {
       return "restaurant/restaurant_order_processing";
    }
    
+   @GetMapping("/restaurant_order_delivery_complete.do")
+   public String deliveryComplete(int rno, int ono) {
+	   restaurantService.completeOrder(ono);
+	   
+	   return "redirect:/restaurant/restaurant_order_processing.do?rno="+rno;
+   }
+   
    @GetMapping("/restaurant_order_complete.do")
    public String orderComplete() {
       return "restaurant/restaurant_order_complete";
