@@ -206,4 +206,10 @@ public class CustomerDao extends EgovAbstractMapper{
 		update("beforeOrder.udateBonoAtBo", map);
 	}
 
+	public String selectRtitleByRno(int rno) {
+		Rmember rmember = selectOne("rmember.selectByRno", rno);
+		return rmember.getRtitle();
+	}
+
+
 }

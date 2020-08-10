@@ -173,6 +173,10 @@ public class RestaurantService {
 		return list;
 	}
 
+	public void completeOrder(int ono) {
+		restaurantDao.updateByComplete(ono);
+	}
+
 
 
 
