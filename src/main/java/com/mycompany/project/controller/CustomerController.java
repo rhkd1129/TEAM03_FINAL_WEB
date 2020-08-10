@@ -52,11 +52,6 @@ public class CustomerController{
 		return "customer/customer_main";
 	}
 	
-	@GetMapping("/customer_order_details.do")
-	public String orderDetails() {
-		return "customer/customer_order_details";
-	}
-	
 	@GetMapping("/customer_login.do")
 	public String loginForm(CloginForm cloginForm) {
 		return "customer/customer_login";

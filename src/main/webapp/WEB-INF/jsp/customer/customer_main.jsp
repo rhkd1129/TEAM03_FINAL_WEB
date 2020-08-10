@@ -174,10 +174,6 @@ $(".join").click(function(){
     location.href = "${pageContext.request.contextPath}/customer/customer_join.do";
 });
 
-$(".orderDetails").click(function(){
-    location.href = "${pageContext.request.contextPath}/customer/customer_order_details.do";
-});
-
 $(".zgiyo").click(function(){
     location.href = "${pageContext.request.contextPath}/home/landingpage.do";
 });
