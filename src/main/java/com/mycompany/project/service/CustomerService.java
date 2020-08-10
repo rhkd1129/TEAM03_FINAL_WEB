@@ -264,7 +264,10 @@ public class CustomerService {
 		
 	}
 
-
+	public String getRtitleByRno(int rno) {
+		String rtitle = customerDao.selectRtitleByRno(rno);
+		return rtitle;
+	}
 
 
 }

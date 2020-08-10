@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_maincss.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_paymentcss.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_payment_successcss.css">
 	<script src="${pageContext.request.contextPath}/resource/script/addressapi.js"></script>
 </head>
 <body>
@@ -34,8 +34,62 @@
 		</div>
 	</div>
  
-	<div class="paymentMain" style="font-size: 50px;">
-		결제 성공!
+	<div class="successMain">
+		<div class="successFrame">
+			<div class="successTop">
+				<div id="successTopHead">
+					주문 완료
+				</div>
+				<div id="successTopBody">
+					<table id="successTopBodyTable">
+						<tr id="successTopBody1"><td>주문 감사합니다.</td></tr>
+						<tr id="successTopBody2"><td>주문 요청이 완료되었으며 고객님의 휴대전화 번호로 주문 확인 문자가 곧 발송됩니다.</td></tr>					
+					</table>
+				</div>	
+			</div>
+			<div class="successMid">
+				<div id="successMidHead">
+					배달 정보
+				</div>
+				<div id="successMidBody">
+					<table>
+						<tr>
+						<td id="successMidBody1">주문식당</td>
+						<td id="successMidBody2">주문 감사합니다.</td>
+						</tr>
+						<tr>
+						<td id="successMidBody1">결제수단</td>
+						<td id="successMidBody2">주문 감사합니다.</td>
+						</tr>
+						<tr>
+						<td id="successMidBody1">주문자 정보</td>
+						<td id="successMidBody2">주문 감사합니다.</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="successBottom">
+				<div id="successBottomHead">
+					주문 내역
+				</div>
+				<div id="successBottomBody">
+					<table>
+						<%-- <c:forEach items="" var=""> --%>
+						<tr>
+						<td>항목</td>
+						<td>가격</td>
+						</tr>
+						<%-- </c:forEach> --%>
+						
+						<tr>
+						<td>총 결제 금액</td>
+						<td>00000원</td>
+						</tr>
+					</table>
+				
+				</div>
+			</div>
+		</div>
 	</div>
 	
 
@@ -88,7 +142,7 @@ $(".join").click(function(){
 });
 
 $(".zgiyo").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/landingpage.do";
+    location.href = "${pageContext.request.contextPath}/customer/customer_main.do";
 });
 
 </script>

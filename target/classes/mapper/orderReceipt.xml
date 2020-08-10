@@ -17,12 +17,16 @@
 		</select>
 		
 		<select id="selectProcessingByOrno" resultType="orderReceipt">
-			select * from order_receipt where orno = #{orno} and ostatus = 1 order by odate desc
+			select * from order_receipt where orno = #{orno} and ostatus>=1 and 2>=ostatus order by odate desc
 		</select>
-		
 		
 		<update id="udateByTakeover">
 			update order_receipt set ostatus = 1
+			where ono = #{ono}
+		</update>
+		
+		<update id="updateByComplete">
+			update order_receipt set ostatus = 3
 			where ono = #{ono}
 		</update>
 		

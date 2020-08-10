@@ -175,4 +175,9 @@ public class RestaurantDao extends EgovAbstractMapper{
 		return list;
 	}
 
+	public void updateByComplete(int ono) {
+		update("orderReceipt.updateByComplete", ono);
+		
+	}
+
 }

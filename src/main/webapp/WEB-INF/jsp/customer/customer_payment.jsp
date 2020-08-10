@@ -50,6 +50,8 @@
 			</div>
 		</div>
 	</div>
+	
+	
  	<form id="paymentDetail" method="post" action="${pageContext.request.contextPath}/customer/customer_kakaopay.do">
 		<div class="paymentMain">
 			<div class="paymentMainFrame">
