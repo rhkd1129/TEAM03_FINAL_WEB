@@ -121,7 +121,7 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 
 				<div class="btnHome23">
 					<img class="btnHomeimg23" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
-					<div class="btnHometext23">CCTV</div>
+					<div class="btnHometext23">Talk</div>
 				</div>
 
 			</div>
