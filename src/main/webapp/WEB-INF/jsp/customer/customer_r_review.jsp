@@ -22,7 +22,6 @@
 			var rating = 0;
 			$(function () {
 				
-				
 				console.log(rating);
 				  var $rateYo = $("#rateYo").rateYo({
 
