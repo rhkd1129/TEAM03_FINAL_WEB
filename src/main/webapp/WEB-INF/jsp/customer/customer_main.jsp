@@ -28,7 +28,6 @@
 				</c:if>
 				<c:if test="${sessionMid != null}">
 					<button type="button" class="logout">로그아웃</button>
-					<div class="orderDetails">주문내역</div>
 				</c:if>
 			</div>
 		</div>
