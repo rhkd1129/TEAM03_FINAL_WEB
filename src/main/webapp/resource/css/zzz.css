@@ -6,7 +6,7 @@
 	left: 400px;
 	width: 1520px;
 	height: 140px;
-/* 	background-color: navy; */
+	background-color: navy;
 	z-index: 1000;/* 1000으로 변경해야함 (실험시 300) */
 }
 
