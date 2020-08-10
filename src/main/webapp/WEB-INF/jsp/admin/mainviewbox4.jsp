@@ -63,6 +63,11 @@
 					<div class="btnHometext9">SMS</div>
 					<img class="ring9" src="${pageContext.request.contextPath}/resource/image/admin/ring.png">
 				</div>
+
+				<div class="btnHome23">
+					<img class="btnHomeimg23" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
+					<div class="btnHometext23">CCTV</div>
+				</div>
 			</div>
 			<!-- /* Group2 */ -->
 			<div class=nav4>
@@ -81,11 +86,6 @@
 				<div class="btnHome22">
 					<img class="btnHomeimg22" src="${pageContext.request.contextPath}/resource/image/admin/data.png">
 					<div class="btnHometext22">Chatting</div>
-				</div>
-
-				<div class="btnHome23">
-					<img class="btnHomeimg23" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
-					<div class="btnHometext23">CCTV</div>
 				</div>
 
 			</div>

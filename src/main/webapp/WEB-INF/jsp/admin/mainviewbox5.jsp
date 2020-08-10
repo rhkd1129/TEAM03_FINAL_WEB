@@ -98,6 +98,11 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					<img class="btnHomeimg9" src="${pageContext.request.contextPath}/resource/image/admin/message1.png">
 					<div class="btnHometext9">SMS</div>
 				</div>
+				
+				<div class="btnHome23">
+					<img class="btnHomeimg23" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
+					<div class="btnHometext23">Chatting</div>
+				</div>
 			</div>
 			<!-- /* Group2 */ -->
 			<div class=nav4>
@@ -119,10 +124,6 @@ $('.change_greeting2').text("7월 가게 목표량 : " + String(Rpersenttotalmem
 					<div class="btnHometext22">Data</div>
 				</div>
 
-				<div class="btnHome23">
-					<img class="btnHomeimg23" src="${pageContext.request.contextPath}/resource/image/admin/map.png">
-					<div class="btnHometext23">Chatting</div>
-				</div>
 
 			</div>
 		</div>
