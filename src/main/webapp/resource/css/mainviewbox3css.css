@@ -63,7 +63,7 @@ a:hover {
    width: 230px;
    height: 223px;
    background-color: #2A3F54;
-   margin-top: 50px;
+   margin-top: 100px;
 }
 
 .nav1img1{
@@ -1782,7 +1782,7 @@ background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textu
    float: left;
    width: 1285px;
    height: 530px;
-   background-color: white;
+   background:url(http://www.adobetutorialz.com/content_images/AdobePhotoshop/Textures&Patterns/road/ASPHALT3.JPG) repeat;  
    
 }
 
