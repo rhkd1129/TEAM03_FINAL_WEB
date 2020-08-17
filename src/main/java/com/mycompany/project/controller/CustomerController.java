@@ -170,6 +170,7 @@ public class CustomerController{
 
 	@PostMapping("/customer_join.do")
 	public String join(Cmember cmember) {
+		LOGGER.info("111로거");
 		String mid = cmember.getMid();
 		customerService.join(cmember);
 		customerService.loginTryDate(mid);
@@ -332,6 +333,11 @@ public class CustomerController{
 		
 		
 		return "customer/customer_payment_success";
+	}
+	
+	@RequestMapping("/customer_mobile_main.do")
+	public String mobileMain() {
+		return "customer/customer_mobile_main";
 	}
 	
 	

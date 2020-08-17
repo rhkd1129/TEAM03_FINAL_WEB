@@ -29,7 +29,7 @@
 									<div>${fnb.fname}</div>
 									<div>
 										<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/1.png"
-											 style="width: 50px; height: 50px">
+											 style="width: 50px; height: 50px;">
 									</div>
 								</a>
 							</div>

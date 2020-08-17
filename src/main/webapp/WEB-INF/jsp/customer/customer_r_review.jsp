@@ -173,7 +173,7 @@
 				</table>
 				
 				<select name="menu" id="menu">
-					<option value='' selected>--선택--</option>
+					<option value='' selected>--주문한 메뉴--</option>
 					<c:forEach var="orderReceipt" items="${menuList}">
 						<option id="selectedMenu">${orderReceipt.osummary}</option>
 					</c:forEach>
@@ -208,26 +208,23 @@
 						<td style="text-align:center; width:150px; padding-bottom:30px;"><c:out value="${comment.cdate}"></c:out></td>
 					</tr>
 					<tr>
-						<td style="padding-bottom:50px; display:none;">
+						<td style="display:none">
 							<c:set var="texts" value="${comment.ccontent}"/>${fn:length(texts)}
 						</td>
 						<c:if test="${fn:length(texts) < 235}">
-							<td style="padding-bottom:50px; white-space:pre-line;" colspan="7">${comment.ccontent}</td>
+							<td style="padding-bottom:20px; white-space:pre-line;" colspan="7">${comment.ccontent}<hr style="background:#f44336; height:1px;"></td>
 						</c:if>
 						<c:if test="${fn:length(texts) >= 235}">
-							<td style="padding-bottom:50px; white-space:pre-line;" colspan="7">
+							<td id="reviewBefore${status.count}" onclick="reviewAfter(${status.count})" style="padding-bottom:20px; white-space:pre-line;" colspan="7">
 								${fn:substring(comment.ccontent, 0, 236)}
-								<b id="reviewBefore${status.count}" onclick="reviewAfter(${status.count})"
-									style="color:#f44336; cursor:pointer; font-weight:normal;">
-									더보기
-								</b>
-								<b id="reviewAfter${status.count}" onclick="reviewBefore(${status.count})"
-									style="display:none; white-space:pre-line; font-weight:normal;">
-									${fn:substring(comment.ccontent, 236, fn:length(texts))}
-									<b style="color:#f44336; cursor:pointer; font-weight:normal;">
-										접기
-									</b>
-								</b>
+								<b style="color:#f44336; cursor:pointer; font-weight:normal;">더보기</b>
+								<hr style="background:#f44336; height:1px;">
+							</td>
+							<td id="reviewAfter${status.count}" onclick="reviewBefore(${status.count})"
+								style="display:none; white-space:pre-line; font-weight:normal;" colspan="7">
+								${fn:substring(comment.ccontent, 0, fn:length(texts))}
+								<b style="color:#f44336; cursor:pointer; font-weight:normal;">접기</b>
+								<hr style="background:#f44336; height:1px;">
 							</td>
 						</c:if>
 					</tr>
