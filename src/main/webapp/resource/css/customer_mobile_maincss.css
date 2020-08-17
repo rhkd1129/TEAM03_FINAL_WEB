@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+
+.swiper-container {
+	width:100%;
+}
+
+.address{
+	width: 93%;
+}
+
+#list{
+	overflow: auto;
+	width: 93%;
+	background-color: #ffffff;
+	position: relative;
+	z-index: 9999;
+}
+
+#searchedaddress{
+	height: 30%;
+}
+
+#eachaddress{
+	padding: 5px;
+}
