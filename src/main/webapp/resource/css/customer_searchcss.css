@@ -122,21 +122,32 @@ body{
 }
 
 .restaurant_logo{
+	padding-top: 19px;
+	padding-left: 16px; 
 	float: left;
-	width: 30%;
-	height: 100%;
-}
-
-.restaurant_summary{
-	float: left;
-	width: 70%;
+	width: 35%;
 	height: 100%;
 }
 
 .restaurant_logo_img{
 	width: 160px;
 	height: 160px;
+	border: 1px solid black;
 }
+
+
+.restaurant_summary{
+	padding-top: 19px;
+	float: left;
+	width: 65%;
+	height: 100%;
+}
+
+.restaurant_title{
+	font-size: 25px;
+	font-weight: bold;
+}
+
 
 /* foot=============================== */
 .footermain1{

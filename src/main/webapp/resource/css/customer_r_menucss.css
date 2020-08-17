@@ -20,14 +20,36 @@
 
 .food{
 	font-size: 20px;
+	font-weight: bold;
 	border-bottom: 1px solid #d7dada;
 	height: 120px;
 }
 
 .beverage{
 	font-size: 20px;
+	font-weight: bold;
 	border-bottom: 1px solid #d7dada;
 	height: 120px;
+}
+
+.food_summary{
+	padding-top: 10px;
+	padding-left: 25px;
+	width: 80%;
+	float: left;
+}
+
+.food_img{
+	padding-top: 10px;
+	padding-left: 25px;
+	width: 20%;
+	float: left;
+	
+}
+
+.fnb_img{
+	width: 100px; 
+	height: 100px;
 }
 
 ul{

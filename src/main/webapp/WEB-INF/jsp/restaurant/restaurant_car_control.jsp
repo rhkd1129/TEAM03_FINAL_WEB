@@ -33,19 +33,19 @@
 	
 	<script type="text/javascript">
 		$(function(){
-			client = new Paho.MQTT.Client("192.168.3.182", 61614, new Date().getTime().toString());
+			client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
 			client.onMessageArrived = onMessageArrived;
 			client.connect({onSuccess:onConnect});
 		});
 		/* 연결 완료 및 클라이언트 값 구독 */
 		function onConnect() {
-			client.subscribe("/Camera");
+			client.subscribe("/camerapub");
 			client.subscribe("/Message/#");
 		}
 		function onMessageArrived(message) {
-			if(message.destinationName == "/Camera") {
+			if(message.destinationName == "/camerapub") {
 				var cameraView = $("#cameraView").attr(
-						"src", "data:image/jpg;base64,"+message.payloadString);
+						"src", "data:image/jpg;base64," + message.payloadString);
 				
 			}
 			

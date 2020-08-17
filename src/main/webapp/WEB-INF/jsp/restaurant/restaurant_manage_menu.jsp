@@ -13,7 +13,6 @@
 		<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 		<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_order_queuecss.css">
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/restaurant_manage_menucss.css">
 		
 	</head>
@@ -21,48 +20,62 @@
 		<div class="menuRegistForm" style="height:100%">
 		<form id="menuReigister" method="post" enctype="multipart/form-data">
 			<ul>
-				<li>메뉴명</li>
-				<li>
+				<li style="height:50px; font-size: 25px; font-weight: bold;">메뉴명</li>
+				<li style="height:50px; font-size: 25px; font-weight: bold;">
 					<input name="fname"/>
 				</li>
-				<li>카테고리</li>
-				<li>
-					<select name="fcategory">
+				<li style="height:50px; font-size: 25px; font-weight: bold;">카테고리</li>
+				<li style="height:50px; font-size: 25px; font-weight: bold;">
+					<select style="height:50px; font-size: 25px; font-weight: bold;" name="fcategory">
 							<option>food</option>
 							<option>beverage</option>
 					</select>
 				</li>
-				<li>가격</li>
-				<li>
+				<li style="height:50px; font-size: 25px; font-weight: bold;">가격</li>
+				<li style="height:50px; font-size: 25px; font-weight: bold;">
 					<input type="text" name="fprice"/>
 				</li>
-				<li>대표 이미지</li>
-				<li>
+				<li style="height:50px; font-size: 25px; font-weight: bold;">대표 이미지</li>
+				<li style="height:50px; font-size: 25px; font-weight: bold;">
 					<input type="file" name="fimage"/>
 				</li>
 			</ul>
-			<input id="menuSubmit" type="button" value="확인" onclick="registMenu();">
+			<input style="margin-left: 40px;" class="btn btn-primary btn-lg" id="menuSubmit" type="button" value="확인" onclick="registMenu();">
 		</form>
 		</div>
 
 		
 		<div class="menuList" style="height:100%;">
 			<div class="foodList" style="height:50%; overflow:auto;">
-					<c:forEach var="fnb" items="${foodList}">
-						<div id="food" style="background-color: #d7dada">${fnb.fname}</div>
-						<div>
-							<img src="${pageContext.request.contextPath}/${fnb.fimage}">
+				<c:forEach var="fnb" items="${foodList}">
+					<div class="fnb">
+						<div class="fnb_summary">
+							<ul>
+								<li class="fnb_name">${fnb.fname}</li>
+								<li class="fnb_price">${fnb.fprice}원</li>
+							</ul>
 						</div>
-					</c:forEach>
+						<div class="fnb_img">
+							<img class="food_img" src="${pageContext.request.contextPath}/${fnb.fimage}">
+						</div>
+					</div>
+				</c:forEach>
 			</div>
 			
 			<div class="beverageList" style="height:50%; overflow:auto;">
-					<c:forEach var="fnb" items="${beverageList}">
-						<div id="beverage" style="background-color: #d7dada">${fnb.fname}</div>
-						<div>
-							<img src="${pageContext.request.contextPath}/${fnb.fimage}">
+				<c:forEach var="fnb" items="${beverageList}">
+					<div class="fnb">
+						<div class="fnb_summary">
+							<ul>
+								<li class="fnb_name">${fnb.fname}</li>
+								<li class="fnb_price">${fnb.fprice}원</li>
+							</ul>
 						</div>
-					</c:forEach>
+						<div class="fnb_img">
+							<img class="food_img" src="${pageContext.request.contextPath}/${fnb.fimage}">
+						</div>
+					</div>
+				</c:forEach>
 			</div>
 			
 		</div>
