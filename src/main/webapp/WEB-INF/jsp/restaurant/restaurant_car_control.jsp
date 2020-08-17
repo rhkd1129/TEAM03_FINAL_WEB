@@ -14,13 +14,9 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 		<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
-		
 	</head>
 	<body>
-		<h5 class="alert alert-success">/xxx.jsp</h5>
-		
 		<div class="movebutton">
-			<!-- 자동차 조종 방향키 -->
 			<button class="btn btn-danger btn-sm" id="left">◀</button>
 			<button class="btn btn-danger btn-sm" id="right">▶</button>
 			<button class="btn btn-danger btn-sm" id="up">▲</button>
@@ -29,23 +25,40 @@
 		</div>
 		<div class="ViewBox">
 			<img id = "cameraView" style="width:600px; height:399px">					
-		</div>
+		</div> 
+		<div id="status"></div>
+		<div id="ono"></div>
 	</body>
+	<script src="${pageContext.request.contextPath}/resource/script/index.js"></script>
+	
 	<script type="text/javascript">
 		$(function(){
-			client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
+			client = new Paho.MQTT.Client("192.168.3.182", 61614, new Date().getTime().toString());
 			client.onMessageArrived = onMessageArrived;
 			client.connect({onSuccess:onConnect});
 		});
 		/* 연결 완료 및 클라이언트 값 구독 */
 		function onConnect() {
 			client.subscribe("/Camera");
+			client.subscribe("/Message/#");
 		}
 		function onMessageArrived(message) {
 			if(message.destinationName == "/Camera") {
 				var cameraView = $("#cameraView").attr(
 						"src", "data:image/jpg;base64,"+message.payloadString);
 				
+			}
+			
+			if(message.destinationName == "/Message/Detection") {
+				var detectedList = message.payloadString
+				console.log(detectedList)
+			}
+			
+			if(message.destinationName == "/Message/Status") {
+				var ono = JSON.parse(message.payloadString).ono
+				var status = JSON.parse(message.payloadString).status
+				$('#status').text("status:" + status);
+				$('#ono').text("ono:" + ono);
 			}
 			/* var message = new Paho.MQTT.Message("frame arrived");
 			message.destinationName = "/Frame/Flag";
@@ -54,5 +67,4 @@
 		}
 	</script>
 	<script src="${pageContext.request.contextPath}/resource/script/restaurant_car_control.js"></script>
-	
 </html>

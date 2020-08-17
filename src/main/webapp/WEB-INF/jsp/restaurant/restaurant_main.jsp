@@ -84,6 +84,28 @@
 			});
 		}
 		
+		function takeOver(ono) {
+			var rno = ${rno};
+			var ono = ono;
+			$.ajax({
+				type : "get", 
+				url : "restaurant_order_takeover.do?rno="+ rno + "&ono="+ono,
+				success : function(result) { 
+					$(".content1").html(result);
+				}
+			})			
+			
+			message = {'ono' : ono}
+			
+			
+			var message = new Paho.MQTT.Message(JSON.stringify(message));
+			message.destinationName = "/Order/TakeOver";
+			message.qos = 0;
+			client.send(message);
+		}
+		
+		
+		
 	</script>
 </head>
 <body>

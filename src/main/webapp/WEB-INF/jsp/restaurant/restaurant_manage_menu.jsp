@@ -51,7 +51,7 @@
 					<c:forEach var="fnb" items="${foodList}">
 						<div id="food" style="background-color: #d7dada">${fnb.fname}</div>
 						<div>
-							<img src="${fnb.fimage}">
+							<img src="${pageContext.request.contextPath}/${fnb.fimage}">
 						</div>
 					</c:forEach>
 			</div>
@@ -59,6 +59,9 @@
 			<div class="beverageList" style="height:50%; overflow:auto;">
 					<c:forEach var="fnb" items="${beverageList}">
 						<div id="beverage" style="background-color: #d7dada">${fnb.fname}</div>
+						<div>
+							<img src="${pageContext.request.contextPath}/${fnb.fimage}">
+						</div>
 					</c:forEach>
 			</div>
 			

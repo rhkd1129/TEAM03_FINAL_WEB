@@ -46,11 +46,11 @@
 						<li>
 							<div class="beverage">
 								<a id="foodInsert" onclick="foodInsert(${fnb.fno});" >
-									<div>${fnb.fname}</div>
 									<div>
 										<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/1.png"
 											 style="width: 50px; height: 50px">
 									</div>
+									<div>${fnb.fname}</div>
 								</a>
 							</div>
 						</li>
