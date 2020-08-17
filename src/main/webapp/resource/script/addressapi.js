@@ -1,4 +1,5 @@
 function getAddr(){
+	console.log("실행")
 			// 적용예 (api 호출 전에 검색어 체크) 	
 	if (!checkSearchedWord(document.form.keyword)) {
 		return ;
@@ -18,6 +19,7 @@ function getAddr(){
 				alert(errCode+"="+errDesc);
 			}else{
 				if(jsonStr != null){
+					console.log(jsonStr)
 					makeListJson(jsonStr);
 				}
 			}
@@ -43,6 +45,7 @@ function makeListJson(jsonStr){
 		htmlStr += "</tr>"; 
 	});
 	htmlStr += "</table></div>";
+	console.log(htmlStr)
 	$("#list").html(htmlStr);
 }
 
