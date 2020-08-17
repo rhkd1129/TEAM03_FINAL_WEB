@@ -26,10 +26,21 @@
 						<li>
 							<div class="food">
 								<a id="foodInsert" onclick="foodInsert(${fnb.fno});" >
+
 									<div>${fnb.fname}</div>
 									<div>
 										<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/1.png"
 											 style="width: 50px; height: 50px;">
+
+									<div class="food_summary">
+										<ul>
+											<li class="fnb_name">${fnb.fname}</li>
+											<li class="fnb_price">${fnb.fprice}원</li>
+										</ul>
+									</div>
+									<div class="food_img">
+										<img class="fnb_img" src="${pageContext.request.contextPath}/${fnb.fimage}">
+
 									</div>
 								</a>
 							</div>
@@ -46,10 +57,14 @@
 						<li>
 							<div class="beverage">
 								<a id="foodInsert" onclick="foodInsert(${fnb.fno});" >
-									<div>${fnb.fname}</div>
-									<div>
-										<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/1.png"
-											 style="width: 50px; height: 50px">
+									<div class="food_summary">
+										<ul>
+											<li class="fnb_name">${fnb.fname}</li>
+											<li class="fnb_price">${fnb.fprice}원</li>
+										</ul>
+									</div>
+									<div class="food_img">
+										<img class="fnb_img" src="${pageContext.request.contextPath}/${fnb.fimage}">
 									</div>
 								</a>
 							</div>
@@ -57,20 +72,20 @@
 					</c:forEach>
 				</ul>
 			</div>
-			
+
 		</div>
 	</body>
 	<script>
-		
-	
+
+
 		$('.foodtap').click(function() {
 			$(".foodList").toggle();
-			
+
 		});
-		
+
 		$('.beveragetap').click(function() {
 			$(".beverageList").toggle();
-			
+
 		});
 	</script>
 </html>

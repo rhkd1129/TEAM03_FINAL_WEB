@@ -45,16 +45,5 @@
 		</div>
 	</body>
 	<script>
-		function takeOver(ono) {
-			var ono = ono;
-			$.ajax({
-				type : "get", 
-				url : "restaurant_order_takeover.do?ono="+ono,
-				success : function(result) { 
-					$(".content1").html(result);
-				}
-			})			
-		}
-		
 	</script>
 </html>

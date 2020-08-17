@@ -8,7 +8,7 @@ public class Rmember {
 	private String rpassword;
 	private String rname;
 	private String rtitle;
-	private String radress;
+	private String raddress;
 	private String rtel;
 	private String rcategory;
 	private Date rdate;
@@ -43,11 +43,11 @@ public class Rmember {
 	public void setRtitle(String rtitle) {
 		this.rtitle = rtitle;
 	}
-	public String getRadress() {
-		return radress;
+	public String getRaddress() {
+		return raddress;
 	}
-	public void setRadress(String radress) {
-		this.radress = radress;
+	public void setRaddress(String radress) {
+		this.raddress = radress;
 	}
 	public String getRtel() {
 		return rtel;

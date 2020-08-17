@@ -8,14 +8,45 @@
 .menuList{
 	width: 60%;
 	float: left;
+	border-left: 3px solid black;
 }
 
-#food{
-	height: 150px;
-	border-bottom: 2px solid #a6abab;
+.foodList{
+	border-bottom: 2px solid black;
 }
 
-#beverage{
-	height: 150px;
-	border-bottom: 2px solid #a6abab;
+ul{
+	list-style:none;
+}
+
+.fnb{
+	padding-top: 5px;
+	height: 160px;
+	border-bottom: 1px solid #a6abab;
+}
+
+.fnb_summary{
+	width: 80%;
+	float: left;
+}
+
+.fnb_name{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.fnb_price{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.fnb_img{
+	padding-left: 15px;
+	width: 20%;
+	float: left;
+}
+
+.food_img{
+	width: 150px;
+	height: 150px; 
 }

@@ -66,9 +66,9 @@ public class RestaurantController {
    }
    
    @GetMapping("/restaurant_order_takeover.do")
-   public String takeOver(int ono, Model model) {
+   public String takeOver(int rno, int ono, Model model) {
 	   restaurantService.takeoverOrder(ono);
-	   return "restaurant/restaurant_order_queue";
+	   return "redirect:/restaurant/restaurant_order_queue.do?rno="+rno;
    }
    
    @GetMapping("/restaurant_order_processing.do")
@@ -113,10 +113,10 @@ public class RestaurantController {
       fnb.setFcategory(fcategory);
       fnb.setFname(fname);
       fnb.setFprice(fprice);
-      String saveDir = "C:/Temp/Images/Restaurant/menu/";
+      String saveDir = "C:/Temp/Images/menu/";
       String saveFileName = fimage.getOriginalFilename();
       String imageUrl = saveDir + fimage.getOriginalFilename();
-      fnb.setFimage(imageUrl);
+      fnb.setFimage("images/menu/" + saveFileName);
       File filePath = new File(saveDir + saveFileName);
       fimage.transferTo(filePath);
       LOGGER.info("실행");

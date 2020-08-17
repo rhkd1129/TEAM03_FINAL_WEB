@@ -56,11 +56,13 @@
 		<div class="restaurant" style="cursor:pointer;" 
 			onclick="location.href='${pageContext.request.contextPath}/customer/customer_r_info.do?rno=${restaurant.rno}';">
 			<div class="restaurant_logo">
-				<img class="restaurant_logo_img" src="${pageContext.request.contextPath}/resource/image/restaurant/logo/${restaurant.rid}.png">
+				<img class="restaurant_logo_img" src="${pageContext.request.contextPath}/images/logo/${restaurant.rno}.png">
 			</div>
 			<div class="restaurant_summary">
-				<table>
+				<table class="restaurant_summary_table">
 					<tr class="restaurant_title"><td>${restaurant.rtitle}</td></tr>
+					<tr class="restaurant_address"><td>${restaurant.raddress}</td></tr>
+					<tr class="restaurant_tel"><td>${restaurant.rtel}</td></tr>
 				</table>
 			</div>
 		</div>

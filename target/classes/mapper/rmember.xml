@@ -3,32 +3,32 @@
 
 	<mapper namespace="rmember">
 		<insert id="insert" parameterType="rmember" useGeneratedKeys="true" keyProperty="rno">
-			insert into restaurant (rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate)
-			values (#{rid}, #{rpassword}, #{rname}, #{rtitle}, #{radress}, #{rtel}, #{rcategory}, NOW())
+			insert into restaurant (rid, rpassword, rname, rtitle, raddress, rtel, rcategory, rdate)
+			values (#{rid}, #{rpassword}, #{rname}, #{rtitle}, #{raddress}, #{rtel}, #{rcategory}, NOW())
 		</insert>
 
 
 
 		<select id="selectByRid" parameterType="String" resultType="rmember">
-			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate from restaurant
+			select rid, rpassword, rname, rtitle, raddress, rtel, rcategory, rdate from restaurant
 			where rid = #{rid}
 		</select>
 
 
 
 		<select id="selectAllByPage" resultType="rmember">
-			select rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
+			select rid, rpassword, rname, rtitle, raddress, rtel, rcategory, rdate
 			from restaurant order by rtel desc limit #{startIndex1}, #{rowsPerPage1}
 		</select>
 
 		<select id="selectByRno" resultType="rmember">
-			select rno, rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
+			select rno, rid, rpassword, rname, rtitle, raddress, rtel, rcategory, rdate
 			from restaurant where rno=#{rno}
 		</select>
 		
 		<select id="selectByAddr" resultType="rmember">
-			select rno, rid, rpassword, rname, rtitle, radress, rtel, rcategory, rdate
-			from restaurant where radress like CONCAT('%',#{siNm},'%') and radress like CONCAT('%',#{emdNm},'%')
+			select rno, rid, rpassword, rname, rtitle, raddress, rtel, rcategory, rdate
+			from restaurant where raddress like CONCAT('%',#{siNm},'%') and raddress like CONCAT('%',#{emdNm},'%')
 		</select>
 
 
