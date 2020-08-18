@@ -177,6 +177,11 @@ public class RestaurantService {
 		restaurantDao.updateByComplete(ono);
 	}
 
+	public List<Rmember> getRestaurantLink(Rmember rmember) {
+		List<Rmember> list = restaurantDao.getRestaurantLink(rmember);
+		return list;
+	}
+
 
 
 

@@ -180,4 +180,9 @@ public class RestaurantDao extends EgovAbstractMapper{
 		
 	}
 
+	public List<Rmember> getRestaurantLink(Rmember rmember) {
+		List<Rmember> list = selectList("rmember.selectAllRestaurant", rmember);
+		return list;
+	}
+
 }

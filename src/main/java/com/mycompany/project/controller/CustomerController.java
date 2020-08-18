@@ -357,4 +357,13 @@ public class CustomerController{
 
 	}
 	
+	@GetMapping("/customer_mobile_restaurantlink.do")
+	public String mobileRestaurantLink(Model model, Rmember rmember, HttpSession session) {
+		List<Rmember> list = restaurantService.getRestaurantLink(rmember);
+		model.addAttribute("restaurantList", list);
+
+		return "customer/customer_mobile_restaurantlist";
+
+	}
+	
 }
