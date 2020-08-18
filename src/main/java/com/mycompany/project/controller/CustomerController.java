@@ -154,6 +154,105 @@ public class CustomerController{
 		}
 		return returnPage;
 	}
+	
+	@PostMapping("/customer_mobile_login.do")
+	public String mobileLogin(CloginForm cloginForm, BindingResult bindingResult,
+						HttpServletResponse response, HttpSession session) throws Exception {
+
+		String mid = cloginForm.getMid();
+		int loginResult = customerService.login(cloginForm);
+		String returnPage = "customer/customer_mobile_login";
+
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+
+		PrintWriter out = response.getWriter();
+
+		if(bindingResult.hasErrors()) {
+			return returnPage;
+		}
+
+		if (loginResult == CustomerService.LOGIN_SUCCESS) {
+			String loginLock = customerService.getLoginLock(cloginForm);
+			System.out.println(loginLock);
+
+			String latestLoginTryDate = customerService.getLoginTryDate(cloginForm);
+
+			java.sql.Timestamp latestTryDate = java.sql.Timestamp.valueOf(latestLoginTryDate);
+
+			Calendar cal = Calendar.getInstance();
+			cal.setTimeInMillis(latestTryDate.getTime());
+			cal.add(Calendar.SECOND, 600);
+			Timestamp latestTryDate10 = new Timestamp(cal.getTime().getTime());
+
+			SimpleDateFormat latestTryDate10Format = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분 ss초");
+			String Date10Format =  latestTryDate10Format.format(latestTryDate10);
+
+			long nowTime = System.currentTimeMillis();
+			Timestamp currentTime = new Timestamp(nowTime);
+			boolean timeCompare = currentTime.after(latestTryDate10);
+
+			if (loginLock.equals("N")) {
+				session.setAttribute("sessionMid", cloginForm.getMid());
+
+				customerService.resetLoginLock(mid);
+
+				returnPage = "redirect:/customer/customer_mobile_main.do";
+
+			}
+
+			if (loginLock.equals("Y") && timeCompare == true) {
+				session.setAttribute("sessionMid", cloginForm.getMid());
+
+				customerService.resetLoginLock(mid);
+
+				returnPage = "redirect:/customer/customer_mobile_main.do";
+
+			}
+
+			if (loginLock.equals("Y") && timeCompare == false) {
+				customerService.loginFailCount(mid);
+
+				out.println("<script>alert('아직 10분이 지나지 않았습니다.\\n" + Date10Format + " 이후에 로그인이 가능합니다.');</script>");
+				out.flush();
+
+				return "customer/customer_mobile_login";
+			}
+
+		} else if (loginResult == CustomerService.LOGIN_MID_FAIL) {
+			out.println("<script>alert('아이디를 확인해주세요.');</script>");
+			out.flush();
+			bindingResult.rejectValue("mid", "login.mid.fail");
+			// returnPage = "customer/customer_login";
+			return returnPage;
+
+		} else if (loginResult == CustomerService.LOGIN_MAPSSWORD_FAIL) {
+			customerService.loginFailCount(mid);
+			int failCount = customerService.getFailCount(cloginForm);
+
+			if (failCount < 5) {
+			out.println("<script>alert('비밀번호를 (" + failCount + "/5)회 틀렸습니다.\\n5회 이상 틀릴 경우, 10분간 로그인을 할 수 없습니다.');</script>");
+			out.flush();
+
+			}
+
+			if (failCount >= 5) {
+				customerService.loginLock(mid);
+
+				out.println("<script>alert('비밀번호 오류 횟수 초과로 인해, 10분간 로그인을 할 수 없습니다.');</script>");
+				out.flush();
+				// out.close();
+			}
+
+			System.out.println(failCount);
+
+			bindingResult.rejectValue("mpassword", "login.mpassword.fail");
+			// returnPage = "customer/customer_login";
+			return returnPage;
+
+		}
+		return returnPage;
+	}
 
 	@GetMapping("/logout.do")
 	public String logout(HttpSession session) {
@@ -354,7 +453,6 @@ public class CustomerController{
 		LOGGER.info("" + list);
 
 		return "customer/customer_mobile_restaurantlist";
-
 	}
 	
 	@GetMapping("/customer_mobile_restaurantlink.do")
@@ -363,7 +461,19 @@ public class CustomerController{
 		model.addAttribute("restaurantList", list);
 
 		return "customer/customer_mobile_restaurantlist";
-
+	}
+	
+	@GetMapping("/customer_mobile_login.do")
+	public String mobileLoginForm(CloginForm cloginForm) {
+		return "customer/customer_mobile_login";
+	}
+	
+	@GetMapping("/customer_mobile_order.do")
+	public String mobileOrder(int rno, Model model) {
+		Rmember rmember = restaurantService.getRestaurantInfoByRno(rno);
+		model.addAttribute("rno", rno);
+		model.addAttribute("rmember", rmember);
+		return "customer/customer_mobile_order";
 	}
 	
 }

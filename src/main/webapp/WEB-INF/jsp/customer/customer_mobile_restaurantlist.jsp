@@ -35,18 +35,18 @@
 			</div>
 		</div>
 		
-		<div class="restaurant_list" style="width:100%;">
+		<div class="restaurant_list" style="width: 100%;">
 			<c:forEach var="restaurant" items="${restaurantList}">
 			
 			<div class="restaurant" style="cursor:pointer;" 
-				onclick="location.href='${pageContext.request.contextPath}/customer/customer_r_info.do?rno=${restaurant.rno}';">
+				onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_order.do?rno=${restaurant.rno}';">
 				<div style="width:50%; float:left; padding-left:4%; padding-right:4%; margin-top:5%; margin-bottom:5%;">
 					<div class="restaurant_logo">
 						<img style="width:84%;" class="restaurant_logo_img" src="${pageContext.request.contextPath}/resource/image/restaurant/logo/${restaurant.rno}.png">
 					</div>
 					<div class="restaurant_summary" style="width:100%; padding-top:5%;">
 						<table class="restaurant_summary_table">
-							<tr style="font-family: 'Do Hyeon', sans-serif; font-size:16px; font-weight:bold;" class="restaurant_title"><td>${restaurant.rtitle}</td></tr>
+							<tr style="font-family: 'Jua', sans-serif; font-size:18px;" class="restaurant_title"><td>${restaurant.rtitle}</td></tr>
 							<tr style="font-family: 'Do Hyeon', sans-serif; font-size:14px;" class="restaurant_address"><td>${restaurant.raddress}</td></tr>
 							<tr style="font-family: 'Do Hyeon', sans-serif; font-size:14px;" class="restaurant_tel"><td>${restaurant.rtel}</td></tr>
 						</table>
