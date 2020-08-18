@@ -339,5 +339,22 @@ public class CustomerController{
 		return "customer/customer_mobile_main";
 	}
 	
+	@RequestMapping("/customer_mobile_searchlist.do")
+	public String mobileSearchList() {
+		return "customer/customer_mobile_searchlist";
+	}
+	
+	@GetMapping("/customer_mobile_restaurantlist.do")
+	public String mobileRestaurantList(String roadAddr, String bdNm, String siNm, String emdNm,  Model model, HttpSession session) {
+		String fullAddr = roadAddr + " " + bdNm;
+		List<Rmember> list = restaurantService.getRestaurantList(siNm, emdNm);
+		session.setAttribute("fullAddr", fullAddr);
+		model.addAttribute("restaurantList", list);
+		LOGGER.info("실행");
+		LOGGER.info("" + list);
+
+		return "customer/customer_mobile_restaurantlist";
+
+	}
 	
 }

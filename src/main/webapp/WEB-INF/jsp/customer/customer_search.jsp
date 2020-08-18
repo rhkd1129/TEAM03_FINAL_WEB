@@ -56,7 +56,7 @@
 		<div class="restaurant" style="cursor:pointer;" 
 			onclick="location.href='${pageContext.request.contextPath}/customer/customer_r_info.do?rno=${restaurant.rno}';">
 			<div class="restaurant_logo">
-				<img class="restaurant_logo_img" src="${pageContext.request.contextPath}/images/logo/${restaurant.rno}.png">
+				<img class="restaurant_logo_img" src="${pageContext.request.contextPath}/resource/image/restaurant/logo/${restaurant.rno}.png">
 			</div>
 			<div class="restaurant_summary">
 				<table class="restaurant_summary_table">
