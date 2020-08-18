@@ -3,6 +3,29 @@
 .swiper-container {
 	width: 100%;
 }
+nav{
+	width:100%;
+	height:auto;
+}
+div.item{
+	width:100%;
+}
+
+img{
+	max-width: 100%;
+  	height: auto;
+}
+
+.container{
+	display: grid;
+	min-width: fit-content;
+	height : auto;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 1fr);	
+	margin-right:9px;
+	padding:0px;
+	text-align:-webkit-center;
+}
 
 .address{
 	width: 93%;

@@ -338,6 +338,10 @@ public class CustomerController{
 	public String mobileMain() {
 		return "customer/customer_mobile_main";
 	}
+	@RequestMapping("/customer_mobile_main1.do")
+	public String mobileMain1() {
+		return "customer/customer_mobile_main1";
+	}
 	
 	@RequestMapping("/customer_mobile_searchlist.do")
 	public String mobileSearchList() {

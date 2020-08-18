@@ -24,6 +24,9 @@
 		<div class="header" onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_main.do'">
 			<img src="${pageContext.request.contextPath}/resource/image/home/zgiyo_logo.png" style="width:260px; height:111px">
 		</div>
+		<div class="header" onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_main1.do'">
+			<img src="${pageContext.request.contextPath}/resource/image/home/zgiyo_logo.png" style="width:260px; height:111px">
+		</div>
 		<div class='landingmain'>
 			<div class='row'>
 				<div class='column' style="text-align:center;">

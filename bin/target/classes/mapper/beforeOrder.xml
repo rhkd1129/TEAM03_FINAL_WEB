@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+	<mapper namespace="beforeOrder">
+		<insert id="insertOrderTable" parameterType="beforeOrder" useGeneratedKeys="true" keyProperty="bno">
+			insert into before_order (bmid, brno, bfname, bfprice, bcount, bdate, bcheckout)
+			values (#{bmid}, #{brno}, #{bfname}, #{bfprice}, 1, NOW(), 0)
+		</insert>
+		
+		<delete id="deleteOrderTable">
+			delete from before_order where bno = #{bno}
+		</delete>
+		
+		<select id="selecOrderTable" resultType="beforeOrder">
+			select bno, bono, bmid, brno, bfname, bfprice, bcount from before_order
+			where bmid = #{bmid} and bcheckout = 0 order by bdate desc
+		</select>
+		
+		<update id="udateBonoAtBo">
+			update before_order set bono = #{bono}, bcheckout = 1
+			where bmid = #{bmid} and bcheckout = 0
+		</update>
+		
+	</mapper>

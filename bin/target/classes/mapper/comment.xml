@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+	
+	<mapper namespace="comment">
+		<insert id="insert" useGeneratedKeys="true" keyProperty="cno">
+			insert into comment (cno, crno, cmid, crating, cdate, ccontent, cmenu)
+			values (#{cno}, #{crno}, #{cmid}, #{crating}, NOW(), #{ccontent}, #{cmenu})
+		</insert>
+		
+		<select id="averageRating" resultType="double">
+			select avg(crating) from comment
+		</select>
+		
+		<select id="selectAllByCno" resultType="map">
+			select cno, crno, cmid, crating, cdate, ccontent, cmenu
+			from comment order by cno desc
+		</select>
+	</mapper>
