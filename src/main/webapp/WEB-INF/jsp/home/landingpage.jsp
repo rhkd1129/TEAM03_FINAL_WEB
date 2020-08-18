@@ -39,7 +39,7 @@
 				</div>
 				
 				<div class='column' style="text-align:center;">
-					<a href='${pageContext.request.contextPath}/admin/adminlogin.do'>
+					<a href='${pageContext.request.contextPath}/admin/main.do'>
 						<img class='enter_logo' id='enter_logo3' src="${pageContext.request.contextPath}/resource/image/home/zgiyo_app3.png">
 					</a>
 				</div>
