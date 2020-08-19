@@ -13,7 +13,7 @@
 		<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
 		<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-		<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
 		<script src="${pageContext.request.contextPath}/resource/script/addressapi.js"></script>
 		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
@@ -39,7 +39,7 @@
 			<c:forEach var="restaurant" items="${restaurantList}">
 			
 			<div class="restaurant" style="cursor:pointer;" 
-				onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_order.do?rno=${restaurant.rno}';">
+				onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_orderreviewmain.do?rno=${restaurant.rno}';">
 				<div style="width:50%; float:left; padding-left:4%; padding-right:4%; margin-top:5%; margin-bottom:5%;">
 					<div class="restaurant_logo">
 						<img style="width:84%;" class="restaurant_logo_img" src="${pageContext.request.contextPath}/resource/image/restaurant/logo/${restaurant.rno}.png">

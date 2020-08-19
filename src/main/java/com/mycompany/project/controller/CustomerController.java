@@ -468,12 +468,51 @@ public class CustomerController{
 		return "customer/customer_mobile_login";
 	}
 	
-	@GetMapping("/customer_mobile_order.do")
-	public String mobileOrder(int rno, Model model) {
+	@GetMapping("/customer_mobile_logout.do")
+	public String mobileLogout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/customer/customer_mobile_main.do";
+	}
+	
+	@GetMapping("/customer_mobile_orderreviewmain.do")
+	public String orderReviewMain(int rno, Model model) {
 		Rmember rmember = restaurantService.getRestaurantInfoByRno(rno);
 		model.addAttribute("rno", rno);
 		model.addAttribute("rmember", rmember);
+		return "customer/customer_mobile_orderreviewmain";
+	}
+	
+	@GetMapping("/customer_mobile_order.do")
+	public String mobileMenu(int rno, Model model) {
+		List<Fnb> foodList = restaurantService.getFoodListByFrno(rno);
+		List<Fnb> beverageList = restaurantService.getBeverageListByFrno(rno);
+		model.addAttribute("foodList", foodList);
+		model.addAttribute("beverageList", beverageList);
+		
 		return "customer/customer_mobile_order";
+	}
+	
+	@GetMapping("/customer_mobile_review.do")
+	public String mobileReview(HttpSession session, int rno, Model model, Comment comment, OrderReceipt orderReceipt) {
+		LOGGER.info("리뷰컨트롤러도착");
+		double averageRating = customerService.averageRating(comment);
+		double avgRating = (Math.round(averageRating*10)/10.0);
+		
+		String mid = (String) session.getAttribute("sessionMid");
+		
+		comment.setCavgrating(avgRating);
+		
+		List<Comment> list = new ArrayList<>();
+		list = customerService.reviewList(comment);
+		
+		model.addAttribute("list", list);
+		
+		List<OrderReceipt> menuList = customerService.getMenuList(mid);
+
+		model.addAttribute("menuList", menuList);
+		LOGGER.info("이이잉");
+		
+		return "customer/customer_mobile_review";
 	}
 	
 }
