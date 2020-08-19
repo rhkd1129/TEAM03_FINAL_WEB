@@ -1,7 +1,7 @@
 /* 모터 start */
 function MotorAccel() {
-	var message = new Paho.MQTT.Message("forward");
-	message.destinationName = "/ControlMoving/Speed";
+	var message = new Paho.MQTT.Message("accel");
+	message.destinationName = "/Control/Motor";
 	message.qos = 0;
 
 	client.send(message);
@@ -36,8 +36,8 @@ function MoveRight() {
 }
 
 function MotorStop() {
-	var message = new Paho.MQTT.Message("stop");
-	message.destinationName = "/ControlMoving/Speed";
+	var message = new Paho.MQTT.Message("break");
+	message.destinationName = "/Control/Motor";
 	message.qos = 0;
 
 	client.send(message);
