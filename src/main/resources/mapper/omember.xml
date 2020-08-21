@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+	
+	<mapper namespace="omember">
+		<insert id="insert" parameterType="omember" useGeneratedKeys="true" keyProperty="oid">
+ 			insert into omember (oname, odate) 
+ 			values (#{oname}, #{odate}) 
+		</insert>
+		
+		<select id="selectAllByPage" resultType="omember">
+			select oid, oname, odate
+			from omember order by oid desc limit #{startIndex}, #{rowsPerPage}
+		</select>
+		
+		<select id="count" resultType="int">
+			select count(*) from omember
+		</select>
+		
+	</mapper>
