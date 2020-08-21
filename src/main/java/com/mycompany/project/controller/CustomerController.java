@@ -552,12 +552,15 @@ public class CustomerController{
 	}
 	
 	@GetMapping("/customer_mobile_payment.do")
-	public String mobilePayment(Model model, HttpSession session) {
+	public String mobilePayment(int rno, Model model, HttpSession session) {
 		LOGGER.info("결제할거야");
 		String bmid = (String) session.getAttribute("sessionMid");
 		List<BeforeOrder> list = customerService.getOrderTable(bmid);
+		model.addAttribute("rno", rno);
 		model.addAttribute("orderTableList", list);
 		return "customer/customer_mobile_payment";
 	}
+	
+	
 	
 }
