@@ -26,20 +26,39 @@ http://www.templatemo.com/tm-518-sentra
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
         <script src="${pageContext.request.contextPath}/resource/admin/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    	<script>
+    	$(function(){
+			client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
+			client.onMessageArrived = onMessageArrived;
+			client.connect({onSuccess:onConnect});
+		});
+		/* 연결 완료 및 클라이언트 값 구독 */
+		function onConnect() {
+			client.subscribe("/camerapub");
+		}
+		function onMessageArrived(message) {
+			if(message.destinationName == "/camerapub") {
+				var cameraView = $("#cameraView1").attr(
+						"src", "data:image/jpg;base64," + message.payloadString);
+				
+			}
+    	
+    	</script>
+    
     </head>
 
 <body>
 
 
 
-        <header class="nav-down responsive-nav hidden-lg hidden-md">
+        <!-- <header class="nav-down responsive-nav hidden-lg hidden-md">
             <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <!--/.navbar-header-->
+            /.navbar-header
             <div id="main-nav" class="collapse navbar-collapse">
                 <nav>
                     <ul class="nav navbar-nav">
@@ -52,7 +71,7 @@ http://www.templatemo.com/tm-518-sentra
                     </ul>
                 </nav>
             </div>
-        </header>
+        </header> -->
 
         <div class="sidebar-navigation hidde-sm hidden-xs">
             <div class="logo">
@@ -124,18 +143,16 @@ http://www.templatemo.com/tm-518-sentra
             
             <section id="blog" class="content-section">
                 <div class="section-heading">
-                    <h1>Blog<br><em>Entries</em></h1>
-                    <p>Curabitur hendrerit mauris mollis ipsum vulputate rutrum. 
-                    <br>Phasellus luctus odio eget dui imperdiet.</p>
+                    <h1>Car <em>Control</em> Center</h1>
                 </div>
                 <div class="section-content">
                     <div class="tabs-content">
                         <div class="wrapper">
                             <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-                              <li><a href="#tab1" class="active">July 2018</a></li>
-                              <li><a href="#tab2">June 2018</a></li>
-                              <li><a href="#tab3">May 2018</a></li>
-                              <li><a href="#tab4">April 2018</a></li>
+                              <li><a href="#tab1" class="active">In Operation</a></li>
+                              <li><a href="#tab2">In Delivery</a></li>
+                              <li><a href="#tab3">Waiting</a></li>
+                              <li><a href="#tab4">Under Repair</a></li>
                             </ul>
                             <section id="first-tab-group" class="tabgroup">
                    		        <!-- tab1 ################################################################################## -->
@@ -143,14 +160,14 @@ http://www.templatemo.com/tm-518-sentra
                                     <ul>
                                         <li>
                                             <div class="item">
-                                                <img src="${pageContext.request.contextPath}/resource/admin/img/blog_1.jpg" alt="">
+                                                <img id="cameraView1" alt="">
                                                 <div class="text-content">
-                                                    <h4>Integer ultrices augue</h4>
-                                                    <span>25 July 2018</span>
+                                                    <h4>Car ID : 00001</h4>
+                                                    <span>Registration Date : 2020.08.01</span>
                                                     <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
                                                     
                                                     <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
+                                                        <a href="#contact">Control Car</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -159,12 +176,12 @@ http://www.templatemo.com/tm-518-sentra
                                             <div class="item">
                                                 <img src="${pageContext.request.contextPath}/resource/admin/img/blog_2.jpg" alt="">
                                                 <div class="text-content">
-                                                    <h4>Cras commodo odio ut</h4>
-                                                    <span>16 July 2018</span>
+                                                    <h4>Car ID : 00004</h4>
+                                                    <span>Registration Date : 2020.08.04</span>
                                                     <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
                                                     
                                                     <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
+                                                        <a href="#contact">Control Car</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -173,12 +190,12 @@ http://www.templatemo.com/tm-518-sentra
                                             <div class="item">
                                                 <img src="${pageContext.request.contextPath}/resource/admin/img/blog_3.jpg" alt="">
                                                 <div class="text-content">
-                                                    <h4>Sed at massa turpis</h4>
-                                                    <span>10 July 2018</span>
+                                                    <h4>Car ID : 00005</h4>
+                                                    <span>Registration Date : 2020.08.05</span>
                                                     <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
                                                     
                                                     <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
+                                                        <a href="#contact">Control Car</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -192,12 +209,12 @@ http://www.templatemo.com/tm-518-sentra
                                             <div class="item">
                                                 <img src="${pageContext.request.contextPath}/resource/admin/img/blog_3.jpg" alt="">
                                                 <div class="text-content">
-                                                    <h4>Sed at massa turpis</h4>
-                                                    <span>30 June 2018</span>
+                                                    <h4>Car ID : 00002</h4>
+                                                    <span>Registration Date : 2020.08.02</span>
                                                     <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
                                                     
                                                     <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
+                                                        <a href="#contact">Control Car</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -206,26 +223,12 @@ http://www.templatemo.com/tm-518-sentra
                                             <div class="item">
                                                 <img src="${pageContext.request.contextPath}/resource/admin/img/blog_1.jpg" alt="">
                                                 <div class="text-content">
-                                                    <h4>Lorem ipsum dolor sit</h4>
-                                                    <span>24 June 2018</span>
+                                                    <h4>Car ID : 00003</h4>
+                                                    <span>Registration Date : 2020.08.03</span>
                                                     <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
                                                     
                                                     <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item">
-                                                <img src="${pageContext.request.contextPath}/resource/admin/img/blog_2.jpg" alt="">
-                                                <div class="text-content">
-                                                    <h4>Cras commodo odio ut</h4>
-                                                    <span>12 June 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-                                                    
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
+                                                        <a href="#contact">Control Car</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -240,40 +243,12 @@ http://www.templatemo.com/tm-518-sentra
                                             <div class="item">
                                                 <img src="${pageContext.request.contextPath}/resource/admin/img/blog_2.jpg" alt="">
                                                 <div class="text-content">
-                                                    <h4>Cras commodo odio ut</h4>
-                                                    <span>26 May 2018</span>
+                                                    <h4>Car ID : 00007</h4>
+                                                    <span>Registration Date : 2020.08.07</span>
                                                     <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
                                                     
                                                     <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item">
-                                                <img src="${pageContext.request.contextPath}/resource/admin/img/blog_1.jpg" alt="">
-                                                <div class="text-content">
-                                                    <h4>Lorem ipsum dolor sit</h4>
-                                                    <span>22 May 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-                                                    
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item">
-                                                <img src="${pageContext.request.contextPath}/resource/admin/img/blog_3.jpg" alt="">
-                                                <div class="text-content">
-                                                    <h4>Integer ultrices augue</h4>
-                                                    <span>8 May 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-                                                    
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
+                                                        <a href="#contact">Control Car</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -288,44 +263,16 @@ http://www.templatemo.com/tm-518-sentra
                                             <div class="item">
                                                 <img src="${pageContext.request.contextPath}/resource/admin/img/blog_1.jpg" alt="">
                                                 <div class="text-content">
-                                                    <h4>Lorem ipsum dolor sit</h4>
-                                                    <span>26 April 2018</span>
+                                                    <h4>Car ID : 00006</h4>
+                                                    <span>Registration Date : 2020.08.06</span>
                                                     <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
                                                     
                                                     <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
+                                                        <a href="#contact">Control Car</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>                                
-                                        <li>
-                                            <div class="item">
-                                                <img src="${pageContext.request.contextPath}/resource/admin/img/blog_3.jpg" alt="">
-                                                <div class="text-content">
-                                                    <h4>Integer ultrices augue eu</h4>
-                                                    <span>24 April 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-                                                    
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item">
-                                                <img src="${pageContext.request.contextPath}/resource/admin/img/blog_2.jpg" alt="">
-                                                <div class="text-content">
-                                                    <h4>Cras commodo odio ut</h4>
-                                                    <span>20 April 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-                                                    
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
                                     </ul>
                                 </div>
                             </section> 
