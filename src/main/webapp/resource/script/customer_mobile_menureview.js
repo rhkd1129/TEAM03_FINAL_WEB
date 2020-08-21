@@ -1,8 +1,10 @@
 $('#menu_tab').click(function() {
 	$(this).css({
 		'border' : '2px solid #fd5858',
+		'background-color' : '#f7c9c9',
 	})
 	$('#review_tab').css({
+		'background-color' : '#ffffff',
 		'border' : '2px solid #DBDBDB',
 	})
 	
@@ -20,8 +22,10 @@ $('#menu_tab').click(function() {
 $('#review_tab').click(function() {
 	$(this).css({
 		'border' : '2px solid #fd5858',
+		'background-color' : '#f7c9c9',
 	})
 	$('#menu_tab').css({
+		'background-color' : '#ffffff',
 		'border' : '2px solid #DBDBDB',
 	})
 	

@@ -372,6 +372,7 @@ public class CustomerController{
 	
 	@GetMapping("/customer_insert_order_table.do")
 	public String insertOrderTable(int fno, int rno, Model model, HttpSession session) {
+		LOGGER.info("장바구니");
 		Fnb fnb = customerService.getFnbByFno(fno);
 		BeforeOrder beforeOrder = new BeforeOrder();
 		String bmid = (String) session.getAttribute("sessionMid");
@@ -396,6 +397,7 @@ public class CustomerController{
 	
 	@GetMapping("/customer_payment.do")
 	public String payment(int rno, Model model, HttpSession session) {
+		LOGGER.info("결제할거야");
 		String bmid = (String) session.getAttribute("sessionMid");
 		List<BeforeOrder> list = customerService.getOrderTable(bmid);
 		model.addAttribute("rno", rno);
@@ -479,6 +481,7 @@ public class CustomerController{
 		Rmember rmember = restaurantService.getRestaurantInfoByRno(rno);
 		model.addAttribute("rno", rno);
 		model.addAttribute("rmember", rmember);
+		LOGGER.info("" + rno);
 		return "customer/customer_mobile_orderreviewmain";
 	}
 	
@@ -513,6 +516,48 @@ public class CustomerController{
 		LOGGER.info("이이잉");
 		
 		return "customer/customer_mobile_review";
+	}
+	
+	@GetMapping("/customer_mobile_basket.do")
+	public String mobileBasket(int rno, Model model, HttpSession session) {
+		String bmid = (String) session.getAttribute("sessionMid");
+		List<BeforeOrder> list = customerService.getOrderTable(bmid);
+		model.addAttribute("orderTableList", list);
+		model.addAttribute("rno", rno);
+		
+		return "customer/customer_mobile_basket";
+	}
+	
+	@GetMapping("/customer_mobile_insertorder.do")
+	public String mobileInsertOrder(int fno, int rno, Model model, HttpSession session) {
+		LOGGER.info("장바구니");
+		Fnb fnb = customerService.getFnbByFno(fno);
+		BeforeOrder beforeOrder = new BeforeOrder();
+		String bmid = (String) session.getAttribute("sessionMid");
+		beforeOrder.setBmid(bmid);
+		beforeOrder.setBrno(rno);
+		beforeOrder.setBfname(fnb.getFname());
+		beforeOrder.setBfprice(fnb.getFprice());
+		customerService.addOrderTable(beforeOrder);
+		
+		
+		return "redirect:/customer/customer_mobile_basket.do?rno="+rno;
+	}
+	
+	@GetMapping("/customer_mobile_deleteorder.do")
+	public String mobileDeleteOrder(int bno, int rno) {
+		customerService.removeOrderTable(bno);
+		
+		return "redirect:/customer/customer_mobile_basket.do?rno="+rno;
+	}
+	
+	@GetMapping("/customer_mobile_payment.do")
+	public String mobilePayment(Model model, HttpSession session) {
+		LOGGER.info("결제할거야");
+		String bmid = (String) session.getAttribute("sessionMid");
+		List<BeforeOrder> list = customerService.getOrderTable(bmid);
+		model.addAttribute("orderTableList", list);
+		return "customer/customer_mobile_payment";
 	}
 	
 }

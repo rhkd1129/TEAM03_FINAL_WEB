@@ -39,8 +39,12 @@
 			</div>		
 		</div>
 		
-		
 		<div class="restaurant_info_main"></div>
+		
+		<div id="floatMenu">
+			<div id="floatMenu1"></div>
+			<div id="floatMenu2"></div>
+		</div>
 		
 		
 		<script>
@@ -50,6 +54,7 @@
 
 				$('#menu_tab').css({
 					'border' : '2px solid #fd5858',
+					'background-color' : '#f7c9c9',
 				})
 				
 				$('#review_tab').css({
@@ -63,8 +68,27 @@
 						$(".restaurant_info_main").html(result);
 					}
 				});
+				
+				/* $.ajax({
+					type : "get",
+					url : "${pageContext.request.contextPath}/customer/customer_mobile_basket.do?",
+					success : function(result) {
+						$("#floatMenu2").html(result);
+					}
+				}); */
 
 			});
+			
+			function foodInsert(fno) {
+				var fno = fno
+				$.ajax({
+					type : "get",
+					url : "${pageContext.request.contextPath}/customer/customer_mobile_insertorder.do?fno="+fno + "&rno=" + rno,
+					success : function(result) {
+						alert("메뉴를 장바구니에 추가했습니다.");
+					}
+				});
+			}
 		</script>
 	
 	
