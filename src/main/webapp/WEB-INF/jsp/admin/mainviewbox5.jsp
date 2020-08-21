@@ -560,6 +560,7 @@ var nowDay = nowDate.getDate();
 if(nowMonth < 10) { nowMonth = "0" + nowMonth; }
 if(nowDay < 10) { nowDay = "0" + nowDay; }
 
+
 //오늘 날짜 결과
 var todayDate = nowYear + "-" + nowMonth + "-" + nowDay;
 $('.todayday').text(String(todayDate));
