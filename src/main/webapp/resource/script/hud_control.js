@@ -180,12 +180,12 @@ function stopInterval(action){
 }, 50);
 /* 키 눌렀을 때 이벤트를 실행하겠다 */
 document.addEventListener('keydown', function(event) {
-   event.preventDefault();
+//   event.preventDefault();
    keyValue[event.keyCode] = 'down';
 }, true);
 /* 키 땠을 때 이벤트를 실행하겠다 */
 document.addEventListener('keyup', function(event) {   
-event.preventDefault();
+//event.preventDefault();
    keyValue[event.keyCode] = 'up';
    stopInterval()
 }, true);

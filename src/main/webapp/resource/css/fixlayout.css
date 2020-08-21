@@ -1523,6 +1523,26 @@ $size: 284px;
 	font-weight: bold;
 }
 
+.box_modal4{
+	z-index: 9990;
+	width: 250px;
+	height: 40px;
+	position: absolute;
+    left: 1240px;
+	top: 30px;
+	border: 3px solid #05E5EE;
+	box-shadow: 0 0 20px #05E5EE, 0 0 20px #05E5EE;
+	opacity: 0.85;
+	color: #05E5EE;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 50px;
+}
+
+.modaltext4{
+	text-align: center;
+}
+
 .Camimg1{
 	width: 250px;
 	height: 250px;
@@ -1767,30 +1787,87 @@ $size: 284px;
 	position: absolute;
 }
 
-#points{
+.pointdeliverybox{
 	position: absolute;
-	margin-left: 1720px;
-	margin-top: 720px;
-	z-index: 9999;
-	width: 150px;
+	z-index: 9991;	
+	width: 325px;
+	height:325px;	
+	float: left;	
+	border: 1px solid #05E5EE;
+    margin-left: 1580px;
+    margin-top: 572px;
+}
+
+.boxpoint{
+	width: 30px;
+	height:30px;	
+	cursor: pointer;
 	border: 1px solid #05E5EE;
 	font-family: inherit;
-	background: url('arrow.jpg') no-repeat 95% 50%;
-	border-radius: 0px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
 	color: #05E5EE;
 	text-align: center;
+	line-height: 30px;
+	position: absolute;
 }
 
-select::-ms-expand {
-    display: none;
+.boxpoint:hover{
+	box-shadow: 0 0 5px #05E5EE, 0 0 5px #05E5EE;
 }
 
-.optionvalue{
-	background-color: black;
+#pointstext{
+	position: absolute;
+	width: 100px;
+	height:35px;
+	border: 1px solid #05E5EE;
+	font-family: inherit;
+	color: #05E5EE;
 	text-align: center;
+	line-height: 30px;
+	margin-left: 120px;
+	margin-top: 135px;	
 }
+
+#points{
+	position: absolute;
+	width: 100px;
+	height:35px;
+	border: 1px solid #05E5EE;
+	font-family: inherit;
+	color: #05E5EE;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+	margin-left: 120px;
+	margin-top: 170px;
+}
+
+#points:hover{
+	box-shadow: 0 0 10px #05E5EE, 0 0 10px #05E5EE;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
