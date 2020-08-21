@@ -216,7 +216,7 @@
 <!-- Computer 모달창 -->
 <div id="box_modal3">
 	<div id="modaltext3">Computer
-	
+
 	</div>
 </div>
 <!-- Control 모달창 -->
@@ -296,29 +296,178 @@
 	</div>
 </div>
 
+<!-- 핑 위치 배달 설정 -->
 <div class="backgroundopacitybox"></div>
+<div class="pointdeliverybox">
+	<div class="A boxpoint" style="margin-top:20px; margin-left:240px;">A</div>
+	<div class="B boxpoint" style="margin-top:20px; margin-left:185px;">B</div>
+	<div class="C boxpoint" style="margin-top:20px; margin-left:130px;">C</div>
+	<div class="D boxpoint" style="margin-top:20px; margin-left:75px;">D</div>
+	<div class="E boxpoint" style="margin-top:40px; margin-left:41px;">E</div>
+	<div class="F boxpoint" style="margin-top:80px; margin-left:41px;">F</div>
+	<div class="H boxpoint" style="margin-top:180px; margin-left:21px;">H</div>
+	<div class="I boxpoint" style="margin-top:220px; margin-left:21px;">I</div>
+	<div class="J boxpoint" style="margin-top:247px; margin-left:55px;">J</div>
+	<div class="K boxpoint" style="margin-top:274px; margin-left:100px;">K</div>
+	<div class="M boxpoint" style="margin-top:274px; margin-left:170px;">M</div>
+	<div class="N boxpoint" style="margin-top:274px; margin-left:240px;">N</div>
+	<div class="P boxpoint" style="margin-top:230px; margin-left:268px;">P</div>
+	<div class="S boxpoint" style="margin-top:135px; margin-left:268px;">S</div>
+	<div class="T boxpoint" style="margin-top:60px; margin-left:268px;">T</div>
+	
+	<div id="pointstext"></div>
+	<div id="points">Delivery</div>
+</div>
 
-<select id="points" >
-    <option class="optionvalue" value="A">Location A</option>
-    <option class="optionvalue" value="B">Location B</option>
-    <option class="optionvalue" value="C">Location C</option>
-    <option class="optionvalue" value="B">Location D</option>
-    <option class="optionvalue" value="E">Location E</option>
-    <option class="optionvalue" value="F">Location F</option>
-    <option class="optionvalue" value="H">Location H</option>
-    <option class="optionvalue" value="I">Location I</option>
-    <option class="optionvalue" value="J">Location J</option>
-    <option class="optionvalue" value="K">Location K</option>
-    <option class="optionvalue" value="M">Location M</option>	    
-    <option class="optionvalue" value="N">Location N</option>	  	     	    
-    <option class="optionvalue" value="P">Location P</option>	  	     	    
-    <option class="optionvalue" value="S">Location S</option>	  	    
-    <option class="optionvalue" value="T">Location T</option>
-</select>
+<div class="box_modal4">
+	<div class="modaltext4">Move Point [--]</div>
+</div>
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 <!-- Jarvis Canvas Script -->
 <script>
+var pointtextex = $("#pointstext").html();
+
+$(".A").click(function(){
+	$("#pointstext").text("Point A");
+	$(".A").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".B").click(function(){
+	$("#pointstext").text("Point B");
+	$(".B").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".C").click(function(){
+	$("#pointstext").text("Point C");
+	$(".C").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".D").click(function(){
+	$("#pointstext").text("Point D");
+	$(".D").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".E").click(function(){
+	$("#pointstext").text("Point E");
+	$(".E").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".F").click(function(){
+	$("#pointstext").text("Point F");
+	$(".F").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".H").click(function(){
+	$("#pointstext").text("Point H");
+	$(".H").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".I").click(function(){
+	$("#pointstext").text("Point I");
+	$(".I").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".J").click(function(){
+	$("#pointstext").text("Point J");
+	$(".J").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".K").click(function(){
+	$("#pointstext").text("Point K");
+	$(".K").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".M").click(function(){
+	$("#pointstext").text("Point M");
+	$(".M").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".N").click(function(){
+	$("#pointstext").text("Point N");
+	$(".N").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".P").click(function(){
+	$("#pointstext").text("Point P");
+	$(".P").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".S").click(function(){
+	$("#pointstext").text("Point S");
+	$(".S").css("background-color","rgba(47,138,241,0.3)");
+});
+$(".T").click(function(){
+	$("#pointstext").text("Point T");
+	$(".T").css("background-color","rgba(47,138,241,0.3)");
+});
+
+$("#points").click(function(){
+	pointtextex = $("#pointstext").html();
+	
+	if(pointtextex == "" || pointtextex == null){
+		console.log("[Error]선택된 지점이 없습니다.");	
+		$(".boxpoint").css("background-color","")
+	}
+	if(pointtextex != ""){
+		console.log("배송 지점 : " + pointtextex);
+		$(".modaltext4").text("Move Point ["+pointtextex+"]");
+		$(".boxpoint").css("background-color","")
+	}
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 페이져  시작*/
 function viewPaging(pageNo) {
 	   var pageNo = pageNo;
