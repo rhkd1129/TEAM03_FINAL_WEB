@@ -4,12 +4,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.mycompany.project.model.Amember;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import com.mycompany.project.model.Amember;
 import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.OrderReceipt;
 import com.mycompany.project.model.Rmember;
@@ -82,6 +81,11 @@ public class RestaurantDao extends EgovAbstractMapper{
 	public void updateByComplete(int ono) {
 		update("orderReceipt.updateByComplete", ono);
 		
+	}
+
+	public List<Rmember> getRestaurantLink(Rmember rmember) {
+		List<Rmember> list = selectList("rmember.selectAllRestaurant", rmember);
+		return list;
 	}
 
 }

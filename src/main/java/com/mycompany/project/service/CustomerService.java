@@ -6,22 +6,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springmodules.validation.bean.conf.loader.annotation.handler.Length;
 
 import com.mycompany.project.SHA256.SHA256Util;
-import com.mycompany.project.controller.CustomerController;
 import com.mycompany.project.dao.CustomerDao;
-
 import com.mycompany.project.model.BeforeOrder;
+import com.mycompany.project.model.CloginForm;
 import com.mycompany.project.model.Cmember;
-
 import com.mycompany.project.model.Comment;
-
 import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.OrderReceipt;
-import com.mycompany.project.model.Rmember;
-
-import com.mycompany.project.model.CloginForm;
 
 
 

@@ -13,6 +13,10 @@
 			select rid, rpassword, rname, rtitle, raddress, rtel, rcategory, rdate from restaurant
 			where rid = #{rid}
 		</select>
+		
+		<select id="selectAllRestaurant" resultType="map">
+			select rno, rid, rpassword, rname, rtitle, raddress, rtel, rcategory, rdate from restaurant
+		</select>
 
 
 
