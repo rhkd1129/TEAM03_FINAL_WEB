@@ -20,7 +20,7 @@
 			var rno = ${rno}
 			
 			$(function(){
-				client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
+				client = new Paho.MQTT.Client("192.168.3.210", 61614, new Date().getTime().toString());
 				client.onMessageArrived = onMessageArrived;
 				client.connect({onSuccess:onConnect});
 			});
@@ -84,9 +84,15 @@
 			});
 		}
 		
+		function randomItem(a) {
+			  return a[Math.floor(Math.random() * a.length)];
+			}
+		
 		function takeOver(ono) {
+			console.log("실행")
 			var rno = ${rno};
-			var ono = ono;
+			var ono = ono
+			var dest = new Array('B','C','D','E','F','H','I','J','K','M','N','P','S','T');
 			$.ajax({
 				type : "get", 
 				url : "restaurant_order_takeover.do?rno="+ rno + "&ono="+ono,
@@ -95,14 +101,39 @@
 				}
 			})			
 			
-			message = {'ono' : ono}
+			message = {'ono' : randomItem(dest),
+					   'rno' : 'A'}
 			
 			
 			var message = new Paho.MQTT.Message(JSON.stringify(message));
-			message.destinationName = "/Order/TakeOver";
+			message.destinationName = "/ControlMoving/Order/TakeOver";
 			message.qos = 0;
 			client.send(message);
+			console.log("보냄")
 		}
+		
+		
+		function DeliveryStart() {
+			console.log("실행")
+			var dest = new Array('B','C','D','E','F','H','I','J','K','M','N','P','S','T');
+			/* $.ajax({
+				type : "get", 
+				url : "restaurant_order_takeover.do?rno="+ rno + "&ono="+ono,
+				success : function(result) { 
+					$(".content1").html(result);
+				}
+			}) */			
+			
+			message = {'ono' : randomItem(dest)}
+			
+			
+			var message = new Paho.MQTT.Message(JSON.stringify(message));
+			message.destinationName = "/ControlMoving/Order/DeliveryStart";
+			message.qos = 0;
+			client.send(message);
+			console.log("보냄")
+		}
+		
 		
 		
 		
