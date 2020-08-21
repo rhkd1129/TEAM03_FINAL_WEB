@@ -297,6 +297,25 @@
 </div>
 
 <div class="backgroundopacitybox"></div>
+
+<select id="points" >
+    <option class="optionvalue" value="A">Location A</option>
+    <option class="optionvalue" value="B">Location B</option>
+    <option class="optionvalue" value="C">Location C</option>
+    <option class="optionvalue" value="B">Location D</option>
+    <option class="optionvalue" value="E">Location E</option>
+    <option class="optionvalue" value="F">Location F</option>
+    <option class="optionvalue" value="H">Location H</option>
+    <option class="optionvalue" value="I">Location I</option>
+    <option class="optionvalue" value="J">Location J</option>
+    <option class="optionvalue" value="K">Location K</option>
+    <option class="optionvalue" value="M">Location M</option>	    
+    <option class="optionvalue" value="N">Location N</option>	  	     	    
+    <option class="optionvalue" value="P">Location P</option>	  	     	    
+    <option class="optionvalue" value="S">Location S</option>	  	    
+    <option class="optionvalue" value="T">Location T</option>
+</select>
+
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 <!-- Jarvis Canvas Script -->
 <script>

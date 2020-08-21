@@ -1767,13 +1767,30 @@ $size: 284px;
 	position: absolute;
 }
 
+#points{
+	position: absolute;
+	margin-left: 1720px;
+	margin-top: 720px;
+	z-index: 9999;
+	width: 150px;
+	border: 1px solid #05E5EE;
+	font-family: inherit;
+	background: url('arrow.jpg') no-repeat 95% 50%;
+	border-radius: 0px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	color: #05E5EE;
+	text-align: center;
+}
 
+select::-ms-expand {
+    display: none;
+}
 
-
-
-
-
-
-
+.optionvalue{
+	background-color: black;
+	text-align: center;
+}
 
 
