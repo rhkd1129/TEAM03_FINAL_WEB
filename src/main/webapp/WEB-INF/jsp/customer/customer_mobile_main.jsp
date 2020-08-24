@@ -34,59 +34,59 @@
             </div>
          </div>
       </nav>
+      <nav>
          <nav>
-            <nav>
-               <div class="container" style="text-align:-webkit-center;width:100%;height:auto;">
-                  <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category1.png"></img></div>
-                  <div class="item"><img onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_restaurantlist.do'" src="${pageContext.request.contextPath}/resource/image/customer/category2.png"></img></div>
-                  <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category3.png"></img></div>
-                  <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category4.png"></img></div>
-                  <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category5.png"></img></div>
-                  <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category6.png"></img></div>
-                  <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category7.png"></img></div>
-                  <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category8.png"></img></div>
-                  <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category9.png"></img></div>
-                  <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category10.png"></img></div>
-                  <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category11.png"></img></div>
-                  <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category12.png"></img></div>
-               </div>
-            </nav>
-         </nav>
-         <nav>
-         <c:if test="${sessionMid == null}">
-            <div style="width: 100%; height: 10%; float: left; margin-top: 5%; margin-bottom:5%; border-top: 1px solid #DBDBDB; border-bottom: 1px solid #DBDBDB;">
-               <div onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_main.do'"
-               style="width: 33%; background-color:white; height: 20%; float: left; border-right: 1px solid #DBDBDB;">
-                  <img src="${pageContext.request.contextPath}/resource/image/customer/mobilehomeicon.png"
-                  style="width:15%; float:left; margin-left: 40%; margin-top: 5%; margin-bottom: 5%; ">
-               </div>
-               <div onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_searchlist.do'"
-               style="width: 33%; background:white; height: 20%; float: left; border-right: 1px solid #DBDBDB;">
-                  <img src="${pageContext.request.contextPath}/resource/image/customer/mobilesearchicon.png"
-                  style="width:15%; float:left; margin-left: 40%; margin-top: 5%; margin-bottom: 5%; ">
-               </div>
-               <div onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_login.do'"
-               style="width: 33%; background:white; height: 20%; float: left; ">
-                  <img src="${pageContext.request.contextPath}/resource/image/customer/mobileloginicon.png"
-                  style="width:15%; float:left; margin-left: 40%; margin-top: 5%; margin-bottom: 5%; ">
-               </div>
+            <div class="container" style="text-align:-webkit-center;width:100%;height:auto;">
+               <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category1.png"></img></div>
+               <div class="item"><img onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_restaurantlist.do'" src="${pageContext.request.contextPath}/resource/image/customer/category2.png"></img></div>
+               <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category3.png"></img></div>
+               <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category4.png"></img></div>
+               <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category5.png"></img></div>
+               <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category6.png"></img></div>
+               <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category7.png"></img></div>
+               <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category8.png"></img></div>
+               <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category9.png"></img></div>
+               <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category10.png"></img></div>
+               <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category11.png"></img></div>
+               <div class="item"><img src="${pageContext.request.contextPath}/resource/image/customer/category12.png"></img></div>
             </div>
-         </c:if>
-         <c:if test="${sessionMid != null}">
-            <div style="width: 100%; height: 10%; float: left; margin-top: 5%; margin-bottom:5%; border-top: 1px solid #DBDBDB; border-bottom: 1px solid #DBDBDB;">
-               <div onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_main.do'"
-               style="width: 50%; background-color:white; height: 20%; float: left; border-right: 1px solid #DBDBDB;">
-                  <img src="${pageContext.request.contextPath}/resource/image/customer/mobilehomeicon.png"
-                  style="width:15%; float:left; margin-left: 40%; margin-top: 5%; margin-bottom: 5%;">
-               </div>
-               <div onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_searchlist.do'"
-               style="width: 50%; background:white; height: 20%; float: left;">
-                  <img src="${pageContext.request.contextPath}/resource/image/customer/mobilesearchicon.png"
-                  style="width:15%; float:left; margin-left: 40%; margin-top: 5%; margin-bottom: 5%;">
-               </div>
-            </div>
-         </c:if>
          </nav>
+      </nav>
+      <nav>
+      <c:if test="${sessionMid == null}">
+         <div style="width: 100%; height: 10%; float: left; margin-top: 5%; margin-bottom:5%; border-top: 1px solid #DBDBDB; border-bottom: 1px solid #DBDBDB;">
+            <div onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_main.do'"
+            style="width: 33%; background-color:white; height: 20%; float: left; border-right: 1px solid #DBDBDB;">
+               <img src="${pageContext.request.contextPath}/resource/image/customer/mobilehomeicon.png"
+               style="width:15%; float:left; margin-left: 40%; margin-top: 5%; margin-bottom: 5%; ">
+            </div>
+            <div onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_searchlist.do'"
+            style="width: 33%; background:white; height: 20%; float: left; border-right: 1px solid #DBDBDB;">
+               <img src="${pageContext.request.contextPath}/resource/image/customer/mobilesearchicon.png"
+               style="width:15%; float:left; margin-left: 40%; margin-top: 5%; margin-bottom: 5%; ">
+            </div>
+            <div onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_login.do'"
+            style="width: 33%; background:white; height: 20%; float: left; ">
+               <img src="${pageContext.request.contextPath}/resource/image/customer/mobileloginicon.png"
+               style="width:15%; float:left; margin-left: 40%; margin-top: 5%; margin-bottom: 5%; ">
+            </div>
+         </div>
+      </c:if>
+      <c:if test="${sessionMid != null}">
+         <div style="width: 100%; height: 10%; float: left; margin-top: 5%; margin-bottom:5%; border-top: 1px solid #DBDBDB; border-bottom: 1px solid #DBDBDB;">
+            <div onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_main.do'"
+            style="width: 50%; background-color:white; height: 20%; float: left; border-right: 1px solid #DBDBDB;">
+               <img src="${pageContext.request.contextPath}/resource/image/customer/mobilehomeicon.png"
+               style="width:15%; float:left; margin-left: 40%; margin-top: 5%; margin-bottom: 5%;">
+            </div>
+            <div onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_searchlist.do'"
+            style="width: 50%; background:white; height: 20%; float: left;">
+               <img src="${pageContext.request.contextPath}/resource/image/customer/mobilesearchicon.png"
+               style="width:15%; float:left; margin-left: 40%; margin-top: 5%; margin-bottom: 5%;">
+            </div>
+         </div>
+      </c:if>
+      </nav>
       <footer>
          <div class="footermain1">
             <img class="footimg1" src="${pageContext.request.contextPath}/resource/image/home/footer/footer1.png">
