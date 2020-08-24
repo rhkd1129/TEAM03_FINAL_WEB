@@ -4,55 +4,44 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>주문하기</title>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
-	<script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
-	<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_maincss.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_paymentcss.css">
-	<script src="${pageContext.request.contextPath}/resource/script/addressapi.js"></script>
-	<script>
-			$(function(){
-				sum = 0
-				var i = 1
-				while(true) {
-					
-					sum = sum + $('#price'+i).text() * $('#count'+i).text();
-					var flag = $('#flag'+i).text()
-					if(!flag) {
-						break;
-					}
-					i = i + 1
-				}
-				$('#sum').text(sum);
-				$('#test').val(sum);
-			});
-	</script>
-</head>
-<body>
-	<div class="header">
-		<div class="navbar1">
-			<img class="zgiyo" src="${pageContext.request.contextPath}/resource/image/home/즈기요.png">
-
-			<div class="boxbox">
-				<c:if test="${sessionMid == null}">
-					<div class="login"><a href="${pageContext.request.contextPath}/customer/customer_login.do"></a>로그인</div>
-					<div class="join"><a href="${pageContext.request.contextPath}/customer/customer_join.do"></a>회원가입</div>
-				</c:if>
-				<c:if test="${sessionMid != null}">
-					<button type="button" class="logout" onclick="location.href='${pageContext.request.contextPath}/customer/logout.do'">로그아웃</button>
-				</c:if>
-			</div>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css">
+		<script src="${pageContext.request.contextPath}/resource/jquery/jquery.min.js"></script>
+		<script src="${pageContext.request.contextPath}/resource/popper/popper.min.js"></script>
+		<script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.css">
+		<script src="${pageContext.request.contextPath}/resource/jquery-ui/jquery-ui.min.js"></script>
+		<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/customer_paymentcss.css"> --%>
+		<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">		
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+		
+		<style>
+			#backButton {
+				margin-left: 8%;
+				margin-top: 8%;
+				width: 5%;
+			    position: fixed;
+			    top: 0px;
+			    left: 0px; 
+			}
+		</style>
+		
+		</head>
+	<body>
+		<div style="text-align: center; margin-top: 5%; margin-bottom: 5%;" onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_main.do'">
+			<img src="${pageContext.request.contextPath}/resource/image/home/zgiyo_logo.png" style="width:25%">
 		</div>
-	</div>
+		
+		<a href="javascript:history.back()">
+			<img src="${pageContext.request.contextPath}/resource/image/customer/mobilebackicon.png" id="backButton">
+		</a>
 	
-	
- 	<form id="paymentDetail" method="post" action="${pageContext.request.contextPath}/customer/customer_kakaopay.do">
+		<form id="paymentDetail" method="post" action="${pageContext.request.contextPath}/customer/customer_kakaopay.do"
+		style="border-top: 1px solid #DBDBDB; border-left: 1px solid #DBDBDB; border-right: 1px solid #DBDBDB; margin-left: 5%; margin-right: 5%;">
 		<div class="paymentMain">
 			<div class="paymentMainFrame">
 				<div class="paymentTop">
@@ -96,13 +85,10 @@
 							주문시 요청사항
 						</div>
 						<div class="paymentRequirementContent">
-							<textarea name="orequirement" rows="3" cols="100"></textarea>
+							<textarea name="orequirement" rows="3" cols="39"></textarea>
 						</div>
 						<div class="paymentMethod">
-							결제수단 선택
-						</div>
-						<div class="paymentMethodContent">
-							결제수단 선택
+							카카오페이로만 결제 가능합니다
 						</div>
 					</div>
 				
@@ -147,53 +133,29 @@
 			</div>
 		</div>
 	</form>
-
-
-
-	<!-- FOOTER START ======================================== -->
-	<div class="footermain1">
-		<div class="footer1-1">
-			<div class="footer1-2-1">이용약관</div>
-			<div class="footer1-2-2">개인정보처리방침</div>
-			<div class="footer1-2-3">회원등급정책</div>
-			<div class="footer1-2-4">회사소개</div>
-			<div class="footer1-2-5">즈기요사장님</div>
-			<div class="footer1-2-6">입점문의</div>
-			<div class="footer1-2-7">공지사항</div>
-
-			<div class="foot1-2">
-				<img class="footimg1" src="${pageContext.request.contextPath}/resource/image/home/footer/face.png">
-				페이스북
-			</div>
-			<div class="foot1-3">
-				<img class="footimg2" src="${pageContext.request.contextPath}/resource/image/home/footer/blog.png">
-				블로그
-			</div>
-		</div>
-	</div>
-
-	<div class="footermain2">
-		<img class="footimg3" src="${pageContext.request.contextPath}/resource/image/home/footer/footer.png">
-	</div>
-	<!-- FOOTER END ======================================== -->
-
-</body>
-<script type="text/javascript">
-$(".login").click(function(){
-    location.href = "${pageContext.request.contextPath}/customer/customer_login.do";
-});
-
-$(".logout").click(function(){
-    location.href = "${pageContext.request.contextPath}/customer/logout.do";
-});
-
-$(".join").click(function(){
-    location.href = "${pageContext.request.contextPath}/customer/customer_join.do";
-});
-
-$(".zgiyo").click(function(){
-    location.href = "${pageContext.request.contextPath}/home/landingpage.do";
-});
-
-</script>
+	
+	<script>
+			$(function(){
+				sum = 0
+				var i = 1
+				while(true) {
+					
+					sum = sum + $('#price'+i).text() * $('#count'+i).text();
+					var flag = $('#flag'+i).text()
+					if(!flag) {
+						break;
+					}
+					i = i + 1
+				}
+				$('#sum').text(sum);
+				$('#test').val(sum);
+			});
+	</script>
+	
+	
+	
+	
+	
+	
+	</body>
 </html>

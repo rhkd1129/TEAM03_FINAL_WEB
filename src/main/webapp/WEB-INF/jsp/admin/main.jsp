@@ -161,14 +161,16 @@
                                     <ul>
                                         <li>
                                             <div class="item">
+                                            	<a href="${pageContext.request.contextPath}/Objectdiscrimination/fixlayout.do">
                                                 <img id="cameraView1" alt="">
+                                                </a>
                                                 <div class="text-content">
                                                     <h4>Car ID : 00001</h4>
                                                     <span>Registration Date : 2020.08.01</span>
                                                     <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
                                                     
                                                     <div class="accent-button button">
-                                                        <a href="#contact">Control Car</a>
+                                                        <a href="${pageContext.request.contextPath}/Objectdiscrimination/fixlayout.do">Control Car</a>
                                                     </div>
                                                 </div>
                                             </div>
