@@ -21,7 +21,7 @@
    </head>
    <body>
       <header style="text-align:center" onclick="location.href='${pageContext.request.contextPath}/customer/customer_mobile_main.do'">
-         <img src="${pageContext.request.contextPath}/resource/image/home/zgiyo_logo.png" style="width:20%">
+         <img src="${pageContext.request.contextPath}/resource/image/home/zgiyo_logo.png" style="width:20%; margin-top:5%">
       </header>
       <nav>
          <div class="swiper-container" style="margin-bottom:5%; margin-top:5%;">
