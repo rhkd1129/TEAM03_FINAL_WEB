@@ -1458,10 +1458,11 @@ var canvasCar = document.querySelector(".car");
 canvasMap.width = 330;
 canvasMap.height = 330;
 canvasMap.style.position = "absolute";
+
 canvasCar.width = 330;
 canvasCar.height = 330;
 canvasCar.style.position = "absolute";  
-   
+
 var carLocation = {
          A: [270, 20],
          B: [205, 20],
@@ -1484,8 +1485,7 @@ var ctxMap = canvasMap.getContext("2d");
 var ctxCar = canvasCar.getContext("2d");
 
 var mapArea = new mapArea(ctxMap, ctxCar, 0, 0);
-mapArea.readyDrawCar("#05E5EE", 7);
-
+mapArea.readyDrawCar("#FF0000", 7);
 mapArea.drawTrack(); 
 
 function mapArea(ctxMap, ctxCar, x, y) {
@@ -1537,32 +1537,32 @@ function mapArea(ctxMap, ctxCar, x, y) {
         
     // 자동차 색깔과 크기 설정
     this.readyDrawCar = function(color, radius) {
-       this.carColor = color;
-       this.carRadius = radius;
+        this.carColor = color;
+        this.carRadius = radius;
     }
 
     // 자동차 위치 얻기
     this.setCarLocation = function(carLocX, carLocY) {
-       this.carLocX = carLocX;
-       this.carLocY = carLocY;
+        this.carLocX = carLocX;
+        this.carLocY = carLocY;
     }
    
     // 자동차 그리기
     this.drawCar = function() {
-       this.ctxCar.clearRect(this.x, this.y, this.mapWidth, this.mapHeight);
-       this.ctxCar.beginPath();
-       this.ctxCar.fillStyle = this.carColor;
-       this.ctxCar.arc(this.carLocX, this.carLocY, this.carRadius, 0, 2*Math.PI);
-       this.ctxCar.fill();
-       this.ctxCar.stroke();
+        this.ctxCar.clearRect(this.x, this.y, this.mapWidth, this.mapHeight);
+        this.ctxCar.beginPath();
+        this.ctxCar.fillStyle = this.carColor;
+        this.ctxCar.arc(this.carLocX, this.carLocY, this.carRadius, 0, 2*Math.PI);
+        this.ctxCar.fill();
+        this.ctxCar.stroke();
     }
    
     this.getCarLocX = function() {
-       return this.carLocX;
+        return this.carLocX;
     }
    
     this.getCarLocY = function() {
-       return this.carLocY;
+        return this.carLocY;
     }        
 
 }
@@ -1581,10 +1581,10 @@ var canvas2 = hud[1];
 
 // HUD에 맵의 일부분을 그리기
 function minimap () {
- ctx1map = canvas1.getContext("2d");
-  ctx2map = canvas2.getContext("2d");
+    ctx1map = canvas1.getContext("2d");
+    ctx2map = canvas2.getContext("2d");
  
-  ctx1map.clearRect(0, 0, canvas1.width, canvas1.height);
+    ctx1map.clearRect(0, 0, canvas1.width, canvas1.height);
     ctx2map.clearRect(0, 0, canvas2.width, canvas2.height);
     
     ctx1map.drawImage(imgMap, carLocX-50, carLocY-50, 100, 100, 2, 2, 100, 100);
