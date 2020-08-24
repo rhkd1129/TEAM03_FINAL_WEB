@@ -26,12 +26,6 @@
 						<li>
 							<div class="food">
 								<a id="foodInsert" onclick="foodInsert(${fnb.fno});" >
-
-									<div>${fnb.fname}</div>
-									<div>
-										<img src="${pageContext.request.contextPath}/resource/image/restaurant/logo/1.png"
-											 style="width: 50px; height: 50px;">
-
 									<div class="food_summary">
 										<ul>
 											<li class="fnb_name">${fnb.fname}</li>
@@ -40,7 +34,6 @@
 									</div>
 									<div class="food_img">
 										<img class="fnb_img" src="${pageContext.request.contextPath}/${fnb.fimage}">
-
 									</div>
 								</a>
 							</div>

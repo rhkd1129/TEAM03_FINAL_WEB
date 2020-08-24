@@ -17,7 +17,6 @@ import com.mycompany.project.model.Amember;
 import com.mycompany.project.model.Fnb;
 import com.mycompany.project.model.OrderReceipt;
 import com.mycompany.project.model.RloginForm;
-import com.mycompany.project.model.Rmember;
 import com.mycompany.project.service.RestaurantService;
 
 @Controller
