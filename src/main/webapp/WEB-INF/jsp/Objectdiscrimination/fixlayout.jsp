@@ -1598,7 +1598,7 @@ function clickevent(){
 	location.reload();
 }
 
-setInterval(clickevent, 10000);
+setInterval(clickevent, 5000);
   
   
   
