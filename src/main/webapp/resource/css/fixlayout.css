@@ -1845,6 +1845,53 @@ $size: 284px;
 	box-shadow: 0 0 10px #05E5EE, 0 0 10px #05E5EE;
 }
 
+.warningbox{
+	width: 600px;
+	height: 170px;
+	box-shadow: 0 0 30px #FF0000, 0 0 30px #FF0000;
+	z-index: 9999;
+	position: absolute;
+	margin-top: 100px;
+	margin-left: 660px;
+}
+
+.warningbox2{
+	width: 500px;
+	height: 100px;
+	box-shadow: 0 0 10px #FF0000, 0 0 10px #FF0000;
+	margin-left: 50px;
+	margin-top: 35px;
+	color: #FF0000;
+    text-shadow: 2px 2px 4px #FF0000;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

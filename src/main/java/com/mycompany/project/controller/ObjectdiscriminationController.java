@@ -91,4 +91,10 @@ public class ObjectdiscriminationController {
 		LOGGER.info("jetson3 실행");						
 		return "Objectdiscrimination/jetson3";
 	}	
+	
+	@RequestMapping("/smssend")
+	public String smssend() {
+		LOGGER.info("jetson3 실행");						
+		return "Objectdiscrimination/smssend";
+	}	
 }

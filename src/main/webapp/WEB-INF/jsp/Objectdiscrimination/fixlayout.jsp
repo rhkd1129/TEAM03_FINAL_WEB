@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="sms.SMS" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -323,9 +324,71 @@
 	<div class="modaltext4">Move Point [--]</div>
 </div>
 
+<!-- SMS Send Page =================================-->
+<div class="viewbox9" style="position: absolute; z-index: 9999;">
+	<div class="container" id="SMSCONTAINER">
+    <form method="post" name="smsForm" action="smssend.do">
+    	<table class="table table-striped" id="SMSTABLE" style="text-align: center; border: 1px solid #dddddd">
+    		<thead>
+    			<tr>
+    				<td style="text-align: center; font-weight: bold;">문자 전송 양식</td>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>
+    					<!-- 받는 사람 이름 설정 필요! -->
+      					<textarea id="SMStextarea" class="form-control" maxlength="45" name="msg" readonly="readonly">
+안녕하세요 고객님 즈기요입니다.
+주문하신 음식이 --로 
+출발하였습니다.♬
+      					</textarea>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+    					<!-- 받는 사람 전화번호 설정 필요! -->
+						<input id="SMSinput" class="form-control" type="text" name="rphone" value="010-8832-7217" readonly="readonly">
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+						주의 사항 : 『문자는 신중하게!』 『전송은 빠르게!』 『내용은 안전하게!』
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+						남은 문자 잔여량 : <%= new SMS().getCount() %>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+    					<input type="hidden" name="action" value="go">
+				        <input type="hidden" name="sphone1" value="010">
+				        <input type="hidden" name="sphone2" value="8832">
+				        <input type="hidden" name="sphone3" value="7217">
+				        <input class="btn btn-primary pull-right" id="sendmessage" type="submit" value="전송">
+    				</td>
+    			</tr>
+    		</tbody>
+    	</table>
+
+    </form>	<!-- SMS form  -->
+    </div>	<!-- container div -->
+</div>
+
+<div class="warningbox">
+	<div class="warningbox2">
+		Detection of objects 20cm ahead
+	</div>
+</div>
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 <!-- Jarvis Canvas Script -->
 <script>
+$(".warningbox").hide();
+
+/* 목적지 설정 및 문자 전송 */
+$(".viewbox9").hide();
 var pointtextex = $("#pointstext").html();
 
 $(".A").click(function(){
@@ -397,76 +460,12 @@ $("#points").click(function(){
 		$(".boxpoint").css("background-color","")
 	}
 	if(pointtextex != ""){
-		console.log("배송 지점 : " + pointtextex);
 		$(".modaltext4").text("Move Point ["+pointtextex+"]");
 		$(".boxpoint").css("background-color","")
+		$("#SMStextarea").text("안녕하세요 고객님! 배달업체 즈기요입니다. 주문하신 음식이 "+pointtextex+"로 출발하였습니다.♬");
+		$("#sendmessage").trigger("click");
 	}
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* 페이져  시작*/
 function viewPaging(pageNo) {
@@ -481,7 +480,6 @@ function viewPaging(pageNo) {
    });
 };
 /* 페이져  끝*/
-
 
 $(".inputboxhidden").hide();
 
@@ -873,9 +871,7 @@ function onMessageArrived(message) {
 				sensing5ctx.shadowOffsetY = 0;
 				sensing5ctx.shadowBlur = 20;
 				sensing5ctx.shadowColor = "#05E5EE";
-				sensing5ctx.fill();
-				
-// 				console.log("객체 생성중 :" + centerx + "|" + centery)
+				sensing5ctx.fill();			
 				
 				/* 거리감지 script end 908|480*/
 				if(centerx >= 710 && centerx <= 1103 && centery >= 402 && centery <= 500){
@@ -883,8 +879,10 @@ function onMessageArrived(message) {
 					sensing2ctx.fillStyle = "#FFFFFF";
 					sensing2ctx.shadowColor = "#FFFFFF";
 					sensing2ctx.fill();
+					$(".warningbox").show();
+					$(".warningbox2").text("Detection of objects 20cm ahead");
 				}
-				if(centerx >= 647 && centerx <= 1193 && centery >= 502 && centery <= 600){
+				else if(centerx >= 647 && centerx <= 1193 && centery >= 502 && centery <= 600){
 					console.log("2차@@@@")
 					sensing2ctx.fillStyle = "#FFFFFF";
 					sensing2ctx.shadowColor = "#FFFFFF";
@@ -892,8 +890,10 @@ function onMessageArrived(message) {
 					sensing3ctx.shadowColor = "#FFFFFF";
 					sensing2ctx.fill();
 					sensing3ctx.fill();
+					$(".warningbox").show();
+					$(".warningbox2").text("Detection of objects 15cm ahead");
 				}
-				if(centerx >= 494 && centerx <= 1256 && centery >= 602 && centery <= 700){
+				else if(centerx >= 494 && centerx <= 1256 && centery >= 602 && centery <= 700){
 					console.log("3차@@@@")
 					sensing2ctx.fillStyle = "#FFFFFF";
 					sensing2ctx.shadowColor = "#FFFFFF";
@@ -904,8 +904,10 @@ function onMessageArrived(message) {
 					sensing2ctx.fill();
 					sensing3ctx.fill();
 					sensing4ctx.fill();
+					$(".warningbox").show();
+					$(".warningbox2").text("Detection of objects 10cm ahead");
 				}
-				if(centerx >= 523 && centerx <= 1317 && centery >= 702 && centery <= 798){
+				else if(centerx >= 523 && centerx <= 1317 && centery >= 702 && centery <= 798){
 					console.log("4차@@@@")
 					sensing2ctx.fillStyle = "#FFFFFF";
 					sensing2ctx.shadowColor = "#FFFFFF";
@@ -919,7 +921,16 @@ function onMessageArrived(message) {
 					sensing3ctx.fill();
 					sensing4ctx.fill();
 					sensing5ctx.fill();
-				}			
+					$(".warningbox").show();
+					$(".warningbox2").text("Detection of objects 5cm ahead");
+				}
+				
+				else{
+					console.log("@@@@")
+					$(".warningbox").hide();
+					$(".warningbox2").text("");
+				}
+				
 			
 			if(name.length != 0){								
 				$("#textboxline").remove();
@@ -1587,7 +1598,7 @@ function clickevent(){
 	location.reload();
 }
 
-setInterval(clickevent, 5000);
+setInterval(clickevent, 10000);
   
   
   
