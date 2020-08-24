@@ -1,26 +1,82 @@
 @charset "UTF-8";
 
 .swiper-container {
-	width: 100%;
+   width: 100%;
+}
+nav{
+   width:100%;
+   height:auto;
+}
+div.item{
+   width:100%;
+}
+
+img{
+   max-width: 100%;
+     height: auto;
+}
+@media screen and (min-width: 150px){
+   .container{
+      display: grid;
+      min-width: fit-content;
+      height : auto;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(auto-fill, 1fr);   
+      margin-right:9px;
+      padding:0px;
+      text-align:-webkit-center;
+   }
+}
+@media screen and (min-width: 300px){
+   .container{
+      display: grid;
+      min-width: fit-content;
+      height : auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(auto-fill, 1fr);   
+      margin-right:9px;
+      padding:0px;
+      text-align:-webkit-center;
+   }
+}
+@media all and (min-width: 450px){
+   .container{
+      display: grid;
+      min-width: fit-content;
+      height : auto;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);   
+      margin-right:9px;
+      padding:0px;
+      text-align:-webkit-center;
+   }
 }
 
 .address{
-	width: 93%;
+   width: 93%;
 }
 
 #list{
-	overflow: auto;
-	width: 93%;
-	background-color: #ffffff;
-	position: relative;
-	z-index: 9999;
+   overflow: auto;
+   width: 93%;
+   background-color: #ffffff;
+   position: relative;
+   z-index: 9999;
 }
 
 #searchedaddress{
-	height: 30%;
+   height: 30%;
 }
 
 #eachaddress{
-	padding: 5px;
+   padding: 5px;
 }
-
+.footermain1{
+   width: 100%;
+   height: auto;
+    background: #FBFBFB;
+}
+.footimg1{
+   width: 100%;
+   cursor: pointer;
+}
