@@ -983,11 +983,11 @@ function onMessageArrived(message) {
 						if(name == "unlabeled"){
 							document.getElementById("textboximg").src="";
 						}else if(name == "red"){
-							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/traficlight.jpg";
+							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/red.jpg";
 						}else if(name == "green"){
-							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/traficlight.jpg";
+							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/green.jpg";
 						}else if(name == "yellow"){
-							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/traficlight.jpg";
+							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/yellow.jpg";
 						}else if(name == "crosswalk"){
 							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/crosswalk.jpg";
 						}else if(name == "schoolzone"){
