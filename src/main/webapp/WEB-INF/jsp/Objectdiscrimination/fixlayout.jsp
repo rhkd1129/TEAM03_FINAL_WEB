@@ -52,6 +52,7 @@
        <img   class="hud05" src="${pageContext.request.contextPath}/resource/image/hud2/hover05.png">              
     </div>
 </div>
+
 <!-- canvas 드로잉 판 -->
 <div id = "total">
   <!-- 카메라 캔버스 -->
@@ -330,46 +331,29 @@
     <form method="post" name="smsForm" action="smssend.do">
     	<table class="table table-striped" id="SMSTABLE" style="text-align: center; border: 1px solid #dddddd">
     		<thead>
-    			<tr>
-    				<td style="text-align: center; font-weight: bold;">문자 전송 양식</td>
-    			</tr>
+    			<tr><td style="text-align: center; font-weight: bold;">문자 전송 양식</td></tr>
     		</thead>
     		<tbody>
-    			<tr>
-    				<td>
+    			<tr><td>
     					<!-- 받는 사람 이름 설정 필요! -->
       					<textarea id="SMStextarea" class="form-control" maxlength="45" name="msg" readonly="readonly">
 안녕하세요 고객님 즈기요입니다.
 주문하신 음식이 --로 
 출발하였습니다.♬
       					</textarea>
-    				</td>
-    			</tr>
-    			<tr>
-    				<td>
-    					<!-- 받는 사람 전화번호 설정 필요! -->
+    			</td></tr>
+    			<tr><td>
 						<input id="SMSinput" class="form-control" type="text" name="rphone" value="010-8832-7217" readonly="readonly">
-    				</td>
-    			</tr>
-    			<tr>
-    				<td>
-						주의 사항 : 『문자는 신중하게!』 『전송은 빠르게!』 『내용은 안전하게!』
-    				</td>
-    			</tr>
-    			<tr>
-    				<td>
-						남은 문자 잔여량 : <%= new SMS().getCount() %>
-    				</td>
-    			</tr>
-    			<tr>
-    				<td>
+    			</td></tr>
+    			<tr><td>주의 사항 : 『문자는 신중하게!』 『전송은 빠르게!』 『내용은 안전하게!』</td></tr>
+    			<tr><td>남은 문자 잔여량 : <%= new SMS().getCount() %></td></tr>
+    			<tr><td>
     					<input type="hidden" name="action" value="go">
 				        <input type="hidden" name="sphone1" value="010">
 				        <input type="hidden" name="sphone2" value="8832">
 				        <input type="hidden" name="sphone3" value="7217">
 				        <input class="btn btn-primary pull-right" id="sendmessage" type="submit" value="전송">
-    				</td>
-    			</tr>
+    			</td></tr>
     		</tbody>
     	</table>
 
