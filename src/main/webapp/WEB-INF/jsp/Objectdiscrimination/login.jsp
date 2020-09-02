@@ -25,7 +25,7 @@
             <div class="mhn-ui-date">September 05, 2015</div>
         </div>
         <div class="mhn-lock-wrap">
-            <div class="mhn-lock-title" data-title="Draw a pattern to unlock"></div>
+            <div class="mhn-lock-title" data-title="패턴을 입력하시오"></div>
             <div class="mhn-lock"></div>
         </div>
     </div>
@@ -130,12 +130,12 @@ mhnUI = {
         mhnUI.page.hide(), pattern = new PatternLock(".mhn-lock", {
             margin: 15
         }), $(".mhn-lock-title").html($(".mhn-lock-title").data("title")), pattern.checkForPattern("7415369", function() {
-            $(".mhn-lock-title").html('<span class="mhn-lock-success">Yes! you unlocked pattern</span>'), $(".patt-holder").addClass("patt-success"), setTimeout(function() {
+            $(".mhn-lock-title").html('<span class="mhn-lock-success">HUD에 오신것을 환영합니다.</span>'), $(".patt-holder").addClass("patt-success"), setTimeout(function() {
                 pattern.reset(), mhnUI.message()
 			location.href = "${pageContext.request.contextPath}/Objectdiscrimination/firstlayout.do";
             }, 1e3), mhnUI.page.show()
         }, function() {
-            $(".mhn-lock-title").html('<span class="mhn-lock-failure">Opps! pattern is not correct</span>'), $(".patt-holder").removeClass("patt-success"), setTimeout(function() {
+            $(".mhn-lock-title").html('<span class="mhn-lock-failure">비밀번호를 다시 입력하시오.</span>'), $(".patt-holder").removeClass("patt-success"), setTimeout(function() {
                 pattern.reset(), mhnUI.message()
             }, 2e3)
         })

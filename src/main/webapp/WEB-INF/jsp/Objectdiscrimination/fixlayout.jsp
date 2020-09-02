@@ -52,6 +52,7 @@
        <img   class="hud05" src="${pageContext.request.contextPath}/resource/image/hud2/hover05.png">              
     </div>
 </div>
+
 <!-- canvas 드로잉 판 -->
 <div id = "total">
   <!-- 카메라 캔버스 -->
@@ -330,46 +331,29 @@
     <form method="post" name="smsForm" action="smssend.do">
     	<table class="table table-striped" id="SMSTABLE" style="text-align: center; border: 1px solid #dddddd">
     		<thead>
-    			<tr>
-    				<td style="text-align: center; font-weight: bold;">문자 전송 양식</td>
-    			</tr>
+    			<tr><td style="text-align: center; font-weight: bold;">문자 전송 양식</td></tr>
     		</thead>
     		<tbody>
-    			<tr>
-    				<td>
+    			<tr><td>
     					<!-- 받는 사람 이름 설정 필요! -->
       					<textarea id="SMStextarea" class="form-control" maxlength="45" name="msg" readonly="readonly">
 안녕하세요 고객님 즈기요입니다.
 주문하신 음식이 --로 
 출발하였습니다.♬
       					</textarea>
-    				</td>
-    			</tr>
-    			<tr>
-    				<td>
-    					<!-- 받는 사람 전화번호 설정 필요! -->
+    			</td></tr>
+    			<tr><td>
 						<input id="SMSinput" class="form-control" type="text" name="rphone" value="010-8832-7217" readonly="readonly">
-    				</td>
-    			</tr>
-    			<tr>
-    				<td>
-						주의 사항 : 『문자는 신중하게!』 『전송은 빠르게!』 『내용은 안전하게!』
-    				</td>
-    			</tr>
-    			<tr>
-    				<td>
-						남은 문자 잔여량 : <%= new SMS().getCount() %>
-    				</td>
-    			</tr>
-    			<tr>
-    				<td>
+    			</td></tr>
+    			<tr><td>주의 사항 : 『문자는 신중하게!』 『전송은 빠르게!』 『내용은 안전하게!』</td></tr>
+    			<tr><td>남은 문자 잔여량 : <%= new SMS().getCount() %></td></tr>
+    			<tr><td>
     					<input type="hidden" name="action" value="go">
 				        <input type="hidden" name="sphone1" value="010">
 				        <input type="hidden" name="sphone2" value="8832">
 				        <input type="hidden" name="sphone3" value="7217">
 				        <input class="btn btn-primary pull-right" id="sendmessage" type="submit" value="전송">
-    				</td>
-    			</tr>
+    			</td></tr>
     		</tbody>
     	</table>
 
@@ -983,11 +967,11 @@ function onMessageArrived(message) {
 						if(name == "unlabeled"){
 							document.getElementById("textboximg").src="";
 						}else if(name == "red"){
-							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/traficlight.jpg";
+							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/red.jpg";
 						}else if(name == "green"){
-							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/traficlight.jpg";
+							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/green.jpg";
 						}else if(name == "yellow"){
-							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/traficlight.jpg";
+							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/yellow.jpg";
 						}else if(name == "crosswalk"){
 							document.getElementById("textboximg").src="${pageContext.request.contextPath}/resource/image/도로사진/crosswalk.jpg";
 						}else if(name == "schoolzone"){
@@ -1458,10 +1442,11 @@ var canvasCar = document.querySelector(".car");
 canvasMap.width = 330;
 canvasMap.height = 330;
 canvasMap.style.position = "absolute";
+
 canvasCar.width = 330;
 canvasCar.height = 330;
 canvasCar.style.position = "absolute";  
-   
+
 var carLocation = {
          A: [270, 20],
          B: [205, 20],
@@ -1484,8 +1469,7 @@ var ctxMap = canvasMap.getContext("2d");
 var ctxCar = canvasCar.getContext("2d");
 
 var mapArea = new mapArea(ctxMap, ctxCar, 0, 0);
-mapArea.readyDrawCar("#05E5EE", 7);
-
+mapArea.readyDrawCar("#FF0000", 7);
 mapArea.drawTrack(); 
 
 function mapArea(ctxMap, ctxCar, x, y) {
@@ -1537,32 +1521,32 @@ function mapArea(ctxMap, ctxCar, x, y) {
         
     // 자동차 색깔과 크기 설정
     this.readyDrawCar = function(color, radius) {
-       this.carColor = color;
-       this.carRadius = radius;
+        this.carColor = color;
+        this.carRadius = radius;
     }
 
     // 자동차 위치 얻기
     this.setCarLocation = function(carLocX, carLocY) {
-       this.carLocX = carLocX;
-       this.carLocY = carLocY;
+        this.carLocX = carLocX;
+        this.carLocY = carLocY;
     }
    
     // 자동차 그리기
     this.drawCar = function() {
-       this.ctxCar.clearRect(this.x, this.y, this.mapWidth, this.mapHeight);
-       this.ctxCar.beginPath();
-       this.ctxCar.fillStyle = this.carColor;
-       this.ctxCar.arc(this.carLocX, this.carLocY, this.carRadius, 0, 2*Math.PI);
-       this.ctxCar.fill();
-       this.ctxCar.stroke();
+        this.ctxCar.clearRect(this.x, this.y, this.mapWidth, this.mapHeight);
+        this.ctxCar.beginPath();
+        this.ctxCar.fillStyle = this.carColor;
+        this.ctxCar.arc(this.carLocX, this.carLocY, this.carRadius, 0, 2*Math.PI);
+        this.ctxCar.fill();
+        this.ctxCar.stroke();
     }
    
     this.getCarLocX = function() {
-       return this.carLocX;
+        return this.carLocX;
     }
    
     this.getCarLocY = function() {
-       return this.carLocY;
+        return this.carLocY;
     }        
 
 }
@@ -1581,10 +1565,10 @@ var canvas2 = hud[1];
 
 // HUD에 맵의 일부분을 그리기
 function minimap () {
- ctx1map = canvas1.getContext("2d");
-  ctx2map = canvas2.getContext("2d");
+    ctx1map = canvas1.getContext("2d");
+    ctx2map = canvas2.getContext("2d");
  
-  ctx1map.clearRect(0, 0, canvas1.width, canvas1.height);
+    ctx1map.clearRect(0, 0, canvas1.width, canvas1.height);
     ctx2map.clearRect(0, 0, canvas2.width, canvas2.height);
     
     ctx1map.drawImage(imgMap, carLocX-50, carLocY-50, 100, 100, 2, 2, 100, 100);
