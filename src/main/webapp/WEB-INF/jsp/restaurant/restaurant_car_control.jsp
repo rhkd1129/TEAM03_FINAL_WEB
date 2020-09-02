@@ -61,6 +61,7 @@
 			client.subscribe("/camerapub");
 			client.subscribe("/Message/#");
 		}
+		
 		function onMessageArrived(message) {
 			if(message.destinationName == "/camerapub") {
 				var cameraView = $("#cameraView").attr(
@@ -68,7 +69,32 @@
 				
 			}
 			
-			a
+			/* if(message.destinationName == "/Message") {
+				var location = JSON.parse(message.payloadString).location
+				var traffic_light = JSON.parse(message.payloadString).traffic_light
+				var speed = JSON.parse(message.payloadString).speed
+				var sign = JSON.parse(message.payloadString).sign
+				var road_thing = JSON.parse(message.payloadString).road_thing
+				
+				$('#location').text(location);
+				$('#traffic_light').text(traffic_light);
+				$('#speed').text(speed);
+				$('#sign').text(sign);
+				$('#road_thing').text(road_thing);
+				
+				if (sign == 'stop') {
+					if (stopCnt < 50) {
+						MotorStop()
+						stopCnt = stopCnt + 1
+
+					} else {
+						MotorAccel()
+						stopCnt = 0
+					}
+					
+				}
+				
+			} */
 			
 			
 			/* if(message.destinationName == "/Message/Detection") {

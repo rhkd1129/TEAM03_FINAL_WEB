@@ -88,4 +88,9 @@ public class RestaurantDao extends EgovAbstractMapper{
 		return list;
 	}
 
+	public void udateByDeliveryStart(int ono) {
+		update("orderReceipt.udateByDeliveryStart", ono);
+		
+	}
+
 }

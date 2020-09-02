@@ -28,6 +28,11 @@
 			update order_receipt set ostatus = 1
 			where ono = #{ono}
 		</update>
+		
+		<update id="udateByDeliveryStart">
+			update order_receipt set ostatus = 2
+			where ono = #{ono}
+		</update>
 
 		<update id="updateByComplete">
 			update order_receipt set ostatus = 3

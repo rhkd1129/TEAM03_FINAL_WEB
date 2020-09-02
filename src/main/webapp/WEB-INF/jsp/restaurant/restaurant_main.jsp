@@ -20,7 +20,7 @@
 			var rno = ${rno}
 			
 			$(function(){
-				client = new Paho.MQTT.Client("192.168.3.210", 61614, new Date().getTime().toString());
+				client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
 				client.onMessageArrived = onMessageArrived;
 				client.connect({onSuccess:onConnect});
 			});
@@ -113,16 +113,18 @@
 		}
 		
 		
-		function DeliveryStart() {
+		function DeliveryStart(ono) {
 			console.log("실행")
+			var rno = ${rno};
+			var ono = ono
 			var dest = new Array('B','C','D','E','F','H','I','J','K','M','N','P','S','T');
-			/* $.ajax({
+			$.ajax({
 				type : "get", 
-				url : "restaurant_order_takeover.do?rno="+ rno + "&ono="+ono,
+				url : "restaurant_order_deliveryStart.do?rno="+ rno + "&ono="+ono,
 				success : function(result) { 
 					$(".content1").html(result);
 				}
-			}) */			
+			})			
 			
 			message = {'ono' : randomItem(dest)}
 			
@@ -189,13 +191,13 @@
 				메뉴 등록
 			</div>
 			<div class="menu2" id='menu6'>
-				고객 관리
+				.
 			</div>
 			<div class="menu3" id='menu7'>
-				광고 관리
+				.
 			</div>
 			<div class="menu4" id='menu8'>
-				데이터 조회
+				.
 			</div>
 		</div>
 		

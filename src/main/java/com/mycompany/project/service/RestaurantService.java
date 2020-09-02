@@ -86,6 +86,11 @@ public class RestaurantService {
 		return list;
 	}
 
+	public void deliveryStartOrder(int ono) {
+		restaurantDao.udateByDeliveryStart(ono);
+		
+	}
+
 
 
 

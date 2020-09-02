@@ -77,6 +77,12 @@ public class RestaurantController {
       return "restaurant/restaurant_order_processing";
    }
    
+   @GetMapping("/restaurant_order_deliveryStart.do")
+   public String deliveryStart(int rno, int ono, Model model) {
+	   restaurantService.deliveryStartOrder(ono);
+	   return "redirect:/restaurant/restaurant_order_processing.do?rno="+rno;
+   }
+   
    @GetMapping("/restaurant_order_delivery_complete.do")
    public String deliveryComplete(int rno, int ono) {
 	   restaurantService.completeOrder(ono);

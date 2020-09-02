@@ -32,7 +32,7 @@
 						</td>
 						<td class="orederstatus">
 							<c:if test="${orderReceipt.ostatus eq '1'}" >
-								<button onclick="DeliveryStart()" id="processingButton">준비중</button>
+								<button onclick="DeliveryStart(${orderReceipt.ono})" id="processingButton">준비중</button>
 							</c:if>
 							<c:if test="${orderReceipt.ostatus eq '2'}" >
 								<button id="processingButton">배달중</button>
